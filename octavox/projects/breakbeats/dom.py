@@ -260,9 +260,9 @@ class Patches(list):
             f.write(self.to_yaml())
     
 if __name__=="__main__":
-    from banks import Banks
+    from octavox.samples.banks import Banks
     banks=Banks.load()
-    samples=yaml.safe_load(open("samples.yaml").read())
+    samples=yaml.safe_load(open("octavox/projects/breakbeats/pico-samples.yaml").read())
     controllers=yaml.safe_load("""
     - mod: Echo
       attr: wet

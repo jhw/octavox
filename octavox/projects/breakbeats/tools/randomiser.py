@@ -21,7 +21,7 @@ Controllers=yaml.safe_load("""
 
 if __name__=="__main__":
     try:
-        from cli import cli
+        from octavox.tools.cli import cli
         cliconf=yaml.safe_load("""
         - key: nbeats
           description: "n(beats)"
@@ -36,7 +36,7 @@ if __name__=="__main__":
         """)
         kwargs=cli(cliconf)
         banks=Banks.load("tmp/banks/pico")
-        samples=yaml.safe_load(open("samples.yaml").read())
+        samples=yaml.safe_load(open("octavox/projects/breakbeats/pico-samples.yaml").read())
         patches=Patches.randomise(banks=banks,
                                   samples=samples,
                                   controllers=Controllers,

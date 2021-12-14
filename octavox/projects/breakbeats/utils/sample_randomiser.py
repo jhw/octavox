@@ -93,6 +93,6 @@ class SampleRandomiser:
 if __name__=="__main__":
     from banks import Banks
     banks=Banks.load("tmp/banks/pico")
-    samples=yaml.safe_load(open("samples.yaml").read())
+    samples=yaml.safe_load(open("octavox/projects/breakbeats/pico-samples.yaml").read())
     for i in range(10):
         print (SampleRandomiser().initialise(banks, samples))

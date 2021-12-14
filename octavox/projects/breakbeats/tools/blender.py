@@ -6,7 +6,7 @@ import yaml
 
 if __name__=="__main__":
     try:
-        from cli import cli
+        from octavox.tools.cli import cli
         cliconf=yaml.safe_load("""
         - key: src
           description: source

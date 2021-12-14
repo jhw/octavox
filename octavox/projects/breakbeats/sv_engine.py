@@ -11,6 +11,8 @@ from rv.modules.reverb import Reverb as RVReverb
 
 from octavox.projects.breakbeats.utils.sv_utils import *
 
+from octavox.projects.breakbeats.utils.sampler_utils import load_sample
+
 import yaml
 
 Drum, Sampler = "Drum", "Sampler"
@@ -136,7 +138,6 @@ def render(banks,
             raise RuntimeError("sampler max slots exceeded")
         print ("%i sampler slots used" % len(samplekeys))
         patches.add_sample_ids(samplekeys)
-        from sampler_utils import load_sample
         for i, samplekey in enumerate(samplekeys):
             sampler.note_samples[notes[i]]=i
             src=banks.get_wavfile(samplekey)
