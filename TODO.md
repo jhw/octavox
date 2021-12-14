@@ -17,6 +17,7 @@
 
 ### thoughts
 
+- save colours ?
 - harmonise fx/effects nomenclature ?
 - sv drum levels ?
 
