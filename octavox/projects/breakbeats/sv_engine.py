@@ -1,20 +1,15 @@
 from rv.api import Project as RVProject
 from rv.pattern import Pattern as RVPattern
 from rv.note import Note as RVNote
-from rv.note import NOTE as RVNOTE
 
-from rv.modules.sampler import Sampler as RVSampler
 from rv.modules.drumsynth import DrumSynth as RVDrumSynth
 from rv.modules.echo import Echo as RVEcho
 from rv.modules.distortion import Distortion as RVDistortion
 from rv.modules.reverb import Reverb as RVReverb
 
-import random, warnings, yaml
+from octavox.modules.sampler import SVSampler
 
-# from scipy.io import wavfile
-from octavox.projects.breakbeats.utils import wavfile
-
-warnings.simplefilter("ignore", wavfile.WavFileWarning)
+import random, yaml
 
 Drum, Sampler = "Drum", "Sampler"
 
@@ -85,87 +80,44 @@ def mutate_color(color, contrast=32):
     return [min(255, max(0, rgb+random.choice(values)))
             for rgb in  color]
 
-class SVPatches(list):
+class Trig(dict):
 
-    def ___init__(self, patches):
-        list.__init__(self, patches)
+    def __init__(self, item):
+        dict.__init__(self, item)
 
-    """
-    - returns list of all unique sample keys listed in patches
-    - so you only need to load used samples from banks, thereby reducing overall sunvox file size
-    - order not important because patch is updated with note of whatever slot a particular sample is inserted into
-    """
-            
-    @property
-    def sample_keys(self):
-        def keyfn(key):
-            return "%s:%i" % (key["bank"],
-                              key["id"])
-        keys={}
-        for patch in self:
-            for track in patch["tracks"]:
-                if track["type"]=="trig":
-                    trigs=track["notes"]
-                    for trig in trigs.values():
-                        if trig and trig["mod"]==Sampler:
-                            keys[keyfn(trig["key"])]=trig["key"]
-        return list(keys.values())
+    def render(self, modules, controllers, volume=128):
+        trig=1+self["id"]
+        mod=1+modules[self["mod"]]
+        vel=max(1, int(self["vel"]*volume)) 
+        return RVNote(note=trig,
+                      vel=vel,
+                      module=mod)
 
-    def add_sample_ids(self, mapping):
-        for patch in self:
-            for track in patch["tracks"]:
-                if track["type"]=="trig":
-                    trigs=track["notes"]
-                    for trig in trigs.values():
-                        if trig and trig["mod"]==Sampler:
-                            trig["id"]=mapping.index(trig["key"])
-
-class SVSampler(RVSampler):
-
-    def __init__(self, *args, **kwargs):
-        RVSampler.__init__(self, *args, **kwargs)
-
-    def load(self, src, slot, **kwargs):
-        sample = self.Sample()
-        freq, snd = wavfile.read(src)
-        if snd.dtype.name == 'int16':
-            sample.format = self.Format.int16
-        elif snd.dtype.name == 'float32':
-            sample.format = self.Format.float32
-        else:
-            raise RuntimeError("dtype %s Not supported" % snd.dtype.name)
-        if len(snd.shape) == 1:
-            size, = snd.shape
-            channels = 1
-        else:
-            size, channels = snd.shape
-        sample.rate = freq
-        sample.channels = {
-            1: RVSampler.Channels.mono,
-            2: RVSampler.Channels.stereo,
-        }[channels]
-        sample.data = snd.data.tobytes()
-        for key, value in kwargs.items():
-            setattr(sample, key, value)
-        self.samples[slot] = sample
-        return sample
-
-    def initialise(self, banks, patches, maxslots=120):
-        patches=SVPatches(patches)
-        notes=list(RVNOTE)
-        root=notes.index(RVNOTE.C5)
-        samplekeys=patches.sample_keys
-        if len(samplekeys) > maxslots:
-            raise RuntimeError("sampler max slots exceeded")
-        print ("%i sampler slots used" % len(samplekeys))
-        patches.add_sample_ids(samplekeys)
-        for i, samplekey in enumerate(samplekeys):
-            self.note_samples[notes[i]]=i
-            src=banks.get_wavfile(samplekey)
-            self.load(src, i)
-            sample=self.samples[i]
-            sample.relative_note+=(root-i)
+class Effect(dict):
     
+    def __init__(self, item):
+        dict.__init__(self, item)
+        
+    def render(self, modules, controllers,
+               ctrlmult=256,
+               maxvalue=256*128):
+        mod=1+modules[self["mod"]]
+        ctrl=ctrlmult*controllers[self["mod"]][self["attr"]]
+        value=int(self["value"]*maxvalue) # don't add 1 as will exceed max
+        return RVNote(module=mod,
+                      ctl=ctrl,
+                      val=value)
+
+class Offset:
+
+    def __init__(self):
+        self.value=0
+        self.count=0
+
+    def increment(self, value):
+        self.value+=value
+        self.count+=1
+            
 def render(banks,
            patches,
            globalz=Globals,
@@ -191,28 +143,6 @@ def render(banks,
         for src, dest in links:
             proj.connect(proj.modules[modmap[src]],
                          proj.modules[modmap[dest]])
-    class Trig(dict):
-        def __init__(self, item):
-            dict.__init__(self, item)
-        def render(self, modules, controllers, volume=128):
-            trig=1+self["id"]
-            mod=1+modules[self["mod"]]
-            vel=max(1, int(self["vel"]*volume)) 
-            return RVNote(note=trig,
-                          vel=vel,
-                          module=mod)
-    class Effect(dict):
-        def __init__(self, item):
-            dict.__init__(self, item)
-        def render(self, modules, controllers,
-                   ctrlmult=256,
-                   maxvalue=256*128):
-            mod=1+modules[self["mod"]]
-            ctrl=ctrlmult*controllers[self["mod"]][self["attr"]]
-            value=int(self["value"]*maxvalue) # don't add 1 as will exceed max
-            return RVNote(module=mod,
-                          ctl=ctrl,
-                          val=value)
     def init_pattern(proj, modules, controllers, patch, offset, color, height=64):
         def init_grid(patch):
             def classfn(type):
@@ -233,13 +163,6 @@ def render(banks,
         rvpat.set_via_fn(notefn)
         offset.increment(patch["n"])                
         return rvpat
-    class Offset:
-        def __init__(self):
-            self.value=0
-            self.count=0
-        def increment(self, value):
-            self.value+=value
-            self.count+=1
     def init_patterns(proj, patches):
         def init_controllers(modules):
             controllers={}
