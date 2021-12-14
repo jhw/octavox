@@ -1,11 +1,13 @@
 ### short
 
-- rename engine as project
+- move colours into pattern
+- rename enginename as suffix
 - pass randomiser class to samples and move SampleRandomiser into randomiser
 - parameterise randomiser params
 
 ### medium
 
+- blender to preserve roots
 - "sticky" track/slices (heartbeat)
 - breakbeats readme
 
@@ -40,6 +42,7 @@
 
 ### done
 
+- rename engine as project
 - sampler class
 - consider moving init_sampler to /sampler
 - notes re recorder buffer

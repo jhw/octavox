@@ -10,7 +10,7 @@ from octavox.projects.breakbeats.fx import Styles as FXStyles
 
 from octavox.projects.breakbeats.utils.sample_randomiser import SampleRandomiser
 
-from octavox.projects.breakbeats.sv_engine import SVEngine
+from octavox.projects.breakbeats.project import SVProject
 
 import copy, datetime, json, os, random, yaml
 
@@ -249,8 +249,8 @@ class Patches(list):
                      "tmp/patches"]:
             if not os.path.exists(path):
                 os.makedirs(path)
-        project=SVEngine().render(banks,
-                                  [patch.render(nbeats=nbeats)
+        project=SVProject().render(banks,
+                                   [patch.render(nbeats=nbeats)
                                    for patch in self])        
         projfile="tmp/projects/%s-%s.sunvox" % (timestamp, enginename)
         with open(projfile, 'wb') as f:

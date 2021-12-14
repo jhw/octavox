@@ -80,7 +80,7 @@ def mutate_color(color, contrast=32):
     return [min(255, max(0, rgb+random.choice(values)))
             for rgb in  color]
 
-class Trig(dict):
+class SVTrig(dict):
 
     def __init__(self, item):
         dict.__init__(self, item)
@@ -93,7 +93,7 @@ class Trig(dict):
                       vel=vel,
                       module=mod)
 
-class Effect(dict):
+class SVEffect(dict):
     
     def __init__(self, item):
         dict.__init__(self, item)
@@ -108,7 +108,7 @@ class Effect(dict):
                       ctl=ctrl,
                       val=value)
 
-class Offset:
+class SVOffset:
 
     def __init__(self):
         self.value=0
@@ -118,7 +118,7 @@ class Offset:
         self.value+=value
         self.count+=1
 
-class SVEngine:
+class SVProject:
         
     def init_modules(self, proj, modules):
         for i, item in enumerate(modules):
@@ -135,7 +135,6 @@ class SVEngine:
                     mod.set_raw(k, v)
             proj.attach_module(mod)
 
-
     def link_modules(self, proj, links):
         modmap={mod.name: mod.index
                 for mod in proj.modules}
@@ -145,7 +144,7 @@ class SVEngine:
 
     def init_grid(self, patch):
         def classfn(type):
-            return Trig if type=="trig" else Effect
+            return SVTrig if type=="trig" else SVEffect
         return [{k:classfn(track["type"])(v)
                  for k, v in track["notes"].items()}
                 for track in patch["tracks"]]
@@ -186,7 +185,7 @@ class SVEngine:
         modmap={mod.name: mod.index
                 for mod in proj.modules}
         ctrlmap=self.init_controllers(proj.modules)
-        offset=Offset()
+        offset=SVOffset()
         patterns, color = [], None
         for i, patch in enumerate(patches):
             color=new_color() if 0==i%4 else mutate_color(color)

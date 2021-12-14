@@ -1,6 +1,6 @@
-from rv.note import NOTE as RVNOTE
-
 from rv.modules.sampler import Sampler as RVSampler
+
+from rv.note import NOTE as RVNOTE
 
 import warnings
 
