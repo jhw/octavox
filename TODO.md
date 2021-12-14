@@ -1,6 +1,7 @@
 ### short
 
-- fix pico banks paths
+- fix samples references
+- check all imports
 - test breakbeat tools
 - archive
 - todo
@@ -8,6 +9,7 @@
 
 ### done
 
+- fix pico banks paths
 - core breakbeats project
 - banks
 - complete pico sample management

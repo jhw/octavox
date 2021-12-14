@@ -32,7 +32,7 @@ if __name__=="__main__":
         if len(sys.argv) >= 2:
             cliconf[0]["pattern"]=sys.argv[1]
         kwargs=cli(cliconf)
-        banks=Banks.load()
+        banks=Banks.load("tmp/banks/pico")
         patches=Patches(yaml.safe_load(open(kwargs["src"]).read()))
         for index in kwargs["indexes"]:
             if index >= len(patches):        

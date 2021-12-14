@@ -80,7 +80,7 @@ if __name__=="__main__":
                                                               kwargs,
                                                               i)
                             for i in range(kwargs["npatches"])])
-        banks=Banks.load()
+        banks=Banks.load("tmp/banks/pico")
         modpatches.render(enginename="mutator",
                           banks=banks,
                           nbeats=kwargs["nbeats"])

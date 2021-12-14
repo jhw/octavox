@@ -35,7 +35,7 @@ if __name__=="__main__":
           default: 16
         """)
         kwargs=cli(cliconf)
-        banks=Banks.load()
+        banks=Banks.load("tmp/banks/pico")
         samples=yaml.safe_load(open("samples.yaml").read())
         patches=Patches.randomise(banks=banks,
                                   samples=samples,
