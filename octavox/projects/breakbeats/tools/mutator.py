@@ -1,6 +1,6 @@
-from banks import Banks
+from octavox.samples.banks import Banks
 
-from dom import Patches
+from octavox.projects.breakbeats.dom import Patches
 
 import yaml
 

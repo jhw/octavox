@@ -1,4 +1,4 @@
-from trigs import Channels, Instruments
+from octavox.projects.breakbeats.trigs import Channels, Instruments
 
 import random, yaml
 

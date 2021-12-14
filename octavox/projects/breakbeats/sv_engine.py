@@ -9,7 +9,7 @@ from rv.modules.echo import Echo as RVEcho
 from rv.modules.distortion import Distortion as RVDistortion
 from rv.modules.reverb import Reverb as RVReverb
 
-from sv_utils import *
+from octavox.projects.breakbeats.utils.sv_utils import *
 
 import yaml
 

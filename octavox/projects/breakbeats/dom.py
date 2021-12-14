@@ -1,16 +1,16 @@
-from trigs import Channels
+from octavox.projects.breakbeats.trigs import Channels
 
-from trigs import TrigGenerator
+from octavox.projects.breakbeats.trigs import TrigGenerator
 
-from trigs import Styles as TrigStyles
+from octavox.projects.breakbeats.trigs import Styles as TrigStyles
 
-from fx import FXGenerator
+from octavox.projects.breakbeats.fx import FXGenerator
 
-from fx import Styles as FXStyles
+from octavox.projects.breakbeats.fx import Styles as FXStyles
 
-from sample_randomiser import SampleRandomiser
+from octavox.projects.breakbeats.usample_randomiser import SampleRandomiser
 
-import sv_engine as sv
+import octavox.projects.breakbeats.sv_engine as sv
 
 import copy, datetime, json, os, random, yaml
 
