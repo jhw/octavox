@@ -7,7 +7,7 @@ def upload_pico(s3, bucketname):
         if not filename.endswith(".zip"):
             continue
         print (filename)
-        s3.upload_file("tmp/banks/%s" % filename,
+        s3.upload_file("tmp/banks/pico/%s" % filename,
                        bucketname,
                             filename)
     
