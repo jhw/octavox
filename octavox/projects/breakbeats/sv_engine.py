@@ -20,7 +20,8 @@ Drum, Sampler = "Drum", "Sampler"
 
 Modules=yaml.safe_load("""
 - name: Sampler
-  class: RVSampler
+  # class: RVSampler
+  class: SVSampler
   position:
     x: -3
     y: -1
@@ -119,31 +120,52 @@ class SVPatches(list):
                         if trig and trig["mod"]==Sampler:
                             trig["id"]=mapping.index(trig["key"])
 
-def load_sample(src, sampler, slot, **kwargs):
-    sample = sampler.Sample()
-    freq, snd = wavfile.read(src)
-    if snd.dtype.name == 'int16':
-        sample.format = sampler.Format.int16
-    elif snd.dtype.name == 'float32':
-        sample.format = sampler.Format.float32
-    else:
-        raise RuntimeError("dtype %s Not supported" % snd.dtype.name)
-    if len(snd.shape) == 1:
-        size, = snd.shape
-        channels = 1
-    else:
-        size, channels = snd.shape
-    sample.rate = freq
-    sample.channels = {
-        1: RVSampler.Channels.mono,
-        2: RVSampler.Channels.stereo,
-    }[channels]
-    sample.data = snd.data.tobytes()
-    for key, value in kwargs.items():
-        setattr(sample, key, value)
-    sampler.samples[slot] = sample
-    return sample
-                            
+class SVSampler(RVSampler):
+
+    def __init__(self, *args, **kwargs):
+        RVSampler.__init__(self, *args, **kwargs)
+
+    def load(self, src, slot, **kwargs):
+        sample = self.Sample()
+        freq, snd = wavfile.read(src)
+        if snd.dtype.name == 'int16':
+            sample.format = self.Format.int16
+        elif snd.dtype.name == 'float32':
+            sample.format = self.Format.float32
+        else:
+            raise RuntimeError("dtype %s Not supported" % snd.dtype.name)
+        if len(snd.shape) == 1:
+            size, = snd.shape
+            channels = 1
+        else:
+            size, channels = snd.shape
+        sample.rate = freq
+        sample.channels = {
+            1: RVSampler.Channels.mono,
+            2: RVSampler.Channels.stereo,
+        }[channels]
+        sample.data = snd.data.tobytes()
+        for key, value in kwargs.items():
+            setattr(sample, key, value)
+        self.samples[slot] = sample
+        return sample
+
+    def initialise(self, banks, patches, maxslots=120):
+        patches=SVPatches(patches)
+        notes=list(RVNOTE)
+        root=notes.index(RVNOTE.C5)
+        samplekeys=patches.sample_keys
+        if len(samplekeys) > maxslots:
+            raise RuntimeError("sampler max slots exceeded")
+        print ("%i sampler slots used" % len(samplekeys))
+        patches.add_sample_ids(samplekeys)
+        for i, samplekey in enumerate(samplekeys):
+            self.note_samples[notes[i]]=i
+            src=banks.get_wavfile(samplekey)
+            self.load(src, i)
+            sample=self.samples[i]
+            sample.relative_note+=(root-i)
+    
 def render(banks,
            patches,
            globalz=Globals,
@@ -169,22 +191,6 @@ def render(banks,
         for src, dest in links:
             proj.connect(proj.modules[modmap[src]],
                          proj.modules[modmap[dest]])
-    def init_sampler(proj, banks, patches, maxslots=120):
-        sampler={mod.name: mod
-                 for mod in proj.modules}[Sampler]
-        notes=list(RVNOTE)
-        root=notes.index(RVNOTE.C5)
-        samplekeys=patches.sample_keys
-        if len(samplekeys) > maxslots:
-            raise RuntimeError("sampler max slots exceeded")
-        print ("%i sampler slots used" % len(samplekeys))
-        patches.add_sample_ids(samplekeys)
-        for i, samplekey in enumerate(samplekeys):
-            sampler.note_samples[notes[i]]=i
-            src=banks.get_wavfile(samplekey)
-            load_sample(src, sampler, i)
-            sample=sampler.samples[i]
-            sample.relative_note+=(root-i)
     class Trig(dict):
         def __init__(self, item):
             dict.__init__(self, item)
@@ -258,7 +264,9 @@ def render(banks,
     proj.global_volume=globalz["volume"]
     init_modules(proj, modules)
     link_modules(proj, links)
-    init_sampler(proj, banks, SVPatches(patches))
+    sampler={mod.name: mod
+             for mod in proj.modules}[Sampler]
+    sampler.initialise(banks, patches)
     proj.patterns=init_patterns(proj, patches)
     return proj
 

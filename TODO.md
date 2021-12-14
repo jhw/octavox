@@ -5,9 +5,9 @@
 
 ### medium
 
+- sampler class
 - "sticky" track/slices (heartbeat)
 - breakbeats readme
-- gldnspd thank u
 
 ### practice
 
