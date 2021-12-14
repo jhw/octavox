@@ -1,11 +1,11 @@
 ### short
 
+- rename engine as project
 - pass randomiser class to samples and move SampleRandomiser into randomiser
 - parameterise randomiser params
 
 ### medium
 
-- sampler class
 - "sticky" track/slices (heartbeat)
 - breakbeats readme
 
@@ -40,6 +40,7 @@
 
 ### done
 
+- sampler class
 - consider moving init_sampler to /sampler
 - notes re recorder buffer
 - notes re octa -> hermod -> sunvox trigger
