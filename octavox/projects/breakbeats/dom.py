@@ -8,7 +8,7 @@ from octavox.projects.breakbeats.fx import FXGenerator
 
 from octavox.projects.breakbeats.fx import Styles as FXStyles
 
-from octavox.projects.breakbeats.usample_randomiser import SampleRandomiser
+from octavox.projects.breakbeats.utils.sample_randomiser import SampleRandomiser
 
 import octavox.projects.breakbeats.sv_engine as sv
 

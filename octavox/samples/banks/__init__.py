@@ -9,8 +9,7 @@ class Banks(dict):
              root="tmp/banks",
              filterfn=FilterFn):
         def keyfn(item):
-            return "-".join(item.split(".")[0].split("-")[1:])
-
+            return item.split(".")[0]
         banks=Banks()
         for filename in os.listdir(root):
             if not filterfn(filename):

@@ -10,7 +10,7 @@ import warnings
 
 # from scipy.io import wavfile
 
-import wavfile
+from octavox.projects.breakbeats.utils import wavfile
 
 warnings.simplefilter("ignore", wavfile.WavFileWarning)
 
