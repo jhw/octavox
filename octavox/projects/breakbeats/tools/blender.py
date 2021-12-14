@@ -41,7 +41,7 @@ if __name__=="__main__":
         for patch in patches:
             for slice in patch["tracks"]["slices"]:
                 slice["samples"].randomise_samples(samples)
-        patches.render(enginename="blender",
+        patches.render(suffix="blender",
                        banks=banks,
                        nbeats=kwargs["nbeats"])
     except RuntimeError as error:

@@ -243,7 +243,7 @@ class Patches(list):
         return yaml.safe_dump(json.loads(json.dumps(self)), 
                               default_flow_style=False)
 
-    def render(self, enginename, banks, nbeats):
+    def render(self, suffix, banks, nbeats):
         timestamp=datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
         for path in ["tmp/projects",
                      "tmp/patches"]:
@@ -252,10 +252,10 @@ class Patches(list):
         project=SVProject().render(banks,
                                    [patch.render(nbeats=nbeats)
                                    for patch in self])        
-        projfile="tmp/projects/%s-%s.sunvox" % (timestamp, enginename)
+        projfile="tmp/projects/%s-%s.sunvox" % (timestamp, suffix)
         with open(projfile, 'wb') as f:
             project.write_to(f)
-        patchfile="tmp/patches/%s-%s.yaml" % (timestamp, enginename)
+        patchfile="tmp/patches/%s-%s.yaml" % (timestamp, suffix)
         with open(patchfile, 'w') as f:
             f.write(self.to_yaml())
     
@@ -281,7 +281,7 @@ if __name__=="__main__":
                               samples=samples,
                               controllers=controllers,
                               n=16)
-    patches.render(enginename="hello",
+    patches.render(suffix="hello",
                    banks=banks,
                    nbeats=16)
     

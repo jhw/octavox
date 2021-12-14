@@ -21,7 +21,7 @@ if __name__=="__main__":
         kwargs=cli(cliconf)
         patches=Patches(yaml.safe_load(open(kwargs["src"]).read()))
         banks=Banks.load("tmp/banks/pico")
-        patches.render(enginename="dearchiver",
+        patches.render(suffix="reanimator",
                        banks=banks,
                        nbeats=kwargs["nbeats"])
     except RuntimeError as error:

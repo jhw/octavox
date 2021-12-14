@@ -1,6 +1,5 @@
 ### short
 
-- rename enginename as suffix
 - pass randomiser class to samples and move SampleRandomiser into randomiser
 - parameterise randomiser params
 
@@ -42,6 +41,7 @@
 
 ### done
 
+- rename enginename as suffix
 - move colours into pattern
 - rename engine as project
 - sampler class

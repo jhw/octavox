@@ -81,7 +81,7 @@ if __name__=="__main__":
                                                               i)
                             for i in range(kwargs["npatches"])])
         banks=Banks.load("tmp/banks/pico")
-        modpatches.render(enginename="mutator",
+        modpatches.render(suffix="mutator",
                           banks=banks,
                           nbeats=kwargs["nbeats"])
     except RuntimeError as error:

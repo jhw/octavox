@@ -41,7 +41,7 @@ if __name__=="__main__":
                                   samples=samples,
                                   controllers=Controllers,
                                   n=kwargs["npatches"])
-        patches.render(enginename="randomiser",
+        patches.render(suffix="randomiser",
                        banks=banks,
                        nbeats=kwargs["nbeats"])
     except RuntimeError as error:
