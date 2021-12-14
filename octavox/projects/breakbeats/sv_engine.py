@@ -117,71 +117,78 @@ class Offset:
     def increment(self, value):
         self.value+=value
         self.count+=1
-            
+
+def init_modules(proj, modules):
+    for i, item in enumerate(modules):
+        klass=eval(item["class"])
+        kwargs={"name": item["name"]}
+        for attr, mult in [("x", 1),
+                           ("y", -2)]:
+            if attr in item["position"]:
+                value=item["position"][attr]
+                kwargs[attr]=int(512+128*mult*value)
+        mod=klass(**kwargs)
+        if "defaults" in item:
+            for k, v in item["defaults"].items():
+                mod.set_raw(k, v)
+        proj.attach_module(mod)
+
+
+def link_modules(proj, links):
+    modmap={mod.name: mod.index
+            for mod in proj.modules}
+    for src, dest in links:
+        proj.connect(proj.modules[modmap[src]],
+                     proj.modules[modmap[dest]])
+
+def init_grid(patch):
+    def classfn(type):
+        return Trig if type=="trig" else Effect
+    return [{k:classfn(track["type"])(v)
+             for k, v in track["notes"].items()}
+            for track in patch["tracks"]]
+        
+def init_pattern(proj, modules, controllers, patch, offset, color, height=64):
+    grid=init_grid(patch)
+    def notefn(self, j, i):
+        return grid[i][j].render(modules, controllers) if j in grid[i] else RVNote()
+    rvpat=RVPattern(name=str(offset.count),
+                    fg_color=(255, 255, 255),
+                    lines=patch["n"],
+                    tracks=len(patch["tracks"]),
+                    x=offset.value,
+                    y_size=height,
+                    bg_color=color)
+    rvpat.set_via_fn(notefn)
+    offset.increment(patch["n"])                
+    return rvpat
+
+def init_controllers(modules):
+    controllers={}
+    for mod in modules:
+        controllers.setdefault(mod.name, {})
+        for controller in mod.controllers.values():
+            controllers[mod.name].setdefault(controller.name, {})
+            controllers[mod.name][controller.name]=controller.number
+    return controllers
+
+def init_patterns(proj, patches):
+    modmap={mod.name: mod.index
+            for mod in proj.modules}
+    ctrlmap=init_controllers(proj.modules)
+    offset=Offset()
+    patterns, color = [], None
+    for i, patch in enumerate(patches):
+        color=new_color() if 0==i%4 else mutate_color(color)
+        pattern=init_pattern(proj, modmap, ctrlmap, patch, offset, color)
+        patterns.append(pattern)
+    return patterns
+
 def render(banks,
            patches,
            globalz=Globals,
            modules=Modules,
            links=Links):
-    def init_modules(proj, modules):
-        for i, item in enumerate(modules):
-            klass=eval(item["class"])
-            kwargs={"name": item["name"]}
-            for attr, mult in [("x", 1),
-                               ("y", -2)]:
-                if attr in item["position"]:
-                    value=item["position"][attr]
-                    kwargs[attr]=int(512+128*mult*value)
-            mod=klass(**kwargs)
-            if "defaults" in item:
-                for k, v in item["defaults"].items():
-                    mod.set_raw(k, v)
-            proj.attach_module(mod)
-    def link_modules(proj, links):
-        modmap={mod.name: mod.index
-                for mod in proj.modules}
-        for src, dest in links:
-            proj.connect(proj.modules[modmap[src]],
-                         proj.modules[modmap[dest]])
-    def init_pattern(proj, modules, controllers, patch, offset, color, height=64):
-        def init_grid(patch):
-            def classfn(type):
-                return Trig if type=="trig" else Effect
-            return [{k:classfn(track["type"])(v)
-                     for k, v in track["notes"].items()}
-                    for track in patch["tracks"]]
-        grid=init_grid(patch)
-        def notefn(self, j, i):
-            return grid[i][j].render(modules, controllers) if j in grid[i] else RVNote()
-        rvpat=RVPattern(name=str(offset.count),
-                        fg_color=(255, 255, 255),
-                        lines=patch["n"],
-                        tracks=len(patch["tracks"]),
-                        x=offset.value,
-                        y_size=height,
-                        bg_color=color)
-        rvpat.set_via_fn(notefn)
-        offset.increment(patch["n"])                
-        return rvpat
-    def init_patterns(proj, patches):
-        def init_controllers(modules):
-            controllers={}
-            for mod in modules:
-                controllers.setdefault(mod.name, {})
-                for controller in mod.controllers.values():
-                    controllers[mod.name].setdefault(controller.name, {})
-                    controllers[mod.name][controller.name]=controller.number
-            return controllers
-        modmap={mod.name: mod.index
-                for mod in proj.modules}
-        ctrlmap=init_controllers(proj.modules)
-        offset=Offset()
-        patterns, color = [], None
-        for i, patch in enumerate(patches):
-            color=new_color() if 0==i%4 else mutate_color(color)
-            pattern=init_pattern(proj, modmap, ctrlmap, patch, offset, color)
-            patterns.append(pattern)
-        return patterns
     proj=RVProject()
     proj.initial_bpm=globalz["bpm"]
     proj.global_volume=globalz["volume"]
