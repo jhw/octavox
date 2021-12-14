@@ -1,0 +1,4 @@
+git+https://github.com//metrasynth/radiant-voices
+numpy 
+awscli
+boto3
