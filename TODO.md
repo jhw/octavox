@@ -1,6 +1,5 @@
 ### short
 
-- blender to preserve roots
 - pass kwargs to sample randomiser
 - expose sample randomiser params to cli
 
@@ -23,7 +22,10 @@
 
 ### thoughts
 
+- blender to preserve roots ?
+  - no because no clones are created 
 - "sticky" track/slices (heartbeat) ?
+  - feels like overkill for now
 - save colours ?
 - harmonise fx/effects nomenclature ?
 - sv drum levels ?
