@@ -1,34 +1,30 @@
 ### short
 
+- pass randomiser class to samples and move SampleRandomiser into randomiser
+
+### medium
+
+- "sticky" track/slices (heartbeat)
+- breakbeats readme
+- gldnspd thank u
+
+### practice
+
 - recorder buffer demo -> http://sarm-wol.s3-website-eu-west-1.amazonaws.com/2021-08/workflow_midi_patch.html
 
 - manual capture demo -> http://sarm-wol.s3-website-eu-west-1.amazonaws.com/2021-08/workflow_sunvox_patch.html
 
 - octa -> hermod -> sunvox demo -> https://keep.google.com/#NOTE/1_UC8B2V2yQuw5B_wRJU8TZhYbveWMOt-F8ig3wudp6hwZ-unBl5-6n4_fIPZJKk
 
-### medium
-
-- pass randomiser class to samples and move SampleRandomiser into randomiser
-- "sticky" track/slices (heartbeat)
-
 - slicing
 - slider- driven slicing
 - recording breakbeats
-
-- breakbeats readme
-- gldnspd thank u
 
 ### thoughts
 
 - save colours ?
 - harmonise fx/effects nomenclature ?
 - sv drum levels ?
-
-### octatrack
-
-- check recorder buffer triggering via hermod
-- capture slice chain and test
-- patch swiching using OT scenes
 
 ### projects
 
