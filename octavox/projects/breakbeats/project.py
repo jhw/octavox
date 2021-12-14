@@ -65,21 +65,6 @@ bpm: 120
 volume: 256
 """)
 
-def new_color(offset=64, contrast=128, n=16):
-    def random_color(offset):
-        return [int(offset+random.random()*(255-offset))
-                for i in range(3)]
-    for i in range(n):
-        color=random_color(offset)
-        if (max(color)-min(color)) > contrast:
-            return color
-    return [127 for i in range(3)]
-
-def mutate_color(color, contrast=32):
-    values=range(-contrast, contrast)
-    return [min(255, max(0, rgb+random.choice(values)))
-            for rgb in  color]
-
 class SVTrig(dict):
 
     def __init__(self, item):
@@ -119,7 +104,23 @@ class SVOffset:
         self.count+=1
 
 class SVProject:
-        
+
+    def random_color(self, offset):
+        return [int(offset+random.random()*(255-offset))
+                for i in range(3)]
+    
+    def new_color(self, offset=64, contrast=128, n=16):
+        for i in range(n):
+            color=self.random_color(offset)
+            if (max(color)-min(color)) > contrast:
+                return color
+        return [127 for i in range(3)]
+
+    def mutate_color(self, color, contrast=32):
+        values=range(-contrast, contrast)
+        return [min(255, max(0, rgb+random.choice(values)))
+                for rgb in  color]
+    
     def init_modules(self, proj, modules):
         for i, item in enumerate(modules):
             klass=eval(item["class"])
@@ -188,7 +189,7 @@ class SVProject:
         offset=SVOffset()
         patterns, color = [], None
         for i, patch in enumerate(patches):
-            color=new_color() if 0==i%4 else mutate_color(color)
+            color=self.new_color() if 0==i%4 else self.mutate_color(color)
             pattern=self.init_pattern(proj,
                                       modmap,
                                       ctrlmap,

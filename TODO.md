@@ -1,12 +1,12 @@
 ### short
 
-- move colours into pattern
 - rename enginename as suffix
 - pass randomiser class to samples and move SampleRandomiser into randomiser
 - parameterise randomiser params
 
 ### medium
 
+- add link to load sample code
 - blender to preserve roots
 - "sticky" track/slices (heartbeat)
 - breakbeats readme
@@ -42,6 +42,7 @@
 
 ### done
 
+- move colours into pattern
 - rename engine as project
 - sampler class
 - consider moving init_sampler to /sampler
