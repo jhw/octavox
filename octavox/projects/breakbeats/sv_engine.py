@@ -11,7 +11,7 @@ from rv.modules.reverb import Reverb as RVReverb
 
 from octavox.projects.breakbeats.utils.sv_utils import *
 
-from octavox.projects.breakbeats.utils.sampler_utils import load_sample
+from octavox.sampler import load_sample
 
 import yaml
 

@@ -1,6 +1,5 @@
 ### short
 
-- new sampler directory with wavfile, sampler_utils
 - archive
 - github project
 
@@ -31,6 +30,7 @@
 
 ### done
 
+- new sampler directory with wavfile, sampler_utils
 - rename trigs/fx as generators
 - todo
 - test breakbeats
