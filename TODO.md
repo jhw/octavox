@@ -1,6 +1,19 @@
 ### short
 
+- recorder buffer demo -> http://sarm-wol.s3-website-eu-west-1.amazonaws.com/2021-08/workflow_midi_patch.html
+
+- manual capture demo -> http://sarm-wol.s3-website-eu-west-1.amazonaws.com/2021-08/workflow_sunvox_patch.html
+
+- octa -> hermod -> sunvox demo -> https://keep.google.com/#NOTE/1_UC8B2V2yQuw5B_wRJU8TZhYbveWMOt-F8ig3wudp6hwZ-unBl5-6n4_fIPZJKk
+
 ### medium
+
+- slicing
+- slider- driven slicing
+- recording breakbeats
+
+- breakbeats readme
+- gldnspd thank u
 
 ### thoughts
 
@@ -26,6 +39,8 @@
 
 ### done
 
+- notes re recorder buffer
+- notes re octa -> hermod -> sunvox trigger
 - dearchiver
 - archive
 - github project
