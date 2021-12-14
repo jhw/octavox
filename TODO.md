@@ -1,7 +1,5 @@
 ### short
 
-- dearchiver
-
 ### medium
 
 ### thoughts
@@ -28,6 +26,7 @@
 
 ### done
 
+- dearchiver
 - archive
 - github project
 - new sampler directory with wavfile, sampler_utils
