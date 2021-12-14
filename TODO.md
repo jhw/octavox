@@ -1,6 +1,7 @@
 ### short
 
 - pass randomiser class to samples and move SampleRandomiser into randomiser
+- parameterise randomiser params
 
 ### medium
 
