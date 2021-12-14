@@ -1,13 +1,12 @@
 ### short
 
-- pass randomiser class to samples and move SampleRandomiser into randomiser
-- parameterise randomiser params
+- blender to preserve roots
+- pass kwargs to sample randomiser
+- expose sample randomiser params to cli
 
 ### medium
 
 - add link to load sample code
-- blender to preserve roots
-- "sticky" track/slices (heartbeat)
 - breakbeats readme
 
 ### practice
@@ -24,6 +23,7 @@
 
 ### thoughts
 
+- "sticky" track/slices (heartbeat) ?
 - save colours ?
 - harmonise fx/effects nomenclature ?
 - sv drum levels ?
@@ -41,6 +41,7 @@
 
 ### done
 
+- pass randomiser class to samples and move SampleRandomiser into randomiser
 - rename enginename as suffix
 - move colours into pattern
 - rename engine as project

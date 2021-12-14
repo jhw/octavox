@@ -8,8 +8,6 @@ from octavox.projects.breakbeats.fx import FXGenerator
 
 from octavox.projects.breakbeats.fx import Styles as FXStyles
 
-from octavox.projects.breakbeats.utils.sample_randomiser import SampleRandomiser
-
 from octavox.projects.breakbeats.project import SVProject
 
 import copy, datetime, json, os, random, yaml
@@ -22,8 +20,9 @@ def Q(seed):
 class Samples(dict):
 
     @classmethod
-    def randomise(self, banks, samples):
-        return Samples(SampleRandomiser().initialise(banks, samples))
+    def randomise(self, banks, samples, randomisers):
+        randomiser=randomisers["samples"]()
+        return Samples(randomiser.randomise(banks, samples))
 
     def __init__(self, obj):
         dict.__init__(self, obj)
@@ -37,8 +36,8 @@ class Trig(dict):
     @classmethod
     def randomise(self, channel, styles=TrigStyles):
         return Trig({"channel": channel,
-                      "seed": int(1e8*random.random()),
-                      "style": random.choice(styles[channel])})
+                     "seed": int(1e8*random.random()),
+                     "style": random.choice(styles[channel])})
 
     def __init__(self, obj):
         dict.__init__(self, obj)
@@ -56,7 +55,7 @@ class Trigs(list):
     @classmethod
     def randomise(self, channels=Channels):
         return Trigs([Trig.randomise(channel)
-                       for channel in channels])
+                      for channel in channels])
             
     def __init__(self, trigs):
         list.__init__(self, [Trig(trig)
@@ -70,8 +69,10 @@ class Trigs(list):
 class Slice(dict):
 
     @classmethod
-    def randomise(self, banks, samples):
-        return Slice(samples=Samples.randomise(banks, samples),
+    def randomise(self, banks, samples, randomisers):
+        return Slice(samples=Samples.randomise(banks,
+                                               samples,
+                                               randomisers),
                      trigs=Trigs.randomise())
     
     def __init__(self, samples, trigs):
@@ -81,8 +82,10 @@ class Slice(dict):
 class Slices(list):
 
     @classmethod
-    def randomise(self, banks, samples, n=4):
-        return Slices([Slice.randomise(banks, samples)
+    def randomise(self, banks, samples, randomisers, n=4):
+        return Slices([Slice.randomise(banks,
+                                       samples,
+                                       randomisers)
                        for i in range(n)])
     
     def __init__(self, slices):
@@ -99,10 +102,12 @@ class Tracks(dict):
               [0, 1, 2, 3]]
     
     @classmethod
-    def randomise(self, banks, samples):
-        return Tracks(slices=Slices.randomise(banks, samples),
-                     pattern=random.choice(self.Patterns),
-                     mutes=[])
+    def randomise(self, banks, samples, randomisers):
+        return Tracks(slices=Slices.randomise(banks,
+                                              samples,
+                                              randomisers),
+                      pattern=random.choice(self.Patterns),
+                      mutes=[])
         
     def __init__(self, slices, pattern, mutes):
         dict.__init__(self, {"slices": Slices(slices),
@@ -191,8 +196,10 @@ class Effects(list):
 class Patch(dict):
 
     @classmethod
-    def randomise(self, banks, samples, controllers):
-        return Patch(tracks=Tracks.randomise(banks, samples),
+    def randomise(self, banks, samples, randomisers, controllers):
+        return Patch(tracks=Tracks.randomise(banks,
+                                             samples,
+                                             randomisers),
                      effects=Effects.randomise(controllers))
     
     def __init__(self, tracks, effects):
@@ -217,8 +224,11 @@ class Patch(dict):
 class Patches(list):
 
     @classmethod
-    def randomise(self, banks, samples, controllers, n):
-        return Patches([Patch.randomise(banks, samples, controllers)
+    def randomise(self, banks, samples, randomisers, controllers, n):
+        return Patches([Patch.randomise(banks,
+                                        samples,
+                                        randomisers,
+                                        controllers)
                         for i in range(n)])
     
     def __init__(self, patches):
