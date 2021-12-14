@@ -8,6 +8,9 @@
 
 ### medium
 
+- consider moving init_sampler to /sampler
+- expose sample_randomiser params to randomiser tool
+
 - slicing
 - slider- driven slicing
 - recording breakbeats
