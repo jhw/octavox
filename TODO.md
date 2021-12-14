@@ -1,15 +1,13 @@
 ### short
 
-- archive
-- github project
+- dearchiver
 
 ### medium
 
-- harmonise fx/effects nomenclature
-
 ### thoughts
 
-- sv drum levels
+- harmonise fx/effects nomenclature ?
+- sv drum levels ?
 
 ### octatrack
 
@@ -30,6 +28,8 @@
 
 ### done
 
+- archive
+- github project
 - new sampler directory with wavfile, sampler_utils
 - rename trigs/fx as generators
 - todo
