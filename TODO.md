@@ -8,7 +8,6 @@
 
 ### medium
 
-- consider moving init_sampler to /sampler
 - expose sample_randomiser params to randomiser tool
 
 - slicing
@@ -43,6 +42,7 @@
 
 ### done
 
+- consider moving init_sampler to /sampler
 - notes re recorder buffer
 - notes re octa -> hermod -> sunvox trigger
 - dearchiver

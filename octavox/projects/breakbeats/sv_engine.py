@@ -9,11 +9,12 @@ from rv.modules.echo import Echo as RVEcho
 from rv.modules.distortion import Distortion as RVDistortion
 from rv.modules.reverb import Reverb as RVReverb
 
-from octavox.projects.breakbeats.utils.sv_utils import *
+import random, warnings, yaml
 
-from octavox.sampler import load_sample
+# from scipy.io import wavfile
+from octavox.projects.breakbeats.utils import wavfile
 
-import yaml
+warnings.simplefilter("ignore", wavfile.WavFileWarning)
 
 Drum, Sampler = "Drum", "Sampler"
 
@@ -68,6 +69,21 @@ bpm: 120
 volume: 256
 """)
 
+def new_color(offset=64, contrast=128, n=16):
+    def random_color(offset):
+        return [int(offset+random.random()*(255-offset))
+                for i in range(3)]
+    for i in range(n):
+        color=random_color(offset)
+        if (max(color)-min(color)) > contrast:
+            return color
+    return [127 for i in range(3)]
+
+def mutate_color(color, contrast=32):
+    values=range(-contrast, contrast)
+    return [min(255, max(0, rgb+random.choice(values)))
+            for rgb in  color]
+
 class SVPatches(list):
 
     def ___init__(self, patches):
@@ -102,7 +118,32 @@ class SVPatches(list):
                     for trig in trigs.values():
                         if trig and trig["mod"]==Sampler:
                             trig["id"]=mapping.index(trig["key"])
-    
+
+def load_sample(src, sampler, slot, **kwargs):
+    sample = sampler.Sample()
+    freq, snd = wavfile.read(src)
+    if snd.dtype.name == 'int16':
+        sample.format = sampler.Format.int16
+    elif snd.dtype.name == 'float32':
+        sample.format = sampler.Format.float32
+    else:
+        raise RuntimeError("dtype %s Not supported" % snd.dtype.name)
+    if len(snd.shape) == 1:
+        size, = snd.shape
+        channels = 1
+    else:
+        size, channels = snd.shape
+    sample.rate = freq
+    sample.channels = {
+        1: RVSampler.Channels.mono,
+        2: RVSampler.Channels.stereo,
+    }[channels]
+    sample.data = snd.data.tobytes()
+    for key, value in kwargs.items():
+        setattr(sample, key, value)
+    sampler.samples[slot] = sample
+    return sample
+                            
 def render(banks,
            patches,
            globalz=Globals,
