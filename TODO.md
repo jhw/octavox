@@ -8,7 +8,8 @@
 
 ### medium
 
-- expose sample_randomiser params to randomiser tool
+- pass randomiser class to samples and move SampleRandomiser into randomiser
+- "sticky" track/slices (heartbeat)
 
 - slicing
 - slider- driven slicing
