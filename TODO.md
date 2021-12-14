@@ -5,6 +5,8 @@
 
 ### medium
 
+- reanimator to reanimate all
+- SVSampler pull request
 - add link to load sample code
 - breakbeats readme
 
