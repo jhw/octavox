@@ -1,7 +1,3 @@
-"""
-- script to fetch Erica Pico samples from website, parse them, split and save to zipfiles
-"""
-
 import json, os, urllib.request, zipfile
 
 PicoDrum="http://data.ericasynths.lv/picodrum/"
@@ -27,7 +23,7 @@ def filter_blocks(buf):
             for i, block in enumerate(buf.split(b"\202\244name")[1:])]
 
 def generate(packname, packfile):
-    zfname="tmp/banks/pico-%s.zip" % packname.replace(" ", "-").lower()
+    zfname="tmp/banks/pico/%s.zip" % packname.replace(" ", "-").lower()
     zf=zipfile.ZipFile(zfname, 'w')
     buf=fetch_bin(packfile)
     blocks=filter_blocks(buf)
@@ -40,7 +36,8 @@ def generate(packname, packfile):
 if __name__=="__main__":
     try:
         for path in ["tmp",
-                     "tmp/banks"]:
+                     "tmp/banks",
+                     "tmp/banks/pico"]:
             if not os.path.exists(path):
                 os.makedirs(path)            
         for packname, packfile in pack_list().items():

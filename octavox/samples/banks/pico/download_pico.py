@@ -1,7 +1,3 @@
-"""
-- downloads Pico samples to tmp
-"""
-
 import boto3, os
 
 def download_pico(s3, bucketname):
@@ -13,7 +9,7 @@ def download_pico(s3, bucketname):
                 print (obj["Key"])
                 s3.download_file(bucketname,
                                  obj["Key"],
-                                 "tmp/banks/%s" % obj["Key"])
+                                 "tmp/banks/pico/%s" % obj["Key"])
 
 if __name__=="__main__":
     try:
@@ -23,7 +19,8 @@ if __name__=="__main__":
         bucketname=sys.argv[1]
         s3=boto3.client("s3")
         for path in ["tmp",
-                     "tmp/banks"]:
+                     "tmp/banks",
+                     "tmp/banks/pico"]:
             if not os.path.exists(path):
                 os.makedirs(path)            
         download_pico(s3, bucketname)

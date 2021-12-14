@@ -1,15 +1,10 @@
-"""
-- uploads Pico samples from tmp
-"""
-
 import boto3, os
 
 Region="eu-west-1"
 
 def upload_pico(s3, bucketname):
-    for filename in os.listdir("tmp/banks"):
-        if not (filename.startswith("pico-") and
-                filename.endswith(".zip")):
+    for filename in os.listdir("tmp/banks/pico"):
+        if not filename.endswith(".zip"):
             continue
         print (filename)
         s3.upload_file("tmp/banks/%s" % filename,

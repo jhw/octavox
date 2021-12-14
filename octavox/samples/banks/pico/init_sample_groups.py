@@ -1,7 +1,3 @@
-"""
-- script to generate mapped samples based on pico names
-"""
-
 import json, os, urllib.request, yaml
 
 PicoDrum="http://data.ericasynths.lv/picodrum/"
@@ -90,7 +86,12 @@ if __name__=="__main__":
             print (packname)
             bankname=packname.replace(" ", "-").lower()
             generate(bankname, packfile, samples)
-        with open("tmp/samples.yaml", 'w') as f:            
+        for path in ["tmp",
+                     "tmp/banks",
+                     "tmp/banks/pico"]:
+            if not os.path.exists(path):
+                os.makedirs(path)            
+        with open("tmp/banks/pico/samples.yaml", 'w') as f:            
             f.write(yaml.safe_dump(samples,
                                    default_flow_style=False))
     except RuntimeError as error:
