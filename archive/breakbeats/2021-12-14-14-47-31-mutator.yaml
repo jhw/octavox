@@ -1,0 +1,1393 @@
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 97562458
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 47429628
+    style: sample_hold
+  tracks:
+    mutes: []
+    pattern:
+    - 0
+    - 1
+    - 2
+    - 3
+    slices:
+    - samples:
+        ch: baseck:36
+        kk: default:5
+        oh: richard-devine:11
+        sn: legowelt:6
+      trigs:
+      - channel: kk
+        seed: 94311309
+        style: electro
+      - channel: sn
+        seed: 74711913
+        style: backbeat
+      - channel: ht
+        seed: 56407300
+        style: offbeats
+    - samples:
+        ch: complex-waveforms:46
+        kk: clipping:10
+        oh: dj-raitis-vinyl-cuts:34
+        sn: default:33
+      trigs:
+      - channel: kk
+        seed: 26870849
+        style: electro
+      - channel: sn
+        seed: 55920635
+        style: skip
+      - channel: ht
+        seed: 14282349
+        style: offbeats
+    - samples:
+        ch: pitch-black:18
+        kk: legowelt:33
+        oh: clipping:12
+        sn: pitch-black:10
+      trigs:
+      - channel: kk
+        seed: 88685901
+        style: triplets
+      - channel: sn
+        seed: 84684775
+        style: backbeat
+      - channel: ht
+        seed: 7405520
+        style: offbeats
+    - samples:
+        ch: default:10
+        kk: svdrum:2
+        oh: complex-waveforms:4
+        sn: ib-magnetic-saturation:21
+      trigs:
+      - channel: kk
+        seed: 98343922
+        style: fourfloor
+      - channel: sn
+        seed: 33732615
+        style: skip
+      - channel: ht
+        seed: 23341840
+        style: offbeats
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 35683712
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 11401098
+    style: sample_hold
+  tracks:
+    mutes: []
+    pattern:
+    - 0
+    - 0
+    - 0
+    - 1
+    slices:
+    - samples:
+        ch: baseck:36
+        kk: default:5
+        oh: richard-devine:11
+        sn: legowelt:6
+      trigs:
+      - channel: kk
+        seed: 94311309
+        style: electro
+      - channel: sn
+        seed: 74711913
+        style: backbeat
+      - channel: ht
+        seed: 56407300
+        style: offbeats
+    - samples:
+        ch: complex-waveforms:46
+        kk: clipping:10
+        oh: dj-raitis-vinyl-cuts:34
+        sn: default:33
+      trigs:
+      - channel: kk
+        seed: 26870849
+        style: electro
+      - channel: sn
+        seed: 31044787
+        style: skip
+      - channel: ht
+        seed: 53504610
+        style: offbeats
+    - samples:
+        ch: pitch-black:18
+        kk: legowelt:33
+        oh: clipping:12
+        sn: pitch-black:10
+      trigs:
+      - channel: kk
+        seed: 88685901
+        style: electro
+      - channel: sn
+        seed: 84684775
+        style: backbeat
+      - channel: ht
+        seed: 7405520
+        style: closed
+    - samples:
+        ch: default:10
+        kk: svdrum:2
+        oh: complex-waveforms:4
+        sn: ib-magnetic-saturation:21
+      trigs:
+      - channel: kk
+        seed: 98343922
+        style: triplets
+      - channel: sn
+        seed: 17932465
+        style: skip
+      - channel: ht
+        seed: 36687486
+        style: offbeats
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 97562458
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 47429628
+    style: sample_hold
+  tracks:
+    mutes: []
+    pattern:
+    - 0
+    - 1
+    - 2
+    - 3
+    slices:
+    - samples:
+        ch: baseck:36
+        kk: default:5
+        oh: richard-devine:11
+        sn: legowelt:6
+      trigs:
+      - channel: kk
+        seed: 98254064
+        style: triplets
+      - channel: sn
+        seed: 30073103
+        style: backbeat
+      - channel: ht
+        seed: 56407300
+        style: offbeats
+    - samples:
+        ch: complex-waveforms:46
+        kk: clipping:10
+        oh: dj-raitis-vinyl-cuts:34
+        sn: default:33
+      trigs:
+      - channel: kk
+        seed: 54678189
+        style: electro
+      - channel: sn
+        seed: 55920635
+        style: skip
+      - channel: ht
+        seed: 14282349
+        style: offbeats
+    - samples:
+        ch: pitch-black:18
+        kk: legowelt:33
+        oh: clipping:12
+        sn: pitch-black:10
+      trigs:
+      - channel: kk
+        seed: 88685901
+        style: triplets
+      - channel: sn
+        seed: 70276393
+        style: backbeat
+      - channel: ht
+        seed: 7405520
+        style: offbeats
+    - samples:
+        ch: default:10
+        kk: svdrum:2
+        oh: complex-waveforms:4
+        sn: ib-magnetic-saturation:21
+      trigs:
+      - channel: kk
+        seed: 25909171
+        style: fourfloor
+      - channel: sn
+        seed: 47546889
+        style: skip
+      - channel: ht
+        seed: 23341840
+        style: offbeats
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 97562458
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 51982555
+    style: sample_hold
+  tracks:
+    mutes:
+    - sn
+    - ht
+    pattern:
+    - 0
+    - 1
+    - 0
+    - 2
+    slices:
+    - samples:
+        ch: baseck:36
+        kk: default:5
+        oh: richard-devine:11
+        sn: legowelt:6
+      trigs:
+      - channel: kk
+        seed: 94311309
+        style: electro
+      - channel: sn
+        seed: 11528371
+        style: skip
+      - channel: ht
+        seed: 56407300
+        style: offbeats
+    - samples:
+        ch: complex-waveforms:46
+        kk: clipping:10
+        oh: dj-raitis-vinyl-cuts:34
+        sn: default:33
+      trigs:
+      - channel: kk
+        seed: 26870849
+        style: triplets
+      - channel: sn
+        seed: 47045826
+        style: skip
+      - channel: ht
+        seed: 14282349
+        style: offbeats
+    - samples:
+        ch: pitch-black:18
+        kk: legowelt:33
+        oh: clipping:12
+        sn: pitch-black:10
+      trigs:
+      - channel: kk
+        seed: 88685901
+        style: electro
+      - channel: sn
+        seed: 84684775
+        style: backbeat
+      - channel: ht
+        seed: 39945374
+        style: offbeats
+    - samples:
+        ch: default:10
+        kk: svdrum:2
+        oh: complex-waveforms:4
+        sn: ib-magnetic-saturation:21
+      trigs:
+      - channel: kk
+        seed: 98343922
+        style: fourfloor
+      - channel: sn
+        seed: 33732615
+        style: skip
+      - channel: ht
+        seed: 23341840
+        style: closed
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 61036995
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 47429628
+    style: sample_hold
+  tracks:
+    mutes:
+    - sn
+    - ht
+    pattern:
+    - 0
+    - 1
+    - 2
+    - 3
+    slices:
+    - samples:
+        ch: baseck:36
+        kk: default:5
+        oh: richard-devine:11
+        sn: legowelt:6
+      trigs:
+      - channel: kk
+        seed: 89882865
+        style: electro
+      - channel: sn
+        seed: 74711913
+        style: backbeat
+      - channel: ht
+        seed: 1400009
+        style: offbeats
+    - samples:
+        ch: complex-waveforms:46
+        kk: clipping:10
+        oh: dj-raitis-vinyl-cuts:34
+        sn: default:33
+      trigs:
+      - channel: kk
+        seed: 26870849
+        style: electro
+      - channel: sn
+        seed: 34716931
+        style: skip
+      - channel: ht
+        seed: 753180
+        style: offbeats
+    - samples:
+        ch: pitch-black:18
+        kk: legowelt:33
+        oh: clipping:12
+        sn: pitch-black:10
+      trigs:
+      - channel: kk
+        seed: 65681262
+        style: triplets
+      - channel: sn
+        seed: 84684775
+        style: skip
+      - channel: ht
+        seed: 7405520
+        style: offbeats
+    - samples:
+        ch: default:10
+        kk: svdrum:2
+        oh: complex-waveforms:4
+        sn: ib-magnetic-saturation:21
+      trigs:
+      - channel: kk
+        seed: 20422761
+        style: fourfloor
+      - channel: sn
+        seed: 33732615
+        style: backbeat
+      - channel: ht
+        seed: 23341840
+        style: offbeats
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 21086988
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 46113666
+    style: sample_hold
+  tracks:
+    mutes: []
+    pattern:
+    - 0
+    - 1
+    - 0
+    - 1
+    slices:
+    - samples:
+        ch: baseck:36
+        kk: default:5
+        oh: richard-devine:11
+        sn: legowelt:6
+      trigs:
+      - channel: kk
+        seed: 94311309
+        style: electro
+      - channel: sn
+        seed: 74711913
+        style: backbeat
+      - channel: ht
+        seed: 56407300
+        style: closed
+    - samples:
+        ch: complex-waveforms:46
+        kk: clipping:10
+        oh: dj-raitis-vinyl-cuts:34
+        sn: default:33
+      trigs:
+      - channel: kk
+        seed: 73546903
+        style: electro
+      - channel: sn
+        seed: 55920635
+        style: skip
+      - channel: ht
+        seed: 14282349
+        style: offbeats
+    - samples:
+        ch: pitch-black:18
+        kk: legowelt:33
+        oh: clipping:12
+        sn: pitch-black:10
+      trigs:
+      - channel: kk
+        seed: 57367563
+        style: electro
+      - channel: sn
+        seed: 81842513
+        style: backbeat
+      - channel: ht
+        seed: 7405520
+        style: offbeats
+    - samples:
+        ch: default:10
+        kk: svdrum:2
+        oh: complex-waveforms:4
+        sn: ib-magnetic-saturation:21
+      trigs:
+      - channel: kk
+        seed: 11316865
+        style: fourfloor
+      - channel: sn
+        seed: 33732615
+        style: backbeat
+      - channel: ht
+        seed: 29215879
+        style: offbeats
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 97562458
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 75875174
+    style: sample_hold
+  tracks:
+    mutes:
+    - kk
+    - sn
+    pattern:
+    - 0
+    - 1
+    - 2
+    - 3
+    slices:
+    - samples:
+        ch: baseck:36
+        kk: default:5
+        oh: richard-devine:11
+        sn: legowelt:6
+      trigs:
+      - channel: kk
+        seed: 94311309
+        style: electro
+      - channel: sn
+        seed: 85198867
+        style: backbeat
+      - channel: ht
+        seed: 56407300
+        style: offbeats
+    - samples:
+        ch: complex-waveforms:46
+        kk: clipping:10
+        oh: dj-raitis-vinyl-cuts:34
+        sn: default:33
+      trigs:
+      - channel: kk
+        seed: 46231156
+        style: electro
+      - channel: sn
+        seed: 75565459
+        style: skip
+      - channel: ht
+        seed: 14282349
+        style: closed
+    - samples:
+        ch: pitch-black:18
+        kk: legowelt:33
+        oh: clipping:12
+        sn: pitch-black:10
+      trigs:
+      - channel: kk
+        seed: 88685901
+        style: electro
+      - channel: sn
+        seed: 84684775
+        style: backbeat
+      - channel: ht
+        seed: 46517375
+        style: offbeats
+    - samples:
+        ch: default:10
+        kk: svdrum:2
+        oh: complex-waveforms:4
+        sn: ib-magnetic-saturation:21
+      trigs:
+      - channel: kk
+        seed: 98343922
+        style: fourfloor
+      - channel: sn
+        seed: 99182780
+        style: skip
+      - channel: ht
+        seed: 23341840
+        style: offbeats
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 59316769
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 47429628
+    style: sample_hold
+  tracks:
+    mutes:
+    - kk
+    pattern:
+    - 0
+    - 1
+    - 2
+    - 3
+    slices:
+    - samples:
+        ch: baseck:36
+        kk: default:5
+        oh: richard-devine:11
+        sn: legowelt:6
+      trigs:
+      - channel: kk
+        seed: 90115518
+        style: electro
+      - channel: sn
+        seed: 21407971
+        style: skip
+      - channel: ht
+        seed: 56407300
+        style: offbeats
+    - samples:
+        ch: complex-waveforms:46
+        kk: clipping:10
+        oh: dj-raitis-vinyl-cuts:34
+        sn: default:33
+      trigs:
+      - channel: kk
+        seed: 45296129
+        style: electro
+      - channel: sn
+        seed: 55920635
+        style: skip
+      - channel: ht
+        seed: 54910190
+        style: closed
+    - samples:
+        ch: pitch-black:18
+        kk: legowelt:33
+        oh: clipping:12
+        sn: pitch-black:10
+      trigs:
+      - channel: kk
+        seed: 88685901
+        style: electro
+      - channel: sn
+        seed: 84684775
+        style: skip
+      - channel: ht
+        seed: 37824214
+        style: offbeats
+    - samples:
+        ch: default:10
+        kk: svdrum:2
+        oh: complex-waveforms:4
+        sn: ib-magnetic-saturation:21
+      trigs:
+      - channel: kk
+        seed: 98343922
+        style: fourfloor
+      - channel: sn
+        seed: 33732615
+        style: backbeat
+      - channel: ht
+        seed: 69159802
+        style: offbeats
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 97562458
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 92081078
+    style: sample_hold
+  tracks:
+    mutes: []
+    pattern:
+    - 0
+    - 1
+    - 2
+    - 3
+    slices:
+    - samples:
+        ch: baseck:36
+        kk: default:5
+        oh: richard-devine:11
+        sn: legowelt:6
+      trigs:
+      - channel: kk
+        seed: 33753917
+        style: triplets
+      - channel: sn
+        seed: 74711913
+        style: skip
+      - channel: ht
+        seed: 56407300
+        style: offbeats
+    - samples:
+        ch: complex-waveforms:46
+        kk: clipping:10
+        oh: dj-raitis-vinyl-cuts:34
+        sn: default:33
+      trigs:
+      - channel: kk
+        seed: 26870849
+        style: electro
+      - channel: sn
+        seed: 73282812
+        style: skip
+      - channel: ht
+        seed: 39043483
+        style: offbeats
+    - samples:
+        ch: pitch-black:18
+        kk: legowelt:33
+        oh: clipping:12
+        sn: pitch-black:10
+      trigs:
+      - channel: kk
+        seed: 87962685
+        style: triplets
+      - channel: sn
+        seed: 84684775
+        style: skip
+      - channel: ht
+        seed: 57918371
+        style: closed
+    - samples:
+        ch: default:10
+        kk: svdrum:2
+        oh: complex-waveforms:4
+        sn: ib-magnetic-saturation:21
+      trigs:
+      - channel: kk
+        seed: 98343922
+        style: fourfloor
+      - channel: sn
+        seed: 97346203
+        style: backbeat
+      - channel: ht
+        seed: 23341840
+        style: offbeats
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 18670460
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 47429628
+    style: sample_hold
+  tracks:
+    mutes: []
+    pattern:
+    - 0
+    slices:
+    - samples:
+        ch: baseck:36
+        kk: default:5
+        oh: richard-devine:11
+        sn: legowelt:6
+      trigs:
+      - channel: kk
+        seed: 94311309
+        style: fourfloor
+      - channel: sn
+        seed: 20512380
+        style: skip
+      - channel: ht
+        seed: 56407300
+        style: offbeats
+    - samples:
+        ch: complex-waveforms:46
+        kk: clipping:10
+        oh: dj-raitis-vinyl-cuts:34
+        sn: default:33
+      trigs:
+      - channel: kk
+        seed: 28346106
+        style: electro
+      - channel: sn
+        seed: 6406267
+        style: skip
+      - channel: ht
+        seed: 73783130
+        style: offbeats
+    - samples:
+        ch: pitch-black:18
+        kk: legowelt:33
+        oh: clipping:12
+        sn: pitch-black:10
+      trigs:
+      - channel: kk
+        seed: 77827012
+        style: triplets
+      - channel: sn
+        seed: 25483915
+        style: backbeat
+      - channel: ht
+        seed: 7405520
+        style: closed
+    - samples:
+        ch: default:10
+        kk: svdrum:2
+        oh: complex-waveforms:4
+        sn: ib-magnetic-saturation:21
+      trigs:
+      - channel: kk
+        seed: 98343922
+        style: electro
+      - channel: sn
+        seed: 33732615
+        style: skip
+      - channel: ht
+        seed: 9311476
+        style: offbeats
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 70650466
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 9981044
+    style: sample_hold
+  tracks:
+    mutes:
+    - sn
+    pattern:
+    - 0
+    - 0
+    - 0
+    - 1
+    slices:
+    - samples:
+        ch: baseck:36
+        kk: default:5
+        oh: richard-devine:11
+        sn: legowelt:6
+      trigs:
+      - channel: kk
+        seed: 19739627
+        style: triplets
+      - channel: sn
+        seed: 64120559
+        style: skip
+      - channel: ht
+        seed: 84446130
+        style: offbeats
+    - samples:
+        ch: complex-waveforms:46
+        kk: clipping:10
+        oh: dj-raitis-vinyl-cuts:34
+        sn: default:33
+      trigs:
+      - channel: kk
+        seed: 26870849
+        style: electro
+      - channel: sn
+        seed: 29350574
+        style: skip
+      - channel: ht
+        seed: 66676804
+        style: offbeats
+    - samples:
+        ch: pitch-black:18
+        kk: legowelt:33
+        oh: clipping:12
+        sn: pitch-black:10
+      trigs:
+      - channel: kk
+        seed: 88685901
+        style: triplets
+      - channel: sn
+        seed: 87287008
+        style: backbeat
+      - channel: ht
+        seed: 31443105
+        style: offbeats
+    - samples:
+        ch: default:10
+        kk: svdrum:2
+        oh: complex-waveforms:4
+        sn: ib-magnetic-saturation:21
+      trigs:
+      - channel: kk
+        seed: 98343922
+        style: fourfloor
+      - channel: sn
+        seed: 33732615
+        style: skip
+      - channel: ht
+        seed: 23341840
+        style: offbeats
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 8149018
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 47429628
+    style: sample_hold
+  tracks:
+    mutes: []
+    pattern:
+    - 0
+    slices:
+    - samples:
+        ch: baseck:36
+        kk: default:5
+        oh: richard-devine:11
+        sn: legowelt:6
+      trigs:
+      - channel: kk
+        seed: 94311309
+        style: triplets
+      - channel: sn
+        seed: 74711913
+        style: skip
+      - channel: ht
+        seed: 64423408
+        style: offbeats
+    - samples:
+        ch: complex-waveforms:46
+        kk: clipping:10
+        oh: dj-raitis-vinyl-cuts:34
+        sn: default:33
+      trigs:
+      - channel: kk
+        seed: 26870849
+        style: electro
+      - channel: sn
+        seed: 55920635
+        style: backbeat
+      - channel: ht
+        seed: 2509245
+        style: offbeats
+    - samples:
+        ch: pitch-black:18
+        kk: legowelt:33
+        oh: clipping:12
+        sn: pitch-black:10
+      trigs:
+      - channel: kk
+        seed: 88685901
+        style: electro
+      - channel: sn
+        seed: 37045503
+        style: backbeat
+      - channel: ht
+        seed: 2349306
+        style: offbeats
+    - samples:
+        ch: default:10
+        kk: svdrum:2
+        oh: complex-waveforms:4
+        sn: ib-magnetic-saturation:21
+      trigs:
+      - channel: kk
+        seed: 50334869
+        style: electro
+      - channel: sn
+        seed: 33732615
+        style: skip
+      - channel: ht
+        seed: 91948765
+        style: closed
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 38266148
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 27488857
+    style: sample_hold
+  tracks:
+    mutes: []
+    pattern:
+    - 0
+    - 1
+    - 2
+    - 3
+    slices:
+    - samples:
+        ch: baseck:36
+        kk: default:5
+        oh: richard-devine:11
+        sn: legowelt:6
+      trigs:
+      - channel: kk
+        seed: 12353430
+        style: electro
+      - channel: sn
+        seed: 56180203
+        style: backbeat
+      - channel: ht
+        seed: 87827081
+        style: offbeats
+    - samples:
+        ch: complex-waveforms:46
+        kk: clipping:10
+        oh: dj-raitis-vinyl-cuts:34
+        sn: default:33
+      trigs:
+      - channel: kk
+        seed: 26870849
+        style: fourfloor
+      - channel: sn
+        seed: 55920635
+        style: skip
+      - channel: ht
+        seed: 42633646
+        style: closed
+    - samples:
+        ch: pitch-black:18
+        kk: legowelt:33
+        oh: clipping:12
+        sn: pitch-black:10
+      trigs:
+      - channel: kk
+        seed: 96714323
+        style: electro
+      - channel: sn
+        seed: 18609409
+        style: backbeat
+      - channel: ht
+        seed: 7405520
+        style: closed
+    - samples:
+        ch: default:10
+        kk: svdrum:2
+        oh: complex-waveforms:4
+        sn: ib-magnetic-saturation:21
+      trigs:
+      - channel: kk
+        seed: 98343922
+        style: fourfloor
+      - channel: sn
+        seed: 64666373
+        style: skip
+      - channel: ht
+        seed: 23341840
+        style: offbeats
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 8820323
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 47429628
+    style: sample_hold
+  tracks:
+    mutes: []
+    pattern:
+    - 0
+    - 1
+    - 2
+    - 3
+    slices:
+    - samples:
+        ch: baseck:36
+        kk: default:5
+        oh: richard-devine:11
+        sn: legowelt:6
+      trigs:
+      - channel: kk
+        seed: 54796865
+        style: electro
+      - channel: sn
+        seed: 20231208
+        style: skip
+      - channel: ht
+        seed: 56407300
+        style: offbeats
+    - samples:
+        ch: complex-waveforms:46
+        kk: clipping:10
+        oh: dj-raitis-vinyl-cuts:34
+        sn: default:33
+      trigs:
+      - channel: kk
+        seed: 26870849
+        style: electro
+      - channel: sn
+        seed: 61534991
+        style: backbeat
+      - channel: ht
+        seed: 4075479
+        style: closed
+    - samples:
+        ch: pitch-black:18
+        kk: legowelt:33
+        oh: clipping:12
+        sn: pitch-black:10
+      trigs:
+      - channel: kk
+        seed: 88685901
+        style: triplets
+      - channel: sn
+        seed: 84684775
+        style: backbeat
+      - channel: ht
+        seed: 98125511
+        style: closed
+    - samples:
+        ch: default:10
+        kk: svdrum:2
+        oh: complex-waveforms:4
+        sn: ib-magnetic-saturation:21
+      trigs:
+      - channel: kk
+        seed: 59982378
+        style: fourfloor
+      - channel: sn
+        seed: 27441244
+        style: skip
+      - channel: ht
+        seed: 23341840
+        style: offbeats
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 20916519
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 47429628
+    style: sample_hold
+  tracks:
+    mutes:
+    - sn
+    pattern:
+    - 0
+    - 1
+    slices:
+    - samples:
+        ch: baseck:36
+        kk: default:5
+        oh: richard-devine:11
+        sn: legowelt:6
+      trigs:
+      - channel: kk
+        seed: 51471414
+        style: electro
+      - channel: sn
+        seed: 74711913
+        style: backbeat
+      - channel: ht
+        seed: 89979249
+        style: closed
+    - samples:
+        ch: complex-waveforms:46
+        kk: clipping:10
+        oh: dj-raitis-vinyl-cuts:34
+        sn: default:33
+      trigs:
+      - channel: kk
+        seed: 95807690
+        style: electro
+      - channel: sn
+        seed: 55920635
+        style: backbeat
+      - channel: ht
+        seed: 34269531
+        style: offbeats
+    - samples:
+        ch: pitch-black:18
+        kk: legowelt:33
+        oh: clipping:12
+        sn: pitch-black:10
+      trigs:
+      - channel: kk
+        seed: 77595466
+        style: triplets
+      - channel: sn
+        seed: 45572963
+        style: skip
+      - channel: ht
+        seed: 7405520
+        style: offbeats
+    - samples:
+        ch: default:10
+        kk: svdrum:2
+        oh: complex-waveforms:4
+        sn: ib-magnetic-saturation:21
+      trigs:
+      - channel: kk
+        seed: 53251068
+        style: electro
+      - channel: sn
+        seed: 33732615
+        style: skip
+      - channel: ht
+        seed: 42473714
+        style: closed
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 78962181
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 5303662
+    style: sample_hold
+  tracks:
+    mutes: []
+    pattern:
+    - 0
+    - 1
+    - 2
+    - 3
+    slices:
+    - samples:
+        ch: baseck:36
+        kk: default:5
+        oh: richard-devine:11
+        sn: legowelt:6
+      trigs:
+      - channel: kk
+        seed: 2636990
+        style: fourfloor
+      - channel: sn
+        seed: 33385814
+        style: backbeat
+      - channel: ht
+        seed: 24330564
+        style: offbeats
+    - samples:
+        ch: complex-waveforms:46
+        kk: clipping:10
+        oh: dj-raitis-vinyl-cuts:34
+        sn: default:33
+      trigs:
+      - channel: kk
+        seed: 53969189
+        style: triplets
+      - channel: sn
+        seed: 55920635
+        style: backbeat
+      - channel: ht
+        seed: 32471241
+        style: offbeats
+    - samples:
+        ch: pitch-black:18
+        kk: legowelt:33
+        oh: clipping:12
+        sn: pitch-black:10
+      trigs:
+      - channel: kk
+        seed: 88685901
+        style: electro
+      - channel: sn
+        seed: 84684775
+        style: backbeat
+      - channel: ht
+        seed: 90793205
+        style: offbeats
+    - samples:
+        ch: default:10
+        kk: svdrum:2
+        oh: complex-waveforms:4
+        sn: ib-magnetic-saturation:21
+      trigs:
+      - channel: kk
+        seed: 98421119
+        style: fourfloor
+      - channel: sn
+        seed: 82919375
+        style: skip
+      - channel: ht
+        seed: 53312706
+        style: offbeats
