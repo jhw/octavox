@@ -1,5 +1,7 @@
 ### short
 
+- move banks into sampler
+- rename samples as curated
 - chainmaker to implement mutes
 - reanimator to reanimate all within dates
 
