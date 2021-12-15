@@ -1,26 +1,19 @@
 ### short
 
-- pass kwargs to sample randomiser
-- expose sample randomiser params to cli
+- add link to load sample code
 
 ### medium
 
 - reanimator to reanimate all
 - SVSampler pull request
-- add link to load sample code
-- breakbeats readme
+- breakbeats README
 
-### practice
+### octatrack
 
-- recorder buffer demo -> http://sarm-wol.s3-website-eu-west-1.amazonaws.com/2021-08/workflow_midi_patch.html
-
-- manual capture demo -> http://sarm-wol.s3-website-eu-west-1.amazonaws.com/2021-08/workflow_sunvox_patch.html
-
-- octa -> hermod -> sunvox demo -> https://keep.google.com/#NOTE/1_UC8B2V2yQuw5B_wRJU8TZhYbveWMOt-F8ig3wudp6hwZ-unBl5-6n4_fIPZJKk
-
-- slicing
-- slider- driven slicing
-- recording breakbeats
+- re- practive recorder buffer workflow
+  - parts rather than sliders
+- extend recorder buffers
+- re- recording from master
 
 ### thoughts
 
@@ -45,6 +38,9 @@
 
 ### done
 
+- pattern temperature control
+- pass kwargs to sample randomiser
+- expose sample randomiser params to cli
 - pass randomiser class to samples and move SampleRandomiser into randomiser
 - rename enginename as suffix
 - move colours into pattern

@@ -35,6 +35,9 @@ class SampleRandomiser:
     SVDrumBass=svdrum(range(4))
     SVDrumHats=svdrum(range(4, 7))
 
+    def __init__(self, thresholds):
+        self.thresholds=thresholds
+
     def random_wild(self, banks):
         modnames=[self.SVDrum]+list(banks.keys())
         mod=random.choice(modnames)
@@ -44,52 +47,44 @@ class SampleRandomiser:
 
     def random_kk(self,
                   banks,
-                  samples,
-                  prob_svdrum=0.45,
-                  prob_samples=0.45):
+                  samples):
         q=random.random()
-        if q < prob_svdrum:
+        if q < self.thresholds["kksvdrum"]:
             return random.choice(self.SVDrumBass)
-        elif q < prob_svdrum+prob_samples:
+        elif q < self.thresholds["kksvdrum"]+self.thresholds["kksamples"]:
             return random.choice(samples["kick"]+samples["bass"])    
         else:
             return self.random_wild(banks)
 
     def random_sn(self,
                   banks,
-                  samples,
-                  prob_samples_sn=0.45,
-                  prob_samples_cp=0.45):
+                  samples):
         q=random.random()
-        if q < prob_samples_sn:
+        if q < self.thresholds["snsamples"]:
             return random.choice(samples["snare"])
-        elif q < prob_samples_sn+prob_samples_cp:
+        elif q < self.thresholds["snsamples"]+self.thresholds["cpsamples"]:
             return random.choice(samples["clap"])
         else:
             return self.random_wild(banks)
 
     def random_oh(self,
                   banks,
-                  samples,
-                  prob_svdrum=0.25,
-                  prob_samples=0.25):
+                  samples):
         q=random.random()
-        if q < prob_svdrum:
+        if q < self.thresholds["ohsvdrum"]:
             return random.choice(self.SVDrumHats)
-        elif q< prob_svdrum+prob_samples:
+        elif q< self.thresholds["ohsvdrum"]+self.thresholds["ohsamples"]:
             return random.choice(samples["hat"]+samples["perc"])    
         else:
             return self.random_wild(banks)
 
     def random_ch(self,
                   banks,
-                  samples,
-                  prob_svdrum=0.25,
-                  prob_samples=0.25):
+                  samples):
         q=random.random()
-        if q < prob_svdrum:
+        if q < self.thresholds["chsvdrum"]:
             return random.choice(self.SVDrumHats)
-        elif q< prob_svdrum+prob_samples:
+        elif q< self.thresholds["chsvdrum"]+self.thresholds["chsamples"]:
             return random.choice(samples["hat"]+samples["perc"])    
         else:
             return self.random_wild(banks)        
@@ -115,6 +110,54 @@ if __name__=="__main__":
     try:
         from octavox.tools.cli import cli
         cliconf=yaml.safe_load("""
+        - key: kksvdrum
+          description: "svdrum(kk)"
+          type: float
+          min: 0
+          max: 1
+          default: 0.45
+        - key: kksamples
+          description: "samples(kk)"
+          type: float
+          min: 0
+          max: 1
+          default: 0.45
+        - key: snsamples
+          description: "samples(sn)"
+          type: float
+          min: 0
+          max: 1
+          default: 0.45
+        - key: cpsamples
+          description: "samples(cp)"
+          type: float
+          min: 0
+          max: 1
+          default: 0.45
+        - key: ohsvdrum
+          description: "svdrum(oh)"
+          type: float
+          min: 0
+          max: 1
+          default: 0.25
+        - key: ohsamples
+          description: "samples(oh)"
+          type: float
+          min: 0
+          max: 1
+          default: 0.25
+        - key: chsvdrum
+          description: "svdrum(ch)"
+          type: float
+          min: 0
+          max: 1
+          default: 0.25
+        - key: chsamples
+          description: "samples(ch)"
+          type: float
+          min: 0
+          max: 1
+          default: 0.25
         - key: nbeats
           description: "n(beats)"
           type: int
@@ -129,14 +172,15 @@ if __name__=="__main__":
         kwargs=cli(cliconf)
         banks=Banks.load("tmp/banks/pico")
         samples=yaml.safe_load(open("octavox/projects/breakbeats/pico-samples.yaml").read())
-        randomisers={"samples": SampleRandomiser}
+        npatches, nbeats = kwargs.pop("npatches"), kwargs.pop("nbeats")
+        randomisers={"samples": SampleRandomiser(thresholds=kwargs)}
         patches=Patches.randomise(banks=banks,
                                   samples=samples,
                                   controllers=Controllers,
                                   randomisers=randomisers,
-                                  n=kwargs["npatches"])
+                                  n=npatches)
         patches.render(suffix="randomiser",
                        banks=banks,
-                       nbeats=kwargs["nbeats"])
+                       nbeats=nbeats)
     except RuntimeError as error:
         print ("Error: %s" % str(error))
