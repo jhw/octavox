@@ -1,10 +1,11 @@
 ### short
 
 - add link to load sample code
+- new chainmaker to implement mutes
+- reanimator to reanimate all within dates
 
 ### medium
 
-- reanimator to reanimate all
 - SVSampler pull request
 - breakbeats README
 
@@ -38,6 +39,7 @@
 
 ### done
 
+- remove mutator mutes
 - pattern temperature control
 - pass kwargs to sample randomiser
 - expose sample randomiser params to cli
