@@ -80,14 +80,17 @@ class SVSampler(RVSampler):
         self.samples[slot] = sample
         return sample
 
-    def initialise(self, banks, patches, maxslots=120):
+    def initialise(self, banks, patches,
+                   maxslots=120,
+                   debug=False):
         patches=SVPatches(patches)
         notes=list(RVNOTE)
         root=notes.index(RVNOTE.C5)
         samplekeys=patches.sample_keys
         if len(samplekeys) > maxslots:
             raise RuntimeError("sampler max slots exceeded")
-        print ("%i sampler slots used" % len(samplekeys))
+        if debug:
+            print ("%i sampler slots used" % len(samplekeys))
         patches.add_sample_ids(samplekeys)
         for i, samplekey in enumerate(samplekeys):
             self.note_samples[notes[i]]=i
