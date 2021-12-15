@@ -1,7 +1,6 @@
 ### short
 
-- add link to load sample code
-- new chainmaker to implement mutes
+- chainmaker to implement mutes
 - reanimator to reanimate all within dates
 
 ### medium
@@ -12,8 +11,8 @@
 ### octatrack
 
 - re- practive recorder buffer workflow
-  - parts rather than sliders
-- extend recorder buffers
+  - parts rather than slider
+- extended recorder buffers
 - re- recording from master
 
 ### thoughts
@@ -39,6 +38,7 @@
 
 ### done
 
+- add link to load sample code
 - remove mutator mutes
 - pattern temperature control
 - pass kwargs to sample randomiser

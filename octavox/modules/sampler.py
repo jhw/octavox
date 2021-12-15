@@ -51,6 +51,10 @@ class SVSampler(RVSampler):
     def __init__(self, *args, **kwargs):
         RVSampler.__init__(self, *args, **kwargs)
 
+    """
+    - https://github.com/metrasynth/gallery/blob/master/wicked.mmckpy#L497-L526
+    """
+        
     def load(self, src, slot, **kwargs):
         sample = self.Sample()
         freq, snd = wavfile.read(src)

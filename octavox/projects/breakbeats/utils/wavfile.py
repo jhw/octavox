@@ -1,4 +1,8 @@
 """
+- NB local wavfile.py implementation culled from scipy, as scipy is huge and currently doesn't play well with new macs
+"""
+
+"""
 Module to read / write wav files using NumPy arrays
 
 Functions
