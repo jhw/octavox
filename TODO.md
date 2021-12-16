@@ -1,6 +1,7 @@
 ### short
 
 - sunvox preroll
+- trigs contatenation
 
 ### medium
 
@@ -8,20 +9,11 @@
 - chainmaker / mutes
 - reanimator date range
 - SVSampler pull request
-- breakbeats README
-
-### octatrack
-
-- re- practive recorder buffer workflow
-  - parts rather than slider
-- extended recorder buffers
-- re- recording from master
 
 ### thoughts
 
 - render fx same way as trigs ?
-  - controversial as current way is pleasing
-  - but 
+  - controversial [notes]
 - blender to preserve roots ?
   - no because no clones are created 
 - "sticky" track/slices (heartbeat) ?

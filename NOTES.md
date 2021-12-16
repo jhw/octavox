@@ -1,3 +1,12 @@
+### fx rendering 16/12/21
+
+- should fx be rendered globally across track, or locally at slice level
+- currently implementing former and it feels like clean solution
+- but problem is it means arrangement is harder - you can concatenate slices, but no sense in which you can concatenate fx
+- but maybe it doesn't matter since fx is relatively fixed, and this is a "discoverly" tool rather than an "exact replication" tool
+- if you were to implement this then fx would need to sit at per- slice level, and there would have to be a lot more fx definitions, which starts to feel superfluous
+- so maybe things are the right way after all, even if there are some limitations
+
 ### arranger 16/12/21
 
 - octa seems to suck at auto- slicing long samples
