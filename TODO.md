@@ -1,17 +1,20 @@
 ### short
 
-- sunvox preroll
+- slice ids
 - trigs contatenation
+- arranger
 
 ### medium
 
-- arranger
+- degrade
 - chainmaker / mutes
 - reanimator date range
 - SVSampler pull request
 
 ### thoughts
 
+- sunvox preroll ?
+  - doesn't matter if going to do manual sampling
 - render fx same way as trigs ?
   - controversial [notes]
 - blender to preserve roots ?
