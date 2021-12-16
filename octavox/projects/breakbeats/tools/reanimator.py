@@ -18,10 +18,10 @@ if __name__=="__main__":
         banks=SVBanks.load("tmp/banks/pico")
         for filename in sorted(os.listdir("archive/breakbeats")):
             src="archive/breakbeats/%s" % filename
-            stub=filename.split(".")[0]
-            print (stub)
+            filestub=filename.split(".")[0]
+            print (filestub)
             patches=Patches(yaml.safe_load(open(src).read()))
-            patches.render(filename=stub,
+            patches.render(filestub=filestub,
                            banks=banks,
                            nbeats=kwargs["nbeats"])
     except RuntimeError as error:

@@ -1,6 +1,5 @@
 ### short
 
-- use filestub not filename
 - sunvox preroll
 
 ### medium
@@ -44,6 +43,7 @@
 
 ### done
 
+- use filestub not filename
 - reanimator to use single datetime
 - reanimator to use original timestamp slug
 - move banks into sampler

@@ -42,8 +42,8 @@ if __name__=="__main__":
             for slice in patch["tracks"]["slices"]:
                 slice["samples"].randomise_samples(samples)
         timestamp=datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
-        filename="%s-blender" % timestamp
-        patches.render(filename=filename,
+        filestub="%s-blender" % timestamp
+        patches.render(filestub=filestub,
                        banks=banks,
                        nbeats=kwargs["nbeats"])
     except RuntimeError as error:
