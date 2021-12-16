@@ -20,6 +20,9 @@
 
 ### thoughts
 
+- render fx same way as trigs ?
+  - controversial as current way is pleasing
+  - but 
 - blender to preserve roots ?
   - no because no clones are created 
 - "sticky" track/slices (heartbeat) ?
