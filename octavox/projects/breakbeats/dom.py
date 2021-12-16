@@ -20,9 +20,9 @@ def Q(seed):
 class Samples(dict):
 
     @classmethod
-    def randomise(self, banks, samples, randomisers):
+    def randomise(self, randomisers):
         randomiser=randomisers["samples"]
-        return Samples(randomiser.randomise(banks, samples))
+        return Samples(randomiser.randomise())
 
     def __init__(self, obj):
         dict.__init__(self, obj)
@@ -69,10 +69,8 @@ class Trigs(list):
 class Slice(dict):
 
     @classmethod
-    def randomise(self, banks, samples, randomisers):
-        return Slice(samples=Samples.randomise(banks,
-                                               samples,
-                                               randomisers),
+    def randomise(self, randomisers):
+        return Slice(samples=Samples.randomise(randomisers),
                      trigs=Trigs.randomise())
     
     def __init__(self, samples, trigs):
@@ -82,10 +80,8 @@ class Slice(dict):
 class Slices(list):
 
     @classmethod
-    def randomise(self, banks, samples, randomisers, n=4):
-        return Slices([Slice.randomise(banks,
-                                       samples,
-                                       randomisers)
+    def randomise(self, randomisers, n=4):
+        return Slices([Slice.randomise(randomisers)
                        for i in range(n)])
     
     def __init__(self, slices):
@@ -109,10 +105,8 @@ class Tracks(dict):
               [0, 1, 2, 3]]
     
     @classmethod
-    def randomise(self, banks, samples, randomisers):
-        return Tracks(slices=Slices.randomise(banks,
-                                              samples,
-                                              randomisers),
+    def randomise(self, randomisers):
+        return Tracks(slices=Slices.randomise(randomisers),
                       pattern=random.choice(self.Patterns),
                       mutes=[])
         
@@ -203,10 +197,8 @@ class Effects(list):
 class Patch(dict):
 
     @classmethod
-    def randomise(self, banks, samples, randomisers, controllers):
-        return Patch(tracks=Tracks.randomise(banks,
-                                             samples,
-                                             randomisers),
+    def randomise(self, randomisers, controllers):
+        return Patch(tracks=Tracks.randomise(randomisers),
                      effects=Effects.randomise(controllers))
     
     def __init__(self, tracks, effects):
@@ -231,10 +223,8 @@ class Patch(dict):
 class Patches(list):
 
     @classmethod
-    def randomise(self, banks, samples, randomisers, controllers, n):
-        return Patches([Patch.randomise(banks,
-                                        samples,
-                                        randomisers,
+    def randomise(self, randomisers, controllers, n):
+        return Patches([Patch.randomise(randomisers,
                                         controllers)
                         for i in range(n)])
     
@@ -277,28 +267,4 @@ class Patches(list):
             f.write(self.to_yaml())
     
 if __name__=="__main__":
-    from octavox.samples.banks import Banks
-    banks=Banks.load()
-    samples=yaml.safe_load(open("octavox/projects/breakbeats/pico-samples.yaml").read())
-    controllers=yaml.safe_load("""
-    - mod: Echo
-      attr: wet
-      kwargs:
-        sample_hold:
-          step: 4
-          max: 0.75
-    - mod: Echo
-      attr: feedback
-      kwargs:
-        sample_hold:
-          step: 4
-          max: 0.75
-    """)
-    patches=Patches.randomise(banks=banks,
-                              samples=samples,
-                              controllers=controllers,
-                              n=16)
-    patches.render(suffix="hello",
-                   banks=banks,
-                   nbeats=16)
-    
+    pass

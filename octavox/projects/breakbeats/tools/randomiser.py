@@ -35,75 +35,58 @@ class SampleRandomiser:
     SVDrumBass=svdrum(range(4))
     SVDrumHats=svdrum(range(4, 7))
 
-    def __init__(self, thresholds):
+    def __init__(self, banks, samples, thresholds):
+        self.banks=banks
+        self.samples=samples
         self.thresholds=thresholds
 
-    def random_wild(self, banks):
-        modnames=[self.SVDrum]+list(banks.keys())
+    def random_wild(self):
+        modnames=[self.SVDrum]+list(self.banks.keys())
         mod=random.choice(modnames)
-        n=len(banks[mod].infolist()) if mod!=self.SVDrum else 120
+        n=len(self.banks[mod].infolist()) if mod!=self.SVDrum else 120
         i=random.choice(range(n))
         return "%s:%i" % (mod, i)
 
-    def random_kk(self,
-                  banks,
-                  samples):
+    def random_kk(self):
         q=random.random()
         if q < self.thresholds["kksvdrum"]:
             return random.choice(self.SVDrumBass)
         elif q < self.thresholds["kksvdrum"]+self.thresholds["kksamples"]:
-            return random.choice(samples["kick"]+samples["bass"])    
+            return random.choice(self.samples["kick"]+self.samples["bass"])    
         else:
-            return self.random_wild(banks)
+            return self.random_wild()
 
-    def random_sn(self,
-                  banks,
-                  samples):
+    def random_sn(self):
         q=random.random()
         if q < self.thresholds["snsamples"]:
-            return random.choice(samples["snare"])
+            return random.choice(self.samples["snare"])
         elif q < self.thresholds["snsamples"]+self.thresholds["cpsamples"]:
-            return random.choice(samples["clap"])
+            return random.choice(self.samples["clap"])
         else:
-            return self.random_wild(banks)
+            return self.random_wild()
 
-    def random_oh(self,
-                  banks,
-                  samples):
+    def random_oh(self):
         q=random.random()
         if q < self.thresholds["ohsvdrum"]:
             return random.choice(self.SVDrumHats)
         elif q< self.thresholds["ohsvdrum"]+self.thresholds["ohsamples"]:
-            return random.choice(samples["hat"]+samples["perc"])    
+            return random.choice(self.samples["hat"]+self.samples["perc"])    
         else:
-            return self.random_wild(banks)
+            return self.random_wild()
 
-    def random_ch(self,
-                  banks,
-                  samples):
+    def random_ch(self):
         q=random.random()
         if q < self.thresholds["chsvdrum"]:
             return random.choice(self.SVDrumHats)
         elif q< self.thresholds["chsvdrum"]+self.thresholds["chsamples"]:
-            return random.choice(samples["hat"]+samples["perc"])    
+            return random.choice(self.samples["hat"]+self.samples["perc"])    
         else:
-            return self.random_wild(banks)        
-
-    def init_sample(self,
-                    instrument,
-                    banks,
-                    samples):
-        fn=getattr(self, "random_%s" % instrument)
-        return fn(banks, samples)        
+            return self.random_wild()        
 
     def randomise(self,
-                  banks,
-                  samples,
                   instruments=Instruments,
                   channels=Channels):
-        return {instrument:self.init_sample(instrument,
-                                            banks,
-                                            samples)
+        return {instrument: getattr(self, "random_%s" % instrument)()
                 for instrument in instruments}
 
 if __name__=="__main__":
@@ -173,10 +156,10 @@ if __name__=="__main__":
         banks=Banks.load("tmp/banks/pico")
         samples=yaml.safe_load(open("octavox/projects/breakbeats/pico-samples.yaml").read())
         npatches, nbeats = kwargs.pop("npatches"), kwargs.pop("nbeats")
-        randomisers={"samples": SampleRandomiser(thresholds=kwargs)}
-        patches=Patches.randomise(banks=banks,
-                                  samples=samples,
-                                  controllers=Controllers,
+        randomisers={"samples": SampleRandomiser(banks=banks,
+                                                 samples=samples,
+                                                 thresholds=kwargs)}
+        patches=Patches.randomise(controllers=Controllers,
                                   randomisers=randomisers,
                                   n=npatches)
         patches.render(suffix="randomiser",
