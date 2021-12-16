@@ -91,7 +91,7 @@ if __name__=="__main__":
                      "tmp/banks/pico"]:
             if not os.path.exists(path):
                 os.makedirs(path)            
-        with open("tmp/banks/pico/samples.yaml", 'w') as f:            
+        with open("tmp/banks/pico/curated.yaml", 'w') as f:            
             f.write(yaml.safe_dump(samples,
                                    default_flow_style=False))
     except RuntimeError as error:
