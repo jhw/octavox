@@ -2,7 +2,7 @@ from octavox.modules.sampler import SVBanks
 
 from octavox.projects.breakbeats.dom import Patches
 
-import yaml
+import datetime, yaml
 
 if __name__=="__main__":
     try:
@@ -74,7 +74,9 @@ if __name__=="__main__":
                                                               i)
                             for i in range(kwargs["npatches"])])
         banks=SVBanks.load("tmp/banks/pico")
-        modpatches.render(suffix="mutator",
+        timestamp=datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
+        filename="%s-mutator" % timestamp
+        modpatches.render(filename=filename,
                           banks=banks,
                           nbeats=kwargs["nbeats"])
     except RuntimeError as error:

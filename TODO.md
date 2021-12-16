@@ -1,11 +1,10 @@
 ### short
 
-- reanimator to use single datetime
-- reanimator to use original timestamp slug
+- use filestub not filename
+- sunvox preroll
 
 ### medium
 
-- sunvox preroll
 - arranger
 - chainmaker / mutes
 - reanimator date range
@@ -42,6 +41,8 @@
 
 ### done
 
+- reanimator to use single datetime
+- reanimator to use original timestamp slug
 - move banks into sampler
 - rename samples as curated
 - reanimator to reanimate all within dates

@@ -4,7 +4,7 @@ from octavox.projects.breakbeats.dom import Patches
 
 from octavox.projects.breakbeats.trigs import Channels, Instruments
 
-import random, yaml
+import datetime, random, yaml
 
 Controllers=yaml.safe_load("""
 - mod: Echo
@@ -162,7 +162,9 @@ if __name__=="__main__":
         patches=Patches.randomise(controllers=Controllers,
                                   randomisers=randomisers,
                                   n=npatches)
-        patches.render(suffix="randomiser",
+        timestamp=datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
+        filename="%s-randomiser" % timestamp
+        patches.render(filename=filename,
                        banks=banks,
                        nbeats=nbeats)
     except RuntimeError as error:

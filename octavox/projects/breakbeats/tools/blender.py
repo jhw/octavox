@@ -2,7 +2,7 @@ from octavox.modules.sampler import SVBanks
 
 from octavox.projects.breakbeats.dom import Patches
 
-import yaml
+import datetime, yaml
 
 if __name__=="__main__":
     try:
@@ -41,7 +41,9 @@ if __name__=="__main__":
         for patch in patches:
             for slice in patch["tracks"]["slices"]:
                 slice["samples"].randomise_samples(samples)
-        patches.render(suffix="blender",
+        timestamp=datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
+        filename="%s-blender" % timestamp
+        patches.render(filename=filename,
                        banks=banks,
                        nbeats=kwargs["nbeats"])
     except RuntimeError as error:

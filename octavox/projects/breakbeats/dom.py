@@ -10,7 +10,7 @@ from octavox.projects.breakbeats.fx import Styles as FXStyles
 
 from octavox.projects.breakbeats.project import SVProject
 
-import copy, datetime, json, os, random, yaml
+import copy, json, os, random, yaml
 
 def Q(seed):
     q=random.Random()
@@ -248,9 +248,8 @@ class Patches(list):
     def to_yaml(self):
         return yaml.safe_dump(json.loads(json.dumps(self)), 
                               default_flow_style=False)
-
-    def render(self, suffix, banks, nbeats):
-        timestamp=datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
+    
+    def render(self, filename, banks, nbeats):
         for path in ["tmp/projects",
                      "tmp/patches"]:
             if not os.path.exists(path):
@@ -258,10 +257,10 @@ class Patches(list):
         project=SVProject().render(banks,
                                    [patch.render(nbeats=nbeats)
                                    for patch in self])        
-        projfile="tmp/projects/%s-%s.sunvox" % (timestamp, suffix)
+        projfile="tmp/projects/%s.sunvox" % filename
         with open(projfile, 'wb') as f:
             project.write_to(f)
-        patchfile="tmp/patches/%s-%s.yaml" % (timestamp, suffix)
+        patchfile="tmp/patches/%s.yaml" % filename
         with open(patchfile, 'w') as f:
             f.write(self.to_yaml())
     
