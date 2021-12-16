@@ -1,4 +1,4 @@
-from octavox.samples.banks import Banks
+from octavox.modules.sampler import SVBanks
 
 from octavox.projects.breakbeats.dom import Patches
 
@@ -73,7 +73,7 @@ if __name__=="__main__":
                                                               kwargs,
                                                               i)
                             for i in range(kwargs["npatches"])])
-        banks=Banks.load("tmp/banks/pico")
+        banks=SVBanks.load("tmp/banks/pico")
         modpatches.render(suffix="mutator",
                           banks=banks,
                           nbeats=kwargs["nbeats"])

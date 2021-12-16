@@ -1,4 +1,4 @@
-from octavox.samples.banks import Banks
+from octavox.modules.sampler import SVBanks
 
 from octavox.projects.breakbeats.dom import Patches
 
@@ -153,7 +153,7 @@ if __name__=="__main__":
           default: 16
         """)
         kwargs=cli(cliconf)
-        banks=Banks.load("tmp/banks/pico")
+        banks=SVBanks.load("tmp/banks/pico")
         curated=yaml.safe_load(open("octavox/projects/breakbeats/pico-curated.yaml").read())
         npatches, nbeats = kwargs.pop("npatches"), kwargs.pop("nbeats")
         randomisers={"samples": SampleRandomiser(banks=banks,

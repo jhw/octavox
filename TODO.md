@@ -1,13 +1,14 @@
 ### short
 
-- move banks into sampler
-- arranger
+- reanimator to use single datetime
+- reanimator to use original timestamp slug
 
 ### medium
 
 - sunvox preroll
-- chainmaker to implement mutes
-- reanimator to save original filenames
+- arranger
+- chainmaker / mutes
+- reanimator date range
 - SVSampler pull request
 - breakbeats README
 
@@ -41,6 +42,7 @@
 
 ### done
 
+- move banks into sampler
 - rename samples as curated
 - reanimator to reanimate all within dates
 - add link to load sample code

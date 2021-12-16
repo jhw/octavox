@@ -1,4 +1,4 @@
-from octavox.samples.banks import Banks
+from octavox.modules.sampler import SVBanks
 
 from octavox.projects.breakbeats.dom import Patches
 
@@ -15,7 +15,7 @@ if __name__=="__main__":
           default: 16
         """)
         kwargs=cli(cliconf)
-        banks=Banks.load("tmp/banks/pico")
+        banks=SVBanks.load("tmp/banks/pico")
         for filename in os.listdir("archive/breakbeats"):
             src="archive/breakbeats/%s" % filename
             patches=Patches(yaml.safe_load(open(src).read()))
