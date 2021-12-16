@@ -1,3 +1,23 @@
+### arranger 16/12/21
+
+- octa seems to suck at auto- slicing long samples
+- might have better luck at manual capture and slicing
+- but in meantime you could have an octavox arranger
+- specify patches and have octavox glue them together in longer tracks
+- nice thing about this is you get the effects bleed from one slice to another
+- which you don't get with octa
+- also the whole arranging thing might just be simpler with octavox
+
+- to do this you will need to concatenate tracks
+- problem with this is right now fx is applied to global track rather than patch
+- this needs to change
+
+- means effects need to become part of tracks
+- then track rendering needs separate render_slices, render_effects methods
+- effects needs to observe tracks
+- means archive will have to change and have new fx with randomly generated seeds
+
+
 ### practice 14/12/21
 
 - recorder buffer demo -> http://sarm-wol.s3-website-eu-west-1.amazonaws.com/2021-08/workflow_midi_patch.html
