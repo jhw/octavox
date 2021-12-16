@@ -35,9 +35,9 @@ class SampleRandomiser:
     SVDrumBass=svdrum(range(4))
     SVDrumHats=svdrum(range(4, 7))
 
-    def __init__(self, banks, samples, thresholds):
+    def __init__(self, banks, curated, thresholds):
         self.banks=banks
-        self.samples=samples
+        self.curated=curated
         self.thresholds=thresholds
 
     def random_wild(self):
@@ -52,16 +52,16 @@ class SampleRandomiser:
         if q < self.thresholds["kksvdrum"]:
             return random.choice(self.SVDrumBass)
         elif q < self.thresholds["kksvdrum"]+self.thresholds["kksamples"]:
-            return random.choice(self.samples["kick"]+self.samples["bass"])    
+            return random.choice(self.curated["kick"]+self.curated["bass"])    
         else:
             return self.random_wild()
 
     def random_sn(self):
         q=random.random()
         if q < self.thresholds["snsamples"]:
-            return random.choice(self.samples["snare"])
+            return random.choice(self.curated["snare"])
         elif q < self.thresholds["snsamples"]+self.thresholds["cpsamples"]:
-            return random.choice(self.samples["clap"])
+            return random.choice(self.curated["clap"])
         else:
             return self.random_wild()
 
@@ -70,7 +70,7 @@ class SampleRandomiser:
         if q < self.thresholds["ohsvdrum"]:
             return random.choice(self.SVDrumHats)
         elif q< self.thresholds["ohsvdrum"]+self.thresholds["ohsamples"]:
-            return random.choice(self.samples["hat"]+self.samples["perc"])    
+            return random.choice(self.curated["hat"]+self.curated["perc"])    
         else:
             return self.random_wild()
 
@@ -79,7 +79,7 @@ class SampleRandomiser:
         if q < self.thresholds["chsvdrum"]:
             return random.choice(self.SVDrumHats)
         elif q< self.thresholds["chsvdrum"]+self.thresholds["chsamples"]:
-            return random.choice(self.samples["hat"]+self.samples["perc"])    
+            return random.choice(self.curated["hat"]+self.curated["perc"])    
         else:
             return self.random_wild()        
 
@@ -154,10 +154,10 @@ if __name__=="__main__":
         """)
         kwargs=cli(cliconf)
         banks=Banks.load("tmp/banks/pico")
-        samples=yaml.safe_load(open("octavox/projects/breakbeats/pico-samples.yaml").read())
+        curated=yaml.safe_load(open("octavox/projects/breakbeats/pico-curated.yaml").read())
         npatches, nbeats = kwargs.pop("npatches"), kwargs.pop("nbeats")
         randomisers={"samples": SampleRandomiser(banks=banks,
-                                                 samples=samples,
+                                                 curated=curated,
                                                  thresholds=kwargs)}
         patches=Patches.randomise(controllers=Controllers,
                                   randomisers=randomisers,

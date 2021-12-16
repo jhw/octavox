@@ -1,13 +1,13 @@
 ### short
 
-- sunvox preroll
-- reanimator to save original filenames
 - move banks into sampler
-- rename samples as curated
-- chainmaker to implement mutes
+- arranger
 
 ### medium
 
+- sunvox preroll
+- chainmaker to implement mutes
+- reanimator to save original filenames
 - SVSampler pull request
 - breakbeats README
 
@@ -41,6 +41,7 @@
 
 ### done
 
+- rename samples as curated
 - reanimator to reanimate all within dates
 - add link to load sample code
 - remove mutator mutes

@@ -21,8 +21,7 @@ class Samples(dict):
 
     @classmethod
     def randomise(self, randomisers):
-        randomiser=randomisers["samples"]
-        return Samples(randomiser.randomise())
+        return Samples(randomisers["samples"].randomise())
 
     def __init__(self, obj):
         dict.__init__(self, obj)
