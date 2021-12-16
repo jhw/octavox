@@ -1,18 +1,21 @@
 ### short
 
-- slice ids
-- trigs contatenation
+- add mute option back to mutator
+- trig concat
 - arranger
 
 ### medium
 
 - degrade
-- chainmaker / mutes
 - reanimator date range
 - SVSampler pull request
 
 ### thoughts
 
+- chainmaker/mutes ?
+  - think covered by mutator
+- slice ids ?
+  - not enough similarity in patterns
 - sunvox preroll ?
   - doesn't matter if going to do manual sampling
 - render fx same way as trigs ?
