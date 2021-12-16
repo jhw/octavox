@@ -1,0 +1,1363 @@
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 94379293
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 67235346
+    style: sample_hold
+  tracks:
+    mutes: []
+    pattern:
+    - 0
+    - 1
+    slices:
+    - samples:
+        ch: pitch-black:5
+        kk: nero-bellum:7
+        oh: svdrum:29
+        sn: legowelt:35
+      trigs:
+      - channel: kk
+        seed: 18824699
+        style: triplets
+      - channel: sn
+        seed: 16594201
+        style: skip
+      - channel: ht
+        seed: 56635839
+        style: closed
+    - samples:
+        ch: dj-raitis-vinyl-cuts:37
+        kk: pitch-black:1
+        oh: svdrum:102
+        sn: nero-bellum:11
+      trigs:
+      - channel: kk
+        seed: 49914452
+        style: fourfloor
+      - channel: sn
+        seed: 43190656
+        style: backbeat
+      - channel: ht
+        seed: 41389313
+        style: closed
+    - samples:
+        ch: syntrx:34
+        kk: nero-bellum:5
+        oh: ib-magnetic-saturation:39
+        sn: dj-raitis-vinyl-cuts:17
+      trigs:
+      - channel: kk
+        seed: 73061215
+        style: fourfloor
+      - channel: sn
+        seed: 95561694
+        style: skip
+      - channel: ht
+        seed: 74015333
+        style: offbeats
+    - samples:
+        ch: nero-bellum:40
+        kk: pitch-black:27
+        oh: dj-raitis-vinyl-cuts:4
+        sn: ib-magnetic-saturation:28
+      trigs:
+      - channel: kk
+        seed: 61587126
+        style: triplets
+      - channel: sn
+        seed: 93808307
+        style: skip
+      - channel: ht
+        seed: 76528787
+        style: offbeats
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 88651112
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 8988763
+    style: sample_hold
+  tracks:
+    mutes: []
+    pattern:
+    - 0
+    - 1
+    slices:
+    - samples:
+        ch: pitch-black:5
+        kk: nero-bellum:7
+        oh: svdrum:29
+        sn: legowelt:35
+      trigs:
+      - channel: kk
+        seed: 46335112
+        style: triplets
+      - channel: sn
+        seed: 71187395
+        style: backbeat
+      - channel: ht
+        seed: 56635839
+        style: offbeats
+    - samples:
+        ch: dj-raitis-vinyl-cuts:37
+        kk: pitch-black:1
+        oh: svdrum:102
+        sn: nero-bellum:11
+      trigs:
+      - channel: kk
+        seed: 62337097
+        style: electro
+      - channel: sn
+        seed: 43190656
+        style: skip
+      - channel: ht
+        seed: 41389313
+        style: closed
+    - samples:
+        ch: syntrx:34
+        kk: nero-bellum:5
+        oh: ib-magnetic-saturation:39
+        sn: dj-raitis-vinyl-cuts:17
+      trigs:
+      - channel: kk
+        seed: 73061215
+        style: fourfloor
+      - channel: sn
+        seed: 7351397
+        style: skip
+      - channel: ht
+        seed: 57535063
+        style: offbeats
+    - samples:
+        ch: nero-bellum:40
+        kk: pitch-black:27
+        oh: dj-raitis-vinyl-cuts:4
+        sn: ib-magnetic-saturation:28
+      trigs:
+      - channel: kk
+        seed: 61587126
+        style: triplets
+      - channel: sn
+        seed: 93808307
+        style: skip
+      - channel: ht
+        seed: 76528787
+        style: closed
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 85350470
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 67235346
+    style: sample_hold
+  tracks:
+    mutes: []
+    pattern:
+    - 0
+    - 1
+    slices:
+    - samples:
+        ch: pitch-black:5
+        kk: nero-bellum:7
+        oh: svdrum:29
+        sn: legowelt:35
+      trigs:
+      - channel: kk
+        seed: 18824699
+        style: electro
+      - channel: sn
+        seed: 28972850
+        style: backbeat
+      - channel: ht
+        seed: 42150627
+        style: offbeats
+    - samples:
+        ch: dj-raitis-vinyl-cuts:37
+        kk: pitch-black:1
+        oh: svdrum:102
+        sn: nero-bellum:11
+      trigs:
+      - channel: kk
+        seed: 49914452
+        style: triplets
+      - channel: sn
+        seed: 43190656
+        style: backbeat
+      - channel: ht
+        seed: 41389313
+        style: closed
+    - samples:
+        ch: syntrx:34
+        kk: nero-bellum:5
+        oh: ib-magnetic-saturation:39
+        sn: dj-raitis-vinyl-cuts:17
+      trigs:
+      - channel: kk
+        seed: 35655440
+        style: fourfloor
+      - channel: sn
+        seed: 22517429
+        style: skip
+      - channel: ht
+        seed: 74015333
+        style: closed
+    - samples:
+        ch: nero-bellum:40
+        kk: pitch-black:27
+        oh: dj-raitis-vinyl-cuts:4
+        sn: ib-magnetic-saturation:28
+      trigs:
+      - channel: kk
+        seed: 61587126
+        style: triplets
+      - channel: sn
+        seed: 36857595
+        style: skip
+      - channel: ht
+        seed: 41076124
+        style: offbeats
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 94379293
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 31533682
+    style: sample_hold
+  tracks:
+    mutes: []
+    pattern:
+    - 0
+    - 1
+    slices:
+    - samples:
+        ch: pitch-black:5
+        kk: nero-bellum:7
+        oh: svdrum:29
+        sn: legowelt:35
+      trigs:
+      - channel: kk
+        seed: 2190537
+        style: triplets
+      - channel: sn
+        seed: 61762675
+        style: backbeat
+      - channel: ht
+        seed: 56635839
+        style: closed
+    - samples:
+        ch: dj-raitis-vinyl-cuts:37
+        kk: pitch-black:1
+        oh: svdrum:102
+        sn: nero-bellum:11
+      trigs:
+      - channel: kk
+        seed: 11866370
+        style: fourfloor
+      - channel: sn
+        seed: 43665326
+        style: backbeat
+      - channel: ht
+        seed: 51391413
+        style: offbeats
+    - samples:
+        ch: syntrx:34
+        kk: nero-bellum:5
+        oh: ib-magnetic-saturation:39
+        sn: dj-raitis-vinyl-cuts:17
+      trigs:
+      - channel: kk
+        seed: 73061215
+        style: fourfloor
+      - channel: sn
+        seed: 95561694
+        style: skip
+      - channel: ht
+        seed: 74015333
+        style: offbeats
+    - samples:
+        ch: nero-bellum:40
+        kk: pitch-black:27
+        oh: dj-raitis-vinyl-cuts:4
+        sn: ib-magnetic-saturation:28
+      trigs:
+      - channel: kk
+        seed: 61587126
+        style: triplets
+      - channel: sn
+        seed: 68282453
+        style: backbeat
+      - channel: ht
+        seed: 76528787
+        style: offbeats
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 42309397
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 67235346
+    style: sample_hold
+  tracks:
+    mutes: []
+    pattern:
+    - 0
+    slices:
+    - samples:
+        ch: pitch-black:5
+        kk: nero-bellum:7
+        oh: svdrum:29
+        sn: legowelt:35
+      trigs:
+      - channel: kk
+        seed: 18824699
+        style: triplets
+      - channel: sn
+        seed: 62180579
+        style: skip
+      - channel: ht
+        seed: 77308120
+        style: closed
+    - samples:
+        ch: dj-raitis-vinyl-cuts:37
+        kk: pitch-black:1
+        oh: svdrum:102
+        sn: nero-bellum:11
+      trigs:
+      - channel: kk
+        seed: 49914452
+        style: fourfloor
+      - channel: sn
+        seed: 43190656
+        style: backbeat
+      - channel: ht
+        seed: 69892373
+        style: closed
+    - samples:
+        ch: syntrx:34
+        kk: nero-bellum:5
+        oh: ib-magnetic-saturation:39
+        sn: dj-raitis-vinyl-cuts:17
+      trigs:
+      - channel: kk
+        seed: 11306364
+        style: fourfloor
+      - channel: sn
+        seed: 95561694
+        style: skip
+      - channel: ht
+        seed: 79917367
+        style: closed
+    - samples:
+        ch: nero-bellum:40
+        kk: pitch-black:27
+        oh: dj-raitis-vinyl-cuts:4
+        sn: ib-magnetic-saturation:28
+      trigs:
+      - channel: kk
+        seed: 32795094
+        style: triplets
+      - channel: sn
+        seed: 93808307
+        style: skip
+      - channel: ht
+        seed: 30684190
+        style: offbeats
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 22365501
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 83284240
+    style: sample_hold
+  tracks:
+    mutes: []
+    pattern:
+    - 0
+    - 1
+    - 2
+    - 3
+    slices:
+    - samples:
+        ch: pitch-black:5
+        kk: nero-bellum:7
+        oh: svdrum:29
+        sn: legowelt:35
+      trigs:
+      - channel: kk
+        seed: 29704675
+        style: triplets
+      - channel: sn
+        seed: 16594201
+        style: skip
+      - channel: ht
+        seed: 31128404
+        style: offbeats
+    - samples:
+        ch: dj-raitis-vinyl-cuts:37
+        kk: pitch-black:1
+        oh: svdrum:102
+        sn: nero-bellum:11
+      trigs:
+      - channel: kk
+        seed: 27135217
+        style: electro
+      - channel: sn
+        seed: 33228336
+        style: backbeat
+      - channel: ht
+        seed: 22176554
+        style: closed
+    - samples:
+        ch: syntrx:34
+        kk: nero-bellum:5
+        oh: ib-magnetic-saturation:39
+        sn: dj-raitis-vinyl-cuts:17
+      trigs:
+      - channel: kk
+        seed: 36080833
+        style: fourfloor
+      - channel: sn
+        seed: 95561694
+        style: skip
+      - channel: ht
+        seed: 90190540
+        style: offbeats
+    - samples:
+        ch: nero-bellum:40
+        kk: pitch-black:27
+        oh: dj-raitis-vinyl-cuts:4
+        sn: ib-magnetic-saturation:28
+      trigs:
+      - channel: kk
+        seed: 61587126
+        style: electro
+      - channel: sn
+        seed: 63038117
+        style: backbeat
+      - channel: ht
+        seed: 76528787
+        style: closed
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 94379293
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 91114229
+    style: sample_hold
+  tracks:
+    mutes: []
+    pattern:
+    - 0
+    - 1
+    slices:
+    - samples:
+        ch: pitch-black:5
+        kk: nero-bellum:7
+        oh: svdrum:29
+        sn: legowelt:35
+      trigs:
+      - channel: kk
+        seed: 18824699
+        style: electro
+      - channel: sn
+        seed: 20395916
+        style: skip
+      - channel: ht
+        seed: 44357481
+        style: closed
+    - samples:
+        ch: dj-raitis-vinyl-cuts:37
+        kk: pitch-black:1
+        oh: svdrum:102
+        sn: nero-bellum:11
+      trigs:
+      - channel: kk
+        seed: 49914452
+        style: fourfloor
+      - channel: sn
+        seed: 46729100
+        style: backbeat
+      - channel: ht
+        seed: 41564410
+        style: closed
+    - samples:
+        ch: syntrx:34
+        kk: nero-bellum:5
+        oh: ib-magnetic-saturation:39
+        sn: dj-raitis-vinyl-cuts:17
+      trigs:
+      - channel: kk
+        seed: 73061215
+        style: fourfloor
+      - channel: sn
+        seed: 95561694
+        style: skip
+      - channel: ht
+        seed: 37995961
+        style: offbeats
+    - samples:
+        ch: nero-bellum:40
+        kk: pitch-black:27
+        oh: dj-raitis-vinyl-cuts:4
+        sn: ib-magnetic-saturation:28
+      trigs:
+      - channel: kk
+        seed: 95612063
+        style: triplets
+      - channel: sn
+        seed: 87453642
+        style: skip
+      - channel: ht
+        seed: 77309200
+        style: offbeats
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 94379293
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 67235346
+    style: sample_hold
+  tracks:
+    mutes: []
+    pattern:
+    - 0
+    slices:
+    - samples:
+        ch: pitch-black:5
+        kk: nero-bellum:7
+        oh: svdrum:29
+        sn: legowelt:35
+      trigs:
+      - channel: kk
+        seed: 36680956
+        style: triplets
+      - channel: sn
+        seed: 33407083
+        style: backbeat
+      - channel: ht
+        seed: 8186507
+        style: closed
+    - samples:
+        ch: dj-raitis-vinyl-cuts:37
+        kk: pitch-black:1
+        oh: svdrum:102
+        sn: nero-bellum:11
+      trigs:
+      - channel: kk
+        seed: 49914452
+        style: fourfloor
+      - channel: sn
+        seed: 43190656
+        style: skip
+      - channel: ht
+        seed: 98280655
+        style: offbeats
+    - samples:
+        ch: syntrx:34
+        kk: nero-bellum:5
+        oh: ib-magnetic-saturation:39
+        sn: dj-raitis-vinyl-cuts:17
+      trigs:
+      - channel: kk
+        seed: 97159157
+        style: triplets
+      - channel: sn
+        seed: 95561694
+        style: backbeat
+      - channel: ht
+        seed: 74015333
+        style: offbeats
+    - samples:
+        ch: nero-bellum:40
+        kk: pitch-black:27
+        oh: dj-raitis-vinyl-cuts:4
+        sn: ib-magnetic-saturation:28
+      trigs:
+      - channel: kk
+        seed: 96066247
+        style: fourfloor
+      - channel: sn
+        seed: 93808307
+        style: skip
+      - channel: ht
+        seed: 76528787
+        style: offbeats
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 94379293
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 23562449
+    style: sample_hold
+  tracks:
+    mutes: []
+    pattern:
+    - 0
+    - 0
+    - 0
+    - 1
+    slices:
+    - samples:
+        ch: pitch-black:5
+        kk: nero-bellum:7
+        oh: svdrum:29
+        sn: legowelt:35
+      trigs:
+      - channel: kk
+        seed: 18824699
+        style: electro
+      - channel: sn
+        seed: 16594201
+        style: skip
+      - channel: ht
+        seed: 2655639
+        style: closed
+    - samples:
+        ch: dj-raitis-vinyl-cuts:37
+        kk: pitch-black:1
+        oh: svdrum:102
+        sn: nero-bellum:11
+      trigs:
+      - channel: kk
+        seed: 31678691
+        style: fourfloor
+      - channel: sn
+        seed: 21681087
+        style: backbeat
+      - channel: ht
+        seed: 41389313
+        style: offbeats
+    - samples:
+        ch: syntrx:34
+        kk: nero-bellum:5
+        oh: ib-magnetic-saturation:39
+        sn: dj-raitis-vinyl-cuts:17
+      trigs:
+      - channel: kk
+        seed: 73061215
+        style: fourfloor
+      - channel: sn
+        seed: 95561694
+        style: skip
+      - channel: ht
+        seed: 86724765
+        style: offbeats
+    - samples:
+        ch: nero-bellum:40
+        kk: pitch-black:27
+        oh: dj-raitis-vinyl-cuts:4
+        sn: ib-magnetic-saturation:28
+      trigs:
+      - channel: kk
+        seed: 61587126
+        style: electro
+      - channel: sn
+        seed: 93808307
+        style: backbeat
+      - channel: ht
+        seed: 73379040
+        style: closed
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 54868532
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 67235346
+    style: sample_hold
+  tracks:
+    mutes: []
+    pattern:
+    - 0
+    - 1
+    slices:
+    - samples:
+        ch: pitch-black:5
+        kk: nero-bellum:7
+        oh: svdrum:29
+        sn: legowelt:35
+      trigs:
+      - channel: kk
+        seed: 18824699
+        style: triplets
+      - channel: sn
+        seed: 16594201
+        style: skip
+      - channel: ht
+        seed: 56635839
+        style: closed
+    - samples:
+        ch: dj-raitis-vinyl-cuts:37
+        kk: pitch-black:1
+        oh: svdrum:102
+        sn: nero-bellum:11
+      trigs:
+      - channel: kk
+        seed: 49914452
+        style: fourfloor
+      - channel: sn
+        seed: 43190656
+        style: backbeat
+      - channel: ht
+        seed: 41389313
+        style: offbeats
+    - samples:
+        ch: syntrx:34
+        kk: nero-bellum:5
+        oh: ib-magnetic-saturation:39
+        sn: dj-raitis-vinyl-cuts:17
+      trigs:
+      - channel: kk
+        seed: 7830060
+        style: electro
+      - channel: sn
+        seed: 37147816
+        style: skip
+      - channel: ht
+        seed: 74015333
+        style: offbeats
+    - samples:
+        ch: nero-bellum:40
+        kk: pitch-black:27
+        oh: dj-raitis-vinyl-cuts:4
+        sn: ib-magnetic-saturation:28
+      trigs:
+      - channel: kk
+        seed: 61587126
+        style: fourfloor
+      - channel: sn
+        seed: 31759294
+        style: skip
+      - channel: ht
+        seed: 40798282
+        style: closed
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 42991916
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 67235346
+    style: sample_hold
+  tracks:
+    mutes: []
+    pattern:
+    - 0
+    - 1
+    slices:
+    - samples:
+        ch: pitch-black:5
+        kk: nero-bellum:7
+        oh: svdrum:29
+        sn: legowelt:35
+      trigs:
+      - channel: kk
+        seed: 45346838
+        style: triplets
+      - channel: sn
+        seed: 86603704
+        style: skip
+      - channel: ht
+        seed: 40225788
+        style: closed
+    - samples:
+        ch: dj-raitis-vinyl-cuts:37
+        kk: pitch-black:1
+        oh: svdrum:102
+        sn: nero-bellum:11
+      trigs:
+      - channel: kk
+        seed: 49914452
+        style: fourfloor
+      - channel: sn
+        seed: 70338225
+        style: backbeat
+      - channel: ht
+        seed: 41389313
+        style: closed
+    - samples:
+        ch: syntrx:34
+        kk: nero-bellum:5
+        oh: ib-magnetic-saturation:39
+        sn: dj-raitis-vinyl-cuts:17
+      trigs:
+      - channel: kk
+        seed: 53361117
+        style: fourfloor
+      - channel: sn
+        seed: 95561694
+        style: backbeat
+      - channel: ht
+        seed: 74015333
+        style: offbeats
+    - samples:
+        ch: nero-bellum:40
+        kk: pitch-black:27
+        oh: dj-raitis-vinyl-cuts:4
+        sn: ib-magnetic-saturation:28
+      trigs:
+      - channel: kk
+        seed: 23731571
+        style: fourfloor
+      - channel: sn
+        seed: 52287608
+        style: skip
+      - channel: ht
+        seed: 30584236
+        style: offbeats
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 94379293
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 65878610
+    style: sample_hold
+  tracks:
+    mutes: []
+    pattern:
+    - 0
+    - 1
+    slices:
+    - samples:
+        ch: pitch-black:5
+        kk: nero-bellum:7
+        oh: svdrum:29
+        sn: legowelt:35
+      trigs:
+      - channel: kk
+        seed: 61343481
+        style: triplets
+      - channel: sn
+        seed: 16594201
+        style: skip
+      - channel: ht
+        seed: 56635839
+        style: closed
+    - samples:
+        ch: dj-raitis-vinyl-cuts:37
+        kk: pitch-black:1
+        oh: svdrum:102
+        sn: nero-bellum:11
+      trigs:
+      - channel: kk
+        seed: 10146592
+        style: electro
+      - channel: sn
+        seed: 21475927
+        style: backbeat
+      - channel: ht
+        seed: 41389313
+        style: closed
+    - samples:
+        ch: syntrx:34
+        kk: nero-bellum:5
+        oh: ib-magnetic-saturation:39
+        sn: dj-raitis-vinyl-cuts:17
+      trigs:
+      - channel: kk
+        seed: 73061215
+        style: fourfloor
+      - channel: sn
+        seed: 72567050
+        style: skip
+      - channel: ht
+        seed: 74015333
+        style: closed
+    - samples:
+        ch: nero-bellum:40
+        kk: pitch-black:27
+        oh: dj-raitis-vinyl-cuts:4
+        sn: ib-magnetic-saturation:28
+      trigs:
+      - channel: kk
+        seed: 61587126
+        style: electro
+      - channel: sn
+        seed: 92786762
+        style: skip
+      - channel: ht
+        seed: 77366205
+        style: offbeats
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 23394129
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 67235346
+    style: sample_hold
+  tracks:
+    mutes: []
+    pattern:
+    - 0
+    slices:
+    - samples:
+        ch: pitch-black:5
+        kk: nero-bellum:7
+        oh: svdrum:29
+        sn: legowelt:35
+      trigs:
+      - channel: kk
+        seed: 18824699
+        style: triplets
+      - channel: sn
+        seed: 61435902
+        style: skip
+      - channel: ht
+        seed: 56635839
+        style: closed
+    - samples:
+        ch: dj-raitis-vinyl-cuts:37
+        kk: pitch-black:1
+        oh: svdrum:102
+        sn: nero-bellum:11
+      trigs:
+      - channel: kk
+        seed: 49914452
+        style: fourfloor
+      - channel: sn
+        seed: 84692548
+        style: backbeat
+      - channel: ht
+        seed: 41389313
+        style: closed
+    - samples:
+        ch: syntrx:34
+        kk: nero-bellum:5
+        oh: ib-magnetic-saturation:39
+        sn: dj-raitis-vinyl-cuts:17
+      trigs:
+      - channel: kk
+        seed: 46390188
+        style: fourfloor
+      - channel: sn
+        seed: 95561694
+        style: skip
+      - channel: ht
+        seed: 89094545
+        style: offbeats
+    - samples:
+        ch: nero-bellum:40
+        kk: pitch-black:27
+        oh: dj-raitis-vinyl-cuts:4
+        sn: ib-magnetic-saturation:28
+      trigs:
+      - channel: kk
+        seed: 61587126
+        style: triplets
+      - channel: sn
+        seed: 93808307
+        style: skip
+      - channel: ht
+        seed: 97276663
+        style: offbeats
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 6495214
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 67235346
+    style: sample_hold
+  tracks:
+    mutes: []
+    pattern:
+    - 0
+    - 1
+    - 0
+    - 1
+    slices:
+    - samples:
+        ch: pitch-black:5
+        kk: nero-bellum:7
+        oh: svdrum:29
+        sn: legowelt:35
+      trigs:
+      - channel: kk
+        seed: 38693546
+        style: triplets
+      - channel: sn
+        seed: 44552459
+        style: skip
+      - channel: ht
+        seed: 56635839
+        style: closed
+    - samples:
+        ch: dj-raitis-vinyl-cuts:37
+        kk: pitch-black:1
+        oh: svdrum:102
+        sn: nero-bellum:11
+      trigs:
+      - channel: kk
+        seed: 55797997
+        style: electro
+      - channel: sn
+        seed: 57940112
+        style: backbeat
+      - channel: ht
+        seed: 85676534
+        style: closed
+    - samples:
+        ch: syntrx:34
+        kk: nero-bellum:5
+        oh: ib-magnetic-saturation:39
+        sn: dj-raitis-vinyl-cuts:17
+      trigs:
+      - channel: kk
+        seed: 73061215
+        style: fourfloor
+      - channel: sn
+        seed: 10898294
+        style: skip
+      - channel: ht
+        seed: 51208097
+        style: offbeats
+    - samples:
+        ch: nero-bellum:40
+        kk: pitch-black:27
+        oh: dj-raitis-vinyl-cuts:4
+        sn: ib-magnetic-saturation:28
+      trigs:
+      - channel: kk
+        seed: 61587126
+        style: electro
+      - channel: sn
+        seed: 93808307
+        style: skip
+      - channel: ht
+        seed: 20630170
+        style: offbeats
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 70921105
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 67235346
+    style: sample_hold
+  tracks:
+    mutes: []
+    pattern:
+    - 0
+    - 1
+    slices:
+    - samples:
+        ch: pitch-black:5
+        kk: nero-bellum:7
+        oh: svdrum:29
+        sn: legowelt:35
+      trigs:
+      - channel: kk
+        seed: 18824699
+        style: triplets
+      - channel: sn
+        seed: 16594201
+        style: skip
+      - channel: ht
+        seed: 56635839
+        style: closed
+    - samples:
+        ch: dj-raitis-vinyl-cuts:37
+        kk: pitch-black:1
+        oh: svdrum:102
+        sn: nero-bellum:11
+      trigs:
+      - channel: kk
+        seed: 49914452
+        style: fourfloor
+      - channel: sn
+        seed: 94935521
+        style: backbeat
+      - channel: ht
+        seed: 41389313
+        style: closed
+    - samples:
+        ch: syntrx:34
+        kk: nero-bellum:5
+        oh: ib-magnetic-saturation:39
+        sn: dj-raitis-vinyl-cuts:17
+      trigs:
+      - channel: kk
+        seed: 1557265
+        style: fourfloor
+      - channel: sn
+        seed: 95561694
+        style: backbeat
+      - channel: ht
+        seed: 74015333
+        style: offbeats
+    - samples:
+        ch: nero-bellum:40
+        kk: pitch-black:27
+        oh: dj-raitis-vinyl-cuts:4
+        sn: ib-magnetic-saturation:28
+      trigs:
+      - channel: kk
+        seed: 61587126
+        style: triplets
+      - channel: sn
+        seed: 47544585
+        style: skip
+      - channel: ht
+        seed: 46869519
+        style: offbeats
+- effects:
+  - controller:
+      attr: wet
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 94379293
+    style: sample_hold
+  - controller:
+      attr: feedback
+      kwargs:
+        sample_hold:
+          max: 0.75
+          step: 4
+      mod: Echo
+    seed: 11838123
+    style: sample_hold
+  tracks:
+    mutes: []
+    pattern:
+    - 0
+    - 1
+    slices:
+    - samples:
+        ch: pitch-black:5
+        kk: nero-bellum:7
+        oh: svdrum:29
+        sn: legowelt:35
+      trigs:
+      - channel: kk
+        seed: 18824699
+        style: fourfloor
+      - channel: sn
+        seed: 85365737
+        style: backbeat
+      - channel: ht
+        seed: 17329273
+        style: closed
+    - samples:
+        ch: dj-raitis-vinyl-cuts:37
+        kk: pitch-black:1
+        oh: svdrum:102
+        sn: nero-bellum:11
+      trigs:
+      - channel: kk
+        seed: 64809838
+        style: electro
+      - channel: sn
+        seed: 43190656
+        style: backbeat
+      - channel: ht
+        seed: 41389313
+        style: closed
+    - samples:
+        ch: syntrx:34
+        kk: nero-bellum:5
+        oh: ib-magnetic-saturation:39
+        sn: dj-raitis-vinyl-cuts:17
+      trigs:
+      - channel: kk
+        seed: 56175634
+        style: fourfloor
+      - channel: sn
+        seed: 23140625
+        style: skip
+      - channel: ht
+        seed: 74015333
+        style: offbeats
+    - samples:
+        ch: nero-bellum:40
+        kk: pitch-black:27
+        oh: dj-raitis-vinyl-cuts:4
+        sn: ib-magnetic-saturation:28
+      trigs:
+      - channel: kk
+        seed: 61587126
+        style: triplets
+      - channel: sn
+        seed: 93808307
+        style: skip
+      - channel: ht
+        seed: 76528787
+        style: offbeats
