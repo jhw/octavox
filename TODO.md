@@ -1,5 +1,7 @@
 ### short
 
+- move curated
+- move wavfile
 - add mute option back to mutator
 
 ### medium

@@ -154,7 +154,7 @@ if __name__=="__main__":
         """)
         kwargs=cli(cliconf)
         banks=SVBanks.load("tmp/banks/pico")
-        curated=yaml.safe_load(open("octavox/projects/breakbeats/pico-curated.yaml").read())
+        curated=yaml.safe_load(open("octavox/samples/banks/pico/curated.yaml").read())
         npatches, nbeats = kwargs.pop("npatches"), kwargs.pop("nbeats")
         randomisers={"samples": SampleRandomiser(banks=banks,
                                                  curated=curated,
