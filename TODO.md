@@ -1,17 +1,22 @@
 ### short
 
 - add mute option back to mutator
-- trig concat
-- arranger
 
 ### medium
 
-- degrade
+- breakbeats2
+  - no slices
+  - change samples within different slice ranges
+  
+- degrading
 - reanimator date range
 - SVSampler pull request
 
 ### thoughts
 
+- arranger ?
+  - don't think it makes sense
+  - better to scan entire mutator chain into octatrack and set trig points manually
 - chainmaker/mutes ?
   - think covered by mutator
 - slice ids ?

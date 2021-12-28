@@ -98,13 +98,13 @@ if __name__=="__main__":
           type: float
           min: 0
           max: 1
-          default: 0.45
+          default: 0.3
         - key: kksamples
           description: "samples(kk)"
           type: float
           min: 0
           max: 1
-          default: 0.45
+          default: 0.6
         - key: snsamples
           description: "samples(sn)"
           type: float
