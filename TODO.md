@@ -1,7 +1,5 @@
 ### short
 
-- move curated
-- move wavfile
 - add mute option back to mutator
 
 ### medium
@@ -48,6 +46,8 @@
 
 ### done
 
+- move curated
+- move wavfile
 - use filestub not filename
 - reanimator to use single datetime
 - reanimator to use original timestamp slug

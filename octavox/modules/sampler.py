@@ -5,7 +5,7 @@ from rv.note import NOTE as RVNOTE
 import re, os, warnings, zipfile
 
 # from scipy.io import wavfile
-from octavox.projects.breakbeats.utils import wavfile
+from octavox.modules.utils import wavfile
 
 warnings.simplefilter("ignore", wavfile.WavFileWarning)
 
