@@ -1,20 +1,14 @@
 ### short
 
-- renamed breakbeats as slicebeats
-- slicebeats to save to tmp/slicebeats
-
 ### medium
 
 - simplebeats [notes]
 - arranger -> benefit from echo overlap
 - degrading
-- reanimator date range
 - SVSampler pull request
 
 ### thoughts
 
-- chainmaker/mutes ?
-  - think covered by mutator
 - slice ids ?
   - not enough similarity in patterns
 - sunvox preroll ?
@@ -42,6 +36,8 @@
 
 ### done
 
+- renamed breakbeats as slicebeats
+- slicebeats to save to tmp/slicebeats
 - add mute option back to mutator
 - move curated
 - move wavfile

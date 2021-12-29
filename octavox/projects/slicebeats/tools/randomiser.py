@@ -1,8 +1,8 @@
 from octavox.modules.sampler import SVBanks
 
-from octavox.projects.breakbeats.dom import Patches
+from octavox.projects.slicebeats.dom import Patches
 
-from octavox.projects.breakbeats.trigs import Channels, Instruments
+from octavox.projects.slicebeats.trigs import Channels, Instruments
 
 import datetime, random, yaml
 

@@ -1,14 +1,14 @@
-from octavox.projects.breakbeats.trigs import Channels
+from octavox.projects.slicebeats.trigs import Channels
 
-from octavox.projects.breakbeats.trigs import TrigGenerator
+from octavox.projects.slicebeats.trigs import TrigGenerator
 
-from octavox.projects.breakbeats.trigs import Styles as TrigStyles
+from octavox.projects.slicebeats.trigs import Styles as TrigStyles
 
-from octavox.projects.breakbeats.fx import FXGenerator
+from octavox.projects.slicebeats.fx import FXGenerator
 
-from octavox.projects.breakbeats.fx import Styles as FXStyles
+from octavox.projects.slicebeats.fx import Styles as FXStyles
 
-from octavox.projects.breakbeats.project import SVProject
+from octavox.projects.slicebeats.project import SVProject
 
 import copy, json, os, random, yaml
 
@@ -250,17 +250,19 @@ class Patches(list):
                               default_flow_style=False)
     
     def render(self, filestub, banks, nbeats):
-        for path in ["tmp/projects",
-                     "tmp/patches"]:
+        for path in ["tmp",
+                     "tmp/slicebeats",
+                     "tmp/slicebeats/projects",
+                     "tmp/slicebeats/patches"]:
             if not os.path.exists(path):
                 os.makedirs(path)
         project=SVProject().render(banks,
                                    [patch.render(nbeats=nbeats)
                                    for patch in self])        
-        projfile="tmp/projects/%s.sunvox" % filestub
+        projfile="tmp/slicebeats/projects/%s.sunvox" % filestub
         with open(projfile, 'wb') as f:
             project.write_to(f)
-        patchfile="tmp/patches/%s.yaml" % filestub
+        patchfile="tmp/slicebeats/patches/%s.yaml" % filestub
         with open(patchfile, 'w') as f:
             f.write(self.to_yaml())
     

@@ -1,6 +1,6 @@
 from octavox.modules.sampler import SVBanks
 
-from octavox.projects.breakbeats.dom import Patches
+from octavox.projects.slicebeats.dom import Patches
 
 import datetime, yaml
 
