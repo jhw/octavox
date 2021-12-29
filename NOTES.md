@@ -1,3 +1,11 @@
+### simplebeats 29/12/21
+
+- simplebeat is like slicebeats but simpler
+- one problem with slicebeats is it doesn't preserve long patterns, they are copied over
+- simplebeats preserves that but allows you to switch samples for slices within a pattern
+- this is likely to mean some kind of expanded trigs generator which allows you to pass in a list of patterns
+- could then select sample using modulo len(samples) or something
+
 ### fx rendering 16/12/21
 
 - should fx be rendered globally across track, or locally at slice level

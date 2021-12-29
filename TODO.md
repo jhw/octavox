@@ -1,22 +1,18 @@
 ### short
 
-- add mute option back to mutator
+- renamed breakbeats as slicebeats
+- slicebeats to save to tmp/slicebeats
 
 ### medium
 
-- breakbeats2
-  - no slices
-  - change samples within different slice ranges
-  
+- simplebeats [notes]
+- arranger -> benefit from echo overlap
 - degrading
 - reanimator date range
 - SVSampler pull request
 
 ### thoughts
 
-- arranger ?
-  - don't think it makes sense
-  - better to scan entire mutator chain into octatrack and set trig points manually
 - chainmaker/mutes ?
   - think covered by mutator
 - slice ids ?
@@ -46,6 +42,7 @@
 
 ### done
 
+- add mute option back to mutator
 - move curated
 - move wavfile
 - use filestub not filename

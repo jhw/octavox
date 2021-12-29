@@ -35,6 +35,12 @@ if __name__=="__main__":
           min: 0
           max: 1
           default: 0.5
+        - key: dtrigmute
+          description: dtrigmute
+          type: float
+          min: 0
+          max: 1
+          default: 0.1
         - key: dfxseed
           description: dfxseed
           type: float
@@ -61,11 +67,12 @@ if __name__=="__main__":
             raise RuntimeError("index exceeds root patches length")
         root=roots[kwargs["index"]]
         def randomise_patch(patch, kwargs, i):
+            patch["tracks"].randomise_pattern(kwargs["dtrigpat"])
+            patch["tracks"].randomise_mutes(kwargs["dtrigmute"])
             for slice in patch["tracks"]["slices"]:
                 for track in slice["trigs"]:
                     track.randomise_style(kwargs["dtrigstyle"])
                     track.randomise_seed(kwargs["dtrigseed"])
-            patch["tracks"].randomise_pattern(kwargs["dtrigpat"])
             for effect in patch["effects"]:
                 effect.randomise_seed(kwargs["dfxseed"])
             return patch
