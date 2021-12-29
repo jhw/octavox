@@ -11,7 +11,7 @@ if __name__=="__main__":
         - key: src
           description: source
           type: file
-          root: tmp/patches
+          root: tmp/slicebeats/patches
         - key: index
           description: index
           type: int
