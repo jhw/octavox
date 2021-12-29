@@ -1,5 +1,7 @@
 ### short
 
+- palettes
+
 ### medium
 
 - simplebeats [notes]
