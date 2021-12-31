@@ -1,12 +1,22 @@
 ### short
 
+- cli to take pattern arg and not iterate thru files
+- remove command line pattern passed to cli
+
+- gaussian temperature variables
+  - sample selection
+  - pattern mutation
+
 - palettes
+- arranger
 
 ### medium
 
-- simplebeats [notes]
-- arranger -> benefit from echo overlap
 - degrading
+
+### long
+
+- simplebeats
 - SVSampler pull request
 
 ### thoughts
