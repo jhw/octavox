@@ -91,74 +91,20 @@ class SampleRandomiser:
 
 if __name__=="__main__":
     try:
-        from octavox.tools.cli import cli
-        cliconf=yaml.safe_load("""
-        - key: kksvdrum
-          description: "svdrum(kk)"
-          type: float
-          min: 0
-          max: 1
-          default: 0.3
-        - key: kksamples
-          description: "samples(kk)"
-          type: float
-          min: 0
-          max: 1
-          default: 0.6
-        - key: snsamples
-          description: "samples(sn)"
-          type: float
-          min: 0
-          max: 1
-          default: 0.45
-        - key: cpsamples
-          description: "samples(cp)"
-          type: float
-          min: 0
-          max: 1
-          default: 0.45
-        - key: ohsvdrum
-          description: "svdrum(oh)"
-          type: float
-          min: 0
-          max: 1
-          default: 0.25
-        - key: ohsamples
-          description: "samples(oh)"
-          type: float
-          min: 0
-          max: 1
-          default: 0.25
-        - key: chsvdrum
-          description: "svdrum(ch)"
-          type: float
-          min: 0
-          max: 1
-          default: 0.25
-        - key: chsamples
-          description: "samples(ch)"
-          type: float
-          min: 0
-          max: 1
-          default: 0.25
-        - key: nbeats
-          description: "n(beats)"
-          type: int
-          min: 4
-          default: 16
-        - key: npatches
-          description: "n(patches)"
-          type: int
-          min: 1
-          default: 16
-        """)
-        kwargs=cli(cliconf)
+        import sys
+        if len(sys.argv) < 2:
+            raise RuntimeError("please enter profile name")
+        profilename=sys.argv[1]
+        profiles=yaml.safe_load(open("octavox/projects/slicebeats/profiles/randomiser.yaml").read())
+        if profilename not in profiles:
+            raise RuntimeError("profile not found")
+        profile=profiles[profilename]
         banks=SVBanks.load("tmp/banks/pico")
         curated=yaml.safe_load(open("octavox/samples/banks/pico/curated.yaml").read())
-        npatches, nbeats = kwargs.pop("npatches"), kwargs.pop("nbeats")
+        npatches, nbeats = profile.pop("npatches"), profile.pop("nbeats")
         randomisers={"samples": SampleRandomiser(banks=banks,
                                                  curated=curated,
-                                                 thresholds=kwargs)}
+                                                 thresholds=profile)}
         patches=Patches.randomise(controllers=Controllers,
                                   randomisers=randomisers,
                                   n=npatches)

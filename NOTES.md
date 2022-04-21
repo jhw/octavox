@@ -1,3 +1,54 @@
+### old notes 21/04/22
+
+###### short
+
+- cli to take pattern arg and not iterate thru files
+- remove command line pattern passed to cli
+
+- gaussian temperature variables
+  - sample selection
+  - pattern mutation
+
+- palettes
+- arranger
+
+###### medium
+
+- degrading
+
+###### long
+
+- simplebeats
+- SVSampler pull request
+
+###### thoughts
+
+- slice ids ?
+  - not enough similarity in patterns
+- sunvox preroll ?
+  - doesn't matter if going to do manual sampling
+- render fx same way as trigs ?
+  - controversial [notes]
+- blender to preserve roots ?
+  - no because no clones are created 
+- "sticky" track/slices (heartbeat) ?
+  - feels like overkill for now
+- save colours ?
+- harmonise fx/effects nomenclature ?
+- sv drum levels ?
+
+### projects
+
+- polyrhythms
+- sweet city dreams bass
+- pads/chords/lfos
+- kicker
+- 303 (slide, accent)
+- rumble bass
+- noise hats
+- noise lasers
+
+
 ### simplebeats 29/12/21
 
 - simplebeat is like slicebeats but simpler
