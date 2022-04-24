@@ -28,8 +28,6 @@ default:
   cpsamples: 0.45
   kksamples: 0.6
   kksvdrum: 0.3
-  nbeats: 16
-  npatches: 16
   ohsamples: 0.25
   ohsvdrum: 0.25
   snsamples: 0.45
@@ -105,19 +103,30 @@ class SampleRandomiser:
 
 if __name__=="__main__":
     try:
+        from octavox.tools.cli import cli
+        cliconf=yaml.safe_load("""
+        - key: nbeats
+          description: "n(beats)"
+          type: int
+          min: 4
+          default: 16
+        - key: npatches
+          description: "n(patches)"
+          type: int
+          min: 1
+          default: 16
+        """)
         import sys
-        if len(sys.argv) < 2:
-            raise RuntimeError("please enter profile name")
-        profilename=sys.argv[1]
-        if profilename not in Profiles:
-            raise RuntimeError("profile not found")
-        profile=Profiles[profilename]
+        if len(sys.argv) >= 2:
+            cliconf[0]["pattern"]=sys.argv[1]
+        kwargs=cli(cliconf)
+        kwargs.update(Profiles["default"]) # TEMP
         banks=SVBanks.load("tmp/banks/pico")
         curated=yaml.safe_load(open("octavox/samples/banks/pico/curated.yaml").read())
-        npatches, nbeats = profile.pop("npatches"), profile.pop("nbeats")
+        npatches, nbeats = kwargs.pop("npatches"), kwargs.pop("nbeats")
         randomisers={"samples": SampleRandomiser(banks=banks,
                                                  curated=curated,
-                                                 thresholds=profile)}
+                                                 thresholds=kwargs)}
         patches=Patches.randomise(controllers=Controllers,
                                   randomisers=randomisers,
                                   n=npatches)

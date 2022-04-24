@@ -1,13 +1,12 @@
 ### short
 
-- move profiles into randomiser
-- renamed randomiser keys
-- remove cli from mutator
-  - include pattern lookup
-- remove cli from blender
-- remove cli
+- add profile as enum
+- change cli file stuff to accept pattern
 - add back breaks
 - add back mutes
+
+### medium
+
 - add option for degrees of pattern randomisation
 - new expander script
   - based on mutator
@@ -18,10 +17,10 @@
   - takes wav file
   - removes breaks
 
-### medium
-
 ### long
 
 ### thoughts
 
 ### done
+
+- move profiles into randomiser
