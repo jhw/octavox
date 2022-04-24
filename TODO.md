@@ -6,6 +6,8 @@
 
 ### medium
 
+- separate oh/ch tracks
+  - remove distinction between channels and instruments
 - new expander script
   - based on mutator
   - each patch copied and includes per- track mutes
