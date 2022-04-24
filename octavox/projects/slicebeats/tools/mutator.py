@@ -4,6 +4,17 @@ from octavox.projects.slicebeats.dom import Patches
 
 import datetime, yaml
 
+Profiles=yaml.safe_load("""
+default:
+  dfxseed: 0.5
+  dtrigmute: 0.1
+  dtrigpat: 0.5
+  dtrigseed: 0.5
+  dtrigstyle: 0.5
+  nbeats: 16
+  npatches: 32
+""")
+
 if __name__=="__main__":
     try:
         from octavox.tools.cli import cli
@@ -14,54 +25,15 @@ if __name__=="__main__":
           root: tmp/slicebeats/patches
         - key: index
           description: index
-          type: int
+          type: int  
           min: 0
           default: 0
-        - key: dtrigstyle
-          description: dtrigstyle
-          type: float
-          min: 0
-          max: 1
-          default: 0.5
-        - key: dtrigseed
-          description: dtrigseed
-          type: float
-          min: 0
-          max: 1
-          default: 0.5
-        - key: dtrigpat
-          description: dtrigpat
-          type: float
-          min: 0
-          max: 1
-          default: 0.5
-        - key: dtrigmute
-          description: dtrigmute
-          type: float
-          min: 0
-          max: 1
-          default: 0.1
-        - key: dfxseed
-          description: dfxseed
-          type: float
-          min: 0
-          max: 1
-          default: 0.5
-        - key: nbeats
-          description: "n(beats)"
-          type: int
-          min: 4
-          default: 16
-        - key: npatches
-          description: "n(patches)"
-          type: int
-          min: 1
-          default: 32
         """)
         import sys
         if len(sys.argv) >= 2:
             cliconf[0]["pattern"]=sys.argv[1]
         kwargs=cli(cliconf)
+        kwargs.update(Profiles["default"]) # TEMP
         roots=Patches(yaml.safe_load(open(kwargs["src"]).read()))
         if kwargs["index"] >= len(roots):        
             raise RuntimeError("index exceeds root patches length")
