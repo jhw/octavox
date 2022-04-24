@@ -1,6 +1,5 @@
 ### short
 
-- change cli file stuff to accept pattern
 - add back breaks
 - add back mutes
 
@@ -22,5 +21,6 @@
 
 ### done
 
+- change cli file stuff to accept pattern
 - add profile as enum
 - move profiles into randomiser

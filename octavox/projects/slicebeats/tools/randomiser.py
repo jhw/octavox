@@ -23,14 +23,14 @@ Controllers=yaml.safe_load("""
 
 Profiles=yaml.safe_load("""
 default:
-  chsamples: 0.25
-  chsvdrum: 0.25
-  cpsamples: 0.45
   kksamples: 0.6
   kksvdrum: 0.3
+  snsamples: 0.45
+  cpsamples: 0.45
   ohsamples: 0.25
   ohsvdrum: 0.25
-  snsamples: 0.45
+  chsamples: 0.25
+  chsvdrum: 0.25
 """)
 
 import random, yaml

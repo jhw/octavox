@@ -8,7 +8,7 @@ def cli_base(item, matcher, parser):
                 print ("INFO: using %s %s" % (item["key"],
                                               item["default"]))
                 return item["default"]
-        elif matcher(resp):
+        elif matcher(resp, item):
             value=parser(resp, item)
             if value!=None:
                 return value
@@ -16,7 +16,7 @@ def cli_base(item, matcher, parser):
             raise RuntimeError("exit")
 
 def cli_enum(item):
-    def matcher(resp):
+    def matcher(resp, item):
         return True
     def parser(resp, item):
         if resp not in item["options"]:
@@ -26,7 +26,7 @@ def cli_enum(item):
     return cli_base(item, matcher, parser)
         
 def cli_int(item):
-    def matcher(resp):
+    def matcher(resp, item):
         return re.search("^\\s*\\d+\\s*$", resp)!=None
     def parser(resp, item):
         value=int(resp)
@@ -38,7 +38,7 @@ def cli_int(item):
     return cli_base(item, matcher, parser)
 
 def cli_int_array(item):
-    def matcher(resp):
+    def matcher(resp, item):
         return re.search("^\\s*(\\d+\\s+)*\\d+\\s*$", resp)!=None
     def parser(resp, item):
         values=[]
@@ -55,7 +55,7 @@ def cli_int_array(item):
     return cli_base(item, matcher, parser)
  
 def cli_float(item):
-    def matcher(resp):
+    def matcher(resp, item):
         return re.search("^\\s*\\d+(\\.\\d+)?\\s*$", resp)!=None
     def parser(resp, item):
         value=float(resp)
@@ -67,7 +67,7 @@ def cli_float(item):
     return cli_base(item, matcher, parser)
 
 def cli_bool(item):
-    def matcher(resp):
+    def matcher(resp, item):
         return re.search("^\\s*(true)|(false)\\s*$", resp, re.I)!=None
     def parser(resp, item):
         return eval(resp.lower().capitalize())
@@ -76,24 +76,28 @@ def cli_bool(item):
 def cli_file(item):
     if not os.path.isdir(item["root"]):
         raise RuntimeError("%s root is not a directory" % item["key"])
-    def matches(filename, item):
-        return True if "pattern" not in item else re.search(item["pattern"], filename)!=None
-    filenames=[filename for filename in os.listdir(item["root"])
-               if matches(filename, item)]
-    if filenames==[]:
-        raise RuntimeError("no %s files found" % item["key"])
-    for filename in reversed(sorted(filenames)):
-        resp=re.sub("\\s", "", input("%s -> %s ? " % (item["description"],
-                                                     filename)))
-        if resp=="":
-            continue
-        elif resp in "yY":
-            return "%s/%s" % (item["root"],
-                              filename)
-        elif resp in "qQ":
-            raise RuntimeError("exit")
-    raise RuntimeError("no file selected")
-        
+    def matcher(resp, item):
+        matches=[filename
+                 for filename in os.listdir(item["root"])
+                 if resp in filename]
+        if len(matches) > 1:
+            print ("WARNING: multiple matches found [%s]" % ", ".join(matches))
+            return False
+        elif matches==[]:
+            print ("WARNING: no matches found")
+            return False
+        else:
+            return True
+    def parser(resp, item):
+        matches=[filename 
+                 for filename in os.listdir(item["root"])
+                 if resp in filename]
+        filename=matches.pop()
+        print ("INFO: using %s" % filename)
+        return "%s/%s" % (item["root"],
+                          filename)
+    return cli_base(item, matcher, parser)
+
 def cli(conf):
     values={}
     for item in conf:
