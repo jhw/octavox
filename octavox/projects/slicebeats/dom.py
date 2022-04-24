@@ -89,17 +89,9 @@ class Slices(list):
 
 class Tracks(dict):
 
-    """
-    - want an equal mixture of long patterns and breakbeats
-    - long patterns have less going on but can have more subtle beat variation
-    """
-    
     Patterns=[[0],
-              [0],
-              [0, 1],
               [0, 1],
               [0, 0, 0, 1],
-              [0, 1, 0, 1],
               [0, 1, 0, 2],
               [0, 1, 2, 3]]
     

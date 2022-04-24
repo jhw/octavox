@@ -23,14 +23,32 @@ Controllers=yaml.safe_load("""
 
 Profiles=yaml.safe_load("""
 default:
-  kksamples: 0.6
+  kksamples: 0.5
   kksvdrum: 0.3
-  snsamples: 0.45
-  cpsamples: 0.45
+  snsamples: 0.4
+  cpsamples: 0.4
   ohsamples: 0.25
   ohsvdrum: 0.25
   chsamples: 0.25
   chsvdrum: 0.25
+strict:
+  kksamples: 0.65
+  kksvdrum: 0.35
+  snsamples: 0.5
+  cpsamples: 0.5
+  ohsamples: 0.4
+  ohsvdrum: 0.4
+  chsamples: 0.4
+  chsvdrum: 0.4
+wild:
+  kksamples: 0.25
+  kksvdrum: 0.15
+  snsamples: 0.2
+  cpsamples: 0.2
+  ohsamples: 0.1
+  ohsvdrum: 0.1
+  chsamples: 0.1
+  chsvdrum: 0.1
 """)
 
 import random, yaml
@@ -110,6 +128,8 @@ if __name__=="__main__":
           type: enum
           options:
           - default
+          - strict
+          - wild
           default: default
         - key: nbeats
           description: "n(beats)"

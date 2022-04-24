@@ -1,11 +1,11 @@
 ### short
 
-- add back breaks
-- add back mutes
+- slice temperature
+- patch breaks
+- track mutes
 
 ### medium
 
-- add option for degrees of pattern randomisation
 - new expander script
   - based on mutator
   - each patch copied and includes per- track mutes
