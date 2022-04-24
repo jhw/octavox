@@ -26,7 +26,7 @@ if __name__=="__main__":
           description: "n(patches)"
           type: int
           min: 1
-          default: 32
+          default: 16
         """)
         import sys
         if len(sys.argv) >= 2:

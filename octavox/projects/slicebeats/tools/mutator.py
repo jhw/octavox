@@ -11,8 +11,6 @@ default:
   dtrigpat: 0.5
   dtrigseed: 0.5
   dtrigstyle: 0.5
-  nbeats: 16
-  npatches: 32
 """)
 
 if __name__=="__main__":
@@ -28,6 +26,16 @@ if __name__=="__main__":
           type: int  
           min: 0
           default: 0
+        - key: nbeats
+          description: "n(beats)"
+          type: int
+          min: 4
+          default: 16
+        - key: npatches
+          description: "n(patches)"
+          type: int
+          min: 1
+          default: 16
         """)
         import sys
         if len(sys.argv) >= 2:
