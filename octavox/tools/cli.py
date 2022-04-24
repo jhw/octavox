@@ -37,42 +37,6 @@ def cli_int(item):
         return value
     return cli_base(item, matcher, parser)
 
-def cli_int_array(item):
-    def matcher(resp, item):
-        return re.search("^\\s*(\\d+\\s+)*\\d+\\s*$", resp)!=None
-    def parser(resp, item):
-        values=[]
-        for token in re.split("\\s", resp):
-            if token=='':
-                continue
-            value=int(token)
-            if (("min" in item and value < item["min"]) or
-                ("max" in item and value > item["max"])):
-                print ("WARNING: %s exceeds limits" % item["key"])
-                return None
-            values.append(value)
-        return values
-    return cli_base(item, matcher, parser)
- 
-def cli_float(item):
-    def matcher(resp, item):
-        return re.search("^\\s*\\d+(\\.\\d+)?\\s*$", resp)!=None
-    def parser(resp, item):
-        value=float(resp)
-        if (("min" in item and value < item["min"]) or
-            ("max" in item and value > item["max"])):
-            print ("WARNING: %s exceeds limits" % item["key"])
-            return None        
-        return value
-    return cli_base(item, matcher, parser)
-
-def cli_bool(item):
-    def matcher(resp, item):
-        return re.search("^\\s*(true)|(false)\\s*$", resp, re.I)!=None
-    def parser(resp, item):
-        return eval(resp.lower().capitalize())
-    return cli_base(item, matcher, parser)
-
 def cli_file(item):
     if not os.path.isdir(item["root"]):
         raise RuntimeError("%s root is not a directory" % item["key"])
@@ -109,16 +73,14 @@ if __name__=="__main__":
     try:
         import yaml
         conf=yaml.safe_load("""
+        - key: my_enum
+          description: my_enum
+          type: enum
+          options:
+          - hello
         - key: my_int
           description: my_int
           type: int
-        - key: my_float
-          description: my_float
-          type: float
-        - key: my_file
-          description: my_file
-          type: file
-          root: tmp/random/patches
         """)
         resp=cli(conf)
         print ()

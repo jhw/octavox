@@ -21,6 +21,7 @@
 
 ### done
 
+- convert blender to use new file lookup
 - change cli file stuff to accept pattern
 - add profile as enum
 - move profiles into randomiser
