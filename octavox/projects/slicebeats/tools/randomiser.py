@@ -126,7 +126,8 @@ if __name__=="__main__":
         if len(sys.argv) >= 2:
             cliconf[0]["pattern"]=sys.argv[1]
         kwargs=cli(cliconf)
-        kwargs.update(Profiles[kwargs["profile"]])
+        profilename=kwargs.pop("profile")
+        kwargs.update(Profiles[profilename])
         banks=SVBanks.load("tmp/banks/pico")
         curated=yaml.safe_load(open("octavox/samples/banks/pico/curated.yaml").read())
         npatches, nbeats = kwargs.pop("npatches"), kwargs.pop("nbeats")
