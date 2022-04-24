@@ -21,6 +21,20 @@ Controllers=yaml.safe_load("""
       max: 0.75
 """)
 
+Profiles=yaml.safe_load("""
+default:
+  chsamples: 0.25
+  chsvdrum: 0.25
+  cpsamples: 0.45
+  kksamples: 0.6
+  kksvdrum: 0.3
+  nbeats: 16
+  npatches: 16
+  ohsamples: 0.25
+  ohsvdrum: 0.25
+  snsamples: 0.45
+""")
+
 import random, yaml
 
 class SampleRandomiser:
@@ -95,10 +109,9 @@ if __name__=="__main__":
         if len(sys.argv) < 2:
             raise RuntimeError("please enter profile name")
         profilename=sys.argv[1]
-        profiles=yaml.safe_load(open("octavox/projects/slicebeats/profiles/randomiser.yaml").read())
-        if profilename not in profiles:
+        if profilename not in Profiles:
             raise RuntimeError("profile not found")
-        profile=profiles[profilename]
+        profile=Profiles[profilename]
         banks=SVBanks.load("tmp/banks/pico")
         curated=yaml.safe_load(open("octavox/samples/banks/pico/curated.yaml").read())
         npatches, nbeats = profile.pop("npatches"), profile.pop("nbeats")

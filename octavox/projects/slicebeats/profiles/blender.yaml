@@ -1,8 +1,0 @@
-default:
-  indexes:
-  - 1
-  - 2
-  - 3
-  nbeats: 16
-  npatches: 32
-  src: tmp/slicebeats/patches/2022-04-21-16-50-17-mutator.yaml
