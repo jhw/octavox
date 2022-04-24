@@ -26,6 +26,12 @@ if __name__=="__main__":
           type: int  
           min: 0
           default: 0
+        - key: profile
+          description: "profile"
+          type: enum
+          options:
+          - default
+          default: default
         - key: nbeats
           description: "n(beats)"
           type: int
@@ -41,7 +47,8 @@ if __name__=="__main__":
         if len(sys.argv) >= 2:
             cliconf[0]["pattern"]=sys.argv[1]
         kwargs=cli(cliconf)
-        kwargs.update(Profiles["default"]) # TEMP
+        profilename=kwargs.pop("profile")
+        kwargs.update(Profiles[profilename])
         roots=Patches(yaml.safe_load(open(kwargs["src"]).read()))
         if kwargs["index"] >= len(roots):        
             raise RuntimeError("index exceeds root patches length")
