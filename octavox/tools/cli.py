@@ -15,6 +15,16 @@ def cli_base(item, matcher, parser):
         elif resp in "qQ":
             raise RuntimeError("exit")
 
+def cli_enum(item):
+    def matcher(resp):
+        return True
+    def parser(resp, item):
+        if resp not in item["options"]:
+            print ("WARNING: %s is not a valid option" % resp)
+            return None
+        return resp
+    return cli_base(item, matcher, parser)
+        
 def cli_int(item):
     def matcher(resp):
         return re.search("^\\s*\\d+\\s*$", resp)!=None
