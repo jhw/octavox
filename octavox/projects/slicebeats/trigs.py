@@ -10,16 +10,6 @@ Instruments = [Kick, Snare, OpenHat, ClosedHat]
 
 Channels = [Kick, Snare, Hats]
 
-ChannelMapping=yaml.safe_load("""
-kk: 
- - kk
-sn:
- - sn
-ht:
- - oh
- - ch
-""")
-
 Electro, FourFloor, Triplets, Offbeats, Closed, Backbeat, Skip, Empty = "electro", "fourfloor", "triplets", "offbeats", "closed", "backbeat", "skip", "empty"
 
 Styles={Kick: [Electro, FourFloor, Triplets],
