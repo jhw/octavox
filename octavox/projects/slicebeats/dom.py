@@ -21,42 +21,42 @@ class Samples(dict):
         dict.__init__(self, obj)
 
     def randomise_samples(self, samples):
-        for instrument in self.keys():
-            self[instrument]=random.choice(samples[instrument])
+        for key in self.keys():
+            self[key]=random.choice(samples[key])
         
-class Trig(dict):
+class Instrument(dict):
 
     @classmethod
     def randomise(self, instrument, styles=TrigStyles):
-        return Trig({"instrument": instrument,
-                     "seed": int(1e8*random.random()),
-                     "style": random.choice(styles[instrument])})
+        return Instrument({"key": instrument,
+                           "seed": int(1e8*random.random()),
+                           "style": random.choice(styles[instrument])})
 
     def __init__(self, obj):
         dict.__init__(self, obj)
 
     def randomise_style(self, limit, styles=TrigStyles):
         if random.random() < limit:
-            self["style"]=random.choice(styles[self["instrument"]])
+            self["style"]=random.choice(styles[self["key"]])
             
     def randomise_seed(self, limit):
         if random.random() < limit:
             self["seed"]=int(1e8*random.random())
         
-class Trigs(list):
+class Instruments(list):
 
     @classmethod
     def randomise(self, instruments=TrigStyles):
-        return Trigs([Trig.randomise(instrument)
-                      for instrument in instruments])
+        return Instruments([Instrument.randomise(key)
+                            for key in instruments])
             
     def __init__(self, trigs):
-        list.__init__(self, [Trig(trig)
+        list.__init__(self, [Instrument(trig)
                              for trig in trigs])
 
     @property
     def trigmap(self):
-        return {trig["instrument"]:trig
+        return {trig["key"]:trig
                 for trig in self}
             
 class Slice(dict):
@@ -64,11 +64,11 @@ class Slice(dict):
     @classmethod
     def randomise(self, randomisers):
         return Slice(samples=Samples.randomise(randomisers),
-                     trigs=Trigs.randomise())
+                     trigs=Instruments.randomise())
     
     def __init__(self, samples, trigs):
         dict.__init__(self, {"samples": Samples(samples),
-                             "trigs": Trigs(trigs)})
+                             "trigs": Instruments(trigs)})
 
 class Slices(list):
 
@@ -105,17 +105,17 @@ class Tracks(dict):
             self["pattern"]=random.choice(self.Patterns)
 
     def randomise_mutes(self, limit, instruments=TrigStyles):
-        self["mutes"]=[instrument for instrument in instruments
+        self["mutes"]=[key for key in instruments
                        if random.random() < limit]
             
     def render(self, struct, nbeats, instruments=TrigStyles):
-        for instrument in instruments:
+        for key in instruments:
             svtrig={"type": "trig",
                     "notes": {}}
-            volume=1 if instrument not in self["mutes"] else 0
+            volume=1 if key not in self["mutes"] else 0
             for j, i in enumerate(self["pattern"]):
                 slice=self["slices"][i]
-                trig=slice["trigs"].trigmap[instrument]
+                trig=slice["trigs"].trigmap[key]
                 offset=j*nbeats
                 generator=TrigGenerator(samples=slice["samples"],
                                         offset=offset,
@@ -167,7 +167,7 @@ class Effects(list):
     def render(self, struct, nslices, nbeats):
         for effect in self:
             svtrig={"type": "fx",
-                     "notes": {}}
+                    "notes": {}}
             q=Q(effect["seed"]) 
             for j in range(nslices):
                 offset=j*nbeats
