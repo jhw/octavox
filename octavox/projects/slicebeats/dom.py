@@ -10,7 +10,9 @@ from octavox.projects.slicebeats.project import SVProject
 
 import copy, json, os, random, yaml
 
-Channels=["kk", "sn", "ht"]
+# START TEMP CODE
+Instruments=["kk", "sn", "ht"]
+# END TEMP CODE
 
 def Q(seed):
     q=random.Random()
@@ -27,23 +29,23 @@ class Samples(dict):
         dict.__init__(self, obj)
 
     def randomise_samples(self, samples):
-        for channel in self.keys():
-            self[channel]=random.choice(samples[channel])
+        for instrument in self.keys():
+            self[instrument]=random.choice(samples[instrument])
         
 class Trig(dict):
 
     @classmethod
-    def randomise(self, channel, styles=TrigStyles):
-        return Trig({"channel": channel,
+    def randomise(self, instrument, styles=TrigStyles):
+        return Trig({"instrument": instrument,
                      "seed": int(1e8*random.random()),
-                     "style": random.choice(styles[channel])})
+                     "style": random.choice(styles[instrument])})
 
     def __init__(self, obj):
         dict.__init__(self, obj)
 
     def randomise_style(self, limit, styles=TrigStyles):
         if random.random() < limit:
-            self["style"]=random.choice(styles[self["channel"]])
+            self["style"]=random.choice(styles[self["instrument"]])
             
     def randomise_seed(self, limit):
         if random.random() < limit:
@@ -52,9 +54,9 @@ class Trig(dict):
 class Trigs(list):
 
     @classmethod
-    def randomise(self, channels=Channels):
-        return Trigs([Trig.randomise(channel)
-                      for channel in channels])
+    def randomise(self, instruments=Instruments):
+        return Trigs([Trig.randomise(instrument)
+                      for instrument in instruments])
             
     def __init__(self, trigs):
         list.__init__(self, [Trig(trig)
@@ -62,7 +64,7 @@ class Trigs(list):
 
     @property
     def trigmap(self):
-        return {trig["channel"]:trig
+        return {trig["instrument"]:trig
                 for trig in self}
             
 class Slice(dict):
@@ -110,18 +112,18 @@ class Tracks(dict):
         if random.random() < limit:
             self["pattern"]=random.choice(self.Patterns)
 
-    def randomise_mutes(self, limit, channels=Channels):
-        self["mutes"]=[channel for channel in channels
+    def randomise_mutes(self, limit, instruments=Instruments):
+        self["mutes"]=[instrument for instrument in instruments
                        if random.random() < limit]
             
-    def render(self, struct, nbeats, channels=Channels):
-        for channel in channels:
+    def render(self, struct, nbeats, instruments=Instruments):
+        for instrument in instruments:
             svtrig={"type": "trig",
                     "notes": {}}
-            volume=1 if channel not in self["mutes"] else 0
+            volume=1 if instrument not in self["mutes"] else 0
             for j, i in enumerate(self["pattern"]):
                 slice=self["slices"][i]
-                trig=slice["trigs"].trigmap[channel]
+                trig=slice["trigs"].trigmap[instrument]
                 offset=j*nbeats
                 generator=TrigGenerator(samples=slice["samples"],
                                         offset=offset,

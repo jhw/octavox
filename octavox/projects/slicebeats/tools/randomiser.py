@@ -6,8 +6,6 @@ from octavox.projects.slicebeats.trigs import Instruments
 
 import datetime, random, yaml
 
-Channels=["kk", "sn", "ht"]
-
 Controllers=yaml.safe_load("""
 - mod: Echo
   attr: wet
@@ -116,8 +114,7 @@ class SampleRandomiser:
             return self.random_wild()        
 
     def randomise(self,
-                  instruments=Instruments,
-                  channels=Channels):
+                  instruments=Instruments):
         return {instrument: getattr(self, "random_%s" % instrument)()
                 for instrument in instruments}
 

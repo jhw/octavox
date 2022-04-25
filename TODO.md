@@ -1,11 +1,10 @@
 ### short
 
-- slice temperature
-- patch breaks
-- separate oh/ch tracks
 
 ### medium
 
+- patch breaks
+- slice temperature
 - new expander script
   - based on mutator
   - each patch copied and includes per- track mutes
