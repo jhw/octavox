@@ -2,7 +2,7 @@ from octavox.modules.sampler import SVBanks
 
 from octavox.projects.slicebeats.dom import Patches
 
-from octavox.projects.slicebeats.trigs import Instruments
+from octavox.projects.slicebeats.trigs import TrigStyles
 
 import datetime, random, yaml
 
@@ -114,7 +114,7 @@ class SampleRandomiser:
             return self.random_wild()        
 
     def randomise(self,
-                  instruments=Instruments):
+                  instruments=TrigStyles):
         return {instrument: getattr(self, "random_%s" % instrument)()
                 for instrument in instruments}
 

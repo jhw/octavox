@@ -1,5 +1,10 @@
 ### short
 
+- get rid of trigmap
+- rename trigs as instruments
+- add random conditions to offbeats open/closed
+- ensure all random numbers are pre- called in offbeats_open/closed
+- group seeds at dom level and pass to trigs
 
 ### medium
 

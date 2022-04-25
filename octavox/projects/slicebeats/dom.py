@@ -1,18 +1,10 @@
-from octavox.projects.slicebeats.trigs import TrigGenerator
+from octavox.projects.slicebeats.trigs import TrigGenerator, TrigStyles
 
-from octavox.projects.slicebeats.trigs import Styles as TrigStyles
-
-from octavox.projects.slicebeats.fx import FXGenerator
-
-from octavox.projects.slicebeats.fx import Styles as FXStyles
+from octavox.projects.slicebeats.fx import FXGenerator, FXStyles
 
 from octavox.projects.slicebeats.project import SVProject
 
 import copy, json, os, random, yaml
-
-# START TEMP CODE
-Instruments=["kk", "sn", "ht"]
-# END TEMP CODE
 
 def Q(seed):
     q=random.Random()
@@ -54,7 +46,7 @@ class Trig(dict):
 class Trigs(list):
 
     @classmethod
-    def randomise(self, instruments=Instruments):
+    def randomise(self, instruments=TrigStyles):
         return Trigs([Trig.randomise(instrument)
                       for instrument in instruments])
             
@@ -112,11 +104,11 @@ class Tracks(dict):
         if random.random() < limit:
             self["pattern"]=random.choice(self.Patterns)
 
-    def randomise_mutes(self, limit, instruments=Instruments):
+    def randomise_mutes(self, limit, instruments=TrigStyles):
         self["mutes"]=[instrument for instrument in instruments
                        if random.random() < limit]
             
-    def render(self, struct, nbeats, instruments=Instruments):
+    def render(self, struct, nbeats, instruments=TrigStyles):
         for instrument in instruments:
             svtrig={"type": "trig",
                     "notes": {}}

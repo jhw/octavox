@@ -1,6 +1,6 @@
-SampleAndHold="sample_hold"
+SampleHold="sample_hold"
 
-Styles=[SampleAndHold]
+FXStyles=[SampleHold]
 
 class FXGenerator(dict):
     
@@ -22,7 +22,7 @@ class FXGenerator(dict):
                  "attr": self.ctrl["attr"]}
     
     def sample_hold(self, q, i):
-        kwargs=self.ctrl["kwargs"]["sample_hold"]
+        kwargs=self.ctrl["kwargs"][SampleHold]
         step=kwargs["step"]
         floor=kwargs["min"] if "min" in kwargs else 0
         ceil=kwargs["max"] if "max" in kwargs else 1

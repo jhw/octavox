@@ -2,19 +2,20 @@
 - https://github.com/beats/acid-banger/blob/main/src/pattern.ts
 """
 
+from collections import OrderedDict
+
 import yaml
 
-Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
+Kick, Snare, OpenHat, ClosedHat = "kk", "sn", "oh", "ch"
 
-Instruments = [Kick, Snare, OpenHat, ClosedHat]
-
-Electro, FourFloor, Triplets, Offbeats, Closed, Backbeat, Skip, Empty = "electro", "fourfloor", "triplets", "offbeats", "closed", "backbeat", "skip", "empty"
-
-Styles={Kick: [Electro, FourFloor, Triplets],
-        Snare: [Backbeat, Skip],
-        Hats: [Offbeats, Closed]}
+Electro, FourFloor, Triplets, OffbeatsOpen, OffbeatsClosed, Closed, Backbeat, Skip= "electro", "fourfloor", "triplets", "offbeats_open", "offbeats_closed", "closed", "backbeat", "skip"
 
 SVDrum, Drum, Sampler = "svdrum", "Drum", "Sampler"
+
+TrigStyles=OrderedDict({Kick: [Electro, FourFloor, Triplets],
+                        Snare: [Backbeat, Skip],
+                        OpenHat: [OffbeatsOpen, Closed],
+                        ClosedHat: [OffbeatsClosed, Closed]})
 
 class SampleKey:
 
@@ -82,15 +83,20 @@ class TrigGenerator(dict):
         elif q.random() < 0.1:
             self.add(i, (k, 0.2+0.2*q.random()))
 
-    def offbeats(self, q, i,
-                 ko=OpenHat,
-                 kc=ClosedHat):
+    def offbeats_open(self, q, i, k=OpenHat):
         if i % 4 == 2:
-            self.add(i, (ko, 0.4))
+            self.add(i, (k, 0.4))
         elif q.random() < 0.3:
-            k = kc if q.random() < 0.5 else ko
             # self.add(i, (k, 0.2*q.random()))
             self.add(i, (k, 0.1+0.1*q.random()))
+
+    def offbeats_closed(self, q, i, k=ClosedHat):
+        if i % 4 == 2:
+            self.add(i, (k, 0.4))
+        elif q.random() < 0.3:
+            # self.add(i, (k, 0.2*q.random()))
+            self.add(i, (k, 0.1+0.1*q.random()))
+
 
     def closed(self, q, i,
                k=ClosedHat):
