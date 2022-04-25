@@ -8,8 +8,6 @@ Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
 
 Instruments = [Kick, Snare, OpenHat, ClosedHat]
 
-Channels = [Kick, Snare, Hats]
-
 Electro, FourFloor, Triplets, Offbeats, Closed, Backbeat, Skip, Empty = "electro", "fourfloor", "triplets", "offbeats", "closed", "backbeat", "skip", "empty"
 
 Styles={Kick: [Electro, FourFloor, Triplets],

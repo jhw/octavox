@@ -2,9 +2,11 @@ from octavox.modules.sampler import SVBanks
 
 from octavox.projects.slicebeats.dom import Patches
 
-from octavox.projects.slicebeats.trigs import Channels, Instruments
+from octavox.projects.slicebeats.trigs import Instruments
 
 import datetime, random, yaml
+
+Channels=["kk", "sn", "ht"]
 
 Controllers=yaml.safe_load("""
 - mod: Echo

@@ -1,5 +1,3 @@
-from octavox.projects.slicebeats.trigs import Channels
-
 from octavox.projects.slicebeats.trigs import TrigGenerator
 
 from octavox.projects.slicebeats.trigs import Styles as TrigStyles
@@ -11,6 +9,8 @@ from octavox.projects.slicebeats.fx import Styles as FXStyles
 from octavox.projects.slicebeats.project import SVProject
 
 import copy, json, os, random, yaml
+
+Channels=["kk", "sn", "ht"]
 
 def Q(seed):
     q=random.Random()
