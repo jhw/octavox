@@ -24,13 +24,13 @@ class Samples(dict):
         for key in self.keys():
             self[key]=random.choice(samples[key])
         
-class Instrument(dict):
+class Machine(dict):
 
     @classmethod
-    def randomise(self, instrument, styles=TrigStyles):
-        return Instrument({"key": instrument,
-                           "seed": int(1e8*random.random()),
-                           "style": random.choice(styles[instrument])})
+    def randomise(self, machine, styles=TrigStyles):
+        return Machine({"key": machine,
+                        "seed": int(1e8*random.random()),
+                        "style": random.choice(styles[machine])})
 
     def __init__(self, obj):
         dict.__init__(self, obj)
@@ -43,27 +43,31 @@ class Instrument(dict):
         if random.random() < limit:
             self["seed"]=int(1e8*random.random())
         
-class Instruments(list):
+class Machines(list):
 
     @classmethod
-    def randomise(self, instruments=TrigStyles):
-        return Instruments([Instrument.randomise(key)
-                            for key in instruments])
+    def randomise(self, machines=TrigStyles):
+        return Machines([Machine.randomise(key)
+                         for key in machines])
             
-    def __init__(self, instruments):
-        list.__init__(self, [Instrument(instrument)
-                             for instrument in instruments])
+    def __init__(self, machines):
+        list.__init__(self, [Machine(machine)
+                             for machine in machines])
 
+    def to_map(self):
+        return {machine["key"]:machine
+                for machine in self}
+        
 class Slice(dict):
 
     @classmethod
     def randomise(self, randomisers):
         return Slice(samples=Samples.randomise(randomisers),
-                     instruments=Instruments.randomise())
+                     machines=Machines.randomise())
     
-    def __init__(self, samples, instruments):
+    def __init__(self, samples, machines):
         dict.__init__(self, {"samples": Samples(samples),
-                             "instruments": Instruments(instruments)})
+                             "machines": Machines(machines)})
 
 class Slices(list):
 
@@ -99,8 +103,8 @@ class Tracks(dict):
         if random.random() < limit:
             self["pattern"]=random.choice(self.Patterns)
 
-    def render(self, struct, nbeats, _instruments=TrigStyles):
-        for key in _instruments:
+    def render(self, struct, nbeats, _machines=TrigStyles):
+        for key in _machines:
             svtrig={"type": "trig",
                     "notes": {}}
             volume=1 if key not in self["mutes"] else 0
@@ -110,12 +114,10 @@ class Tracks(dict):
                 generator=TrigGenerator(samples=slice["samples"],
                                         offset=offset,
                                         volume=volume)
-                instruments={instrument["key"]:instrument
-                             for instrument in slice["instruments"]}
-                seed, style = instruments[key]["seed"], instruments[key]["style"]
+                machine=slice["machines"].to_map()[key]
                 values=generator.generate(n=nbeats,
-                                          q=Q(seed),
-                                          style=style)
+                                          q=Q(machine["seed"]),
+                                          style=machine["style"])
                 svtrig["notes"].update(values)
             struct["tracks"].append(svtrig)
 
