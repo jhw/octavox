@@ -50,20 +50,20 @@ class Instruments(list):
         return Instruments([Instrument.randomise(key)
                             for key in instruments])
             
-    def __init__(self, trigs):
-        list.__init__(self, [Instrument(trig)
-                             for trig in trigs])
+    def __init__(self, instruments):
+        list.__init__(self, [Instrument(instrument)
+                             for instrument in instruments])
 
 class Slice(dict):
 
     @classmethod
     def randomise(self, randomisers):
         return Slice(samples=Samples.randomise(randomisers),
-                     trigs=Instruments.randomise())
+                     instruments=Instruments.randomise())
     
-    def __init__(self, samples, trigs):
+    def __init__(self, samples, instruments):
         dict.__init__(self, {"samples": Samples(samples),
-                             "trigs": Instruments(trigs)})
+                             "instruments": Instruments(instruments)})
 
 class Slices(list):
 
@@ -99,8 +99,8 @@ class Tracks(dict):
         if random.random() < limit:
             self["pattern"]=random.choice(self.Patterns)
 
-    def render(self, struct, nbeats, instruments=TrigStyles):
-        for key in instruments:
+    def render(self, struct, nbeats, _instruments=TrigStyles):
+        for key in _instruments:
             svtrig={"type": "trig",
                     "notes": {}}
             volume=1 if key not in self["mutes"] else 0
@@ -110,9 +110,9 @@ class Tracks(dict):
                 generator=TrigGenerator(samples=slice["samples"],
                                         offset=offset,
                                         volume=volume)
-                trigs={trig["key"]:trig
-                       for trig in slice["trigs"]}
-                seed, style = trigs[key]["seed"], trigs[key]["style"]
+                instruments={instrument["key"]:instrument
+                             for instrument in slice["instruments"]}
+                seed, style = instruments[key]["seed"], instruments[key]["style"]
                 values=generator.generate(n=nbeats,
                                           q=Q(seed),
                                           style=style)

@@ -55,9 +55,8 @@ if __name__=="__main__":
         root=roots[kwargs["index"]]
         def randomise_patch(patch, kwargs, i):
             patch["tracks"].randomise_pattern(kwargs["dtrigpat"])
-            patch["tracks"].randomise_mutes(kwargs["dtrigmute"])
             for slice in patch["tracks"]["slices"]:
-                for track in slice["trigs"]:
+                for track in slice["instruments"]:
                     track.randomise_style(kwargs["dtrigstyle"])
                     track.randomise_seed(kwargs["dtrigseed"])
             for effect in patch["effects"]:
