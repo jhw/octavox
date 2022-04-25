@@ -1,10 +1,11 @@
 ### short
 
-- get rid of trigmap
-- rename trigs as instruments
+- remove refs to "trigs" from dom
+- import TrigStyles as Instruments
 - add random conditions to offbeats open/closed
 - ensure all random numbers are pre- called in offbeats_open/closed
 - group seeds at dom level and pass to trigs
+- offbeats_open/closed will also need linked fx seeding
 
 ### medium
 
@@ -25,6 +26,8 @@
 
 ### done
 
+- get rid of trigmap
+- rename trigs as instruments
 - track mutes
 - convert blender to use new file lookup
 - change cli file stuff to accept pattern

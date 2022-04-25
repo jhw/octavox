@@ -54,11 +54,6 @@ class Instruments(list):
         list.__init__(self, [Instrument(trig)
                              for trig in trigs])
 
-    @property
-    def trigmap(self):
-        return {trig["key"]:trig
-                for trig in self}
-            
 class Slice(dict):
 
     @classmethod
@@ -104,10 +99,6 @@ class Tracks(dict):
         if random.random() < limit:
             self["pattern"]=random.choice(self.Patterns)
 
-    def randomise_mutes(self, limit, instruments=TrigStyles):
-        self["mutes"]=[key for key in instruments
-                       if random.random() < limit]
-            
     def render(self, struct, nbeats, instruments=TrigStyles):
         for key in instruments:
             svtrig={"type": "trig",
@@ -115,14 +106,16 @@ class Tracks(dict):
             volume=1 if key not in self["mutes"] else 0
             for j, i in enumerate(self["pattern"]):
                 slice=self["slices"][i]
-                trig=slice["trigs"].trigmap[key]
                 offset=j*nbeats
                 generator=TrigGenerator(samples=slice["samples"],
                                         offset=offset,
                                         volume=volume)
+                trigs={trig["key"]:trig
+                       for trig in slice["trigs"]}
+                seed, style = trigs[key]["seed"], trigs[key]["style"]
                 values=generator.generate(n=nbeats,
-                                          q=Q(trig["seed"]),
-                                          style=trig["style"])
+                                          q=Q(seed),
+                                          style=style)
                 svtrig["notes"].update(values)
             struct["tracks"].append(svtrig)
 
