@@ -2,12 +2,10 @@
 
 - slice temperature
 - patch breaks
-- track mutes
+- separate oh/ch tracks
 
 ### medium
 
-- separate oh/ch tracks
-  - remove distinction between channels and instruments
 - new expander script
   - based on mutator
   - each patch copied and includes per- track mutes
@@ -23,6 +21,7 @@
 
 ### done
 
+- track mutes
 - convert blender to use new file lookup
 - change cli file stuff to accept pattern
 - add profile as enum
