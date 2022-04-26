@@ -1,16 +1,12 @@
 ### short
 
-- check seed passing
 - cluster offbeats open/closed seeds
-  
 - Closed+Empty handling
-
 - re- check vitling patterns
 - consider replacing TrigStyles
 
 ### medium
 
-- replace TrigStyles
 - patch breaks
 - slice temperature
 - new expander script
