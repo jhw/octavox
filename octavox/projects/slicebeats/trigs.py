@@ -8,14 +8,18 @@ import yaml
 
 Kick, Snare, OpenHat, ClosedHat = "kk", "sn", "oh", "ch"
 
-Electro, FourFloor, Triplets, OffbeatsOpen, OffbeatsClosed, Closed, Backbeat, Skip= "electro", "fourfloor", "triplets", "offbeats_open", "offbeats_closed", "closed", "backbeat", "skip"
+FourFloor, Electro, Triplets, Backbeat, Skip, OffbeatsOpen, OffbeatsClosed, Closed, Empty = "fourfloor", "electro", "triplets", "backbeat", "skip", "offbeats_open", "offbeats_closed", "closed", "empty"
 
 SVDrum, Drum, Sampler = "svdrum", "Drum", "Sampler"
 
+"""
+- Closed and Empty currently ignored whilst try to figure out offbeats seeding
+"""
+
 TrigStyles=OrderedDict({Kick: [Electro, FourFloor, Triplets],
                         Snare: [Backbeat, Skip],
-                        OpenHat: [OffbeatsOpen, Closed],
-                        ClosedHat: [OffbeatsClosed, Closed]})
+                        OpenHat: [OffbeatsOpen],
+                        ClosedHat: [OffbeatsClosed]})
 
 class SampleKey:
 
@@ -97,7 +101,6 @@ class TrigGenerator(dict):
             # self.add(i, (k, 0.2*q.random()))
             self.add(i, (k, 0.1+0.1*q.random()))
 
-
     def closed(self, q, i,
                k=ClosedHat):
         if i % 2 == 0:
@@ -105,6 +108,9 @@ class TrigGenerator(dict):
         elif q.random() < 0.5:
             # self.add(i, (k, 0.3*q.random()))
             self.add(i, (k, 0.1+0.2*q.random()))
-        
+
+    def empty(self, q, i):
+        pass
+            
 if __name__ == "__main__":
     pass
