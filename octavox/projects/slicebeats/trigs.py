@@ -68,8 +68,7 @@ class TrigGenerator(dict):
             self.add(i, (k, 1))
         elif ((i % 2 == 0 and i % 8 != 4 and q.random() < 0.5) or
               q.random() < 0.05):
-            # self.add(i, (k, 0.9*q.random()))
-            self.add(i, (k, 0.2+0.7*q.random()))
+            self.add(i, (k, 0.9*q.random()))
 
     def triplets(self, q, i, k=Kick):
         if i % 16  in [0, 3, 6, 9, 14]:
@@ -90,24 +89,18 @@ class TrigGenerator(dict):
     def offbeats_open(self, q, i, k=OpenHat):
         if i % 4 == 2:
             self.add(i, (k, 0.4))
-        elif q.random() < 0.3:
-            # self.add(i, (k, 0.2*q.random()))
-            self.add(i, (k, 0.1+0.1*q.random()))
+        elif q.random() < 0.15:
+            self.add(i, (k, 0.2*q.random()))
 
     def offbeats_closed(self, q, i, k=ClosedHat):
-        if i % 4 == 2:
-            self.add(i, (k, 0.4))
-        elif q.random() < 0.3:
-            # self.add(i, (k, 0.2*q.random()))
-            self.add(i, (k, 0.1+0.1*q.random()))
+        if 0.15 < q.random() < 0.3:
+            self.add(i, (k, 0.2*q.random()))
 
-    def closed(self, q, i,
-               k=ClosedHat):
+    def closed(self, q, i, k=ClosedHat):
         if i % 2 == 0:
             self.add(i, (k, 0.4))
         elif q.random() < 0.5:
-            # self.add(i, (k, 0.3*q.random()))
-            self.add(i, (k, 0.1+0.2*q.random()))
+            self.add(i, (k, 0.3*q.random()))
 
     def empty(self, q, i):
         pass

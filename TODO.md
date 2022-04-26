@@ -1,14 +1,16 @@
 ### short
 
-- add random conditions to offbeats open/closed
-  - ensure all random numbers are pre- called in offbeats_open/closed
-- group seeds at dom level and pass to trigs
-  - test by commenting out closed
-- closed needs to be matched with empty
-- replace TrigStyles
+- check seed passing
+- cluster offbeats open/closed seeds
+  
+- Closed+Empty handling
+
+- re- check vitling patterns
+- consider replacing TrigStyles
 
 ### medium
 
+- replace TrigStyles
 - patch breaks
 - slice temperature
 - new expander script
