@@ -1,3 +1,16 @@
+### linked machines 26/04/22
+
+- so the problem appears to be that a single machine can't be randomised (either style or seed) in isolation
+- because you have linked machines or machine groups
+- and its really the linked machines which have styles and seeds
+- eg if you decide "offbeats" then it's "offbeats_open" + "offbeats_closed"
+- and in this case the two seeds *must* be the same
+- and if you decide "closed" then it's "closed" + "empty"
+- the two seeds don't have to be the same here but they may as well be
+- then TrigStyles has to change because you don't directly influence offbeats_open and offbeats_closed; you influence "offbeats" which then calls "offbeats_open" and "offbeats_closed" under the hood
+- these groups mirror the old style channels
+- feels like there is a missing class here in terms of machine groups
+
 ### old notes 21/04/22
 
 ###### short
