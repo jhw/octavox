@@ -141,10 +141,11 @@ class HatsMachine(MachineBase):
     
     def __init__(self, seed, rootstyle):
         MachineBase.__init__(self,
-                             [Player({"key": Hats,
+                             [Player({"key": key,
                                       "seed": seed,
                                       "style": substyle})
-                              for substyle in HatsMachine.substyles(rootstyle)])
+                              for key, substyle in zip([OpenHat, ClosedHat],
+                                                       HatsMachine.substyles(rootstyle))])
 
     def randomise_style(self, limit, styles=HatsStyles):
         if random.random() < limit:
@@ -295,6 +296,9 @@ class Tracks(dict):
                 generator=TrigGenerator(samples=slice["samples"],
                                         offset=offset,
                                         volume=volume)
+                # START TEMP CODE
+                # print (slice["machines"].players.to_map())
+                # END TEMP CODE
                 player=slice["machines"].players.to_map()[key]
                 values=generator.generate(n=nbeats,
                                           q=Q(player["seed"]),

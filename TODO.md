@@ -1,5 +1,7 @@
 ### short
 
+- kick and snare samples seem to be the same
+- comment out closed/empty and offbeats open initial beat, check offbeats open/closed are synchronised properly
 - re- check vitling patterns
 
 ### medium
