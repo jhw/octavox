@@ -6,15 +6,13 @@ import copy, json, os, random, yaml
 
 Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
 
+PlayerKeys=[Kick, Snare, OpenHat, ClosedHat]
+
 FourFloor, Electro, Triplets, Backbeat, Skip, Offbeats, OffbeatsOpen, OffbeatsClosed, Closed, Empty = "fourfloor", "electro", "triplets", "backbeat", "skip", "offbeats", "offbeats_open", "offbeats_closed", "closed", "empty"
 
 SVDrum, Drum, Sampler = "svdrum", "Drum", "Sampler"
 
-PlayerKeys=[Kick, Snare, OpenHat, ClosedHat]
-
 SampleHold="sample_hold"
-
-FXStyles=[SampleHold]
 
 def Q(seed):
     q=random.Random()
@@ -63,7 +61,13 @@ class Players(list):
     def to_map(self):
         return {player["key"]:player
                 for player in self}
-        
+
+""" 
+- Machine contains multiple Players
+- eg Hats machine has open/closed players
+- must be kept in sync seed- and style- wise
+"""
+    
 class MachineBase(list):
 
     def __init__(self, items):
@@ -165,7 +169,7 @@ class Machines(list):
     def players(self):
         players=Players()
         for machine in self:
-            players+=list(machine)
+            players+=machine
         return players
                 
 class Slice(dict):
@@ -243,15 +247,22 @@ class TrigGenerator(dict):
         elif q.random() < 0.1:
             self.add(i, (k, 0.2+0.2*q.random()))
 
+    """
+    - offbeats_open/closed must pre- define two random variables to ensure they always remain in sync
+    - ie don't nest one call to `q.random()` inside another
+    """
+            
     def offbeats_open(self, q, i, k=OpenHat):
+        q0, q1 = q.random(), q.random()
         if i % 4 == 2:
             self.add(i, (k, 0.4))
-        elif q.random() < 0.15:
-            self.add(i, (k, 0.2*q.random()))
+        elif q0 < 0.15:
+            self.add(i, (k, 0.2*q1))
 
     def offbeats_closed(self, q, i, k=ClosedHat):
-        if 0.15 < q.random() < 0.3:
-            self.add(i, (k, 0.2*q.random()))
+        q0, q1 = q.random(), q.random()
+        if 0.15 < q0 < 0.3:
+            self.add(i, (k, 0.2*q1))
 
     def closed(self, q, i, k=ClosedHat):
         if i % 2 == 0:
@@ -296,9 +307,6 @@ class Tracks(dict):
                 generator=TrigGenerator(samples=slice["samples"],
                                         offset=offset,
                                         volume=volume)
-                # START TEMP CODE
-                # print (slice["machines"].players)
-                # END TEMP CODE
                 player=slice["machines"].players.to_map()[key]
                 values=generator.generate(n=nbeats,
                                           q=Q(player["seed"]),
@@ -313,7 +321,7 @@ class Tracks(dict):
 class Effect(dict):
 
     @classmethod
-    def randomise(self, controller, styles=FXStyles):
+    def randomise(self, controller, styles=[SampleHold]):
         return Effect({"controller": controller,
                        "seed": int(1e8*random.random()),
                        "style": random.choice(styles)})
