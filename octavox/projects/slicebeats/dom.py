@@ -1,15 +1,48 @@
-from octavox.projects.slicebeats.trigs import TrigGenerator, TrigStyles
-
-from octavox.projects.slicebeats.fx import FXGenerator, FXStyles
-
 from octavox.projects.slicebeats.project import SVProject
 
+from collections import OrderedDict
+
 import copy, json, os, random, yaml
+
+"""
+- https://github.com/beats/acid-banger/blob/main/src/pattern.ts
+"""
+
+Kick, Snare, OpenHat, ClosedHat = "kk", "sn", "oh", "ch"
+
+FourFloor, Electro, Triplets, Backbeat, Skip, OffbeatsOpen, OffbeatsClosed, Closed, Empty = "fourfloor", "electro", "triplets", "backbeat", "skip", "offbeats_open", "offbeats_closed", "closed", "empty"
+
+SVDrum, Drum, Sampler = "svdrum", "Drum", "Sampler"
+
+TrigStyles=OrderedDict({Kick: [Electro, FourFloor, Triplets],
+                        Snare: [Backbeat, Skip],
+                        OpenHat: [OffbeatsOpen],
+                        ClosedHat: [OffbeatsClosed]})
+
+SampleHold="sample_hold"
+
+FXStyles=[SampleHold]
 
 def Q(seed):
     q=random.Random()
     q.seed(seed)
     return q
+
+class SampleKey:
+
+    def __init__(self, value):
+        self.value=value
+
+    def expand(self):
+        tokens=self.value.split(":")
+        name, id = tokens[0], int(tokens[1])
+        if tokens[0]==SVDrum:
+            return {"mod": Drum,
+                    "id": id}
+        else:
+            return {"mod": Sampler,
+                    "key": {"bank": name,
+                            "id": id}}
 
 class Samples(dict):
 
@@ -80,6 +113,74 @@ class Slices(list):
         list.__init__(self, [Slice(**slice)
                              for slice in slices])
 
+class TrigGenerator(dict):
+    
+    def __init__(self, samples, offset=0, volume=1):
+        dict.__init__(self)
+        self.samples={k: SampleKey(v).expand()
+                      for k, v in samples.items()}
+        self.offset=offset
+        self.volume=volume
+
+    def generate(self, style, q, n):
+        fn=getattr(self, style)
+        for i in range(n):
+            fn(q, i)
+        return self
+        
+    def add(self, i, v):
+        trig=dict(self.samples[v[0]])
+        trig["vel"]=v[1]*self.volume
+        self[i+self.offset]=trig
+
+    def fourfloor(self, q, i, k=Kick):
+        if i % 4 == 0:
+            self.add(i, (k, 0.9))
+        elif i % 2 == 0 and q.random() < 0.1:
+            self.add(i, (k, 0.6))
+
+    def electro(self, q, i, k=Kick):
+        if i == 0:
+            self.add(i, (k, 1))
+        elif ((i % 2 == 0 and i % 8 != 4 and q.random() < 0.5) or
+              q.random() < 0.05):
+            self.add(i, (k, 0.9*q.random()))
+
+    def triplets(self, q, i, k=Kick):
+        if i % 16  in [0, 3, 6, 9, 14]:
+           self.add(i, (k, 1))
+           
+    def backbeat(self, q, i, k=Snare):
+        if i % 8 == 4:
+            self.add(i, (k, 1))
+
+    def skip(self, q, i, k=Snare):
+        if i % 8 in [3, 6]:
+            self.add(i, (k, 0.6+0.4*q.random()))
+        elif i % 2 == 0 and q.random() < 0.2:
+            self.add(i, (k, 0.4+0.2*q.random()))
+        elif q.random() < 0.1:
+            self.add(i, (k, 0.2+0.2*q.random()))
+
+    def offbeats_open(self, q, i, k=OpenHat):
+        if i % 4 == 2:
+            self.add(i, (k, 0.4))
+        elif q.random() < 0.15:
+            self.add(i, (k, 0.2*q.random()))
+
+    def offbeats_closed(self, q, i, k=ClosedHat):
+        if 0.15 < q.random() < 0.3:
+            self.add(i, (k, 0.2*q.random()))
+
+    def closed(self, q, i, k=ClosedHat):
+        if i % 2 == 0:
+            self.add(i, (k, 0.4))
+        elif q.random() < 0.5:
+            self.add(i, (k, 0.3*q.random()))
+
+    def empty(self, q, i):
+        pass
+        
 class Tracks(dict):
 
     Patterns=[[0],
@@ -140,6 +241,36 @@ class Effect(dict):
         if random.random() < limit:
             self["seed"]=int(1e8*random.random())
 
+class FXGenerator(dict):
+    
+    def __init__(self, ctrl, offset=0):
+        dict.__init__(self)
+        self.ctrl=ctrl
+        self.offset=offset
+
+    def generate(self, style, q, n):
+        fn=getattr(self, style)
+        for i in range(n):
+            fn(q, i)
+        return self
+
+    def add(self, i, v):
+        j=i+self.offset
+        self[j]={"value": v,
+                 "mod": self.ctrl["mod"],
+                 "attr": self.ctrl["attr"]}
+    
+    def sample_hold(self, q, i):
+        kwargs=self.ctrl["kwargs"][SampleHold]
+        step=kwargs["step"]
+        floor=kwargs["min"] if "min" in kwargs else 0
+        ceil=kwargs["max"] if "max" in kwargs else 1
+        inc=kwargs["inc"] if "inc" in kwargs else 0.25
+        if 0 == i % step:
+            v0=floor+(ceil-floor)*q.random()
+            v=inc*int(0.5+v0/inc)
+            self.add(i, v)
+            
 class Effects(list):
 
     @classmethod
