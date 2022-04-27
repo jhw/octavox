@@ -8,7 +8,7 @@ import copy, json, os, random, yaml
 - https://github.com/beats/acid-banger/blob/main/src/pattern.ts
 """
 
-Kick, Snare, OpenHat, ClosedHat = "kk", "sn", "oh", "ch"
+Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
 
 FourFloor, Electro, Triplets, Backbeat, Skip, Offbeats, OffbeatsOpen, OffbeatsClosed, Closed, Empty = "fourfloor", "electro", "triplets", "backbeat", "skip", "offbeats", "offbeats_open", "offbeats_closed", "closed", "empty"
 
@@ -62,6 +62,15 @@ class Player(dict):
     def __init__(self, obj):
         dict.__init__(self, obj)
 
+class Players(list):
+
+    def __init__(self, players=[]):
+        list.__init__(self, players)
+
+    def to_map(self):
+        return {player["key"]:player
+                for player in self}
+        
 class MachineBase(list):
 
     def __init__(self, items):
@@ -143,32 +152,28 @@ class HatsMachine(MachineBase):
     def randomise_style(self, limit, styles=HatsStyles):
         if random.random() < limit:
             rootstyle=random.choice(styles)
-            for player, substyle in zip(self, HatsMachine.substyles(rootstyle):
+            for player, substyle in zip(self, HatsMachine.substyles(rootstyle)):
                 player["style"]=substyle
                 
 class Machines(list):
 
-    """
     @classmethod
-    def randomise(self, machines=TrigStyles):
-        return Machines([Player.randomise(key)
-                         for key in machines])
-    """
+    def randomise(self):
+        return Machines([klass.randomise()
+                         for klass in [KickMachine,
+                                       SnareMachine,
+                                       HatsMachine]])
 
-    @classmethod
-    def randomise(self, machines=TrigStyles):
-        pass
-            
     def __init__(self, machines):
-        list.__init__(self, [Player(player)
-                             for player in machines])
+        list.__init__(self, machines)
 
-    """
-    def to_map(self):
-        return {player["key"]:player
-                for player in self}
-    """
-        
+    @property
+    def players(self):
+        players=Players()
+        for machine in self:
+            players+=list(machine)
+        return players
+                
 class Slice(dict):
 
     @classmethod

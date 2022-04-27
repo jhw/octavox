@@ -1,6 +1,5 @@
 ### short
 
-- Machines.flatten to return list of players
 - clients to iterate over Machines.flatten
 - rename "machines" as "players"
 - remove TrigStyles
@@ -25,6 +24,7 @@
 
 ### done
 
+- Machines.flatten to return list of players
 - add hats- specific logic to MachineGroup.randomise_styles/seed
   - maybe HatsMatchineGroup class ?
 - Machines.randomise to genereate joint hats group
