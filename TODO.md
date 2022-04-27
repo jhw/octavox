@@ -1,7 +1,5 @@
 ### short
 
-- rename "machines" as "players"
-- remove TrigStyles
 - re- check vitling patterns
 
 ### medium
@@ -23,6 +21,7 @@
 
 ### done
 
+- remove TrigStyles
 - clients to iterate over Machines.flatten
 - Machines.flatten to return list of players
 - add hats- specific logic to MachineGroup.randomise_styles/seed

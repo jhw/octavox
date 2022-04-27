@@ -1,8 +1,6 @@
 from octavox.modules.sampler import SVBanks
 
-from octavox.projects.slicebeats.dom import Patches
-
-from octavox.projects.slicebeats.trigs import TrigStyles
+from octavox.projects.slicebeats.dom import Patches, PlayerKeys
 
 import datetime, random, yaml
 
@@ -114,9 +112,9 @@ class SampleRandomiser:
             return self.random_wild()        
 
     def randomise(self,
-                  instruments=TrigStyles):
-        return {instrument: getattr(self, "random_%s" % instrument)()
-                for instrument in instruments}
+                  keys=PlayerKeys):
+        return {key: getattr(self, "random_%s" % key)()
+                for key in keys}
 
 if __name__=="__main__":
     try:

@@ -14,10 +14,7 @@ FourFloor, Electro, Triplets, Backbeat, Skip, Offbeats, OffbeatsOpen, OffbeatsCl
 
 SVDrum, Drum, Sampler = "svdrum", "Drum", "Sampler"
 
-TrigStyles=OrderedDict({Kick: [Electro, FourFloor, Triplets],
-                        Snare: [Backbeat, Skip],
-                        OpenHat: [OffbeatsOpen],
-                        ClosedHat: [OffbeatsClosed]})
+PlayerKeys = [Kick, Snare, OpenHat, ClosedHat]
 
 SampleHold="sample_hold"
 
@@ -287,8 +284,8 @@ class Tracks(dict):
         if random.random() < limit:
             self["pattern"]=random.choice(self.Patterns)
 
-    def render(self, struct, nbeats, _machines=TrigStyles):
-        for key in _machines:
+    def render(self, struct, nbeats, keys=PlayerKeys):
+        for key in keys:
             svtrig={"type": "trig",
                     "notes": {}}
             volume=1 if key not in self["mutes"] else 0
