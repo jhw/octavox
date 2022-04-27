@@ -298,7 +298,7 @@ class Tracks(dict):
                 generator=TrigGenerator(samples=slice["samples"],
                                         offset=offset,
                                         volume=volume)
-                player=slice["machines"].to_map()[key]
+                player=slice["machines"].players.to_map()[key]
                 values=generator.generate(n=nbeats,
                                           q=Q(player["seed"]),
                                           style=player["style"])
