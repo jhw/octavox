@@ -1,3 +1,15 @@
+### mutator and rendering 27/04/22
+
+- machines don't need base class; kick and snare can be dicts, hats can be list
+- but hats needs a renderer that makes it look like a dict with ht key
+- ideally this is something like __repr__ which can be called automatically by yaml.safe_dump
+- (maybe they are all just dicts?)
+- confirm that a patch is dumped correctly
+- then machine constructors need to take seed and style
+- they (should) already do this but need to rename rootstyle as style
+- then machines randomisation and constructor needs to change because classes have to be instantiated at the __init__ level
+- randomise() method must send something similar to what the constructor receives when loading a file 
+
 ### linked machines 26/04/22
 
 - so the problem appears to be that a single machine can't be randomised (either style or seed) in isolation
