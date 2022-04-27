@@ -1,6 +1,8 @@
 ### short
 
-- test mutator
+- yaml output is saving players not machines
+- mutator loading needs to recreate machines
+- re- test mutator
 
 ### medium
 
@@ -28,6 +30,7 @@
 
 ### done
 
+- test mutator
 - comment out closed/empty and offbeats open initial beat, check offbeats open/closed are synchronised properly
 - kick and snare samples seem to be the same
 - remove TrigStyles
