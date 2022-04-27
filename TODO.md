@@ -1,11 +1,13 @@
 ### short
 
-- kick and snare samples seem to be the same
 - comment out closed/empty and offbeats open initial beat, check offbeats open/closed are synchronised properly
-- re- check vitling patterns
+
+- why, if you give kick patterns to the snare machine, does the snare machine then use kick sample refs ?
+  - feels like a reference error, something needs cloning
 
 ### medium
 
+- re- check vitling patterns
 - patch breaks
 - slice temperature
 - new expander script
@@ -23,6 +25,7 @@
 
 ### done
 
+- kick and snare samples seem to be the same
 - remove TrigStyles
 - clients to iterate over Machines.flatten
 - Machines.flatten to return list of players

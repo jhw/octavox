@@ -4,17 +4,13 @@ from collections import OrderedDict
 
 import copy, json, os, random, yaml
 
-"""
-- https://github.com/beats/acid-banger/blob/main/src/pattern.ts
-"""
-
 Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
 
 FourFloor, Electro, Triplets, Backbeat, Skip, Offbeats, OffbeatsOpen, OffbeatsClosed, Closed, Empty = "fourfloor", "electro", "triplets", "backbeat", "skip", "offbeats", "offbeats_open", "offbeats_closed", "closed", "empty"
 
 SVDrum, Drum, Sampler = "svdrum", "Drum", "Sampler"
 
-PlayerKeys = [Kick, Snare, OpenHat, ClosedHat]
+PlayerKeys=[Kick, Snare, OpenHat, ClosedHat]
 
 SampleHold="sample_hold"
 
@@ -106,7 +102,7 @@ class KickMachine(MachineBase):
                   
 class SnareMachine(MachineBase):
 
-    SnareStyles=[FourFloor, Electro, Triplets]
+    SnareStyles=[Backbeat, Skip]
     
     @classmethod
     def randomise(self, styles=SnareStyles):
@@ -194,6 +190,10 @@ class Slices(list):
         list.__init__(self, [Slice(**slice)
                              for slice in slices])
 
+"""
+- https://github.com/beats/acid-banger/blob/main/src/pattern.ts
+"""
+        
 class TrigGenerator(dict):
     
     def __init__(self, samples, offset=0, volume=1):
@@ -297,7 +297,7 @@ class Tracks(dict):
                                         offset=offset,
                                         volume=volume)
                 # START TEMP CODE
-                # print (slice["machines"].players.to_map())
+                # print (slice["machines"].players)
                 # END TEMP CODE
                 player=slice["machines"].players.to_map()[key]
                 values=generator.generate(n=nbeats,
