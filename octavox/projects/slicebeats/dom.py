@@ -10,7 +10,7 @@ import copy, json, os, random, yaml
 
 Kick, Snare, OpenHat, ClosedHat = "kk", "sn", "oh", "ch"
 
-FourFloor, Electro, Triplets, Backbeat, Skip, OffbeatsOpen, OffbeatsClosed, Closed, Empty = "fourfloor", "electro", "triplets", "backbeat", "skip", "offbeats_open", "offbeats_closed", "closed", "empty"
+FourFloor, Electro, Triplets, Backbeat, Skip, Offbeats, OffbeatsOpen, OffbeatsClosed, Closed, Empty = "fourfloor", "electro", "triplets", "backbeat", "skip", "offbeats", "offbeats_open", "offbeats_closed", "closed", "empty"
 
 SVDrum, Drum, Sampler = "svdrum", "Drum", "Sampler"
 
@@ -57,39 +57,117 @@ class Samples(dict):
         for key in self.keys():
             self[key]=random.choice(samples[key])
         
-class Machine(dict):
-
-    @classmethod
-    def randomise(self, machine, styles=TrigStyles):
-        return Machine({"key": machine,
-                        "seed": int(1e8*random.random()),
-                        "style": random.choice(styles[machine])})
+class Player(dict):
 
     def __init__(self, obj):
         dict.__init__(self, obj)
 
-    def randomise_style(self, limit, styles=TrigStyles):
-        if random.random() < limit:
-            self["style"]=random.choice(styles[self["key"]])
-            
+class MachineBase(list):
+
+    def __init__(self, items):
+        list.__init__(self, items)
+
+    """ 
+    - all players in a machine need the same seed
+    """
+        
     def randomise_seed(self, limit):
         if random.random() < limit:
-            self["seed"]=int(1e8*random.random())
+            seed=int(1e8*random.random())
+            for player in self:                
+                player["seed"]=seed
         
+class KickMachine(MachineBase):
+
+    KickStyles=[FourFloor, Electro, Triplets]
+    
+    @classmethod
+    def randomise(self, styles=KickStyles):
+        seed=int(1e8*random.random())
+        style=random.choice(styles)
+        return KickMachine(seed, style)
+    
+    def __init__(self, seed, style):
+        MachineBase.__init__(self,
+                             [Player({"key": Kick,
+                                      "seed": seed,
+                                      "style": style})])
+
+    def randomise_style(self, limit, styles=KickStyles):
+        if random.random() < limit:
+            for player in self:
+                player["style"]=random.choice(styles)
+                  
+class SnareMachine(MachineBase):
+
+    SnareStyles=[FourFloor, Electro, Triplets]
+    
+    @classmethod
+    def randomise(self, styles=SnareStyles):
+        seed=int(1e8*random.random())
+        style=random.choice(styles)
+        return SnareMachine(seed, style)
+    
+    def __init__(self, seed, style):
+        MachineBase.__init__(self,
+                             [Player({"key": Snare,
+                                      "seed": seed,
+                                      "style": style})])
+
+    def randomise_style(self, limit, styles=SnareStyles):
+        if random.random() < limit:
+            for player in self:
+                player["style"]=random.choice(styles)
+
+class HatsMachine(MachineBase):
+
+    HatsStyles=[Offbeats, Closed]
+    
+    @classmethod
+    def randomise(self, styles=HatsStyles):
+        seed=int(1e8*random.random())
+        style=random.choice(styles)
+        return HatsMachine(seed, style)
+
+    @classmethod
+    def substyles(self, style):
+        return [OffbeatsOpen, OffbeatsClosed] if style==Offbeats else [Closed, Empty]
+    
+    def __init__(self, seed, rootstyle):
+        MachineBase.__init__(self,
+                             [Player({"key": Hats,
+                                      "seed": seed,
+                                      "style": substyle})
+                              for substyle in HatsMachine.substyles(rootstyle)])
+
+    def randomise_style(self, limit, styles=HatsStyles):
+        if random.random() < limit:
+            rootstyle=random.choice(styles)
+            for player, substyle in zip(self, HatsMachine.substyles(rootstyle):
+                player["style"]=substyle
+                
 class Machines(list):
+
+    """
+    @classmethod
+    def randomise(self, machines=TrigStyles):
+        return Machines([Player.randomise(key)
+                         for key in machines])
+    """
 
     @classmethod
     def randomise(self, machines=TrigStyles):
-        return Machines([Machine.randomise(key)
-                         for key in machines])
+        pass
             
     def __init__(self, machines):
-        list.__init__(self, [Machine(machine)
-                             for machine in machines])
+        list.__init__(self, [Player(player)
+                             for player in machines])
 
+    """
     def to_map(self):
-        return {machine["key"]:machine
-                for machine in self}
+        return {player["key"]:player
+                for player in self}
+    """
         
 class Slice(dict):
 
@@ -215,10 +293,10 @@ class Tracks(dict):
                 generator=TrigGenerator(samples=slice["samples"],
                                         offset=offset,
                                         volume=volume)
-                machine=slice["machines"].to_map()[key]
+                player=slice["machines"].to_map()[key]
                 values=generator.generate(n=nbeats,
-                                          q=Q(machine["seed"]),
-                                          style=machine["style"])
+                                          q=Q(player["seed"]),
+                                          style=player["style"])
                 svtrig["notes"].update(values)
             struct["tracks"].append(svtrig)
 
