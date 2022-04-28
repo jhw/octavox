@@ -69,7 +69,8 @@ class MachineBase(dict):
             seed=int(1e8*random.random())
             self["seed"]=seed
 
-    def randomise_style(self, limit, styles):
+    def randomise_style(self, limit, mapping=MachineMapping):
+        styles=eval("%sStyles" % mapping[self["key"]].capitalize())
         if random.random() < limit:
             self["style"]=random.choice(styles)
             
@@ -79,19 +80,14 @@ class MachineBase(dict):
     
 class KickMachine(MachineBase):
 
-    def randomise_style(self, limit, styles=KickStyles):
-        MachineBase.randomise_style(self, limit, styles)
+    pass
                 
 class SnareMachine(MachineBase):
 
-    def randomise_style(self, limit, styles=SnareStyles):
-        MachineBase.randomise_style(self, limit, styles)
+    pass
     
 class HatsMachine(MachineBase):
-
-    def randomise_style(self, limit, styles=HatsStyles):
-        MachineBase.randomise_style(self, limit, styles)
-        
+    
     @property
     def substyles(self):
         return zip([OpenHat, ClosedHat],

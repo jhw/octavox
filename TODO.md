@@ -1,7 +1,5 @@
 ### short
 
-- remove randomise_style
-
 ### medium
 
 - setting SnareStyles to [Kick, Electro] seems to result in Kick samples being used
@@ -34,6 +32,7 @@
 
 ### done
 
+- remove randomise_style
 - see if machine classes can be simplified
 - simplify MachineConfig
 - refactor init_machine
