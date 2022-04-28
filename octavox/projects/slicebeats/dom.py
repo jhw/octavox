@@ -12,6 +12,13 @@ FourFloor, Electro, Triplets, Backbeat, Skip, Offbeats, OffbeatsOpen, OffbeatsCl
 
 KickStyles, SnareStyles, HatsStyles = [FourFloor, Electro, Triplets], [Backbeat, Skip], [Offbeats, Closed]
 
+MachineConfig={Kick: {"class": "KickMachine",
+                      "styles": KickStyles},
+               Snare: {"class": "SnareMachine",
+                       "styles": SnareStyles},
+               Hats: {"class": "HatsMachine",
+                      "styles": HatsStyles}}
+                   
 SVDrum, Drum, Sampler = "svdrum", "Drum", "Sampler"
 
 SampleHold="sample_hold"
@@ -70,39 +77,15 @@ class MachineBase(dict):
     
 class KickMachine(MachineBase):
 
-    @classmethod
-    def randomise(self, key=Kick, styles=KickStyles):
-        seed=int(1e8*random.random())
-        style=random.choice(styles)
-        return KickMachine({"key": key,
-                            "seed": seed,
-                            "style": style})
-    
     def randomise_style(self, limit, styles=KickStyles):
         MachineBase.randomise_style(self, limit, styles)
                 
 class SnareMachine(MachineBase):
 
-    @classmethod
-    def randomise(self, key=Snare, styles=SnareStyles):
-        seed=int(1e8*random.random())
-        style=random.choice(styles)
-        return SnareMachine({"key": key,
-                             "seed": seed,
-                             "style": style})
-    
     def randomise_style(self, limit, styles=SnareStyles):
         MachineBase.randomise_style(self, limit, styles)
     
 class HatsMachine(MachineBase):
-
-    @classmethod
-    def randomise(self, key=Hats, styles=HatsStyles):
-        seed=int(1e8*random.random())
-        style=random.choice(styles)
-        return HatsMachine({"key": key,
-                            "seed": seed,
-                            "style": style})
 
     def randomise_style(self, limit, styles=HatsStyles):
         MachineBase.randomise_style(self, limit, styles)
@@ -127,18 +110,22 @@ class Players(list):
     def to_map(self):
         return {player["key"]:player
                 for player in self}
-    
+
 class Machines(list):
 
     @classmethod
-    def randomise(self):
-        return Machines([klass.randomise()
-                         for klass in [KickMachine,
-                                       SnareMachine,
-                                       HatsMachine]])
+    def randomise(self, config=MachineConfig):
+        return Machines([{"seed": int(1e8*random.random()),
+                          "style": random.choice(config[key]["styles"]),
+                          "key": key}
+                         for key in config])
 
-    def __init__(self, machines):
-        list.__init__(self, machines)
+    def __init__(self, machines, config=MachineConfig):
+        def init_machine(machine, config):
+            klass=eval(config[machine["key"]]["class"])
+            return klass(machine)
+        list.__init__(self, [init_machine(machine, config)
+                             for machine in machines])
 
     @property
     def players(self):
