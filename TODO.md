@@ -1,12 +1,14 @@
 ### short
 
-- re- check vitling patterns
-- re- check mutes handling
-  - esp wih respect to hats machine
+- render() to iterate over machines
+
+- mutes
 - patch breaks
 - slice temperature
 
 ### medium
+
+- re- check vitling patterns
 
 - setting SnareStyles to [Kick, Electro] seems to result in Kick samples being used
   - accidentally copied reference ?

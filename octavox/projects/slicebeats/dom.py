@@ -246,23 +246,20 @@ class Tracks(dict):
     @classmethod
     def randomise(self, randomisers):
         return Tracks(slices=Slices.randomise(randomisers),
-                      pattern=random.choice(self.Patterns),
-                      mutes=[])
+                      pattern=random.choice(self.Patterns))
         
-    def __init__(self, slices, pattern, mutes):
+    def __init__(self, slices, pattern):
         dict.__init__(self, {"slices": Slices(slices),
-                             "pattern": pattern,
-                             "mutes": mutes})
+                             "pattern": pattern})
 
     def randomise_pattern(self, limit):
         if random.random() < limit:
             self["pattern"]=random.choice(self.Patterns)
 
-    def render(self, struct, nbeats, keys=PlayerKeys):
+    def render(self, struct, nbeats, volume=1, keys=PlayerKeys):
         for key in keys:
             svtrig={"type": "trig",
                     "notes": {}}
-            volume=1 if key not in self["mutes"] else 0
             for j, i in enumerate(self["pattern"]):
                 slice=self["slices"][i]
                 offset=j*nbeats

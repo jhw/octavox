@@ -7,7 +7,6 @@ import datetime, yaml
 Profiles=yaml.safe_load("""
 default:
   dfxseed: 0.5
-  dtrigmute: 0.1
   dtrigpat: 0.5
   dtrigseed: 0.5
   dtrigstyle: 0.5
