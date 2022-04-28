@@ -1,7 +1,5 @@
 ### short
 
-- check randomiser yaml output
-- check mutator works
 - refactor init_machine
 - see if machine classes can be simplified
 - simplify MachineConfig
@@ -38,6 +36,8 @@
 
 ### done
 
+- check randomiser yaml output
+- check mutator works
 - refactor machines contructor
   - must be able to take json input
   - randomisation to randomise inputs only
