@@ -1,7 +1,5 @@
 ### short
 
-- check saved yaml file
-
 - refactor machines contructor
   - must be able to take json input
   - randomisation to randomise inputs only
@@ -38,6 +36,7 @@
 
 ### done
 
+- check saved yaml file
 - do you still need a Players class
   - what happens to to_map
 - replace rootstyle with style
