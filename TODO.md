@@ -1,8 +1,6 @@
 ### short
 
-- do you still need a Players class
-  - what happens to to_map
-  - check saved yaml file
+- check saved yaml file
 
 - refactor machines contructor
   - must be able to take json input
@@ -40,6 +38,8 @@
 
 ### done
 
+- do you still need a Players class
+  - what happens to to_map
 - replace rootstyle with style
   - all machines to take constructor args
 - test mutator

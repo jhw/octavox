@@ -131,6 +131,15 @@ class HatsMachine(MachineBase):
                  "seed": self["seed"],
                  "style": substyle}
                 for key, substyle in self.substyles.items()]
+
+class Players(list):
+
+    def __init__(self, players=[]):
+        list.__init__(self, players)
+
+    def to_map(self):
+        return {player["key"]:player
+                for player in self}
     
 class Machines(list):
 
@@ -146,7 +155,7 @@ class Machines(list):
 
     @property
     def players(self):
-        players=[]
+        players=Players()
         for machine in self:
             players+=machine.players
         return players
