@@ -1,8 +1,9 @@
 ### short
 
-- machines to extend dict
-  - render to json nicely
+- do you still need a Players class
+  - what happens to to_map
   - check saved yaml file
+
 - refactor machines contructor
   - must be able to take json input
   - randomisation to randomise inputs only
