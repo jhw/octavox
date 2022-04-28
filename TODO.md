@@ -1,5 +1,11 @@
 ### short
 
+- re- check vitling patterns
+- re- check mutes handling
+  - esp wih respect to hats machine
+- patch breaks
+- slice temperature
+
 ### medium
 
 - setting SnareStyles to [Kick, Electro] seems to result in Kick samples being used
@@ -9,10 +15,7 @@
   - is 0 rendered for 1x12 or 3x4 beats ?
   - should overlay
 
-- re- check vitling patterns
-
-- patch breaks
-- slice temperature
+- add back blender
 
 - new expander script
   - based on mutator
