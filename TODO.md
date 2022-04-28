@@ -1,13 +1,22 @@
 ### short
 
-- yaml output is saving players not machines
-- mutator loading needs to recreate machines
-- re- test mutator
+- replace rootstyle with style
+  - all machines to take constructor args
+- machines to extend dict
+  - render to json nicely
+  - check saved yaml file
+- refactor machines contructor
+  - must be able to take json input
+  - randomisation to randomise inputs only
 
 ### medium
 
 - setting SnareStyles to [Kick, Electro] seems to result in Kick samples being used
   - accidentally copied reference ?
+  
+- check handling of [0, 0, 0, 1] pattern
+  - is 0 rendered for 1x12 or 3x4 beats ?
+  - should overlay
 
 - re- check vitling patterns
 
