@@ -1,7 +1,5 @@
 ### short
 
-- replace rootstyle with style
-  - all machines to take constructor args
 - machines to extend dict
   - render to json nicely
   - check saved yaml file
@@ -35,10 +33,14 @@
 
 ### long
 
+- librosa for python audio similarity
+
 ### thoughts
 
 ### done
 
+- replace rootstyle with style
+  - all machines to take constructor args
 - test mutator
 - comment out closed/empty and offbeats open initial beat, check offbeats open/closed are synchronised properly
 - kick and snare samples seem to be the same

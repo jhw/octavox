@@ -139,18 +139,18 @@ class HatsMachine(MachineBase):
     def substyles(self, style):
         return [OffbeatsOpen, OffbeatsClosed] if style==Offbeats else [Closed, Empty]
     
-    def __init__(self, seed, rootstyle):
+    def __init__(self, seed, style):
         MachineBase.__init__(self,
                              [Player({"key": key,
                                       "seed": seed,
                                       "style": substyle})
                               for key, substyle in zip([OpenHat, ClosedHat],
-                                                       HatsMachine.substyles(rootstyle))])
+                                                       HatsMachine.substyles(style))])
 
     def randomise_style(self, limit, styles=HatsStyles):
         if random.random() < limit:
-            rootstyle=random.choice(styles)
-            for player, substyle in zip(self, HatsMachine.substyles(rootstyle)):
+            style=random.choice(styles)
+            for player, substyle in zip(self, HatsMachine.substyles(style)):
                 player["style"]=substyle
                 
 class Machines(list):
