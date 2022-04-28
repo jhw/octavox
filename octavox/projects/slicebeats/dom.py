@@ -6,19 +6,16 @@ import copy, json, os, random, yaml
 
 Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
 
-MachineKeys, PlayerKeys = [Kick, Snare, Hats], [Kick, Snare, OpenHat, ClosedHat]
-
 FourFloor, Electro, Triplets, Backbeat, Skip, Offbeats, OffbeatsOpen, OffbeatsClosed, Closed, Empty = "fourfloor", "electro", "triplets", "backbeat", "skip", "offbeats", "offbeats_open", "offbeats_closed", "closed", "empty"
 
 KickStyles, SnareStyles, HatsStyles = [FourFloor, Electro, Triplets], [Backbeat, Skip], [Offbeats, Closed]
 
-MachineConfig={Kick: {"class": "KickMachine",
-                      "styles": KickStyles},
-               Snare: {"class": "SnareMachine",
-                       "styles": SnareStyles},
-               Hats: {"class": "HatsMachine",
-                      "styles": HatsStyles}}
-                   
+MachineMapping={Kick: "kick",
+                Snare: "snare",
+                Hats: "hats"}
+
+PlayerKeys=[Kick, Snare, OpenHat, ClosedHat]
+
 SVDrum, Drum, Sampler = "svdrum", "Drum", "Sampler"
 
 SampleHold="sample_hold"
@@ -59,6 +56,11 @@ class Samples(dict):
         
 class MachineBase(dict):
 
+    @classmethod
+    def initialise(self, machine, mapping=MachineMapping):
+        klass=eval("%sMachine" % mapping[machine["key"]].capitalize())
+        return klass(machine)
+    
     def __init__(self, items):
         dict.__init__(self, items)
 
@@ -114,17 +116,19 @@ class Players(list):
 class Machines(list):
 
     @classmethod
-    def randomise(self, config=MachineConfig):
-        return Machines([{"seed": int(1e8*random.random()),
-                          "style": random.choice(config[key]["styles"]),
+    def randomise(self, mapping=MachineMapping):
+        def init_seed(key, mapping):
+            return int(1e8*random.random())
+        def init_style(key, mapping):
+            styles=eval("%sStyles" % mapping[key].capitalize())
+            return random.choice(styles)
+        return Machines([{"seed": init_seed(key, mapping),
+                          "style": init_style(key, mapping),
                           "key": key}
-                         for key in config])
+                         for key in mapping])
 
-    def __init__(self, machines, config=MachineConfig):
-        def init_machine(machine, config):
-            klass=eval(config[machine["key"]]["class"])
-            return klass(machine)
-        list.__init__(self, [init_machine(machine, config)
+    def __init__(self, machines):
+        list.__init__(self, [MachineBase.initialise(machine)
                              for machine in machines])
 
     @property

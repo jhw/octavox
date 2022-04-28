@@ -1,8 +1,6 @@
 ### short
 
-- refactor init_machine
-- see if machine classes can be simplified
-- simplify MachineConfig
+- remove randomise_style
 
 ### medium
 
@@ -36,6 +34,9 @@
 
 ### done
 
+- see if machine classes can be simplified
+- simplify MachineConfig
+- refactor init_machine
 - check randomiser yaml output
 - check mutator works
 - refactor machines contructor
