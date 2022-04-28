@@ -6,9 +6,11 @@ import copy, json, os, random, yaml
 
 Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
 
-PlayerKeys=[Kick, Snare, OpenHat, ClosedHat]
+MachineKeys, PlayerKeys = [Kick, Snare, Hats], [Kick, Snare, OpenHat, ClosedHat]
 
 FourFloor, Electro, Triplets, Backbeat, Skip, Offbeats, OffbeatsOpen, OffbeatsClosed, Closed, Empty = "fourfloor", "electro", "triplets", "backbeat", "skip", "offbeats", "offbeats_open", "offbeats_closed", "closed", "empty"
+
+KickStyles, SnareStyles, HatsStyles = [FourFloor, Electro, Triplets], [Backbeat, Skip], [Offbeats, Closed]
 
 SVDrum, Drum, Sampler = "svdrum", "Drum", "Sampler"
 
@@ -68,69 +70,54 @@ class MachineBase(dict):
     
 class KickMachine(MachineBase):
 
-    KickStyles=[FourFloor, Electro, Triplets]
-    
     @classmethod
-    def randomise(self, styles=KickStyles):
+    def randomise(self, key=Kick, styles=KickStyles):
         seed=int(1e8*random.random())
         style=random.choice(styles)
-        return KickMachine(seed, style)
+        return KickMachine({"key": key,
+                            "seed": seed,
+                            "style": style})
     
-    def __init__(self, seed, style):
-        MachineBase.__init__(self, {"key": Kick,
-                                    "seed": seed,
-                                    "style": style})
-        
     def randomise_style(self, limit, styles=KickStyles):
         MachineBase.randomise_style(self, limit, styles)
                 
 class SnareMachine(MachineBase):
 
-    SnareStyles=[Backbeat, Skip]
-
     @classmethod
-    def randomise(self, styles=SnareStyles):
+    def randomise(self, key=Snare, styles=SnareStyles):
         seed=int(1e8*random.random())
         style=random.choice(styles)
-        return SnareMachine(seed, style)
+        return SnareMachine({"key": key,
+                             "seed": seed,
+                             "style": style})
     
-    def __init__(self, seed, style):
-        MachineBase.__init__(self, {"key": Snare,
-                                    "seed": seed,
-                                    "style": style})
-        
     def randomise_style(self, limit, styles=SnareStyles):
         MachineBase.randomise_style(self, limit, styles)
     
 class HatsMachine(MachineBase):
 
-    HatsStyles=[Offbeats, Closed]
-    
     @classmethod
-    def randomise(self, styles=HatsStyles):
+    def randomise(self, key=Hats, styles=HatsStyles):
         seed=int(1e8*random.random())
         style=random.choice(styles)
-        return HatsMachine(seed, style)
-
-    def __init__(self, seed, style):
-        MachineBase.__init__(self, {"key": Hats,
-                                    "seed": seed,
-                                    "style": style})
+        return HatsMachine({"key": key,
+                            "seed": seed,
+                            "style": style})
 
     def randomise_style(self, limit, styles=HatsStyles):
         MachineBase.randomise_style(self, limit, styles)
         
     @property
     def substyles(self):
-        return {k:v for k, v in zip([OpenHat, ClosedHat],
-                                    [OffbeatsOpen, OffbeatsClosed] if self["style"]==Offbeats else [Closed, Empty])}
+        return zip([OpenHat, ClosedHat],
+                   [OffbeatsOpen, OffbeatsClosed] if self["style"]==Offbeats else [Closed, Empty])
                    
     @property
     def players(self):
         return [{"key": key,
                  "seed": self["seed"],
                  "style": substyle}
-                for key, substyle in self.substyles.items()]
+                for key, substyle in self.substyles]
 
 class Players(list):
 
