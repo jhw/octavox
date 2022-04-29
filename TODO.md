@@ -1,10 +1,11 @@
 ### short
 
-- render() to iterate over machines
-
-- mutes
+- embed rendering in machines
+- implement fx as machine
+- allow machines to render both notes and fx
 - patch breaks
 - slice temperature
+- mutes
 
 ### medium
 
