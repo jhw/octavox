@@ -240,21 +240,25 @@ class Tracks(dict):
         if random.random() < limit:
             self["pattern"]=random.choice(self.Patterns)
 
-    def render(self, struct, nbeats, volume=1, keys=PlayerKeys):
-        notes={key: {} for key in keys}
+    """
+    - NB new generator currently for each iteration as is stateful
+    """
+            
+    def render(self, struct, nbeats, volume=1):
+        notes={}
         for i_offset, i_slice in enumerate(self["pattern"]):
-            slice_=self["slices"][i_slice]
+            czlice=self["slices"][i_slice]
             offset=i_offset*nbeats
-            generator=TrigGenerator(samples=slice_["samples"],
-                                    offset=offset,
-                                    volume=volume)
-            for machine in slice_["machines"]:
+            for machine in czlice["machines"]:
                 for player in machine.players:
-                    values=generator.generate(n=nbeats,
-                                              q=Q(player["seed"]),
-                                              style=player["style"])
+                    triggen=TrigGenerator(samples=czlice["samples"],
+                                          offset=offset,
+                                          volume=volume)
+                    values=triggen.generate(n=nbeats,
+                                            q=Q(player["seed"]),
+                                            style=player["style"])
+                    notes.setdefault(player["key"], {})
                     notes[player["key"]].update(values)
-                    print (i_slice, i_offset, player["key"], len(notes[player["key"]]))
         trigs=[{"notes": v,
                 "type": "trig"}
                for v in notes.values()]

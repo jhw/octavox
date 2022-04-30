@@ -1,43 +1,36 @@
 ### short
 
-- embed rendering in machines
-- implement fx as machine
-- allow machines to render both notes and fx
-- patch breaks
-- slice temperature
-- mutes
+- refactor fx render as per track render
+- re- check vitling patterns
+- change render to return beats rather than add them
+- remove player keys; iterate over machine.players
 
 ### medium
 
-- re- check vitling patterns
-
-- setting SnareStyles to [Kick, Electro] seems to result in Kick samples being used
-  - accidentally copied reference ?
-  
-- check handling of [0, 0, 0, 1] pattern
-  - is 0 rendered for 1x12 or 3x4 beats ?
-  - should overlay
-
+- patch breaks
+- slice temperature
+- mutes
 - add back blender
-
-- new expander script
+- expander script
   - based on mutator
   - each patch copied and includes per- track mutes
   - include breaks in output
   - check octatrack max number of slices
-
-- new compressor script
+- compressor script
   - takes wav file
   - removes breaks
 
 ### long
 
-- librosa for python audio similarity
-
 ### thoughts
+
+- librosa for python audio similarity ?
+- change rendering root slice is rendered for full nbeats ?
 
 ### done
 
+- allow machines to render both notes and fx
+- embed rendering in machines
 - remove randomise_style
 - see if machine classes can be simplified
 - simplify MachineConfig
