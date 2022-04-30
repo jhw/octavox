@@ -257,21 +257,24 @@ class Tracks(dict):
             self["pattern"]=random.choice(self.Patterns)
 
     def render(self, struct, nbeats, volume=1, keys=PlayerKeys):
-        for key in keys:
-            svtrig={"type": "trig",
-                    "notes": {}}
-            for j, i in enumerate(self["pattern"]):
-                slice=self["slices"][i]
-                offset=j*nbeats
-                generator=TrigGenerator(samples=slice["samples"],
-                                        offset=offset,
-                                        volume=volume)
-                player=slice["machines"].players.to_map()[key]
-                values=generator.generate(n=nbeats,
-                                          q=Q(player["seed"]),
-                                          style=player["style"])
-                svtrig["notes"].update(values)
-            struct["tracks"].append(svtrig)
+        notes={key: {} for key in keys}
+        for i_offset, i_slice in enumerate(self["pattern"]):
+            slice_=self["slices"][i_slice]
+            offset=i_offset*nbeats
+            generator=TrigGenerator(samples=slice_["samples"],
+                                    offset=offset,
+                                    volume=volume)
+            for machine in slice_["machines"]:
+                for player in machine.players:
+                    values=generator.generate(n=nbeats,
+                                              q=Q(player["seed"]),
+                                              style=player["style"])
+                    print (i_slice, i_offset, player["key"], len(values), values)
+                    notes[player["key"]].update(values)
+        trigs=[{"notes": v,
+                "type": "trig"}
+               for v in notes.values()]
+        struct["tracks"]+=trigs
 
     @property
     def nslices(self):
