@@ -100,15 +100,6 @@ class HatsMachine(MachineBase):
                  "style": substyle}
                 for key, substyle in self.substyles]
 
-class Players(list):
-
-    def __init__(self, players=[]):
-        list.__init__(self, players)
-
-    def to_map(self):
-        return {player["key"]:player
-                for player in self}
-
 class Machines(list):
 
     @classmethod
@@ -127,13 +118,6 @@ class Machines(list):
         list.__init__(self, [MachineBase.initialise(machine)
                              for machine in machines])
 
-    @property
-    def players(self):
-        players=Players()
-        for machine in self:
-            players+=machine.players
-        return players
-                
 class Slice(dict):
 
     @classmethod
@@ -269,8 +253,8 @@ class Tracks(dict):
                     values=generator.generate(n=nbeats,
                                               q=Q(player["seed"]),
                                               style=player["style"])
-                    print (i_slice, i_offset, player["key"], len(values), values)
                     notes[player["key"]].update(values)
+                    print (i_slice, i_offset, player["key"], len(notes[player["key"]]))
         trigs=[{"notes": v,
                 "type": "trig"}
                for v in notes.values()]
