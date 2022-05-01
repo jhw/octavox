@@ -12,7 +12,8 @@
 - blender
 - patch breaks
 - slice temperature
-- mutes
+- mute
+- degrade
 - expander script
   - based on mutator
   - each patch copied and includes per- track mutes
