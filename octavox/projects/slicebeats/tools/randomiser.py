@@ -1,6 +1,6 @@
 from octavox.modules.sampler import SVBanks
 
-from octavox.projects.slicebeats.dom import Patches, PlayerKeys
+from octavox.projects.slicebeats.dom import Patches
 
 import datetime, random, yaml
 
@@ -112,7 +112,7 @@ class SampleRandomiser:
             return self.random_wild()        
 
     def randomise(self,
-                  keys=PlayerKeys):
+                  keys="kk|sn|oh|ch".split("|")):
         return {key: getattr(self, "random_%s" % key)()
                 for key in keys}
 

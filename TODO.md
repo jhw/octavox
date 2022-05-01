@@ -8,7 +8,6 @@
 - refactor fx render as per track render
 - re- check vitling patterns
 - change render to return beats rather than add them
-- remove player keys; iterate over machine.players
 
 ### medium
 
@@ -36,6 +35,7 @@
 
 ### done
 
+- remove player keys; iterate over machine.players
 - move trig rendering into slice and then into machine 
 - allow machines to render both notes and fx
 - embed rendering in machines

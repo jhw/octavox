@@ -14,8 +14,6 @@ MachineMapping={Kick: "kick",
                 Snare: "snare",
                 Hats: "hats"}
 
-PlayerKeys=[Kick, Snare, OpenHat, ClosedHat]
-
 SVDrum, Drum, Sampler = "svdrum", "Drum", "Sampler"
 
 SampleHold="sample_hold"
