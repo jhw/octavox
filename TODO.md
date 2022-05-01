@@ -1,6 +1,5 @@
 ### short
 
-- move trig rendering into slice and then into machine 
 - rename players as tracks 
 - ensure machine can render both trigs and FX
 - refactor FX generation as another machine 
@@ -37,6 +36,7 @@
 
 ### done
 
+- move trig rendering into slice and then into machine 
 - allow machines to render both notes and fx
 - embed rendering in machines
 - remove randomise_style

@@ -77,6 +77,21 @@ class MachineBase(dict):
     @property
     def players(self):
         return [self]
+
+    """
+    - NB generator is currently stateful ie you need a new one for each iteration
+    """
+    
+    def render(self, struct, nbeats, offset, samples, volume=1):
+        for player in self.players:
+            generator=TrigGenerator(samples=samples,
+                                    offset=offset,
+                                    volume=volume)                                
+            notes=generator.generate(n=nbeats,
+                                     q=Q(player["seed"]),
+                                     style=player["style"])
+            struct.setdefault(player["key"], {})
+            struct[player["key"]].update(notes)
     
 class KickMachine(MachineBase):
 
@@ -131,15 +146,7 @@ class Slice(dict):
 
     def render(self, struct, nbeats, offset, volume=1):
         for machine in self["machines"]:
-            for player in machine.players:
-                generator=TrigGenerator(samples=self["samples"],
-                                        offset=offset,
-                                        volume=volume)                                
-                notes=generator.generate(n=nbeats,
-                                         q=Q(player["seed"]),
-                                         style=player["style"])
-                struct.setdefault(player["key"], {})
-                struct[player["key"]].update(notes)
+            machine.render(struct, nbeats, offset, self["samples"])
         
 class Slices(list):
 
@@ -255,9 +262,9 @@ class Tracks(dict):
     def render(self, struct, nbeats):
         notes={}
         for i_offset, i_slice in enumerate(self["pattern"]):
-            czlice=self["slices"][i_slice]
             offset=i_offset*nbeats
-            czlice.render(notes, nbeats, offset)
+            slice=self["slices"][i_slice]
+            slice.render(notes, nbeats, offset)
         trigs=[{"notes": v,
                 "type": "trig"}
                for v in notes.values()]
