@@ -1,20 +1,18 @@
 ### short
 
-- rename players as tracks 
-- ensure machine can render both trigs and FX
-- refactor FX generation as another machine 
+- refactor echo as a machine
+  - refactor fx rendering
+- machines to return note types (trig, fx)
 
-- consider moving vitling patterns into machine classes
-- refactor fx render as per track render
-- re- check vitling patterns
-- change render to return beats rather than add them
+- move vitling patterns into machine classes
+- check vitling patterns
 
 ### medium
 
+- blender
 - patch breaks
 - slice temperature
 - mutes
-- add back blender
 - expander script
   - based on mutator
   - each patch copied and includes per- track mutes
@@ -26,8 +24,15 @@
 
 ### long
 
+- euclidian beats
+- vitling 303
+- sunvox reverb chords
+- city dreams bass
+- city dreams noise
+
 ### thoughts
 
+- rename players as tracks  ?
 - add generator reset method ?
   - no because might remove state in future
 - librosa for python audio similarity ?
@@ -35,6 +40,7 @@
 
 ### done
 
+- re- test mutator
 - remove player keys; iterate over machine.players
 - move trig rendering into slice and then into machine 
 - allow machines to render both notes and fx
