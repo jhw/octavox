@@ -1,5 +1,12 @@
 ### short
 
+- add reset method to trig generator to avoid recreating
+- move trig rendering into slice and then into machine 
+- rename players as tracks 
+- ensure machine can render both trigs and FX
+- refactor FX generation as another machine 
+
+- consider moving vitling patterns into machine classes
 - refactor fx render as per track render
 - re- check vitling patterns
 - change render to return beats rather than add them
