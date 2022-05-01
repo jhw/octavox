@@ -1,6 +1,5 @@
 ### short
 
-- add reset method to trig generator to avoid recreating
 - move trig rendering into slice and then into machine 
 - rename players as tracks 
 - ensure machine can render both trigs and FX
@@ -31,6 +30,8 @@
 
 ### thoughts
 
+- add generator reset method ?
+  - no because might remove state in future
 - librosa for python audio similarity ?
 - change rendering root slice is rendered for full nbeats ?
 

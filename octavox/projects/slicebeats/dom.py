@@ -251,12 +251,12 @@ class Tracks(dict):
             offset=i_offset*nbeats
             for machine in czlice["machines"]:
                 for player in machine.players:
-                    triggen=TrigGenerator(samples=czlice["samples"],
-                                          offset=offset,
-                                          volume=volume)
-                    values=triggen.generate(n=nbeats,
-                                            q=Q(player["seed"]),
-                                            style=player["style"])
+                    generator=TrigGenerator(samples=czlice["samples"],
+                                            offset=offset,
+                                            volume=volume)                                
+                    values=generator.generate(n=nbeats,
+                                              q=Q(player["seed"]),
+                                              style=player["style"])
                     notes.setdefault(player["key"], {})
                     notes[player["key"]].update(values)
         trigs=[{"notes": v,
