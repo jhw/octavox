@@ -129,6 +129,18 @@ class Slice(dict):
         dict.__init__(self, {"samples": Samples(samples),
                              "machines": Machines(machines)})
 
+    def render(self, struct, nbeats, offset, volume=1):
+        for machine in self["machines"]:
+            for player in machine.players:
+                generator=TrigGenerator(samples=self["samples"],
+                                        offset=offset,
+                                        volume=volume)                                
+                notes=generator.generate(n=nbeats,
+                                         q=Q(player["seed"]),
+                                         style=player["style"])
+                struct.setdefault(player["key"], {})
+                struct[player["key"]].update(notes)
+        
 class Slices(list):
 
     @classmethod
@@ -240,25 +252,12 @@ class Tracks(dict):
         if random.random() < limit:
             self["pattern"]=random.choice(self.Patterns)
 
-    """
-    - NB new generator currently for each iteration as is stateful
-    """
-            
-    def render(self, struct, nbeats, volume=1):
+    def render(self, struct, nbeats):
         notes={}
         for i_offset, i_slice in enumerate(self["pattern"]):
             czlice=self["slices"][i_slice]
             offset=i_offset*nbeats
-            for machine in czlice["machines"]:
-                for player in machine.players:
-                    generator=TrigGenerator(samples=czlice["samples"],
-                                            offset=offset,
-                                            volume=volume)                                
-                    values=generator.generate(n=nbeats,
-                                              q=Q(player["seed"]),
-                                              style=player["style"])
-                    notes.setdefault(player["key"], {})
-                    notes[player["key"]].update(values)
+            czlice.render(notes, nbeats, offset)
         trigs=[{"notes": v,
                 "type": "trig"}
                for v in notes.values()]
