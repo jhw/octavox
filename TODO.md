@@ -1,19 +1,19 @@
 ### short
 
-- refactor echo as a machine
-  - refactor fx rendering
-- machines to return note types (trig, fx)
-
-- move vitling patterns into machine classes
-- check vitling patterns
+- fixed sample hold pattern [0, 0, 0, 0]
+- hungarorise keys rather than capitalising them
+- different machines must return different note types (trigs, effects)
 
 ### medium
+
+- re- check vitling patterns
 
 - blender
 - patch breaks
 - slice temperature
 - mute
 - degrade
+
 - expander script
   - based on mutator
   - each patch copied and includes per- track mutes
@@ -33,9 +33,9 @@
 
 ### thoughts
 
+- move vitling patterns into machine classes ?
+  - no; seem to need to be stateful; keep in own class for now
 - rename players as tracks  ?
-- add generator reset method ?
-  - no because might remove state in future
 - librosa for python audio similarity ?
 - change rendering root slice is rendered for full nbeats ?
 

@@ -4,7 +4,7 @@ from collections import OrderedDict
 
 import copy, json, os, random, yaml
 
-Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
+Kick, Snare, Hats, OpenHat, ClosedHat, EchoWet, EchoFeedback = "kk", "sn", "ht", "oh", "ch", "ew", "ef"
 
 FourFloor, Electro, Triplets, Backbeat, Skip, Offbeats, OffbeatsOpen, OffbeatsClosed, Closed, Empty = "fourfloor", "electro", "triplets", "backbeat", "skip", "offbeats", "offbeats_open", "offbeats_closed", "closed", "empty"
 
@@ -12,7 +12,9 @@ KickStyles, SnareStyles, HatsStyles = [FourFloor, Electro, Triplets], [Backbeat,
 
 MachineMapping={Kick: "kick",
                 Snare: "snare",
-                Hats: "hats"}
+                Hats: "hats",
+                EchoWet: "echoWet",
+                EchoFeedback": echoFeedback"}
 
 SVDrum, Drum, Sampler = "svdrum", "Drum", "Sampler"
 
@@ -51,111 +53,6 @@ class Samples(dict):
     def randomise_samples(self, samples):
         for key in self.keys():
             self[key]=random.choice(samples[key])
-        
-class MachineBase(dict):
-
-    @classmethod
-    def initialise(self, machine, mapping=MachineMapping):
-        klass=eval("%sMachine" % mapping[machine["key"]].capitalize())
-        return klass(machine)
-    
-    def __init__(self, items):
-        dict.__init__(self, items)
-
-    def randomise_seed(self, limit):
-        if random.random() < limit:
-            seed=int(1e8*random.random())
-            self["seed"]=seed
-
-    def randomise_style(self, limit, mapping=MachineMapping):
-        styles=eval("%sStyles" % mapping[self["key"]].capitalize())
-        if random.random() < limit:
-            self["style"]=random.choice(styles)
-            
-    @property
-    def players(self):
-        return [self]
-
-    """
-    - NB generator is currently stateful ie you need a new one for each iteration
-    """
-    
-    def render(self, struct, nbeats, offset, samples, volume=1):
-        for player in self.players:
-            generator=TrigGenerator(samples=samples,
-                                    offset=offset,
-                                    volume=volume)                                
-            notes=generator.generate(n=nbeats,
-                                     q=Q(player["seed"]),
-                                     style=player["style"])
-            struct.setdefault(player["key"], {})
-            struct[player["key"]].update(notes)
-    
-class KickMachine(MachineBase):
-
-    pass
-                
-class SnareMachine(MachineBase):
-
-    pass
-    
-class HatsMachine(MachineBase):
-    
-    @property
-    def substyles(self):
-        return zip([OpenHat, ClosedHat],
-                   [OffbeatsOpen, OffbeatsClosed] if self["style"]==Offbeats else [Closed, Empty])
-                   
-    @property
-    def players(self):
-        return [{"key": key,
-                 "seed": self["seed"],
-                 "style": substyle}
-                for key, substyle in self.substyles]
-
-class Machines(list):
-
-    @classmethod
-    def randomise(self, mapping=MachineMapping):
-        def init_seed(key, mapping):
-            return int(1e8*random.random())
-        def init_style(key, mapping):
-            styles=eval("%sStyles" % mapping[key].capitalize())
-            return random.choice(styles)
-        return Machines([{"seed": init_seed(key, mapping),
-                          "style": init_style(key, mapping),
-                          "key": key}
-                         for key in mapping])
-
-    def __init__(self, machines):
-        list.__init__(self, [MachineBase.initialise(machine)
-                             for machine in machines])
-
-class Slice(dict):
-
-    @classmethod
-    def randomise(self, randomisers):
-        return Slice(samples=Samples.randomise(randomisers),
-                     machines=Machines.randomise())
-    
-    def __init__(self, samples, machines):
-        dict.__init__(self, {"samples": Samples(samples),
-                             "machines": Machines(machines)})
-
-    def render(self, struct, nbeats, offset, volume=1):
-        for machine in self["machines"]:
-            machine.render(struct, nbeats, offset, self["samples"])
-        
-class Slices(list):
-
-    @classmethod
-    def randomise(self, randomisers, n=4):
-        return Slices([Slice.randomise(randomisers)
-                       for i in range(n)])
-    
-    def __init__(self, slices):
-        list.__init__(self, [Slice(**slice)
-                             for slice in slices])
 
 """
 - https://github.com/beats/acid-banger/blob/main/src/pattern.ts
@@ -235,59 +132,8 @@ class TrigGenerator(dict):
 
     def empty(self, q, i):
         pass
-        
-class Tracks(dict):
 
-    Patterns=[[0],
-              [0, 1],
-              [0, 0, 0, 1],
-              [0, 1, 0, 2],
-              [0, 1, 2, 3]]
-    
-    @classmethod
-    def randomise(self, randomisers):
-        return Tracks(slices=Slices.randomise(randomisers),
-                      pattern=random.choice(self.Patterns))
-        
-    def __init__(self, slices, pattern):
-        dict.__init__(self, {"slices": Slices(slices),
-                             "pattern": pattern})
-
-    def randomise_pattern(self, limit):
-        if random.random() < limit:
-            self["pattern"]=random.choice(self.Patterns)
-
-    def render(self, struct, nbeats):
-        notes={}
-        for i_offset, i_slice in enumerate(self["pattern"]):
-            offset=i_offset*nbeats
-            slice=self["slices"][i_slice]
-            slice.render(notes, nbeats, offset)
-        trigs=[{"notes": v,
-                "type": "trig"}
-               for v in notes.values()]
-        struct["tracks"]+=trigs
-
-    @property
-    def nslices(self):
-        return len(self["pattern"])
-            
-class Effect(dict):
-
-    @classmethod
-    def randomise(self, controller, styles=[SampleHold]):
-        return Effect({"controller": controller,
-                       "seed": int(1e8*random.random()),
-                       "style": random.choice(styles)})
-    
-    def __init__(self, obj):
-        dict.__init__(self, obj)
-
-    def randomise_seed(self, limit):
-        if random.random() < limit:
-            self["seed"]=int(1e8*random.random())
-
-class FXGenerator(dict):
+class SampleHoldGenerator(dict):
     
     def __init__(self, ctrl, offset=0):
         dict.__init__(self)
@@ -316,55 +162,212 @@ class FXGenerator(dict):
             v0=floor+(ceil-floor)*q.random()
             v=inc*int(0.5+v0/inc)
             self.add(i, v)
-            
-class Effects(list):
+    
+class MachineBase(dict):
 
     @classmethod
-    def randomise(self, controllers):
-        return Effects([Effect.randomise(controller)
-                        for controller in controllers])
+    def initialise(self, machine, mapping=MachineMapping):
+        klass=eval("%sMachine" % mapping[machine["key"]].capitalize())
+        return klass(machine)
     
-    def __init__(self, effects):
-        list.__init__(self, [Effect(effect)
-                             for effect in effects])
+    def __init__(self, items):
+        dict.__init__(self, items)
 
-    def randomise_seeds(self, limit):
-        for trig in self:
-            trig.randomise_seed(limit)
+    def randomise_seed(self, limit):
+        if random.random() < limit:
+            seed=int(1e8*random.random())
+            self["seed"]=seed
 
-    """
-    - NB define q on per- effect level, not locally for each slice
-    """
+    def randomise_style(self, limit, mapping=MachineMapping):
+        styles=eval("%sStyles" % mapping[self["key"]].capitalize())
+        if random.random() < limit:
+            self["style"]=random.choice(styles)
             
-    def render(self, struct, nslices, nbeats):
-        for effect in self:
-            svtrig={"type": "fx",
-                    "notes": {}}
-            q=Q(effect["seed"]) 
-            for j in range(nslices):
-                offset=j*nbeats
-                generator=FXGenerator(ctrl=effect["controller"],
+    @property
+    def players(self):
+        return [self]
+
+    """
+    - NB generator is currently stateful ie you need a new one for each iteration
+    """
+    
+    def render(self, struct, nbeats, offset, samples, volume=1):
+        for player in self.players:
+            generator=TrigGenerator(samples=samples,
+                                    offset=offset,
+                                    volume=volume)                                
+            notes=generator.generate(n=nbeats,
+                                     q=Q(player["seed"]),
+                                     style=player["style"])
+            struct.setdefault(player["key"], {})
+            struct[player["key"]].update(notes)
+    
+class KickMachine(MachineBase):
+
+    pass
+                
+class SnareMachine(MachineBase):
+
+    pass
+    
+class HatsMachine(MachineBase):
+    
+    @property
+    def substyles(self):
+        return zip([OpenHat, ClosedHat],
+                   [OffbeatsOpen, OffbeatsClosed] if self["style"]==Offbeats else [Closed, Empty])
+                   
+    @property
+    def players(self):
+        return [{"key": key,
+                 "seed": self["seed"],
+                 "style": substyle}
+                for key, substyle in self.substyles]
+
+class SampleHoldMachineBase(MachineBase):
+
+    def render(self, struct, nbeats, offset):
+        generator=SampleHoldGenerator(ctrl=self.Controller,
                                       offset=offset)
-                values=generator.generate(n=nbeats,
-                                          q=q,
-                                          style=effect["style"])
-                svtrig["notes"].update(values)
-            struct["tracks"].append(svtrig)
+        notes=generator.generate(n=nbeats,
+                                 q=Q(self["seed"]),
+                                 style=self["style"])
+        struct.setdefault(self["key"], {})
+        struct[self["key"]].update(notes)
+        
+class EchoWetMachine(SampleHoldMachineBase):
+
+    Controller="wet"
+
+class EchoFeedbackMachine(SampleHoldMachineBase):
+
+    Controller="feedback"
+            
+class Machines(list):
+
+    @classmethod
+    def randomise(self, mapping=MachineMapping):
+        def init_seed(key, mapping):
+            return int(1e8*random.random())
+        def init_style(key, mapping):
+            styles=eval("%sStyles" % mapping[key].capitalize())
+            return random.choice(styles)
+        return Machines([{"seed": init_seed(key, mapping),
+                          "style": init_style(key, mapping),
+                          "key": key}
+                         for key in mapping])
+
+    def __init__(self, machines):
+        list.__init__(self, [MachineBase.initialise(machine)
+                             for machine in machines])
+
+class Slice(dict):
+
+    @classmethod
+    def randomise(self, randomisers):
+        return Slice(samples=Samples.randomise(randomisers),
+                     machines=Machines.randomise())
+    
+    def __init__(self, samples, machines):
+        dict.__init__(self, {"samples": Samples(samples),
+                             "machines": Machines(machines)})
+
+    @property
+    def trig_machines(self):
+        return [KickMachine, SnareMachine, HatsMachine]
+
+    @property
+    def effect_machines(self):
+        return [EchoWetMachine, EchoFeedbackMachine]
+        
+    def render_trigs(self, struct, nbeats, offset):
+        machines={machine[key]: machine
+                  for machine in self["machines"]}
+        for key in self.trig_machines:
+            machines=machines[key]
+            machine.render(struct, nbeats, offset, self["samples"])
+
+    def render_effects(self, struct, nbeats, offset):
+        machines={machine[key]: machine
+                  for machine in self["machines"]}
+        for key in self.effect_machines:
+            machines=machines[key]
+            machine.render(struct, nbeats, offset)
+            
+class Slices(list):
+
+    @classmethod
+    def randomise(self, randomisers, n=4):
+        return Slices([Slice.randomise(randomisers)
+                       for i in range(n)])
+    
+    def __init__(self, slices):
+        list.__init__(self, [Slice(**slice)
+                             for slice in slices])
+        
+class Tracks(dict):
+
+    Patterns=[[0],
+              [0, 1],
+              [0, 0, 0, 1],
+              [0, 1, 0, 2],
+              [0, 1, 2, 3]]
+    
+    @classmethod
+    def randomise(self, randomisers):
+        return Tracks(slices=Slices.randomise(randomisers),
+                      pattern=random.choice(self.Patterns))
+        
+    def __init__(self, slices, pattern):
+        dict.__init__(self, {"slices": Slices(slices),
+                             "pattern": pattern})
+
+    def randomise_pattern(self, limit):
+        if random.random() < limit:
+            self["pattern"]=random.choice(self.Patterns)
+
+    def render_trigs(self, struct, nbeats):
+        notes={}
+        for i_offset, i_slice in enumerate(self["pattern"]):
+            offset=i_offset*nbeats
+            slice=self["slices"][i_slice]
+            slice.render_trigs(notes, nbeats, offset)
+        trigs=[{"notes": v,
+                "type": "trig"}
+               for v in notes.values()]
+        struct["tracks"]+=trigs
+
+    def render_effects(self, struct, nbeats):
+        notes={}
+        for i_offset, i_slice in enumerate(self["pattern"]):
+            offset=i_offset*nbeats
+            slice=self["slices"][i_slice]
+            slice.render_effects(notes, nbeats, offset)
+        trigs=[{"notes": v,
+                "type": "effect"}
+               for v in notes.values()]
+        struct["effects"]+=trigs
+
+    def render(self, struct, nbeats):
+        self.render_trigs(struct, nbeats)
+        self.render_effewcts(struct, nbeats)
+        
+    @property
+    def nslices(self):
+        return len(self["pattern"])
             
 class Patch(dict):
 
     @classmethod
     def randomise(self, randomisers, controllers):
-        return Patch(tracks=Tracks.randomise(randomisers),
-                     effects=Effects.randomise(controllers))
+        return Patch(tracks=Tracks.randomise(randomisers))
     
     def __init__(self, tracks, effects):
-        dict.__init__(self, {"tracks": Tracks(**tracks),
-                             "effects": Effects(effects)})
+        dict.__init__(self, {"tracks": Tracks(**tracks)})
 
     def clone(self):
         return copy.deepcopy(self)
-        
+
     def render(self, nbeats):
         struct={"n": nbeats,
                 "tracks": []}
@@ -372,9 +375,6 @@ class Patch(dict):
         nslicebeats=int(nbeats/nslices)
         self["tracks"].render(struct,
                               nbeats=nslicebeats)
-        self["effects"].render(struct,
-                               nslices=nslices,
-                               nbeats=nslicebeats)
         return struct
         
 class Patches(list):
