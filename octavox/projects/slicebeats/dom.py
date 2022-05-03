@@ -20,8 +20,6 @@ MachineMapping={Kick: "kick",
 
 SVDrum, Drum, Sampler = "svdrum", "Drum", "Sampler"
 
-
-
 def Q(seed):
     q=random.Random()
     q.seed(seed)
@@ -230,7 +228,7 @@ class HatsMachine(TrigsMachineBase):
 
 class SampleHoldMachineBase(MachineBase):
 
-    def render(self, struct, nbeats, offset):
+    def render(self, struct, nbeats, offset, **kwargs):
         generator=SampleHoldGenerator(ctrl=self.Controller,
                                       offset=offset)
         notes=generator.generate(n=nbeats,
@@ -280,28 +278,14 @@ class Slice(dict):
         dict.__init__(self, {"samples": Samples(samples),
                              "machines": Machines(machines)})
 
-    @property
-    def trig_machine_keys(self):
-        return [Kick, Snare, Hats]
-
-    @property
-    def effect_machine_keys(self):
-        return [EchoWet, EchoFeedback]
-        
-    def render_trigs(self, struct, nbeats, offset):
+    def render(self, keys, struct, nbeats, offset):
         machines={machine["key"]: machine
                   for machine in self["machines"]}
-        for key in self.trig_machine_keys:
+        for key in keys:
             machine=machines[key]
-            machine.render(struct, nbeats, offset, self["samples"])
+            machine.render(struct, nbeats, offset,
+                           samples=self["samples"])
 
-    def render_effects(self, struct, nbeats, offset):
-        machines={machine["key"]: machine
-                  for machine in self["machines"]}
-        for key in self.effect_machine_keys:
-            machine=machines[key]
-            machine.render(struct, nbeats, offset)
-            
 class Slices(list):
 
     @classmethod
@@ -336,27 +320,29 @@ class Tracks(dict):
         if random.random() < limit:
             self["pattern"]=random.choice(self.TrigPatterns)
 
-    def render_trigs(self, struct, nbeats):
+    def _render(self, struct, keys, pattern, type, nbeats):
         notes={}
-        for i_offset, i_slice in enumerate(self["pattern"]):
+        for i_offset, i_slice in enumerate(pattern):
             offset=i_offset*nbeats
             slice=self["slices"][i_slice]
-            slice.render_trigs(notes, nbeats, offset)
-        trigs=[{"notes": v,
-                "type": "trig"}
-               for v in notes.values()]
-        struct["tracks"]+=trigs
+            slice.render(keys, notes, nbeats, offset)                         
+        struct["tracks"]+=[{"notes": v,
+                            "type": type}
+                           for v in notes.values()]
+                
+    def render_trigs(self, struct, nbeats):
+        self._render(struct=struct,
+                    keys=[Kick, Snare, Hats],
+                    pattern=self["pattern"],
+                    type="trig",
+                    nbeats=nbeats)
 
     def render_effects(self, struct, nbeats):
-        notes={}
-        for i_offset, i_slice in enumerate(self.EffectPattern):
-            offset=i_offset*nbeats
-            slice=self["slices"][i_slice]
-            slice.render_effects(notes, nbeats, offset)
-        trigs=[{"notes": v,
-                "type": "fx"}
-               for v in notes.values()]
-        struct["tracks"]+=trigs
+        self._render(struct=struct,
+                     keys=[EchoWet, EchoFeedback],
+                     pattern=self.EffectPattern,
+                     type="fx",
+                     nbeats=nbeats)
 
     def render(self, struct, nbeats):
         self.render_trigs(struct, nbeats)

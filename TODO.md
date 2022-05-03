@@ -1,12 +1,10 @@
 ### short
 
-- combine slice render_trigs/effects
-  - need to fix id issue
-- combine track render_trigs/effects
-- fx seeds not being reset
-  - check if EffectPattern is required
+- nbeats/nslices needs to vary depending on trigs or effects
 - simplify effect machine config
 - hungarorise machine names
+- add fx, trig globals
+- check mutator still works
 
 ### medium
 
@@ -45,6 +43,11 @@
 
 ### done
 
+- combine slice render_trigs/effects
+  - need to fix id issue
+- combine track render_trigs/effects
+- fx seeds not being reset
+  - check if EffectPattern is required
 - re- test mutator
 - remove player keys; iterate over machine.players
 - move trig rendering into slice and then into machine 
