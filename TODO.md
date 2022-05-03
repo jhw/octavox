@@ -1,9 +1,11 @@
 ### short
 
-- fx seeds not always being reset
-- combine trig and fx rendering
+- combine slice render_trigs/effects
+  - need to fix id issue
+- combine track render_trigs/effects
+- fx seeds not being reset
+  - check if EffectPattern is required
 - simplify effect machine config
-- not clear that EffectPattern is required
 - hungarorise machine names
 
 ### medium
