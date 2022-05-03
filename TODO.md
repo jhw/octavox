@@ -1,8 +1,9 @@
 ### short
 
-- fixed sample hold pattern [0, 0, 0, 0]
-- hungarorise keys rather than capitalising them
-- different machines must return different note types (trigs, effects)
+- effect machines not being rendered
+- simplify effect machine config
+- not clear that EffectPattern is required
+- hungarorise machine names
 
 ### medium
 

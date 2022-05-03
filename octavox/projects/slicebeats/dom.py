@@ -8,17 +8,19 @@ Kick, Snare, Hats, OpenHat, ClosedHat, EchoWet, EchoFeedback = "kk", "sn", "ht",
 
 FourFloor, Electro, Triplets, Backbeat, Skip, Offbeats, OffbeatsOpen, OffbeatsClosed, Closed, Empty = "fourfloor", "electro", "triplets", "backbeat", "skip", "offbeats", "offbeats_open", "offbeats_closed", "closed", "empty"
 
-KickStyles, SnareStyles, HatsStyles = [FourFloor, Electro, Triplets], [Backbeat, Skip], [Offbeats, Closed]
+SampleHold="sample_hold"
+
+KickStyles, SnareStyles, HatsStyles, EchowetStyles, EchofeedbackStyles = [FourFloor, Electro, Triplets], [Backbeat, Skip], [Offbeats, Closed], [SampleHold], [SampleHold]
 
 MachineMapping={Kick: "kick",
                 Snare: "snare",
                 Hats: "hats",
                 EchoWet: "echoWet",
-                EchoFeedback": echoFeedback"}
+                EchoFeedback: "echoFeedback"}
 
 SVDrum, Drum, Sampler = "svdrum", "Drum", "Sampler"
 
-SampleHold="sample_hold"
+
 
 def Q(seed):
     q=random.Random()
@@ -187,6 +189,8 @@ class MachineBase(dict):
     def players(self):
         return [self]
 
+class TrigsMachineBase(MachineBase):
+    
     """
     - NB generator is currently stateful ie you need a new one for each iteration
     """
@@ -202,15 +206,15 @@ class MachineBase(dict):
             struct.setdefault(player["key"], {})
             struct[player["key"]].update(notes)
     
-class KickMachine(MachineBase):
+class KickMachine(TrigsMachineBase):
 
     pass
                 
-class SnareMachine(MachineBase):
+class SnareMachine(TrigsMachineBase):
 
     pass
     
-class HatsMachine(MachineBase):
+class HatsMachine(TrigsMachineBase):
     
     @property
     def substyles(self):
@@ -235,13 +239,17 @@ class SampleHoldMachineBase(MachineBase):
         struct.setdefault(self["key"], {})
         struct[self["key"]].update(notes)
         
-class EchoWetMachine(SampleHoldMachineBase):
+class EchowetMachine(SampleHoldMachineBase):
 
-    Controller="wet"
+    Controller={"kwargs": {"sample_hold": {"step": 4}},
+                "attr": "wet",
+                "mod": "echo"}
 
-class EchoFeedbackMachine(SampleHoldMachineBase):
+class EchofeedbackMachine(SampleHoldMachineBase):
 
-    Controller="feedback"
+    Controller={"kwargs": {"sample_hold": {"step": 4}},
+                "attr": "feedback",
+                "mod": "echo"}
             
 class Machines(list):
 
@@ -273,25 +281,25 @@ class Slice(dict):
                              "machines": Machines(machines)})
 
     @property
-    def trig_machines(self):
-        return [KickMachine, SnareMachine, HatsMachine]
+    def trig_machine_keys(self):
+        return [Kick, Snare, Hats]
 
     @property
-    def effect_machines(self):
-        return [EchoWetMachine, EchoFeedbackMachine]
+    def effect_machine_keys(self):
+        return [EchoWet, EchoFeedback]
         
     def render_trigs(self, struct, nbeats, offset):
-        machines={machine[key]: machine
+        machines={machine["key"]: machine
                   for machine in self["machines"]}
-        for key in self.trig_machines:
-            machines=machines[key]
+        for key in self.trig_machine_keys:
+            machine=machines[key]
             machine.render(struct, nbeats, offset, self["samples"])
 
     def render_effects(self, struct, nbeats, offset):
-        machines={machine[key]: machine
+        machines={machine["key"]: machine
                   for machine in self["machines"]}
-        for key in self.effect_machines:
-            machines=machines[key]
+        for key in self.effect_machine_keys:
+            machine=machines[key]
             machine.render(struct, nbeats, offset)
             
 class Slices(list):
@@ -307,16 +315,18 @@ class Slices(list):
         
 class Tracks(dict):
 
-    Patterns=[[0],
-              [0, 1],
-              [0, 0, 0, 1],
-              [0, 1, 0, 2],
-              [0, 1, 2, 3]]
+    TrigPatterns=[[0],
+                  [0, 1],
+                  [0, 0, 0, 1],
+                  [0, 1, 0, 2],
+                  [0, 1, 2, 3]]
+
+    EffectPattern=[0, 0, 0, 0]
     
     @classmethod
     def randomise(self, randomisers):
         return Tracks(slices=Slices.randomise(randomisers),
-                      pattern=random.choice(self.Patterns))
+                      pattern=random.choice(self.TrigPatterns))
         
     def __init__(self, slices, pattern):
         dict.__init__(self, {"slices": Slices(slices),
@@ -324,7 +334,7 @@ class Tracks(dict):
 
     def randomise_pattern(self, limit):
         if random.random() < limit:
-            self["pattern"]=random.choice(self.Patterns)
+            self["pattern"]=random.choice(self.TrigPatterns)
 
     def render_trigs(self, struct, nbeats):
         notes={}
@@ -339,7 +349,7 @@ class Tracks(dict):
 
     def render_effects(self, struct, nbeats):
         notes={}
-        for i_offset, i_slice in enumerate(self["pattern"]):
+        for i_offset, i_slice in enumerate(self.EffectPattern):
             offset=i_offset*nbeats
             slice=self["slices"][i_slice]
             slice.render_effects(notes, nbeats, offset)
@@ -350,7 +360,7 @@ class Tracks(dict):
 
     def render(self, struct, nbeats):
         self.render_trigs(struct, nbeats)
-        self.render_effewcts(struct, nbeats)
+        self.render_effects(struct, nbeats)
         
     @property
     def nslices(self):
@@ -362,7 +372,7 @@ class Patch(dict):
     def randomise(self, randomisers, controllers):
         return Patch(tracks=Tracks.randomise(randomisers))
     
-    def __init__(self, tracks, effects):
+    def __init__(self, tracks):
         dict.__init__(self, {"tracks": Tracks(**tracks)})
 
     def clone(self):
@@ -370,7 +380,8 @@ class Patch(dict):
 
     def render(self, nbeats):
         struct={"n": nbeats,
-                "tracks": []}
+                "tracks": [],
+                "effects": []}
         nslices=self["tracks"].nslices
         nslicebeats=int(nbeats/nslices)
         self["tracks"].render(struct,
