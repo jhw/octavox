@@ -305,7 +305,7 @@ class Tracks(dict):
                   [0, 1, 0, 2],
                   [0, 1, 2, 3]]
 
-    EffectPattern=[0, 0, 0, 0]
+    EffectPattern=[0, 1, 2, 3]
     
     @classmethod
     def randomise(self, randomisers):
