@@ -243,13 +243,13 @@ class EchowetMachine(SampleHoldMachineBase):
 
     Controller={"kwargs": {"sample_hold": {"step": 4}},
                 "attr": "wet",
-                "mod": "echo"}
+                "mod": "Echo"}
 
 class EchofeedbackMachine(SampleHoldMachineBase):
 
     Controller={"kwargs": {"sample_hold": {"step": 4}},
                 "attr": "feedback",
-                "mod": "echo"}
+                "mod": "Echo"}
             
 class Machines(list):
 
@@ -354,9 +354,9 @@ class Tracks(dict):
             slice=self["slices"][i_slice]
             slice.render_effects(notes, nbeats, offset)
         trigs=[{"notes": v,
-                "type": "effect"}
+                "type": "fx"}
                for v in notes.values()]
-        struct["effects"]+=trigs
+        struct["tracks"]+=trigs
 
     def render(self, struct, nbeats):
         self.render_trigs(struct, nbeats)
@@ -380,8 +380,7 @@ class Patch(dict):
 
     def render(self, nbeats):
         struct={"n": nbeats,
-                "tracks": [],
-                "effects": []}
+                "tracks": []}
         nslices=self["tracks"].nslices
         nslicebeats=int(nbeats/nslices)
         self["tracks"].render(struct,

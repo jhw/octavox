@@ -1,6 +1,7 @@
 ### short
 
-- effect machines not being rendered
+- fx seeds not always being reset
+- combine trig and fx rendering
 - simplify effect machine config
 - not clear that EffectPattern is required
 - hungarorise machine names
