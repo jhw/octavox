@@ -305,20 +305,31 @@ class Tracks(dict):
                   [0, 1, 0, 2],
                   [0, 1, 2, 3]]
 
-    EffectPattern=[0, 1, 2, 3]
+    FXPatterns=[[0],
+                [0, 1],
+                [0, 0, 0, 1],
+                [0, 1, 0, 2],
+                [0, 1, 2, 3]]
     
     @classmethod
     def randomise(self, randomisers):
         return Tracks(slices=Slices.randomise(randomisers),
-                      pattern=random.choice(self.TrigPatterns))
+                      trigpattern=random.choice(self.TrigPatterns),
+                      fxpattern=random.choice(self.FXPatterns))
         
-    def __init__(self, slices, pattern):
+    def __init__(self, slices, trigpattern, fxpattern):
         dict.__init__(self, {"slices": Slices(slices),
-                             "pattern": pattern})
+                             "trigpattern": trigpattern,
+                             "fxpattern": fxpattern})
 
-    def randomise_pattern(self, limit):
+    def randomise_trig_pattern(self, limit):
         if random.random() < limit:
-            self["pattern"]=random.choice(self.TrigPatterns)
+            self["trigpattern"]=random.choice(self.TrigPatterns)
+
+    def randomise_fx_pattern(self, limit):
+        if random.random() < limit:
+            self["fxpattern"]=random.choice(self.TrigPatterns)
+
 
     def _render(self, struct, keys, pattern, type, nbeats):
         notes={}
@@ -333,14 +344,14 @@ class Tracks(dict):
     def render_trigs(self, struct, nbeats):
         self._render(struct=struct,
                     keys=[Kick, Snare, Hats],
-                    pattern=self["pattern"],
+                    pattern=self["trigpattern"],
                     type="trig",
                     nbeats=nbeats)
 
     def render_effects(self, struct, nbeats):
         self._render(struct=struct,
                      keys=[EchoWet, EchoFeedback],
-                     pattern=self.EffectPattern,
+                     pattern=self["fxpattern"],
                      type="fx",
                      nbeats=nbeats)
 
@@ -349,8 +360,12 @@ class Tracks(dict):
         self.render_effects(struct, nbeats)
         
     @property
-    def nslices(self):
-        return len(self["pattern"])
+    def ntrigslices(self):
+        return len(self["trigpattern"])
+
+    @property
+    def nfxslices(self):
+        return len(self["fxpattern"])
             
 class Patch(dict):
 
@@ -367,10 +382,12 @@ class Patch(dict):
     def render(self, nbeats):
         struct={"n": nbeats,
                 "tracks": []}
-        nslices=self["tracks"].nslices
-        nslicebeats=int(nbeats/nslices)
-        self["tracks"].render(struct,
-                              nbeats=nslicebeats)
+        ntrigslices=self["tracks"].ntrigslices
+        ntrigbeats=int(nbeats/ntrigslices)
+        self["tracks"].render_trigs(struct, ntrigbeats)
+        nfxslices=self["tracks"].nfxslices
+        nfxbeats=int(nbeats/nfxslices)
+        self["tracks"].render_effects(struct, nfxbeats)
         return struct
         
 class Patches(list):

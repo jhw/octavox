@@ -1,9 +1,8 @@
 ### short
 
-- dual patterns
+- check mutator still works
 - simplify s&h machine
 - hungarorise machine names
-- check mutator still works
 
 ### medium
 
@@ -40,6 +39,7 @@
 
 ### done
 
+- dual patterns
 - combine slice render_trigs/effects
   - need to fix id issue
 - combine track render_trigs/effects
