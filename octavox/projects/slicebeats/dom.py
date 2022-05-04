@@ -135,14 +135,17 @@ class TrigGenerator(dict):
 
 class FXGenerator(dict):
     
-    def __init__(self, ctrl,
+    def __init__(self,
+                 mod,
+                 attr,
                  offset=0,
                  step=4,
                  floor=0,
                  ceil=1,
                  inc=0.25):
         dict.__init__(self)
-        self.ctrl=ctrl
+        self.mod=mod
+        self.attr=attr
         self.offset=offset
         self.step=step
         self.floor=floor
@@ -158,8 +161,8 @@ class FXGenerator(dict):
     def add(self, i, v):
         j=i+self.offset
         self[j]={"value": v,
-                 "mod": self.ctrl["mod"],
-                 "attr": self.ctrl["attr"]}
+                 "mod": self.mod,
+                 "attr": self.attr}
     
     def sample_hold(self, q, i):
         if 0 == i % self.step:
@@ -233,8 +236,9 @@ class HatsMachine(TrigMachineBase):
 class FXMachineBase(MachineBase):
 
     def render(self, struct, nbeats, offset, **kwargs):
-        generator=FXGenerator(ctrl=self.Controller,
-                              ceil=self.ceil,
+        generator=FXGenerator(mod=self.Mod,
+                              attr=self.Attr,
+                              ceil=self.Ceil,
                               offset=offset)
         notes=generator.generate(n=nbeats,
                                  q=Q(self["seed"]),
@@ -244,21 +248,11 @@ class FXMachineBase(MachineBase):
         
 class EchowetMachine(FXMachineBase):
 
-    Controller={"attr": "wet",
-                "mod": "Echo"}
+    Mod, Attr, Ceil = "Echo", "wet", 1.0
 
-    def __init__(self, machine, **kwargs):
-        FXMachineBase.__init__(self, machine, **kwargs)
-        self.ceil=1.0
-    
 class EchofeedbackMachine(FXMachineBase):
 
-    Controller={"attr": "feedback",
-                "mod": "Echo"}
-
-    def __init__(self, machine, **kwargs):
-        FXMachineBase.__init__(self, machine, **kwargs)
-        self.ceil=0.75
+    Mod, Attr, Ceil = "Echo", "feedback", 0.75
     
 class Machines(list):
 
@@ -310,18 +304,12 @@ class Slices(list):
         
 class Tracks(dict):
 
-    TrigPatterns=[[0],
-                  [0, 1],
-                  [0, 0, 0, 1],
-                  [0, 1, 0, 2],
-                  [0, 1, 2, 3]]
+    TrigPatterns=FXPatterns=[[0],
+                             [0, 1],
+                             [0, 0, 0, 1],
+                             [0, 1, 0, 2],
+                             [0, 1, 2, 3]]
 
-    FXPatterns=[[0],
-                [0, 1],
-                [0, 0, 0, 1],
-                [0, 1, 0, 2],
-                [0, 1, 2, 3]]
-    
     @classmethod
     def randomise(self, randomisers):
         return Tracks(slices=Slices.randomise(randomisers),
