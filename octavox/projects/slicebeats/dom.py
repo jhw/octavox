@@ -1,14 +1,10 @@
 from octavox.projects.slicebeats.project import SVProject
 
-from collections import OrderedDict
-
 import copy, json, os, random, yaml
 
 Kick, Snare, Hats, OpenHat, ClosedHat, EchoWet, EchoFeedback = "kk", "sn", "ht", "oh", "ch", "ew", "ef"
 
-FourFloor, Electro, Triplets, Backbeat, Skip, Offbeats, OffbeatsOpen, OffbeatsClosed, Closed, Empty = "fourfloor", "electro", "triplets", "backbeat", "skip", "offbeats", "offbeats_open", "offbeats_closed", "closed", "empty"
-
-SampleHold="sample_hold"
+FourFloor, Electro, Triplets, Backbeat, Skip, Offbeats, OffbeatsOpen, OffbeatsClosed, Closed, Empty, SampleHold = "fourfloor", "electro", "triplets", "backbeat", "skip", "offbeats", "offbeats_open", "offbeats_closed", "closed", "empty", "sample_hold"
 
 KickStyles, SnareStyles, HatsStyles, EchoWetStyles, EchoFeedbackStyles = [FourFloor, Electro, Triplets], [Backbeat, Skip], [Offbeats, Closed], [SampleHold], [SampleHold]
 
@@ -353,17 +349,17 @@ class Tracks(dict):
 
     def render_fx(self, struct, nbeats):
         self.render(struct=struct,
-                     keys=[EchoWet, EchoFeedback],
-                     pattern=self["fxpattern"],
-                     type="fx",
-                     nbeats=nbeats)
+                    keys=[EchoWet, EchoFeedback],
+                    pattern=self["fxpattern"],
+                    type="fx",
+                    nbeats=nbeats)
 
     @property
-    def ntrigslices(self):
+    def n_trig_slices(self):
         return len(self["trigpattern"])
 
     @property
-    def nfxslices(self):
+    def n_fx_slices(self):
         return len(self["fxpattern"])
             
 class Patch(dict):
@@ -381,10 +377,10 @@ class Patch(dict):
     def render(self, nbeats):
         struct={"n": nbeats,
                 "tracks": []}
-        ntrigslices=self["tracks"].ntrigslices
+        ntrigslices=self["tracks"].n_trig_slices
         ntrigbeats=int(nbeats/ntrigslices)
         self["tracks"].render_trigs(struct, ntrigbeats)
-        nfxslices=self["tracks"].nfxslices
+        nfxslices=self["tracks"].n_fx_slices
         nfxbeats=int(nbeats/nfxslices)
         self["tracks"].render_fx(struct, nfxbeats)
         return struct
