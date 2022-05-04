@@ -1,5 +1,8 @@
 ### short
 
+- move s&h parameters to function level rather than class level
+- add property helpers for trig/fx n_slice_beats
+
 - patch breaks
 - slice temperature
 - mute
