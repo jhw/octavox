@@ -1,16 +1,15 @@
 ### short
 
-- hungarorise machine names
-
-- blender
 - patch breaks
 - slice temperature
 - mute
 - degrade
 
+### medium
+
 - re- check vitling patterns
 
-### medium
+- blender
 
 - expander script
   - based on mutator
@@ -38,6 +37,7 @@
 
 ### done
 
+- hungarorise machine names
 - add fx pattern randomisation to mutator
 - check if/why FX generator needs step
 - pass different max levels to echo wet and feedback

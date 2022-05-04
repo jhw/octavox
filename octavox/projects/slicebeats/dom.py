@@ -10,13 +10,13 @@ FourFloor, Electro, Triplets, Backbeat, Skip, Offbeats, OffbeatsOpen, OffbeatsCl
 
 SampleHold="sample_hold"
 
-KickStyles, SnareStyles, HatsStyles, EchowetStyles, EchofeedbackStyles = [FourFloor, Electro, Triplets], [Backbeat, Skip], [Offbeats, Closed], [SampleHold], [SampleHold]
+KickStyles, SnareStyles, HatsStyles, EchoWetStyles, EchoFeedbackStyles = [FourFloor, Electro, Triplets], [Backbeat, Skip], [Offbeats, Closed], [SampleHold], [SampleHold]
 
 MachineMapping={Kick: "kick",
                 Snare: "snare",
                 Hats: "hats",
-                EchoWet: "echoWet",
-                EchoFeedback: "echoFeedback"}
+                EchoWet: "echo_wet",
+                EchoFeedback: "echo_feedback"}
 
 SVDrum, Drum, Sampler = "svdrum", "Drum", "Sampler"
 
@@ -24,6 +24,10 @@ def Q(seed):
     q=random.Random()
     q.seed(seed)
     return q
+
+def hungarorise(text):
+    return "".join([tok.capitalize()
+                    for tok in text.split("_")])
 
 class SampleKey:
 
@@ -108,7 +112,7 @@ class TrigGenerator(dict):
             self.add(i, (k, 0.2+0.2*q.random()))
 
     """
-    - offbeats_open/closed must pre- define two random variables to ensure they always remain in sync
+    - offbeats_open/closed must pre- define random variables to ensure they always remain in sync
     - ie don't nest one call to `q.random()` inside another
     """
             
@@ -174,7 +178,7 @@ class MachineBase(dict):
 
     @classmethod
     def initialise(self, machine, mapping=MachineMapping):
-        klass=eval("%sMachine" % mapping[machine["key"]].capitalize())
+        klass=eval(hungarorise("%s_machine" % mapping[machine["key"]]))
         return klass(machine)
     
     def __init__(self, items):
@@ -186,7 +190,7 @@ class MachineBase(dict):
             self["seed"]=seed
 
     def randomise_style(self, limit, mapping=MachineMapping):
-        styles=eval("%sStyles" % mapping[self["key"]].capitalize())
+        styles=eval(hungarorise("%s_styles" % mapping[self["key"]]))
         if random.random() < limit:
             self["style"]=random.choice(styles)
             
@@ -197,7 +201,7 @@ class MachineBase(dict):
 class TrigMachineBase(MachineBase):
     
     """
-    - NB generator is currently stateful ie you need a new one for each iteration
+    - NB stateful generator ie you need a new one for each track
     """
     
     def render(self, struct, nbeats, offset, samples, volume=1):
@@ -246,11 +250,11 @@ class FXMachineBase(MachineBase):
         struct.setdefault(self["key"], {})
         struct[self["key"]].update(notes)
         
-class EchowetMachine(FXMachineBase):
+class EchoWetMachine(FXMachineBase):
 
     Mod, Attr, Ceil = "Echo", "wet", 1.0
 
-class EchofeedbackMachine(FXMachineBase):
+class EchoFeedbackMachine(FXMachineBase):
 
     Mod, Attr, Ceil = "Echo", "feedback", 0.75
     
@@ -261,7 +265,7 @@ class Machines(list):
         def init_seed(key, mapping):
             return int(1e8*random.random())
         def init_style(key, mapping):
-            styles=eval("%sStyles" % mapping[key].capitalize())
+            styles=eval(hungarorise("%s_styles" % mapping[key]))
             return random.choice(styles)
         return Machines([{"seed": init_seed(key, mapping),
                           "style": init_style(key, mapping),
@@ -330,7 +334,7 @@ class Tracks(dict):
             self["fxpattern"]=random.choice(self.TrigPatterns)
 
 
-    def _render(self, struct, keys, pattern, type, nbeats):
+    def render(self, struct, keys, pattern, type, nbeats):
         notes={}
         for i_offset, i_slice in enumerate(pattern):
             offset=i_offset*nbeats
@@ -341,23 +345,19 @@ class Tracks(dict):
                            for v in notes.values()]
                 
     def render_trigs(self, struct, nbeats):
-        self._render(struct=struct,
+        self.render(struct=struct,
                     keys=[Kick, Snare, Hats],
                     pattern=self["trigpattern"],
                     type="trig",
                     nbeats=nbeats)
 
-    def render_effects(self, struct, nbeats):
-        self._render(struct=struct,
+    def render_fx(self, struct, nbeats):
+        self.render(struct=struct,
                      keys=[EchoWet, EchoFeedback],
                      pattern=self["fxpattern"],
                      type="fx",
                      nbeats=nbeats)
 
-    def render(self, struct, nbeats):
-        self.render_trigs(struct, nbeats)
-        self.render_effects(struct, nbeats)
-        
     @property
     def ntrigslices(self):
         return len(self["trigpattern"])
@@ -386,7 +386,7 @@ class Patch(dict):
         self["tracks"].render_trigs(struct, ntrigbeats)
         nfxslices=self["tracks"].nfxslices
         nfxbeats=int(nbeats/nfxslices)
-        self["tracks"].render_effects(struct, nfxbeats)
+        self["tracks"].render_fx(struct, nfxbeats)
         return struct
         
 class Patches(list):
@@ -412,7 +412,7 @@ class Patches(list):
                 for k, v in samples.items()}
         
     """
-    - json dumps/loads to clear classes which yaml won't represent by default
+    - json dumps/loads to remove classes which yaml won't render by default
     """
     
     def to_yaml(self):
