@@ -3,8 +3,6 @@
 - add fx pattern randomisation to mutator
 - hungarorise machine names
 
-### medium
-
 - re- check vitling patterns
 
 - blender
@@ -12,6 +10,8 @@
 - slice temperature
 - mute
 - degrade
+
+### medium
 
 - expander script
   - based on mutator
