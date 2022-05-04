@@ -1,15 +1,14 @@
 ### short
 
-- add fx pattern randomisation to mutator
 - hungarorise machine names
-
-- re- check vitling patterns
 
 - blender
 - patch breaks
 - slice temperature
 - mute
 - degrade
+
+- re- check vitling patterns
 
 ### medium
 
@@ -18,6 +17,7 @@
   - each patch copied and includes per- track mutes
   - include breaks in output
   - check octatrack max number of slices
+
 - compressor script
   - takes wav file
   - removes breaks
@@ -38,6 +38,7 @@
 
 ### done
 
+- add fx pattern randomisation to mutator
 - check if/why FX generator needs step
 - pass different max levels to echo wet and feedback
 - simplify s&h machine
