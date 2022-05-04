@@ -1,9 +1,8 @@
 ### short
 
-- nbeats/nslices needs to vary depending on trigs or effects
-- simplify effect machine config
+- dual patterns
+- simplify s&h machine
 - hungarorise machine names
-- add fx, trig globals
 - check mutator still works
 
 ### medium
@@ -35,11 +34,9 @@
 
 ### thoughts
 
-- move vitling patterns into machine classes ?
-  - no; seem to need to be stateful; keep in own class for now
+- add fx, trig globals ?
 - rename players as tracks  ?
 - librosa for python audio similarity ?
-- change rendering root slice is rendered for full nbeats ?
 
 ### done
 
