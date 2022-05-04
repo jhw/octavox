@@ -1,7 +1,7 @@
 ### short
 
-- check mutator still works
 - simplify s&h machine
+- add fx randomisation to mutator
 - hungarorise machine names
 
 ### medium
@@ -39,6 +39,7 @@
 
 ### done
 
+- check mutator still works
 - dual patterns
 - combine slice render_trigs/effects
   - need to fix id issue
