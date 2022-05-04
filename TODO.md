@@ -1,6 +1,5 @@
 ### short
 
-- check if/why FX generator needs step
 - add fx pattern randomisation to mutator
 - hungarorise machine names
 
@@ -39,6 +38,7 @@
 
 ### done
 
+- check if/why FX generator needs step
 - pass different max levels to echo wet and feedback
 - simplify s&h machine
 - check mutator still works
