@@ -301,6 +301,10 @@ class Slices(list):
     def __init__(self, slices):
         list.__init__(self, [Slice(**slice)
                              for slice in slices])
+
+"""
+- trigs and fx have different slice patterns
+"""
         
 class Tracks(dict):
 
@@ -328,7 +332,6 @@ class Tracks(dict):
     def randomise_fx_pattern(self, limit):
         if random.random() < limit:
             self["fxpattern"]=random.choice(self.TrigPatterns)
-
 
     def render(self, struct, keys, pattern, type, nbeats):
         notes={}

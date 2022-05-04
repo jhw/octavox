@@ -1,7 +1,6 @@
 ### short
 
 - move s&h parameters to function level rather than class level
-- add property helpers for trig/fx n_slice_beats
 
 - patch breaks
 - slice temperature
@@ -31,12 +30,14 @@
 - sunvox reverb chords
 - city dreams bass
 - city dreams noise
+- librosa
 
 ### thoughts
 
+- add property helpers for trig/fx n_slice_beats ?
+  - seems excessive
 - add fx, trig globals ?
-- rename players as tracks  ?
-- librosa for python audio similarity ?
+  - seems excessive
 
 ### done
 
