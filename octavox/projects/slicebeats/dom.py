@@ -188,35 +188,35 @@ class MachineBase(dict):
             self["style"]=random.choice(styles)
             
     @property
-    def players(self):
+    def tracks(self):
         return [self]
 
-class TrigsMachineBase(MachineBase):
+class TrigMachineBase(MachineBase):
     
     """
     - NB generator is currently stateful ie you need a new one for each iteration
     """
     
     def render(self, struct, nbeats, offset, samples, volume=1):
-        for player in self.players:
+        for track in self.tracks:
             generator=TrigGenerator(samples=samples,
                                     offset=offset,
                                     volume=volume)                                
             notes=generator.generate(n=nbeats,
-                                     q=Q(player["seed"]),
-                                     style=player["style"])
-            struct.setdefault(player["key"], {})
-            struct[player["key"]].update(notes)
+                                     q=Q(track["seed"]),
+                                     style=track["style"])
+            struct.setdefault(track["key"], {})
+            struct[track["key"]].update(notes)
     
-class KickMachine(TrigsMachineBase):
+class KickMachine(TrigMachineBase):
 
     pass
                 
-class SnareMachine(TrigsMachineBase):
+class SnareMachine(TrigMachineBase):
 
     pass
     
-class HatsMachine(TrigsMachineBase):
+class HatsMachine(TrigMachineBase):
     
     @property
     def substyles(self):
@@ -224,7 +224,7 @@ class HatsMachine(TrigsMachineBase):
                    [OffbeatsOpen, OffbeatsClosed] if self["style"]==Offbeats else [Closed, Empty])
                    
     @property
-    def players(self):
+    def tracks(self):
         return [{"key": key,
                  "seed": self["seed"],
                  "style": substyle}
@@ -234,6 +234,7 @@ class FXMachineBase(MachineBase):
 
     def render(self, struct, nbeats, offset, **kwargs):
         generator=FXGenerator(ctrl=self.Controller,
+                              ceil=self.ceil,
                               offset=offset)
         notes=generator.generate(n=nbeats,
                                  q=Q(self["seed"]),
@@ -246,11 +247,19 @@ class EchowetMachine(FXMachineBase):
     Controller={"attr": "wet",
                 "mod": "Echo"}
 
+    def __init__(self, machine, **kwargs):
+        FXMachineBase.__init__(self, machine, **kwargs)
+        self.ceil=1.0
+    
 class EchofeedbackMachine(FXMachineBase):
 
     Controller={"attr": "feedback",
                 "mod": "Echo"}
-            
+
+    def __init__(self, machine, **kwargs):
+        FXMachineBase.__init__(self, machine, **kwargs)
+        self.ceil=0.75
+    
 class Machines(list):
 
     @classmethod
