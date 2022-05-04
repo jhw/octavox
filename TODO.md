@@ -1,7 +1,8 @@
 ### short
 
-- simplify s&h machine
-- add fx randomisation to mutator
+- check if/why FX generator needs step
+- pass different max levels to echo wet and feedback
+- add fx pattern randomisation to mutator
 - hungarorise machine names
 
 ### medium
@@ -39,6 +40,7 @@
 
 ### done
 
+- simplify s&h machine
 - check mutator still works
 - dual patterns
 - combine slice render_trigs/effects

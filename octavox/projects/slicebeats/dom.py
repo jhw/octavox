@@ -133,12 +133,21 @@ class TrigGenerator(dict):
     def empty(self, q, i):
         pass
 
-class SampleHoldGenerator(dict):
+class FXGenerator(dict):
     
-    def __init__(self, ctrl, offset=0):
+    def __init__(self, ctrl,
+                 offset=0,
+                 step=4,
+                 floor=0,
+                 ceil=1,
+                 inc=0.25):
         dict.__init__(self)
         self.ctrl=ctrl
         self.offset=offset
+        self.step=step
+        self.floor=floor
+        self.ceil=ceil
+        self.inc=inc
 
     def generate(self, style, q, n):
         fn=getattr(self, style)
@@ -153,14 +162,9 @@ class SampleHoldGenerator(dict):
                  "attr": self.ctrl["attr"]}
     
     def sample_hold(self, q, i):
-        kwargs=self.ctrl["kwargs"][SampleHold]
-        step=kwargs["step"]
-        floor=kwargs["min"] if "min" in kwargs else 0
-        ceil=kwargs["max"] if "max" in kwargs else 1
-        inc=kwargs["inc"] if "inc" in kwargs else 0.25
-        if 0 == i % step:
-            v0=floor+(ceil-floor)*q.random()
-            v=inc*int(0.5+v0/inc)
+        if 0 == i % self.step:
+            v0=self.floor+(self.ceil-self.floor)*q.random()
+            v=self.inc*int(0.5+v0/self.inc)
             self.add(i, v)
     
 class MachineBase(dict):
@@ -226,27 +230,25 @@ class HatsMachine(TrigsMachineBase):
                  "style": substyle}
                 for key, substyle in self.substyles]
 
-class SampleHoldMachineBase(MachineBase):
+class FXMachineBase(MachineBase):
 
     def render(self, struct, nbeats, offset, **kwargs):
-        generator=SampleHoldGenerator(ctrl=self.Controller,
-                                      offset=offset)
+        generator=FXGenerator(ctrl=self.Controller,
+                              offset=offset)
         notes=generator.generate(n=nbeats,
                                  q=Q(self["seed"]),
                                  style=self["style"])
         struct.setdefault(self["key"], {})
         struct[self["key"]].update(notes)
         
-class EchowetMachine(SampleHoldMachineBase):
+class EchowetMachine(FXMachineBase):
 
-    Controller={"kwargs": {"sample_hold": {"step": 4}},
-                "attr": "wet",
+    Controller={"attr": "wet",
                 "mod": "Echo"}
 
-class EchofeedbackMachine(SampleHoldMachineBase):
+class EchofeedbackMachine(FXMachineBase):
 
-    Controller={"kwargs": {"sample_hold": {"step": 4}},
-                "attr": "feedback",
+    Controller={"attr": "feedback",
                 "mod": "Echo"}
             
 class Machines(list):
