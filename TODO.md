@@ -1,9 +1,9 @@
 ### short
 
-- reduce reverb to 4
-- tune down loud SVDrum bass
+- separate s&h machine
+- abstract vitling patterns
 
-- move s&h parameters to function level rather than class level
+- track expansions [notes]
 
 - patch breaks
 - slice temperature
@@ -12,8 +12,7 @@
 
 ### medium
 
-- re- check vitling patterns
-
+- tune down loud SVDrum bass
 - blender
 
 - expander script
@@ -44,6 +43,7 @@
 
 ### done
 
+- reduce reverb to 4
 - hungarorise machine names
 - add fx pattern randomisation to mutator
 - check if/why FX generator needs step
