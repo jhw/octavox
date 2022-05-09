@@ -1,5 +1,8 @@
 ### short
 
+- reduce reverb to 4
+- tune down loud SVDrum bass
+
 - move s&h parameters to function level rather than class level
 
 - patch breaks

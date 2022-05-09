@@ -44,7 +44,7 @@ Modules=yaml.safe_load("""
   position:
     x: -1
   defaults:
-    wet: 8
+    wet: 4
 """)
 
 Links=yaml.safe_load("""
