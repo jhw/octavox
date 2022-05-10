@@ -1,10 +1,10 @@
 ### short
 
-- separate s&h machine
-- abstract vitling patterns
+- machine configuration [notes]
 
 - track expansions [notes]
 
+- separate s&h machine
 - patch breaks
 - slice temperature
 - mute
@@ -36,6 +36,8 @@
 
 ### thoughts
 
+- abstract vitling patterns 
+  - doesn't seem this would help
 - add property helpers for trig/fx n_slice_beats ?
   - seems excessive
 - add fx, trig globals ?

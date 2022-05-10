@@ -1,3 +1,12 @@
+### machine configuration
+
+- so current blocker is that trigs and fx machines are configured different ways
+- trigs pass samples to render, which are then used to create a trig generator
+- fx uses class- level variable for mod/attr etc to create an fx generator
+- somehow these two have to be harmonised, in order that render has a single signature, and also that whatever gets passed to generators is passed in a consistent manner
+- feels like the fx machine class- level variables have to go
+- remember that all these machines need to be instantiated with seed and style variables
+
 ### mutator and rendering 27/04/22
 
 - machines don't need base class; kick and snare can be dicts, hats can be list
