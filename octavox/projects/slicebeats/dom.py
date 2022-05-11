@@ -150,10 +150,6 @@ class MachineBase(dict):
         if random.random() < limit:
             self["style"]=random.choice(styles)
             
-    @property
-    def tracks(self):
-        return [self]
-
 class TrigMachineBase(MachineBase):
     
     """
@@ -161,15 +157,14 @@ class TrigMachineBase(MachineBase):
     """
     
     def render(self, struct, nbeats, offset, samples, volume=1):
-        for track in self.tracks:
-            generator=TrigGenerator(samples=samples,
-                                    offset=offset,
-                                    volume=volume)                                
-            notes=generator.generate(n=nbeats,
-                                     q=Q(track["seed"]),
-                                     style=track["style"])
-            struct.setdefault(track["key"], {})
-            struct[track["key"]].update(notes)
+        generator=TrigGenerator(samples=samples,
+                                offset=offset,
+                                volume=volume)                                
+        notes=generator.generate(n=nbeats,
+                                 q=Q(self["seed"]),
+                                 style=self["style"])
+        struct.setdefault(self["key"], {})
+        struct[self["key"]].update(notes)
     
 class KickMachine(TrigMachineBase):
 
