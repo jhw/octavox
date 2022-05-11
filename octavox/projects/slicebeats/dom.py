@@ -9,8 +9,7 @@ FourFloor, Electro, Triplets, Backbeat, Skip, Offbeats, OffbeatsOpen, OffbeatsCl
 KickStyles, SnareStyles, HatsStyles, EchoWetStyles, EchoFeedbackStyles = [FourFloor, Electro, Triplets], [Backbeat, Skip], [Offbeats, Closed], [SampleHold], [SampleHold]
 
 MachineMapping={Kick: "kick",
-                Snare: "snare",
-                Hats: "hats"}
+                Snare: "snare"}
 
 SVDrum, Drum, Sampler = "svdrum", "Drum", "Sampler"
 
@@ -180,20 +179,6 @@ class SnareMachine(TrigMachineBase):
 
     pass
     
-class HatsMachine(TrigMachineBase):
-    
-    @property
-    def substyles(self):
-        return zip([OpenHat, ClosedHat],
-                   [OffbeatsOpen, OffbeatsClosed] if self["style"]==Offbeats else [Closed, Empty])
-                   
-    @property
-    def tracks(self):
-        return [{"key": key,
-                 "seed": self["seed"],
-                 "style": substyle}
-                for key, substyle in self.substyles]
-
 class Machines(list):
 
     @classmethod
@@ -263,7 +248,7 @@ class Tracks(dict):
         if random.random() < limit:
             self["pattern"]=random.choice(self.Patterns)
 
-    def render(self, struct, nbeats, keys=[Kick, Snare, Hats]):
+    def render(self, struct, nbeats, keys=[Kick, Snare]):
         notes={}
         for i_offset, i_slice in enumerate(self["pattern"]):
             offset=i_offset*nbeats
