@@ -1,7 +1,8 @@
 ### short
 
+- TrigNote class
+- generator to return type and notes.expand() to group according to type
 - generator to be passed as a closure
-- add intermediate representation with separate() method
 - add fx generator 
   - same pattern as trigs
 - add hats
@@ -14,7 +15,10 @@
 - mute
 - degrade
 
+- make hats and s&h an option because lots of richness with just two tracks
+
 - tune down loud SVDrum bass
+
 - blender
 
 - expander script
@@ -47,6 +51,8 @@
 
 ### done
 
+- add basic notes class
+- add intermediate representation with separate() method
 - remove tracks
 - remove hats
 - re- merge trig rendering code

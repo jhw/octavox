@@ -129,7 +129,7 @@ class TrigGenerator(dict):
 
     def empty(self, q, i):
         pass
-
+            
 class MachineBase(dict):
 
     @classmethod
@@ -222,6 +222,16 @@ class Slices(list):
         list.__init__(self, [Slice(**slice)
                              for slice in slices])
 
+class Notes(dict):
+
+    def __init__(self, item={}):
+        dict.__init__(self, item)
+
+    def expand(self):
+        return [{"notes": v,
+                 "type": "trig"}
+                for v in self.values()]
+        
 class Tracks(dict):
 
     Patterns=[[0],
@@ -244,14 +254,12 @@ class Tracks(dict):
             self["pattern"]=random.choice(self.Patterns)
 
     def render(self, struct, nbeats, keys=[Kick, Snare]):
-        notes={}
+        notes=Notes()
         for i_offset, i_slice in enumerate(self["pattern"]):
             offset=i_offset*nbeats
             slice=self["slices"][i_slice]
             slice.render(keys, notes, nbeats, offset)                         
-        struct["tracks"]+=[{"notes": v,
-                            "type": "trig"}
-                           for v in notes.values()]
+        struct["tracks"]+=notes.expand()
                 
     @property
     def n_slices(self):
