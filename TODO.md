@@ -1,8 +1,8 @@
 ### short
 
-- simplify patch nomenclature
 - re- merge trig rendering code
 - remove hats
+- remove tracks
 - generator to be passed as a closure
 - add intermediate representation with separate() method
 - add fx generator 
@@ -50,6 +50,7 @@
 
 ### done
 
+- simplify patch nomenclature
 - remove fx
 - reduce reverb to 4
 - hungarorise machine names
