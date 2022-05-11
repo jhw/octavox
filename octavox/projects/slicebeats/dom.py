@@ -263,23 +263,16 @@ class Tracks(dict):
         if random.random() < limit:
             self["pattern"]=random.choice(self.Patterns)
 
-    def render(self, struct, keys, pattern, type, nbeats):
+    def render(self, struct, nbeats, keys=[Kick, Snare, Hats]):
         notes={}
-        for i_offset, i_slice in enumerate(pattern):
+        for i_offset, i_slice in enumerate(self["pattern"]):
             offset=i_offset*nbeats
             slice=self["slices"][i_slice]
             slice.render(keys, notes, nbeats, offset)                         
         struct["tracks"]+=[{"notes": v,
-                            "type": type}
+                            "type": "trig"}
                            for v in notes.values()]
                 
-    def render_trigs(self, struct, nbeats):
-        self.render(struct=struct,
-                    keys=[Kick, Snare, Hats],
-                    pattern=self["pattern"],
-                    type="trig",
-                    nbeats=nbeats)
-
     @property
     def n_slices(self):
         return len(self["pattern"])
@@ -301,7 +294,7 @@ class Patch(dict):
                 "tracks": []}
         nslices=self["tracks"].n_slices
         nslicebeats=int(nbeats/nslices)
-        self["tracks"].render_trigs(struct, nslicebeats)
+        self["tracks"].render(struct, nslicebeats)
         return struct
         
 class Patches(list):

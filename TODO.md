@@ -1,6 +1,5 @@
 ### short
 
-- re- merge trig rendering code
 - remove hats
 - remove tracks
 - generator to be passed as a closure
@@ -50,6 +49,7 @@
 
 ### done
 
+- re- merge trig rendering code
 - simplify patch nomenclature
 - remove fx
 - reduce reverb to 4
