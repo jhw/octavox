@@ -1,6 +1,7 @@
 ### short
 
 - simplify patch nomenclature
+- re- merge trig rendering code
 - remove hats
 - generator to be passed as a closure
 - add intermediate representation with separate() method

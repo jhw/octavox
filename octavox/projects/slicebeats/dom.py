@@ -244,24 +244,24 @@ class Slices(list):
 
 class Tracks(dict):
 
-    TrigPatterns=[[0],
-                  [0, 1],
-                  [0, 0, 0, 1],
-                  [0, 1, 0, 2],
-                  [0, 1, 2, 3]]
+    Patterns=[[0],
+              [0, 1],
+              [0, 0, 0, 1],
+              [0, 1, 0, 2],
+              [0, 1, 2, 3]]
 
     @classmethod
     def randomise(self, randomisers):
         return Tracks(slices=Slices.randomise(randomisers),
-                      trigpattern=random.choice(self.TrigPatterns))
+                      pattern=random.choice(self.Patterns))
         
-    def __init__(self, slices, trigpattern):
+    def __init__(self, slices, pattern):
         dict.__init__(self, {"slices": Slices(slices),
-                             "trigpattern": trigpattern})
+                             "pattern": pattern})
 
-    def randomise_trig_pattern(self, limit):
+    def randomise_pattern(self, limit):
         if random.random() < limit:
-            self["trigpattern"]=random.choice(self.TrigPatterns)
+            self["pattern"]=random.choice(self.Patterns)
 
     def render(self, struct, keys, pattern, type, nbeats):
         notes={}
@@ -276,13 +276,13 @@ class Tracks(dict):
     def render_trigs(self, struct, nbeats):
         self.render(struct=struct,
                     keys=[Kick, Snare, Hats],
-                    pattern=self["trigpattern"],
+                    pattern=self["pattern"],
                     type="trig",
                     nbeats=nbeats)
 
     @property
-    def n_trig_slices(self):
-        return len(self["trigpattern"])
+    def n_slices(self):
+        return len(self["pattern"])
 
 class Patch(dict):
 
@@ -299,9 +299,9 @@ class Patch(dict):
     def render(self, nbeats):
         struct={"n": nbeats,
                 "tracks": []}
-        ntrigslices=self["tracks"].n_trig_slices
-        ntrigbeats=int(nbeats/ntrigslices)
-        self["tracks"].render_trigs(struct, ntrigbeats)
+        nslices=self["tracks"].n_slices
+        nslicebeats=int(nbeats/nslices)
+        self["tracks"].render_trigs(struct, nslicebeats)
         return struct
         
 class Patches(list):

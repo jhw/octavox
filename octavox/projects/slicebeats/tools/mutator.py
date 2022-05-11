@@ -7,7 +7,6 @@ import datetime, yaml
 Profiles=yaml.safe_load("""
 default:
   dtrigpat: 0.5
-  dfxpat: 0.5
   dtrigseed: 0.5
   dtrigstyle: 0.5
 """)
@@ -53,8 +52,7 @@ if __name__=="__main__":
             raise RuntimeError("index exceeds root patches length")
         root=roots[kwargs["index"]]
         def randomise_patch(patch, kwargs, i):
-            patch["tracks"].randomise_trig_pattern(kwargs["dtrigpat"])
-            patch["tracks"].randomise_fx_pattern(kwargs["dfxpat"])
+            patch["tracks"].randomise_pattern(kwargs["dtrigpat"])
             for slice in patch["tracks"]["slices"]:
                 for track in slice["machines"]:
                     track.randomise_style(kwargs["dtrigstyle"])
