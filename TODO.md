@@ -1,16 +1,21 @@
 ### short
 
-- machine configuration [notes]
+- remove fx
+- remove hats
+- generator to be passed as a closure
+- add intermediate representation with separate() method
+- add fx generator 
+  - same pattern as trigs
+- add hats
+- give fx separate pattern
 
-- track expansions [notes]
+### medium
 
-- separate s&h machine
 - patch breaks
 - slice temperature
 - mute
 - degrade
 
-### medium
 
 - tune down loud SVDrum bass
 - blender
