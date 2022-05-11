@@ -51,6 +51,12 @@ class Samples(dict):
         for key in self.keys():
             self[key]=random.choice(samples[key])
 
+
+class TrigNote(dict):
+
+    def __init__(self, item):
+        dict.__init__(self, item)
+            
 """
 - https://github.com/beats/acid-banger/blob/main/src/pattern.ts
 """
@@ -71,7 +77,7 @@ class TrigGenerator(dict):
         return self
         
     def add(self, i, v):
-        trig=dict(self.samples[v[0]])
+        trig=TrigNote(self.samples[v[0]])
         trig["vel"]=v[1]*self.volume
         self[i+self.offset]=trig
 
