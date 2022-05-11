@@ -1,6 +1,5 @@
 ### short
 
-- remove hats
 - remove tracks
 - generator to be passed as a closure
 - add intermediate representation with separate() method
@@ -49,6 +48,7 @@
 
 ### done
 
+- remove hats
 - re- merge trig rendering code
 - simplify patch nomenclature
 - remove fx
