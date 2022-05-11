@@ -10,9 +10,7 @@ KickStyles, SnareStyles, HatsStyles, EchoWetStyles, EchoFeedbackStyles = [FourFl
 
 MachineMapping={Kick: "kick",
                 Snare: "snare",
-                Hats: "hats",
-                EchoWet: "echo_wet",
-                EchoFeedback: "echo_feedback"}
+                Hats: "hats"}
 
 SVDrum, Drum, Sampler = "svdrum", "Drum", "Sampler"
 
@@ -133,43 +131,6 @@ class TrigGenerator(dict):
     def empty(self, q, i):
         pass
 
-class FXGenerator(dict):
-    
-    def __init__(self,
-                 mod,
-                 attr,
-                 offset=0,
-                 step=4,
-                 floor=0,
-                 ceil=1,
-                 inc=0.25):
-        dict.__init__(self)
-        self.mod=mod
-        self.attr=attr
-        self.offset=offset
-        self.step=step
-        self.floor=floor
-        self.ceil=ceil
-        self.inc=inc
-
-    def generate(self, style, q, n):
-        fn=getattr(self, style)
-        for i in range(n):
-            fn(q, i)
-        return self
-
-    def add(self, i, v):
-        j=i+self.offset
-        self[j]={"value": v,
-                 "mod": self.mod,
-                 "attr": self.attr}
-    
-    def sample_hold(self, q, i):
-        if 0 == i % self.step:
-            v0=self.floor+(self.ceil-self.floor)*q.random()
-            v=self.inc*int(0.5+v0/self.inc)
-            self.add(i, v)
-    
 class MachineBase(dict):
 
     @classmethod
@@ -233,27 +194,6 @@ class HatsMachine(TrigMachineBase):
                  "style": substyle}
                 for key, substyle in self.substyles]
 
-class FXMachineBase(MachineBase):
-
-    def render(self, struct, nbeats, offset, **kwargs):
-        generator=FXGenerator(mod=self.Mod,
-                              attr=self.Attr,
-                              ceil=self.Ceil,
-                              offset=offset)
-        notes=generator.generate(n=nbeats,
-                                 q=Q(self["seed"]),
-                                 style=self["style"])
-        struct.setdefault(self["key"], {})
-        struct[self["key"]].update(notes)
-        
-class EchoWetMachine(FXMachineBase):
-
-    Mod, Attr, Ceil = "Echo", "wet", 1.0
-
-class EchoFeedbackMachine(FXMachineBase):
-
-    Mod, Attr, Ceil = "Echo", "feedback", 0.75
-    
 class Machines(list):
 
     @classmethod
@@ -302,36 +242,26 @@ class Slices(list):
         list.__init__(self, [Slice(**slice)
                              for slice in slices])
 
-"""
-- trigs and fx have different slice patterns
-"""
-        
 class Tracks(dict):
 
-    TrigPatterns=FXPatterns=[[0],
-                             [0, 1],
-                             [0, 0, 0, 1],
-                             [0, 1, 0, 2],
-                             [0, 1, 2, 3]]
+    TrigPatterns=[[0],
+                  [0, 1],
+                  [0, 0, 0, 1],
+                  [0, 1, 0, 2],
+                  [0, 1, 2, 3]]
 
     @classmethod
     def randomise(self, randomisers):
         return Tracks(slices=Slices.randomise(randomisers),
-                      trigpattern=random.choice(self.TrigPatterns),
-                      fxpattern=random.choice(self.FXPatterns))
+                      trigpattern=random.choice(self.TrigPatterns))
         
-    def __init__(self, slices, trigpattern, fxpattern):
+    def __init__(self, slices, trigpattern):
         dict.__init__(self, {"slices": Slices(slices),
-                             "trigpattern": trigpattern,
-                             "fxpattern": fxpattern})
+                             "trigpattern": trigpattern})
 
     def randomise_trig_pattern(self, limit):
         if random.random() < limit:
             self["trigpattern"]=random.choice(self.TrigPatterns)
-
-    def randomise_fx_pattern(self, limit):
-        if random.random() < limit:
-            self["fxpattern"]=random.choice(self.TrigPatterns)
 
     def render(self, struct, keys, pattern, type, nbeats):
         notes={}
@@ -350,21 +280,10 @@ class Tracks(dict):
                     type="trig",
                     nbeats=nbeats)
 
-    def render_fx(self, struct, nbeats):
-        self.render(struct=struct,
-                    keys=[EchoWet, EchoFeedback],
-                    pattern=self["fxpattern"],
-                    type="fx",
-                    nbeats=nbeats)
-
     @property
     def n_trig_slices(self):
         return len(self["trigpattern"])
 
-    @property
-    def n_fx_slices(self):
-        return len(self["fxpattern"])
-            
 class Patch(dict):
 
     @classmethod
@@ -383,9 +302,6 @@ class Patch(dict):
         ntrigslices=self["tracks"].n_trig_slices
         ntrigbeats=int(nbeats/ntrigslices)
         self["tracks"].render_trigs(struct, ntrigbeats)
-        nfxslices=self["tracks"].n_fx_slices
-        nfxbeats=int(nbeats/nfxslices)
-        self["tracks"].render_fx(struct, nfxbeats)
         return struct
         
 class Patches(list):

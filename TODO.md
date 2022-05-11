@@ -1,6 +1,6 @@
 ### short
 
-- remove fx
+- simplify patch nomenclature
 - remove hats
 - generator to be passed as a closure
 - add intermediate representation with separate() method
@@ -15,7 +15,6 @@
 - slice temperature
 - mute
 - degrade
-
 
 - tune down loud SVDrum bass
 - blender
@@ -50,6 +49,7 @@
 
 ### done
 
+- remove fx
 - reduce reverb to 4
 - hungarorise machine names
 - add fx pattern randomisation to mutator
