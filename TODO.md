@@ -1,6 +1,6 @@
 ### short
 
-- remove machine classes
+- single machine class
 - map generators to different machine types
 
 - add fx generator
@@ -46,6 +46,7 @@
 
 ### done
 
+- remove machine classes
 - generator to be passed as a closure
 - generator to return type and notes.expand() to group according to type
 - TrigNote to add type variable

@@ -173,8 +173,7 @@ class MachineBase(dict):
 
     @classmethod
     def initialise(self, machine, mapping=MachineMapping):
-        klass=eval(hungarorise("%s_machine" % mapping[machine["key"]]))
-        return klass(machine)
+        return TrigMachineBase(machine)
     
     def __init__(self, items):
         dict.__init__(self, items)
@@ -197,14 +196,6 @@ class TrigMachineBase(MachineBase):
                                  style=self["style"])
         struct.setdefault(self["key"], {})
         struct[self["key"]].update(notes)
-    
-class KickMachine(TrigMachineBase):
-
-    pass
-                
-class SnareMachine(TrigMachineBase):
-
-    pass
     
 class Machines(list):
 
