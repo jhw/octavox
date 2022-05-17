@@ -13,6 +13,8 @@ MachineMapping={Kick: "kick",
 
 SVDrum, Drum, Sampler = "svdrum", "Drum", "Sampler"
 
+TrigType, FXType = "trig", "fx"
+            
 def Q(seed):
     q=random.Random()
     q.seed(seed)
@@ -51,8 +53,6 @@ class Samples(dict):
         for key in self.keys():
             self[key]=random.choice(samples[key])
 
-TrigType, FXType = "trig", "fx"
-            
 class TrigNote(dict):
 
     DefaultName="default"
@@ -71,7 +71,25 @@ class TrigNote(dict):
     @property
     def key(self):
         return "%s/%s" % (self.name, self.type)
-            
+
+class Notes(dict):
+
+    def __init__(self, item={}):
+        dict.__init__(self, item)
+
+    def expand(self):
+        tracks, types = {}, {}
+        for machinekey, notes in self.items():
+            for i, note in notes.items():
+                trackkey="%s/%s" % (machinekey, note.key)
+                tracks.setdefault(trackkey, {})
+                tracks[trackkey][i]=note
+                types[trackkey]=note.type
+        return [{"notes": v,
+                 "type": types[k]}
+                for k, v in tracks.items()
+                if v!=[]]
+    
 """
 - https://github.com/beats/acid-banger/blob/main/src/pattern.ts
 """
@@ -242,24 +260,6 @@ class Slices(list):
     def __init__(self, slices):
         list.__init__(self, [Slice(**slice)
                              for slice in slices])
-
-class Notes(dict):
-
-    def __init__(self, item={}):
-        dict.__init__(self, item)
-
-    def expand(self):
-        tracks, types = {}, {}
-        for machinekey, notes in self.items():
-            for i, note in notes.items():
-                trackkey="%s/%s" % (machinekey, note.key)
-                tracks.setdefault(trackkey, {})
-                tracks[trackkey][i]=note
-                types[trackkey]=note.type
-        return [{"notes": v,
-                 "type": types[k]}
-                for k, v in tracks.items()
-                if v!=[]]
         
 class Tracks(dict):
 
