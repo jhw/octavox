@@ -1,6 +1,7 @@
 ### short
 
 - replace nested notes with single dict
+- trig patterns must pass key to add() function
 - refactor note types
   - do you need a dedicated class ?
   - use class type ?
