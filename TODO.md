@@ -1,8 +1,5 @@
 ### short
 
-- required trig names 
-  - remove default name
-- remove machine key from expansion keys
 - replace nested notes with single dict
 - refactor note types
   - do you need a dedicated class ?
@@ -52,6 +49,9 @@
 
 ### done
 
+- required trig names 
+  - remove default name
+- remove machine key from expansion keys
 - remove machine.initialise
 - single machine class
 - remove machine classes

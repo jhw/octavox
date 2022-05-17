@@ -55,22 +55,16 @@ class Samples(dict):
 
 class TrigNote(dict):
 
-    DefaultName="default"
-    
     def __init__(self, item):
         dict.__init__(self, item)
         
-    @property
-    def name(self):
-        return self["name"] if "name" in self else self.DefaultName
-
     @property
     def type(self):
         return TrigType
 
     @property
     def key(self):
-        return "%s/%s" % (self.name, self.type)
+        return "%s/%s" % (self["name"], self.type)
 
 class Notes(dict):
 
@@ -79,12 +73,11 @@ class Notes(dict):
 
     def expand(self):
         tracks, types = {}, {}
-        for machinekey, notes in self.items():
+        for notes in self.values():
             for i, note in notes.items():
-                trackkey="%s/%s" % (machinekey, note.key)
-                tracks.setdefault(trackkey, {})
-                tracks[trackkey][i]=note
-                types[trackkey]=note.type
+                tracks.setdefault(note.key, {})
+                tracks[note.key][i]=note
+                types[note.key]=note.type
         return [{"notes": v,
                  "type": types[k]}
                 for k, v in tracks.items()
@@ -96,8 +89,9 @@ class Notes(dict):
         
 class TrigGenerator(dict):
     
-    def __init__(self, samples, offset=0, volume=1):
+    def __init__(self, key, samples, offset=0, volume=1):
         dict.__init__(self)
+        self.key=key
         self.samples={k: SampleKey(v).expand()
                       for k, v in samples.items()}
         self.offset=offset
@@ -111,6 +105,7 @@ class TrigGenerator(dict):
         
     def add(self, i, v):
         trig=TrigNote(self.samples[v[0]])
+        trig["name"]=self.key
         trig["vel"]=v[1]*self.volume
         self[i+self.offset]=trig
 
@@ -221,16 +216,18 @@ class Slice(dict):
                              "machines": Machines(machines)})
 
     def render(self, keys, struct, nbeats, offset):
-        def init_generator(samples, offset, volume=1):
-            return TrigGenerator(samples=samples,
+        def init_generator(key, samples, offset, volume=1):
+            return TrigGenerator(key=key,
+                                 samples=samples,
                                  offset=offset,
                                  volume=volume)                                
         machines={machine["key"]: machine
                   for machine in self["machines"]}
         for key in keys:
             machine=machines[key]
-            generator=init_generator(self["samples"],
-                                     offset)
+            generator=init_generator(key=key,
+                                     samples=self["samples"],
+                                     offset=offset)
             machine.render(struct, nbeats, generator)
 
 class Slices(list):
