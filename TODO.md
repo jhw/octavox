@@ -1,6 +1,5 @@
 ### short
 
-- replace trignote with standard dict
 - trig patterns must pass key to add() function
 - refactor note types
   - do you need a dedicated class ?
@@ -50,6 +49,7 @@
 
 ### done
 
+- replace trignote with standard dict
 - replace nested notes with single dict
 - required trig names 
   - remove default name

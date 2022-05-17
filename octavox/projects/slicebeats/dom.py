@@ -53,19 +53,6 @@ class Samples(dict):
         for key in self.keys():
             self[key]=random.choice(samples[key])
 
-class TrigNote(dict):
-
-    def __init__(self, item):
-        dict.__init__(self, item)
-        
-    @property
-    def type(self):
-        return TrigType
-
-    @property
-    def key(self):
-        return "%s/%s" % (self["name"], self.type)
-
 class Notes(dict):
 
     def __init__(self, item={}):
@@ -74,9 +61,11 @@ class Notes(dict):
     def expand(self):
         tracks, types = {}, {}
         for i, note in self.items():
-            tracks.setdefault(note.key, {})
-            tracks[note.key][i]=note
-            types[note.key]=note.type
+            key="%s/%s" % (note["name"],
+                           note["type"])
+            tracks.setdefault(key, {})
+            tracks[key][i]=note
+            types[key]=note["type"]
         return [{"notes": v,
                  "type": types[k]}
                 for k, v in tracks.items()
@@ -103,9 +92,10 @@ class TrigGenerator(dict):
         return self
         
     def add(self, i, v):
-        trig=TrigNote(self.samples[v[0]])
+        trig=dict(self.samples[v[0]])
         trig["name"]=self.key
         trig["vel"]=v[1]*self.volume
+        trig["type"]=TrigType
         self[i+self.offset]=trig
 
     def fourfloor(self, q, i, k=Kick):
