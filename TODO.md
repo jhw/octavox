@@ -1,9 +1,8 @@
 ### short
 
-- remove machine.initialise
-
-- map generators to different machine types
-
+- different generators for different machines
+- rationalise machine mapping
+- simplify notes expansion
 - add fx generator
   - same pattern as trigs
 - add hats 
@@ -47,6 +46,7 @@
 
 ### done
 
+- remove machine.initialise
 - single machine class
 - remove machine classes
 - generator to be passed as a closure

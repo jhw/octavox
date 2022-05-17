@@ -171,10 +171,6 @@ class TrigGenerator(dict):
             
 class Machine(dict):
 
-    @classmethod
-    def initialise(self, machine):
-        return Machine(machine)
-    
     def __init__(self, items):
         dict.__init__(self, items)
 
@@ -210,7 +206,7 @@ class Machines(list):
                          for key in mapping])
 
     def __init__(self, machines):
-        list.__init__(self, [Machine.initialise(machine)
+        list.__init__(self, [Machine(machine)
                              for machine in machines])
 
 class Slice(dict):
