@@ -191,14 +191,7 @@ class MachineBase(dict):
             
 class TrigMachineBase(MachineBase):
     
-    """
-    - NB stateful generator ie you need a new one for each track
-    """
-    
-    def render(self, struct, nbeats, offset, samples, volume=1):
-        generator=TrigGenerator(samples=samples,
-                                offset=offset,
-                                volume=volume)                                
+    def render(self, struct, nbeats, generator):
         notes=generator.generate(n=nbeats,
                                  q=Q(self["seed"]),
                                  style=self["style"])
@@ -243,12 +236,17 @@ class Slice(dict):
                              "machines": Machines(machines)})
 
     def render(self, keys, struct, nbeats, offset):
+        def init_generator(samples, offset, volume=1):
+            return TrigGenerator(samples=samples,
+                                 offset=offset,
+                                 volume=volume)                                
         machines={machine["key"]: machine
                   for machine in self["machines"]}
         for key in keys:
             machine=machines[key]
-            machine.render(struct, nbeats, offset,
-                           samples=self["samples"])
+            generator=init_generator(self["samples"],
+                                     offset)
+            machine.render(struct, nbeats, generator)
 
 class Slices(list):
 

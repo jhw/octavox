@@ -1,12 +1,12 @@
 ### short
 
-- generator to be passed as a closure
-- add fx generator 
-  - same pattern as trigs
-- add hats
-- give fx separate pattern
+- remove machine classes
+- map generators to different machine types
 
-- consider if you really need machines, if all the functionality is coming from generator closures
+- add fx generator
+  - same pattern as trigs
+- add hats 
+- separate fx pattern
 
 ### medium
 
@@ -46,6 +46,7 @@
 
 ### done
 
+- generator to be passed as a closure
 - generator to return type and notes.expand() to group according to type
 - TrigNote to add type variable
 - Notes to cluster and render based on type variable
