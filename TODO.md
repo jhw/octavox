@@ -1,9 +1,7 @@
 ### short
 
-- TrigNote to add type variable
-- Notes to cluster and render based on type variable
+- separate machinenotes, tracknotes classes
 
-- generator to return type and notes.expand() to group according to type
 - generator to be passed as a closure
 - add fx generator 
   - same pattern as trigs
@@ -55,6 +53,9 @@
 
 ### done
 
+- generator to return type and notes.expand() to group according to type
+- TrigNote to add type variable
+- Notes to cluster and render based on type variable
 - TrigNote class
 - add basic notes class
 - add intermediate representation with separate() method

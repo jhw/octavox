@@ -51,11 +51,26 @@ class Samples(dict):
         for key in self.keys():
             self[key]=random.choice(samples[key])
 
-
+TrigType, FXType = "trig", "fx"
+            
 class TrigNote(dict):
 
+    DefaultName="default"
+    
     def __init__(self, item):
         dict.__init__(self, item)
+        
+    @property
+    def name(self):
+        return self["name"] if "name" in self else self.DefaultName
+
+    @property
+    def type(self):
+        return TrigType
+
+    @property
+    def key(self):
+        return "%s/%s" % (self.name, self.type)
             
 """
 - https://github.com/beats/acid-banger/blob/main/src/pattern.ts
@@ -234,9 +249,17 @@ class Notes(dict):
         dict.__init__(self, item)
 
     def expand(self):
+        tracks, types = {}, {}
+        for machinekey, notes in self.items():
+            for i, note in notes.items():
+                trackkey="%s/%s" % (machinekey, note.key)
+                tracks.setdefault(trackkey, {})
+                tracks[trackkey][i]=note
+                types[trackkey]=note.type
         return [{"notes": v,
-                 "type": "trig"}
-                for v in self.values()]
+                 "type": types[k]}
+                for k, v in tracks.items()
+                if v!=[]]
         
 class Tracks(dict):
 
