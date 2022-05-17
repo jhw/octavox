@@ -1,6 +1,7 @@
 ### short
 
-- single machine class
+- remove machine.initialise
+
 - map generators to different machine types
 
 - add fx generator
@@ -46,6 +47,7 @@
 
 ### done
 
+- single machine class
 - remove machine classes
 - generator to be passed as a closure
 - generator to return type and notes.expand() to group according to type

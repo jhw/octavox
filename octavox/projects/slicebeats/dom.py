@@ -169,11 +169,11 @@ class TrigGenerator(dict):
     def empty(self, q, i):
         pass
             
-class MachineBase(dict):
+class Machine(dict):
 
     @classmethod
-    def initialise(self, machine, mapping=MachineMapping):
-        return TrigMachineBase(machine)
+    def initialise(self, machine):
+        return Machine(machine)
     
     def __init__(self, items):
         dict.__init__(self, items)
@@ -188,8 +188,6 @@ class MachineBase(dict):
         if random.random() < limit:
             self["style"]=random.choice(styles)
             
-class TrigMachineBase(MachineBase):
-    
     def render(self, struct, nbeats, generator):
         notes=generator.generate(n=nbeats,
                                  q=Q(self["seed"]),
@@ -212,7 +210,7 @@ class Machines(list):
                          for key in mapping])
 
     def __init__(self, machines):
-        list.__init__(self, [MachineBase.initialise(machine)
+        list.__init__(self, [Machine.initialise(machine)
                              for machine in machines])
 
 class Slice(dict):
