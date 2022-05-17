@@ -1,11 +1,17 @@
 ### short
 
-- different generators for different machines
-- rationalise machine mapping
-- simplify notes expansion
-- add fx generator
+- required trig names 
+  - remove default name
+- remove machine key from expansion keys
+- replace nested notes with single dict
+- refactor note types
+  - do you need a dedicated class ?
+  - use class type ?
+
+- mapping to include generators
+- fx generator
   - same pattern as trigs
-- add hats 
+- hats 
 - separate fx pattern
 
 ### medium
