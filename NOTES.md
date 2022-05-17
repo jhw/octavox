@@ -1,4 +1,19 @@
-### machine configuration
+### notes setup 17/05/22
+
+- notes class
+- trignote class
+- vitling generator adds trignotes to notes
+- notes must sort/expand into tracks
+- must do this based on key
+- each note type must have a key property
+- is a combination of type and name
+- type is mandatory and either trig or FX
+- name is optional but defaults to default 
+- so add name type and key fields to trignote
+- could be dict properties maybe 
+- when expanding, include the type from the first note 
+
+### machine configuration ???
 
 - so current blocker is that trigs and fx machines are configured different ways
 - trigs pass samples to render, which are then used to create a trig generator
