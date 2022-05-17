@@ -1,7 +1,5 @@
 ### short
 
-- separate machinenotes, tracknotes classes
-
 - generator to be passed as a closure
 - add fx generator 
   - same pattern as trigs
@@ -17,10 +15,8 @@
 - mute
 - degrade
 
-- make hats and s&h an option because lots of richness with just two tracks
-
+- add options for kk/sn/ht/ec
 - tune down loud SVDrum bass
-
 - blender
 
 - expander script
@@ -44,12 +40,9 @@
 
 ### thoughts
 
-- abstract vitling patterns 
+- separate machinenotes, tracknotes classes ?
+- abstract vitling patterns  ?
   - doesn't seem this would help
-- add property helpers for trig/fx n_slice_beats ?
-  - seems excessive
-- add fx, trig globals ?
-  - seems excessive
 
 ### done
 
