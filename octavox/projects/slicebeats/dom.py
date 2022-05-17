@@ -91,41 +91,42 @@ class TrigGenerator(dict):
             fn(q, i)
         return self
         
-    def add(self, i, v):
-        trig=dict(self.samples[v[0]])
-        trig["name"]=self.key
-        trig["vel"]=v[1]*self.volume
+    def add(self, k, i, v):
+        samplekey, volume = v
+        trig=dict(self.samples[samplekey])
+        trig["name"]=k
+        trig["vel"]=self.volume*volume
         trig["type"]=TrigType
         self[i+self.offset]=trig
 
     def fourfloor(self, q, i, k=Kick):
         if i % 4 == 0:
-            self.add(i, (k, 0.9))
+            self.add(self.key, i, (k, 0.9))
         elif i % 2 == 0 and q.random() < 0.1:
-            self.add(i, (k, 0.6))
+            self.add(self.key, i, (k, 0.6))
 
     def electro(self, q, i, k=Kick):
         if i == 0:
-            self.add(i, (k, 1))
+            self.add(self.key, i, (k, 1))
         elif ((i % 2 == 0 and i % 8 != 4 and q.random() < 0.5) or
               q.random() < 0.05):
-            self.add(i, (k, 0.9*q.random()))
+            self.add(self.key, i, (k, 0.9*q.random()))
 
     def triplets(self, q, i, k=Kick):
         if i % 16  in [0, 3, 6, 9, 14]:
-           self.add(i, (k, 1))
+           self.add(self.key, i, (k, 1))
            
     def backbeat(self, q, i, k=Snare):
         if i % 8 == 4:
-            self.add(i, (k, 1))
+            self.add(self.key, i, (k, 1))
 
     def skip(self, q, i, k=Snare):
         if i % 8 in [3, 6]:
-            self.add(i, (k, 0.6+0.4*q.random()))
+            self.add(self.key, i, (k, 0.6+0.4*q.random()))
         elif i % 2 == 0 and q.random() < 0.2:
-            self.add(i, (k, 0.4+0.2*q.random()))
+            self.add(self.key, i, (k, 0.4+0.2*q.random()))
         elif q.random() < 0.1:
-            self.add(i, (k, 0.2+0.2*q.random()))
+            self.add(self.key, i, (k, 0.2+0.2*q.random()))
 
     """
     - offbeats_open/closed must pre- define random variables to ensure they always remain in sync
@@ -135,20 +136,20 @@ class TrigGenerator(dict):
     def offbeats_open(self, q, i, k=OpenHat):
         q0, q1 = q.random(), q.random()
         if i % 4 == 2:
-            self.add(i, (k, 0.4))
+            self.add(self.key, i, (k, 0.4))
         elif q0 < 0.15:
-            self.add(i, (k, 0.2*q1))
+            self.add(self.key, i, (k, 0.2*q1))
 
     def offbeats_closed(self, q, i, k=ClosedHat):
         q0, q1 = q.random(), q.random()
         if 0.15 < q0 < 0.3:
-            self.add(i, (k, 0.2*q1))
+            self.add(self.key, i, (k, 0.2*q1))
 
     def closed(self, q, i, k=ClosedHat):
         if i % 2 == 0:
-            self.add(i, (k, 0.4))
+            self.add(self.key, i, (k, 0.4))
         elif q.random() < 0.5:
-            self.add(i, (k, 0.3*q.random()))
+            self.add(self.key, i, (k, 0.3*q.random()))
 
     def empty(self, q, i):
         pass

@@ -1,6 +1,6 @@
 ### short
 
-- trig patterns must pass key to add() function
+
 - refactor note types
   - do you need a dedicated class ?
   - use class type ?
@@ -49,6 +49,7 @@
 
 ### done
 
+- trig patterns must pass key to add() function
 - replace trignote with standard dict
 - replace nested notes with single dict
 - required trig names 
