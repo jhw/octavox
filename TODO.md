@@ -1,6 +1,11 @@
 ### short
 
-- mapping to include generators
+- replace trig name/type combo with directly specified key
+- merge offbeats open/closed
+- merge mapping and styles
+- remove eval/hungarorise
+- include generators within mapping
+
 - fx generator
   - same pattern as trigs
 - hats 
@@ -13,7 +18,6 @@
 - mute
 - degrade
 
-- add options for kk/sn/ht/ec
 - tune down loud SVDrum bass
 - blender
 

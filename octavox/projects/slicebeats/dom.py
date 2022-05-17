@@ -2,11 +2,11 @@ from octavox.projects.slicebeats.project import SVProject
 
 import copy, json, os, random, yaml
 
-Kick, Snare, Hats, OpenHat, ClosedHat, EchoWet, EchoFeedback = "kk", "sn", "ht", "oh", "ch", "ew", "ef"
+Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
 
-FourFloor, Electro, Triplets, Backbeat, Skip, Offbeats, OffbeatsOpen, OffbeatsClosed, Closed, Empty, SampleHold = "fourfloor", "electro", "triplets", "backbeat", "skip", "offbeats", "offbeats_open", "offbeats_closed", "closed", "empty", "sample_hold"
+FourFloor, Electro, Triplets, Backbeat, Skip, Offbeats, OffbeatsOpen, OffbeatsClosed, Closed = "fourfloor", "electro", "triplets", "backbeat", "skip", "offbeats", "offbeats_open", "offbeats_closed", "closed"
 
-KickStyles, SnareStyles, HatsStyles, EchoWetStyles, EchoFeedbackStyles = [FourFloor, Electro, Triplets], [Backbeat, Skip], [Offbeats, Closed], [SampleHold], [SampleHold]
+KickStyles, SnareStyles, HatsStyles = [FourFloor, Electro, Triplets], [Backbeat, Skip], [Offbeats, Closed]
 
 MachineMapping={Kick: "kick",
                 Snare: "snare"}
