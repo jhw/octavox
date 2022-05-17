@@ -73,11 +73,10 @@ class Notes(dict):
 
     def expand(self):
         tracks, types = {}, {}
-        for notes in self.values():
-            for i, note in notes.items():
-                tracks.setdefault(note.key, {})
-                tracks[note.key][i]=note
-                types[note.key]=note.type
+        for i, note in self.items():
+            tracks.setdefault(note.key, {})
+            tracks[note.key][i]=note
+            types[note.key]=note.type
         return [{"notes": v,
                  "type": types[k]}
                 for k, v in tracks.items()
@@ -178,13 +177,12 @@ class Machine(dict):
         styles=eval(hungarorise("%s_styles" % mapping[self["key"]]))
         if random.random() < limit:
             self["style"]=random.choice(styles)
-            
+
     def render(self, struct, nbeats, generator):
         notes=generator.generate(n=nbeats,
                                  q=Q(self["seed"]),
                                  style=self["style"])
-        struct.setdefault(self["key"], {})
-        struct[self["key"]].update(notes)
+        struct.update(notes)
     
 class Machines(list):
 
