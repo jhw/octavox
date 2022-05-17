@@ -1,10 +1,5 @@
 ### short
 
-
-- refactor note types
-  - do you need a dedicated class ?
-  - use class type ?
-
 - mapping to include generators
 - fx generator
   - same pattern as trigs
