@@ -147,7 +147,7 @@ class SVProject:
         def classfn(type):
             return SVTrig if type=="trig" else SVEffect
         return [{k:classfn(v["type"])(v)
-                 for k, v in track["notes"].items()}
+                 for k, v in track.items()}
                 for track in patch["tracks"]]
         
     def init_pattern(self,

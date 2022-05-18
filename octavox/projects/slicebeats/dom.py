@@ -65,8 +65,7 @@ class Notes(dict):
             key=note["name"]
             tracks.setdefault(key, {})
             tracks[key][i]=note
-        return [{"notes": v}
-                for k, v in tracks.items()
+        return [v for v in tracks.values()
                 if v!=[]]
     
 """
