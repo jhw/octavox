@@ -1,12 +1,14 @@
 ### short
 
-- notes.add methid
+- notes.add method
 
 - merge mapping and styles
 - remove eval/hungarorise
 - include generators within mapping
 
 - pass patterns as dict (trig, fix)
+
+- why can't note name be replaced with key ?
 
 - fx generator
   - same pattern as trigs
