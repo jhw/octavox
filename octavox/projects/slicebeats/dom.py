@@ -59,14 +59,12 @@ class Notes(dict):
     def __init__(self, item={}):
         dict.__init__(self, item)
 
-    def expand(self):
-        tracks={}
-        for i, note in self.items():
+    def add(self, notes):
+        for i, note in notes.items():
             key=note["name"]
-            tracks.setdefault(key, {})
-            tracks[key][i]=note
-        return list(tracks.values())
-    
+            self.setdefault(key, {})
+            self[key][i]=note
+
 """
 - https://github.com/vitling/acid-banger/blob/main/src/pattern.ts
 """
@@ -161,7 +159,7 @@ class Machine(dict):
         notes=generator.generate(n=nbeats,
                                  q=Q(self["seed"]),
                                  style=self["style"])
-        struct.update(notes)
+        struct.add(notes)
     
 class Machines(list):
 
@@ -245,7 +243,7 @@ class Tracks(dict):
             offset=i_offset*nbeats
             slice=self["slices"][i_slice]
             slice.render(keys, notes, nbeats, offset)                         
-        struct["tracks"]+=notes.expand()
+        struct["tracks"]+=list(notes.values())
                 
     @property
     def n_slices(self):

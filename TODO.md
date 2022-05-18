@@ -1,7 +1,6 @@
 ### short
 
 - refactor generator / notes relationship so notes are passed to generator and generator is stateless
-- notes.add method
 - include generators within mapping
 - why can't note name be replaced with key ?
 - pass patterns as dict 
@@ -50,6 +49,7 @@
 
 ### done
 
+- notes.add method
 - remove eval/hungarorise
 - merge mapping and styles
 - remove trig key (name/type) and replace with key
