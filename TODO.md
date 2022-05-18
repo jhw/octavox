@@ -1,10 +1,14 @@
 ### short
 
-- replace trig name/type combo with directly specified key
 - merge offbeats open/closed
+- remove trig key (name/type) and replace with key
+- notes.add methid
+
 - merge mapping and styles
 - remove eval/hungarorise
 - include generators within mapping
+
+- pass patterns as dict (trig, fix)
 
 - fx generator
   - same pattern as trigs
