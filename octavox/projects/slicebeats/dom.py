@@ -2,11 +2,11 @@ from octavox.projects.slicebeats.project import SVProject
 
 import copy, json, os, random, yaml
 
-Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
+Kick, Snare, OpenHat, ClosedHat = "kk", "sn", "oh", "ch"
 
-FourFloor, Electro, Triplets, Backbeat, Skip, Offbeats, OffbeatsOpen, OffbeatsClosed, Closed = "fourfloor", "electro", "triplets", "backbeat", "skip", "offbeats", "offbeats_open", "offbeats_closed", "closed"
+FourFloor, Electro, Triplets, Backbeat, Skip, Offbeats, Closed = "fourfloor", "electro", "triplets", "backbeat", "skip", "offbeats", "closed"
 
-KickStyles, SnareStyles, HatsStyles = [FourFloor, Electro, Triplets], [Backbeat, Skip], [Offbeats, Closed]
+KickStyles, SnareStyles = [FourFloor, Electro, Triplets], [Backbeat, Skip]
 
 MachineMapping={Kick: "kick",
                 Snare: "snare"}
@@ -72,7 +72,7 @@ class Notes(dict):
                 if v!=[]]
     
 """
-- https://github.com/beats/acid-banger/blob/main/src/pattern.ts
+- https://github.com/vitling/acid-banger/blob/main/src/pattern.ts
 """
         
 class TrigGenerator(dict):
@@ -128,22 +128,14 @@ class TrigGenerator(dict):
         elif q.random() < 0.1:
             self.add(self.key, i, (k, 0.2+0.2*q.random()))
 
-    """
-    - offbeats_open/closed must pre- define random variables to ensure they always remain in sync
-    - ie don't nest one call to `q.random()` inside another
-    """
-            
-    def offbeats_open(self, q, i, k=OpenHat):
-        q0, q1 = q.random(), q.random()
+    def offbeats(self, q, i,
+                 ko=OpenHat,
+                 kc=ClosedHat):
         if i % 4 == 2:
-            self.add(self.key, i, (k, 0.4))
-        elif q0 < 0.15:
-            self.add(self.key, i, (k, 0.2*q1))
-
-    def offbeats_closed(self, q, i, k=ClosedHat):
-        q0, q1 = q.random(), q.random()
-        if 0.15 < q0 < 0.3:
-            self.add(self.key, i, (k, 0.2*q1))
+            self.add(self.key, i, (ko, 0.4))
+        elif q.random() < 0.3:
+            k=ko if q.random() < 0.5 else kc
+            self.add(self.key, i, (kc, 0.2*q.random()))
 
     def closed(self, q, i, k=ClosedHat):
         if i % 2 == 0:
