@@ -61,8 +61,7 @@ class Notes(dict):
     def expand(self):
         tracks, types = {}, {}
         for i, note in self.items():
-            key="%s/%s" % (note["name"],
-                           note["type"])
+            key=note["name"]
             tracks.setdefault(key, {})
             tracks[key][i]=note
             types[key]=note["type"]

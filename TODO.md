@@ -1,6 +1,5 @@
 ### short
 
-- remove trig key (name/type) and replace with key
 - notes.add methid
 
 - merge mapping and styles
@@ -51,6 +50,7 @@
 
 ### done
 
+- remove trig key (name/type) and replace with key
 - merge offbeats open/closed
 - trig patterns must pass key to add() function
 - replace trignote with standard dict
