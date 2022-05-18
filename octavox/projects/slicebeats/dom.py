@@ -65,8 +65,7 @@ class Notes(dict):
             key=note["name"]
             tracks.setdefault(key, {})
             tracks[key][i]=note
-        return [v for v in tracks.values()
-                if v!=[]]
+        return list(tracks.values())
     
 """
 - https://github.com/vitling/acid-banger/blob/main/src/pattern.ts
