@@ -1,6 +1,9 @@
 ### short
 
+- refactor generator / notes relationship so notes are passed to generator and generator is stateless
+
 - notes.add method
+
 - include generators within mapping
 
 - why can't note name be replaced with key ?
