@@ -4,14 +4,16 @@ import copy, json, os, random, yaml
 
 Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
 
-Styles=yaml.safe_load("""
+MachineConfig=yaml.safe_load("""
 kk:
-- fourfloor
-- electro
-- triplets
+  styles:
+  - fourfloor
+  - electro
+  - triplets
 sn:
-- backbeat
-- skip
+  styles:
+  - backbeat
+  - skip
 """)
 
 SVDrum, Drum, Sampler = "svdrum", "Drum", "Sampler"
@@ -154,9 +156,10 @@ class Machine(dict):
             seed=int(1e8*random.random())
             self["seed"]=seed
 
-    def randomise_style(self, limit, styles=Styles):
+    def randomise_style(self, limit, config=MachineConfig):
         if random.random() < limit:
-            self["style"]=random.choice(styles[self["key"]])
+            styles=config[self["key"]]["styles"]
+            self["style"]=random.choice(styles)
 
     def render(self, struct, nbeats, generator):
         notes=generator.generate(n=nbeats,
@@ -167,15 +170,16 @@ class Machine(dict):
 class Machines(list):
 
     @classmethod
-    def randomise(self, styles=Styles):
+    def randomise(self, config=MachineConfig):
         def init_seed(key):
             return int(1e8*random.random())
         def init_style(key):
-            return random.choice(styles[key])
+            styles=config[key]["styles"]
+            return random.choice(styles)
         return Machines([{"seed": init_seed(key),
                           "style": init_style(key),
                           "key": key}
-                         for key in styles])
+                         for key in config])
 
     def __init__(self, machines):
         list.__init__(self, [Machine(machine)

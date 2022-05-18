@@ -1,13 +1,13 @@
 ### short
 
 - notes.add method
-
-- remove eval/hungarorise
 - include generators within mapping
 
-- pass patterns as dict (trig, fix)
-
 - why can't note name be replaced with key ?
+
+- pass patterns as dict 
+  - trig, fix
+  - may need to include type at machine config level
 
 - fx generator
   - same pattern as trigs
@@ -51,6 +51,7 @@
 
 ### done
 
+- remove eval/hungarorise
 - merge mapping and styles
 - remove trig key (name/type) and replace with key
 - merge offbeats open/closed
