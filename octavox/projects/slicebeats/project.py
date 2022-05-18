@@ -146,7 +146,7 @@ class SVProject:
     def init_grid(self, patch):
         def classfn(type):
             return SVTrig if type=="trig" else SVEffect
-        return [{k:classfn(track["type"])(v)
+        return [{k:classfn(v["type"])(v)
                  for k, v in track["notes"].items()}
                 for track in patch["tracks"]]
         

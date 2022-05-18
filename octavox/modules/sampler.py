@@ -73,21 +73,19 @@ class SVPatches(list):
         keys={}
         for patch in self:
             for track in patch["tracks"]:
-                if track["type"]=="trig":
-                    trigs=track["notes"]
-                    for trig in trigs.values():
-                        if trig and trig["mod"]==Sampler:
-                            keys[keyfn(trig["key"])]=trig["key"]
+                trigs=track["notes"]
+                for trig in trigs.values():
+                    if trig and trig["mod"]==Sampler:
+                        keys[keyfn(trig["key"])]=trig["key"]
         return list(keys.values())
 
     def add_sample_ids(self, mapping):
         for patch in self:
             for track in patch["tracks"]:
-                if track["type"]=="trig":
-                    trigs=track["notes"]
-                    for trig in trigs.values():
-                        if trig and trig["mod"]==Sampler:
-                            trig["id"]=mapping.index(trig["key"])
+                trigs=track["notes"]
+                for trig in trigs.values():
+                    if trig and trig["mod"]==Sampler:
+                        trig["id"]=mapping.index(trig["key"])
 
 class SVSampler(RVSampler):
 

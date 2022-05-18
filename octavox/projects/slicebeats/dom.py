@@ -60,14 +60,12 @@ class Notes(dict):
         dict.__init__(self, item)
 
     def expand(self):
-        tracks, types = {}, {}
+        tracks={}
         for i, note in self.items():
             key=note["name"]
             tracks.setdefault(key, {})
             tracks[key][i]=note
-            types[key]=note["type"]
-        return [{"notes": v,
-                 "type": types[k]}
+        return [{"notes": v}
                 for k, v in tracks.items()
                 if v!=[]]
     
