@@ -2,14 +2,17 @@ from octavox.projects.slicebeats.project import SVProject
 
 import copy, json, os, random, yaml
 
-Kick, Snare, OpenHat, ClosedHat = "kk", "sn", "oh", "ch"
+Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
 
-FourFloor, Electro, Triplets, Backbeat, Skip, Offbeats, Closed = "fourfloor", "electro", "triplets", "backbeat", "skip", "offbeats", "closed"
-
-KickStyles, SnareStyles = [FourFloor, Electro, Triplets], [Backbeat, Skip]
-
-MachineMapping={Kick: "kick",
-                Snare: "snare"}
+Styles=yaml.safe_load("""
+kk:
+- fourfloor
+- electro
+- triplets
+sn:
+- backbeat
+- skip
+""")
 
 SVDrum, Drum, Sampler = "svdrum", "Drum", "Sampler"
 
@@ -19,10 +22,6 @@ def Q(seed):
     q=random.Random()
     q.seed(seed)
     return q
-
-def hungarorise(text):
-    return "".join([tok.capitalize()
-                    for tok in text.split("_")])
 
 class SampleKey:
 
@@ -155,10 +154,9 @@ class Machine(dict):
             seed=int(1e8*random.random())
             self["seed"]=seed
 
-    def randomise_style(self, limit, mapping=MachineMapping):
-        styles=eval(hungarorise("%s_styles" % mapping[self["key"]]))
+    def randomise_style(self, limit, styles=Styles):
         if random.random() < limit:
-            self["style"]=random.choice(styles)
+            self["style"]=random.choice(styles[self["key"]])
 
     def render(self, struct, nbeats, generator):
         notes=generator.generate(n=nbeats,
@@ -169,16 +167,15 @@ class Machine(dict):
 class Machines(list):
 
     @classmethod
-    def randomise(self, mapping=MachineMapping):
-        def init_seed(key, mapping):
+    def randomise(self, styles=Styles):
+        def init_seed(key):
             return int(1e8*random.random())
-        def init_style(key, mapping):
-            styles=eval(hungarorise("%s_styles" % mapping[key]))
-            return random.choice(styles)
-        return Machines([{"seed": init_seed(key, mapping),
-                          "style": init_style(key, mapping),
+        def init_style(key):
+            return random.choice(styles[key])
+        return Machines([{"seed": init_seed(key),
+                          "style": init_style(key),
                           "key": key}
-                         for key in mapping])
+                         for key in styles])
 
     def __init__(self, machines):
         list.__init__(self, [Machine(machine)

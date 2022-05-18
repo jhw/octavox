@@ -2,7 +2,6 @@
 
 - notes.add method
 
-- merge mapping and styles
 - remove eval/hungarorise
 - include generators within mapping
 
@@ -52,6 +51,7 @@
 
 ### done
 
+- merge mapping and styles
 - remove trig key (name/type) and replace with key
 - merge offbeats open/closed
 - trig patterns must pass key to add() function
