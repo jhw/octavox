@@ -1,6 +1,5 @@
 ### short
 
-- rename generator
 - include generators within mapping
 - pass patterns as dict 
 - fx generator
@@ -43,6 +42,7 @@
 
 ### done
 
+- rename generator
 - rename struct
 - replace iteration over hardcoded keys with machine config
 - add back sampler protection against fx trigs

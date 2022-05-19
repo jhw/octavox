@@ -60,7 +60,7 @@ class Samples(dict):
 - https://github.com/vitling/acid-banger/blob/main/src/pattern.ts
 """
         
-class TrigGenerator:
+class VitlingGenerator:
     
     def __init__(self, key, samples, offset=0, volume=1):
         self.key=key
@@ -177,10 +177,10 @@ class Slice(dict):
 
     def render(self, config, notes, nbeats, offset):
         def init_generator(key, samples, offset, volume=1):
-            return TrigGenerator(key=key,
-                                 samples=samples,
-                                 offset=offset,
-                                 volume=volume)                                
+            return VitlingGenerator(key=key,
+                                    samples=samples,
+                                    offset=offset,
+                                    volume=volume)
         machines={machine["key"]: machine
                   for machine in self["machines"]}
         for key in config:
