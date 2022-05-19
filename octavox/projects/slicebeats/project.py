@@ -144,9 +144,9 @@ class SVProject:
                          proj.modules[modmap[dest]])
 
     def init_grid(self, patch):
-        def classfn(type):
-            return SVTrig if type=="trig" else SVEffect
-        return [{k:classfn(v["type"])(v)
+        def classfn(v):
+            return SVEffect if "attr" in v else SVTrig
+        return [{k:classfn(v)(v)
                  for k, v in track.items()}
                 for track in patch["tracks"]]
         

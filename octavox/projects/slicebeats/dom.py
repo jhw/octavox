@@ -18,8 +18,6 @@ sn:
 
 SVDrum, Drum, Sampler = "svdrum", "Drum", "Sampler"
 
-TrigType, FXType = "trig", "fx"
-            
 def Q(seed):
     q=random.Random()
     q.seed(seed)
@@ -90,7 +88,6 @@ class TrigGenerator(dict):
         trig=dict(self.samples[samplekey])
         trig["name"]=k
         trig["vel"]=self.volume*volume
-        trig["type"]=TrigType
         self[i+self.offset]=trig
 
     def fourfloor(self, q, i, k=Kick):
