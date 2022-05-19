@@ -1,15 +1,15 @@
 ### short
 
-- refactor generator / notes relationship so notes are passed to generator and generator is stateless
+- rename struct as notes
+- hats 
+
 - include generators within mapping
-- why can't note name be replaced with key ?
 - pass patterns as dict 
   - trig, fix
   - may need to include type at machine config level
 - add back sampler protection against fx trigs
 - fx generator
   - same pattern as trigs
-- hats 
 - separate fx pattern
 
 ### medium
@@ -49,6 +49,7 @@
 
 ### done
 
+- refactor generator / notes relationship so notes are passed to generator and generator is stateless
 - notes.add method
 - remove eval/hungarorise
 - merge mapping and styles

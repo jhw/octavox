@@ -52,91 +52,75 @@ class Samples(dict):
         for key in self.keys():
             self[key]=random.choice(samples[key])
 
-class Notes(dict):
-
-    def __init__(self, item={}):
-        dict.__init__(self, item)
-
-    def add(self, notes):
-        for i, note in notes.items():
-            key=note["name"]
-            self.setdefault(key, {})
-            self[key][i]=note
-
 """
 - https://github.com/vitling/acid-banger/blob/main/src/pattern.ts
 """
         
-class TrigGenerator(dict):
+class TrigGenerator:
     
     def __init__(self, key, samples, offset=0, volume=1):
-        dict.__init__(self)
         self.key=key
         self.samples={k: SampleKey(v).expand()
                       for k, v in samples.items()}
         self.offset=offset
         self.volume=volume
 
-    def generate(self, style, q, n):
+    def generate(self, notes, style, q, n):
         fn=getattr(self, style)
         for i in range(n):
-            fn(q, i)
-        return self
+            fn(notes, q, i)
         
-    def add(self, k, i, v):
+    def add(self, notes, k, i, v):
         samplekey, volume = v
         trig=dict(self.samples[samplekey])
-        trig["name"]=k
         trig["vel"]=self.volume*volume
-        self[i+self.offset]=trig
+        notes.setdefault(k, {})
+        notes[k][i+self.offset]=trig
 
-    def fourfloor(self, q, i, k=Kick):
+    def fourfloor(self, notes, q, i, k=Kick):
         if i % 4 == 0:
-            self.add(self.key, i, (k, 0.9))
+            self.add(notes, self.key, i, (k, 0.9))
         elif i % 2 == 0 and q.random() < 0.1:
-            self.add(self.key, i, (k, 0.6))
+            self.add(notes, self.key, i, (k, 0.6))
 
-    def electro(self, q, i, k=Kick):
+    def electro(self, notes, q, i, k=Kick):
         if i == 0:
-            self.add(self.key, i, (k, 1))
+            self.add(notes, self.key, i, (k, 1))
         elif ((i % 2 == 0 and i % 8 != 4 and q.random() < 0.5) or
               q.random() < 0.05):
-            self.add(self.key, i, (k, 0.9*q.random()))
+            self.add(notes, self.key, i, (k, 0.9*q.random()))
 
-    def triplets(self, q, i, k=Kick):
+    def triplets(self, notes, q, i, k=Kick):
         if i % 16  in [0, 3, 6, 9, 14]:
-           self.add(self.key, i, (k, 1))
+           self.add(notes, self.key, i, (k, 1))
            
-    def backbeat(self, q, i, k=Snare):
+    def backbeat(self, notes, q, i, k=Snare):
         if i % 8 == 4:
-            self.add(self.key, i, (k, 1))
+            self.add(notes, self.key, i, (k, 1))
 
-    def skip(self, q, i, k=Snare):
+    def skip(self, notes, q, i, k=Snare):
         if i % 8 in [3, 6]:
-            self.add(self.key, i, (k, 0.6+0.4*q.random()))
+            self.add(notes, self.key, i, (k, 0.6+0.4*q.random()))
         elif i % 2 == 0 and q.random() < 0.2:
-            self.add(self.key, i, (k, 0.4+0.2*q.random()))
+            self.add(notes, self.key, i, (k, 0.4+0.2*q.random()))
         elif q.random() < 0.1:
-            self.add(self.key, i, (k, 0.2+0.2*q.random()))
+            self.add(notes, self.key, i, (k, 0.2+0.2*q.random()))
 
-    def offbeats(self, q, i,
+    def offbeats(self, notes, q, i,
                  ko=OpenHat,
                  kc=ClosedHat):
         if i % 4 == 2:
-            self.add(self.key, i, (ko, 0.4))
+            self.add(notes, self.key, i, (ko, 0.4))
         elif q.random() < 0.3:
             k=ko if q.random() < 0.5 else kc
-            self.add(self.key, i, (kc, 0.2*q.random()))
+            self.add(notes, self.key, i, (kc, 0.2*q.random()))
 
-    def closed(self, q, i, k=ClosedHat):
+    def closed(self, notes, q, i, k=ClosedHat):
         if i % 2 == 0:
-            self.add(self.key, i, (k, 0.4))
+            self.add(notes, self.key, i, (k, 0.4))
         elif q.random() < 0.5:
-            self.add(self.key, i, (k, 0.3*q.random()))
+            self.add(notes, self.key, i, (k, 0.3*q.random()))
 
-    def empty(self, q, i):
-        pass
-            
 class Machine(dict):
 
     def __init__(self, items):
@@ -153,10 +137,10 @@ class Machine(dict):
             self["style"]=random.choice(styles)
 
     def render(self, struct, nbeats, generator):
-        notes=generator.generate(n=nbeats,
-                                 q=Q(self["seed"]),
-                                 style=self["style"])
-        struct.add(notes)
+        generator.generate(notes=struct,
+                           n=nbeats,
+                           q=Q(self["seed"]),
+                           style=self["style"])
     
 class Machines(list):
 
@@ -235,7 +219,7 @@ class Tracks(dict):
             self["pattern"]=random.choice(self.Patterns)
 
     def render(self, struct, nbeats, keys=[Kick, Snare]):
-        notes=Notes()
+        notes={}
         for i_offset, i_slice in enumerate(self["pattern"]):
             offset=i_offset*nbeats
             slice=self["slices"][i_slice]
