@@ -1,6 +1,5 @@
 ### short
 
-- rename struct as notes
 - hats 
 
 - include generators within mapping
@@ -49,6 +48,7 @@
 
 ### done
 
+- rename struct as notes
 - refactor generator / notes relationship so notes are passed to generator and generator is stateless
 - notes.add method
 - remove eval/hungarorise

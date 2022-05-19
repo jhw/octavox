@@ -136,8 +136,8 @@ class Machine(dict):
             styles=config[self["key"]]["styles"]
             self["style"]=random.choice(styles)
 
-    def render(self, struct, nbeats, generator):
-        generator.generate(notes=struct,
+    def render(self, notes, nbeats, generator):
+        generator.generate(notes=notes,
                            n=nbeats,
                            q=Q(self["seed"]),
                            style=self["style"])
