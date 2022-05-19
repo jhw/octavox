@@ -6,15 +6,18 @@ Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
 
 MachineConfig=yaml.safe_load("""
 kk:
+  generator: vitling
   styles:
   - fourfloor
   - electro
   - triplets
 sn:
+  generator: vitling
   styles:
   - backbeat
   - skip
 # ht:
+#   generator: vitling
 #   styles:
 #   - offbeats
 #   - closed
@@ -26,6 +29,10 @@ def Q(seed):
     q=random.Random()
     q.seed(seed)
     return q
+
+def hungarorise(text):
+    return "".join([tok.capitalize()
+                    for tok in text.split("_")])
 
 class SampleKey:
 
@@ -176,20 +183,22 @@ class Slice(dict):
                              "machines": Machines(machines)})
 
     def render(self, config, notes, nbeats, offset):
-        def init_generator(key, samples, offset, volume=1):
-            return VitlingGenerator(key=key,
-                                    samples=samples,
-                                    offset=offset,
-                                    volume=volume)
+        def vitling_kwargs(self, key, offset, volume=1):
+            return {"key": key,
+                    "samples": self["samples"],
+                    "offset": offset,
+                    "volume": volume}
         machines={machine["key"]: machine
                   for machine in self["machines"]}
         for key in config:
+            genkey=config[key]["generator"]
+            genkwargsfn=eval("%s_kwargs" % genkey)
+            genkwargs=genkwargsfn(self, key, offset)
+            genclass=eval(hungarorise("%s_generator" % genkey))
+            generator=genclass(**genkwargs)
             machine=machines[key]
-            generator=init_generator(key=key,
-                                     samples=self["samples"],
-                                     offset=offset)
             machine.render(notes, nbeats, generator)
-
+            
 class Slices(list):
 
     @classmethod

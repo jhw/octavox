@@ -1,16 +1,14 @@
 ### short
 
-- include generators within mapping
+- initialise vitling generator with specific set of styles
 - pass patterns as dict 
 - fx generator
-- separate fx pattern
 
 ### medium
 
 - patch breaks
 - slice temperature
 - pass kk/sn/ht/sh as cli options
-- degrade
 
 - tune down loud SVDrum bass
 
@@ -35,13 +33,19 @@
 
 ### thoughts
 
-- abstract project Modules and Links
+- mutes ?
+  - don't think its consistent with cli options for different channels
+- degrade ?
+  - don't think it's really consistent with slices
+- abstract project Modules and Links ?
   - not sure it's worth it since specific module classes have to be imported
 - abstract vitling patterns  ?
   - doesn't seem this would help
 
 ### done
 
+- genericise passing of kwargs to generators
+- include generators within mapping
 - rename generator
 - rename struct
 - replace iteration over hardcoded keys with machine config
