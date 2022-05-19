@@ -1,25 +1,19 @@
 ### short
 
-- hats 
-
+- replace iteration over hardcoded keys with machine config
 - include generators within mapping
 - pass patterns as dict 
-  - trig, fix
-  - may need to include type at machine config level
-- add back sampler protection against fx trigs
 - fx generator
-  - same pattern as trigs
 - separate fx pattern
 
 ### medium
 
 - patch breaks
 - slice temperature
-- mute
+- pass kk/sn/ht/sh as cli options
 - degrade
 
 - tune down loud SVDrum bass
-- blender
 
 - expander script
   - based on mutator
@@ -48,6 +42,8 @@
 
 ### done
 
+- add back sampler protection against fx trigs
+- hats 
 - rename struct as notes
 - refactor generator / notes relationship so notes are passed to generator and generator is stateless
 - notes.add method

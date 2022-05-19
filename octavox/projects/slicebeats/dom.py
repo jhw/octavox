@@ -14,6 +14,10 @@ sn:
   styles:
   - backbeat
   - skip
+# ht:
+#   styles:
+#   - offbeats
+#   - closed
 """)
 
 SVDrum, Drum, Sampler = "svdrum", "Drum", "Sampler"
