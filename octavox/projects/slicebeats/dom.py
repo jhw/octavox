@@ -175,7 +175,7 @@ class Slice(dict):
         dict.__init__(self, {"samples": Samples(samples),
                              "machines": Machines(machines)})
 
-    def render(self, config, struct, nbeats, offset):
+    def render(self, config, notes, nbeats, offset):
         def init_generator(key, samples, offset, volume=1):
             return TrigGenerator(key=key,
                                  samples=samples,
@@ -188,7 +188,7 @@ class Slice(dict):
             generator=init_generator(key=key,
                                      samples=self["samples"],
                                      offset=offset)
-            machine.render(struct, nbeats, generator)
+            machine.render(notes, nbeats, generator)
 
 class Slices(list):
 

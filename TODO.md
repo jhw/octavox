@@ -1,6 +1,5 @@
 ### short
 
-- rename struct
 - rename generator
 - include generators within mapping
 - pass patterns as dict 
@@ -44,6 +43,7 @@
 
 ### done
 
+- rename struct
 - replace iteration over hardcoded keys with machine config
 - add back sampler protection against fx trigs
 - hats 
