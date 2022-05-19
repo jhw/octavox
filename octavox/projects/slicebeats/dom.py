@@ -175,7 +175,7 @@ class Slice(dict):
         dict.__init__(self, {"samples": Samples(samples),
                              "machines": Machines(machines)})
 
-    def render(self, keys, struct, nbeats, offset):
+    def render(self, config, struct, nbeats, offset):
         def init_generator(key, samples, offset, volume=1):
             return TrigGenerator(key=key,
                                  samples=samples,
@@ -183,7 +183,7 @@ class Slice(dict):
                                  volume=volume)                                
         machines={machine["key"]: machine
                   for machine in self["machines"]}
-        for key in keys:
+        for key in config:
             machine=machines[key]
             generator=init_generator(key=key,
                                      samples=self["samples"],
@@ -222,12 +222,12 @@ class Tracks(dict):
         if random.random() < limit:
             self["pattern"]=random.choice(self.Patterns)
 
-    def render(self, struct, nbeats, keys=[Kick, Snare]):
+    def render(self, struct, nbeats, config=MachineConfig):
         notes={}
         for i_offset, i_slice in enumerate(self["pattern"]):
             offset=i_offset*nbeats
             slice=self["slices"][i_slice]
-            slice.render(keys, notes, nbeats, offset)                         
+            slice.render(config, notes, nbeats, offset)                         
         struct["tracks"]+=list(notes.values())
                 
     @property

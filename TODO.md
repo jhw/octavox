@@ -1,6 +1,7 @@
 ### short
 
-- replace iteration over hardcoded keys with machine config
+- rename struct
+- rename generator
 - include generators within mapping
 - pass patterns as dict 
 - fx generator
@@ -36,12 +37,14 @@
 
 ### thoughts
 
-- separate machinenotes, tracknotes classes ?
+- abstract project Modules and Links
+  - not sure it's worth it since specific module classes have to be imported
 - abstract vitling patterns  ?
   - doesn't seem this would help
 
 ### done
 
+- replace iteration over hardcoded keys with machine config
 - add back sampler protection against fx trigs
 - hats 
 - rename struct as notes
