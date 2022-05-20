@@ -1,6 +1,9 @@
 ### short
 
-- initialise vitling generator with specific set of styles
+- notes should be a list not dict
+- vitling should add explicit key
+- investigate dynamic rv class loading
+- refactor pattern for so can include slices of different length
 - pass patterns as dict 
 - fx generator
 
@@ -33,17 +36,18 @@
 
 ### thoughts
 
+- initialise vitling generator with specific set of styles ? 
+  - no because style info is part of machine
 - mutes ?
   - don't think its consistent with cli options for different channels
 - degrade ?
   - don't think it's really consistent with slices
 - abstract project Modules and Links ?
   - not sure it's worth it since specific module classes have to be imported
-- abstract vitling patterns  ?
-  - doesn't seem this would help
 
 ### done
 
+  
 - genericise passing of kwargs to generators
 - include generators within mapping
 - rename generator
