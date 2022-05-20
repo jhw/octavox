@@ -1,6 +1,5 @@
 ### short
 
-- vitling should add explicit key
 - investigate dynamic rv class loading
 - refactor pattern for so can include slices of different length
 - pass patterns as dict 
@@ -46,6 +45,7 @@
 
 ### done
 
+- vitling should add explicit key
 - notes should be a list not dict
 - genericise passing of kwargs to generators
 - include generators within mapping
