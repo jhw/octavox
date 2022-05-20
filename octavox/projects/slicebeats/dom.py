@@ -85,8 +85,9 @@ class VitlingGenerator:
         samplekey, volume = v
         trig=dict(self.samples[samplekey])
         trig["vel"]=self.volume*volume
-        notes.setdefault(k, {})
-        notes[k][i+self.offset]=trig
+        trig["i"]=i+self.offset
+        notes.setdefault(k, [])
+        notes[k].append(trig)
 
     def fourfloor(self, notes, q, i, k=Kick):
         if i % 4 == 0:

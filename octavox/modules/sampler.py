@@ -73,7 +73,7 @@ class SVPatches(list):
         keys={}
         for patch in self:
             for track in patch["tracks"]:
-                for trig in track.values():
+                for trig in track:
                     if trig and trig["mod"]==Sampler:
                         keys[keyfn(trig["key"])]=trig["key"]
         return list(keys.values())
@@ -81,7 +81,7 @@ class SVPatches(list):
     def add_sample_ids(self, mapping):
         for patch in self:
             for track in patch["tracks"]:
-                for trig in track.values():
+                for trig in track:
                     if trig and trig["mod"]==Sampler:
                         trig["id"]=mapping.index(trig["key"])
 
