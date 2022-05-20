@@ -2,7 +2,7 @@
 
 - pass patterns as dict 
 - fx generator
-- separate fx patterns
+- per- machine patterns
 
 ### medium
 
