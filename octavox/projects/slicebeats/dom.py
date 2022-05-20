@@ -16,11 +16,11 @@ sn:
   styles:
   - backbeat
   - skip
-# ht:
-#   generator: vitling
-#   styles:
-#   - offbeats
-#   - closed
+ht:
+  generator: vitling
+  styles:
+  - offbeats
+  - closed
 """)
 
 SVDrum, Drum, Sampler = "svdrum", "Drum", "Sampler"

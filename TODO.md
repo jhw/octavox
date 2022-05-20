@@ -1,17 +1,16 @@
 ### short
 
-- investigate dynamic rv class loading
-- refactor pattern for so can include slices of different length
 - pass patterns as dict 
 - fx generator
+- separate fx patterns
 
 ### medium
 
 - patch breaks
 - slice temperature
 - pass kk/sn/ht/sh as cli options
-
 - tune down loud SVDrum bass
+- refactor pattern for so can include slices of different length
 
 - expander script
   - based on mutator
@@ -34,6 +33,8 @@
 
 ### thoughts
 
+- dynamic RV class loading ?
+  - feels like it's going to be a pain, esp class renaming
 - initialise vitling generator with specific set of styles ? 
   - no because style info is part of machine
 - mutes ?
