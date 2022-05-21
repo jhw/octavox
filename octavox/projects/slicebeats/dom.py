@@ -183,7 +183,7 @@ class Slice(dict):
         dict.__init__(self, {"samples": Samples(samples),
                              "machines": Machines(machines)})
 
-    def render(self, config, notes, nbeats, offset):
+    def render(self, key, config, notes, nbeats, offset):
         def vitling_kwargs(self, key, offset, volume=1):
             return {"key": key,
                     "samples": self["samples"],
@@ -191,14 +191,13 @@ class Slice(dict):
                     "volume": volume}
         machines={machine["key"]: machine
                   for machine in self["machines"]}
-        for key in config:
-            genkey=config[key]["generator"]
-            genkwargsfn=eval("%s_kwargs" % genkey)
-            genkwargs=genkwargsfn(self, key, offset)
-            genclass=eval(hungarorise("%s_generator" % genkey))
-            generator=genclass(**genkwargs)
-            machine=machines[key]
-            machine.render(notes, nbeats, generator)
+        genkey=config[key]["generator"]
+        genkwargsfn=eval("%s_kwargs" % genkey)
+        genkwargs=genkwargsfn(self, key, offset)
+        genclass=eval(hungarorise("%s_generator" % genkey))
+        generator=genclass(**genkwargs)
+        machine=machines[key]
+        machine.render(notes, nbeats, generator)
             
 class Slices(list):
 
@@ -234,10 +233,11 @@ class Tracks(dict):
 
     def render(self, struct, nbeats, config=MachineConfig):
         notes={}
-        for i_offset, i_slice in enumerate(self["pattern"]):
-            offset=i_offset*nbeats
-            slice=self["slices"][i_slice]
-            slice.render(config, notes, nbeats, offset)                         
+        for key in config:
+            for i_offset, i_slice in enumerate(self["pattern"]):
+                offset=i_offset*nbeats
+                slice=self["slices"][i_slice]
+                slice.render(key, config, notes, nbeats, offset)
         struct["tracks"]+=list(notes.values())
                 
     @property

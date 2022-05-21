@@ -1,6 +1,8 @@
 ### short
 
-- per- machine patterns
+- machines as dict
+- simplify slice rendering
+
 - fx generator
 
 - patch breaks
@@ -47,6 +49,7 @@
 
 ### done
 
+- move slice iteration into tracks
 - vitling should add explicit key
 - notes should be a list not dict
 - genericise passing of kwargs to generators
