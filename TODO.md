@@ -1,5 +1,6 @@
 ### short
 
+- embed styles in machine
 - remove machines key
 - simplify slice rendering
 - per- machine patterns
