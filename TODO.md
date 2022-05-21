@@ -1,16 +1,17 @@
 ### short
 
-- pass patterns as dict 
-- fx generator
 - per- machine patterns
-
-### medium
+- fx generator
 
 - patch breaks
 - slice temperature
 - pass kk/sn/ht/sh as cli options
 - tune down loud SVDrum bass
-- refactor pattern for so can include slices of different length
+- pattern to allow slices of different lengths
+
+### medium
+
+- per- machine SVDrum/Sampler modules
 
 - expander script
   - based on mutator
