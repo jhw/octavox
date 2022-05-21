@@ -227,20 +227,17 @@ class Tracks(dict):
         if random.random() < limit:
             self["pattern"]=random.choice(self.Patterns)
 
-    def render(self, struct, nbeats, config=MachineConfig):
+    def render(self, patch, nbeats, config=MachineConfig):
         notes={}
         for key in config:
             genkey=config[key]["generator"]
             for i_offset, i_slice in enumerate(self["pattern"]):
-                offset=i_offset*nbeats
                 slice=self["slices"][i_slice]
-                slice.render(key, genkey, notes, nbeats, offset)
-        struct["tracks"]+=list(notes.values())
+                nslicebeats=int(nbeats/len(self["pattern"]))
+                offset=i_offset*nslicebeats
+                slice.render(key, genkey, notes, nslicebeats, offset)
+        patch["tracks"]+=list(notes.values())
                 
-    @property
-    def n_slices(self):
-        return len(self["pattern"])
-
 class Patch(dict):
 
     @classmethod
@@ -254,12 +251,10 @@ class Patch(dict):
         return copy.deepcopy(self)
 
     def render(self, nbeats):
-        struct={"n": nbeats,
+        patch={"n": nbeats,
                 "tracks": []}
-        nslices=self["tracks"].n_slices
-        nslicebeats=int(nbeats/nslices)
-        self["tracks"].render(struct, nslicebeats)
-        return struct
+        self["tracks"].render(patch, nbeats)
+        return patch
         
 class Patches(list):
 

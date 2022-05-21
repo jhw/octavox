@@ -1,10 +1,8 @@
 ### short
 
-- n(slice)beats to be set at Tracks level
 - per- machine patterns
 - pattern to allow slices of different lengths
 - fx generator
-
 - patch breaks
 - slice temperature
 - pass kk/sn/ht/sh as cli options
@@ -48,6 +46,7 @@
 
 ### done
 
+- n(slice)beats to be set at Tracks level
 - simplify slice rendering
 - embed styles in machine
 - remove machines key
