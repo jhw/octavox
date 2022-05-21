@@ -1,7 +1,8 @@
 ### short
 
-- machines as dict
+- remove machines key
 - simplify slice rendering
+- per- machine patterns
 
 - fx generator
 
@@ -49,6 +50,7 @@
 
 ### done
 
+- machines as dict
 - move slice iteration into tracks
 - vitling should add explicit key
 - notes should be a list not dict
