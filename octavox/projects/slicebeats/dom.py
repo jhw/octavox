@@ -135,18 +135,17 @@ class VitlingGenerator:
 
 class Machine(dict):
 
-    def __init__(self, items):
-        dict.__init__(self, items)
+    def __init__(self, item):
+        dict.__init__(self, item)
 
     def randomise_seed(self, limit):
         if random.random() < limit:
             seed=int(1e8*random.random())
             self["seed"]=seed
 
-    def randomise_style(self, limit, config=MachineConfig):
+    def randomise_style(self, limit):
         if random.random() < limit:
-            styles=config[self["key"]]["styles"]
-            self["style"]=random.choice(styles)
+            self["style"]=random.choice(self["styles"])
 
     def render(self, notes, nbeats, generator):
         generator.generate(notes=notes,
@@ -165,7 +164,7 @@ class Machines(dict):
             return random.choice(styles)
         return Machines({key: {"seed": init_seed(key),
                                "style": init_style(key),
-                               "key": key}
+                               "styles": config[key]["styles"]}
                          for key in config})
 
     def __init__(self, machines):

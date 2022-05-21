@@ -1,7 +1,5 @@
 ### short
 
-- embed styles in machine
-- remove machines key
 - simplify slice rendering
 - per- machine patterns
 
@@ -51,6 +49,8 @@
 
 ### done
 
+- embed styles in machine
+- remove machines key
 - machines as dict
 - move slice iteration into tracks
 - vitling should add explicit key
