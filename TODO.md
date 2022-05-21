@@ -1,15 +1,14 @@
 ### short
 
-- simplify slice rendering
+- n(slice)beats to be set at Tracks level
 - per- machine patterns
-
+- pattern to allow slices of different lengths
 - fx generator
 
 - patch breaks
 - slice temperature
 - pass kk/sn/ht/sh as cli options
 - tune down loud SVDrum bass
-- pattern to allow slices of different lengths
 
 ### medium
 
@@ -49,6 +48,7 @@
 
 ### done
 
+- simplify slice rendering
 - embed styles in machine
 - remove machines key
 - machines as dict
