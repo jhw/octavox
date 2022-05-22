@@ -228,9 +228,12 @@ class Pattern(list):
                     for item in self])
 
 class Tracks(dict):
-    
-    Patterns=["3x0|1",
+
+    Patterns=["0",
+              "0|1",
+              "3x0|1",
               "0|1|0|1",
+              "0|1|0|2",
               "0|1|2|3"]
     
     @classmethod

@@ -1,8 +1,8 @@
 ### short
 
-- add back patterns from master
-- move pattern expansion into slice constructor
 - per- machine patterns
+
+- should all styles really be saved in project state ? [all samples aren't]
 
 - abstract project as module
   - import sv classes into dom
@@ -36,6 +36,8 @@
 
 ### thoughts
 
+- move pattern expansion into slice constructor ?
+  - no because it's fine as things are
 - per- machine SVDrum/Sampler modules ?
   - probably overkill
   - would be useful for sv- level muting but that's really the OT's job
@@ -48,6 +50,7 @@
 
 ### done
 
+- add back patterns from master
 - renamed pattern initialise as pattern expand
 - pattern initialise
 - pattern dsl
