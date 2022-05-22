@@ -1,7 +1,8 @@
 ### short
 
-- initialise pattern at slice contructor level 
+- renamed pattern initialise as pattern expand
 - add back patterns from master
+- move pattern expansion into slice constructor
 - per- machine patterns
 
 - abstract project as module
