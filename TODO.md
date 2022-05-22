@@ -1,6 +1,5 @@
 ### short
 
-- renamed pattern initialise as pattern expand
 - add back patterns from master
 - move pattern expansion into slice constructor
 - per- machine patterns
@@ -49,6 +48,7 @@
 
 ### done
 
+- renamed pattern initialise as pattern expand
 - pattern initialise
 - pattern dsl
 - reduce n to 1 by default

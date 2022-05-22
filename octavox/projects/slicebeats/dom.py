@@ -209,7 +209,7 @@ class Slices(list):
 class Pattern(list):
 
     @classmethod
-    def initialise(self, pattern):
+    def expand(self, pattern):
         def parse_item(item):
             tokens=[int(tok)
                     for tok in item.split("x")]
@@ -250,7 +250,7 @@ class Tracks(dict):
         notes={}
         for key in config:
             genkey=config[key]["generator"]
-            pattern=Pattern.initialise(self["pattern"])
+            pattern=Pattern.expand(self["pattern"])
             multiplier=int(nbeats/pattern.size)
             offset=0
             for item in pattern:
