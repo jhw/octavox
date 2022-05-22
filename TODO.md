@@ -1,6 +1,5 @@
 ### short
 
-- reduce n to 1 by default
 - add back patterns from master
 - pattern dsl
 - initialise Pattern class at same level as Slices
@@ -50,6 +49,7 @@
 
 ### done
 
+- reduce n to 1 by default
 - include n within pattern definition
 - add back irregular patterns
 - pattern class and multipler

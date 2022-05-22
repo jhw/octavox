@@ -220,9 +220,9 @@ class Pattern(list):
         
 class Tracks(dict):
 
-    Patterns=[[(0, 12), (1, 4)],
-              [(0, 4), (1, 4), (0, 4), (2, 4)],
-              [(0, 4), (1, 4), (2, 4), (3, 4)]]
+    Patterns=[[(0, 3), (1, 1)],
+              [(0, 1), (1, 1), (0, 1), (2, 1)],
+              [(0, 1), (1, 1), (2, 1), (3, 1)]]
 
     @classmethod
     def randomise(self, randomisers):
