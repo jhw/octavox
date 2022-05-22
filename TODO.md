@@ -1,7 +1,14 @@
 ### short
 
+- pattern class
+  - expands with i, n
+  - nslicebeats calculated from multiplier
+
 - per- machine patterns
-- pattern to allow slices of different lengths
+
+- abstract project as module
+  - import sv classes into dom
+  
 - fx generator
 - patch breaks
 - slice temperature
@@ -9,8 +16,6 @@
 - tune down loud SVDrum bass
 
 ### medium
-
-- per- machine SVDrum/Sampler modules
 
 - expander script
   - based on mutator
@@ -33,16 +38,15 @@
 
 ### thoughts
 
-- dynamic RV class loading ?
-  - feels like it's going to be a pain, esp class renaming
+- per- machine SVDrum/Sampler modules ?
+  - probably overkill
+  - would be useful for sv- level muting but that's really the OT's job
 - initialise vitling generator with specific set of styles ? 
   - no because style info is part of machine
 - mutes ?
   - don't think its consistent with cli options for different channels
 - degrade ?
   - don't think it's really consistent with slices
-- abstract project Modules and Links ?
-  - not sure it's worth it since specific module classes have to be imported
 
 ### done
 
