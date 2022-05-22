@@ -1,9 +1,9 @@
 ### short
 
-- pattern class
-  - expands with i, n
-  - nslicebeats calculated from multiplier
-
+- include n within pattern definition
+- add back irregular patterns
+- pattern dsl
+- initialise Pattern class at same level as Slices
 - per- machine patterns
 
 - abstract project as module
@@ -50,6 +50,7 @@
 
 ### done
 
+- pattern class and multipler
 - n(slice)beats to be set at Tracks level
 - simplify slice rendering
 - embed styles in machine

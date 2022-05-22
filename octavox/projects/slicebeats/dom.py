@@ -205,6 +205,18 @@ class Slices(list):
     def __init__(self, slices):
         list.__init__(self, [Slice(**slice)
                              for slice in slices])
+
+class Pattern(list):
+
+    def __init__(self, values):
+        list.__init__(self, [{"i": i,
+                              "n": 4}
+                             for i in values])
+
+    @property
+    def size(self):
+        return sum([item["n"]
+                    for item in self])
         
 class Tracks(dict):
 
@@ -226,17 +238,17 @@ class Tracks(dict):
             self["pattern"]=random.choice(self.Patterns)
 
     def render(self, patch, nbeats, config=MachineConfig):
-        def expand(pat):
-            return [{"i": i,
-                     "n": 4}
-                    for i in pat]
         notes={}
         for key in config:
-            genkey, offset = config[key]["generator"], 0
-            for pat in expand(self["pattern"]):
-                slice=self["slices"][pat["i"]]
-                slice.render(key, genkey, notes, pat["n"], offset)
-                offset+=pat["n"]
+            genkey=config[key]["generator"]
+            pattern=Pattern(self["pattern"])
+            multiplier=int(nbeats/pattern.size)
+            offset=0
+            for item in pattern:
+                slice=self["slices"][item["i"]]
+                nslicebeats=item["n"]*multiplier
+                slice.render(key, genkey, notes, nslicebeats, offset)
+                offset+=nslicebeats
         patch["tracks"]+=list(notes.values())
                 
 class Patch(dict):
