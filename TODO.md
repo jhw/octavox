@@ -1,6 +1,5 @@
 ### short
 
-- pattern initialise
 - initialise pattern at slice contructor level 
 - add back patterns from master
 - per- machine patterns
@@ -49,6 +48,7 @@
 
 ### done
 
+- pattern initialise
 - pattern dsl
 - reduce n to 1 by default
 - include n within pattern definition

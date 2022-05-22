@@ -206,20 +206,21 @@ class Slices(list):
         list.__init__(self, [Slice(**slice)
                              for slice in slices])
 
-def expand_pattern(pattern):
-    def parse_item(item):
-        tokens=[int(tok)
-                for tok in item.split("x")]
-        return (1, tokens[0]) if len(tokens)==1 else tuple(tokens)
-    return [parse_item(item)
-            for item in pattern.split("|")]
-            
 class Pattern(list):
 
-    def __init__(self, items):
-        list.__init__(self, [{"n": n,
-                              "i": i}
-                             for n, i in items])
+    @classmethod
+    def initialise(self, pattern):
+        def parse_item(item):
+            tokens=[int(tok)
+                    for tok in item.split("x")]
+            if len(tokens)==1:
+                tokens=[1, tokens[0]]
+            return {k:v for k, v in zip("ni", tokens)}
+        return Pattern([parse_item(item)
+                        for item in pattern.split("|")])
+    
+    def __init__(self, items=[]):
+        list.__init__(self, items)
 
     @property
     def size(self):
@@ -249,7 +250,7 @@ class Tracks(dict):
         notes={}
         for key in config:
             genkey=config[key]["generator"]
-            pattern=Pattern(expand_pattern(self["pattern"]))
+            pattern=Pattern.initialise(self["pattern"])
             multiplier=int(nbeats/pattern.size)
             offset=0
             for item in pattern:
