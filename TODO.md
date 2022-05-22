@@ -1,8 +1,8 @@
 ### short
 
+- pattern initialise
+- initialise pattern at slice contructor level 
 - add back patterns from master
-- pattern dsl
-- initialise Pattern class at same level as Slices
 - per- machine patterns
 
 - abstract project as module
@@ -49,6 +49,7 @@
 
 ### done
 
+- pattern dsl
 - reduce n to 1 by default
 - include n within pattern definition
 - add back irregular patterns
