@@ -1,7 +1,7 @@
 ### short
 
-- include n within pattern definition
-- add back irregular patterns
+- reduce n to 1 by default
+- add back patterns from master
 - pattern dsl
 - initialise Pattern class at same level as Slices
 - per- machine patterns
@@ -50,6 +50,8 @@
 
 ### done
 
+- include n within pattern definition
+- add back irregular patterns
 - pattern class and multipler
 - n(slice)beats to be set at Tracks level
 - simplify slice rendering

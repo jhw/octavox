@@ -208,10 +208,10 @@ class Slices(list):
 
 class Pattern(list):
 
-    def __init__(self, values):
+    def __init__(self, items):
         list.__init__(self, [{"i": i,
-                              "n": 4}
-                             for i in values])
+                              "n": n}
+                             for i, n in items])
 
     @property
     def size(self):
@@ -220,9 +220,9 @@ class Pattern(list):
         
 class Tracks(dict):
 
-    Patterns=[[0, 0, 0, 1],
-              [0, 1, 0, 2],
-              [0, 1, 2, 3]]
+    Patterns=[[(0, 12), (1, 4)],
+              [(0, 4), (1, 4), (0, 4), (2, 4)],
+              [(0, 4), (1, 4), (2, 4), (3, 4)]]
 
     @classmethod
     def randomise(self, randomisers):
