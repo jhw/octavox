@@ -54,7 +54,7 @@ if __name__=="__main__":
         def randomise_patch(patch, kwargs, i):
             patch["tracks"].randomise_pattern(kwargs["dtrigpat"])
             for slice in patch["tracks"]["slices"]:
-                for track in slice["machines"].values():
+                for track in slice["machines"]:
                     track.randomise_style(kwargs["dtrigstyle"])
                     track.randomise_seed(kwargs["dtrigseed"])
             return patch

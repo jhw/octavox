@@ -153,7 +153,7 @@ class Machine(dict):
                            q=Q(self["seed"]),
                            style=self["style"])
     
-class Machines(dict):
+class Machines(list):
 
     @classmethod
     def randomise(self, config=MachineConfig):
@@ -162,14 +162,15 @@ class Machines(dict):
         def init_style(key):
             styles=config[key]["styles"]
             return random.choice(styles)
-        return Machines({key: {"seed": init_seed(key),
-                               "style": init_style(key),
-                               "styles": config[key]["styles"]}
-                         for key in config})
+        return Machines([{"key": key,
+                          "seed": init_seed(key),
+                          "style": init_style(key),
+                          "styles": config[key]["styles"]}
+                         for key in config])
 
     def __init__(self, machines):
-        dict.__init__(self, {key: Machine(machine)
-                             for key, machine in machines.items()})
+        list.__init__(self, [Machine(machine)
+                             for machine in machines])
 
 class Slice(dict):
 
@@ -192,7 +193,8 @@ class Slice(dict):
         genkwargs=genkwargsfn(self, key, offset)
         genclass=eval(hungarorise("%s_generator" % genkey))
         generator=genclass(**genkwargs)
-        machine=self["machines"][key]
+        machine={machine["key"]:machine
+                 for machine in self["machines"]}[key]
         machine.render(notes, nbeats, generator)
             
 class Slices(list):
