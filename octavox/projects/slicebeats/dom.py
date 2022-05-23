@@ -235,25 +235,27 @@ class Tracks(dict):
               "0|1|0|1",
               "0|1|0|2",
               "0|1|2|3"]
-    
+
     @classmethod
-    def randomise(self, randomisers):
+    def randomise(self, randomisers, config=MachineConfig):
         return Tracks(slices=Slices.randomise(randomisers),
-                      pattern=random.choice(self.Patterns))
+                      patterns={key:random.choice(self.Patterns)
+                                for key in config})
         
-    def __init__(self, slices, pattern):
+    def __init__(self, slices, patterns):
         dict.__init__(self, {"slices": Slices(slices),
-                             "pattern": pattern})
+                             "patterns": patterns})
 
     def randomise_pattern(self, limit):
-        if random.random() < limit:
-            self["pattern"]=random.choice(self.Patterns)
+        for key in self["patterns"]:
+            if random.random() < limit:
+                self["patterns"][key]=random.choice(self.Patterns)
 
     def render(self, patch, nbeats, config=MachineConfig):
         notes={}
         for key in config:
             genkey=config[key]["generator"]
-            pattern=Pattern.expand(self["pattern"])
+            pattern=Pattern.expand(self["patterns"][key])
             multiplier=int(nbeats/pattern.size)
             offset=0
             for item in pattern:
