@@ -143,9 +143,10 @@ class Machine(dict):
             seed=int(1e8*random.random())
             self["seed"]=seed
 
-    def randomise_style(self, limit):
+    def randomise_style(self, limit, config=MachineConfig):
+        styles=config[self["key"]]["styles"]
         if random.random() < limit:
-            self["style"]=random.choice(self["styles"])
+            self["style"]=random.choice(styles)
 
     def render(self, notes, nbeats, generator):
         generator.generate(notes=notes,
@@ -164,8 +165,7 @@ class Machines(list):
             return random.choice(styles)
         return Machines([{"key": key,
                           "seed": init_seed(key),
-                          "style": init_style(key),
-                          "styles": config[key]["styles"]}
+                          "style": init_style(key)}
                          for key in config])
 
     def __init__(self, machines):

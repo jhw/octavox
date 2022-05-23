@@ -1,9 +1,8 @@
 ### short
 
-- abstract project as module
-  - import sv classes into dom
-  
 - fx generator
+- echo machine
+
 - patch breaks
 - slice temperature
 - pass kk/sn/ht/sh as cli options
@@ -11,6 +10,9 @@
 
 ### medium
 
+- abstract project as module
+  - import sv classes into dom
+  
 - expander script
   - based on mutator
   - each patch copied and includes per- track mutes
@@ -47,6 +49,8 @@
 
 ### done
 
+- convert machines to list
+- remove styles from machine
 - per- machine patterns
 - add back patterns from master
 - renamed pattern initialise as pattern expand
