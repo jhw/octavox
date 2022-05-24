@@ -1,7 +1,10 @@
-### short
+### fx generator
 
-- fx generator
-- echo machine
+- fx generator class
+- define echo machine
+- add feedback changes
+
+### short
 
 - patch breaks
 - slice temperature
