@@ -1,14 +1,13 @@
 ### short
 
+- abstract project as module
+  - import sv classes into dom
 - pass kk/sn/ht/sh as cli options
 - patch breaks
 - slice temperature
 
 ### medium
 
-- abstract project as module
-  - import sv classes into dom
-  
 - expander script
   - based on mutator
   - each patch copied and includes per- track mutes
@@ -21,13 +20,16 @@
   
 - arranger script
 
-- trig format validator
+- validator
+  - trig formats
+  - module references
+
 - tune down loud SVDrum bass
 
 ### long
 
-- euclidian beats
 - vitling 303
+- euclidian beats
 - sunvox reverb chords
 - city dreams bass
 - city dreams noise
