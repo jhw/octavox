@@ -25,6 +25,8 @@
 - compressor script
   - takes wav file
   - removes breaks
+  
+- arranger script
 
 ### long
 
@@ -37,7 +39,8 @@
 
 ### thoughts
 
-- don't like machine styles saved as part of state ?
+- trig format validator ?
+  - probably overkill as octavox unlikely to have other users
 - move pattern expansion into slice constructor ?
   - no because it's fine as things are
 - per- machine SVDrum/Sampler modules ?
