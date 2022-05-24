@@ -21,6 +21,10 @@ ht:
   styles:
   - offbeats
   - closed
+ec:
+  generator: fx
+  styles:
+  - sample_hold
 """)
 
 SVDrum, Drum, Sampler = "svdrum", "Drum", "Sampler"
@@ -133,6 +137,21 @@ class VitlingGenerator:
         elif q.random() < 0.5:
             self.add(notes, self.key, i, (k, 0.3*q.random()))
 
+class FxGenerator:
+
+    def generate(self, notes, style, q, n):
+        fn=getattr(self, style)
+        for i in range(n):
+            fn(notes, q, i)
+        
+    def add(self, notes, k, i, v):
+        trig={}
+        notes.setdefault(k, [])
+        notes[k].append(trig)
+    
+    def sample_hold(self, notes, q, i):
+        pass
+            
 class Machine(dict):
 
     def __init__(self, item):
