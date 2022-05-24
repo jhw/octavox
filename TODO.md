@@ -1,8 +1,10 @@
 ### fx generator
 
-- check renderer attr vs ctrl
 - test echo wet
 - add echo feedback
+
+- refactor effect note :value attribute
+  - what does trig use ?
 
 ### short
 
@@ -55,6 +57,7 @@
 
 ### done
 
+- check renderer attr vs ctrl
 - complete sample_hold implementation
 - complete add implementation
 - define echo machine

@@ -87,7 +87,7 @@ class SVEffect(dict):
                ctrlmult=256,
                maxvalue=256*128):
         mod=1+modules[self["mod"]]
-        ctrl=ctrlmult*controllers[self["mod"]][self["attr"]]
+        ctrl=ctrlmult*controllers[self["mod"]][self["ctrl"]]
         value=int(self["value"]*maxvalue) # don't add 1 as will exceed max
         return RVNote(module=mod,
                       ctl=ctrl,
@@ -145,7 +145,7 @@ class SVProject:
 
     def init_grid(self, patch):
         def classfn(v):
-            return SVEffect if "attr" in v else SVTrig
+            return SVEffect if "ctrl" in v else SVTrig
         return [{note["i"]:classfn(note)(note)
                  for note in track}
                 for track in patch["tracks"]]
