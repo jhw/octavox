@@ -13,51 +13,50 @@ import random, yaml
 
 Drum, Sampler = "Drum", "Sampler"
 
-Modules=yaml.safe_load("""
-- name: Sampler
-  # class: RVSampler
-  class: SVSampler
-  position:
-    x: -3
-    y: -1
-- name: Drum
-  class: RVDrumSynth
-  position:
-    x: -3
-    y: 1
-- name: Echo
-  class: RVEcho
-  position:
-    x: -3
-  defaults:
-    dry: 128
-    wet: 128
-    delay: 192
-- name: Distortion
-  class: RVDistortion
-  position:
-    x: -2
-  defaults:
-    power: 64
-- name: Reverb
-  class: RVReverb
-  position:
-    x: -1
-  defaults:
-    wet: 4
-""")
-
-Links=yaml.safe_load("""
-- - Sampler
-  - Echo
-- - Drum
-  - Echo
-- - Echo
-  - Distortion
-- - Distortion
-  - Reverb
-- - Reverb
-  - Output
+Modular=yaml.safe_load("""
+modules:
+  - name: Sampler
+    # class: RVSampler
+    class: SVSampler
+    position:
+      x: -3
+      y: -1
+  - name: Drum
+    class: RVDrumSynth
+    position:
+      x: -3
+      y: 1
+  - name: Echo
+    class: RVEcho
+    position:
+      x: -3
+    defaults:
+      dry: 128
+      wet: 128
+      delay: 192
+  - name: Distortion
+    class: RVDistortion
+    position:
+      x: -2
+    defaults:
+      power: 64
+  - name: Reverb
+    class: RVReverb
+    position:
+      x: -1
+    defaults:
+      wet: 4
+links:
+  - - Sampler
+    - Echo
+  - - Drum
+    - Echo
+  - - Echo
+    - Distortion
+  - - Distortion
+    - Reverb
+  - - Reverb
+    - Output
 """)
 
 Globals=yaml.safe_load("""
@@ -203,13 +202,12 @@ class SVProject:
                banks,
                patches,
                globalz=Globals,
-               modules=Modules,
-               links=Links):
+               modular=Modular):
         proj=RVProject()
         proj.initial_bpm=globalz["bpm"]
         proj.global_volume=globalz["volume"]
-        self.init_modules(proj, modules)
-        self.link_modules(proj, links)
+        self.init_modules(proj, modular["modules"])
+        self.link_modules(proj, modular["links"])
         sampler={mod.name: mod
                  for mod in proj.modules}[Sampler]
         sampler.initialise(banks, patches)
