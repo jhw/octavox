@@ -27,7 +27,7 @@ ec:
   - sample_hold
 """)
 
-SVDrum, Drum, Sampler = "svdrum", "Drum", "Sampler"
+SVDrum, Drum, Sampler, Echo = "svdrum", "Drum", "Sampler", "Echo"
 
 def Q(seed):
     q=random.Random()
@@ -73,11 +73,11 @@ class Samples(dict):
         
 class VitlingGenerator:
     
-    def __init__(self, key, samples, offset=0, volume=1):
+    def __init__(self, key, offset, samples, volume=1):
         self.key=key
+        self.offset=offset
         self.samples={k: SampleKey(v).expand()
                       for k, v in samples.items()}
-        self.offset=offset
         self.volume=volume
 
     def generate(self, notes, style, q, n):
@@ -139,13 +139,25 @@ class VitlingGenerator:
 
 class FxGenerator:
 
+    def __init__(self, key, offset, mod=Echo, ceil=1, step=4):
+        self.key=key
+        self.offset=offset
+        self.mod=mod
+        self.ceil=ceil
+        self.step=step
+    
     def generate(self, notes, style, q, n):
         fn=getattr(self, style)
         for i in range(n):
             fn(notes, q, i)
-        
+
+    """
+    - remember add() should be called by sample_hold and other styles
+    """
+            
     def add(self, notes, k, i, v):
-        trig={}
+        trig={"mod": self.mod}
+        # add more stuff to trig
         notes.setdefault(k, [])
         notes[k].append(trig)
     
@@ -203,11 +215,13 @@ class Slice(dict):
                              "machines": Machines(machines)})
 
     def render(self, key, genkey, notes, nbeats, offset):
-        def vitling_kwargs(self, key, offset, volume=1):
+        def vitling_kwargs(self, key, offset):
             return {"key": key,
                     "samples": self["samples"],
-                    "offset": offset,
-                    "volume": volume}
+                    "offset": offset}
+        def fx_kwargs(self, key, offset):
+            return {"key": key,
+                    "offset": offset}
         genkwargsfn=eval("%s_kwargs" % genkey)
         genkwargs=genkwargsfn(self, key, offset)
         genclass=eval(hungarorise("%s_generator" % genkey))

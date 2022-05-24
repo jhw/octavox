@@ -1,8 +1,8 @@
 ### fx generator
 
-- fx generator class
-- define echo machine
-- add feedback changes
+- define sample_hold wet
+- test sample_hold
+- add sample_hold feedback
 
 ### short
 
@@ -52,6 +52,7 @@
 
 ### done
 
+- define echo machine
 - convert machines to list
 - remove styles from machine
 - per- machine patterns
