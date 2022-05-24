@@ -139,7 +139,14 @@ class VitlingGenerator:
 
 class FxGenerator:
 
-    def __init__(self, key, offset, mod=Echo, floor=0, ceil=1, inc=0.25, step=4):
+    def __init__(self, key, offset,
+                 mod=Echo,
+                 floor={Wet: 0,
+                        Feedback: 0},
+                 ceil={Wet: 1,
+                       Feedback: 1},
+                 inc=0.25,
+                 step=4):
         self.key=key
         self.offset=offset
         self.mod=mod
@@ -153,19 +160,21 @@ class FxGenerator:
         for i in range(n):
             fn(notes, q, i)
 
-    def add(self, notes, ctrl, i, v):
+    def add(self, notes, k, i, v):
         trig={"mod": self.mod,
-              "ctrl": ctrl,
-              "value": value,
+              "ctrl": k,
+              "value": v,
               "i": i+self.offset}
         notes.setdefault(k, [])
         notes[k].append(trig)
 
     def sample_hold(self, notes, q, i):
         if 0 == i % self.step:
-            v0=self.floor+(self.ceil-self.floor)*q.random()
-            v=self.inc*int(0.5+v0/self.inc)
-            self.add(notes, Wet, i, v)
+            for ctrl in [Wet, Feedback]:
+                floor, ceil = self.floor[ctrl], self.ceil[ctrl]
+                v0=floor+(ceil-floor)*q.random()
+                v=self.inc*int(0.5+v0/self.inc)
+                self.add(notes, ctrl, i, v)
             
 class Machine(dict):
 
@@ -224,7 +233,11 @@ class Slice(dict):
                     "offset": offset}
         def fx_kwargs(self, key, offset):
             return {"key": key,
-                    "offset": offset}
+                    "offset": offset,
+                    "floor": {Wet: 0,
+                              Feedback: 0.25},
+                    "ceil": {Wet: 0.75,
+                             Feedback: 0.75}}                    
         genkwargsfn=eval("%s_kwargs" % genkey)
         genkwargs=genkwargsfn(self, key, offset)
         genclass=eval(hungarorise("%s_generator" % genkey))

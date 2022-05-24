@@ -1,8 +1,5 @@
 ### fx generator
 
-- test echo wet
-- add echo feedback
-
 - refactor effect note :value attribute
   - what does trig use ?
 
@@ -57,6 +54,8 @@
 
 ### done
 
+- test echo wet
+- add echo feedback
 - check renderer attr vs ctrl
 - complete sample_hold implementation
 - complete add implementation
