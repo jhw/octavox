@@ -1,7 +1,9 @@
 ### short
 
-- abstract project as module
-  - import sv classes into dom
+- try removing rv/sv suffixes
+- try and dynamically import classes
+- move to new /renderers dir
+
 - pass kk/sn/ht/sh as cli options
 - patch breaks
 - slice temperature
@@ -53,6 +55,8 @@
 
 ### done
 
+- abstract project as module
+  - import sv classes into dom
 - refactor effect note :value attribute
   - what does trig use ?
 - test echo wet

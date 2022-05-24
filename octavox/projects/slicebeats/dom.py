@@ -371,9 +371,12 @@ class Patches(list):
                      "tmp/slicebeats/patches"]:
             if not os.path.exists(path):
                 os.makedirs(path)
-        project=SVProject().render(banks,
-                                   [patch.render(nbeats=nbeats)
-                                   for patch in self])        
+        patches=[patch.render(nbeats=nbeats)
+                 for patch in self]
+        modular=yaml.safe_load(open("octavox/projects/slicebeats/modular.yaml").read())
+        project=SVProject().render(banks=banks,
+                                   patches=patches,
+                                   modular=modular)
         projfile="tmp/slicebeats/projects/%s.sunvox" % filestub
         with open(projfile, 'wb') as f:
             project.write_to(f)

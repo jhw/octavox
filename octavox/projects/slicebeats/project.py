@@ -11,53 +11,7 @@ from octavox.modules.sampler import SVSampler
 
 import random, yaml
 
-Drum, Sampler = "Drum", "Sampler"
-
-Modular=yaml.safe_load("""
-modules:
-  - name: Sampler
-    # class: RVSampler
-    class: SVSampler
-    position:
-      x: -3
-      y: -1
-  - name: Drum
-    class: RVDrumSynth
-    position:
-      x: -3
-      y: 1
-  - name: Echo
-    class: RVEcho
-    position:
-      x: -3
-    defaults:
-      dry: 128
-      wet: 128
-      delay: 192
-  - name: Distortion
-    class: RVDistortion
-    position:
-      x: -2
-    defaults:
-      power: 64
-  - name: Reverb
-    class: RVReverb
-    position:
-      x: -1
-    defaults:
-      wet: 4
-links:
-  - - Sampler
-    - Echo
-  - - Drum
-    - Echo
-  - - Echo
-    - Distortion
-  - - Distortion
-    - Reverb
-  - - Reverb
-    - Output
-""")
+Sampler="Sampler"
 
 Globals=yaml.safe_load("""
 bpm: 120
@@ -199,18 +153,19 @@ class SVProject:
         return patterns
 
     def render(self,
-               banks,
                patches,
-               globalz=Globals,
-               modular=Modular):
+               modular,
+               banks=None,
+               globalz=Globals):
         proj=RVProject()
         proj.initial_bpm=globalz["bpm"]
         proj.global_volume=globalz["volume"]
         self.init_modules(proj, modular["modules"])
         self.link_modules(proj, modular["links"])
-        sampler={mod.name: mod
-                 for mod in proj.modules}[Sampler]
-        sampler.initialise(banks, patches)
+        if banks:
+            sampler={mod.name: mod
+                     for mod in proj.modules}[Sampler]
+            sampler.initialise(banks, patches)
         proj.patterns=self.init_patterns(proj, patches)
         return proj
 
