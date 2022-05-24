@@ -27,7 +27,7 @@ ec:
   - sample_hold
 """)
 
-SVDrum, Drum, Sampler, Echo = "svdrum", "Drum", "Sampler", "Echo"
+SVDrum, Drum, Sampler, Echo, Wet, Feedback = "svdrum", "Drum", "Sampler", "Echo", "wet", "feedback"
 
 def Q(seed):
     q=random.Random()
@@ -153,39 +153,19 @@ class FxGenerator:
         for i in range(n):
             fn(notes, q, i)
 
-    """
-    def add(self, notes, k, i, v):
-        samplekey, volume = v
-        trig=dict(self.samples[samplekey])
-        trig["vel"]=self.volume*volume
-        trig["i"]=i+self.offset
-        notes.setdefault(k, [])
-        notes[k].append(trig)
-    """
-
-    """
-    def add(self, i, v):
-        j=i+self.offset
-        self[j]={"value": v,
-                 "mod": self.mod,
-                 "attr": self.attr}
-    """
-    
-    def add(self, notes, k, i, v):
-        trig={"mod": self.mod}
+    def add(self, notes, ctrl, i, v):
+        trig={"mod": self.mod,
+              "ctrl": ctrl,
+              "value": value,
+              "i": i+self.offset}
         notes.setdefault(k, [])
         notes[k].append(trig)
 
-    """
-    def sample_hold(self, q, i):
+    def sample_hold(self, notes, q, i):
         if 0 == i % self.step:
             v0=self.floor+(self.ceil-self.floor)*q.random()
             v=self.inc*int(0.5+v0/self.inc)
-            self.add(i, v)
-    """
-        
-    def sample_hold(self, notes, q, i):
-        pass
+            self.add(notes, Wet, i, v)
             
 class Machine(dict):
 

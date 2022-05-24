@@ -1,9 +1,8 @@
 ### fx generator
 
-- complete sample_hold implementation
-- complete add implementation
-- test
-- add feedback ctrl
+- check renderer attr vs ctrl
+- test echo wet
+- add echo feedback
 
 ### short
 
@@ -56,6 +55,8 @@
 
 ### done
 
+- complete sample_hold implementation
+- complete add implementation
 - define echo machine
 - convert machines to list
 - remove styles from machine
