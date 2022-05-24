@@ -1,8 +1,9 @@
 ### fx generator
 
-- define sample_hold wet
-- test sample_hold
-- add sample_hold feedback
+- complete sample_hold implementation
+- complete add implementation
+- test
+- add feedback ctrl
 
 ### short
 

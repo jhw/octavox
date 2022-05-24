@@ -139,11 +139,13 @@ class VitlingGenerator:
 
 class FxGenerator:
 
-    def __init__(self, key, offset, mod=Echo, ceil=1, step=4):
+    def __init__(self, key, offset, mod=Echo, floor=0, ceil=1, inc=0.25, step=4):
         self.key=key
         self.offset=offset
         self.mod=mod
+        self.floor=floor
         self.ceil=ceil
+        self.inc=inc
         self.step=step
     
     def generate(self, notes, style, q, n):
@@ -152,15 +154,36 @@ class FxGenerator:
             fn(notes, q, i)
 
     """
-    - remember add() should be called by sample_hold and other styles
-    """
-            
     def add(self, notes, k, i, v):
-        trig={"mod": self.mod}
-        # add more stuff to trig
+        samplekey, volume = v
+        trig=dict(self.samples[samplekey])
+        trig["vel"]=self.volume*volume
+        trig["i"]=i+self.offset
         notes.setdefault(k, [])
         notes[k].append(trig)
+    """
+
+    """
+    def add(self, i, v):
+        j=i+self.offset
+        self[j]={"value": v,
+                 "mod": self.mod,
+                 "attr": self.attr}
+    """
     
+    def add(self, notes, k, i, v):
+        trig={"mod": self.mod}
+        notes.setdefault(k, [])
+        notes[k].append(trig)
+
+    """
+    def sample_hold(self, q, i):
+        if 0 == i % self.step:
+            v0=self.floor+(self.ceil-self.floor)*q.random()
+            v=self.inc*int(0.5+v0/self.inc)
+            self.add(i, v)
+    """
+        
     def sample_hold(self, notes, q, i):
         pass
             
