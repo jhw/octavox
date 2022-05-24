@@ -88,7 +88,7 @@ class SVEffect(dict):
                maxvalue=256*128):
         mod=1+modules[self["mod"]]
         ctrl=ctrlmult*controllers[self["mod"]][self["ctrl"]]
-        value=int(self["value"]*maxvalue) # don't add 1 as will exceed max
+        value=int(self["v"]*maxvalue) # don't add 1 as will exceed max
         return RVNote(module=mod,
                       ctl=ctrl,
                       val=value)

@@ -163,7 +163,7 @@ class FxGenerator:
     def add(self, notes, k, i, v):
         trig={"mod": self.mod,
               "ctrl": k,
-              "value": v,
+              "v": v,
               "i": i+self.offset}
         notes.setdefault(k, [])
         notes[k].append(trig)

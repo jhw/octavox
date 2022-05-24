@@ -1,14 +1,8 @@
-### fx generator
-
-- refactor effect note :value attribute
-  - what does trig use ?
-
 ### short
 
+- pass kk/sn/ht/sh as cli options
 - patch breaks
 - slice temperature
-- pass kk/sn/ht/sh as cli options
-- tune down loud SVDrum bass
 
 ### medium
 
@@ -26,6 +20,9 @@
   - removes breaks
   
 - arranger script
+
+- trig format validator
+- tune down loud SVDrum bass
 
 ### long
 
@@ -54,6 +51,8 @@
 
 ### done
 
+- refactor effect note :value attribute
+  - what does trig use ?
 - test echo wet
 - add echo feedback
 - check renderer attr vs ctrl
