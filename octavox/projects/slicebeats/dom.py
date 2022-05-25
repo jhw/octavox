@@ -11,29 +11,6 @@ import copy, json, os, random, yaml
 
 Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
 
-MachineConfig=yaml.safe_load("""
-kk:
-  generator: vitling
-  styles:
-  - fourfloor
-  - electro
-  - triplets
-sn:
-  generator: vitling
-  styles:
-  - backbeat
-  - skip
-ht:
-  generator: vitling
-  styles:
-  - offbeats
-  - closed
-ec:
-  generator: fx
-  styles:
-  - sample_hold
-""")
-
 ModConfig=yaml.safe_load("""
 modules:
   - name: Sampler
@@ -80,12 +57,28 @@ links:
     - Output
 """)
 
-ModClasses={k:eval(k)
-            for k in ["RVDrumSynth",
-                      "RVEcho",
-                      "RVDistortion",
-                      "RVReverb",
-                      "SVSampler"]}
+MachineConfig=yaml.safe_load("""
+kk:
+  generator: vitling
+  styles:
+  - fourfloor
+  - electro
+  - triplets
+sn:
+  generator: vitling
+  styles:
+  - backbeat
+  - skip
+ht:
+  generator: vitling
+  styles:
+  - offbeats
+  - closed
+ec:
+  generator: fx
+  styles:
+  - sample_hold
+""")
 
 def Q(seed):
     q=random.Random()
@@ -417,7 +410,7 @@ class Patches(list):
         return yaml.safe_dump(json.loads(json.dumps(self)), 
                               default_flow_style=False)
     
-    def render(self, filestub, banks, nbeats, modconfig=ModConfig, modclasses=ModClasses):
+    def render(self, filestub, banks, nbeats, modconfig=ModConfig):
         for path in ["tmp",
                      "tmp/slicebeats",
                      "tmp/slicebeats/projects",
@@ -426,6 +419,8 @@ class Patches(list):
                 os.makedirs(path)
         patches=[patch.render(nbeats=nbeats)
                  for patch in self]
+        modclasses={mod["class"]:eval(mod["class"])
+                    for mod in modconfig["modules"]}
         project=SVProject().render(patches=patches,
                                    modconfig=modconfig,
                                    modclasses=modclasses,

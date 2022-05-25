@@ -1,6 +1,7 @@
 ### short
 
-- investigate why modclasses needs RV/SV key prefix
+- construct mod classes dynamically
+- rename FXGenerator as SampleHoldGenerator
 
 - pass kk/sn/ht/sh as cli options
 - patch breaks
