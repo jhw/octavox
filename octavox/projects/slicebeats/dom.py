@@ -199,14 +199,13 @@ class VitlingGenerator:
 
 class FxGenerator:
 
-    def __init__(self, key, offset, floor, ceil,
+    def __init__(self, key, offset, ranges,
                  mod="Echo",
                  inc=0.25,
                  step=4):
         self.key=key
         self.offset=offset
-        self.floor=floor
-        self.ceil=ceil
+        self.ranges=ranges
         self.mod=mod
         self.inc=inc
         self.step=step
@@ -227,7 +226,7 @@ class FxGenerator:
     def sample_hold(self, notes, q, i):
         if 0 == i % self.step:
             for ctrl in "wet|feedback".split("|"):
-                floor, ceil = self.floor[ctrl], self.ceil[ctrl]
+                floor, ceil = self.ranges[ctrl]
                 v0=floor+(ceil-floor)*q.random()
                 v=self.inc*int(0.5+v0/self.inc)
                 self.add(notes, ctrl, i, v)
@@ -290,10 +289,8 @@ class Slice(dict):
         def fx_kwargs(self, key, offset):
             return {"key": key,
                     "offset": offset,
-                    "floor": {"wet": 0,
-                              "feedback": 0.25},
-                    "ceil": {"wet": 0.75,
-                             "feedback": 0.75}}                    
+                    "ranges": {"wet": [0, 0.75],
+                               "feedback": [0.25, 0.75]}}
         genkwargsfn=eval("%s_kwargs" % genkey)
         genkwargs=genkwargsfn(self, key, offset)
         genclass=eval(hungarorise("%s_generator" % genkey))

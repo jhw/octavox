@@ -1,7 +1,5 @@
 ### short
 
-- replace floor/ceil with limits
-
 - investigate why modclasses needs RV/SV key prefix
 
 - pass kk/sn/ht/sh as cli options
@@ -9,6 +7,8 @@
 - slice temperature
 
 ### medium
+
+- echo wet on/off style
 
 - expander script
   - based on mutator
@@ -55,6 +55,7 @@
 
 ### done
 
+- replace floor/ceil with limits
 - abstract renderer
 - rename modular as modconfig
 - pass new modclasses arg as string:class dict
