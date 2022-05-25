@@ -1,11 +1,11 @@
-from octavox.projects.slicebeats.project import SVProject
-
 from rv.modules.drumsynth import DrumSynth as RVDrumSynth
 from rv.modules.echo import Echo as RVEcho
 from rv.modules.distortion import Distortion as RVDistortion
 from rv.modules.reverb import Reverb as RVReverb
 
 from octavox.modules.sampler import SVSampler
+
+from octavox.renderers import SVProject
 
 import copy, json, os, random, yaml
 
@@ -34,15 +34,58 @@ ec:
   - sample_hold
 """)
 
-ModConfig=yaml.safe_load(open("octavox/projects/slicebeats/modular.yaml").read())
+ModConfig=yaml.safe_load("""
+modules:
+  - name: Sampler
+    # class: RVSampler
+    class: SVSampler
+    position:
+      x: -3
+      y: -1
+  - name: Drum
+    class: RVDrumSynth
+    position:
+      x: -3
+      y: 1
+  - name: Echo
+    class: RVEcho
+    position:
+      x: -3
+    defaults:
+      dry: 128
+      wet: 128
+      delay: 192
+  - name: Distortion
+    class: RVDistortion
+    position:
+      x: -2
+    defaults:
+      power: 64
+  - name: Reverb
+    class: RVReverb
+    position:
+      x: -1
+    defaults:
+      wet: 4
+links:
+  - - Sampler
+    - Echo
+  - - Drum
+    - Echo
+  - - Echo
+    - Distortion
+  - - Distortion
+    - Reverb
+  - - Reverb
+    - Output
+""")
 
-ModClasses={"RVDrumSynth": RVDrumSynth,
-            "RVEcho": RVEcho,
-            "RVDistortion": RVDistortion,
-            "RVReverb": RVReverb,
-            "SVSampler": SVSampler}
-
-SVDrum, Drum, Sampler, Echo, Wet, Feedback = "svdrum", "Drum", "Sampler", "Echo", "wet", "feedback"
+ModClasses={k:eval(k)
+            for k in ["RVDrumSynth",
+                      "RVEcho",
+                      "RVDistortion",
+                      "RVReverb",
+                      "SVSampler"]}
 
 def Q(seed):
     q=random.Random()
@@ -55,17 +98,19 @@ def hungarorise(text):
 
 class SampleKey:
 
+    Drum, SVDrum, Sampler = "Drum", "svdrum", "Sampler"
+    
     def __init__(self, value):
         self.value=value
 
     def expand(self):
         tokens=self.value.split(":")
         name, id = tokens[0], int(tokens[1])
-        if tokens[0]==SVDrum:
-            return {"mod": Drum,
+        if tokens[0]==self.SVDrum:
+            return {"mod": self.Drum,
                     "id": id}
         else:
-            return {"mod": Sampler,
+            return {"mod": self.Sampler,
                     "key": {"bank": name,
                             "id": id}}
 
@@ -154,19 +199,15 @@ class VitlingGenerator:
 
 class FxGenerator:
 
-    def __init__(self, key, offset,
-                 mod=Echo,
-                 floor={Wet: 0,
-                        Feedback: 0},
-                 ceil={Wet: 1,
-                       Feedback: 1},
+    def __init__(self, key, offset, floor, ceil,
+                 mod="Echo",
                  inc=0.25,
                  step=4):
         self.key=key
         self.offset=offset
-        self.mod=mod
         self.floor=floor
         self.ceil=ceil
+        self.mod=mod
         self.inc=inc
         self.step=step
     
@@ -185,7 +226,7 @@ class FxGenerator:
 
     def sample_hold(self, notes, q, i):
         if 0 == i % self.step:
-            for ctrl in [Wet, Feedback]:
+            for ctrl in "wet|feedback".split("|"):
                 floor, ceil = self.floor[ctrl], self.ceil[ctrl]
                 v0=floor+(ceil-floor)*q.random()
                 v=self.inc*int(0.5+v0/self.inc)
@@ -249,10 +290,10 @@ class Slice(dict):
         def fx_kwargs(self, key, offset):
             return {"key": key,
                     "offset": offset,
-                    "floor": {Wet: 0,
-                              Feedback: 0.25},
-                    "ceil": {Wet: 0.75,
-                             Feedback: 0.75}}                    
+                    "floor": {"wet": 0,
+                              "feedback": 0.25},
+                    "ceil": {"wet": 0.75,
+                             "feedback": 0.75}}                    
         genkwargsfn=eval("%s_kwargs" % genkey)
         genkwargs=genkwargsfn(self, key, offset)
         genclass=eval(hungarorise("%s_generator" % genkey))

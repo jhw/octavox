@@ -1,6 +1,6 @@
 ### short
 
-- abstract renderer
+- replace floor/ceil with limits
 
 - investigate why modclasses needs RV/SV key prefix
 
@@ -55,6 +55,7 @@
 
 ### done
 
+- abstract renderer
 - rename modular as modconfig
 - pass new modclasses arg as string:class dict
 - abstract project as module
