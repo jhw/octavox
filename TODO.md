@@ -1,10 +1,13 @@
 ### short
 
 - pass kk/sn/ht/sh as cli options
-- patch breaks
-- slice temperature
 
 ### medium
+
+- tune down loud SVDrum bass
+
+- patch breaks
+- slice temperature
 
 - expander script
   - based on mutator
@@ -17,8 +20,6 @@
   - removes breaks
   
 - arranger script
-
-- tune down loud SVDrum bass
 
 ### long
 
