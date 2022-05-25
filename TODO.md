@@ -1,8 +1,8 @@
 ### short
 
-- try removing rv/sv suffixes
-- try and dynamically import classes
-- move to new /renderers dir
+- rename modular as modconfig
+- pass new modclasses arg as string:class dict
+- abstract renderer
 
 - pass kk/sn/ht/sh as cli options
 - patch breaks
