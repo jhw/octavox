@@ -1,8 +1,8 @@
 ### short
 
-- rename modular as modconfig
-- pass new modclasses arg as string:class dict
 - abstract renderer
+
+- investigate why modclasses needs RV/SV key prefix
 
 - pass kk/sn/ht/sh as cli options
 - patch breaks
@@ -55,6 +55,8 @@
 
 ### done
 
+- rename modular as modconfig
+- pass new modclasses arg as string:class dict
 - abstract project as module
   - import sv classes into dom
 - refactor effect note :value attribute

@@ -1,5 +1,12 @@
 from octavox.projects.slicebeats.project import SVProject
 
+from rv.modules.drumsynth import DrumSynth as RVDrumSynth
+from rv.modules.echo import Echo as RVEcho
+from rv.modules.distortion import Distortion as RVDistortion
+from rv.modules.reverb import Reverb as RVReverb
+
+from octavox.modules.sampler import SVSampler
+
 import copy, json, os, random, yaml
 
 Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
@@ -26,6 +33,14 @@ ec:
   styles:
   - sample_hold
 """)
+
+ModConfig=yaml.safe_load(open("octavox/projects/slicebeats/modular.yaml").read())
+
+ModClasses={"RVDrumSynth": RVDrumSynth,
+            "RVEcho": RVEcho,
+            "RVDistortion": RVDistortion,
+            "RVReverb": RVReverb,
+            "SVSampler": SVSampler}
 
 SVDrum, Drum, Sampler, Echo, Wet, Feedback = "svdrum", "Drum", "Sampler", "Echo", "wet", "feedback"
 
@@ -364,7 +379,7 @@ class Patches(list):
         return yaml.safe_dump(json.loads(json.dumps(self)), 
                               default_flow_style=False)
     
-    def render(self, filestub, banks, nbeats):
+    def render(self, filestub, banks, nbeats, modconfig=ModConfig, modclasses=ModClasses):
         for path in ["tmp",
                      "tmp/slicebeats",
                      "tmp/slicebeats/projects",
@@ -373,10 +388,10 @@ class Patches(list):
                 os.makedirs(path)
         patches=[patch.render(nbeats=nbeats)
                  for patch in self]
-        modular=yaml.safe_load(open("octavox/projects/slicebeats/modular.yaml").read())
-        project=SVProject().render(banks=banks,
-                                   patches=patches,
-                                   modular=modular)
+        project=SVProject().render(patches=patches,
+                                   modconfig=modconfig,
+                                   modclasses=modclasses,
+                                   banks=banks)
         projfile="tmp/slicebeats/projects/%s.sunvox" % filestub
         with open(projfile, 'wb') as f:
             project.write_to(f)

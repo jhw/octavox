@@ -2,13 +2,6 @@ from rv.api import Project as RVProject
 from rv.pattern import Pattern as RVPattern
 from rv.note import Note as RVNote
 
-from rv.modules.drumsynth import DrumSynth as RVDrumSynth
-from rv.modules.echo import Echo as RVEcho
-from rv.modules.distortion import Distortion as RVDistortion
-from rv.modules.reverb import Reverb as RVReverb
-
-from octavox.modules.sampler import SVSampler
-
 import random, yaml
 
 Sampler="Sampler"
@@ -74,9 +67,9 @@ class SVProject:
         return [min(255, max(0, rgb+random.choice(values)))
                 for rgb in  color]
     
-    def init_modules(self, proj, modules):
+    def init_modules(self, proj, modules, modclasses):
         for i, item in enumerate(modules):
-            klass=eval(item["class"])
+            klass=modclasses[item["class"]]
             kwargs={"name": item["name"]}
             for attr, mult in [("x", 1),
                                ("y", -2)]:
@@ -154,14 +147,15 @@ class SVProject:
 
     def render(self,
                patches,
-               modular,
+               modconfig,
+               modclasses,
                banks=None,
                globalz=Globals):
         proj=RVProject()
         proj.initial_bpm=globalz["bpm"]
         proj.global_volume=globalz["volume"]
-        self.init_modules(proj, modular["modules"])
-        self.link_modules(proj, modular["links"])
+        self.init_modules(proj, modconfig["modules"], modclasses)
+        self.link_modules(proj, modconfig["links"])
         if banks:
             sampler={mod.name: mod
                      for mod in proj.modules}[Sampler]
