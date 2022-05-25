@@ -1,15 +1,10 @@
 ### short
 
-- construct mod classes dynamically
-- rename FXGenerator as SampleHoldGenerator
-
 - pass kk/sn/ht/sh as cli options
 - patch breaks
 - slice temperature
 
 ### medium
-
-- echo wet on/off style
 
 - expander script
   - based on mutator
@@ -22,10 +17,6 @@
   - removes breaks
   
 - arranger script
-
-- validator
-  - trig formats
-  - module references
 
 - tune down loud SVDrum bass
 
@@ -40,6 +31,10 @@
 
 ### thoughts
 
+- validate trigs against module config ?
+  - no one will ever use this apart from u so seems overkill
+- echo wet on/off style ?
+  - seems too explicit
 - trig format validator ?
   - probably overkill as octavox unlikely to have other users
 - move pattern expansion into slice constructor ?
@@ -56,6 +51,8 @@
 
 ### done
 
+- construct mod classes dynamically
+- rename FXGenerator as SampleHoldGenerator
 - replace floor/ceil with limits
 - abstract renderer
 - rename modular as modconfig

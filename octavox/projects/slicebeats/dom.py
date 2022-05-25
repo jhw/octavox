@@ -75,7 +75,7 @@ ht:
   - offbeats
   - closed
 ec:
-  generator: fx
+  generator: sample_hold
   styles:
   - sample_hold
 """)
@@ -190,7 +190,7 @@ class VitlingGenerator:
         elif q.random() < 0.5:
             self.add(notes, self.key, i, (k, 0.3*q.random()))
 
-class FxGenerator:
+class SampleHoldGenerator:
 
     def __init__(self, key, offset, ranges,
                  mod="Echo",
@@ -279,7 +279,7 @@ class Slice(dict):
             return {"key": key,
                     "samples": self["samples"],
                     "offset": offset}
-        def fx_kwargs(self, key, offset):
+        def sample_hold_kwargs(self, key, offset):
             return {"key": key,
                     "offset": offset,
                     "ranges": {"wet": [0, 0.75],
