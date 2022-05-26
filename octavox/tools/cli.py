@@ -37,6 +37,13 @@ def cli_int(item):
         return value
     return cli_base(item, matcher, parser)
 
+def cli_bool(item):
+    def matcher(resp, item):
+        return re.search("^\\s*y|n\\s*$", resp, re.I)!=None
+    def parser(resp, item):
+        return resp.lower()=="y"
+    return cli_base(item, matcher, parser)
+
 def cli_file(item):
     if not os.path.isdir(item["root"]):
         raise RuntimeError("%s root is not a directory" % item["key"])

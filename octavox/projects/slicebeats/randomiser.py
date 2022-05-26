@@ -128,6 +128,22 @@ if __name__=="__main__":
           - strict
           - wild
           default: default
+        - key: kk
+          description: "kk?"
+          type: bool
+          default: true
+        - key: sn
+          description: "sn?"
+          type: bool
+          default: true
+        - key: ht
+          description: "ht?"
+          type: bool
+          default: true
+        - key: ec
+          description: "ec?"
+          type: bool
+          default: true
         - key: nbeats
           description: "n(beats)"
           type: int
@@ -156,7 +172,9 @@ if __name__=="__main__":
                                   n=npatches)
         timestamp=datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
         filestub="%s-randomiser" % timestamp
-        patches.render(keys="kk|sn|ht|ec".split("|"),
+        keys=[k for k in "kk|sn|ht|ec".split("|")
+              if k in kwargs and kwargs[k]]
+        patches.render(keys=keys,
                        banks=banks,
                        nbeats=nbeats,
                        filestub=filestub)

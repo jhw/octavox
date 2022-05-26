@@ -1,6 +1,6 @@
 ### short
 
-- pass kk/sn/ht/sh as cli options
+- mute option may need to blank volume rather than not- render if mutations are to work
 
 ### medium
 
@@ -52,6 +52,7 @@
 
 ### done
 
+- pass kk/sn/ht/sh as cli options
 - construct mod classes dynamically
 - rename FXGenerator as SampleHoldGenerator
 - replace floor/ceil with limits
