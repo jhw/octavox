@@ -1,6 +1,6 @@
 ### short
 
-- mute option may need to blank volume rather than not- render if mutations are to work
+- mutator must work off same set of keys used in randomiser
 
 ### medium
 
@@ -52,6 +52,7 @@
 
 ### done
 
+- mute option may need to blank volume rather than not- render if mutations are to work
 - pass kk/sn/ht/sh as cli options
 - construct mod classes dynamically
 - rename FXGenerator as SampleHoldGenerator
