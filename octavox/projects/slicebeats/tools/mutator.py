@@ -65,8 +65,9 @@ if __name__=="__main__":
         banks=SVBanks.load("tmp/banks/pico")
         timestamp=datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
         filestub="%s-mutator" % timestamp
-        modpatches.render(filestub=filestub,
+        modpatches.render(keys="kk|sn|ht|ec".split("|"),
                           banks=banks,
-                          nbeats=kwargs["nbeats"])
+                          nbeats=kwargs["nbeats"],
+                          filestub=filestub)
     except RuntimeError as error:
         print ("Error: %s" % str(error))

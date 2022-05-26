@@ -347,9 +347,9 @@ class Tracks(dict):
             if random.random() < limit:
                 self["patterns"][key]=random.choice(self.Patterns)
 
-    def render(self, patch, nbeats, config=MachineConfig):
+    def render(self, keys, patch, nbeats, config=MachineConfig):
         notes={}
-        for key in config:
+        for key in keys:
             genkey=config[key]["generator"]
             pattern=Pattern.expand(self["patterns"][key])
             multiplier=int(nbeats/pattern.size)
@@ -373,10 +373,10 @@ class Patch(dict):
     def clone(self):
         return copy.deepcopy(self)
 
-    def render(self, nbeats):
+    def render(self, keys, nbeats):
         patch={"n": nbeats,
                 "tracks": []}
-        self["tracks"].render(patch, nbeats)
+        self["tracks"].render(keys, patch, nbeats)
         return patch
         
 class Patches(list):
@@ -409,14 +409,16 @@ class Patches(list):
         return yaml.safe_dump(json.loads(json.dumps(self)), 
                               default_flow_style=False)
     
-    def render(self, filestub, banks, nbeats, modconfig=ModConfig):
+    def render(self, keys, banks, nbeats, filestub,
+               modconfig=ModConfig):
         for path in ["tmp",
                      "tmp/slicebeats",
                      "tmp/slicebeats/projects",
                      "tmp/slicebeats/patches"]:
             if not os.path.exists(path):
                 os.makedirs(path)
-        patches=[patch.render(nbeats=nbeats)
+        patches=[patch.render(keys=keys,
+                              nbeats=nbeats)
                  for patch in self]
         modclasses={mod["class"]:eval(mod["class"])
                     for mod in modconfig["modules"]}

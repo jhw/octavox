@@ -156,8 +156,9 @@ if __name__=="__main__":
                                   n=npatches)
         timestamp=datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
         filestub="%s-randomiser" % timestamp
-        patches.render(filestub=filestub,
+        patches.render(keys="kk|sn|ht|ec".split("|"),
                        banks=banks,
-                       nbeats=nbeats)
+                       nbeats=nbeats,
+                       filestub=filestub)
     except RuntimeError as error:
         print ("Error: %s" % str(error))
