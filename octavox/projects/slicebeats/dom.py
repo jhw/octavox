@@ -349,7 +349,7 @@ class Tracks(dict):
 
     def render(self, patch, nbeats, config=MachineConfig):
         notes={}
-        for key in self["patterns"]:
+        for key in sorted(self["patterns"].keys()):
             genkey=config[key]["generator"]
             pattern=Pattern.expand(self["patterns"][key])
             multiplier=int(nbeats/pattern.size)
