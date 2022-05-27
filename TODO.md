@@ -1,7 +1,7 @@
 ### short
 
-- keys must affect machine creation and not just rendering
-- mutuator must iterate over machines
+- order track rendering
+- don't like the way pattern iterates over keys
 
 ### medium
 
@@ -53,6 +53,8 @@
 
 ### done
 
+- keys must affect machine creation and not just rendering
+- mutuator must iterate over machines
 - mute option may need to blank volume rather than not- render if mutations are to work
 - pass kk/sn/ht/sh as cli options
 - construct mod classes dynamically
