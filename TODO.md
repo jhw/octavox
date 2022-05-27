@@ -1,13 +1,9 @@
 ### short
 
-- don't like the way pattern iterates over keys
-
-### medium
-
-- tune down loud SVDrum bass
-
 - patch breaks
 - slice temperature
+
+### medium
 
 - expander script
   - based on mutator
@@ -20,6 +16,9 @@
   - removes breaks
   
 - arranger script
+- blender script
+
+- tune down loud SVDrum bass
 
 ### long
 
@@ -52,6 +51,7 @@
 
 ### done
 
+- don't like the way pattern iterates over keys
 - order track rendering
 - keys must affect machine creation and not just rendering
 - mutuator must iterate over machines
