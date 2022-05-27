@@ -247,7 +247,7 @@ class Machine(dict):
 class Machines(list):
 
     @classmethod
-    def randomise(self, config=MachineConfig):
+    def randomise(self, keys, config=MachineConfig):
         def init_seed(key):
             return int(1e8*random.random())
         def init_style(key):
@@ -256,7 +256,7 @@ class Machines(list):
         return Machines([{"key": key,
                           "seed": init_seed(key),
                           "style": init_style(key)}
-                         for key in config])
+                         for key in keys])
 
     def __init__(self, machines):
         list.__init__(self, [Machine(machine)
@@ -265,9 +265,9 @@ class Machines(list):
 class Slice(dict):
 
     @classmethod
-    def randomise(self, randomisers):
+    def randomise(self, keys, randomisers):
         return Slice(samples=Samples.randomise(randomisers),
-                     machines=Machines.randomise())
+                     machines=Machines.randomise(keys))
     
     def __init__(self, samples, machines):
         dict.__init__(self, {"samples": Samples(samples),
@@ -294,8 +294,8 @@ class Slice(dict):
 class Slices(list):
 
     @classmethod
-    def randomise(self, randomisers, n=4):
-        return Slices([Slice.randomise(randomisers)
+    def randomise(self, keys, randomisers, n=4):
+        return Slices([Slice.randomise(keys, randomisers)
                        for i in range(n)])
     
     def __init__(self, slices):
@@ -333,10 +333,10 @@ class Tracks(dict):
               "0|1|2|3"]
 
     @classmethod
-    def randomise(self, randomisers, config=MachineConfig):
-        return Tracks(slices=Slices.randomise(randomisers),
+    def randomise(self, keys, randomisers):
+        return Tracks(slices=Slices.randomise(keys, randomisers),
                       patterns={key:random.choice(self.Patterns)
-                                for key in config})
+                                for key in keys})
         
     def __init__(self, slices, patterns):
         dict.__init__(self, {"slices": Slices(slices),
@@ -347,9 +347,9 @@ class Tracks(dict):
             if random.random() < limit:
                 self["patterns"][key]=random.choice(self.Patterns)
 
-    def render(self, keys, patch, nbeats, config=MachineConfig):
+    def render(self, patch, nbeats, config=MachineConfig):
         notes={}
-        for key in keys:
+        for key in self["patterns"]:
             genkey=config[key]["generator"]
             pattern=Pattern.expand(self["patterns"][key])
             multiplier=int(nbeats/pattern.size)
@@ -364,8 +364,8 @@ class Tracks(dict):
 class Patch(dict):
 
     @classmethod
-    def randomise(self, randomisers, controllers):
-        return Patch(tracks=Tracks.randomise(randomisers))
+    def randomise(self, keys, randomisers):
+        return Patch(tracks=Tracks.randomise(keys, randomisers))
     
     def __init__(self, tracks):
         dict.__init__(self, {"tracks": Tracks(**tracks)})
@@ -373,18 +373,18 @@ class Patch(dict):
     def clone(self):
         return copy.deepcopy(self)
 
-    def render(self, keys, nbeats):
+    def render(self, nbeats):
         patch={"n": nbeats,
-                "tracks": []}
-        self["tracks"].render(keys, patch, nbeats)
+               "tracks": []}
+        self["tracks"].render(patch, nbeats)
         return patch
         
 class Patches(list):
 
     @classmethod
-    def randomise(self, randomisers, controllers, n):
-        return Patches([Patch.randomise(randomisers,
-                                        controllers)
+    def randomise(self, keys, randomisers, n):
+        return Patches([Patch.randomise(keys,
+                                        randomisers)
                         for i in range(n)])
     
     def __init__(self, patches):
@@ -409,7 +409,7 @@ class Patches(list):
         return yaml.safe_dump(json.loads(json.dumps(self)), 
                               default_flow_style=False)
     
-    def render(self, keys, banks, nbeats, filestub,
+    def render(self, banks, nbeats, filestub,
                modconfig=ModConfig):
         for path in ["tmp",
                      "tmp/slicebeats",
@@ -417,8 +417,7 @@ class Patches(list):
                      "tmp/slicebeats/patches"]:
             if not os.path.exists(path):
                 os.makedirs(path)
-        patches=[patch.render(keys=keys,
-                              nbeats=nbeats)
+        patches=[patch.render(nbeats=nbeats)
                  for patch in self]
         modclasses={mod["class"]:eval(mod["class"])
                     for mod in modconfig["modules"]}

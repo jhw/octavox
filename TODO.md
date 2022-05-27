@@ -1,6 +1,7 @@
 ### short
 
-- mutator must work off same set of keys used in randomiser
+- keys must affect machine creation and not just rendering
+- mutuator must iterate over machines
 
 ### medium
 

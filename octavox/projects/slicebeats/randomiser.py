@@ -4,21 +4,6 @@ from octavox.projects.slicebeats.dom import Patches
 
 import datetime, random, yaml
 
-Controllers=yaml.safe_load("""
-- mod: Echo
-  attr: wet
-  kwargs:
-    sample_hold:
-      step: 4
-      max: 0.75
-- mod: Echo
-  attr: feedback
-  kwargs:
-    sample_hold:
-      step: 4
-      max: 0.75
-""")
-
 Profiles=yaml.safe_load("""
 default:
   kksamples: 0.5
@@ -167,15 +152,14 @@ if __name__=="__main__":
         randomisers={"samples": SampleRandomiser(banks=banks,
                                                  curated=curated,
                                                  thresholds=kwargs)}
-        patches=Patches.randomise(controllers=Controllers,
+        keys=[k for k in "kk|sn|ht|ec".split("|")
+              if k in kwargs and kwargs[k]]
+        patches=Patches.randomise(keys=keys,
                                   randomisers=randomisers,
                                   n=npatches)
         timestamp=datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
         filestub="%s-randomiser" % timestamp
-        keys=[k for k in "kk|sn|ht|ec".split("|")
-              if k in kwargs and kwargs[k]]
-        patches.render(keys=keys,
-                       banks=banks,
+        patches.render(banks=banks,
                        nbeats=nbeats,
                        filestub=filestub)
     except RuntimeError as error:
