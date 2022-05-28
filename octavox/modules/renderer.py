@@ -11,14 +11,16 @@ bpm: 120
 volume: 256
 """)
 
+BreakSz, Height = 16, 64
+
 class SVTrig(dict):
 
     def __init__(self, item):
         dict.__init__(self, item)
 
     def render(self, modules, controllers, volume=128):
-        trig=1+self["id"]
-        mod=1+modules[self["mod"]]
+        trig=1+self["id"] # NB 1+
+        mod=1+modules[self["mod"]] # NB 1+
         vel=max(1, int(self["vel"]*volume)) 
         return RVNote(note=trig,
                       vel=vel,
@@ -32,9 +34,9 @@ class SVEffect(dict):
     def render(self, modules, controllers,
                ctrlmult=256,
                maxvalue=256*128):
-        mod=1+modules[self["mod"]]
+        mod=1+modules[self["mod"]] # NB 1+
         ctrl=ctrlmult*controllers[self["mod"]][self["ctrl"]]
-        value=int(self["v"]*maxvalue) # don't add 1 as will exceed max
+        value=int(self["v"]*maxvalue) # NB **NOT** 1+
         return RVNote(module=mod,
                       ctl=ctrl,
                       val=value)
@@ -103,20 +105,21 @@ class SVProject:
                      patch,
                      offset,
                      color,
-                     height=64):
+                     nbreaks,
+                     breaksz=BreakSz,
+                     height=Height):
         grid=self.init_grid(patch)
         def notefn(self, j, i):
             return grid[i][j].render(modules,
                                      controllers) if j in grid[i] else RVNote()
-        rvpat=RVPattern(name=str(offset.count),
-                        fg_color=(255, 255, 255),
-                        lines=patch["n"],
+        rvpat=RVPattern(lines=patch["n"],
                         tracks=len(patch["tracks"]),
                         x=offset.value,
                         y_size=height,
                         bg_color=color)
         rvpat.set_via_fn(notefn)
-        offset.increment(patch["n"])                
+        offset.increment(patch["n"])
+        offset.increment(nbreaks*breaksz)
         return rvpat
 
     def init_controllers(self, modules):
@@ -128,7 +131,7 @@ class SVProject:
                 controllers[mod.name][controller.name]=controller.number
         return controllers
 
-    def init_patterns(self, proj, patches):
+    def init_patterns(self, proj, patches, nbreaks):
         modmap={mod.name: mod.index
                 for mod in proj.modules}
         ctrlmap=self.init_controllers(proj.modules)
@@ -141,7 +144,8 @@ class SVProject:
                                       ctrlmap,
                                       patch,
                                       offset,
-                                      color)
+                                      color,
+                                      nbreaks)
             patterns.append(pattern)
         return patterns
 
@@ -149,6 +153,7 @@ class SVProject:
                patches,
                modconfig,
                modclasses,
+               nbreaks=0,
                banks=None,
                globalz=Globals):
         proj=RVProject()
@@ -160,7 +165,7 @@ class SVProject:
             sampler={mod.name: mod
                      for mod in proj.modules}[Sampler]
             sampler.initialise(banks, patches)
-        proj.patterns=self.init_patterns(proj, patches)
+        proj.patterns=self.init_patterns(proj, patches, nbreaks)
         return proj
 
 if __name__=="__main__":

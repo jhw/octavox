@@ -1,6 +1,5 @@
 ### short
 
-- patch breaks
 - slice temperature
 
 ### medium
@@ -23,10 +22,10 @@
 ### long
 
 - vitling 303
-- euclidian beats
-- sunvox reverb chords
 - city dreams bass
-- city dreams noise
+- euclidian/bjorklund beats
+- sunvox reverb chords
+- noise hats
 - librosa
 
 ### thoughts
@@ -51,6 +50,7 @@
 
 ### done
 
+- patch breaks
 - don't like the way pattern iterates over keys
 - order track rendering
 - keys must affect machine creation and not just rendering

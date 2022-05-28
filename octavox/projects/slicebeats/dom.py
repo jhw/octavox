@@ -412,6 +412,7 @@ class Patches(list):
                               default_flow_style=False)
     
     def render(self, banks, nbeats, filestub,
+               nbreaks=0,
                modconfig=ModConfig):
         for path in ["tmp",
                      "tmp/slicebeats",
@@ -426,7 +427,8 @@ class Patches(list):
         project=SVProject().render(patches=patches,
                                    modconfig=modconfig,
                                    modclasses=modclasses,
-                                   banks=banks)
+                                   banks=banks,
+                                   nbreaks=nbreaks)
         projfile="tmp/slicebeats/projects/%s.sunvox" % filestub
         with open(projfile, 'wb') as f:
             project.write_to(f)
