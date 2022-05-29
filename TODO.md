@@ -1,6 +1,10 @@
 ### short
 
-- slice temperature
+- float cli variable
+- slice temperature cli variable
+- bubble temp variable up to pattern selection
+- select sample universe based on patterns
+- override sample_hold pattern
 
 ### medium
 
