@@ -1,10 +1,6 @@
 ### short
 
-- float cli variable
-- slice temperature cli variable
-- bubble temp variable up to pattern selection
-- select sample universe based on patterns
-- override sample_hold pattern
+- pass slicetemp to mutator
 
 ### medium
 
@@ -34,6 +30,8 @@
 
 ### thoughts
 
+- why is there still pattern variation at slicetemp 0 ?
+  - because every single pattern contains variation
 - validate trigs against module config ?
   - no one will ever use this apart from u so seems overkill
 - echo wet on/off style ?
@@ -54,6 +52,8 @@
 
 ### done
 
+- helper method for random pattern selection
+- slicetemp
 - patch breaks
 - don't like the way pattern iterates over keys
 - order track rendering

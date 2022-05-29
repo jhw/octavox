@@ -6,7 +6,7 @@ from rv.modules.reverb import Reverb as RVReverb
 from octavox.modules.sampler import SVSampler
 from octavox.modules.renderer import SVProject
 
-import copy, json, os, random, yaml
+import copy, json, math, os, random, yaml
 
 Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
 
@@ -333,10 +333,18 @@ class Tracks(dict):
               "0|1|2|3"]
 
     @classmethod
-    def randomise(self, keys, randomisers):
+    def random_pattern(self, slicetemp):
+        npatterns=1+math.floor(slicetemp*len(self.Patterns))
+        patterns=self.Patterns[:npatterns]
+        return random.choice(patterns)
+    
+    @classmethod
+    def randomise(self, keys, randomisers, slicetemp):
+        npatterns=1+math.floor(slicetemp*len(self.Patterns))
+        patterns=self.Patterns[:npatterns]
         return Tracks(keys=keys,
                       slices=Slices.randomise(keys, randomisers),
-                      patterns={key:random.choice(self.Patterns)
+                      patterns={key:self.random_pattern(slicetemp)
                                 for key in keys})
         
     def __init__(self, keys, slices, patterns):
@@ -344,7 +352,7 @@ class Tracks(dict):
                              "slices": Slices(slices),
                              "patterns": patterns})
 
-    def randomise_pattern(self, limit):
+    def randomise_pattern(self, limit, slicetemp):
         for key in self["keys"]:
             if random.random() < limit:
                 self["patterns"][key]=random.choice(self.Patterns)
@@ -366,8 +374,8 @@ class Tracks(dict):
 class Patch(dict):
 
     @classmethod
-    def randomise(self, keys, randomisers):
-        return Patch(tracks=Tracks.randomise(keys, randomisers))
+    def randomise(self, keys, randomisers, slicetemp):
+        return Patch(tracks=Tracks.randomise(keys, randomisers, slicetemp))
     
     def __init__(self, tracks):
         dict.__init__(self, {"tracks": Tracks(**tracks)})
@@ -384,9 +392,10 @@ class Patch(dict):
 class Patches(list):
 
     @classmethod
-    def randomise(self, keys, randomisers, n):
+    def randomise(self, keys, randomisers, slicetemp, n):
         return Patches([Patch.randomise(keys,
-                                        randomisers)
+                                        randomisers,
+                                        slicetemp)
                         for i in range(n)])
     
     def __init__(self, patches):

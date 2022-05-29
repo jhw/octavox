@@ -1,3 +1,11 @@
+### slicetemp 29/05/22
+
+- float cli variable
+- slice temperature cli variable
+- bubble temp variable up to pattern selection
+- select sample universe based on patterns
+- override sample_hold pattern
+
 ### notes setup 17/05/22
 
 - notes class

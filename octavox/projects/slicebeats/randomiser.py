@@ -113,6 +113,12 @@ if __name__=="__main__":
           - strict
           - wild
           default: default
+        - key: slicetemp
+          description: "slicetemp"
+          type: float
+          min: 0
+          max: 1
+          default: 1
         - key: kk
           description: "kk?"
           type: bool
@@ -156,6 +162,7 @@ if __name__=="__main__":
               if k in kwargs and kwargs[k]]
         patches=Patches.randomise(keys=keys,
                                   randomisers=randomisers,
+                                  slicetemp=kwargs["slicetemp"],
                                   n=npatches)
         timestamp=datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
         filestub="%s-randomiser" % timestamp

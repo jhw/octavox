@@ -37,6 +37,18 @@ def cli_int(item):
         return value
     return cli_base(item, matcher, parser)
 
+def cli_float(item):
+    def matcher(resp, item):
+        return re.search("^\\s*\\d+(\\.\\d+)?\\s*$", resp)!=None
+    def parser(resp, item):
+        value=float(resp)
+        if (("min" in item and value < item["min"]) or
+            ("max" in item and value > item["max"])):
+            print ("WARNING: %s exceeds limits" % item["key"])
+            return None
+        return value
+    return cli_base(item, matcher, parser)
+
 def cli_bool(item):
     def matcher(resp, item):
         return re.search("^\\s*y|n\\s*$", resp, re.I)!=None
