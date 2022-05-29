@@ -1,21 +1,19 @@
-### short
-
-- pass slicetemp to mutator
-
-### medium
+### short [expander script]
 
 - expander script
-  - based on mutator
-  - each patch copied and includes per- track mutes
-  - include breaks in output
-  - check octatrack max number of slices
+  - mutator- like script 
+  - generates large number of single track patches
+  - each with unique sample hold
+  - include breaks
+  - npatches must be the same as octatrack
+
+### medium
 
 - compressor script
   - takes wav file
   - removes breaks
   
 - arranger script
-- blender script
 
 - tune down loud SVDrum bass
 
@@ -30,6 +28,8 @@
 
 ### thoughts
 
+- blender script ?
+  - not clear its useful
 - why is there still pattern variation at slicetemp 0 ?
   - because every single pattern contains variation
 - validate trigs against module config ?
@@ -52,6 +52,7 @@
 
 ### done
 
+- pass slicetemp to mutator
 - helper method for random pattern selection
 - slicetemp
 - patch breaks

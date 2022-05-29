@@ -30,6 +30,12 @@ if __name__=="__main__":
           options:
           - default
           default: default
+        - key: slicetemp
+          description: "slicetemp"
+          type: float
+          min: 0
+          max: 1
+          default: 1
         - key: nbeats
           description: "n(beats)"
           type: int
@@ -52,7 +58,8 @@ if __name__=="__main__":
             raise RuntimeError("index exceeds root patches length")
         root=roots[kwargs["index"]]
         def randomise_patch(patch, kwargs, i):
-            patch["tracks"].randomise_pattern(kwargs["dtrigpat"])
+            patch["tracks"].randomise_pattern(kwargs["dtrigpat"],
+                                              kwargs["slicetemp"])
             for slice in patch["tracks"]["slices"]:
                 for track in slice["machines"]:
                     track.randomise_style(kwargs["dtrigstyle"])
