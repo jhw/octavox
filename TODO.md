@@ -1,9 +1,10 @@
 ### short
 
-- check mutator indexing into randomised output with breaks
+- is keys really required as part of state ?
+  - why not just iterate over patterns ?
 - dom options to reject certain keys
   - may requires explicit cases for stuff which is currently simple dict
-- add reject option to mutator
+- add (key) rejection option to mutator
 
 ### medium
 
