@@ -342,24 +342,22 @@ class Tracks(dict):
     def randomise(self, keys, randomisers, slicetemp):
         npatterns=1+math.floor(slicetemp*len(self.Patterns))
         patterns=self.Patterns[:npatterns]
-        return Tracks(keys=keys,
-                      slices=Slices.randomise(keys, randomisers),
+        return Tracks(slices=Slices.randomise(keys, randomisers),
                       patterns={key:self.random_pattern(slicetemp)
                                 for key in keys})
         
-    def __init__(self, keys, slices, patterns):
-        dict.__init__(self, {"keys": keys,
-                             "slices": Slices(slices),
+    def __init__(self, slices, patterns):
+        dict.__init__(self, {"slices": Slices(slices),
                              "patterns": patterns})
 
     def randomise_pattern(self, limit, slicetemp):
-        for key in self["keys"]:
+        for key in self["patterns"]:
             if random.random() < limit:
                 self["patterns"][key]=random.choice(self.Patterns)
 
     def render(self, patch, nbeats, config=MachineConfig):
         notes={}
-        for key in sorted(self["keys"]):
+        for key in sorted(self["patterns"]):
             genkey=config[key]["generator"]
             pattern=Pattern.expand(self["patterns"][key])
             multiplier=int(nbeats/pattern.size)

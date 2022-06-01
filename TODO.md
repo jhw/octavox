@@ -1,9 +1,8 @@
 ### short
 
-- is keys really required as part of state ?
-  - why not just iterate over patterns ?
-- dom options to reject certain keys
-  - may requires explicit cases for stuff which is currently simple dict
+- new Patterns class
+- patterns.reject(key)
+- machines.reject(key)
 - add (key) rejection option to mutator
 
 ### medium
@@ -49,6 +48,8 @@
 
 ### done
 
+- is keys really required as part of state ?
+  - why not just iterate over patterns ?
 - add breaks option to randomiser, mutator
 - pass slicetemp to mutator
 - helper method for random pattern selection
