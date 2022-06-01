@@ -1,20 +1,16 @@
-### short [expander script]
+### short
 
-- expander script
-  - mutator- like script 
-  - generates large number of single track patches
-  - each with unique sample hold
-  - include breaks
-  - npatches must be the same as octatrack
+- check mutator indexing into randomised output with breaks
+- dom options to reject certain keys
+  - may requires explicit cases for stuff which is currently simple dict
+- add reject option to mutator
 
 ### medium
 
 - compressor script
   - takes wav file
-  - removes breaks
-  
+  - removes breaks  
 - arranger script
-
 - tune down loud SVDrum bass
 
 ### long
@@ -52,6 +48,7 @@
 
 ### done
 
+- add breaks option to randomiser, mutator
 - pass slicetemp to mutator
 - helper method for random pattern selection
 - slicetemp

@@ -145,6 +145,10 @@ if __name__=="__main__":
           type: int
           min: 1
           default: 16
+        - key: breaks
+          description: "breaks?"
+          type: bool
+          default: false
         """)
         import sys
         if len(sys.argv) >= 2:
@@ -166,8 +170,10 @@ if __name__=="__main__":
                                   n=npatches)
         timestamp=datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
         filestub="%s-randomiser" % timestamp
+        nbreaks=int(kwargs["breaks"])
         patches.render(banks=banks,
                        nbeats=nbeats,
-                       filestub=filestub)
+                       filestub=filestub,
+                       nbreaks=nbreaks)
     except RuntimeError as error:
         print ("Error: %s" % str(error))
