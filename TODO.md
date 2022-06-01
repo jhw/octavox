@@ -1,6 +1,7 @@
 ### short
 
 - new Patterns class
+  - better randomisation options
 - patterns.reject(key)
 - machines.reject(key)
 - add (key) rejection option to mutator
@@ -9,7 +10,7 @@
 
 - compressor script
   - takes wav file
-  - removes breaks  
+  - removes breaks
 - arranger script
 - tune down loud SVDrum bass
 
