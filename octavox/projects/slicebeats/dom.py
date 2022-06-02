@@ -302,6 +302,13 @@ class Slices(list):
         list.__init__(self, [Slice(**slice)
                              for slice in slices])
 
+Patternz=["0",
+          "0|1",
+          "3x0|1",
+          "0|1|0|1",
+          "0|1|0|2",
+          "0|1|2|3"]
+        
 class Pattern(list):
 
     @classmethod
@@ -323,37 +330,34 @@ class Pattern(list):
         return sum([item["n"]
                     for item in self])
 
+class Patterns(dict):
+
+    @classmethod
+    def randomise(self, keys, slicetemp):
+        def randomise(slicetemp, patterns=Patternz):
+            npatterns=1+math.floor(slicetemp*len(patterns))
+            return random.choice(patterns[:npatterns])
+        return Patterns({key:randomise(slicetemp)
+                         for key in keys})
+    
+    def __init__(self, item={}):
+        dict.__init__(self, item)
+    
 class Tracks(dict):
 
-    Patterns=["0",
-              "0|1",
-              "3x0|1",
-              "0|1|0|1",
-              "0|1|0|2",
-              "0|1|2|3"]
-
-    @classmethod
-    def random_pattern(self, slicetemp):
-        npatterns=1+math.floor(slicetemp*len(self.Patterns))
-        patterns=self.Patterns[:npatterns]
-        return random.choice(patterns)
-    
     @classmethod
     def randomise(self, keys, randomisers, slicetemp):
-        npatterns=1+math.floor(slicetemp*len(self.Patterns))
-        patterns=self.Patterns[:npatterns]
         return Tracks(slices=Slices.randomise(keys, randomisers),
-                      patterns={key:self.random_pattern(slicetemp)
-                                for key in keys})
+                      patterns=Patterns.randomise(keys, slicetemp))
         
     def __init__(self, slices, patterns):
         dict.__init__(self, {"slices": Slices(slices),
-                             "patterns": patterns})
+                             "patterns": Patterns(patterns)})
 
-    def randomise_pattern(self, limit, slicetemp):
+    def randomise_pattern(self, limit, slicetemp, patterns=Patternz):
         for key in self["patterns"]:
             if random.random() < limit:
-                self["patterns"][key]=random.choice(self.Patterns)
+                self["patterns"][key]=random.choice(patterns)
 
     def render(self, patch, nbeats, config=MachineConfig):
         notes={}
