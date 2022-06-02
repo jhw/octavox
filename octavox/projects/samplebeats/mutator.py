@@ -1,6 +1,6 @@
 from octavox.modules.sampler import SVBanks
 
-from octavox.projects.slicebeats.dom import Patches
+from octavox.projects.samplebeats.dom import Patches
 
 import datetime, yaml
 
@@ -18,7 +18,7 @@ if __name__=="__main__":
         - key: src
           description: source
           type: file
-          root: tmp/slicebeats/patches
+          root: tmp/samplebeats/patches
         - key: index
           description: index
           type: int  

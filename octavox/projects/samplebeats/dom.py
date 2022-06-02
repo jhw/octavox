@@ -384,9 +384,9 @@ class Tracks(dict):
             offset=0
             for item in pattern:
                 slice=self["slices"][item["i"]]
-                nslicebeats=item["n"]*multiplier
-                slice.render(key, genkey, notes, nslicebeats, offset)
-                offset+=nslicebeats
+                nsamplebeats=item["n"]*multiplier
+                slice.render(key, genkey, notes, nsamplebeats, offset)
+                offset+=nsamplebeats
         patch["tracks"]+=list(notes.values())
                 
 class Patch(dict):
@@ -442,9 +442,9 @@ class Patches(list):
                nbreaks=0,
                modconfig=ModConfig):
         for path in ["tmp",
-                     "tmp/slicebeats",
-                     "tmp/slicebeats/projects",
-                     "tmp/slicebeats/patches"]:
+                     "tmp/samplebeats",
+                     "tmp/samplebeats/projects",
+                     "tmp/samplebeats/patches"]:
             if not os.path.exists(path):
                 os.makedirs(path)
         patches=[patch.render(nbeats=nbeats)
@@ -456,10 +456,10 @@ class Patches(list):
                                    modclasses=modclasses,
                                    banks=banks,
                                    nbreaks=nbreaks)
-        projfile="tmp/slicebeats/projects/%s.sunvox" % filestub
+        projfile="tmp/samplebeats/projects/%s.sunvox" % filestub
         with open(projfile, 'wb') as f:
             project.write_to(f)
-        patchfile="tmp/slicebeats/patches/%s.yaml" % filestub
+        patchfile="tmp/samplebeats/patches/%s.yaml" % filestub
         with open(patchfile, 'w') as f:
             f.write(self.to_yaml())
     
