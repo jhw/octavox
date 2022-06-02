@@ -311,18 +311,26 @@ class Slice(dict):
         dict.__init__(self, {"samples": Samples(samples),
                              "machines": Machines(machines)})
 
+    def generator_kwargs(fn):
+        def wrapped(self, key, offset):
+            resp=fn(self, key, offset)
+            resp.update({"key": key,
+                         "offset": offset})
+            return resp
+        return wrapped
+
+    @generator_kwargs
+    def vitling_kwargs(self, key, offset):
+        return {"samples": self["samples"]}
+
+    @generator_kwargs
+    def sample_hold_kwargs(self, key, offset):
+        return {"ranges": {"wet": [0, 0.75],
+                           "feedback": [0.25, 0.75]}}
+            
     def render(self, key, genkey, notes, nbeats, offset):
-        def vitling_kwargs(self, key, offset):
-            return {"key": key,
-                    "samples": self["samples"],
-                    "offset": offset}
-        def sample_hold_kwargs(self, key, offset):
-            return {"key": key,
-                    "offset": offset,
-                    "ranges": {"wet": [0, 0.75],
-                               "feedback": [0.25, 0.75]}}
-        genkwargsfn=eval("%s_kwargs" % genkey)
-        genkwargs=genkwargsfn(self, key, offset)
+        genkwargsfn=getattr(self, "%s_kwargs" % genkey)
+        genkwargs=genkwargsfn(key, offset)
         genclass=eval(hungarorise("%s_generator" % genkey))
         generator=genclass(**genkwargs)
         machine={machine["key"]:machine

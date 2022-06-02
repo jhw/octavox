@@ -12,7 +12,9 @@
 - compressor script
   - takes wav file
   - removes breaks
+
 - arranger script
+
 - tune down loud SVDrum bass
 
 ### long
