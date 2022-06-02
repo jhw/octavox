@@ -1,13 +1,15 @@
 ### short
 
-- pre- expand patterns
-
+- dedicated slicepattern class
 - dom clone
 - dom reject
+- mutator to clone
+- add expand option to mutator
 
 ### medium
 
-- add expand option to mutator
+- check why kick samples have id variation even at low temp
+
 - compressor script
   - takes wav file
   - removes breaks
@@ -49,6 +51,7 @@
 
 ### done
 
+- pre- expand patterns
 - new Patterns class
   - better randomisation options
 - is keys really required as part of state ?

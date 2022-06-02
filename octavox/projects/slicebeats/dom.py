@@ -79,12 +79,23 @@ ec:
   - sample_hold
 """)
 
-SlicePatterns=["0",
-          "0|1",
-          "3x0|1",
-          "0|1|0|1",
-          "0|1|0|2",
-          "0|1|2|3"]
+def expand_pattern(pattern):
+    def parse_chunk(chunk):
+        tokens=[int(tok)
+                for tok in chunk.split("x")]
+        if len(tokens)==1:
+            tokens=[1, tokens[0]]
+        return {k:v for k, v in zip("ni", tokens)}
+    return [parse_chunk(chunk)
+            for chunk in pattern.split("|")]
+
+SlicePatterns=[expand_pattern(pat)
+               for pat in ["0",
+                           "0|1",
+                           "3x0|1",
+                           "0|1|0|1",
+                           "0|1|0|2",
+                           "0|1|2|3"]]
 
 def Q(seed):
     q=random.Random()
@@ -311,17 +322,6 @@ class Slices(list):
         
 class Pattern(list):
 
-    @classmethod
-    def expand(self, pattern):
-        def parse_item(item):
-            tokens=[int(tok)
-                    for tok in item.split("x")]
-            if len(tokens)==1:
-                tokens=[1, tokens[0]]
-            return {k:v for k, v in zip("ni", tokens)}
-        return Pattern([parse_item(item)
-                        for item in pattern.split("|")])
-    
     def __init__(self, items=[]):
         list.__init__(self, items)
 
@@ -337,7 +337,7 @@ class Patterns(dict):
         def randomise(slicetemp, patterns=SlicePatterns):
             npatterns=1+math.floor(slicetemp*len(patterns))
             return random.choice(patterns[:npatterns])
-        return Patterns({key:Pattern.expand(randomise(slicetemp))
+        return Patterns({key:randomise(slicetemp)
                          for key in keys})
     
     def __init__(self, item={}):
@@ -358,7 +358,7 @@ class Tracks(dict):
     def randomise_pattern(self, limit, slicetemp, patterns=SlicePatterns):
         for key in self["patterns"]:
             if random.random() < limit:
-                self["patterns"][key]=Pattern.expand(random.choice(patterns))
+                self["patterns"][key]=random.choice(patterns)
 
     def render(self, patch, nbeats, config=MachineConfig):
         notes={}
