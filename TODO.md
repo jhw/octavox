@@ -1,10 +1,9 @@
 ### short
 
-- dedicated slicepattern class
-- dom clone
-- dom reject
-- mutator to clone
-- add expand option to mutator
+- dom clone functionality
+- mutator to use clone
+- dom reject functionality
+- add expansion option to mutator
 
 ### medium
 
