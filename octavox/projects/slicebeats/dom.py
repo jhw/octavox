@@ -79,6 +79,13 @@ ec:
   - sample_hold
 """)
 
+SlicePatterns=["0",
+          "0|1",
+          "3x0|1",
+          "0|1|0|1",
+          "0|1|0|2",
+          "0|1|2|3"]
+
 def Q(seed):
     q=random.Random()
     q.seed(seed)
@@ -301,13 +308,6 @@ class Slices(list):
     def __init__(self, slices):
         list.__init__(self, [Slice(**slice)
                              for slice in slices])
-
-Patternz=["0",
-          "0|1",
-          "3x0|1",
-          "0|1|0|1",
-          "0|1|0|2",
-          "0|1|2|3"]
         
 class Pattern(list):
 
@@ -334,14 +334,15 @@ class Patterns(dict):
 
     @classmethod
     def randomise(self, keys, slicetemp):
-        def randomise(slicetemp, patterns=Patternz):
+        def randomise(slicetemp, patterns=SlicePatterns):
             npatterns=1+math.floor(slicetemp*len(patterns))
             return random.choice(patterns[:npatterns])
-        return Patterns({key:randomise(slicetemp)
+        return Patterns({key:Pattern.expand(randomise(slicetemp))
                          for key in keys})
     
     def __init__(self, item={}):
-        dict.__init__(self, item)
+        dict.__init__(self, {k: Pattern(v)
+                             for k, v in item.items()})
     
 class Tracks(dict):
 
@@ -354,16 +355,16 @@ class Tracks(dict):
         dict.__init__(self, {"slices": Slices(slices),
                              "patterns": Patterns(patterns)})
 
-    def randomise_pattern(self, limit, slicetemp, patterns=Patternz):
+    def randomise_pattern(self, limit, slicetemp, patterns=SlicePatterns):
         for key in self["patterns"]:
             if random.random() < limit:
-                self["patterns"][key]=random.choice(patterns)
+                self["patterns"][key]=Pattern.expand(random.choice(patterns))
 
     def render(self, patch, nbeats, config=MachineConfig):
         notes={}
         for key in sorted(self["patterns"]):
             genkey=config[key]["generator"]
-            pattern=Pattern.expand(self["patterns"][key])
+            pattern=self["patterns"][key]
             multiplier=int(nbeats/pattern.size)
             offset=0
             for item in pattern:

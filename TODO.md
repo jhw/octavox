@@ -1,13 +1,13 @@
 ### short
 
-- new Patterns class
-  - better randomisation options
-- patterns.reject(key)
-- machines.reject(key)
-- add (key) rejection option to mutator
+- pre- expand patterns
+
+- dom clone
+- dom reject
 
 ### medium
 
+- add expand option to mutator
 - compressor script
   - takes wav file
   - removes breaks
@@ -49,6 +49,8 @@
 
 ### done
 
+- new Patterns class
+  - better randomisation options
 - is keys really required as part of state ?
   - why not just iterate over patterns ?
 - add breaks option to randomiser, mutator
