@@ -7,6 +7,8 @@
 
 ### medium
 
+- layout manager
+
 - check why kick samples have id variation even at low temp
 
 - compressor script
