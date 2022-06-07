@@ -1,7 +1,6 @@
 ### short
 
-- dom clone functionality
-- mutator to use clone
+- refactor clone to use objects
 - dom reject functionality
 - add expansion option to mutator
 
