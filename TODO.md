@@ -9,8 +9,9 @@
 
 - layout manager
 
-- check why kick samples have id variation even at low temp
-
+- s3 utils for favourites
+  - may require pico samples refactoring
+  
 - compressor script
   - takes wav file
   - removes breaks
@@ -30,18 +31,14 @@
 
 ### thoughts
 
+- check why kick samples have id variation even at low temp
+  - its the hat line not the kick line!
 - blender script ?
   - not clear its useful
-- why is there still pattern variation at slicetemp 0 ?
-  - because every single pattern contains variation
 - validate trigs against module config ?
   - no one will ever use this apart from u so seems overkill
 - echo wet on/off style ?
   - seems too explicit
-- trig format validator ?
-  - probably overkill as octavox unlikely to have other users
-- move pattern expansion into slice constructor ?
-  - no because it's fine as things are
 - per- machine SVDrum/Sampler modules ?
   - probably overkill
   - would be useful for sv- level muting but that's really the OT's job
