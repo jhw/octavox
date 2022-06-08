@@ -146,6 +146,10 @@ class SampleKey:
 
 class Samples(dict):
 
+    """
+    - note that sample keys are different from machine keys (oh/ch vs ht), so patches should contain unrestricted set
+    """
+    
     @classmethod
     def randomise(self, randomisers):
         return Samples(randomisers["samples"].randomise())

@@ -1,11 +1,13 @@
 ### short
 
-- pass keys to samples
-- dom reject functionality
-- add expansion option to mutator
+- add beat volume
+- note volume to multiply beat volume by global volume
+- turn down loud SVDrum samples
 
 ### medium
 
+- dom reject functionality
+- add expansion option to mutator
 - layout manager
 - ability to fix/specify certain samples
 - quick visualisation of samples in grid
@@ -15,7 +17,6 @@
   - takes wav file
   - removes breaks
 - arranger script
-- tune down loud SVDrum bass
 
 ### long
 
@@ -28,6 +29,8 @@
 
 ### thoughts
 
+- pass keys to samples ?
+  - no because sample keys are different from machine keys - oh/ch etc
 - check why kick samples have id variation even at low temp
   - its the hat line not the kick line!
 - blender script ?
