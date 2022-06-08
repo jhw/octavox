@@ -1,3 +1,13 @@
+### cloning
+
+- root is list of patches
+- patch has tracks (dict)
+- track has patterns (dict) and slices (list)
+- slice has machines (list) and samples (dict)
+
+- ensure all dicts have consistent constructors
+- ensure all lists have consistent constructors
+
 ### slicetemp 29/05/22
 
 - float cli variable

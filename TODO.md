@@ -1,6 +1,6 @@
 ### short
 
-- refactor clone to use objects
+- ensure cloning deep copies objects
 - dom reject functionality
 - add expansion option to mutator
 
