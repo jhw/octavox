@@ -1,18 +1,16 @@
-### short
+### short [layout manager]
 
-- add beat volume
-- note volume to multiply beat volume by global volume
-- turn down loud SVDrum samples
+- center on Output
+- implement layout manager
 
 ### medium
 
+- script to dump samples mapping
 - dom reject functionality
 - add expansion option to mutator
-- layout manager
 - ability to fix/specify certain samples
-- quick visualisation of samples in grid
 - s3 utils for favourites
-  - may require pico samples refactoring  
+  - may require pico samples refactoring
 - compressor script
   - takes wav file
   - removes breaks
@@ -29,6 +27,8 @@
 
 ### thoughts
 
+- turn down svdrum samples ?
+  - no; not worth it; just manually turn down SVDrum volume in UI
 - pass keys to samples ?
   - no because sample keys are different from machine keys - oh/ch etc
 - check why kick samples have id variation even at low temp
