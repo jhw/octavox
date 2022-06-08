@@ -6,7 +6,7 @@ from rv.modules.reverb import Reverb as RVReverb
 from octavox.modules.sampler import SVSampler
 from octavox.modules.renderer import SVProject
 
-import copy, json, math, os, random, yaml
+import json, math, os, random, yaml
 
 Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
 
@@ -153,6 +153,9 @@ class Samples(dict):
     def __init__(self, obj):
         dict.__init__(self, obj)
 
+    def clone(self):
+        return Samples(self)
+        
     def randomise_samples(self, samples):
         for key in self.keys():
             self[key]=random.choice(samples[key])
@@ -266,6 +269,9 @@ class Machine(dict):
     def __init__(self, item):
         dict.__init__(self, item)
 
+    def clone(self):
+        return Machine(self)
+        
     def randomise_seed(self, limit):
         if random.random() < limit:
             seed=int(1e8*random.random())
@@ -300,6 +306,9 @@ class Machines(list):
         list.__init__(self, [Machine(machine)
                              for machine in machines])
 
+    def clone(self):
+        return Machines(self)
+        
 class Slice(dict):
 
     @classmethod
@@ -311,6 +320,10 @@ class Slice(dict):
         dict.__init__(self, {"samples": Samples(samples),
                              "machines": Machines(machines)})
 
+    def clone(self):
+        return Slice(samples=self["samples"].clone(),
+                     machines=self["machines"].clone())
+        
     def generator_kwargs(fn):
         def wrapped(self, key, offset):
             resp=fn(self, key, offset)
@@ -347,6 +360,9 @@ class Slices(list):
     def __init__(self, slices):
         list.__init__(self, [Slice(**slice)
                              for slice in slices])
+
+    def clone(self):
+        return Slices(self)
         
 class PatternMap(dict):
 
@@ -358,7 +374,10 @@ class PatternMap(dict):
     def __init__(self, item={}):
         dict.__init__(self, {k: Pattern(v)
                              for k, v in item.items()})
-    
+
+    def clone(self):
+        return PatternMap(item=self)
+        
 class Tracks(dict):
 
     @classmethod
@@ -369,6 +388,10 @@ class Tracks(dict):
     def __init__(self, slices, patterns):
         dict.__init__(self, {"slices": Slices(slices),
                              "patterns": PatternMap(patterns)})
+
+    def clone(self):
+        return Tracks(slices=self["slices"].clone(),
+                      patterns=self["patterns"].clone())
 
     def randomise_pattern(self, limit, slicetemp, patterns=SlicePatterns):
         for key in self["patterns"]:
@@ -399,7 +422,7 @@ class Patch(dict):
         dict.__init__(self, {"tracks": Tracks(**tracks)})
 
     def clone(self):
-        return copy.deepcopy(self)
+        return Patch(tracks=self["tracks"].clone())
 
     def render(self, nbeats):
         patch={"n": nbeats,

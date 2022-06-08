@@ -1,22 +1,20 @@
 ### short
 
-- ensure cloning deep copies objects
+- check no (eg) kk references if kk not included
 - dom reject functionality
 - add expansion option to mutator
 
 ### medium
 
 - layout manager
-
+- ability to fix/specify certain samples
+- quick visualisation of samples in grid
 - s3 utils for favourites
-  - may require pico samples refactoring
-  
+  - may require pico samples refactoring  
 - compressor script
   - takes wav file
   - removes breaks
-
 - arranger script
-
 - tune down loud SVDrum bass
 
 ### long
@@ -50,6 +48,7 @@
 
 ### done
 
+- ensure cloning deep copies objects
 - pre- expand patterns
 - new Patterns class
   - better randomisation options
