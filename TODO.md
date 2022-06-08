@@ -1,6 +1,6 @@
 ### short
 
-- check no (eg) kk references if kk not included
+- pass keys to samples
 - dom reject functionality
 - add expansion option to mutator
 
