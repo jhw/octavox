@@ -2,7 +2,7 @@ from rv.api import Project as RVProject
 from rv.pattern import Pattern as RVPattern
 from rv.note import Note as RVNote
 
-import random, yaml
+import math, random, yaml
 
 Sampler="Sampler"
 
@@ -68,16 +68,51 @@ class SVProject:
         values=range(-contrast, contrast)
         return [min(255, max(0, rgb+random.choice(values)))
                 for rgb in  color]
+
+    def init_layout(self, modules, links, n=1000):
+        class Grid(dict):
+            @classmethod
+            def randomise(self, modnames):
+                sz=int(math.ceil(len(modnames)**0.5))
+                coords=sorted([(x, y)
+                               for y in range(sz)
+                               for x in range(sz)],
+                              key=lambda x: random.random())[:len(modnames)]
+                return Grid({mod:xy
+                             for mod, xy in zip(modnames, coords)})
+            def __init__(self, item={}):
+                dict.__init__(self, item)
+            def rms_distance(self, links):
+                total=0
+                for link in links:
+                    a, b = [self[modname]
+                            for modname in link]
+                    distance=((a[0]-b[0])**2+(a[1]-b[1])**2)**0.5
+                    total+=distance
+                return total
+            def normalise(self):
+                return {k: tuple([v1-v0
+                                  for v1, v0 in zip(v, self["Output"])])
+                        for k, v in self.items()}
+        def randomise(modnames, links):
+            grid=Grid.randomise(modnames)
+            distance=grid.rms_distance(links)
+            return (grid.normalise(), distance)
+        modnames=[mod["name"] for mod in modules]
+        modnames.append("Output")
+        return sorted([randomise(modnames, links)
+                       for i in range(n)],
+                      key=lambda x: -x[1]).pop()[0]
     
-    def init_modules(self, proj, modules, modclasses):
+    def init_modules(self, proj, modules, links, modclasses):
+        positions=self.init_layout(modules, links)
         for i, item in enumerate(modules):
             klass=modclasses[item["class"]]
             kwargs={"name": item["name"]}
-            for attr, mult in [("x", 1),
-                               ("y", -2)]:
-                if attr in item["position"]:
-                    value=item["position"][attr]
-                    kwargs[attr]=int(512+128*mult*value)
+            for i, attr, mult in [(0, "x", 1),
+                                  (1, "y", -2)]:
+                value=positions[item["name"]][i]
+                kwargs[attr]=int(512+128*mult*value)
             mod=klass(**kwargs)
             if "defaults" in item:
                 for k, v in item["defaults"].items():
@@ -159,8 +194,12 @@ class SVProject:
         proj=RVProject()
         proj.initial_bpm=globalz["bpm"]
         proj.global_volume=globalz["volume"]
-        self.init_modules(proj, modconfig["modules"], modclasses)
-        self.link_modules(proj, modconfig["links"])
+        self.init_modules(proj,
+                          modconfig["modules"],
+                          modconfig["links"],
+                          modclasses)
+        self.link_modules(proj,
+                          modconfig["links"])
         if banks:
             sampler={mod.name: mod
                      for mod in proj.modules}[Sampler]

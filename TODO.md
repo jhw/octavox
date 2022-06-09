@@ -1,8 +1,6 @@
-### short [layout manager]
+### short
 
-- zip modnames and coords
-- center on Output
-- implement layout manager
+- remove three way iteration in renderer
 
 ### medium
 
@@ -52,6 +50,9 @@
 
 ### done
 
+- zip modnames and coords
+- center on Output
+- implement layout manager
 - ensure cloning deep copies objects
 - pre- expand patterns
 - new Patterns class

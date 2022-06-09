@@ -15,32 +15,20 @@ modules:
   - name: Sampler
     # class: RVSampler
     class: SVSampler
-    position:
-      x: -3
-      y: -1
   - name: Drum
     class: RVDrumSynth
-    position:
-      x: -3
-      y: 1
   - name: Echo
     class: RVEcho
-    position:
-      x: -3
     defaults:
       dry: 128
       wet: 128
       delay: 192
   - name: Distortion
     class: RVDistortion
-    position:
-      x: -2
     defaults:
       power: 64
   - name: Reverb
     class: RVReverb
-    position:
-      x: -1
     defaults:
       wet: 4
 links:
