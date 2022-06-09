@@ -1,36 +1,24 @@
-import random, yaml
+import math, random, yaml
 
 ModConfig=yaml.safe_load("""
 modules:
   - name: Sampler
     # class: RVSampler
     class: SVSampler
-    position:
-      x: -3
-      y: -1
   - name: Drum
     class: RVDrumSynth
-    position:
-      x: -3
-      y: 1
   - name: Echo
     class: RVEcho
-    position:
-      x: -3
     defaults:
       dry: 128
       wet: 128
       delay: 192
   - name: Distortion
     class: RVDistortion
-    position:
-      x: -2
     defaults:
       power: 64
   - name: Reverb
     class: RVReverb
-    position:
-      x: -1
     defaults:
       wet: 4
 links:
@@ -48,29 +36,41 @@ links:
 
 Output="Output"
 
-def random_grid(modnames, links):
-    def calc_distance(modnames, links, grid):
+class Grid(list):
+
+    @classmethod
+    def randomise(self, modnames):
+        sz=int(math.ceil(len(modnames)**0.5))
+        coords=sorted([(x, y)
+                       for y in range(sz)
+                       for x in range(sz)],
+                      key=lambda x: random.random())[:len(modnames)]
+        return Grid(modnames, coords)
+
+    def __init__(self, modnames, coords=[]):
+        list.__init__(self, coords)
+        self.modnames=modnames
+
+    def rms_distance(self, links):
         total=0
         for link in links:
-            a, b = [grid[modnames.index(modname)]
+            a, b = [self[self.modnames.index(modname)]
                     for modname in link]
             distance=((a[0]-b[0])**2+(a[1]-b[1])**2)**0.5
             total+=distance
         return total
-    grid=sorted([(x, y)
-                 for y in range(len(modnames))
-                 for x in range(len(modnames))],
-                key=lambda x: random.random())
-    distance=calc_distance(modnames, links, grid)
-    return (grid[:len(modnames)], distance)
 
 def generate(config, n):
+    def randomise(modnames, links):
+        grid=Grid.randomise(modnames)
+        distance=grid.rms_distance(links)
+        return (grid, distance)
     modnames=[mod["name"] for mod in config["modules"]]
     modnames.append(Output)
-    items=sorted([random_grid(modnames, config["links"])
+    grids=sorted([randomise(modnames, config["links"])
                   for i in range(n)],
                  key=lambda x: x[1])
-    return items[0]
+    return grids[0]
     
 if __name__=="__main__":
     try:
@@ -82,6 +82,7 @@ if __name__=="__main__":
             raise RuntimeError("n is invalid")
         n=int(n)        
         grid, distance = generate(ModConfig, n)
+        print (grid.modnames)
         print (grid)
         print (distance)
     except RuntimeError as error:

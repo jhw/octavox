@@ -1,5 +1,6 @@
 ### short [layout manager]
 
+- zip modnames and coords
 - center on Output
 - implement layout manager
 
