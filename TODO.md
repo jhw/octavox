@@ -1,19 +1,21 @@
 ### short
 
-- remove three way iteration in renderer
+- modules are overlapping
+- dom reject functionality
+- add expansion option to mutator
+- script to dump samples mapping
 
 ### medium
 
-- script to dump samples mapping
-- dom reject functionality
-- add expansion option to mutator
+- coloured modules
+- output format versioning
 - ability to fix/specify certain samples
-- s3 utils for favourites
-  - may require pico samples refactoring
 - compressor script
   - takes wav file
   - removes breaks
 - arranger script
+- s3 utils for favourites
+  - may require pico samples refactoring
 
 ### long
 
@@ -50,6 +52,7 @@
 
 ### done
 
+- remove three way iteration in renderer
 - zip modnames and coords
 - center on Output
 - implement layout manager

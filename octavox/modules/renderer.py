@@ -4,7 +4,7 @@ from rv.note import Note as RVNote
 
 import math, random, yaml
 
-Sampler="Sampler"
+Sampler, Output = "Sampler", "Output"
 
 Globals=yaml.safe_load("""
 bpm: 120
@@ -92,26 +92,31 @@ class SVProject:
                 return total
             def normalise(self):
                 return {k: tuple([v1-v0
-                                  for v1, v0 in zip(v, self["Output"])])
+                                  for v1, v0 in zip(v, self[Output])])
                         for k, v in self.items()}
         def randomise(modnames, links):
             grid=Grid.randomise(modnames)
             distance=grid.rms_distance(links)
             return (grid.normalise(), distance)
         modnames=[mod["name"] for mod in modules]
-        modnames.append("Output")
+        modnames.append(Output)
         return sorted([randomise(modnames, links)
                        for i in range(n)],
                       key=lambda x: -x[1]).pop()[0]
     
-    def init_modules(self, proj, modules, links, modclasses):
+    def init_modules(self,
+                     proj,
+                     modules,
+                     links,
+                     modclasses,
+                     multipliers={"x": 1, "y": -2}):
         positions=self.init_layout(modules, links)
         for i, item in enumerate(modules):
             klass=modclasses[item["class"]]
             kwargs={"name": item["name"]}
-            for i, attr, mult in [(0, "x", 1),
-                                  (1, "y", -2)]:
+            for i, attr in enumerate(["x", "y"]):            
                 value=positions[item["name"]][i]
+                mult=multipliers[attr]
                 kwargs[attr]=int(512+128*mult*value)
             mod=klass(**kwargs)
             if "defaults" in item:
