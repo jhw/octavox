@@ -34,43 +34,40 @@ links:
     - Output
 """)
 
-Output="Output"
-
-class Grid(list):
-
-    @classmethod
-    def randomise(self, modnames):
-        sz=int(math.ceil(len(modnames)**0.5))
-        coords=sorted([(x, y)
-                       for y in range(sz)
-                       for x in range(sz)],
-                      key=lambda x: random.random())[:len(modnames)]
-        return Grid(modnames, coords)
-
-    def __init__(self, modnames, coords=[]):
-        list.__init__(self, coords)
-        self.modnames=modnames
-
-    def rms_distance(self, links):
-        total=0
-        for link in links:
-            a, b = [self[self.modnames.index(modname)]
-                    for modname in link]
-            distance=((a[0]-b[0])**2+(a[1]-b[1])**2)**0.5
-            total+=distance
-        return total
-
-def generate(config, n):
+def init_layout(config, n):
+    class Grid(dict):
+        @classmethod
+        def randomise(self, modnames):
+            sz=int(math.ceil(len(modnames)**0.5))
+            coords=sorted([(x, y)
+                           for y in range(sz)
+                           for x in range(sz)],
+                          key=lambda x: random.random())[:len(modnames)]
+            return Grid({mod:xy
+                         for mod, xy in zip(modnames, coords)})
+        def __init__(self, item={}):
+            dict.__init__(self, item)
+        def rms_distance(self, links):
+            total=0
+            for link in links:
+                a, b = [self[modname]
+                        for modname in link]
+                distance=((a[0]-b[0])**2+(a[1]-b[1])**2)**0.5
+                total+=distance
+            return total
+        def normalise(self):
+            return {k: tuple([v1-v0
+                              for v1, v0 in zip(v, self["Output"])])
+                    for k, v in self.items()}
     def randomise(modnames, links):
         grid=Grid.randomise(modnames)
         distance=grid.rms_distance(links)
-        return (grid, distance)
+        return (grid.normalise(), distance)
     modnames=[mod["name"] for mod in config["modules"]]
-    modnames.append(Output)
-    grids=sorted([randomise(modnames, config["links"])
-                  for i in range(n)],
-                 key=lambda x: x[1])
-    return grids[0]
+    modnames.append("Output")
+    return sorted([randomise(modnames, config["links"])
+                   for i in range(n)],
+                  key=lambda x: -x[1]).pop()[0]
     
 if __name__=="__main__":
     try:
@@ -81,9 +78,7 @@ if __name__=="__main__":
         if not re.search("^\\d+$|", n):
             raise RuntimeError("n is invalid")
         n=int(n)        
-        grid, distance = generate(ModConfig, n)
-        print (grid.modnames)
+        grid=init_layout(ModConfig, n)
         print (grid)
-        print (distance)
     except RuntimeError as error:
         print ("Error: %s" % str(error))
