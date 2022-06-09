@@ -34,7 +34,7 @@ links:
     - Output
 """)
 
-def init_layout(config, n):
+def init_layout(config, n=1000):
     class Grid(dict):
         @classmethod
         def randomise(self, modnames):
@@ -71,14 +71,6 @@ def init_layout(config, n):
     
 if __name__=="__main__":
     try:
-        import re, sys
-        if len(sys.argv) < 2:
-            raise RuntimeError("please enter n")
-        n=sys.argv[1]
-        if not re.search("^\\d+$|", n):
-            raise RuntimeError("n is invalid")
-        n=int(n)        
-        grid=init_layout(ModConfig, n)
-        print (grid)
+        print (init_layout(ModConfig))
     except RuntimeError as error:
         print ("Error: %s" % str(error))
