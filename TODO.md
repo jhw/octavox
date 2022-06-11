@@ -1,15 +1,10 @@
 ### short
 
-- modules are overlapping
-- dom reject functionality
-- add expansion option to mutator
-- script to dump samples mapping
+- decompiler code
+- add mutator decompile option
 
 ### medium
 
-- coloured modules
-- output format versioning
-- ability to fix/specify certain samples
 - compressor script
   - takes wav file
   - removes breaks
@@ -28,6 +23,16 @@
 
 ### thoughts
 
+- script to dump samples mapping
+  - feels like overkill for now
+- output format versioning 
+  - feels like overkill for now
+- ability to fix/specify certain samples ?
+  - feels like overkill for now
+- coloured modules ? 
+  - overkill
+- modules are overlapping ?
+  - is a window boundary thing
 - turn down svdrum samples ?
   - no; not worth it; just manually turn down SVDrum volume in UI
 - pass keys to samples ?
