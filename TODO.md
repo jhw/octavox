@@ -1,16 +1,13 @@
 ### short
 
-- decompiler code
-- add mutator decompile option
+- mutator decompilation option
+  - dump mutator-decompiled.yaml files ?
 
 ### medium
 
-- compressor script
-  - takes wav file
-  - removes breaks
+- compressor script 
+  - takes wav file, removes breaks
 - arranger script
-- s3 utils for favourites
-  - may require pico samples refactoring
 
 ### long
 
@@ -23,9 +20,12 @@
 
 ### thoughts
 
-- script to dump samples mapping
+- s3 utils for favourites ?
+  - may require pico samples refactoring
+  - feels like you shouldn't save and should keep everything ephemeral for now
+- script to dump samples mapping ?
   - feels like overkill for now
-- output format versioning 
+- output format versioning  ?
   - feels like overkill for now
 - ability to fix/specify certain samples ?
   - feels like overkill for now
@@ -57,6 +57,7 @@
 
 ### done
 
+- decompiler code
 - remove three way iteration in renderer
 - zip modnames and coords
 - center on Output
