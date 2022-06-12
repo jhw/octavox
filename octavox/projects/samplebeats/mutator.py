@@ -11,6 +11,15 @@ default:
   dtrigstyle: 0.5
 """)
 
+def randomise_patch(patch, kwargs):
+    patch["tracks"].randomise_pattern(kwargs["dtrigpat"],
+                                      kwargs["slicetemp"])
+    for slice in patch["tracks"]["slices"]:
+        for track in slice["machines"]:
+            track.randomise_style(kwargs["dtrigstyle"])
+            track.randomise_seed(kwargs["dtrigseed"])
+    return patch
+
 if __name__=="__main__":
     try:
         from octavox.tools.cli import cli
@@ -60,26 +69,15 @@ if __name__=="__main__":
         roots=Patches(yaml.safe_load(open(kwargs["src"]).read()))
         if kwargs["index"] >= len(roots):        
             raise RuntimeError("index exceeds root patches length")
-        root=roots[kwargs["index"]]
-        def randomise_patch(patch, kwargs, i):
-            patch["tracks"].randomise_pattern(kwargs["dtrigpat"],
-                                              kwargs["slicetemp"])
-            for slice in patch["tracks"]["slices"]:
-                for track in slice["machines"]:
-                    track.randomise_style(kwargs["dtrigstyle"])
-                    track.randomise_seed(kwargs["dtrigseed"])
-            return patch
-        modpatches=Patches([root if i==0 else randomise_patch(root.clone(), 
-                                                              kwargs,
-                                                              i)
-                            for i in range(kwargs["npatches"])])
+        root=roots[kwargs["index"]]       
+        patches=Patches([root if i==0 else randomise_patch(root.clone(), 
+                                                           kwargs)
+                         for i in range(kwargs["npatches"])])
         banks=SVBanks.load("tmp/banks/pico")
         timestamp=datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
-        filestub="%s-mutator" % timestamp
-        nbreaks=int(kwargs["breaks"])
-        modpatches.render(banks=banks,
-                          nbeats=kwargs["nbeats"],
-                          filestub=filestub,
-                          nbreaks=nbreaks)
+        patches.render(banks=banks,
+                       nbeats=kwargs["nbeats"],
+                       filestub="%s-mutator" % timestamp,
+                       nbreaks=int(kwargs["breaks"]))
     except RuntimeError as error:
         print ("Error: %s" % str(error))

@@ -1,10 +1,11 @@
 ### short
 
 - mutator decompilation option
-  - dump mutator-decompiled.yaml files ?
+  - dump mutator-decompiled.yaml files
 
 ### medium
 
+- workflow for exporting and renaming wavs
 - compressor script 
   - takes wav file, removes breaks
 - arranger script
