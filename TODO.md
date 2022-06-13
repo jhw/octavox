@@ -1,5 +1,7 @@
 ### short
 
+- center modules on grid center rather than output
+
 - compressor script 
   - load wavfile
   - remove breaks
