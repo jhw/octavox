@@ -1,7 +1,9 @@
 ### short
 
 - compressor script 
-  - takes wav file, removes breaks
+  - load wavfile
+  - remove breaks
+  - dump
 
 ### medium
 
