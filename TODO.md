@@ -1,13 +1,13 @@
 ### short
 
-- dump to mutator-decompiled
+- compressor script 
+  - takes wav file, removes breaks
 
 ### medium
 
-- workflow for exporting and renaming wavs
-- compressor script 
-  - takes wav file, removes breaks
+- blender script
 - arranger script
+- document sunvox -> octa workflow
 
 ### long
 
@@ -57,6 +57,7 @@
 
 ### done
 
+- dump to mutator-decompiled
 - decompile all patches into a list
 - then have a custom grid structure which takes number of cols and allows you to rotate and flatten 
 - decompiler code

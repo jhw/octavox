@@ -1,8 +1,8 @@
+from octavox.projects.samplebeats.dom import Machines, Slice, Slices, PatternMap, Tracks, Patch, Patches
+
 from octavox.modules.sampler import SVBanks
 
-from octavox.projects.samplebeats.dom import Patches
-
-import datetime, yaml
+import datetime, os, yaml
 
 Profiles=yaml.safe_load("""
 default:
@@ -11,7 +11,7 @@ default:
   dtrigstyle: 0.5
 """)
 
-def randomise_patch(patch, kwargs):
+def randomise(patch, kwargs):
     patch["tracks"].randomise_pattern(kwargs["dtrigpat"],
                                       kwargs["slicetemp"])
     for slice in patch["tracks"]["slices"]:
@@ -19,6 +19,44 @@ def randomise_patch(patch, kwargs):
             track.randomise_style(kwargs["dtrigstyle"])
             track.randomise_seed(kwargs["dtrigseed"])
     return patch
+
+def decompile(patches, keys=["kk", "sn", "ht"]):
+    def init_slice(slice, keys):
+        machines=Machines([machine
+                           for machine in slice["machines"]
+                           if machine["key"] in keys])
+        return Slice(samples=slice["samples"],
+                     machines=machines)
+    def init_patch(patch, keys):
+        slices=Slices([init_slice(slice, keys)
+                       for slice in patch["tracks"]["slices"]])
+        patterns=PatternMap({k:v
+                             for k, v in patch["tracks"]["patterns"].items()
+                             if k in keys})
+        tracks=Tracks(slices=slices,
+                      patterns=patterns)
+        return Patch(tracks=tracks)
+    def decompile(patch, key):
+        return [init_patch(patch, [key, "ec"])
+                for key in keys]
+    class Grid(list):
+        def __init__(self, ncols, items=[]):
+            list.__init__(self, items)
+            self.ncols=ncols
+        @property
+        def nrows(self):
+            return int(len(self)/self.ncols)
+        def rotate(self):
+            rotated=[]
+            for j in range(self.ncols):
+                for i in range(self.nrows):
+                    k=j+i*self.ncols
+                    rotated.append(self[k])
+            return rotated
+    decompiled=Grid(ncols=len(keys))
+    for patch in patches:
+        decompiled+=decompile(patch, keys)
+    return Patches(decompiled.rotate())
 
 if __name__=="__main__":
     try:
@@ -70,8 +108,8 @@ if __name__=="__main__":
         if kwargs["index"] >= len(roots):        
             raise RuntimeError("index exceeds root patches length")
         root=roots[kwargs["index"]]       
-        patches=Patches([root if i==0 else randomise_patch(root.clone(), 
-                                                           kwargs)
+        patches=Patches([root if i==0 else randomise(root.clone(), 
+                                                     kwargs)
                          for i in range(kwargs["npatches"])])
         banks=SVBanks.load("tmp/banks/pico")
         timestamp=datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
@@ -79,5 +117,10 @@ if __name__=="__main__":
                        nbeats=kwargs["nbeats"],
                        filestub="%s-mutator" % timestamp,
                        nbreaks=int(kwargs["breaks"]))
+        decompiled=decompile(patches)
+        decompiled.render(banks=banks,
+                          nbeats=kwargs["nbeats"],
+                          filestub="%s-mutator-decompiled" % timestamp,
+                          nbreaks=int(kwargs["breaks"]))
     except RuntimeError as error:
         print ("Error: %s" % str(error))
