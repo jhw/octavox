@@ -2,7 +2,7 @@ from octavox.projects.samplebeats.dom import Machines, Slice, Slices, PatternMap
 
 import os, yaml
 
-def decompile(patch, keys=["kk", "sn", "ht"]):
+def decompile(patches, keys=["kk", "sn", "ht"]):
     def init_slice(slice, keys):
         machines=Machines([machine
                            for machine in slice["machines"]
@@ -18,8 +18,27 @@ def decompile(patch, keys=["kk", "sn", "ht"]):
         tracks=Tracks(slices=slices,
                       patterns=patterns)
         return Patch(tracks=tracks)
-    return [init_patch(patch, [key, "ec"])
-            for key in keys]
+    def decompile(patch, key):
+        return [init_patch(patch, [key, "ec"])
+                for key in keys]
+    class Grid(list):
+        def __init__(self, ncols, items=[]):
+            list.__init__(self, items)
+            self.ncols=ncols
+        @property
+        def nrows(self):
+            return int(len(self)/self.ncols)
+        def rotate(self):
+            rotated=[]
+            for j in range(self.ncols):
+                for i in range(self.nrows):
+                    k=j+i*self.ncols
+                    rotated.append(self[k])
+            return rotated
+    decompiled=Grid(ncols=len(keys))
+    for patch in patches:
+        decompiled+=decompile(patch, keys)
+    return Patches(decompiled.rotate())
     
 if __name__=="__main__":
     try:
@@ -30,8 +49,8 @@ if __name__=="__main__":
         patches=Patches(yaml.safe_load(open(src).read()))
         if patches==[]:
             raise RuntimeError("no patches found")
-        root=patches.pop()
-        for patch in decompile(root):
-            print (patch)
+        print (len(patches))
+        decompiled=decompile(patches)
+        print (len(decompiled))
     except RuntimeError as error:
         print ("Error: %s" % str(error))

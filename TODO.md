@@ -1,7 +1,5 @@
 ### short
 
-- decompile all patches into a list
-- then have a custom grid structure which takes number of cols and allows you to rotate and flatten 
 - dump to mutator-decompiled
 
 ### medium
@@ -59,6 +57,8 @@
 
 ### done
 
+- decompile all patches into a list
+- then have a custom grid structure which takes number of cols and allows you to rotate and flatten 
 - decompiler code
 - remove three way iteration in renderer
 - zip modnames and coords
