@@ -1,11 +1,12 @@
-### short
+### short [compressor]
 
-- center modules on grid center rather than output
-
-- compressor script 
-  - load wavfile
-  - remove breaks
-  - dump
+- refactor mutator to remove breaks option, remove breaks for standard file and insert breaks for decompiled file
+- remove all files
+- randomise and mutate favourite
+- export to wav file in new wav dir
+- new compressor cli config
+- compress and remove breaks
+- check playing
 
 ### medium
 
@@ -24,6 +25,8 @@
 
 ### thoughts
 
+- center modules on grid center rather than output ?
+  - probably not worth it now
 - s3 utils for favourites ?
   - may require pico samples refactoring
   - feels like you shouldn't save and should keep everything ephemeral for now
