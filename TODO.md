@@ -1,7 +1,5 @@
 ### short
 
-- [push to master]
-
 - blender script
 
 ### medium
