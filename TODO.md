@@ -1,10 +1,11 @@
-### short [compressor]
+### short
 
-- document sunvox -> octa workflow
+- [push to master]
+
+- blender script
 
 ### medium
 
-- blender script
 - arranger script
 
 ### long
@@ -57,6 +58,7 @@
 
 ### done
 
+- document sunvox -> octa workflow
 - export to wav file in new wav dir
 - new compressor cli config
 - compress and remove breaks
