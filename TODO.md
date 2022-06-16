@@ -1,18 +1,11 @@
 ### short [compressor]
 
-- refactor mutator to remove breaks option, remove breaks for standard file and insert breaks for decompiled file
-- remove all files
-- randomise and mutate favourite
-- export to wav file in new wav dir
-- new compressor cli config
-- compress and remove breaks
-- check playing
+- document sunvox -> octa workflow
 
 ### medium
 
 - blender script
 - arranger script
-- document sunvox -> octa workflow
 
 ### long
 
@@ -64,6 +57,13 @@
 
 ### done
 
+- export to wav file in new wav dir
+- new compressor cli config
+- compress and remove breaks
+- check playing
+- refactor mutator to remove breaks option, remove breaks for standard file and insert breaks for decompiled file
+- remove all files
+- randomise and mutate favourite
 - dump to mutator-decompiled
 - decompile all patches into a list
 - then have a custom grid structure which takes number of cols and allows you to rotate and flatten 

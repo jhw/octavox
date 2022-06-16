@@ -1,3 +1,21 @@
+### sunvox -> octatrack workflow 16/06/22
+
+- run randomiser
+- pick favourite
+- run mutator
+- manually export compressed mutator from sunvox into wav dir
+- run compressor
+- connect octatrack
+- go into file mode
+- copy compressed wav in set audio directory
+- eject drive and ** disconnect cable **
+- load sample into flex machine
+- slice sample
+- check how slices play
+- load sample into second flex machine
+- slices should be saved with the sample so no need to re- slice
+- test playing multiple parts and switching
+
 ### cloning 12/06/22
 
 - root is list of patches
