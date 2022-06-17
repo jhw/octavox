@@ -1,6 +1,6 @@
 ### short
 
-- blender script
+- test mutator-compressed slicing on octatrack
 
 ### medium
 
@@ -56,6 +56,7 @@
 
 ### done
 
+- blender script
 - document sunvox -> octa workflow
 - export to wav file in new wav dir
 - new compressor cli config
