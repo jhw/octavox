@@ -32,7 +32,7 @@ if __name__=="__main__":
             offset=int(i*2*length)
             compressed+=slices[offset:offset+length]
         print (len(compressed))
-        destfilename="%s~compressed.wav" % kwargs["src"].split(".")[0]
+        destfilename="%s-compressed.wav" % kwargs["src"].split(".")[0]
         compressed.export(destfilename,
                           format="wav")
     except RuntimeError as error:
