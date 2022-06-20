@@ -1,10 +1,18 @@
 ### short
 
-- remove decompressor
-- add breaks back to mutator
 - add arranger
+- check OT BPM for compressed/uncompressed exports
+
+```
+import sys
+if len(sys.argv) >= 2:
+    cliconf[0]["pattern"]=sys.argv[1]
+```
 
 ### medium
+
+- degrade
+- s&h scaling
 
 ### long
 

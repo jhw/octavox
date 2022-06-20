@@ -168,7 +168,6 @@ if __name__=="__main__":
         filestub="%s-randomiser" % timestamp
         patches.render(banks=banks,
                        nbeats=nbeats,
-                       filestub=filestub,
-                       nbreaks=0)
+                       filestub=filestub)
     except RuntimeError as error:
         print ("Error: %s" % str(error))
