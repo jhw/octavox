@@ -1,10 +1,10 @@
 ### short
 
-- test mutator-compressed slicing on octatrack
+- remove decompressor
+- add breaks back to mutator
+- add arranger
 
 ### medium
-
-- arranger script
 
 ### long
 
