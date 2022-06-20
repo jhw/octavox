@@ -20,44 +20,6 @@ def randomise(patch, kwargs):
             track.randomise_seed(kwargs["dtrigseed"])
     return patch
 
-def decompile(patches, keys=["kk", "sn", "ht"]):
-    def init_slice(slice, keys):
-        machines=Machines([machine
-                           for machine in slice["machines"]
-                           if machine["key"] in keys])
-        return Slice(samples=slice["samples"],
-                     machines=machines)
-    def init_patch(patch, keys):
-        slices=Slices([init_slice(slice, keys)
-                       for slice in patch["tracks"]["slices"]])
-        patterns=PatternMap({k:v
-                             for k, v in patch["tracks"]["patterns"].items()
-                             if k in keys})
-        tracks=Tracks(slices=slices,
-                      patterns=patterns)
-        return Patch(tracks=tracks)
-    def decompile(patch, key):
-        return [init_patch(patch, [key, "ec"])
-                for key in keys]
-    class Grid(list):
-        def __init__(self, ncols, items=[]):
-            list.__init__(self, items)
-            self.ncols=ncols
-        @property
-        def nrows(self):
-            return int(len(self)/self.ncols)
-        def rotate(self):
-            rotated=[]
-            for j in range(self.ncols):
-                for i in range(self.nrows):
-                    k=j+i*self.ncols
-                    rotated.append(self[k])
-            return rotated
-    decompiled=Grid(ncols=len(keys))
-    for patch in patches:
-        decompiled+=decompile(patch, keys)
-    return Patches(decompiled.rotate())
-
 if __name__=="__main__":
     try:
         from octavox.tools.cli import cli
@@ -113,10 +75,5 @@ if __name__=="__main__":
                        nbeats=kwargs["nbeats"],
                        filestub="%s-mutator" % timestamp,
                        nbreaks=0)
-        decompiled=decompile(patches)
-        decompiled.render(banks=banks,
-                          nbeats=kwargs["nbeats"],
-                          filestub="%s-mutator-decompiled" % timestamp,
-                          nbreaks=1)
     except RuntimeError as error:
         print ("Error: %s" % str(error))
