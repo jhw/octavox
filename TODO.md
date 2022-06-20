@@ -1,7 +1,9 @@
 ### short
 
-- add arranger
-- check OT BPM for compressed/uncompressed exports
+- remove compressor
+- remove mutator breaks option
+- increase number of mutator options
+- add mute option to mutator
 
 ```
 import sys
@@ -11,8 +13,9 @@ if len(sys.argv) >= 2:
 
 ### medium
 
+- arranger
+- binary s&h
 - degrade
-- s&h scaling
 
 ### long
 
@@ -64,6 +67,7 @@ if len(sys.argv) >= 2:
 
 ### done
 
+- check OT BPM for compressed/uncompressed exports
 - blender script
 - document sunvox -> octa workflow
 - export to wav file in new wav dir
