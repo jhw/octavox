@@ -1,7 +1,12 @@
 ### short
 
-- `reject` option for mutator
-- add mute option to mutator
+- remove pydub
+- per- beat volume
+- tune down load SVDrum
+- mute options
+- consider replacing keys with mutes
+- arranger
+- merge blender into mutator
 
 ```
 import sys
@@ -11,7 +16,6 @@ if len(sys.argv) >= 2:
 
 ### medium
 
-- arranger
 - binary s&h
 - degrade
 
