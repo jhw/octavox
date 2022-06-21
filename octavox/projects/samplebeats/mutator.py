@@ -54,11 +54,7 @@ if __name__=="__main__":
           description: "n(patches)"
           type: int
           min: 1
-          default: 16
-        - key: breaks
-          description: "breaks?"
-          type: bool
-          default: false
+          default: 64
         """)
         import sys
         if len(sys.argv) >= 2:
@@ -75,10 +71,8 @@ if __name__=="__main__":
                          for i in range(kwargs["npatches"])])
         banks=SVBanks.load("tmp/banks/pico")
         timestamp=datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
-        nbreaks=int(kwargs["breaks"])
         patches.render(banks=banks,
                        nbeats=kwargs["nbeats"],
-                       filestub="%s-mutator" % timestamp,
-                       nbreaks=nbreaks)
+                       filestub="%s-mutator" % timestamp)
     except RuntimeError as error:
         print ("Error: %s" % str(error))

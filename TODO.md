@@ -1,8 +1,6 @@
 ### short
 
-- remove compressor
-- remove mutator breaks option
-- increase number of mutator options
+- `reject` option for mutator
 - add mute option to mutator
 
 ```
@@ -67,6 +65,9 @@ if len(sys.argv) >= 2:
 
 ### done
 
+- increase number of mutator options
+- remove compressor
+- remove mutator breaks option
 - check OT BPM for compressed/uncompressed exports
 - blender script
 - document sunvox -> octa workflow
