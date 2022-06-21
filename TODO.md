@@ -16,7 +16,6 @@ if len(sys.argv) >= 2:
 
 ### medium
 
-- binary s&h
 - degrade
 
 ### long
@@ -30,6 +29,9 @@ if len(sys.argv) >= 2:
 
 ### thoughts
 
+- binary s&h ? 
+  - think is too extreme
+  - better to have a large range of mutator outputs
 - center modules on grid center rather than output ?
   - probably not worth it now
 - s3 utils for favourites ?
