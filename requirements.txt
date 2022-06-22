@@ -3,6 +3,5 @@ botocore
 boto3
 git+https://github.com//metrasynth/radiant-voices
 numpy
-pydub
 pyyaml
 

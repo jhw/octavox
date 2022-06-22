@@ -1,6 +1,5 @@
 ### short
 
-- remove pydub
 - per- beat volume
 - tune down load SVDrum
 - mute options
@@ -71,6 +70,7 @@ if len(sys.argv) >= 2:
 
 ### done
 
+- remove pydub
 - increase number of mutator options
 - remove compressor
 - remove mutator breaks option
