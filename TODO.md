@@ -2,7 +2,6 @@
 
 - mute options
 - arranger
-- merge blender into mutator
 
 ```
 import sys
@@ -25,6 +24,9 @@ if len(sys.argv) >= 2:
 
 ### thoughts
 
+
+- merge blender into mutator ?
+  - blender hasn't really come up with anything good at this stage
 - consider replacing keys with mutes ?
   - probably sub- optimal at this stage
 - binary s&h ? 
