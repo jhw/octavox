@@ -37,24 +37,6 @@ def cli_int(item):
         return value
     return cli_base(item, matcher, parser)
 
-def cli_int_array(item):
-    def matcher(resp, item):
-        return re.search("^\\s*(\\d+\\s+)*\\d+\\s*$", resp)!=None
-    def parser(resp, item):
-        values=[]
-        for token in re.split("\\s", resp):
-            if token=='':
-                continue
-            value=int(token)
-            if (("min" in item and value < item["min"]) or
-                ("max" in item and value > item["max"])):
-                print ("WARNING: %s exceeds limits" % item["key"])
-                return None
-            values.append(value)
-        return values
-    return cli_base(item, matcher, parser)
-
-
 def cli_float(item):
     def matcher(resp, item):
         return re.search("^\\s*\\d+(\\.\\d+)?\\s*$", resp)!=None

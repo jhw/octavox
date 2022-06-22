@@ -1,7 +1,9 @@
 ### short
 
-- mute options
+- cli array dsl option
 - arranger
+- mute options
+
 
 ```
 import sys
@@ -15,6 +17,7 @@ if len(sys.argv) >= 2:
 
 ### long
 
+- kk/sn/ht per channel echo
 - vitling 303
 - city dreams bass
 - euclidian/bjorklund beats
@@ -24,7 +27,8 @@ if len(sys.argv) >= 2:
 
 ### thoughts
 
-
+- s&h volatility parameter ?
+  - doesn't quite seem to fit here
 - merge blender into mutator ?
   - blender hasn't really come up with anything good at this stage
 - consider replacing keys with mutes ?
