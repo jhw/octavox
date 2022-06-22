@@ -1,9 +1,6 @@
 ### short
 
-- per- beat volume
-- tune down load SVDrum
 - mute options
-- consider replacing keys with mutes
 - arranger
 - merge blender into mutator
 
@@ -28,6 +25,8 @@ if len(sys.argv) >= 2:
 
 ### thoughts
 
+- consider replacing keys with mutes ?
+  - probably sub- optimal at this stage
 - binary s&h ? 
   - think is too extreme
   - better to have a large range of mutator outputs
@@ -70,6 +69,8 @@ if len(sys.argv) >= 2:
 
 ### done
 
+- per- beat volume
+- tune down load SVDrum
 - remove pydub
 - increase number of mutator options
 - remove compressor

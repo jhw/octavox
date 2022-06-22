@@ -4,12 +4,16 @@ from rv.note import Note as RVNote
 
 import math, random, yaml
 
-Sampler, Output = "Sampler", "Output"
+Sampler, Drum, Output = "Sampler", "Drum", "Output"
 
 Globals=yaml.safe_load("""
 bpm: 120
 volume: 256
 """)
+
+LoudSVDrumIds=[i*12+j
+               for i in range(3, 9)
+               for j in range(4)]
 
 BreakSz, Height = 16, 64
 
@@ -18,10 +22,14 @@ class SVTrig(dict):
     def __init__(self, item):
         dict.__init__(self, item)
 
-    def render(self, modules, controllers, volume=128):
+    def render(self, modules, controllers,
+               svdrumids=LoudSVDrumIds,
+               svdrumfactor=0.8,
+               volume=128):
         trig=1+self["id"] # NB 1+
         mod=1+modules[self["mod"]] # NB 1+
-        vel=max(1, int(self["vel"]*volume)) 
+        volmult=svdrumfactor if self["mod"]==Drum and self["id"] in svdrumids else 1
+        vel=max(1, int(self["vel"]*volume*volmult)) 
         return RVNote(note=trig,
                       vel=vel,
                       module=mod)
