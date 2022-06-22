@@ -4,13 +4,6 @@
 - arranger
 - mute options
 
-
-```
-import sys
-if len(sys.argv) >= 2:
-    cliconf[0]["pattern"]=sys.argv[1]
-```
-
 ### medium
 
 - degrade
@@ -74,6 +67,12 @@ if len(sys.argv) >= 2:
   - don't think it's really consistent with slices
 
 ### done
+
+```
+import sys
+if len(sys.argv) >= 2:
+    cliconf[0]["pattern"]=sys.argv[1]
+```
 
 - per- beat volume
 - tune down load SVDrum

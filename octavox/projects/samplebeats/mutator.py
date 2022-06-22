@@ -56,9 +56,6 @@ if __name__=="__main__":
           min: 1
           default: 64
         """)
-        import sys
-        if len(sys.argv) >= 2:
-            cliconf[0]["pattern"]=sys.argv[1]
         kwargs=cli(cliconf)
         profilename=kwargs.pop("profile")
         kwargs.update(Profiles[profilename])
