@@ -1,8 +1,12 @@
 ### short
 
+- pass keys to tracks.render
+- mutator to randomise render keys
+- see if you really need generator keys
+
+- s&h volatility parameter
 - cli array dsl option
 - arranger
-- mute options
 
 ### medium
 
