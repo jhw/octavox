@@ -373,18 +373,21 @@ class PatternMap(dict):
 class Tracks(dict):
 
     @classmethod
-    def randomise(self, keys, randomisers, slicetemp):
+    def randomise(self, keys, mutes,  randomisers, slicetemp):
         return Tracks(keys=keys,
+                      mutes=mutes,
                       slices=Slices.randomise(keys, randomisers),
                       patterns=PatternMap.randomise(keys, slicetemp))
         
-    def __init__(self, keys, slices, patterns):
+    def __init__(self, keys, mutes, slices, patterns):
         dict.__init__(self, {"keys": keys,
+                             "mutes": mutes,
                              "slices": Slices(slices),
                              "patterns": PatternMap(patterns)})
 
     def clone(self):
         return Tracks(keys=list(self["keys"]),
+                      mutes=list(self["mutes"]),
                       slices=self["slices"].clone(),
                       patterns=self["patterns"].clone())
 
@@ -393,9 +396,14 @@ class Tracks(dict):
             if random.random() < limit:
                 self["patterns"][key]=patterns.randomise(slicetemp)
 
+    @property
+    def renderkeys(self):
+        return sorted([key for key in self["keys"]
+                       if key not in self["mutes"]])
+                
     def render(self, patch, nbeats, config=MachineConfig):
         notes={}
-        for key in sorted(self["keys"]):
+        for key in self.renderkeys:
             genkey=config[key]["generator"]
             pattern=self["patterns"][key]
             multiplier=int(nbeats/pattern.size)
@@ -410,8 +418,11 @@ class Tracks(dict):
 class Patch(dict):
 
     @classmethod
-    def randomise(self, keys, randomisers, slicetemp):
-        return Patch(tracks=Tracks.randomise(keys, randomisers, slicetemp))
+    def randomise(self, keys, mutes, randomisers, slicetemp):
+        return Patch(tracks=Tracks.randomise(keys,
+                                             mutes,
+                                             randomisers,
+                                             slicetemp))
     
     def __init__(self, tracks):
         dict.__init__(self, {"tracks": Tracks(**tracks)})
@@ -428,8 +439,9 @@ class Patch(dict):
 class Patches(list):
 
     @classmethod
-    def randomise(self, keys, randomisers, slicetemp, n):
+    def randomise(self, keys, mutes, randomisers, slicetemp, n):
         return Patches([Patch.randomise(keys,
+                                        mutes,
                                         randomisers,
                                         slicetemp)
                         for i in range(n)])

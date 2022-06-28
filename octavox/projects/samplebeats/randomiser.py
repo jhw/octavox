@@ -158,6 +158,7 @@ if __name__=="__main__":
         keys=[k for k in "kk|sn|ht|ec".split("|")
               if k in kwargs and kwargs[k]]
         patches=Patches.randomise(keys=keys,
+                                  mutes=[],
                                   randomisers=randomisers,
                                   slicetemp=kwargs["slicetemp"],
                                   n=npatches)

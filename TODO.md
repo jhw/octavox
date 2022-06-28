@@ -1,17 +1,14 @@
 ### short
 
-- pass mutes to tracks
 - mutator to randomise mutes
-
 - mutator to randomise samples
+
 - ensure you can dial mutation level up/down
 
 - cli array dsl option
 - arranger
 
 ### medium
-
-- degrade
 
 ### long
 
@@ -25,6 +22,8 @@
 
 ### thoughts
 
+- degrade ?
+  - not sure it really fits 
 - s&h volatility parameter ?
   - doesn't quite seem to fit here
 - merge blender into mutator ?
@@ -73,6 +72,7 @@
 
 ### done
 
+- pass mutes to tracks
 - tracks to store keys
 
 ```
