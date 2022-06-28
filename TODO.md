@@ -1,10 +1,11 @@
 ### short
 
-- pass keys to tracks.render
-- mutator to randomise render keys
-- see if you really need generator keys
+- pass mutes to tracks
+- mutator to randomise mutes
 
-- s&h volatility parameter
+- mutator to randomise samples
+- ensure you can dial mutation level up/down
+
 - cli array dsl option
 - arranger
 
@@ -71,6 +72,8 @@
   - don't think it's really consistent with slices
 
 ### done
+
+- tracks to store keys
 
 ```
 import sys

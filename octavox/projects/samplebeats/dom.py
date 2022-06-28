@@ -374,25 +374,28 @@ class Tracks(dict):
 
     @classmethod
     def randomise(self, keys, randomisers, slicetemp):
-        return Tracks(slices=Slices.randomise(keys, randomisers),
+        return Tracks(keys=keys,
+                      slices=Slices.randomise(keys, randomisers),
                       patterns=PatternMap.randomise(keys, slicetemp))
         
-    def __init__(self, slices, patterns):
-        dict.__init__(self, {"slices": Slices(slices),
+    def __init__(self, keys, slices, patterns):
+        dict.__init__(self, {"keys": keys,
+                             "slices": Slices(slices),
                              "patterns": PatternMap(patterns)})
 
     def clone(self):
-        return Tracks(slices=self["slices"].clone(),
+        return Tracks(keys=list(self["keys"]),
+                      slices=self["slices"].clone(),
                       patterns=self["patterns"].clone())
 
     def randomise_pattern(self, limit, slicetemp, patterns=SlicePatterns):
-        for key in self["patterns"]:
+        for key in self["keys"]:
             if random.random() < limit:
                 self["patterns"][key]=patterns.randomise(slicetemp)
 
     def render(self, patch, nbeats, config=MachineConfig):
         notes={}
-        for key in sorted(self["patterns"]):
+        for key in sorted(self["keys"]):
             genkey=config[key]["generator"]
             pattern=self["patterns"][key]
             multiplier=int(nbeats/pattern.size)
