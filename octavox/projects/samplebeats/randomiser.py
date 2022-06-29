@@ -52,10 +52,9 @@ if __name__=="__main__":
           default: 16
         """)
         kwargs=cli(cliconf)
-        profilename=kwargs.pop("profile")
         banks=SVBanks.load("tmp/banks/pico")
         curated=yaml.safe_load(open("octavox/samples/banks/pico/curated.yaml").read())
-        thresholds=Profiles[profilename]
+        thresholds=Profiles[kwargs["profile"]]
         randomisers={"samples": SampleRandomiser(banks=banks,
                                                  curated=curated,
                                                  thresholds=thresholds)}

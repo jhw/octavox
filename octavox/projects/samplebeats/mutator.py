@@ -1,12 +1,16 @@
 from octavox.projects.samplebeats.dom import Machines, Slice, Slices, PatternMap, Tracks, Patch, Patches
 
-from octavox.modules.sample_randomiser import SampleRandomiser
+from octavox.modules.sample_randomiser import SampleRandomiser, Profiles
 
 from octavox.modules.sampler import SVBanks
 
 import datetime, os, yaml
 
-def randomise(patch, kwargs):
+def randomise(patch, kwargs, randomiser):
+    samples=randomiser.randomise()
+    for slice in patch["tracks"]["slices"]:
+        slice["samples"].randomise_samples(kwargs["dsample"],
+                                           samples)
     patch["tracks"].randomise_pattern(kwargs["dpat"],
                                       kwargs["slicetemp"])
     for slice in patch["tracks"]["slices"]:
@@ -76,12 +80,19 @@ if __name__=="__main__":
           default: 64
         """)
         kwargs=cli(cliconf)
+        banks=SVBanks.load("tmp/banks/pico")
+        curated=yaml.safe_load(open("octavox/samples/banks/pico/curated.yaml").read())
+        thresholds=Profiles[kwargs["profile"]]
+        randomiser=SampleRandomiser(banks=banks,
+                                    curated=curated,
+                                    thresholds=thresholds)
         roots=Patches(yaml.safe_load(open(kwargs["src"]).read()))
         if kwargs["index"] >= len(roots):        
             raise RuntimeError("index exceeds root patches length")
-        root=roots[kwargs["index"]]       
+        root=roots[kwargs["index"]]    
         patches=Patches([root if i==0 else randomise(root.clone(), 
-                                                     kwargs)
+                                                     kwargs,
+                                                     randomiser)
                          for i in range(kwargs["npatches"])])
         banks=SVBanks.load("tmp/banks/pico")
         timestamp=datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")

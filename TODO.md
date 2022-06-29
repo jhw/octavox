@@ -1,7 +1,7 @@
 ### short
 
-- mutator to load sample randomiser and generate random samples
-- randomise samples
+- replace randomisers dict with single randomiser
+- better way of initialising randomiser with banks/curated/thresholds etc
 
 - mutator to randomise mutes
 - cli array dsl option
@@ -72,6 +72,8 @@
 
 ### done
 
+- mutator to load sample randomiser and generate random samples
+- randomise samples
 - add dsample variable
 - expose mutator options as kwargs
 - pass mutes to tracks

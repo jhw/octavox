@@ -151,7 +151,7 @@ class Samples(dict):
     def randomise_samples(self, limit, samples):
         for key in self.keys():
             if random.random() < limit:
-                self[key]=random.choice(samples[key])
+                self[key]=samples[key]
 
 """
 - https://github.com/vitling/acid-banger/blob/main/src/pattern.ts
