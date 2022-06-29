@@ -55,14 +55,14 @@ if __name__=="__main__":
         banks=SVBanks.load("tmp/banks/pico")
         curated=yaml.safe_load(open("octavox/samples/banks/pico/curated.yaml").read())
         thresholds=Profiles[kwargs["profile"]]
-        randomisers={"samples": SampleRandomiser(banks=banks,
-                                                 curated=curated,
-                                                 thresholds=thresholds)}
+        randomiser=SampleRandomiser(banks=banks,
+                                    curated=curated,
+                                    thresholds=thresholds)
         keys=[k for k in "kk|sn|ht|ec".split("|")
               if k in kwargs and kwargs[k]]
         patches=Patches.randomise(keys=keys,
                                   mutes=[],
-                                  randomisers=randomisers,
+                                  randomiser=randomiser,
                                   slicetemp=kwargs["slicetemp"],
                                   n=kwargs["npatches"])
         timestamp=datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")

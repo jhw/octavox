@@ -1,6 +1,5 @@
 ### short
 
-- replace randomisers dict with single randomiser
 - better way of initialising randomiser with banks/curated/thresholds etc
 
 - mutator to randomise mutes
@@ -72,6 +71,7 @@
 
 ### done
 
+- replace randomisers dict with single randomiser
 - mutator to load sample randomiser and generate random samples
 - randomise samples
 - add dsample variable
