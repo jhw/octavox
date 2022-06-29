@@ -1,12 +1,15 @@
 ### short
 
-- sample randomiser [renamed] belongs in /samplebeats
-- better way of initialising randomiser with banks/curated/thresholds etc
 - mutator to randomise mutes
-- cli array dsl option
-- arranger
 
 ### medium
+
+- replace yaml dump with json + indentation
+- custom json pattern serialisation format
+- better way of initialising randomiser with banks/curated/thresholds etc
+- sample randomiser [renamed] belongs in /samplebeats
+- cli array dsl option
+- arranger
 
 ### long
 
@@ -21,6 +24,8 @@
 
 ### thoughts
 
+- use kick, snare etc key names ?
+  - too much of a pain given samples use the same
 - degrade ?
   - not sure it really fits 
 - s&h volatility parameter ?
