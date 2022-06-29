@@ -1,7 +1,7 @@
 ### short
 
+- sample randomiser [renamed] belongs in /samplebeats
 - better way of initialising randomiser with banks/curated/thresholds etc
-
 - mutator to randomise mutes
 - cli array dsl option
 - arranger
@@ -71,6 +71,7 @@
 
 ### done
 
+- mutator only accepts default profile
 - replace randomisers dict with single randomiser
 - mutator to load sample randomiser and generate random samples
 - randomise samples

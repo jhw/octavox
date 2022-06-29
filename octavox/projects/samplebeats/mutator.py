@@ -37,6 +37,8 @@ if __name__=="__main__":
           type: enum
           options:
           - default
+          - strict
+          - wild
           default: default
         - key: slicetemp
           description: "slicetemp"
