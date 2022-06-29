@@ -1,15 +1,10 @@
 from octavox.projects.samplebeats.dom import Machines, Slice, Slices, PatternMap, Tracks, Patch, Patches
 
+from octavox.modules.sample_randomiser import SampleRandomiser
+
 from octavox.modules.sampler import SVBanks
 
 import datetime, os, yaml
-
-Profiles=yaml.safe_load("""
-default:
-  dpat: 0.5
-  dseed: 0.5
-  dstyle: 0.5
-""")
 
 def randomise(patch, kwargs):
     patch["tracks"].randomise_pattern(kwargs["dpat"],
@@ -45,6 +40,24 @@ if __name__=="__main__":
           min: 0
           max: 1
           default: 1
+        - key: dpat
+          description: "d(pat)"
+          type: float
+          min: 0
+          max: 1
+          default: 0.5
+        - key: dseed
+          description: "d(seed)"
+          type: float
+          min: 0
+          max: 1
+          default: 0.5
+        - key: dstyle
+          description: "d(style)"
+          type: float
+          min: 0
+          max: 1
+          default: 0.5
         - key: nbeats
           description: "n(beats)"
           type: int
@@ -57,8 +70,6 @@ if __name__=="__main__":
           default: 64
         """)
         kwargs=cli(cliconf)
-        profilename=kwargs.pop("profile")
-        kwargs.update(Profiles[profilename])
         roots=Patches(yaml.safe_load(open(kwargs["src"]).read()))
         if kwargs["index"] >= len(roots):        
             raise RuntimeError("index exceeds root patches length")

@@ -5,7 +5,6 @@
 - randomise samples
 
 - mutator to randomise mutes
-- expose mutator options as kwargs
 - cli array dsl option
 - arranger
 
@@ -73,6 +72,7 @@
 
 ### done
 
+- expose mutator options as kwargs
 - pass mutes to tracks
 - tracks to store keys
 

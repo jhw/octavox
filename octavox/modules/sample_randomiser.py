@@ -1,5 +1,35 @@
 import random, yaml
 
+Profiles=yaml.safe_load("""
+default:
+  kksamples: 0.5
+  kksvdrum: 0.3
+  snsamples: 0.4
+  cpsamples: 0.4
+  ohsamples: 0.25
+  ohsvdrum: 0.25
+  chsamples: 0.25
+  chsvdrum: 0.25
+strict:
+  kksamples: 0.65
+  kksvdrum: 0.35
+  snsamples: 0.5
+  cpsamples: 0.5
+  ohsamples: 0.4
+  ohsvdrum: 0.4
+  chsamples: 0.4
+  chsvdrum: 0.4
+wild:
+  kksamples: 0.25
+  kksvdrum: 0.15
+  snsamples: 0.2
+  cpsamples: 0.2
+  ohsamples: 0.1
+  ohsvdrum: 0.1
+  chsamples: 0.1
+  chsvdrum: 0.1
+""")
+
 class SampleRandomiser:
 
     SVDrum= "svdrum"
