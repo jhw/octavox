@@ -40,6 +40,12 @@ if __name__=="__main__":
           min: 0
           max: 1
           default: 1
+        - key: dsample
+          description: "d(sample)"
+          type: float
+          min: 0
+          max: 1
+          default: 0.2
         - key: dpat
           description: "d(pat)"
           type: float

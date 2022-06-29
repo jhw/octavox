@@ -1,7 +1,6 @@
 ### short
 
 - mutator to load sample randomiser and generate random samples
-- add dsample variable
 - randomise samples
 
 - mutator to randomise mutes
@@ -12,6 +11,7 @@
 
 ### long
 
+- caught_on_tape 808/909 sampes
 - kk/sn/ht per channel echo
 - vitling 303
 - city dreams bass
@@ -72,6 +72,7 @@
 
 ### done
 
+- add dsample variable
 - expose mutator options as kwargs
 - pass mutes to tracks
 - tracks to store keys
