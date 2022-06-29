@@ -1,10 +1,11 @@
 ### short
 
+- mutator to load sample randomiser and generate random samples
+- add dsample variable
+- randomise samples
+
 - mutator to randomise mutes
-- mutator to randomise samples
-
-- ensure you can dial mutation level up/down
-
+- expose mutator options as kwargs
 - cli array dsl option
 - arranger
 

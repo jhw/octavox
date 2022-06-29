@@ -4,7 +4,7 @@ from rv.modules.distortion import Distortion as RVDistortion
 from rv.modules.reverb import Reverb as RVReverb
 
 from octavox.modules.sampler import SVSampler
-from octavox.modules.renderer import SVProject
+from octavox.modules.project_renderer import SVProject
 
 import json, math, os, random, yaml
 
