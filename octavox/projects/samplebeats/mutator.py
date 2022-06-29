@@ -6,18 +6,18 @@ import datetime, os, yaml
 
 Profiles=yaml.safe_load("""
 default:
-  dtrigpat: 0.5
-  dtrigseed: 0.5
-  dtrigstyle: 0.5
+  dpat: 0.5
+  dseed: 0.5
+  dstyle: 0.5
 """)
 
 def randomise(patch, kwargs):
-    patch["tracks"].randomise_pattern(kwargs["dtrigpat"],
+    patch["tracks"].randomise_pattern(kwargs["dpat"],
                                       kwargs["slicetemp"])
     for slice in patch["tracks"]["slices"]:
-        for track in slice["machines"]:
-            track.randomise_style(kwargs["dtrigstyle"])
-            track.randomise_seed(kwargs["dtrigseed"])
+        for machine in slice["machines"]:
+            machine.randomise_style(kwargs["dstyle"])
+            machine.randomise_seed(kwargs["dseed"])
     return patch
 
 if __name__=="__main__":
