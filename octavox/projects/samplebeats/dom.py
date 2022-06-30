@@ -4,9 +4,11 @@ from rv.modules.distortion import Distortion as RVDistortion
 from rv.modules.reverb import Reverb as RVReverb
 
 from octavox.modules.sampler import SVSampler
-from octavox.modules.project_renderer import SVProject
+from octavox.modules.renderers.patchchain import SVProject
 
-import json, math, os, random, yaml
+from octavox.projects.samplebeats.utils import *
+
+import json, math, os, yaml
 
 Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
 
@@ -103,15 +105,6 @@ Breakbeats=Patterns([Pattern(pat)
                                  "0|1|0|1",
                                  "0|1|0|2",
                                  "0|1|2|3"]])
-
-def Q(seed):
-    q=random.Random()
-    q.seed(seed)
-    return q
-
-def hungarorise(text):
-    return "".join([tok.capitalize()
-                    for tok in text.split("_")])
 
 class SampleKey:
 

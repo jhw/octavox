@@ -24,7 +24,7 @@ class SVTrig(dict):
 
     def render(self, modules, controllers,
                svdrumids=LoudSVDrumIds,
-               svdrumfactor=0.8,
+               svdrumfactor=0.7,
                volume=128):
         trig=1+self["id"] # NB 1+
         mod=1+modules[self["mod"]] # NB 1+

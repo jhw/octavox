@@ -1,8 +1,10 @@
 ### short
 
+- randomiser should no longer accept keys
+- mutator to randomise mutes
+
 ### medium
 
-- mutator to randomise mutes
 - banks wrapper to load wavs + curated
 - arranger
 
