@@ -67,26 +67,26 @@ ec:
   - sample_hold
 """)
 
-class Pattern(list):
+class Pattern(str):
 
-    @classmethod
-    def initialise(self, pattern):
+    def __init__(self, value):
+        str.__init__(value) # NB no self as first arg
+
+    @property
+    def expanded(self):
         def parse_chunk(chunk):
             tokens=[int(tok)
                     for tok in chunk.split("x")]
             if len(tokens)==1:
                 tokens=[1, tokens[0]]
             return {k:v for k, v in zip("ni", tokens)}
-        return Pattern([parse_chunk(chunk)
-                        for chunk in pattern.split("|")])
+        return [parse_chunk(chunk)
+                for chunk in self.split("|")]
         
-    def __init__(self, items=[]):
-        list.__init__(self, items)
-
     @property
     def size(self):
         return sum([item["n"]
-                    for item in self])
+                    for item in self.expanded])
 
 class Patterns(list):
 
@@ -97,13 +97,12 @@ class Patterns(list):
         n=1+math.floor(slicetemp*len(self))
         return random.choice(self[:n])  
         
-SlicePatterns=Patterns([Pattern.initialise(pat)
-                        for pat in ["0",
-                                    "0|1",
-                                    "3x0|1",
-                                    "0|1|0|1",
-                                    "0|1|0|2",
-                                    "0|1|2|3"]])
+Breakbeats=Patterns([Pattern(pat)
+                     for pat in ["0",
+                                 "3x0|1",
+                                 "0|1|0|1",
+                                 "0|1|0|2",
+                                 "0|1|2|3"]])
 
 def Q(seed):
     q=random.Random()
@@ -360,7 +359,7 @@ class Slices(list):
 class PatternMap(dict):
 
     @classmethod
-    def randomise(self, keys, slicetemp, patterns=SlicePatterns):
+    def randomise(self, keys, slicetemp, patterns=Breakbeats):
         return PatternMap({key:patterns.randomise(slicetemp)
                            for key in keys})
     
@@ -392,7 +391,7 @@ class Tracks(dict):
                       slices=self["slices"].clone(),
                       patterns=self["patterns"].clone())
 
-    def randomise_pattern(self, limit, slicetemp, patterns=SlicePatterns):
+    def randomise_pattern(self, limit, slicetemp, patterns=Breakbeats):
         for key in self["keys"]:
             if random.random() < limit:
                 self["patterns"][key]=patterns.randomise(slicetemp)
@@ -409,7 +408,7 @@ class Tracks(dict):
             pattern=self["patterns"][key]
             multiplier=int(nbeats/pattern.size)
             offset=0
-            for item in pattern:
+            for item in pattern.expanded:
                 slice=self["slices"][item["i"]]
                 nsamplebeats=item["n"]*multiplier
                 slice.render(key, genkey, notes, nsamplebeats, offset)

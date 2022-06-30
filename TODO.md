@@ -1,12 +1,9 @@
 ### short
 
-- convert pattern to string format and add expand method
-
 ### medium
 
 - mutator to randomise mutes
 - banks wrapper to load wavs + curated
-- cli array dsl option
 - arranger
 
 ### long
@@ -17,8 +14,8 @@
 - city dreams bass
 - euclidian/bjorklund beats
 - sunvox reverb chords
+- sunvox kicker
 - noise hats
-- librosa
 
 ### thoughts
 
@@ -74,6 +71,7 @@
 
 ### done
 
+- convert pattern to string format and add expand method
 - replace yaml dump with json + indentation
 - sample randomiser [renamed] belongs in /samplebeats
 - mutator only accepts default profile
