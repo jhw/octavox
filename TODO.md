@@ -1,10 +1,12 @@
 ### short
 
+- mutator to accept int array
 - randomiser should no longer accept keys
 - mutator to randomise mutes
 
 ### medium
 
+- pico classified UI gist
 - banks wrapper to load wavs + curated
 - arranger
 
