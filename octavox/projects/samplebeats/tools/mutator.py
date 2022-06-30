@@ -1,6 +1,6 @@
 from octavox.projects.samplebeats.dom import Machines, Slice, Slices, PatternMap, Tracks, Patch, Patches
 
-from octavox.modules.sample_randomiser import SampleRandomiser, Profiles
+from octavox.projects.samplebeats.randomiser import SampleRandomiser, Profiles
 
 from octavox.modules.sampler import SVBanks
 

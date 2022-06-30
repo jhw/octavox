@@ -7,7 +7,6 @@
 - replace yaml dump with json + indentation
 - custom json pattern serialisation format
 - better way of initialising randomiser with banks/curated/thresholds etc
-- sample randomiser [renamed] belongs in /samplebeats
 - cli array dsl option
 - arranger
 
@@ -76,6 +75,7 @@
 
 ### done
 
+- sample randomiser [renamed] belongs in /samplebeats
 - mutator only accepts default profile
 - replace randomisers dict with single randomiser
 - mutator to load sample randomiser and generate random samples
