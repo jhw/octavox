@@ -1,12 +1,11 @@
 ### short
 
-- mutator to randomise mutes
+- convert pattern to string format and add expand method
 
 ### medium
 
-- replace yaml dump with json + indentation
-- custom json pattern serialisation format
-- better way of initialising randomiser with banks/curated/thresholds etc
+- mutator to randomise mutes
+- banks wrapper to load wavs + curated
 - cli array dsl option
 - arranger
 
@@ -75,6 +74,7 @@
 
 ### done
 
+- replace yaml dump with json + indentation
 - sample randomiser [renamed] belongs in /samplebeats
 - mutator only accepts default profile
 - replace randomisers dict with single randomiser

@@ -461,14 +461,6 @@ class Patches(list):
         return {k:list(v)
                 for k, v in samples.items()}
         
-    """
-    - json dumps/loads to remove classes which yaml won't render by default
-    """
-    
-    def to_yaml(self):
-        return yaml.safe_dump(json.loads(json.dumps(self)), 
-                              default_flow_style=False)
-    
     def render(self, banks, nbeats, filestub,
                nbreaks=0,
                modconfig=ModConfig):
@@ -490,9 +482,10 @@ class Patches(list):
         projfile="tmp/samplebeats/projects/%s.sunvox" % filestub
         with open(projfile, 'wb') as f:
             project.write_to(f)
-        patchfile="tmp/samplebeats/patches/%s.yaml" % filestub
+        patchfile="tmp/samplebeats/patches/%s.json" % filestub
         with open(patchfile, 'w') as f:
-            f.write(self.to_yaml())
+            f.write(json.dumps(self,
+                               indent=2))
     
 if __name__=="__main__":
     pass

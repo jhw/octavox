@@ -4,7 +4,7 @@ from octavox.projects.samplebeats.randomiser import SampleRandomiser, Profiles
 
 from octavox.modules.sampler import SVBanks
 
-import datetime, os, yaml
+import datetime, json, os, yaml
 
 def randomise(patch, kwargs, randomiser):
     samples=randomiser.randomise()
@@ -88,7 +88,7 @@ if __name__=="__main__":
         randomiser=SampleRandomiser(banks=banks,
                                     curated=curated,
                                     thresholds=thresholds)
-        roots=Patches(yaml.safe_load(open(kwargs["src"]).read()))
+        roots=Patches(json.loads(open(kwargs["src"]).read()))
         if kwargs["index"] >= len(roots):        
             raise RuntimeError("index exceeds root patches length")
         root=roots[kwargs["index"]]    
