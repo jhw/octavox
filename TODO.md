@@ -1,7 +1,7 @@
 ### short
 
+- cli (shorthand) int array option
 - mutator to accept int array
-- randomiser should no longer accept keys
 - mutator to randomise mutes
 
 ### medium
@@ -75,6 +75,7 @@
 
 ### done
 
+- randomiser should no longer accept keys
 - convert pattern to string format and add expand method
 - replace yaml dump with json + indentation
 - sample randomiser [renamed] belongs in /samplebeats

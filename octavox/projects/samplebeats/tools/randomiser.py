@@ -24,22 +24,6 @@ if __name__=="__main__":
           min: 0
           max: 1
           default: 1
-        - key: kk
-          description: "kk?"
-          type: bool
-          default: true
-        - key: sn
-          description: "sn?"
-          type: bool
-          default: true
-        - key: ht
-          description: "ht?"
-          type: bool
-          default: true
-        - key: ec
-          description: "ec?"
-          type: bool
-          default: true
         - key: nbeats
           description: "n(beats)"
           type: int
@@ -58,11 +42,7 @@ if __name__=="__main__":
         randomiser=SampleRandomiser(banks=banks,
                                     curated=curated,
                                     thresholds=thresholds)
-        keys=[k for k in "kk|sn|ht|ec".split("|")
-              if k in kwargs and kwargs[k]]
-        patches=Patches.randomise(keys=keys,
-                                  mutes=[],
-                                  randomiser=randomiser,
+        patches=Patches.randomise(randomiser=randomiser,
                                   slicetemp=kwargs["slicetemp"],
                                   n=kwargs["npatches"])
         timestamp=datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")

@@ -432,7 +432,9 @@ class Patch(dict):
 class Patches(list):
 
     @classmethod
-    def randomise(self, keys, mutes, randomiser, slicetemp, n):
+    def randomise(self, randomiser, slicetemp, n,
+                  keys= "kk|sn|ht|ec".split("|"),
+                  mutes=[]):
         return Patches([Patch.randomise(keys,
                                         mutes,
                                         randomiser,
