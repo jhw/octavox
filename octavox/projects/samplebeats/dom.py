@@ -389,6 +389,11 @@ class Tracks(dict):
             if random.random() < limit:
                 self["patterns"][key]=patterns.randomise(slicetemp)
 
+    def randomise_mutes(self, limit):
+        self["mutes"]=[key for key in self["keys"]
+                       if random.random() < limit
+                       and key!="ec"]
+                
     @property
     def renderkeys(self):
         return sorted([key for key in self["keys"]

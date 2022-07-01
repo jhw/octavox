@@ -13,6 +13,7 @@ def randomise(patch, kwargs, randomiser):
                                            samples)
     patch["tracks"].randomise_pattern(kwargs["dpat"],
                                       kwargs["slicetemp"])
+    patch["tracks"].randomise_mutes(kwargs["dmute"])
     for slice in patch["tracks"]["slices"]:
         for machine in slice["machines"]:
             machine.randomise_style(kwargs["dstyle"])
@@ -58,6 +59,12 @@ if __name__=="__main__":
           min: 0
           max: 1
           default: 0.5
+        - key: dmute
+          description: "d(mute)"
+          type: float
+          min: 0
+          max: 1
+          default: 0.2
         - key: dseed
           description: "d(seed)"
           type: float
