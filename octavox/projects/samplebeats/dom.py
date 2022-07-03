@@ -151,11 +151,12 @@ class Samples(dict):
         
 class VitlingGenerator:
     
-    def __init__(self, key, offset, samples, volume=1):
+    def __init__(self, key, offset, samples, degrade, volume=1):
         self.key=key
         self.offset=offset
         self.samples={k: SampleKey(v).expand()
                       for k, v in samples.items()}
+        self.degrade=degrade
         self.volume=volume
 
     def generate(self, notes, style, q, n):
@@ -163,18 +164,14 @@ class VitlingGenerator:
         for i in range(n):
             fn(notes, q, i)
 
-
-    """
-    - q now passed to add() in case you want to implement degrade
-    """
-            
     def add(self, notes, q, k, i, v):
-        samplekey, volume = v
-        trig=dict(self.samples[samplekey])
-        trig["vel"]=self.volume*volume
-        trig["i"]=i+self.offset
-        notes.setdefault(k, [])
-        notes[k].append(trig)
+        if q.random() < 1-self.degrade:
+            samplekey, volume = v
+            trig=dict(self.samples[samplekey])
+            trig["vel"]=self.volume*volume
+            trig["i"]=i+self.offset
+            notes.setdefault(k, [])
+            notes[k].append(trig)
 
     def fourfloor(self, notes, q, i, k=Kick):
         if i % 4 == 0:
@@ -305,7 +302,7 @@ class Slice(dict):
     def randomise(self, keys, randomiser, degrade=0):
         return Slice(samples=Samples.randomise(randomiser),
                      machines=Machines.randomise(keys),
-                     degrade=0)
+                     degrade=degrade)
     
     def __init__(self, samples, machines, degrade):
         dict.__init__(self, {"samples": Samples(samples),
@@ -327,7 +324,8 @@ class Slice(dict):
 
     @generator_kwargs
     def vitling_kwargs(self, key, offset):
-        return {"samples": self["samples"]}
+        return {"samples": self["samples"],
+                "degrade": self["degrade"]}
 
     @generator_kwargs
     def sample_hold_kwargs(self, key, offset):

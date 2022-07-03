@@ -1,23 +1,23 @@
 ### short
 
-- populate slice with degrade parameter
-- pass degrade as part of vitling kwargs
-- implement degrade at add() level
+- pass degrade parameter from randomiser/mutator
+- arranger
 
 ### medium
 
-- arranger
-- pico classified UI gist
-- banks wrapper to load wavs + curated
+- banks wrapper to load wavs+curated/index
+- pico UI classifier gist
 
 ### long
 
-- caught_on_tape 808/909 sampes
-- kk/sn/ht per channel echo
 - vitling 303
 - city dreams bass
 - euclidian/bjorklund beats
 - sunvox reverb chords
+
+- repeats
+- caught_on_tape 808/909 sampes
+- kk/sn/ht per channel echo
 - sunvox kicker
 - noise hats
 
@@ -75,6 +75,8 @@
 
 ### done
 
+- pass degrade as part of vitling kwargs
+- implement degrade at add() level
 - cli (shorthand) int array option
 - mutator to accept int array
 - mutator to randomise mutes
