@@ -1,12 +1,13 @@
 ### short
 
-- pass degrade parameter from randomiser/mutator
-- arranger
+- pass degrade to mutator
 
 ### medium
 
+- arranger
 - banks wrapper to load wavs+curated/index
 - pico UI classifier gist
+- patch names (noun, adj)
 
 ### long
 
@@ -75,6 +76,7 @@
 
 ### done
 
+- pass degrade parameter from randomiser/mutator
 - pass degrade as part of vitling kwargs
 - implement degrade at add() level
 - cli (shorthand) int array option
