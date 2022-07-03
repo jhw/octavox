@@ -1,13 +1,14 @@
 ### short
 
-- cli (shorthand) int array option
-- mutator to accept int array
+- populate slice with degrade parameter
+- pass degrade as part of vitling kwargs
+- implement degrade at add() level
 
 ### medium
 
+- arranger
 - pico classified UI gist
 - banks wrapper to load wavs + curated
-- arranger
 
 ### long
 
@@ -74,6 +75,8 @@
 
 ### done
 
+- cli (shorthand) int array option
+- mutator to accept int array
 - mutator to randomise mutes
 - randomiser should no longer accept keys
 - convert pattern to string format and add expand method

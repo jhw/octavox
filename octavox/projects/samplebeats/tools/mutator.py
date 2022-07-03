@@ -6,7 +6,7 @@ from octavox.modules.sampler import SVBanks
 
 import datetime, json, os, yaml
 
-def randomise(patch, kwargs, randomiser):
+def randomise_patch(patch, randomiser, kwargs):
     samples=randomiser.randomise()
     for slice in patch["tracks"]["slices"]:
         slice["samples"].randomise_samples(kwargs["dsample"],
@@ -20,6 +20,20 @@ def randomise(patch, kwargs, randomiser):
             machine.randomise_seed(kwargs["dseed"])
     return patch
 
+def randomise_patches(roots, randomiser, kwargs):
+    index=kwargs["index"]
+    patches=[]
+    for j in range(kwargs["npatches"]):
+        i=index[j % len(index)]
+        if i > len(roots):
+            raise RuntimeError("index %i exceeds root patches length [%i]" % (i, len(roots)))
+        root=roots[i]
+        patch=root.clone() if j < len(index) else randomise_patch(root.clone(),
+                                                                  randomiser,
+                                                                  kwargs)
+        patches.append(patch)
+    return Patches(patches)
+
 if __name__=="__main__":
     try:
         from octavox.tools.cli import cli
@@ -30,9 +44,9 @@ if __name__=="__main__":
           root: tmp/samplebeats/patches
         - key: index
           description: index
-          type: int  
+          type: intarray  
+          default: [0]
           min: 0
-          default: 0
         - key: profile
           description: "profile"
           type: enum
@@ -96,13 +110,7 @@ if __name__=="__main__":
                                     curated=curated,
                                     thresholds=thresholds)
         roots=Patches(json.loads(open(kwargs["src"]).read()))
-        if kwargs["index"] >= len(roots):        
-            raise RuntimeError("index exceeds root patches length")
-        root=roots[kwargs["index"]]    
-        patches=Patches([root if i==0 else randomise(root.clone(), 
-                                                     kwargs,
-                                                     randomiser)
-                         for i in range(kwargs["npatches"])])
+        patches=randomise_patches(roots, randomiser, kwargs)
         banks=SVBanks.load("tmp/banks/pico")
         timestamp=datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
         patches.render(banks=banks,

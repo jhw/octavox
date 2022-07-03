@@ -37,6 +37,30 @@ def cli_int(item):
         return value
     return cli_base(item, matcher, parser)
 
+def cli_intarray(item):
+    def matcher(resp, item):
+        return re.search("^\\s*(\\d+(x\\d+)?\\|)*(\\d+(x\\d+)?)\\s*$", resp)!=None
+    def parse_chunk(chunk):
+        tokens=[int(tok)
+                for tok in chunk.split("x")]
+        if len(tokens)==1:
+            tokens=[1, tokens[0]]
+        return [tokens[1] for i in range(tokens[0])]
+    def parse_dsl(resp):
+        values=[]
+        for chunk in resp.split("|"):
+            values+=parse_chunk(chunk)
+        return values
+    def parser(resp, item):
+        values=parse_dsl(resp)
+        for value in values:
+            if (("min" in item and value < item["min"]) or
+                ("max" in item and value > item["max"])):
+                print ("WARNING: %s exceeds limits" % item["key"])
+                return None
+        return values
+    return cli_base(item, matcher, parser)
+
 def cli_float(item):
     def matcher(resp, item):
         return re.search("^\\s*\\d+(\\.\\d+)?\\s*$", resp)!=None
