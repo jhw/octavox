@@ -5,6 +5,7 @@
 ### medium
 
 - arranger
+- mutator to merge input roots
 - banks wrapper to load wavs+curated/index
 - pico UI classifier gist
 - patch names (noun, adj)
