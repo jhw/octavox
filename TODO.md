@@ -1,14 +1,13 @@
 ### short
 
-- pass degrade to mutator
-
 ### medium
 
-- arranger
-- mutator to merge input roots
+- pass degrade to mutator
+- mutator option to merge input roots
 - banks wrapper to load wavs+curated/index
 - pico UI classifier gist
 - patch names (noun, adj)
+- arranger
 
 ### long
 
