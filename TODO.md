@@ -1,13 +1,16 @@
 ### short
 
+- rename curated as groups
+- random_wild should use banks method for all keys
+- cli [notes]
+
 ### medium
 
+- degrade to ignore core beats
+- samples/banks should probably be samples/vendor
 - pass degrade to mutator
-- mutator option to merge input roots
-- banks wrapper to load wavs+curated/index
-- pico UI classifier gist
-- patch names (noun, adj)
-- arranger
+- tool to merge input roots
+- arrange tool
 
 ### long
 
@@ -24,6 +27,12 @@
 
 ### thoughts
 
+- patch names (noun, adj) ?
+  - might not be relevant in new cli world
+- pico UI classifier gist ?
+  - not clear it's better than the existing script
+- banks wrapper to load wavs+curated/index ?
+  - not clear they should be the same object
 - use kick, snare etc key names ?
   - too much of a pain given samples use the same
 - degrade ?

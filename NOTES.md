@@ -1,3 +1,13 @@
+### cli 11/07/22
+
+- what if you could run it in a cli
+- you wouldn't need to dump yaml files, you could keep everything in state
+- you could maintain a git like index of current variant, with head position etc 
+- could do undo and redo etc, view current position 
+- all the parameters that go into randomiser and mutator could be state variables 
+- would be quicker to call randomiser and mutaror due to cli shortcuts 
+- bank and sample randomiser could also be cli state variables and could be changed 
+
 ### sunvox -> octatrack workflow 16/06/22
 
 - run randomiser
