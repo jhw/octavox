@@ -66,7 +66,7 @@ if __name__=="__main__":
           type: float
           min: 0
           max: 1
-          default: 0.2
+          default: 0
         - key: dpat
           description: "d(pat)"
           type: float

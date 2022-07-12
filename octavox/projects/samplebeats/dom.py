@@ -22,8 +22,8 @@ modules:
   - name: Echo
     class: RVEcho
     defaults:
-      dry: 128
-      wet: 128
+      dry: 256
+      wet: 256
       delay: 192
   - name: Distortion
     class: RVDistortion
@@ -329,8 +329,8 @@ class Slice(dict):
 
     @generator_kwargs
     def sample_hold_kwargs(self, key, offset):
-        return {"ranges": {"wet": [0, 0.75],
-                           "feedback": [0.25, 0.75]}}
+        return {"ranges": {"wet": [0, 1],
+                           "feedback": [0, 1]}}
             
     def render(self, key, genkey, notes, nbeats, offset):
         genkwargsfn=getattr(self, "%s_kwargs" % genkey)
