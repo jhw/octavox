@@ -68,7 +68,7 @@ class SampleRandomiser:
         if q < self.thresholds["snsamples"]:
             return random.choice(self.curated["snare"])
         elif q < self.thresholds["snsamples"]+self.thresholds["cpsamples"]:
-            return random.choice(self.curated["clap"])
+            return random.choice(self.curated["clap"]+self.curated["snare"])
         else:
             return self.random_wild()
 
@@ -76,7 +76,7 @@ class SampleRandomiser:
         q=random.random()
         if q < self.thresholds["ohsvdrum"]:
             return random.choice(self.SVDrumHats)
-        elif q< self.thresholds["ohsvdrum"]+self.thresholds["ohsamples"]:
+        elif q < self.thresholds["ohsvdrum"]+self.thresholds["ohsamples"]:
             return random.choice(self.curated["hat"]+self.curated["perc"])    
         else:
             return self.random_wild()
