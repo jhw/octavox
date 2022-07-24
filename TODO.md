@@ -1,16 +1,13 @@
 ### short
 
-- rename curated as groups
-- random_wild should use banks method for all keys
-- cli [notes]
+- banks to include all keys method
+- pass degrade to mutator
+- per channel (kk|sn|ht) sampler|drum|echo modules
 
 ### medium
 
-- degrade to ignore core beats
-- samples/banks should probably be samples/vendor
-- pass degrade to mutator
-- tool to merge input roots
-- arrange tool
+- include curated list within banks class
+- cli [notes]
 
 ### long
 
@@ -18,10 +15,8 @@
 - city dreams bass
 - euclidian/bjorklund beats
 - sunvox reverb chords
-
 - repeats
 - caught_on_tape 808/909 sampes
-- kk/sn/ht per channel echo
 - sunvox kicker
 - noise hats
 
