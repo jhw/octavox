@@ -1,15 +1,13 @@
 ### short
 
-- remove pattern short format
-- add slice (position) randomisation to mutator
-- move curated (index) and related helpers from randomiser into bank
+- pico bank to extend bank, embed index and include random helpers
+- add back sample mutation
 
 ### medium
 
+- nouns and adjectives
 - per- instrument samplers
 - svdrum sample chain
-- add back slice mutation
-- `purge` option to remove samples unwanted by patterns
 - cli [notes]
 
 ### long
@@ -25,6 +23,10 @@
 
 ### thoughts
 
+- `purge` option to remove samples unwanted by patterns ?
+  - no it's over- optimisation
+- add pattern shuffle option to mutator ?
+  - no; think it's just the same as pattern mutation
 - remove custom pattern format ?
   - no it seems useful
 - patch names (noun, adj) ?
