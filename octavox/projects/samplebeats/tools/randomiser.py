@@ -24,12 +24,6 @@ if __name__=="__main__":
           min: 0
           max: 1
           default: 1
-        - key: degrade
-          description: "degrade"
-          type: float
-          min: 0
-          max: 1
-          default: 0
         - key: nbeats
           description: "n(beats)"
           type: int
@@ -50,7 +44,6 @@ if __name__=="__main__":
                                     thresholds=thresholds)
         patches=Patches.randomise(randomiser=randomiser,
                                   slicetemp=kwargs["slicetemp"],
-                                  degrade=kwargs["degrade"],
                                   n=kwargs["npatches"])
         timestamp=datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
         filestub="%s-randomiser" % timestamp

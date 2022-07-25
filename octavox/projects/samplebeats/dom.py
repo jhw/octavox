@@ -151,12 +151,11 @@ class Samples(dict):
         
 class VitlingGenerator:
     
-    def __init__(self, key, offset, samples, degrade, volume=1):
+    def __init__(self, key, offset, samples, volume=1):
         self.key=key
         self.offset=offset
         self.samples={k: SampleKey(v).expand()
                       for k, v in samples.items()}
-        self.degrade=degrade
         self.volume=volume
 
     def generate(self, notes, style, q, n):
@@ -165,13 +164,12 @@ class VitlingGenerator:
             fn(notes, q, i)
 
     def add(self, notes, q, k, i, v):
-        if q.random() < 1-self.degrade:
-            samplekey, volume = v
-            trig=dict(self.samples[samplekey])
-            trig["vel"]=self.volume*volume
-            trig["i"]=i+self.offset
-            notes.setdefault(k, [])
-            notes[k].append(trig)
+        samplekey, volume = v
+        trig=dict(self.samples[samplekey])
+        trig["vel"]=self.volume*volume
+        trig["i"]=i+self.offset
+        notes.setdefault(k, [])
+        notes[k].append(trig)
 
     def fourfloor(self, notes, q, i, k=Kick):
         if i % 4 == 0:
@@ -299,20 +297,17 @@ class Machines(list):
 class Slice(dict):
 
     @classmethod
-    def randomise(self, keys, randomiser, degrade):
+    def randomise(self, keys, randomiser):
         return Slice(samples=Samples.randomise(randomiser),
-                     machines=Machines.randomise(keys),
-                     degrade=degrade)
+                     machines=Machines.randomise(keys))
     
-    def __init__(self, samples, machines, degrade):
+    def __init__(self, samples, machines):
         dict.__init__(self, {"samples": Samples(samples),
-                             "machines": Machines(machines),
-                             "degrade": degrade})
+                             "machines": Machines(machines)})
 
     def clone(self):
         return Slice(samples=self["samples"].clone(),
-                     machines=self["machines"].clone(),
-                     degrade=self["degrade"])
+                     machines=self["machines"].clone())
         
     def generator_kwargs(fn):
         def wrapped(self, key, offset):
@@ -324,8 +319,7 @@ class Slice(dict):
 
     @generator_kwargs
     def vitling_kwargs(self, key, offset):
-        return {"samples": self["samples"],
-                "degrade": self["degrade"]}
+        return {"samples": self["samples"]}
 
     @generator_kwargs
     def sample_hold_kwargs(self, key, offset):
@@ -344,8 +338,8 @@ class Slice(dict):
 class Slices(list):
 
     @classmethod
-    def randomise(self, keys, randomiser, degrade, n=4):
-        return Slices([Slice.randomise(keys, randomiser, degrade)
+    def randomise(self, keys, randomiser, n=4):
+        return Slices([Slice.randomise(keys, randomiser)
                        for i in range(n)])
     
     def __init__(self, slices):
@@ -372,10 +366,10 @@ class PatternMap(dict):
 class Tracks(dict):
 
     @classmethod
-    def randomise(self, keys, mutes,  randomiser, slicetemp, degrade):
+    def randomise(self, keys, mutes,  randomiser, slicetemp):
         return Tracks(keys=keys,
                       mutes=mutes,
-                      slices=Slices.randomise(keys, randomiser, degrade),
+                      slices=Slices.randomise(keys, randomiser),
                       patterns=PatternMap.randomise(keys, slicetemp))
         
     def __init__(self, keys, mutes, slices, patterns):
@@ -422,12 +416,11 @@ class Tracks(dict):
 class Patch(dict):
 
     @classmethod
-    def randomise(self, keys, mutes, randomiser, slicetemp, degrade):
+    def randomise(self, keys, mutes, randomiser, slicetemp):
         return Patch(tracks=Tracks.randomise(keys,
                                              mutes,
                                              randomiser,
-                                             slicetemp,
-                                             degrade))
+                                             slicetemp))
     
     def __init__(self, tracks):
         dict.__init__(self, {"tracks": Tracks(**tracks)})
@@ -444,14 +437,13 @@ class Patch(dict):
 class Patches(list):
 
     @classmethod
-    def randomise(self, randomiser, slicetemp, degrade, n,
+    def randomise(self, randomiser, slicetemp, n,
                   keys= "kk|sn|ht|ec".split("|"),
                   mutes=[]):
         return Patches([Patch.randomise(keys,
                                         mutes,
                                         randomiser,
-                                        slicetemp,
-                                        degrade)
+                                        slicetemp)
                         for i in range(n)])
     
     def __init__(self, patches):

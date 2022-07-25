@@ -1,6 +1,5 @@
 ### short
 
-- revert degrade
 - remove custom pattern format
 - remove svdrum module
 
@@ -85,6 +84,7 @@
 
 ### done
 
+- revert degrade
 - pass degrade parameter from randomiser/mutator
 - pass degrade as part of vitling kwargs
 - implement degrade at add() level
