@@ -13,24 +13,19 @@ Sampler="Sampler"
 
 class SVBanks(dict):
 
-    @classmethod
-    def load(self,
-             root="tmp/banks",
-             filterfn=lambda x: x.endswith(".zip")):
+    def __init__(self,
+                 root,
+                 filterfn=lambda x: x.endswith(".zip")):
+        dict.__init__(self)        
         def keyfn(item):
             return item.split(".")[0]
-        banks=SVBanks()
         for filename in os.listdir(root):
             if not filterfn(filename):
                 continue
             key=keyfn(filename)
             path="%s/%s" % (root, filename)
-            banks[key]=zipfile.ZipFile(path)
-        return banks
-    
-    def __init__(self):
-        dict.__init__(self)        
-
+            self[key]=zipfile.ZipFile(path)
+        
     """
     - find sample wavfile associated with particular bank and id
     - note is an index, not the name of the wavfile itself

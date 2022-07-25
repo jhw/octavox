@@ -1,13 +1,11 @@
 ### short
 
-- pico bank to extend bank, embed index and include random helpers
 - add back sample mutation
 
 ### medium
 
 - nouns and adjectives
 - per- instrument samplers
-- svdrum sample chain
 - cli [notes]
 
 ### long
@@ -23,6 +21,8 @@
 
 ### thoughts
 
+- svdrum sample chain
+  - very little added value
 - `purge` option to remove samples unwanted by patterns ?
   - no it's over- optimisation
 - add pattern shuffle option to mutator ?
@@ -87,6 +87,7 @@
 
 ### done
 
+- pico bank to extend bank, embed index and include random helpers
 - merge clap and snare handlers
 - move random wild into bank
 - remove svdrum module

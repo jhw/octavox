@@ -1,9 +1,9 @@
-from octavox.modules.sampler import SVBanks
+from octavox.samples.banks.pico import PicoBanks
 
 from octavox.projects.samplebeats.dom import Patches
 
 import datetime, random, yaml
-
+    
 Profiles=yaml.safe_load("""
 default:
   kk: 0.8
@@ -24,42 +24,29 @@ wild:
 
 class Randomiser:
 
-    def __init__(self, banks, curated, profile):
+    def __init__(self, banks, profile):
         self.banks=banks
-        self.curated=curated
         self.profile=profile
 
-    def random_kk(self):
-        q=random.random()
-        if q < self.profile["kk"]:
-            return random.choice(self.curated["kick"]+self.curated["bass"])    
-        else:
-            return self.banks.random_key
+    @property
+    def random_kk(self):        
+        return self.banks.random_kk if random.random() < self.profile["kk"] else self.banks.random_key
 
+    @property
     def random_sn(self):
-        q=random.random()
-        if q < self.profile["sn"]:
-            return random.choice(self.curated["clap"]+self.curated["snare"])
-        else:
-            return self.banks.random_key
+        return self.banks.random_sn if random.random() < self.profile["sn"] else self.banks.random_key
 
+    @property
     def random_oh(self):
-        q=random.random()
-        if q < self.profile["oh"]:
-            return random.choice(self.curated["hat"]+self.curated["perc"])    
-        else:
-            return self.banks.random_key
+        return self.banks.random_ht if random.random() < self.profile["oh"] else self.banks.random_key
 
+    @property
     def random_ch(self):
-        q=random.random()
-        if q < self.profile["ch"]:
-            return random.choice(self.curated["hat"]+self.curated["perc"])    
-        else:
-            return self.banks.random_key
+        return self.banks.random_ht if random.random() < self.profile["ch"] else self.banks.random_key
 
     def randomise(self,
                   keys="kk|sn|oh|ch".split("|")):
-        return {key: getattr(self, "random_%s" % key)()
+        return {key: getattr(self, "random_%s" % key)
                 for key in keys}
 
 if __name__=="__main__":
@@ -92,11 +79,9 @@ if __name__=="__main__":
           default: 16
         """)
         kwargs=cli(cliconf)
-        banks=SVBanks.load("tmp/banks/pico")
-        curated=yaml.safe_load(open("octavox/samples/banks/pico/curated.yaml").read())
+        banks=PicoBanks(root="tmp/banks/pico")
         profile=Profiles[kwargs["profile"]]
         randomiser=Randomiser(banks=banks,
-                              curated=curated,
                               profile=profile)
         patches=Patches.randomise(randomiser=randomiser,
                                   slicetemp=kwargs["slicetemp"],
