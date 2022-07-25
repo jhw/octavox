@@ -1,10 +1,71 @@
 from octavox.modules.sampler import SVBanks
 
-from octavox.projects.samplebeats.randomiser import SampleRandomiser, Profiles
-
 from octavox.projects.samplebeats.dom import Patches
 
 import datetime, random, yaml
+
+Profiles=yaml.safe_load("""
+default:
+  kk: 0.8
+  sn: 0.4
+  cp: 0.4
+  oh: 0.5
+  ch: 0.5
+strict:
+  kk: 0.9
+  sn: 0.5
+  cp: 0.5
+  oh: 0.8
+  ch: 0.8
+wild:
+  kk: 0.4
+  sn: 0.2
+  cp: 0.2
+  oh: 0.2
+  ch: 0.2
+""")
+
+class Randomiser:
+
+    def __init__(self, banks, curated, profile):
+        self.banks=banks
+        self.curated=curated
+        self.profile=profile
+
+    def random_kk(self):
+        q=random.random()
+        if q < self.profile["kk"]:
+            return random.choice(self.curated["kick"]+self.curated["bass"])    
+        else:
+            return self.banks.random_key
+
+    def random_sn(self):
+        q=random.random()
+        if q < self.profile["sn"]:
+            return random.choice(self.curated["snare"])
+        elif q < self.profile["sn"]+self.profile["cp"]:
+            return random.choice(self.curated["clap"]+self.curated["snare"])
+        else:
+            return self.banks.random_key
+
+    def random_oh(self):
+        q=random.random()
+        if q < self.profile["oh"]:
+            return random.choice(self.curated["hat"]+self.curated["perc"])    
+        else:
+            return self.banks.random_key
+
+    def random_ch(self):
+        q=random.random()
+        if q < self.profile["ch"]:
+            return random.choice(self.curated["hat"]+self.curated["perc"])    
+        else:
+            return self.banks.random_key
+
+    def randomise(self,
+                  keys="kk|sn|oh|ch".split("|")):
+        return {key: getattr(self, "random_%s" % key)()
+                for key in keys}
 
 if __name__=="__main__":
     try:
@@ -38,10 +99,10 @@ if __name__=="__main__":
         kwargs=cli(cliconf)
         banks=SVBanks.load("tmp/banks/pico")
         curated=yaml.safe_load(open("octavox/samples/banks/pico/curated.yaml").read())
-        thresholds=Profiles[kwargs["profile"]]
-        randomiser=SampleRandomiser(banks=banks,
-                                    curated=curated,
-                                    thresholds=thresholds)
+        profile=Profiles[kwargs["profile"]]
+        randomiser=Randomiser(banks=banks,
+                              curated=curated,
+                              profile=profile)
         patches=Patches.randomise(randomiser=randomiser,
                                   slicetemp=kwargs["slicetemp"],
                                   n=kwargs["npatches"])

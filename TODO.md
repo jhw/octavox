@@ -1,13 +1,16 @@
 ### short
 
-- see if selector and bank can be merged
-- per- instrument samplers
-- svdrum sample chain
+- merge clap and snare handlers
+- remove pattern short format
+- add slice (position) randomisation to mutator
+- move curated (index) and related helpers from randomiser into bank
 
 ### medium
 
+- per- instrument samplers
+- svdrum sample chain
+- add back slice mutation
 - `purge` option to remove samples unwanted by patterns
-- allow sliceg re- ordering as part of mutation
 - cli [notes]
 
 ### long
@@ -83,6 +86,7 @@
 
 ### done
 
+- move random wild into bank
 - remove svdrum module
 - revert degrade
 - pass degrade parameter from randomiser/mutator

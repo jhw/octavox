@@ -2,7 +2,7 @@ from rv.modules.sampler import Sampler as RVSampler
 
 from rv.note import NOTE as RVNOTE
 
-import re, os, warnings, zipfile
+import os, random, re, warnings, zipfile
 
 # from scipy.io import wavfile
 from octavox.modules.utils import wavfile
@@ -54,6 +54,14 @@ class SVBanks(dict):
         bankname=key["bank"]
         return self[bankname].open(wavfile, 'r')
 
+    @property
+    def random_key(self):
+        modnames=list(self.keys())
+        mod=random.choice(modnames)
+        n=len(self[mod].infolist())
+        i=random.choice(range(n))
+        return "%s:%i" % (mod, i)
+    
 class SVPatches(list):
 
     def ___init__(self, patches):

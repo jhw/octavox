@@ -1,16 +1,10 @@
 from octavox.projects.samplebeats.dom import Machines, Slice, Slices, PatternMap, Tracks, Patch, Patches
 
-from octavox.projects.samplebeats.randomiser import SampleRandomiser, Profiles
-
 from octavox.modules.sampler import SVBanks
 
 import datetime, json, os, yaml
 
-def randomise_patch(patch, randomiser, kwargs):
-    samples=randomiser.randomise()
-    for slice in patch["tracks"]["slices"]:
-        slice["samples"].randomise_samples(kwargs["dsample"],
-                                           samples)
+def randomise_patch(patch, kwargs):
     patch["tracks"].randomise_pattern(kwargs["dpat"],
                                       kwargs["slicetemp"])
     patch["tracks"].randomise_mutes(kwargs["dmute"])
@@ -20,7 +14,7 @@ def randomise_patch(patch, randomiser, kwargs):
             machine.randomise_seed(kwargs["dseed"])
     return patch
 
-def randomise_patches(roots, randomiser, kwargs):
+def randomise_patches(roots, kwargs):
     index=kwargs["index"]
     patches=[]
     for j in range(kwargs["npatches"]):
@@ -29,7 +23,6 @@ def randomise_patches(roots, randomiser, kwargs):
             raise RuntimeError("index %i exceeds root patches length [%i]" % (i, len(roots)))
         root=roots[i]
         patch=root.clone() if j < len(index) else randomise_patch(root.clone(),
-                                                                  randomiser,
                                                                   kwargs)
         patches.append(patch)
     return Patches(patches)
@@ -61,12 +54,6 @@ if __name__=="__main__":
           min: 0
           max: 1
           default: 1
-        - key: dsample
-          description: "d(sample)"
-          type: float
-          min: 0
-          max: 1
-          default: 0
         - key: dpat
           description: "d(pat)"
           type: float
@@ -103,14 +90,8 @@ if __name__=="__main__":
           default: 64
         """)
         kwargs=cli(cliconf)
-        banks=SVBanks.load("tmp/banks/pico")
-        curated=yaml.safe_load(open("octavox/samples/banks/pico/curated.yaml").read())
-        thresholds=Profiles[kwargs["profile"]]
-        randomiser=SampleRandomiser(banks=banks,
-                                    curated=curated,
-                                    thresholds=thresholds)
         roots=Patches(json.loads(open(kwargs["src"]).read()))
-        patches=randomise_patches(roots, randomiser, kwargs)
+        patches=randomise_patches(roots, kwargs)
         banks=SVBanks.load("tmp/banks/pico")
         timestamp=datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
         patches.render(banks=banks,
