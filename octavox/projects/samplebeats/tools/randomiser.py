@@ -7,20 +7,17 @@ import datetime, random, yaml
 Profiles=yaml.safe_load("""
 default:
   kk: 0.8
-  sn: 0.4
-  cp: 0.4
+  sn: 0.8
   oh: 0.5
   ch: 0.5
 strict:
   kk: 0.9
-  sn: 0.5
-  cp: 0.5
+  sn: 1.0
   oh: 0.8
   ch: 0.8
 wild:
   kk: 0.4
-  sn: 0.2
-  cp: 0.2
+  sn: 0.4
   oh: 0.2
   ch: 0.2
 """)
@@ -42,8 +39,6 @@ class Randomiser:
     def random_sn(self):
         q=random.random()
         if q < self.profile["sn"]:
-            return random.choice(self.curated["snare"])
-        elif q < self.profile["sn"]+self.profile["cp"]:
             return random.choice(self.curated["clap"]+self.curated["snare"])
         else:
             return self.banks.random_key

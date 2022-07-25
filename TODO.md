@@ -1,6 +1,5 @@
 ### short
 
-- merge clap and snare handlers
 - remove pattern short format
 - add slice (position) randomisation to mutator
 - move curated (index) and related helpers from randomiser into bank
@@ -86,6 +85,7 @@
 
 ### done
 
+- merge clap and snare handlers
 - move random wild into bank
 - remove svdrum module
 - revert degrade
