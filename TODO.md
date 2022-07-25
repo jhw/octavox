@@ -1,12 +1,15 @@
 ### short
 
-- banks to include all keys method
-- pass degrade to mutator
-- per channel (kk|sn|ht) sampler|drum|echo modules
+- revert degrade
+- remove custom pattern format
+- create svdrum sample chain
+- include svdrum in pico bank
+- remove svdrum module
 
 ### medium
 
-- include curated list within banks class
+- allow slice re- ordering as part of mutation
+- per- instrument samplers [notes]
 - cli [notes]
 
 ### long

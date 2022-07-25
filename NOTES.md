@@ -1,3 +1,10 @@
+### per- instrument samplers
+
+- per- instrument samplers might simplify a lot of things
+- for one you can include a lot more samples within the project, because you get three or four times the capability
+- for two, you might be able to reduce sampler complexity (particularly the sample packing/indexing code) by pre- populating samples with specific genres
+- this might then allow you to implement vitling ghost beats as a proper vca module, rather than as beat volume (which would be much closer to a midi/hardware implementation)
+
 ### cli 11/07/22
 
 - what if you could run it in a cli
