@@ -2,14 +2,16 @@
 
 - revert degrade
 - remove custom pattern format
-- create svdrum sample chain
-- include svdrum in pico bank
 - remove svdrum module
+
+- see if selector and bank can be merged
+- per- instrument samplers
+- svdrum sample chain
 
 ### medium
 
-- allow slice re- ordering as part of mutation
-- per- instrument samplers [notes]
+- `purge` option to remove samples unwanted by patterns
+- allow sliceg re- ordering as part of mutation
 - cli [notes]
 
 ### long
