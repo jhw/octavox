@@ -2,45 +2,26 @@ import random, yaml
 
 Profiles=yaml.safe_load("""
 default:
-  kksamples: 0.5
-  kksvdrum: 0.3
-  snsamples: 0.4
-  cpsamples: 0.4
-  ohsamples: 0.25
-  ohsvdrum: 0.25
-  chsamples: 0.25
-  chsvdrum: 0.25
+  kk: 0.8
+  sn: 0.4
+  cp: 0.4
+  oh: 0.5
+  ch: 0.5
 strict:
-  kksamples: 0.65
-  kksvdrum: 0.35
-  snsamples: 0.5
-  cpsamples: 0.5
-  ohsamples: 0.4
-  ohsvdrum: 0.4
-  chsamples: 0.4
-  chsvdrum: 0.4
+  kk: 0.9
+  sn: 0.5
+  cp: 0.5
+  oh: 0.8
+  ch: 0.8
 wild:
-  kksamples: 0.25
-  kksvdrum: 0.15
-  snsamples: 0.2
-  cpsamples: 0.2
-  ohsamples: 0.1
-  ohsvdrum: 0.1
-  chsamples: 0.1
-  chsvdrum: 0.1
+  kk: 0.4
+  sn: 0.2
+  cp: 0.2
+  oh: 0.2
+  ch: 0.2
 """)
 
 class SampleRandomiser:
-
-    SVDrum= "svdrum"
-
-    def svdrum(offsets, n=10):
-        return ["svdrum:%i" % (i*12+j)
-                for i in range(n)
-                for j in offsets]
-
-    SVDrumBass=svdrum(range(4))
-    SVDrumHats=svdrum(range(4, 7))
 
     def __init__(self, banks, curated, thresholds):
         self.banks=banks
@@ -48,44 +29,38 @@ class SampleRandomiser:
         self.thresholds=thresholds
 
     def random_wild(self):
-        modnames=[self.SVDrum]+list(self.banks.keys())
+        modnames=list(self.banks.keys())
         mod=random.choice(modnames)
-        n=len(self.banks[mod].infolist()) if mod!=self.SVDrum else 120
+        n=len(self.banks[mod].infolist())
         i=random.choice(range(n))
         return "%s:%i" % (mod, i)
 
     def random_kk(self):
         q=random.random()
-        if q < self.thresholds["kksvdrum"]:
-            return random.choice(self.SVDrumBass)
-        elif q < self.thresholds["kksvdrum"]+self.thresholds["kksamples"]:
+        if q < self.thresholds["kk"]:
             return random.choice(self.curated["kick"]+self.curated["bass"])    
         else:
             return self.random_wild()
 
     def random_sn(self):
         q=random.random()
-        if q < self.thresholds["snsamples"]:
+        if q < self.thresholds["sn"]:
             return random.choice(self.curated["snare"])
-        elif q < self.thresholds["snsamples"]+self.thresholds["cpsamples"]:
+        elif q < self.thresholds["sn"]+self.thresholds["cp"]:
             return random.choice(self.curated["clap"]+self.curated["snare"])
         else:
             return self.random_wild()
 
     def random_oh(self):
         q=random.random()
-        if q < self.thresholds["ohsvdrum"]:
-            return random.choice(self.SVDrumHats)
-        elif q < self.thresholds["ohsvdrum"]+self.thresholds["ohsamples"]:
+        if q < self.thresholds["oh"]:
             return random.choice(self.curated["hat"]+self.curated["perc"])    
         else:
             return self.random_wild()
 
     def random_ch(self):
         q=random.random()
-        if q < self.thresholds["chsvdrum"]:
-            return random.choice(self.SVDrumHats)
-        elif q< self.thresholds["chsvdrum"]+self.thresholds["chsamples"]:
+        if q < self.thresholds["ch"]:
             return random.choice(self.curated["hat"]+self.curated["perc"])    
         else:
             return self.random_wild()        

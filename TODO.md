@@ -1,8 +1,5 @@
 ### short
 
-- remove custom pattern format
-- remove svdrum module
-
 - see if selector and bank can be merged
 - per- instrument samplers
 - svdrum sample chain
@@ -26,6 +23,8 @@
 
 ### thoughts
 
+- remove custom pattern format ?
+  - no it seems useful
 - patch names (noun, adj) ?
   - might not be relevant in new cli world
 - pico UI classifier gist ?
@@ -84,6 +83,7 @@
 
 ### done
 
+- remove svdrum module
 - revert degrade
 - pass degrade parameter from randomiser/mutator
 - pass degrade as part of vitling kwargs

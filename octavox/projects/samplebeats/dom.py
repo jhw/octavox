@@ -1,4 +1,3 @@
-from rv.modules.drumsynth import DrumSynth as RVDrumSynth
 from rv.modules.echo import Echo as RVEcho
 from rv.modules.distortion import Distortion as RVDistortion
 from rv.modules.reverb import Reverb as RVReverb
@@ -17,8 +16,6 @@ modules:
   - name: Sampler
     # class: RVSampler
     class: SVSampler
-  - name: Drum
-    class: RVDrumSynth
   - name: Echo
     class: RVEcho
     defaults:
@@ -35,8 +32,6 @@ modules:
       wet: 4
 links:
   - - Sampler
-    - Echo
-  - - Drum
     - Echo
   - - Echo
     - Distortion
@@ -108,7 +103,7 @@ Breakbeats=Patterns([Pattern(pat)
 
 class SampleKey:
 
-    Drum, SVDrum, Sampler = "Drum", "svdrum", "Sampler"
+    Sampler = "Sampler"
     
     def __init__(self, value):
         self.value=value
@@ -116,13 +111,9 @@ class SampleKey:
     def expand(self):
         tokens=self.value.split(":")
         name, id = tokens[0], int(tokens[1])
-        if tokens[0]==self.SVDrum:
-            return {"mod": self.Drum,
-                    "id": id}
-        else:
-            return {"mod": self.Sampler,
-                    "key": {"bank": name,
-                            "id": id}}
+        return {"mod": self.Sampler,
+                "key": {"bank": name,
+                        "id": id}}
 
 class Samples(dict):
 
