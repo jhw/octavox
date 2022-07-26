@@ -2,24 +2,22 @@ from octavox.projects.samplebeats.dom import Patches
 
 from octavox.modules.sampler import SVBanks
 
-import datetime, json, os, yaml
+import datetime, json, yaml
 
 def randomise_patches(roots, kwargs):
-    index=kwargs["index"]
-    patches=[]
-    for j in range(kwargs["npatches"]):
-        i=index[j % len(index)]
-        if i > len(roots):
-            raise RuntimeError("index %i exceeds root patches length [%i]" % (i, len(roots)))
-        patch=roots[i].clone()
-        if j > 0:
+    def init_patch(root, kwargs, mutate):
+        patch=root.clone()
+        if mutate:
             patch.mutate(dpat=kwargs["dpat"],
                          dmute=kwargs["dmute"],
                          dseed=kwargs["dseed"],
                          dstyle=kwargs["dstyle"],
                          slicetemp=kwargs["slicetemp"])
-        patches.append(patch)
-    return Patches(patches)
+        return patch
+    i=kwargs["index"] % len(roots)
+    root=roots[i]
+    return Patches([init_patch(root, kwargs, j>0)
+                    for j in range(kwargs["npatches"])])
 
 if __name__=="__main__":
     try:
@@ -31,8 +29,8 @@ if __name__=="__main__":
           root: tmp/samplebeats/patches
         - key: index
           description: index
-          type: intarray
-          default: [0]
+          type: int
+          default: 0
           min: 0
         - key: profile
           description: "profile"
