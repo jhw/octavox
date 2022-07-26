@@ -37,17 +37,17 @@ class SVBanks(dict):
         def sorter(zf):
             stub=zf.filename.split(".")[0]
             return int(stub) if re.search("^\\d+$", stub) else stub
-        def lookup(self, key):        
-            if key["bank"] not in self:
-                raise RuntimeError("bank %s not found" % key["bank"])
-            wavfiles=sorted(self[key["bank"]].infolist(),
+        def lookup(self, bank, id):
+            if bank not in self:
+                raise RuntimeError("bank %s not found" % bank)
+            wavfiles=sorted(self[bank].infolist(),
                             key=sorter)
-            if key["id"] >= len(wavfiles):
-                raise RuntimeError("id %i exceeds bank size" % key["id"])
-            return wavfiles[key["id"]]
-        wavfile=lookup(self, key)
-        bankname=key["bank"]
-        return self[bankname].open(wavfile, 'r')
+            if id >= len(wavfiles):
+                raise RuntimeError("id %i exceeds bank size" % id)
+            return wavfiles[id]
+        bank, id = key.split(":")
+        wavfile=lookup(self, bank, int(id))
+        return self[bank].open(wavfile, 'r')
 
     @property
     def random_key(self):
@@ -70,15 +70,12 @@ class SVPatches(list):
             
     @property
     def sample_keys(self):
-        def keyfn(key):
-            return "%s:%i" % (key["bank"],
-                              key["id"])
         keys={}
         for patch in self:
             for track in patch["tracks"]:
                 for trig in track:
                     if trig and trig["mod"]==Sampler:
-                        keys[keyfn(trig["key"])]=trig["key"]
+                        keys[trig["key"]]=trig["key"]
         return list(keys.values())
 
     def add_sample_ids(self, mapping):

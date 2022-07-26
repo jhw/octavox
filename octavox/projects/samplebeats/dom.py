@@ -101,20 +101,6 @@ Breakbeats=Patterns([Pattern(pat)
                                  "0|1|0|2",
                                  "0|1|2|3"]])
 
-class SampleKey:
-
-    Sampler = "Sampler"
-    
-    def __init__(self, value):
-        self.value=value
-
-    def expand(self):
-        tokens=self.value.split(":")
-        name, id = tokens[0], int(tokens[1])
-        return {"mod": self.Sampler,
-                "key": {"bank": name,
-                        "id": id}}
-
 class Samples(dict):
 
     """
@@ -141,11 +127,14 @@ class Samples(dict):
 """
         
 class VitlingGenerator:
+
+    Sampler = "Sampler"
     
     def __init__(self, key, offset, samples, volume=1):
         self.key=key
         self.offset=offset
-        self.samples={k: SampleKey(v).expand()
+        self.samples={k: {"mod": self.Sampler,
+                          "key": v}
                       for k, v in samples.items()}
         self.volume=volume
 
