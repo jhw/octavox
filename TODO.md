@@ -1,11 +1,12 @@
 ### short
 
+- remove multiple mutation index
 - add back sample mutation
 
 ### medium
 
 - nouns and adjectives
-- per- instrument samplers
+- per- instrument samplers, equalizers
 - cli [notes]
 
 ### long
@@ -87,6 +88,7 @@
 
 ### done
 
+- move mutation into track
 - pico bank to extend bank, embed index and include random helpers
 - merge clap and snare handlers
 - move random wild into bank

@@ -1,18 +1,8 @@
-from octavox.projects.samplebeats.dom import Machines, Slice, Slices, PatternMap, Tracks, Patch, Patches
+from octavox.projects.samplebeats.dom import Patches
 
 from octavox.modules.sampler import SVBanks
 
 import datetime, json, os, yaml
-
-def randomise_patch(patch, kwargs):
-    patch["tracks"].randomise_pattern(kwargs["dpat"],
-                                      kwargs["slicetemp"])
-    patch["tracks"].randomise_mutes(kwargs["dmute"])
-    for slice in patch["tracks"]["slices"]:
-        for machine in slice["machines"]:
-            machine.randomise_style(kwargs["dstyle"])
-            machine.randomise_seed(kwargs["dseed"])
-    return patch
 
 def randomise_patches(roots, kwargs):
     index=kwargs["index"]
@@ -21,9 +11,13 @@ def randomise_patches(roots, kwargs):
         i=index[j % len(index)]
         if i > len(roots):
             raise RuntimeError("index %i exceeds root patches length [%i]" % (i, len(roots)))
-        root=roots[i]
-        patch=root.clone() if j < len(index) else randomise_patch(root.clone(),
-                                                                  kwargs)
+        patch=roots[i].clone()
+        if j > 0:
+            patch.mutate(dpat=kwargs["dpat"],
+                         dmute=kwargs["dmute"],
+                         dseed=kwargs["dseed"],
+                         dstyle=kwargs["dstyle"],
+                         slicetemp=kwargs["slicetemp"])
         patches.append(patch)
     return Patches(patches)
 
@@ -37,7 +31,7 @@ if __name__=="__main__":
           root: tmp/samplebeats/patches
         - key: index
           description: index
-          type: intarray  
+          type: intarray
           default: [0]
           min: 0
         - key: profile
