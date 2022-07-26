@@ -70,20 +70,20 @@ class SVPatches(list):
             
     @property
     def sample_keys(self):
-        keys={}
+        keys=set()
         for patch in self:
             for track in patch["tracks"]:
                 for trig in track:
                     if trig and trig["mod"]==Sampler:
-                        keys[trig["key"]]=trig["key"]
-        return list(keys.values())
+                        keys.add(trig["key"])
+        return sorted(list(keys))
 
-    def add_sample_ids(self, mapping):
+    def populate_sample_ids(self, samplekeys):
         for patch in self:
             for track in patch["tracks"]:
                 for trig in track:
                     if trig and trig["mod"]==Sampler:
-                        trig["id"]=mapping.index(trig["key"])
+                        trig["id"]=samplekeys.index(trig["key"])
 
 class SVSampler(RVSampler):
 
@@ -130,7 +130,7 @@ class SVSampler(RVSampler):
             raise RuntimeError("sampler max slots exceeded")
         if debug:
             print ("%i sampler slots used" % len(samplekeys))
-        patches.add_sample_ids(samplekeys)
+        patches.populate_sample_ids(samplekeys)
         for i, samplekey in enumerate(samplekeys):
             self.note_samples[notes[i]]=i
             src=banks.get_wavfile(samplekey)

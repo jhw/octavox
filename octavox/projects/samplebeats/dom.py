@@ -64,6 +64,8 @@ ec:
   - sample_hold
 """)
 
+Sampler="Sampler"
+                    
 class Pattern(str):
 
     def __init__(self, value):
@@ -128,12 +130,10 @@ class Samples(dict):
         
 class VitlingGenerator:
 
-    Sampler = "Sampler"
-    
     def __init__(self, key, offset, samples, volume=1):
         self.key=key
         self.offset=offset
-        self.samples={k: {"mod": self.Sampler,
+        self.samples={k: {"mod": Sampler,
                           "key": v}
                       for k, v in samples.items()}
         self.volume=volume

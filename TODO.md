@@ -1,6 +1,6 @@
 ### short
 
-- replace SVPatches
+- move SVPatches code into Patches 
 - support for multiple samplers
 
 ### medium
