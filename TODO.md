@@ -1,17 +1,13 @@
 ### short
 
-- add back sample mutation
+- replace SVPatches
+- support for multiple samplers
 
 ### medium
 
-- simplify sampler initialisation
-  - avoid use of separate SVPatches cass
-  
-- render support for multiple samplers
-
-- nouns and adjectives
 - per- instrument samplers
-
+- add back sample mutation
+- nouns and adjectives
 - cli [notes]
 - sample blacklist
 
