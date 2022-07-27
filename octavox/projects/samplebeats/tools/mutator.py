@@ -8,10 +8,10 @@ def randomise_patches(roots, kwargs):
     def init_patch(root, kwargs, mutate):
         patch=root.clone()
         if mutate:
-            patch.mutate(dpat=kwargs["dpat"],
-                         dmute=kwargs["dmute"],
-                         dseed=kwargs["dseed"],
-                         dstyle=kwargs["dstyle"],
+            patch.mutate(limits={"pat": kwargs["dpat"],
+                                 "mute": kwargs["dmute"],
+                                 "seed": kwargs["dseed"],
+                                 "style": kwargs["dstyle"]},
                          slicetemp=kwargs["slicetemp"])
         return patch
     i=kwargs["index"] % len(roots)

@@ -408,13 +408,13 @@ class Patch(dict):
     def clone(self):
         return Patch(tracks=self["tracks"].clone())
 
-    def mutate(self, dpat, dmute, dstyle, dseed, slicetemp):
-        self["tracks"].randomise_pattern(dpat, slicetemp)
-        self["tracks"].randomise_mutes(dmute)
+    def mutate(self, limits, slicetemp):
+        self["tracks"].randomise_pattern(limits["pat"], slicetemp)
+        self["tracks"].randomise_mutes(limits["mute"])
         for slice in self["tracks"]["slices"]:
             for machine in slice["machines"]:
-                machine.randomise_style(dstyle)
-                machine.randomise_seed(dseed)
+                machine.randomise_style(limits["style"])
+                machine.randomise_seed(limits["seed"])
     
     def render(self, nbeats):
         patch={"n": nbeats,

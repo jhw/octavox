@@ -1,6 +1,5 @@
 ### short
 
-- pass delta dit to mutator
 - move SVPatches code into Patches 
 - abstract remaining SVPatches code and removed SVPatches
 - investigate how mod classes are instantiated by renderer
@@ -97,6 +96,7 @@
 
 ### done
 
+- pass delta dit to mutator
 - remove multiple mutation index
 - move mutation into track
 - pico bank to extend bank, embed index and include random helpers
