@@ -1,7 +1,5 @@
 ### short
 
-- sampler to initialise samplers on construction
-
 - renderer internal module representation to be a dict with values i and class
 - SVTrig rendering to call sample renderer if `id` key not present in trig
 - sort sample_keys properly
@@ -93,6 +91,7 @@
 
 ### done
 
+- sampler to initialise samplers on construction
 - include banks in sampler kwargs
 - remove patches from initialisation
 - remove SVPatches [notes]

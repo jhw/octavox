@@ -209,10 +209,6 @@ class SVProject:
                           modclasses)
         self.link_modules(proj,
                           modconfig["links"])
-        if banks:
-            sampler={mod.name: mod
-                     for mod in proj.modules}[Sampler]
-            sampler.initialise(banks)
         proj.patterns=self.init_patterns(proj, patches, nbeats, nbreaks)
         return proj
 
