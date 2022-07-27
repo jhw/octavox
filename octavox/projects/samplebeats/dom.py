@@ -438,16 +438,6 @@ class Patches(list):
         list.__init__(self, [Patch(**patch)
                              for patch in patches])
 
-    def filter_samples(self, I):
-        samples={}
-        for i in I:
-            for slice in self[i]["tracks"]["slices"]:
-                for k, v in slice["samples"].items():
-                    samples.setdefault(k, set())
-                    samples[k].add(v)
-        return {k:list(v)
-                for k, v in samples.items()}
-        
     def render(self, banks, nbeats, filestub,
                nbreaks=0,
                modconfig=ModConfig):

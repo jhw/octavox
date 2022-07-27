@@ -1,5 +1,6 @@
 ### short
 
+- remove filter_samples
 - move SVPatches code into Patches 
 - abstract remaining SVPatches code and removed SVPatches
 - investigate how mod classes are instantiated by renderer
