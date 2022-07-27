@@ -113,8 +113,9 @@ class SVProject:
                      multipliers={"x": 1, "y": -2}):
         positions=self.init_layout(modules, links)
         for i, item in enumerate(modules):
-            klass=modclasses[item["class"]]
-            kwargs={"name": item["name"]}
+            modclass=modclasses[item["class"]]
+            klass, kwargs = modclass["class"], modclass["kwargs"]
+            kwargs["name"]=item["name"]
             for i, attr in enumerate(["x", "y"]):            
                 value=positions[item["name"]][i]
                 mult=multipliers[attr]
@@ -172,7 +173,7 @@ class SVProject:
                 controllers[mod.name][controller.name]=controller.number
         return controllers
 
-    def init_patterns(self, proj, patches, nbreaks):
+    def init_patterns(self, proj, patches, nbeats, nbreaks):
         modmap={mod.name: mod.index
                 for mod in proj.modules}
         ctrlmap=self.init_controllers(proj.modules)
@@ -194,6 +195,7 @@ class SVProject:
                patches,
                modconfig,
                modclasses,
+               nbeats,
                nbreaks=0,
                banks=None,
                globalz=Globals):
@@ -210,7 +212,7 @@ class SVProject:
             sampler={mod.name: mod
                      for mod in proj.modules}[Sampler]
             sampler.initialise(banks, patches)
-        proj.patterns=self.init_patterns(proj, patches, nbreaks)
+        proj.patterns=self.init_patterns(proj, patches, nbeats, nbreaks)
         return proj
 
 if __name__=="__main__":

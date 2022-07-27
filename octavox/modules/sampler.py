@@ -87,8 +87,10 @@ class SVPatches(list):
 
 class SVSampler(RVSampler):
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, samplekeys, *args, **kwargs):
         RVSampler.__init__(self, *args, **kwargs)
+        self.samplekeys=samplekeys
+        print (self.samplekeys)
 
     """
     - https://github.com/metrasynth/gallery/blob/master/wicked.mmckpy#L497-L526

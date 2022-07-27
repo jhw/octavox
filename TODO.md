@@ -1,10 +1,9 @@
 ### short
 
-- remove SVPatches [notes]
-- per- instrument samplers
-
 ### medium
 
+- remove SVPatches [notes]
+- per- instrument samplers
 - add back sample mutation
 - nouns and adjectives in filenames
 - cli [notes]

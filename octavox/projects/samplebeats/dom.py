@@ -438,6 +438,15 @@ class Patches(list):
         list.__init__(self, [Patch(**patch)
                              for patch in patches])
 
+    def sample_keys(self, nbeats):
+        keys=set()
+        for patch in self:
+            for track in patch.render(nbeats)["tracks"]:
+                for trig in track:
+                    if trig and trig["mod"]==Sampler:
+                        keys.add(trig["key"])
+        return sorted(list(keys))
+
     def render(self, banks, nbeats, filestub,
                nbreaks=0,
                modconfig=ModConfig):
@@ -447,14 +456,20 @@ class Patches(list):
                      "tmp/samplebeats/patches"]:
             if not os.path.exists(path):
                 os.makedirs(path)
+        def init_kwargs(self, mod):
+            return {"samplekeys": self.sample_keys(nbeats)} if mod["name"]==Sampler else {}
+        modclasses={mod["class"]:{"class": eval(mod["class"]),
+                                  "kwargs": init_kwargs(self, mod)}
+                    for mod in modconfig["modules"]}
+        # START BAD CODE
         patches=[patch.render(nbeats=nbeats)
                  for patch in self]
-        modclasses={mod["class"]:eval(mod["class"])
-                    for mod in modconfig["modules"]}
-        project=SVProject().render(patches=patches,
+        # END BAD CODE
+        project=SVProject().render(patches=patches, # patches=self
                                    modconfig=modconfig,
                                    modclasses=modclasses,
                                    banks=banks,
+                                   nbeats=nbeats,
                                    nbreaks=nbreaks)
         projfile="tmp/samplebeats/projects/%s.sunvox" % filestub
         with open(projfile, 'wb') as f:

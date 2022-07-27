@@ -79,7 +79,7 @@ if __name__=="__main__":
           description: "n(patches)"
           type: int
           min: 1
-          default: 64
+          default: 8
         """)
         kwargs=cli(cliconf)
         roots=Patches(json.loads(open(kwargs["src"]).read()))
