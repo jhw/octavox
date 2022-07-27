@@ -1,6 +1,5 @@
 ### short
 
-- include banks in sampler kwargs
 - sampler to initialise samplers on construction
 
 - renderer internal module representation to be a dict with values i and class
@@ -94,6 +93,7 @@
 
 ### done
 
+- include banks in sampler kwargs
 - remove patches from initialisation
 - remove SVPatches [notes]
 - remove filter_samples

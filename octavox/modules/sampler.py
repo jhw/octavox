@@ -59,11 +59,12 @@ class SVBanks(dict):
     
 class SVSampler(RVSampler):
 
-    def __init__(self, samplekeys,  maxslots=120, *args, **kwargs):                
+    def __init__(self, samplekeys, banks, maxslots=120, *args, **kwargs):                
         RVSampler.__init__(self, *args, **kwargs)
         if len(samplekeys) > maxslots:
             raise RuntimeError("sampler max slots exceeded")
         self.samplekeys=samplekeys
+        self.banks=banks
 
     """
     - https://github.com/metrasynth/gallery/blob/master/wicked.mmckpy#L497-L526

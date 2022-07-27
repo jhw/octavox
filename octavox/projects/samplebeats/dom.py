@@ -457,7 +457,8 @@ class Patches(list):
             if not os.path.exists(path):
                 os.makedirs(path)
         def init_kwargs(self, mod):
-            return {"samplekeys": self.sample_keys(nbeats)} if mod["name"]==Sampler else {}
+            return {"samplekeys": self.sample_keys(nbeats),
+                    "banks": banks} if mod["name"]==Sampler else {}
         modclasses={mod["class"]:{"class": eval(mod["class"]),
                                   "kwargs": init_kwargs(self, mod)}
                     for mod in modconfig["modules"]}
