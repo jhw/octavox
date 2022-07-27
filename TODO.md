@@ -1,19 +1,12 @@
 ### short
 
-- move SVPatches code into Patches 
-- abstract remaining SVPatches code and removed SVPatches
-- investigate how mod classes are instantiated by renderer
-- confirm mod classes are only instantiated a single time
-- instantiate SVSampler class with Patches
-- modify mod class instantiation to handler new SVSampler kwargs
-- and SVSampler render_note method
-- change render code to look for render_note method
+- remove SVPatches [notes]
+- per- instrument samplers
 
 ### medium
 
-- per- instrument samplers
 - add back sample mutation
-- nouns and adjectives
+- nouns and adjectives in filenames
 - cli [notes]
 - sample blacklist
 

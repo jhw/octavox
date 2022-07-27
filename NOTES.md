@@ -1,4 +1,19 @@
-### per- instrument samplers
+### module instantiation 26/07/21
+
+- sampler needs to be initialised with list of sample keys
+- sampler.initialise() needs to be part of constructor routine, which requires banks and patches
+- however patches only required for sample keys
+- right now modclasses are created by patches, and then instantiated with args at the project render level
+- feels like you will have to pass mod and kwargs as part of modklasses
+- kwargs for sampler would be a list of sample keys
+- when instantiating module, update kwargs with modclasses[kwargs]
+- then sample_keys can be set as part of sampler
+- when rendering, can lookup id using sample_keys.index(key)
+- sampler also has to initialise wav files, which requires banks
+- but banks can be passed to init_modules, as is already passed to init_project
+- populate_sample_ids disappears because is replaced by new sample render function
+
+### per- instrument samplers 26/07/21
 
 - per- instrument samplers might simplify a lot of things
 - for one you can include a lot more samples within the project, because you get three or four times the capability
