@@ -4,7 +4,7 @@ from rv.note import Note as RVNote
 
 import math, random, yaml
 
-Sampler, Output = "Sampler", "Output"
+Output="Output"
 
 Globals=yaml.safe_load("""
 bpm: 120
@@ -20,8 +20,8 @@ class SVTrig(dict):
 
     def render(self, modules, controllers,
                volume=128):
-        trig=1+self["id"] # NB 1+
-        mod=1+modules[self["mod"]] # NB 1+
+        trig=1+(modules[self["mod"]]["class"].samplekeys.index(self["key"]) if "key" in self else self["id"])
+        mod=1+modules[self["mod"]]["id"] # NB 1+
         vel=max(1, int(self["vel"]*volume))
         return RVNote(note=trig,
                       vel=vel,
@@ -35,7 +35,7 @@ class SVEffect(dict):
     def render(self, modules, controllers,
                ctrlmult=256,
                maxvalue=256*128):
-        mod=1+modules[self["mod"]] # NB 1+
+        mod=1+modules[self["mod"]]["id"] # NB 1+
         ctrl=ctrlmult*controllers[self["mod"]][self["ctrl"]]
         value=int(self["v"]*maxvalue) # NB **NOT** 1+
         return RVNote(module=mod,
@@ -112,6 +112,7 @@ class SVProject:
                      modclasses,
                      multipliers={"x": 1, "y": -2}):
         positions=self.init_layout(modules, links)
+        klasses={}
         for i, item in enumerate(modules):
             modclass=modclasses[item["class"]]
             klass, kwargs = modclass["class"], modclass["kwargs"]
@@ -125,7 +126,9 @@ class SVProject:
                 for k, v in item["defaults"].items():
                     mod.set_raw(k, v)
             proj.attach_module(mod)
-
+            klasses[item["name"]]=mod
+        return klasses
+    
     def link_modules(self, proj, links):
         modmap={mod.name: mod.index
                 for mod in proj.modules}
@@ -173,8 +176,9 @@ class SVProject:
                 controllers[mod.name][controller.name]=controller.number
         return controllers
 
-    def init_patterns(self, proj, patches, nbeats, nbreaks):
-        modmap={mod.name: mod.index
+    def init_patterns(self, proj, klasses, patches, nbeats, nbreaks):
+        modmap={mod.name: {"id": mod.index,
+                           "class": klasses[mod.name] if mod.name in klasses else None}
                 for mod in proj.modules}
         ctrlmap=self.init_controllers(proj.modules)
         offset=SVOffset()
@@ -203,13 +207,13 @@ class SVProject:
         proj=RVProject()
         proj.initial_bpm=globalz["bpm"]
         proj.global_volume=globalz["volume"]
-        self.init_modules(proj,
-                          modconfig["modules"],
-                          modconfig["links"],
-                          modclasses)
+        klasses=self.init_modules(proj,
+                                  modconfig["modules"],
+                                  modconfig["links"],
+                                  modclasses)
         self.link_modules(proj,
                           modconfig["links"])
-        proj.patterns=self.init_patterns(proj, patches, nbeats, nbreaks)
+        proj.patterns=self.init_patterns(proj, klasses, patches, nbeats, nbreaks)
         return proj
 
 if __name__=="__main__":

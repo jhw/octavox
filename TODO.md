@@ -1,7 +1,11 @@
 ### short
 
-- renderer internal module representation to be a dict with values i and class
-- SVTrig rendering to call sample renderer if `id` key not present in trig
+- include sampler trig rendering within Sampler class
+
+- use mod.index (once bound) rather than creating dedicated map of module name:index
+- avoid dual modmap
+  - you may need it when linking modules, but maybe not after that
+  
 - sort sample_keys properly
 
 ### medium
@@ -91,6 +95,8 @@
 
 ### done
 
+- SVTrig rendering to call sample renderer if `id` key not present in trig
+- renderer internal module representation to be a dict with values i and class
 - sampler to initialise samplers on construction
 - include banks in sampler kwargs
 - remove patches from initialisation
