@@ -461,11 +461,7 @@ class Patches(list):
         modclasses={mod["class"]:{"class": eval(mod["class"]),
                                   "kwargs": init_kwargs(self, mod)}
                     for mod in modconfig["modules"]}
-        # START BAD CODE
-        patches=[patch.render(nbeats=nbeats)
-                 for patch in self]
-        # END BAD CODE
-        project=SVProject().render(patches=patches, # patches=self
+        project=SVProject().render(patches=self,
                                    modconfig=modconfig,
                                    modclasses=modclasses,
                                    banks=banks,

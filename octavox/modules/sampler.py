@@ -57,40 +57,13 @@ class SVBanks(dict):
         i=random.choice(range(n))
         return "%s:%i" % (mod, i)
     
-class SVPatches(list):
-
-    def ___init__(self, patches):
-        list.__init__(self, patches)
-
-    """
-    - returns list of all unique sample keys listed in patches
-    - so you only need to load used samples from banks, thereby reducing overall sunvox file size
-    - order not important because patch is updated with note of whatever slot a particular sample is inserted into
-    """
-            
-    @property
-    def sample_keys(self):
-        keys=set()
-        for patch in self:
-            for track in patch["tracks"]:
-                for trig in track:
-                    if trig and trig["mod"]==Sampler:
-                        keys.add(trig["key"])
-        return sorted(list(keys))
-
-    def populate_sample_ids(self, samplekeys):
-        for patch in self:
-            for track in patch["tracks"]:
-                for trig in track:
-                    if trig and trig["mod"]==Sampler:
-                        trig["id"]=samplekeys.index(trig["key"])
-
 class SVSampler(RVSampler):
 
-    def __init__(self, samplekeys, *args, **kwargs):
+    def __init__(self, samplekeys,  maxslots=120, *args, **kwargs):                
         RVSampler.__init__(self, *args, **kwargs)
+        if len(samplekeys) > maxslots:
+            raise RuntimeError("sampler max slots exceeded")
         self.samplekeys=samplekeys
-        print (self.samplekeys)
 
     """
     - https://github.com/metrasynth/gallery/blob/master/wicked.mmckpy#L497-L526
@@ -121,19 +94,10 @@ class SVSampler(RVSampler):
         self.samples[slot] = sample
         return sample
 
-    def initialise(self, banks, patches,
-                   maxslots=120,
-                   debug=False):
-        patches=SVPatches(patches)
+    def initialise(self, banks, patches):
         notes=list(RVNOTE)
         root=notes.index(RVNOTE.C5)
-        samplekeys=patches.sample_keys
-        if len(samplekeys) > maxslots:
-            raise RuntimeError("sampler max slots exceeded")
-        if debug:
-            print ("%i sampler slots used" % len(samplekeys))
-        patches.populate_sample_ids(samplekeys)
-        for i, samplekey in enumerate(samplekeys):
+        for i, samplekey in enumerate(self.samplekeys):
             self.note_samples[notes[i]]=i
             src=banks.get_wavfile(samplekey)
             self.load(src, i)

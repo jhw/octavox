@@ -179,7 +179,8 @@ class SVProject:
         ctrlmap=self.init_controllers(proj.modules)
         offset=SVOffset()
         patterns, color = [], None
-        for i, patch in enumerate(patches):
+        for i, _patch in enumerate(patches):
+            patch=_patch.render(nbeats)
             color=self.new_color() if 0==i%4 else self.mutate_color(color)
             pattern=self.init_pattern(proj,
                                       modmap,
