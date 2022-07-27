@@ -1,6 +1,8 @@
 ### short
 
+- include banks in sampler kwargs
 - sampler to initialise samplers on construction
+
 - renderer internal module representation to be a dict with values i and class
 - SVTrig rendering to call sample renderer if `id` key not present in trig
 - sort sample_keys properly
@@ -92,6 +94,7 @@
 
 ### done
 
+- remove patches from initialisation
 - remove SVPatches [notes]
 - remove filter_samples
 - pass delta dit to mutator

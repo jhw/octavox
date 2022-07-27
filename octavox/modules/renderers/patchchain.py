@@ -212,7 +212,7 @@ class SVProject:
         if banks:
             sampler={mod.name: mod
                      for mod in proj.modules}[Sampler]
-            sampler.initialise(banks, patches)
+            sampler.initialise(banks)
         proj.patterns=self.init_patterns(proj, patches, nbeats, nbreaks)
         return proj
 

@@ -94,7 +94,7 @@ class SVSampler(RVSampler):
         self.samples[slot] = sample
         return sample
 
-    def initialise(self, banks, patches):
+    def initialise(self, banks):
         notes=list(RVNOTE)
         root=notes.index(RVNOTE.C5)
         for i, samplekey in enumerate(self.samplekeys):
