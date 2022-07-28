@@ -1,6 +1,7 @@
 ### short
 
-- see if modconfig/modclasses can be combined 
+- replace refs to proj.modules with internal modmap
+- combine modconfig, modclassconfig
 - sort sample keys properly
 
 ### medium

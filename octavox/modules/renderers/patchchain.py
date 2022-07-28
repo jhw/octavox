@@ -72,7 +72,7 @@ class SVProject:
         return [min(255, max(0, rgb+random.choice(values)))
                 for rgb in  color]
 
-    def init_layout(self, modules, links, n=1000):
+    def init_layout(self, modconfig, n=1000):
         class Grid(dict):
             @classmethod
             def randomise(self, modnames):
@@ -101,9 +101,9 @@ class SVProject:
             grid=Grid.randomise(modnames)
             distance=grid.rms_distance(links)
             return (grid.normalise(), distance)
-        modnames=[mod["name"] for mod in modules]
+        modnames=[mod["name"] for mod in modconfig["modules"]]
         modnames.append(Output)
-        return sorted([randomise(modnames, links)
+        return sorted([randomise(modnames, modconfig["links"])
                        for i in range(n)],
                       key=lambda x: -x[1]).pop()[0]
     
@@ -112,10 +112,9 @@ class SVProject:
                      modconfig,
                      modclassconfig,
                      multipliers={"x": 1, "y": -2}):
-        modules, links = modconfig["modules"], modconfig["links"]
-        positions=self.init_layout(modules, links)
+        positions=self.init_layout(modconfig)
         modclasses={}
-        for i, item in enumerate(modules):
+        for i, item in enumerate(modconfig["modules"]):
             modclass=modclassconfig[item["class"]]
             klass, kwargs = modclass["class"], modclass["kwargs"]
             kwargs["name"]=item["name"]
