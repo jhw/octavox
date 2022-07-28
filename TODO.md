@@ -1,7 +1,6 @@
 ### short
 
 - remove src from filestub
-- equalizers
 - tool to dump table of samples
 
 ### medium
@@ -95,6 +94,7 @@
 
 ### done
 
+- equalizers
 - nouns and adjectives in filenames
 - initialise different samplers using different sample_keys values
 - increase randomiser nbeats

@@ -72,7 +72,7 @@ class SVProject:
         return [min(255, max(0, rgb+random.choice(values)))
                 for rgb in  color]
 
-    def init_layout(self, modconfig, n=1000):
+    def init_layout(self, modconfig, n=10000):
         class Grid(dict):
             @classmethod
             def randomise(self, modnames):
