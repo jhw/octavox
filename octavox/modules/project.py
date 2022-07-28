@@ -170,25 +170,23 @@ class SVProject:
 
     def init_controllers(self, modules):
         controllers={}
-        for mod in modules:
+        for mod in modules.values():
             controllers.setdefault(mod.name, {})
             for controller in mod.controllers.values():
                 controllers[mod.name].setdefault(controller.name, {})
                 controllers[mod.name][controller.name]=controller.number
         return controllers
 
-    def init_patterns(self, proj, modclasses, patches, nbeats, nbreaks):
-        modmap={mod.name: modclasses[mod.name] if mod.name in modclasses else None
-                for mod in proj.modules}
-        ctrlmap=self.init_controllers(proj.modules)
+    def init_patterns(self, proj, modules, patches, nbeats, nbreaks):
+        controllers=self.init_controllers(modules)
         offset=SVOffset()
         patterns, color = [], None
         for i, _patch in enumerate(patches):
             patch=_patch.render(nbeats)
             color=self.new_color() if 0==i%4 else self.mutate_color(color)
             pattern=self.init_pattern(proj,
-                                      modmap,
-                                      ctrlmap,
+                                      modules,
+                                      controllers,
                                       patch,
                                       offset,
                                       color,

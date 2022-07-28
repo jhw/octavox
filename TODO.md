@@ -1,6 +1,6 @@
 ### short
 
-- replace refs to proj.modules with internal modmap
+- pass modules to link_modules
 - combine modconfig, modclassconfig
 - sort sample keys properly
 
@@ -94,6 +94,7 @@
 
 ### done
 
+- replace refs to proj.modules with internal modmap
 - renamed rendered/patchchain.py as renderer.py
 - refactor variable names within renderer
 - pass around mod class only in dict, not nested dict with id and class
