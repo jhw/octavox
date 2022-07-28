@@ -13,8 +13,13 @@ Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
 
 ModConfig=yaml.safe_load("""
 modules:
-  - name: Sampler
-    # classname: RVSampler
+  - name: KKSampler
+    classname: SVSampler
+  - name: SNSampler
+    classname: SVSampler
+  - name: OHSampler
+    classname: SVSampler
+  - name: CHSampler
     classname: SVSampler
   - name: Echo
     classname: RVEcho
@@ -31,7 +36,13 @@ modules:
     defaults:
       wet: 4
 links:
-  - - Sampler
+  - - KKSampler
+    - Echo
+  - - SNSampler
+    - Echo
+  - - OHSampler
+    - Echo
+  - - CHSampler
     - Echo
   - - Echo
     - Distortion

@@ -1,7 +1,5 @@
 ### short [per- instrument samplers]
 
-- define new samplers and links 
-  - separate oh, ch samplers
 - refactor vitling note module name to include channel prefix
 - refactor sample_keys to work on per- channel basis
 - initialise different samplers using different sample_keys values
@@ -95,6 +93,8 @@
 
 ### done
 
+- define new samplers and links 
+  - separate oh, ch samplers
 - initialise mod classes within dom using partials
   - remove module imports at render level
 - partial instantiation
