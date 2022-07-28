@@ -109,10 +109,10 @@ class SVProject:
     
     def init_modules(self,
                      proj,
-                     modules,
-                     links,
+                     modconfig,
                      modclassconfig,
                      multipliers={"x": 1, "y": -2}):
+        modules, links = modconfig["modules"], modconfig["links"]
         positions=self.init_layout(modules, links)
         modclasses={}
         for i, item in enumerate(modules):
@@ -208,10 +208,7 @@ class SVProject:
         proj=RVProject()
         proj.initial_bpm=globalz["bpm"]
         proj.global_volume=globalz["volume"]
-        modclasses=self.init_modules(proj,
-                                     modconfig["modules"],
-                                     modconfig["links"],
-                                     modclassconfig)
+        modclasses=self.init_modules(proj, modconfig, modclassconfig)
         self.link_modules(proj, modconfig)
         proj.patterns=self.init_patterns(proj, modclasses, patches, nbeats, nbreaks)
         return proj
