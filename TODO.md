@@ -1,6 +1,5 @@
 ### short
 
-- abstract note rendering code into sampler 
 - pass around mod class only in dict, not nested dict with id and class
 - refactor variable names within renderer
 - see if modconfig/modclasses can be combined 
@@ -96,6 +95,7 @@
 
 ### done
 
+- abstract note rendering code into sampler 
 - SVTrig rendering to call sample renderer if `id` key not present in trig
 - renderer internal module representation to be a dict with values i and class
 - sampler to initialise samplers on construction

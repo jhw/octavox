@@ -72,7 +72,10 @@ class SVSampler(RVSampler):
             self.load(src, i)
             sample=self.samples[i]
             sample.relative_note+=(root-i)
-        
+
+    def lookup(self, key):
+        return self.samplekeys.index(key)
+            
     """
     - https://github.com/metrasynth/gallery/blob/master/wicked.mmckpy#L497-L526
     """

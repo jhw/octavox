@@ -20,12 +20,13 @@ class SVTrig(dict):
 
     def render(self, modules, controllers,
                volume=128):
-        trig=1+(modules[self["mod"]]["class"].samplekeys.index(self["key"]) if "key" in self else self["id"])
-        mod=1+modules[self["mod"]]["id"] # NB 1+
+        mod=modules[self["mod"]]
+        trig=1+(mod["class"].lookup(self["key"]) if "key" in self else self["id"])
+        modid=1+mod["id"] # NB 1+
         vel=max(1, int(self["vel"]*volume))
         return RVNote(note=trig,
                       vel=vel,
-                      module=mod)
+                      module=modid)
 
 class SVEffect(dict):
     
@@ -35,12 +36,13 @@ class SVEffect(dict):
     def render(self, modules, controllers,
                ctrlmult=256,
                maxvalue=256*128):
-        mod=1+modules[self["mod"]]["id"] # NB 1+
-        ctrl=ctrlmult*controllers[self["mod"]][self["ctrl"]]
-        value=int(self["v"]*maxvalue) # NB **NOT** 1+
-        return RVNote(module=mod,
-                      ctl=ctrl,
-                      val=value)
+        mod, controller = modules[self["mod"]], controllers[self["mod"]]
+        modid=1+mod["id"] # NB 1+
+        ctrlid=ctrlmult*controller[self["ctrl"]]
+        ctrlvalue=int(self["v"]*maxvalue) # NB **NOT** 1+
+        return RVNote(module=modid,
+                      ctl=ctrlid,
+                      val=ctrlvalue)
 
 class SVOffset:
 
