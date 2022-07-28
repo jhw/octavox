@@ -1,6 +1,5 @@
 ### short
 
-- renamed rendered/patchchain.py as renderer.py
 - replace refs to proj.modules with internal modmap
 - combine modconfig, modclassconfig
 - sort sample keys properly
@@ -95,6 +94,7 @@
 
 ### done
 
+- renamed rendered/patchchain.py as renderer.py
 - refactor variable names within renderer
 - pass around mod class only in dict, not nested dict with id and class
 - abstract note rendering code into sampler 

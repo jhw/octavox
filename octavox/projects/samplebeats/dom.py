@@ -3,7 +3,7 @@ from rv.modules.distortion import Distortion as RVDistortion
 from rv.modules.reverb import Reverb as RVReverb
 
 from octavox.modules.sampler import SVSampler
-from octavox.modules.renderers.patchchain import SVProject
+from octavox.modules.project import SVProject
 
 from octavox.projects.samplebeats.utils import *
 
