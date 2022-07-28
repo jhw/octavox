@@ -75,8 +75,6 @@ ec:
   - sample_hold
 """)
 
-Sampler="Sampler"
-                    
 class Pattern(str):
 
     def __init__(self, value):
@@ -155,7 +153,7 @@ class VitlingGenerator:
     def add(self, notes, q, k, i, v):
         notes.setdefault(k, [])
         samplekey, volume = v
-        trig={"mod": Sampler,
+        trig={"mod": "%sSampler" % k.upper(),
               "key": self.samples[samplekey],
               "vel": self.volume*volume,
               "i": i+self.offset}
@@ -449,17 +447,20 @@ class Patches(list):
                              for patch in patches])
 
     def sample_keys(self, nbeats):
-        keys=set()
+        samplekeys={}
         for patch in self:
             for track in patch.render(nbeats)["tracks"]:
                 for trig in track:
-                    if trig and trig["mod"]==Sampler:
-                        keys.add(trig["key"])
+                    if "key" in trig:
+                        key=trig["mod"][:2].lower() # change
+                        samplekeys.setdefault(key, set())
+                        samplekeys[key].add(trig["key"])
         def sorter(key):
             tokens=key.split(":")
             return "%s%03d" % (tokens[0], int(tokens[1]))
-        return sorted(list(keys),
-                      key=sorter)
+        return {k:sorted(list(v),
+                         key=sorter)
+                for k, v in samplekeys.items()}
 
     def render(self, banks, nbeats, filestub,
                nbreaks=0,

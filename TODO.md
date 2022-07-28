@@ -1,9 +1,8 @@
 ### short [per- instrument samplers]
 
-- refactor vitling note module name to include channel prefix
-- refactor sample_keys to work on per- channel basis
 - initialise different samplers using different sample_keys values
 - increase randomiser nbeats
+- vitling needs to include machine key to assist sample_keys function
 
 ### medium
 
@@ -93,6 +92,8 @@
 
 ### done
 
+- refactor sample_keys to work on per- channel basis
+- refactor vitling note module name to include channel prefix
 - define new samplers and links 
   - separate oh, ch samplers
 - initialise mod classes within dom using partials
