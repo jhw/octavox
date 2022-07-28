@@ -110,24 +110,22 @@ class SVProject:
     def init_modules(self,
                      proj,
                      modconfig,
-                     modclassconfig,
                      multipliers={"x": 1, "y": -2}):
         positions=self.init_layout(modconfig)
         modules={}
-        for i, item in enumerate(modconfig["modules"]):
-            modclass=modclassconfig[item["classname"]]
-            klass, kwargs = modclass["class"], modclass["kwargs"]
-            kwargs["name"]=item["name"]
+        for i, moditem in enumerate(modconfig["modules"]):
+            modklass, modkwargs = moditem["class"], moditem["kwargs"]
+            name=modkwargs["name"]=moditem["name"]
             for i, attr in enumerate(["x", "y"]):            
-                value=positions[item["name"]][i]
+                value=positions[name][i]
                 mult=multipliers[attr]
-                kwargs[attr]=int(512+128*mult*value)
-            mod=klass(**kwargs)
-            if "defaults" in item:
-                for k, v in item["defaults"].items():
+                modkwargs[attr]=int(512+128*mult*value)
+            mod=modklass(**modkwargs)
+            if "defaults" in moditem:
+                for k, v in moditem["defaults"].items():
                     mod.set_raw(k, v)
             proj.attach_module(mod)
-            modules[item["name"]]=mod
+            modules[name]=mod
         return modules
     
     def link_modules(self, proj, modconfig, modules):
@@ -196,7 +194,6 @@ class SVProject:
     def render(self,
                patches,
                modconfig,
-               modclassconfig,
                nbeats,
                nbreaks=0,
                banks=None,
@@ -204,7 +201,7 @@ class SVProject:
         proj=RVProject()
         proj.initial_bpm=globalz["bpm"]
         proj.global_volume=globalz["volume"]
-        modules=self.init_modules(proj, modconfig, modclassconfig)
+        modules=self.init_modules(proj, modconfig)
         self.link_modules(proj, modconfig, modules)
         proj.patterns=self.init_patterns(proj, modules, patches, nbeats, nbreaks)
         return proj

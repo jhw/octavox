@@ -459,12 +459,11 @@ class Patches(list):
         def init_kwargs(self, mod):
             return {"samplekeys": self.sample_keys(nbeats),
                     "banks": banks} if mod["name"]==Sampler else {}
-        modclassconfig={mod["classname"]:{"class": eval(mod["classname"]),
-                                          "kwargs": init_kwargs(self, mod)}
-                        for mod in modconfig["modules"]}
+        for mod in modconfig["modules"]:
+            mod.update({"class": eval(mod["classname"]),
+                        "kwargs": init_kwargs(self, mod)})
         project=SVProject().render(patches=self,
                                    modconfig=modconfig,
-                                   modclassconfig=modclassconfig,
                                    banks=banks,
                                    nbeats=nbeats,
                                    nbreaks=nbreaks)
