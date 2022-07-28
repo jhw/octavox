@@ -115,7 +115,7 @@ class SVProject:
         positions=self.init_layout(modconfig)
         modules={}
         for i, item in enumerate(modconfig["modules"]):
-            modclass=modclassconfig[item["class"]]
+            modclass=modclassconfig[item["classname"]]
             klass, kwargs = modclass["class"], modclass["kwargs"]
             kwargs["name"]=item["name"]
             for i, attr in enumerate(["x", "y"]):            

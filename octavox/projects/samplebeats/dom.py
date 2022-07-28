@@ -14,20 +14,20 @@ Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
 ModConfig=yaml.safe_load("""
 modules:
   - name: Sampler
-    # class: RVSampler
-    class: SVSampler
+    # classname: RVSampler
+    classname: SVSampler
   - name: Echo
-    class: RVEcho
+    classname: RVEcho
     defaults:
       dry: 256
       wet: 256
       delay: 192
   - name: Distortion
-    class: RVDistortion
+    classname: RVDistortion
     defaults:
       power: 64
   - name: Reverb
-    class: RVReverb
+    classname: RVReverb
     defaults:
       wet: 4
 links:
@@ -459,8 +459,8 @@ class Patches(list):
         def init_kwargs(self, mod):
             return {"samplekeys": self.sample_keys(nbeats),
                     "banks": banks} if mod["name"]==Sampler else {}
-        modclassconfig={mod["class"]:{"class": eval(mod["class"]),
-                                      "kwargs": init_kwargs(self, mod)}
+        modclassconfig={mod["classname"]:{"class": eval(mod["classname"]),
+                                          "kwargs": init_kwargs(self, mod)}
                         for mod in modconfig["modules"]}
         project=SVProject().render(patches=self,
                                    modconfig=modconfig,
