@@ -1,11 +1,15 @@
 ### short
 
-- sample mutation
+- remove src from filestub
+- equalizers
+- tool to dump table of samples
 
 ### medium
 
+- filestub and suffix should be generated in same place
+
+- sample mutation
 - sample stickiness
-- nouns and adjectives in filenames
 - rename s3 bucket
 - cli [notes]
 
@@ -91,6 +95,7 @@
 
 ### done
 
+- nouns and adjectives in filenames
 - initialise different samplers using different sample_keys values
 - increase randomiser nbeats
 - refactor sample_keys to work on per- channel basis

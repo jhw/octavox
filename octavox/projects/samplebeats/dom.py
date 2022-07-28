@@ -2,6 +2,8 @@ from rv.modules.echo import Echo as RVEcho
 from rv.modules.distortion import Distortion as RVDistortion
 from rv.modules.reverb import Reverb as RVReverb
 
+from octavox.projects import Nouns, Adjectives
+
 from octavox.modules.sampler import SVSampler
 from octavox.modules.project import SVProject
 
@@ -460,7 +462,9 @@ class Patches(list):
 
     def render(self, banks, nbeats, filestub,
                nbreaks=0,
-               modconfig=ModConfig):
+               modconfig=ModConfig,
+               nouns=Nouns,
+               adjectives=Adjectives):
         for path in ["tmp",
                      "tmp/samplebeats",
                      "tmp/samplebeats/projects",
@@ -482,10 +486,14 @@ class Patches(list):
                                    banks=banks,
                                    nbeats=nbeats,
                                    nbreaks=nbreaks)
-        projfile="tmp/samplebeats/projects/%s.sunvox" % filestub
+        suffix="%s-%s" % (random.choice(adjectives),
+                          random.choice(nouns))
+        projfile="tmp/samplebeats/projects/%s-%s.sunvox" % (filestub,
+                                                            suffix)
         with open(projfile, 'wb') as f:
             project.write_to(f)
-        patchfile="tmp/samplebeats/patches/%s.json" % filestub
+        patchfile="tmp/samplebeats/patches/%s-%s.json" % (filestub,
+                                                          suffix)
         with open(patchfile, 'w') as f:
             f.write(json.dumps(self,
                                indent=2))
