@@ -33,7 +33,7 @@ if __name__=="__main__":
           description: "n(patches)"
           type: int
           min: 1
-          default: 8
+          default: 16
         """)
         kwargs=cli(cliconf)
         banks=PicoBanks(root="tmp/banks/pico")

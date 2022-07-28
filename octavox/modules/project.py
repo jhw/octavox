@@ -114,9 +114,7 @@ class SVProject:
         positions=self.init_layout(modconfig)
         modules={}
         for i, moditem in enumerate(modconfig["modules"]):
-            modklass, modkwargs = moditem["class"], moditem["kwargs"]
-            name=moditem["name"]
-            mod=modklass(**modkwargs)
+            mod, name = moditem["instance"], moditem["name"]
             setattr(mod, "name", name)
             for i, attr in enumerate(["x", "y"]):            
                 value=positions[name][i]

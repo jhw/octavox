@@ -460,12 +460,11 @@ class Patches(list):
                      "tmp/samplebeats/patches"]:
             if not os.path.exists(path):
                 os.makedirs(path)
-        def init_kwargs(self, mod):
-            return {"samplekeys": self.sample_keys(nbeats),
-                    "banks": banks} if mod["name"]==Sampler else {}
         for mod in modconfig["modules"]:
-            mod.update({"class": eval(mod["classname"]),
-                        "kwargs": init_kwargs(self, mod)})
+            klass=eval(mod["classname"])
+            kwargs={"samplekeys": self.sample_keys(nbeats),
+                    "banks": banks} if mod["name"]==Sampler else {}
+            mod["instance"]=klass(**kwargs)
         project=SVProject().render(patches=self,
                                    modconfig=modconfig,
                                    banks=banks,
