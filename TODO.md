@@ -1,20 +1,19 @@
 ### short
 
-- sort sample keys properly
+- initialise mod classes within dom using partials
+  - remove module imports at render level
 
 ### medium
-
-- partial instantiation
-  - https://stackoverflow.com/questions/38911146/python-equivalent-of-functools-partial-for-a-class-constructor
 
 - per- instrument samplers
 - add back sample mutation
 - nouns and adjectives in filenames
+- rename s3 bucket
 - cli [notes]
-- sample blacklist
 
 ### long
 
+- sample blacklist
 - vitling 303
 - city dreams bass
 - euclidian/bjorklund beats
@@ -92,6 +91,9 @@
 
 ### done
 
+- partial instantiation
+  - https://stackoverflow.com/questions/38911146/python-equivalent-of-functools-partial-for-a-class-constructor
+- sort sample keys properly
 - combine modconfig, modclassconfig
 - pass modules to link_modules
 - replace refs to proj.modules with internal modmap

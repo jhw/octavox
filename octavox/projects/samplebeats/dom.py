@@ -445,7 +445,11 @@ class Patches(list):
                 for trig in track:
                     if trig and trig["mod"]==Sampler:
                         keys.add(trig["key"])
-        return sorted(list(keys))
+        def sorter(key):
+            tokens=key.split(":")
+            return "%s%03d" % (tokens[0], int(tokens[1]))
+        return sorted(list(keys),
+                      key=sorter)
 
     def render(self, banks, nbeats, filestub,
                nbreaks=0,
