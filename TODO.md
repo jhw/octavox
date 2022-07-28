@@ -1,20 +1,19 @@
 ### short
 
-- remove src from filestub
+- filestub and suffix should be generated in same place
+
 - tool to dump table of samples
 
 ### medium
 
-- filestub and suffix should be generated in same place
-
+- more intelligent layout engine
 - sample mutation
-- sample stickiness
 - rename s3 bucket
 - cli [notes]
+- sample stickiness
 
 ### long
 
-- sample blacklist
 - vitling 303
 - city dreams bass
 - euclidian/bjorklund beats
@@ -94,6 +93,7 @@
 
 ### done
 
+- remove src from filestub
 - equalizers
 - nouns and adjectives in filenames
 - initialise different samplers using different sample_keys values

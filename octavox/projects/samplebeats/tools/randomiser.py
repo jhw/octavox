@@ -44,9 +44,8 @@ if __name__=="__main__":
                                   slicetemp=kwargs["slicetemp"],
                                   n=kwargs["npatches"])
         timestamp=datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
-        filestub="%s-randomiser" % timestamp
         patches.render(banks=banks,
                        nbeats=kwargs["nbeats"],
-                       filestub=filestub)
+                       filestub=timestamp)
     except RuntimeError as error:
         print ("Error: %s" % str(error))

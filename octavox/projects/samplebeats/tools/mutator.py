@@ -88,6 +88,6 @@ if __name__=="__main__":
         timestamp=datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
         patches.render(banks=banks,
                        nbeats=kwargs["nbeats"],
-                       filestub="%s-mutator" % timestamp)
+                       filestub=timestamp)
     except RuntimeError as error:
         print ("Error: %s" % str(error))
