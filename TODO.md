@@ -8,6 +8,9 @@
 
 ### medium
 
+- partial instantiation
+  - https://stackoverflow.com/questions/38911146/python-equivalent-of-functools-partial-for-a-class-constructor
+
 - per- instrument samplers
 - add back sample mutation
 - nouns and adjectives in filenames
