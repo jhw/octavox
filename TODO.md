@@ -1,6 +1,5 @@
 ### short
 
-- pass modules to link_modules
 - combine modconfig, modclassconfig
 - sort sample keys properly
 
@@ -94,6 +93,7 @@
 
 ### done
 
+- pass modules to link_modules
 - replace refs to proj.modules with internal modmap
 - renamed rendered/patchchain.py as renderer.py
 - refactor variable names within renderer

@@ -113,7 +113,7 @@ class SVProject:
                      modclassconfig,
                      multipliers={"x": 1, "y": -2}):
         positions=self.init_layout(modconfig)
-        modclasses={}
+        modules={}
         for i, item in enumerate(modconfig["modules"]):
             modclass=modclassconfig[item["class"]]
             klass, kwargs = modclass["class"], modclass["kwargs"]
@@ -127,15 +127,14 @@ class SVProject:
                 for k, v in item["defaults"].items():
                     mod.set_raw(k, v)
             proj.attach_module(mod)
-            modclasses[item["name"]]=mod
-        return modclasses
+            modules[item["name"]]=mod
+        return modules
     
-    def link_modules(self, proj, modconfig):
-        modmap={mod.name: mod.index
-                for mod in proj.modules}
+    def link_modules(self, proj, modconfig, modules):
+        output=sorted(proj.modules, key=lambda x: -x.index).pop()
         for src, dest in modconfig["links"]:
-            proj.connect(proj.modules[modmap[src]],
-                         proj.modules[modmap[dest]])
+            proj.connect(modules[src],
+                         output if dest==Output else modules[dest])
 
     def init_grid(self, patch):
         def classfn(v):
@@ -205,9 +204,9 @@ class SVProject:
         proj=RVProject()
         proj.initial_bpm=globalz["bpm"]
         proj.global_volume=globalz["volume"]
-        modclasses=self.init_modules(proj, modconfig, modclassconfig)
-        self.link_modules(proj, modconfig)
-        proj.patterns=self.init_patterns(proj, modclasses, patches, nbeats, nbreaks)
+        modules=self.init_modules(proj, modconfig, modclassconfig)
+        self.link_modules(proj, modconfig, modules)
+        proj.patterns=self.init_patterns(proj, modules, patches, nbeats, nbreaks)
         return proj
 
 if __name__=="__main__":
