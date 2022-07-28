@@ -1,12 +1,9 @@
-### short [per- instrument samplers]
+### short
 
-- initialise different samplers using different sample_keys values
-- increase randomiser nbeats
-- vitling needs to include machine key to assist sample_keys function
+- sample mutation
 
 ### medium
 
-- add back sample mutation
 - sample stickiness
 - nouns and adjectives in filenames
 - rename s3 bucket
@@ -26,7 +23,9 @@
 
 ### thoughts
 
-- svdrum sample chain
+- stop inferring channel key from sampler mod name ?
+  - seems okay as things are
+- svdrum sample chain ?
   - very little added value
 - `purge` option to remove samples unwanted by patterns ?
   - no it's over- optimisation
@@ -92,6 +91,8 @@
 
 ### done
 
+- initialise different samplers using different sample_keys values
+- increase randomiser nbeats
 - refactor sample_keys to work on per- channel basis
 - refactor vitling note module name to include channel prefix
 - define new samplers and links 

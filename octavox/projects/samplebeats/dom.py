@@ -17,9 +17,7 @@ modules:
     classname: SVSampler
   - name: SNSampler
     classname: SVSampler
-  - name: OHSampler
-    classname: SVSampler
-  - name: CHSampler
+  - name: HTSampler
     classname: SVSampler
   - name: Echo
     classname: RVEcho
@@ -40,9 +38,7 @@ links:
     - Echo
   - - SNSampler
     - Echo
-  - - OHSampler
-    - Echo
-  - - CHSampler
+  - - HTSampler
     - Echo
   - - Echo
     - Distortion
@@ -153,7 +149,7 @@ class VitlingGenerator:
     def add(self, notes, q, k, i, v):
         notes.setdefault(k, [])
         samplekey, volume = v
-        trig={"mod": "%sSampler" % k.upper(),
+        trig={"mod": "%sSampler" % k.upper(),              
               "key": self.samples[samplekey],
               "vel": self.volume*volume,
               "i": i+self.offset}
@@ -452,7 +448,7 @@ class Patches(list):
             for track in patch.render(nbeats)["tracks"]:
                 for trig in track:
                     if "key" in trig:
-                        key=trig["mod"][:2].lower() # change
+                        key=trig["mod"][:2].lower() # change?
                         samplekeys.setdefault(key, set())
                         samplekeys[key].add(trig["key"])
         def sorter(key):
@@ -471,10 +467,15 @@ class Patches(list):
                      "tmp/samplebeats/patches"]:
             if not os.path.exists(path):
                 os.makedirs(path)
+        samplekeys=self.sample_keys(nbeats)
         for mod in modconfig["modules"]:
             klass=eval(mod["classname"])
-            kwargs={"samplekeys": self.sample_keys(nbeats),
-                    "banks": banks} if mod["name"]==Sampler else {}
+            if "Sampler" in mod["name"]:
+                key=mod["name"][:2].lower() # change?
+                kwargs={"samplekeys": samplekeys[key],
+                        "banks": banks}
+            else:
+                kwargs={}
             mod["instance"]=klass(**kwargs)
         project=SVProject().render(patches=self,
                                    modconfig=modconfig,
