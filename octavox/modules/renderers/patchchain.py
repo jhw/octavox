@@ -131,10 +131,10 @@ class SVProject:
             modclasses[item["name"]]=mod
         return modclasses
     
-    def link_modules(self, proj, links):
+    def link_modules(self, proj, modconfig):
         modmap={mod.name: mod.index
                 for mod in proj.modules}
-        for src, dest in links:
+        for src, dest in modconfig["links"]:
             proj.connect(proj.modules[modmap[src]],
                          proj.modules[modmap[dest]])
 
@@ -212,8 +212,7 @@ class SVProject:
                                      modconfig["modules"],
                                      modconfig["links"],
                                      modclassconfig)
-        self.link_modules(proj,
-                          modconfig["links"])
+        self.link_modules(proj, modconfig)
         proj.patterns=self.init_patterns(proj, modclasses, patches, nbeats, nbreaks)
         return proj
 
