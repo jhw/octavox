@@ -1,6 +1,5 @@
 ### short
 
-- pass around mod class only in dict, not nested dict with id and class
 - refactor variable names within renderer
 - see if modconfig/modclasses can be combined 
 - sort sample keys properly
@@ -95,6 +94,7 @@
 
 ### done
 
+- pass around mod class only in dict, not nested dict with id and class
 - abstract note rendering code into sampler 
 - SVTrig rendering to call sample renderer if `id` key not present in trig
 - renderer internal module representation to be a dict with values i and class

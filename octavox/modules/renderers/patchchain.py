@@ -21,8 +21,8 @@ class SVTrig(dict):
     def render(self, modules, controllers,
                volume=128):
         mod=modules[self["mod"]]
-        trig=1+(mod["class"].lookup(self["key"]) if "key" in self else self["id"])
-        modid=1+mod["id"] # NB 1+
+        trig=1+(mod.lookup(self["key"]) if "key" in self else self["id"])
+        modid=1+mod.index # NB 1+
         vel=max(1, int(self["vel"]*volume))
         return RVNote(note=trig,
                       vel=vel,
@@ -37,7 +37,7 @@ class SVEffect(dict):
                ctrlmult=256,
                maxvalue=256*128):
         mod, controller = modules[self["mod"]], controllers[self["mod"]]
-        modid=1+mod["id"] # NB 1+
+        modid=1+mod.index # NB 1+
         ctrlid=ctrlmult*controller[self["ctrl"]]
         ctrlvalue=int(self["v"]*maxvalue) # NB **NOT** 1+
         return RVNote(module=modid,
@@ -179,8 +179,7 @@ class SVProject:
         return controllers
 
     def init_patterns(self, proj, klasses, patches, nbeats, nbreaks):
-        modmap={mod.name: {"id": mod.index,
-                           "class": klasses[mod.name] if mod.name in klasses else None}
+        modmap={mod.name: klasses[mod.name] if mod.name in klasses else None
                 for mod in proj.modules}
         ctrlmap=self.init_controllers(proj.modules)
         offset=SVOffset()
