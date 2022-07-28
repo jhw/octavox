@@ -133,9 +133,7 @@ class VitlingGenerator:
     def __init__(self, key, offset, samples, volume=1):
         self.key=key
         self.offset=offset
-        self.samples={k: {"mod": Sampler,
-                          "key": v}
-                      for k, v in samples.items()}
+        self.samples=samples
         self.volume=volume
 
     def generate(self, notes, style, q, n):
@@ -144,11 +142,12 @@ class VitlingGenerator:
             fn(notes, q, i)
 
     def add(self, notes, q, k, i, v):
-        samplekey, volume = v
-        trig=dict(self.samples[samplekey])
-        trig["vel"]=self.volume*volume
-        trig["i"]=i+self.offset
         notes.setdefault(k, [])
+        samplekey, volume = v
+        trig={"mod": Sampler,
+              "key": self.samples[samplekey],
+              "vel": self.volume*volume,
+              "i": i+self.offset}
         notes[k].append(trig)
 
     def fourfloor(self, notes, q, i, k=Kick):
@@ -214,11 +213,11 @@ class SampleHoldGenerator:
             fn(notes, q, i)
 
     def add(self, notes, k, i, v):
+        notes.setdefault(k, [])
         trig={"mod": self.mod,
               "ctrl": k,
               "v": v,
               "i": i+self.offset}
-        notes.setdefault(k, [])
         notes[k].append(trig)
 
     def sample_hold(self, notes, q, i):

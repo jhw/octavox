@@ -1,12 +1,16 @@
-### short
+### short [per- instrument samplers]
 
-- initialise mod classes within dom using partials
-  - remove module imports at render level
+- define new samplers and links 
+  - separate oh, ch samplers
+- refactor vitling note module name to include channel prefix
+- refactor sample_keys to work on per- channel basis
+- initialise different samplers using different sample_keys values
+- increase randomiser nbeats
 
 ### medium
 
-- per- instrument samplers
 - add back sample mutation
+- sample stickiness
 - nouns and adjectives in filenames
 - rename s3 bucket
 - cli [notes]
@@ -91,6 +95,8 @@
 
 ### done
 
+- initialise mod classes within dom using partials
+  - remove module imports at render level
 - partial instantiation
   - https://stackoverflow.com/questions/38911146/python-equivalent-of-functools-partial-for-a-class-constructor
 - sort sample keys properly
