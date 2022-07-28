@@ -1,6 +1,5 @@
 ### short
 
-- refactor variable names within renderer
 - see if modconfig/modclasses can be combined 
 - sort sample keys properly
 
@@ -94,6 +93,7 @@
 
 ### done
 
+- refactor variable names within renderer
 - pass around mod class only in dict, not nested dict with id and class
 - abstract note rendering code into sampler 
 - SVTrig rendering to call sample renderer if `id` key not present in trig

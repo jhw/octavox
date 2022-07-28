@@ -111,12 +111,12 @@ class SVProject:
                      proj,
                      modules,
                      links,
-                     modclasses,
+                     modclassconfig,
                      multipliers={"x": 1, "y": -2}):
         positions=self.init_layout(modules, links)
-        klasses={}
+        modclasses={}
         for i, item in enumerate(modules):
-            modclass=modclasses[item["class"]]
+            modclass=modclassconfig[item["class"]]
             klass, kwargs = modclass["class"], modclass["kwargs"]
             kwargs["name"]=item["name"]
             for i, attr in enumerate(["x", "y"]):            
@@ -128,8 +128,8 @@ class SVProject:
                 for k, v in item["defaults"].items():
                     mod.set_raw(k, v)
             proj.attach_module(mod)
-            klasses[item["name"]]=mod
-        return klasses
+            modclasses[item["name"]]=mod
+        return modclasses
     
     def link_modules(self, proj, links):
         modmap={mod.name: mod.index
@@ -178,8 +178,8 @@ class SVProject:
                 controllers[mod.name][controller.name]=controller.number
         return controllers
 
-    def init_patterns(self, proj, klasses, patches, nbeats, nbreaks):
-        modmap={mod.name: klasses[mod.name] if mod.name in klasses else None
+    def init_patterns(self, proj, modclasses, patches, nbeats, nbreaks):
+        modmap={mod.name: modclasses[mod.name] if mod.name in modclasses else None
                 for mod in proj.modules}
         ctrlmap=self.init_controllers(proj.modules)
         offset=SVOffset()
@@ -200,7 +200,7 @@ class SVProject:
     def render(self,
                patches,
                modconfig,
-               modclasses,
+               modclassconfig,
                nbeats,
                nbreaks=0,
                banks=None,
@@ -208,13 +208,13 @@ class SVProject:
         proj=RVProject()
         proj.initial_bpm=globalz["bpm"]
         proj.global_volume=globalz["volume"]
-        klasses=self.init_modules(proj,
-                                  modconfig["modules"],
-                                  modconfig["links"],
-                                  modclasses)
+        modclasses=self.init_modules(proj,
+                                     modconfig["modules"],
+                                     modconfig["links"],
+                                     modclassconfig)
         self.link_modules(proj,
                           modconfig["links"])
-        proj.patterns=self.init_patterns(proj, klasses, patches, nbeats, nbreaks)
+        proj.patterns=self.init_patterns(proj, modclasses, patches, nbeats, nbreaks)
         return proj
 
 if __name__=="__main__":
