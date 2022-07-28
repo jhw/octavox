@@ -115,12 +115,13 @@ class SVProject:
         modules={}
         for i, moditem in enumerate(modconfig["modules"]):
             modklass, modkwargs = moditem["class"], moditem["kwargs"]
-            name=modkwargs["name"]=moditem["name"]
+            name=moditem["name"]
+            mod=modklass(**modkwargs)
+            setattr(mod, "name", name)
             for i, attr in enumerate(["x", "y"]):            
                 value=positions[name][i]
                 mult=multipliers[attr]
-                modkwargs[attr]=int(512+128*mult*value)
-            mod=modklass(**modkwargs)
+                setattr(mod, attr, int(512+128*mult*value))
             if "defaults" in moditem:
                 for k, v in moditem["defaults"].items():
                     mod.set_raw(k, v)
