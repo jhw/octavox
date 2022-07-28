@@ -1,5 +1,6 @@
 ### short
 
+- renamed rendered/patchchain.py as renderer.py
 - replace refs to proj.modules with internal modmap
 - combine modconfig, modclassconfig
 - sort sample keys properly
