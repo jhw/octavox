@@ -58,7 +58,8 @@ class ModGrid(dict):
 
     @classmethod
     def all(self, sz):
-        return [(x, y)
+        offset=int(sz/2)
+        return [(x-offset, y-offset)
                 for y in range(sz)
                 for x in range(sz)]
     

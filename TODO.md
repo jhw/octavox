@@ -1,10 +1,9 @@
 ### short
 
-- sample mutution
-
 ### medium
 
-- new "neighbour" grid manager
+- manually curate pico samples
+- improved colour flow
 - tool to dump table of samples
 - rename s3 bucket
 - cli [notes]
@@ -24,7 +23,13 @@
 
 ### thoughts
 
-- remove randomise seed
+- sample mutution ?
+  - no because you would really need to know profile
+  - beter way would be to increase number of slices, even if unused
+- new "neighbour" grid manager ?
+  - no current grid manager is fine
+- remove randomise seed ?
+  - no is useful
 - randomise sample sets within a machine (dsample?) 
   - probably a bit excessive for now
 - stop inferring channel key from sampler mod name ?
