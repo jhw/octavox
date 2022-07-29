@@ -1,10 +1,9 @@
 ### short
 
-- improved layout engine
+- tool to dump table of samples
 
 ### medium
 
-- tool to dump table of samples
 - sample mutation
 - rename s3 bucket
 - cli [notes]
@@ -91,6 +90,7 @@
 
 ### done
 
+- improved layout engine
 - filestub and suffix should be generated in same place
 - remove src from filestub
 - equalizers
