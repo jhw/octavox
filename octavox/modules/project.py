@@ -81,7 +81,9 @@ class ModGrid(dict):
 
     @property
     def allocated(self):
-        return list(self.values())
+        allocated=set(self.values())
+        allocated.add((0, 0))
+        return list(allocated)
 
     @property
     def unallocated(self):

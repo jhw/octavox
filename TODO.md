@@ -1,12 +1,12 @@
 ### short
 
-- see if output can be moved to center
 - remove existing randomise samples code
 - remove randomise seed
 - dsample mutation variable
 
 ### medium
 
+- new "neighbour" grid manager
 - tool to dump table of samples
 - rename s3 bucket
 - cli [notes]
@@ -96,6 +96,7 @@
 
 ### done
 
+- mod (0, 0) is getting double counted
 - improved layout engine
 - filestub and suffix should be generated in same place
 - remove src from filestub
