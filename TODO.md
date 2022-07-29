@@ -1,13 +1,15 @@
 ### short
 
-- tool to dump table of samples
+- randomise slice order within a machine (dslice?)
+- randomise sample sets within a machine (dsample?)
 
 ### medium
 
-- sample mutation
+- tool to dump table of samples
 - rename s3 bucket
 - cli [notes]
 - sample stickiness
+- sample blacklist
 
 ### long
 

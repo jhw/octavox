@@ -122,8 +122,8 @@ class SVProject:
         return [min(255, max(0, rgb+random.choice(values)))
                 for rgb in  color]
 
-    def init_layout(self, modconfig, n=1000):
-        def shuffle(grid, links, q=5):
+    def init_layout(self, modconfig, qmax=5, n=1000):
+        def shuffle(grid, links, q):
             clone=grid.clone()
             clone.shuffle(q)
             distance=clone.rms_distance(links)
@@ -134,7 +134,8 @@ class SVProject:
         links=modconfig["links"]
         best=grid.rms_distance(links)
         for i in range(n):
-            clones=sorted([shuffle(grid, links)
+            q=int(math.ceil(qmax*(n-i)/n))
+            clones=sorted([shuffle(grid, links, q)
                            for i in range(10)],
                           key=lambda x: -x[1])
             newgrid, newbest = clones[-1]
