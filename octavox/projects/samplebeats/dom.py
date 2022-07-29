@@ -46,7 +46,7 @@ links:
   - - KKSampler
     - KKEqualiser
   - - SNSampler
-    - KKEqualiser
+    - SNEqualiser
   - - HTSampler
     - HTEqualiser
   - - KKEqualiser
