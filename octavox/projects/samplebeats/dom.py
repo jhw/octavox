@@ -323,7 +323,7 @@ class Slice(dict):
         return {"ranges": {"wet": [0, 1],
                            "feedback": [0, 1]}}
             
-    def render(self, key, genkey, notes, nbeats, offset):
+    def render(self, notes, key, genkey, nbeats, offset):
         genkwargsfn=getattr(self, "%s_kwargs" % genkey)
         genkwargs=genkwargsfn(key, offset)
         genclass=eval(hungarorise("%s_generator" % genkey))
@@ -396,7 +396,7 @@ class Tracks(dict):
         return sorted([key for key in self["keys"]
                        if key not in self["mutes"]])
                 
-    def render(self, patch, nbeats, config=MachineConfig):
+    def render(self, nbeats, config=MachineConfig):
         notes={}
         for key in self.renderkeys:
             genkey=config[key]["generator"]
@@ -406,9 +406,9 @@ class Tracks(dict):
             for item in pattern.expanded:
                 slice=self["slices"][item["i"]]
                 nsamplebeats=item["n"]*multiplier
-                slice.render(key, genkey, notes, nsamplebeats, offset)
+                slice.render(notes, key, genkey, nsamplebeats, offset)
                 offset+=nsamplebeats
-        patch["tracks"]+=list(notes.values())
+        return notes
                 
 class Patch(dict):
 
@@ -434,10 +434,10 @@ class Patch(dict):
                 machine.randomise_seed(limits["seed"])
     
     def render(self, nbeats):
-        patch={"n": nbeats,
+        struct={"n": nbeats,
                "tracks": []}
-        self["tracks"].render(patch, nbeats)
-        return patch
+        struct["tracks"]+=list(self["tracks"].render(nbeats).values())
+        return struct
         
 class Patches(list):
 
