@@ -10,7 +10,8 @@ def randomise_patches(roots, kwargs):
     def init_patch(root, kwargs, mutate):
         patch=root.clone()
         if mutate:
-            patch.mutate(limits={"pat": kwargs["dpat"],
+            patch.mutate(limits={"samples": kwargs["dsamples"],
+                                 "pat": kwargs["dpat"],
                                  "mute": kwargs["dmute"],
                                  "seed": kwargs["dseed"],
                                  "style": kwargs["dstyle"]},
@@ -48,6 +49,12 @@ if __name__=="__main__":
           min: 0
           max: 1
           default: 1
+        - key: dsamples
+          description: "d(samples)"
+          type: float
+          min: 0
+          max: 1
+          default: 0.5
         - key: dpat
           description: "d(pat)"
           type: float

@@ -1,7 +1,7 @@
 ### short
 
-- remove randomise seed
-- dsample mutation variable
+- rename sample mutation as shuffle
+- sample mutution
 
 ### medium
 
@@ -25,6 +25,7 @@
 
 ### thoughts
 
+- remove randomise seed
 - randomise sample sets within a machine (dsample?) 
   - probably a bit excessive for now
 - stop inferring channel key from sampler mod name ?
@@ -95,6 +96,7 @@
 
 ### done
 
+- dsample mutation variable
 - remove existing randomise samples code
 - mod (0, 0) is getting double counted
 - improved layout engine
