@@ -1,6 +1,5 @@
 ### short
 
-- rename sample mutation as shuffle
 - sample mutution
 
 ### medium
@@ -96,6 +95,7 @@
 
 ### done
 
+- rename sample mutation as shuffle
 - dsample mutation variable
 - remove existing randomise samples code
 - mod (0, 0) is getting double counted

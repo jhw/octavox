@@ -341,7 +341,7 @@ class Slices(list):
     def clone(self):
         return Slices(self)
 
-    def randomise_samples(self, limit):
+    def shuffle_samples(self, limit):
         if random.random() < limit:
             samples=sorted([slice["samples"]
                             for slice in self],
@@ -431,7 +431,7 @@ class Patch(dict):
     def mutate(self, limits, slicetemp):
         self["tracks"].randomise_pattern(limits["pat"], slicetemp)
         self["tracks"].randomise_mutes(limits["mute"])
-        self["tracks"]["slices"].randomise_samples(limits["samples"])
+        self["tracks"]["slices"].shuffle_samples(limits["samples"])
         for slice in self["tracks"]["slices"]:
             for machine in slice["machines"]:
                 machine.randomise_style(limits["style"])
