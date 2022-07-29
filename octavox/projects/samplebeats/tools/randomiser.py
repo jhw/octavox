@@ -4,7 +4,9 @@ from octavox.projects.samplebeats.dom import Patches
 
 from octavox.projects.samplebeats.tools import Profiles, Randomiser
 
-import datetime, yaml
+from octavox.projects import Nouns, Adjectives
+
+import datetime, random, yaml
     
 if __name__=="__main__":
     try:
@@ -43,9 +45,11 @@ if __name__=="__main__":
         patches=Patches.randomise(randomiser=randomiser,
                                   slicetemp=kwargs["slicetemp"],
                                   n=kwargs["npatches"])
-        timestamp=datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
+        filename="%s-%s-%s" % (datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S"),
+                               random.choice(Adjectives),
+                               random.choice(Nouns))
         patches.render(banks=banks,
                        nbeats=kwargs["nbeats"],
-                       filestub=timestamp)
+                       filename=filename)
     except RuntimeError as error:
         print ("Error: %s" % str(error))

@@ -1,8 +1,10 @@
 from octavox.projects.samplebeats.dom import Patches
 
+from octavox.projects import Nouns, Adjectives
+
 from octavox.modules.sampler import SVBanks
 
-import datetime, json, yaml
+import datetime, json, random, yaml
 
 def randomise_patches(roots, kwargs):
     def init_patch(root, kwargs, mutate):
@@ -84,10 +86,12 @@ if __name__=="__main__":
         kwargs=cli(cliconf)
         roots=Patches(json.loads(open(kwargs["src"]).read()))
         patches=randomise_patches(roots, kwargs)
-        banks=SVBanks(root="tmp/banks/pico")
-        timestamp=datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
+        banks=SVBanks(root="tmp/banks/pico")        
+        filename="%s-%s-%s" % (datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S"),
+                               random.choice(Adjectives),
+                               random.choice(Nouns))
         patches.render(banks=banks,
                        nbeats=kwargs["nbeats"],
-                       filestub=timestamp)
+                       filename=filename)
     except RuntimeError as error:
         print ("Error: %s" % str(error))

@@ -1,12 +1,10 @@
 ### short
 
-- filestub and suffix should be generated in same place
-
-- tool to dump table of samples
+- improved layout engine
 
 ### medium
 
-- more intelligent layout engine
+- tool to dump table of samples
 - sample mutation
 - rename s3 bucket
 - cli [notes]
@@ -93,6 +91,7 @@
 
 ### done
 
+- filestub and suffix should be generated in same place
 - remove src from filestub
 - equalizers
 - nouns and adjectives in filenames
