@@ -1,6 +1,5 @@
 ### short
 
-- remove existing randomise samples code
 - remove randomise seed
 - dsample mutation variable
 
@@ -96,6 +95,7 @@
 
 ### done
 
+- remove existing randomise samples code
 - mod (0, 0) is getting double counted
 - improved layout engine
 - filestub and suffix should be generated in same place

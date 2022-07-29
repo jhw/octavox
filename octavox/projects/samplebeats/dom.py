@@ -137,11 +137,6 @@ class Samples(dict):
     def clone(self):
         return Samples(self)
 
-    def randomise_samples(self, limit, samples):
-        for key in self.keys():
-            if random.random() < limit:
-                self[key]=samples[key]
-
 """
 - https://github.com/vitling/acid-banger/blob/main/src/pattern.ts
 """
