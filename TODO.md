@@ -1,7 +1,9 @@
 ### short
 
-- randomise slice order within a machine (dslice?)
-- randomise sample sets within a machine (dsample?)
+- see if output can be moved to center
+- remove existing randomise samples code
+- remove randomise seed
+- dsample mutation variable
 
 ### medium
 
@@ -24,6 +26,8 @@
 
 ### thoughts
 
+- randomise sample sets within a machine (dsample?) 
+  - probably a bit excessive for now
 - stop inferring channel key from sampler mod name ?
   - seems okay as things are
 - svdrum sample chain ?
