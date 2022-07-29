@@ -78,11 +78,6 @@ class ModGrid(dict):
             total+=distance
         return total
 
-    def normalise(self):
-        return {k: tuple([v1-v0
-                          for v1, v0 in zip(v, self[Output])])
-                for k, v in self.items()}
-        
 class SVProject:
 
     def random_color(self, offset):
@@ -105,7 +100,7 @@ class SVProject:
         def randomise(modnames, links):
             grid=ModGrid.randomise(modnames)
             distance=grid.rms_distance(links)
-            return (grid.normalise(), distance)
+            return (grid, distance)
         modnames=[mod["name"] for mod in modconfig["modules"]]
         modnames.append(Output)
         return sorted([randomise(modnames, modconfig["links"])
