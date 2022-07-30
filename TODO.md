@@ -2,6 +2,8 @@
 
 ### medium
 
+- merge banks and randomiser
+- add back sample mutation
 - manually curate pico samples
 - improved colour flow
 - tool to dump table of samples
@@ -23,80 +25,46 @@
 
 ### thoughts
 
-- sample mutution ?
-  - no because you would really need to know profile
-  - beter way would be to increase number of slices, even if unused
 - new "neighbour" grid manager ?
   - no current grid manager is fine
 - remove randomise seed ?
   - no is useful
-- randomise sample sets within a machine (dsample?) 
-  - probably a bit excessive for now
 - stop inferring channel key from sampler mod name ?
   - seems okay as things are
 - svdrum sample chain ?
   - very little added value
 - `purge` option to remove samples unwanted by patterns ?
   - no it's over- optimisation
-- add pattern shuffle option to mutator ?
-  - no; think it's just the same as pattern mutation
 - remove custom pattern format ?
   - no it seems useful
-- patch names (noun, adj) ?
-  - might not be relevant in new cli world
 - pico UI classifier gist ?
   - not clear it's better than the existing script
-- banks wrapper to load wavs+curated/index ?
-  - not clear they should be the same object
 - use kick, snare etc key names ?
   - too much of a pain given samples use the same
 - degrade ?
   - not sure it really fits 
 - s&h volatility parameter ?
   - doesn't quite seem to fit here
-- merge blender into mutator ?
-  - blender hasn't really come up with anything good at this stage
 - consider replacing keys with mutes ?
   - probably sub- optimal at this stage
 - binary s&h ? 
   - think is too extreme
   - better to have a large range of mutator outputs
-- center modules on grid center rather than output ?
-  - probably not worth it now
 - s3 utils for favourites ?
   - may require pico samples refactoring
   - feels like you shouldn't save and should keep everything ephemeral for now
-- script to dump samples mapping ?
-  - feels like overkill for now
 - output format versioning  ?
-  - feels like overkill for now
-- ability to fix/specify certain samples ?
   - feels like overkill for now
 - coloured modules ? 
   - overkill
 - modules are overlapping ?
   - is a window boundary thing
-- turn down svdrum samples ?
-  - no; not worth it; just manually turn down SVDrum volume in UI
 - pass keys to samples ?
   - no because sample keys are different from machine keys - oh/ch etc
-- check why kick samples have id variation even at low temp
-  - its the hat line not the kick line!
-- blender script ?
-  - not clear its useful
 - validate trigs against module config ?
   - no one will ever use this apart from u so seems overkill
-- echo wet on/off style ?
-  - seems too explicit
-- per- machine SVDrum/Sampler modules ?
-  - probably overkill
-  - would be useful for sv- level muting but that's really the OT's job
 - initialise vitling generator with specific set of styles ? 
   - no because style info is part of machine
-- mutes ?
-  - don't think its consistent with cli options for different channels
-- degrade ?
-  - don't think it's really consistent with slices
 
 ### done
 
