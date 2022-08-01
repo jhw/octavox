@@ -2,11 +2,9 @@
 
 ### medium
 
-- consider moving position of banks class
-
+- package as sunsynth
 - add back sample mutation
 - manually curate pico samples
-- improved colour flow
 - tool to dump table of samples
 - rename s3 bucket
 - cli [notes]
@@ -26,6 +24,9 @@
 
 ### thoughts
 
+- improved colour flow ?
+  - can't be bothered
+- consider moving position of banks class ? 
 - new "neighbour" grid manager ?
   - no current grid manager is fine
 - remove randomise seed ?

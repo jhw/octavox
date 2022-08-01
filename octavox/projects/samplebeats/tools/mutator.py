@@ -54,31 +54,31 @@ if __name__=="__main__":
           type: float
           min: 0
           max: 1
-          default: 0.25
+          default: 0.5
         - key: dpat
           description: "d(pat)"
           type: float
           min: 0
           max: 1
-          default: 0.25
+          default: 0.5
         - key: dmute
           description: "d(mute)"
           type: float
           min: 0
           max: 1
-          default: 0.25
+          default: 0.0
         - key: dseed
           description: "d(seed)"
           type: float
           min: 0
           max: 1
-          default: 0.25
+          default: 0.5
         - key: dstyle
           description: "d(style)"
           type: float
           min: 0
           max: 1
-          default: 0.25
+          default: 0.5
         - key: nbeats
           description: "n(beats)"
           type: int

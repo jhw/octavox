@@ -8,12 +8,12 @@ import datetime, random, yaml
 
 Profiles=yaml.safe_load("""
 default:
-  kk: 0.8
-  sn: 0.8
-  oh: 0.5
-  ch: 0.5
+  kk: 0.7
+  sn: 0.7
+  oh: 0.4
+  ch: 0.4
 strict:
-  kk: 0.9
+  kk: 1.0
   sn: 1.0
   oh: 0.8
   ch: 0.8
