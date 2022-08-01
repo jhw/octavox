@@ -2,12 +2,28 @@ from octavox.samples.banks.pico import PicoBanks
 
 from octavox.projects.samplebeats.dom import Patches
 
-from octavox.projects.samplebeats.tools import Profiles, Randomiser
-
 from octavox.projects import Nouns, Adjectives
 
 import datetime, random, yaml
-    
+
+Profiles=yaml.safe_load("""
+default:
+  kk: 0.8
+  sn: 0.8
+  oh: 0.5
+  ch: 0.5
+strict:
+  kk: 0.9
+  sn: 1.0
+  oh: 0.8
+  ch: 0.8
+wild:
+  kk: 0.4
+  sn: 0.4
+  oh: 0.2
+  ch: 0.2
+""")
+
 if __name__=="__main__":
     try:
         from octavox.tools.cli import cli
@@ -38,11 +54,10 @@ if __name__=="__main__":
           default: 32
         """)
         kwargs=cli(cliconf)
-        banks=PicoBanks(root="tmp/banks/pico")
         profile=Profiles[kwargs["profile"]]
-        randomiser=Randomiser(banks=banks,
-                              profile=profile)
-        patches=Patches.randomise(randomiser=randomiser,
+        banks=PicoBanks(profile=profile,
+                        root="tmp/banks/pico")
+        patches=Patches.randomise(banks=banks,
                                   slicetemp=kwargs["slicetemp"],
                                   n=kwargs["npatches"])
         filename="%s-%s-%s" % (datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S"),

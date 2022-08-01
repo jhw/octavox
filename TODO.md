@@ -2,7 +2,8 @@
 
 ### medium
 
-- merge banks and randomiser
+- consider moving position of banks class
+
 - add back sample mutation
 - manually curate pico samples
 - improved colour flow
@@ -68,6 +69,7 @@
 
 ### done
 
+- merge banks and randomiser
 - rename sample mutation as shuffle
 - dsample mutation variable
 - remove existing randomise samples code

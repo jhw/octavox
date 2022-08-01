@@ -128,8 +128,8 @@ class Samples(dict):
     """
     
     @classmethod
-    def randomise(self, randomiser):
-        return Samples(randomiser.randomise())
+    def randomise(self, banks):
+        return Samples(banks.randomise())
 
     def __init__(self, obj):
         dict.__init__(self, obj)
@@ -289,8 +289,8 @@ class Machines(list):
 class Slice(dict):
 
     @classmethod
-    def randomise(self, keys, randomiser):
-        return Slice(samples=Samples.randomise(randomiser),
+    def randomise(self, keys, banks):
+        return Slice(samples=Samples.randomise(banks),
                      machines=Machines.randomise(keys))
     
     def __init__(self, samples, machines):
@@ -330,8 +330,8 @@ class Slice(dict):
 class Slices(list):
 
     @classmethod
-    def randomise(self, keys, randomiser, n=4):
-        return Slices([Slice.randomise(keys, randomiser)
+    def randomise(self, keys, banks, n=4):
+        return Slices([Slice.randomise(keys, banks)
                        for i in range(n)])
     
     def __init__(self, slices):
@@ -366,10 +366,10 @@ class PatternMap(dict):
 class Tracks(dict):
 
     @classmethod
-    def randomise(self, keys, mutes,  randomiser, slicetemp):
+    def randomise(self, keys, mutes,  banks, slicetemp):
         return Tracks(keys=keys,
                       mutes=mutes,
-                      slices=Slices.randomise(keys, randomiser),
+                      slices=Slices.randomise(keys, banks),
                       patterns=PatternMap.randomise(keys, slicetemp))
         
     def __init__(self, keys, mutes, slices, patterns):
@@ -416,10 +416,10 @@ class Tracks(dict):
 class Patch(dict):
 
     @classmethod
-    def randomise(self, keys, mutes, randomiser, slicetemp):
+    def randomise(self, keys, mutes, banks, slicetemp):
         return Patch(tracks=Tracks.randomise(keys,
                                              mutes,
-                                             randomiser,
+                                             banks,
                                              slicetemp))
     
     def __init__(self, tracks):
@@ -446,12 +446,12 @@ class Patch(dict):
 class Patches(list):
 
     @classmethod
-    def randomise(self, randomiser, slicetemp, n,
+    def randomise(self, banks, slicetemp, n,
                   keys= "kk|sn|ht|ec".split("|"),
                   mutes=[]):
         return Patches([Patch.randomise(keys,
                                         mutes,
-                                        randomiser,
+                                        banks,
                                         slicetemp)
                         for i in range(n)])
     
