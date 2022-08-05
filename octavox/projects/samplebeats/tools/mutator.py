@@ -1,8 +1,10 @@
 from octavox.projects.samplebeats.dom import Patches
 
-from octavox.projects import Nouns, Adjectives
+from octavox.projects.samplebeats.pico import PicoBanks
 
-from octavox.modules.sampler import SVBanks
+from octavox.projects.samplebeats.tools import Profiles
+
+from octavox.projects import Nouns, Adjectives
 
 import datetime, json, random, yaml
 
@@ -93,7 +95,9 @@ if __name__=="__main__":
         kwargs=cli(cliconf)
         roots=Patches(json.loads(open(kwargs["src"]).read()))
         patches=randomise_patches(roots, kwargs)
-        banks=SVBanks(root="tmp/banks/pico")        
+        profile=Profiles[kwargs["profile"]]
+        banks=PicoBanks(profile=profile,
+                        root="tmp/banks/pico")
         filename="%s-%s-%s" % (datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S"),
                                random.choice(Adjectives),
                                random.choice(Nouns))

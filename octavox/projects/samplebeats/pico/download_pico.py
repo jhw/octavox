@@ -1,6 +1,6 @@
 import boto3, os
 
-def download_pico(s3, bucketname):
+def download_samples(s3, bucketname):
     paginator=s3.get_paginator("list_objects_v2")
     pages=paginator.paginate(Bucket=bucketname)
     for struct in pages:
@@ -23,6 +23,6 @@ if __name__=="__main__":
                      "tmp/banks/pico"]:
             if not os.path.exists(path):
                 os.makedirs(path)            
-        download_pico(s3, bucketname)
+        download_samples(s3, bucketname)
     except RuntimeError as error:
         print ("Error: %s" % (str(error)))

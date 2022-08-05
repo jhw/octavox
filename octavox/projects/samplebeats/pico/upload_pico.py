@@ -2,7 +2,7 @@ import boto3, os
 
 Region="eu-west-1"
 
-def upload_pico(s3, bucketname):
+def upload_samples(s3, bucketname):
     for filename in os.listdir("tmp/banks/pico"):
         if not filename.endswith(".zip"):
             continue
@@ -18,6 +18,6 @@ if __name__=="__main__":
             raise RuntimeError("please enter bucket name")
         bucketname=sys.argv[1]
         s3=boto3.client("s3")
-        upload_pico(s3, bucketname)
+        upload_samples(s3, bucketname)
     except RuntimeError as error:
         print ("Error: %s" % (str(error)))
