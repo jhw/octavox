@@ -1,14 +1,13 @@
 ### short
 
+- shuffle slices not just slice samples
+- cli
+
 ### medium
 
 - package as sunsynth
-- add back sample mutation
-- manually curate pico samples
 - tool to dump table of samples
-- rename s3 bucket
-- cli [notes]
-- sample stickiness
+- sample stickiness, blacklist
 - sample blacklist
 
 ### long
@@ -24,6 +23,10 @@
 
 ### thoughts
 
+- rename s3 bucket ?
+  - not worth it
+- manually curate pico samples ?
+  - not worth it
 - improved colour flow ?
   - can't be bothered
 - consider moving position of banks class ? 
@@ -70,6 +73,7 @@
 
 ### done
 
+- move all pico stuff into samplebeats
 - merge banks and randomiser
 - rename sample mutation as shuffle
 - dsample mutation variable

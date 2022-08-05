@@ -7,7 +7,7 @@ class PicoBanks(SVBanks):
     def __init__(self,
                  profile,
                  root="tmp/banks/pico",
-                 indexfile="octavox/projects/samplebeats/pico/curated.yaml"):
+                 indexfile="octavox/projects/samplebeats/banks/pico/curated.yaml"):
         SVBanks.__init__(self, root)
         self.index=yaml.safe_load(open(indexfile).read())
         self.profile=profile

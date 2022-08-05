@@ -1,6 +1,6 @@
 from octavox.projects.samplebeats.dom import Patches
 
-from octavox.projects.samplebeats.pico import PicoBanks
+from octavox.projects.samplebeats.banks.pico import PicoBanks
 
 from octavox.projects.samplebeats.tools import Profiles
 
