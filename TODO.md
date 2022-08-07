@@ -8,7 +8,6 @@
 - package as sunsynth
 - tool to dump table of samples
 - sample stickiness, blacklist
-- sample blacklist
 
 ### long
 
