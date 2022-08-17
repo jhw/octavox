@@ -1,9 +1,9 @@
 ### short
 
-- single get/set param action
+- separate parse_line, wrap_action decorators
 - optimistic value parsing
-- [param] type checking against config
-- profile [enum] param
+- new decorator to validate params
+- support for enum params (profile)
 - list params
 
 - stop dumping patch to JSON
