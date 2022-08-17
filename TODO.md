@@ -1,13 +1,13 @@
 ### short
 
-- shuffle slices not just slice samples
-
-- layout manager switch option
-
 - cli
+
+- merge
+- arrange
 
 ### medium
 
+- layout switch to complement shuffle
 - package as sunsynth
 - tool to dump table of samples
 - sample stickiness, blacklist
@@ -77,6 +77,7 @@
 
 ### done
 
+- shuffle slices not just slice samples
 - move all pico stuff into samplebeats
 - merge banks and randomiser
 - rename sample mutation as shuffle
