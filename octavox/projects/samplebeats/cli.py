@@ -1,6 +1,31 @@
 import cmd, re, yaml
 
-DefaultParams=[]
+Parameters=yaml.safe_load("""
+slicetemp: 
+  type: float
+  value: 1
+dslices: 
+  type: float
+  value: 0.5
+dpat: 
+  type: float
+  value: 0.5
+dmute: 
+  type: float
+  value: 0.0
+dseed: 
+  type: float
+  value: 0.5
+dstyle: 
+  type: float
+  value: 0.5
+nbeats: 
+  type: int
+  value: 16
+npatches: 
+  type: int
+  value: 64
+""")
 
 class SamplebeatsShell(cmd.Cmd):
 
@@ -8,58 +33,37 @@ class SamplebeatsShell(cmd.Cmd):
 
     prompt=">>> "
 
-    def __init__(self, params=DefaultParams):
+    def __init__(self, params=Parameters):
         cmd.Cmd.__init__(self)
         self.params=params
         self.stack=[]
 
-    def wrap_action(params=[]):
-        def parse_int(v, param):
-            if not re.match("\\-?\\d+", v):
-                raise RuntimeError("%s is not an int" % v)
-            return int(v)
-        def parse_float(v, param):
-            if not re.match("\\-?\\d+(\\.\\d+)?", v):
-                raise RuntimeError("%s is not a float" % v)
-            return float(v)
-        def parse_value(v, param):
-            if "type" not in param:
-                return v
-            elif param["type"]=="int":
-                return parse_int(v, param)
-            elif param["type"]=="float":
-                return parse_float(v, param)
-            else:
-                return v
+    def wrap_action(keys=[]):
         def decorator(fn):            
             def wrapped(self, line):
                 try:
-                    args=[tok for tok in line.split(" ")
-                          if tok!='']
-                    if len(args) < len(params):
-                        paramnames=[param["name"]
-                                    for param in params]
-                        raise RuntimeError("please enter %s" % ", ".join(paramnames))
-                    kwargs={param["name"]:parse_value(v, param)
-                            for param, v in zip(params, args[:len(params)])}
+                    args=[tok for tok in line.split(" ") if tok!='']
+                    if len(args) < len(keys):
+                        raise RuntimeError("please enter %s" % ", ".join(keys))
+                    kwargs={k:v for k, v in zip(keys, args[:len(keys)])}
                     return fn(self, **kwargs)
                 except RuntimeError as error:
                     print ("error: %s" % str(error))
             return wrapped
         return decorator
 
-    @wrap_action(params=[{"name": "key",
-                          "name": "value"}])
+    @wrap_action(keys=["key", "value"])
     def do_set_param(self, key, value):
         if key not in self.params:
             raise RuntimeError("%s not found" % key)
-        print (key, value)
+        self.params[key]["value"]=value
+        print ("%s=%s" % (key, self.params[key]["value"]))
 
-    @wrap_action(params=[{"name": "key"}])
+    @wrap_action(keys=["key"])
     def do_get_param(self, key):
         if key not in self.params:
             raise RuntimeError("%s not found" % key)
-        print (key)
+        print ("%s=%s" % (key, self.params[key]["value"]))
     
     @wrap_action()
     def do_randomise(self, **kwargs):

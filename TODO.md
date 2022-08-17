@@ -1,19 +1,21 @@
 ### short
 
-- undo type code and revert to keys
-- default values and types
+- single get/set param action
+- optimistic value parsing
+- [param] type checking against config
+- profile [enum] param
 - list params
+
+- stop dumping patch to JSON
+- remove existing cli
 
 ### medium
 
-- merge
-- arrange
+- tools to inspect/mute/switch specific samples
+- merge, arrange
 
 - layout switch to complement shuffle
-
-- package as sunsynth
-- tool to dump table of samples
-- sample stickiness, blacklist
+- sunsynth packaging
 
 ### long
 
@@ -21,8 +23,6 @@
 - city dreams bass
 - euclidian/bjorklund beats
 - sunvox reverb chords
-- repeats
-- caught_on_tape 808/909 sampes
 - sunvox kicker
 - noise hats
 
