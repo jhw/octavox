@@ -1,13 +1,16 @@
 ### short
 
-- cli
+- undo type code and revert to keys
+- default values and types
+- list params
+
+### medium
 
 - merge
 - arrange
 
-### medium
-
 - layout switch to complement shuffle
+
 - package as sunsynth
 - tool to dump table of samples
 - sample stickiness, blacklist
