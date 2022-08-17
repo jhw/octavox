@@ -1,6 +1,9 @@
 ### short
 
 - shuffle slices not just slice samples
+
+- layout manager switch option
+
 - cli
 
 ### medium
@@ -22,6 +25,8 @@
 
 ### thoughts
 
+- remove equalisers ?
+  - they are useful even if you don't use them
 - rename s3 bucket ?
   - not worth it
 - manually curate pico samples ?
