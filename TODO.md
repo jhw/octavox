@@ -1,8 +1,6 @@
 ### short
 
-- separate parse_line, wrap_action decorators
-- optimistic value parsing
-- new decorator to validate params
+- min/max param support
 - support for enum params (profile)
 - list params
 
@@ -80,6 +78,8 @@
 
 ### done
 
+- optimistic value parsing
+- separate parse_line, wrap_action decorators
 - shuffle slices not just slice samples
 - move all pico stuff into samplebeats
 - merge banks and randomiser

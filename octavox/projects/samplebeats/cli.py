@@ -47,12 +47,20 @@ class SamplebeatsShell(cmd.Cmd):
         return wrapped
                        
     def parse_line(keys=[]):
+        def parse_value(v):
+            if re.match("\\-?\\d+(\\.\\d+)?", v):
+                return float(v)
+            elif re.match("\\-?\\d+", v):
+                return int(v)
+            else:
+                return v
         def decorator(fn):            
             def wrapped(self, line):
                 args=[tok for tok in line.split(" ") if tok!='']
                 if len(args) < len(keys):
                     raise RuntimeError("please enter %s" % ", ".join(keys))
-                kwargs={k:v for k, v in zip(keys, args[:len(keys)])}
+                kwargs={k:parse_value(v)
+                        for k, v in zip(keys, args[:len(keys)])}
                 return fn(self, *[], **kwargs)
             return wrapped
         return decorator
@@ -62,6 +70,8 @@ class SamplebeatsShell(cmd.Cmd):
     def do_set_param(self, key, value):
         if key not in self.params:
             raise RuntimeError("%s not found" % key)
+        if eval(self.params[key]["type"])!=type(value):
+            raise RuntimeError("%s value [%s] is invalid type" % (key, value))
         self.params[key]["value"]=value
         print ("%s=%s" % (key, self.params[key]["value"]))
 
