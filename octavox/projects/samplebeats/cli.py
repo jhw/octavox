@@ -38,47 +38,54 @@ class SamplebeatsShell(cmd.Cmd):
         self.params=params
         self.stack=[]
 
-    def wrap_action(keys=[]):
+    def wrap_action(fn):
+        def wrapped(self, *args, **kwargs):
+            try:
+                return fn(self, *args, **kwargs)
+            except RuntimeError as error:
+                print ("error: %s" % str(error))
+        return wrapped
+                       
+    def parse_line(keys=[]):
         def decorator(fn):            
             def wrapped(self, line):
-                try:
-                    args=[tok for tok in line.split(" ") if tok!='']
-                    if len(args) < len(keys):
-                        raise RuntimeError("please enter %s" % ", ".join(keys))
-                    kwargs={k:v for k, v in zip(keys, args[:len(keys)])}
-                    return fn(self, **kwargs)
-                except RuntimeError as error:
-                    print ("error: %s" % str(error))
+                args=[tok for tok in line.split(" ") if tok!='']
+                if len(args) < len(keys):
+                    raise RuntimeError("please enter %s" % ", ".join(keys))
+                kwargs={k:v for k, v in zip(keys, args[:len(keys)])}
+                return fn(self, *[], **kwargs)
             return wrapped
         return decorator
 
-    @wrap_action(keys=["key", "value"])
+    @wrap_action
+    @parse_line(keys=["key", "value"])
     def do_set_param(self, key, value):
         if key not in self.params:
             raise RuntimeError("%s not found" % key)
         self.params[key]["value"]=value
         print ("%s=%s" % (key, self.params[key]["value"]))
 
-    @wrap_action(keys=["key"])
+    @wrap_action
+    @parse_line(keys=["key"])
     def do_get_param(self, key):
         if key not in self.params:
             raise RuntimeError("%s not found" % key)
         print ("%s=%s" % (key, self.params[key]["value"]))
     
-    @wrap_action()
-    def do_randomise(self, **kwargs):
+    @parse_line()
+    def do_randomise(self, *args, **kwargs):
         print ("randomise")
 
-    @wrap_action()
-    def do_mutate(self, **kwargs):
+    @parse_line()
+    def do_mutate(self, *args, **kwargs):
         print ("mutate")
 
-    @wrap_action()
-    def do_exit(self, **kwargs):
+    @parse_line()
+    def do_exit(self, *args, **kwargs):
         return self.do_quit(arg)
 
-    @wrap_action()
-    def do_quit(self, **kwargs):
+    @parse_line()
+    def do_quit(self, *args, **kwargs):
         print ("exiting")
         return True
 
