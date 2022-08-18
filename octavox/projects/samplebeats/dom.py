@@ -6,9 +6,7 @@ from rv.modules.reverb import Reverb as RVReverb
 from octavox.modules.sampler import SVSampler
 from octavox.modules.project import SVProject
 
-from octavox.projects.samplebeats.utils import *
-
-import json, math, os, yaml
+import json, math, os, random, yaml
 
 Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
 
@@ -83,6 +81,15 @@ ec:
   styles:
   - sample_hold
 """)
+
+def Q(seed):
+    q=random.Random()
+    q.seed(seed)
+    return q
+
+def hungarorise(text):
+    return "".join([tok.capitalize()
+                    for tok in text.split("_")])
 
 class Pattern(str):
 
