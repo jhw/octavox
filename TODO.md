@@ -1,10 +1,8 @@
 ### short
 
-- pass bank to cli
-  - how do you change profile ?
+- __main__ to initialise Bank and pass to cli
+- changing profile changes bank.profile
 
-- Parameters class
-- param lookup function
 - list params
 
 ### medium
@@ -78,6 +76,8 @@
 
 ### done
 
+- Parameters class
+- param lookup function
 - min/max param support
 - enum type support
 - add profile to list of params

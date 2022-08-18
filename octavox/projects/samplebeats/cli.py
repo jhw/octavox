@@ -1,6 +1,39 @@
 import cmd, re, yaml
 
-Parameters=yaml.safe_load("""
+Profiles=yaml.safe_load("""
+default:
+  kk: 0.7
+  sn: 0.7
+  oh: 0.4
+  ch: 0.4
+strict:
+  kk: 1.0
+  sn: 1.0
+  oh: 0.8
+  ch: 0.8
+wild:
+  kk: 0.4
+  sn: 0.4
+  oh: 0.2
+  ch: 0.2
+""")
+
+class Parameterz(dict):
+
+    def __init__(self, item={}):
+        dict.__init__(self, item)
+
+    def lookup(self, pat):
+        keys=[key for key in self
+              if pat in key]
+        if keys==[]:
+            raise RuntimeError("%s not found" % pat)
+        elif len(keys) > 1:
+            raise RuntimeError("multiple key matches for %s" % pat)
+        key=keys.pop()
+        return (key, self[key])            
+        
+Parameters=Parameterz(yaml.safe_load("""
 profile:
   type: enum
   value: default
@@ -46,7 +79,7 @@ npatches:
   type: int
   value: 64
   min: 4
-""")
+"""))
 
 class SamplebeatsShell(cmd.Cmd):
 
@@ -87,8 +120,8 @@ class SamplebeatsShell(cmd.Cmd):
         return decorator
 
     @wrap_action
-    @parse_line(keys=["key", "value"])
-    def do_setparam(self, key, value):
+    @parse_line(keys=["pat", "value"])
+    def do_setparam(self, pat, value):
         def validate(value, param):
             def is_number(value):
                 return type(value) in [int, float]
@@ -106,19 +139,15 @@ class SamplebeatsShell(cmd.Cmd):
                 raise RuntimeError("%s exceeds %s min value" % (value, key))
             if "max" in param and value > param["max"]:
                 raise RuntimeError("%s exceeds %s max value" % (value, key))
-        if key not in self.params:
-            raise RuntimeError("%s not found" % key)
-        param=self.params[key]
+        key, param = self.params.lookup(pat)
         validate(value, param)
         param["value"]=value
         print ("%s=%s" % (key, param["value"]))
 
     @wrap_action
-    @parse_line(keys=["key"])
-    def do_getparam(self, key):
-        if key not in self.params:
-            raise RuntimeError("%s not found" % key)
-        param=self.params[key]
+    @parse_line(keys=["pat"])
+    def do_getparam(self, pat):
+        key, param = self.params.lookup(pat)
         print ("%s=%s" % (key, param["value"]))
     
     @parse_line()
