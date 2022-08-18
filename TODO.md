@@ -1,7 +1,11 @@
 ### short
 
+- remove hypens in action name
+- define number type
+- functional type validators
+- enum type support
+- add profile to list of params
 - min/max param support
-- support for enum params (profile)
 - list params
 
 - stop dumping patch to JSON
