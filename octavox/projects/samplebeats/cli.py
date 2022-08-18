@@ -175,6 +175,18 @@ class Shell(cmd.Cmd):
                             for k, v in self.params.items()],
                            key=lambda x: x["key"]))
         print (table.render(["key", "value"]))
+
+    """
+    patches=Patches.randomise(banks=banks,
+                                  slicetemp=kwargs["slicetemp"],
+                                  n=kwargs["npatches"])
+        filename="%s-%s-%s" % (datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S"),
+                               random.choice(Adjectives),
+                               random.choice(Nouns))
+        patches.render(banks=banks,
+                       nbeats=kwargs["nbeats"],
+                       filename=filename)
+    """
         
     @parse_line()
     def do_randomise(self, *args, **kwargs):

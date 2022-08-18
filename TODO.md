@@ -2,10 +2,13 @@
 
 - add titles to table rendering
 
+- randomise to generate filename
+- randomise to 
+
 ### medium
 
+- rename params as env
 - sample viewing, blacklisting, replacing
-
 - merge, arrange
 
 - layout switch to complement shuffle
