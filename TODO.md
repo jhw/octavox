@@ -3,18 +3,19 @@
 - use default as default cli main arg
 - action to list stack
 - npatches should passed as arg to action
+- outpit is getting overridden
+- add titles to table rendering
 
 ### medium
-
-- add titles to table rendering
 
 - sample viewing, blacklisting, replacing
 - merge, arrange
 
 - layout switch to complement shuffle
-- sunsynth packaging
 
 ### long
+
+- sunsynth packaging
 
 - vitling 303
 - city dreams bass
