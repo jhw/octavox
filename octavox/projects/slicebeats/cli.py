@@ -1,6 +1,10 @@
 from octavox.projects.slicebeats.dom import Patches
 
-import cmd, re, sys, yaml
+from octavox.projects import Nouns, Adjectives
+
+from datetime import datetime
+
+import cmd, random, re, sys, yaml
 
 Profiles=yaml.safe_load("""
 default:
@@ -95,6 +99,14 @@ class Table(list):
                                     for key in keys])
                           for item in self])
 
+def timestamp():
+    return datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
+
+def random_filename():
+    return "%s-%s-%s" % (timestamp(),
+                         random.choice(Adjectives),
+                         random.choice(Nouns))
+    
 class Shell(cmd.Cmd):
 
     intro="Welcome to Octavox Slicebeats :)"
@@ -179,9 +191,6 @@ class Shell(cmd.Cmd):
         print (table.render(["key", "value"]))
 
     """
-        filename="%s-%s-%s" % (datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S"),
-                               random.choice(Adjectives),
-                               random.choice(Nouns))
         patches.render(banks=banks,
                        nbeats=kwargs["nbeats"],
                        filename=filename)
@@ -194,7 +203,8 @@ class Shell(cmd.Cmd):
         patches=Patches.randomise(banks=self.banks,
                                   slicetemp=slicetemp,
                                   n=n)
-        print ("%i patches generated" % len(patches))
+        filename=random_filename()
+        print (filename)
 
     @wrap_action
     def do_mutate(self, *args, **kwargs):

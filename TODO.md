@@ -1,6 +1,5 @@
 ### short [randomise]
 
-- generate filename
 - append to stack
 - action to list stack
 
@@ -79,6 +78,7 @@
 
 ### done
 
+- generate filename
 - rename as slicebeats
 - remove json rendering from project and render to samplebeats root
 - retire tools and old cli
