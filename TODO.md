@@ -2,6 +2,8 @@
 
 - action to list stack
 
+- npatches should passed as arg to action
+
 ### medium
 
 - add titles to table rendering
@@ -77,6 +79,7 @@
 
 ### done
 
+- remove equalisers
 - append to stack
 - generate filename
 - rename as slicebeats

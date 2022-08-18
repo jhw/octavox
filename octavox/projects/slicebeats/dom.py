@@ -1,5 +1,4 @@
 from rv.modules.echo import Echo as RVEcho
-from rv.modules.eq import Eq as RVEqualiser
 from rv.modules.distortion import Distortion as RVDistortion
 from rv.modules.reverb import Reverb as RVReverb
 
@@ -18,12 +17,6 @@ modules:
     classname: SVSampler
   - name: HTSampler
     classname: SVSampler
-  - name: KKEqualiser
-    classname: RVEqualiser
-  - name: SNEqualiser
-    classname: RVEqualiser
-  - name: HTEqualiser
-    classname: RVEqualiser
   - name: Echo
     classname: RVEcho
     defaults:
@@ -40,16 +33,10 @@ modules:
       wet: 4
 links:
   - - KKSampler
-    - KKEqualiser
+    - Echo
   - - SNSampler
-    - SNEqualiser
+    - Echo
   - - HTSampler
-    - HTEqualiser
-  - - KKEqualiser
-    - Echo
-  - - SNEqualiser
-    - Echo
-  - - HTEqualiser
     - Echo
   - - Echo
     - Distortion
