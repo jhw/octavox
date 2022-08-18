@@ -83,7 +83,7 @@ nbeats:
   min: 4
 npatches: 
   type: int
-  value: 64
+  value: 16
   min: 4
 """))
 
@@ -204,6 +204,11 @@ class Shell(cmd.Cmd):
                                   slicetemp=slicetemp,
                                   n=n)
         filename=random_filename()
+        self.stack.append((filename, patches))
+        nbeats=self.params["nbeats"]["value"]
+        patches.render(banks=self.banks,
+                       nbeats=nbeats,
+                       filename=filename)
         print (filename)
 
     @wrap_action

@@ -1,6 +1,5 @@
 ### short [randomise]
 
-- append to stack
 - action to list stack
 
 ### medium
@@ -78,6 +77,7 @@
 
 ### done
 
+- append to stack
 - generate filename
 - rename as slicebeats
 - remove json rendering from project and render to samplebeats root
