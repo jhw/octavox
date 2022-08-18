@@ -2,22 +2,22 @@ import cmd, re, yaml
 
 Parameters=yaml.safe_load("""
 slicetemp: 
-  type: float
+  type: number
   value: 1
 dslices: 
-  type: float
+  type: number
   value: 0.5
 dpat: 
-  type: float
+  type: number
   value: 0.5
 dmute: 
-  type: float
+  type: number
   value: 0.0
 dseed: 
-  type: float
+  type: number
   value: 0.5
 dstyle: 
-  type: float
+  type: number
   value: 0.5
 nbeats: 
   type: int
@@ -47,11 +47,11 @@ class SamplebeatsShell(cmd.Cmd):
         return wrapped
                        
     def parse_line(keys=[]):
-        def parse_value(v):
-            if re.match("\\-?\\d+(\\.\\d+)?", v):
-                return float(v)
-            elif re.match("\\-?\\d+", v):
+        def optimistic_parse(v):
+            if re.search("^\\-?\\d+$", v):
                 return int(v)
+            elif re.search("^\\-?\\d+(\\.\\d+)?$", v):
+                return float(v)
             else:
                 return v
         def decorator(fn):            
@@ -59,7 +59,7 @@ class SamplebeatsShell(cmd.Cmd):
                 args=[tok for tok in line.split(" ") if tok!='']
                 if len(args) < len(keys):
                     raise RuntimeError("please enter %s" % ", ".join(keys))
-                kwargs={k:parse_value(v)
+                kwargs={k:optimistic_parse(v)
                         for k, v in zip(keys, args[:len(keys)])}
                 return fn(self, *[], **kwargs)
             return wrapped
@@ -68,10 +68,16 @@ class SamplebeatsShell(cmd.Cmd):
     @wrap_action
     @parse_line(keys=["key", "value"])
     def do_setparam(self, key, value):
+        def is_number(value):
+            return type(value) in [int, float]
+        def is_int(value):
+            return isinstance(value, int)        
         if key not in self.params:
             raise RuntimeError("%s not found" % key)
-        if eval(self.params[key]["type"])!=type(value):
-            raise RuntimeError("%s value [%s] is invalid type" % (key, value))
+        validfn=eval("is_%s" % self.params[key]["type"])
+        validkwargs={"value": value}
+        if not validfn(**validkwargs):
+            raise RuntimeError("% is invalid %s value" % (value, key, value))
         self.params[key]["value"]=value
         print ("%s=%s" % (key, self.params[key]["value"]))
 

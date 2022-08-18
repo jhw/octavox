@@ -1,7 +1,5 @@
 ### short
 
-- define number type
-- functional type validators
 - enum type support
 - add profile to list of params
 - min/max param support
@@ -81,6 +79,8 @@
 
 ### done
 
+- define number type
+- functional type validators
 - remove hypens in action name
 - optimistic value parsing
 - separate parse_line, wrap_action decorators
