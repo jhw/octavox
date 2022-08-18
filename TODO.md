@@ -1,6 +1,5 @@
 ### short
 
-- remove hypens in action name
 - define number type
 - functional type validators
 - enum type support
@@ -82,6 +81,7 @@
 
 ### done
 
+- remove hypens in action name
 - optimistic value parsing
 - separate parse_line, wrap_action decorators
 - shuffle slices not just slice samples

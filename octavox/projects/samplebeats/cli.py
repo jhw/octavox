@@ -67,7 +67,7 @@ class SamplebeatsShell(cmd.Cmd):
 
     @wrap_action
     @parse_line(keys=["key", "value"])
-    def do_set_param(self, key, value):
+    def do_setparam(self, key, value):
         if key not in self.params:
             raise RuntimeError("%s not found" % key)
         if eval(self.params[key]["type"])!=type(value):
@@ -77,7 +77,7 @@ class SamplebeatsShell(cmd.Cmd):
 
     @wrap_action
     @parse_line(keys=["key"])
-    def do_get_param(self, key):
+    def do_getparam(self, key):
         if key not in self.params:
             raise RuntimeError("%s not found" % key)
         print ("%s=%s" % (key, self.params[key]["value"]))
