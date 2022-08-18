@@ -2,7 +2,6 @@
 
 - generate filename
 - append to stack
-- remove json rendering from project and render to samplebeats root
 - action to list stack
 
 - rename as slicebeats
@@ -82,6 +81,7 @@
 
 ### done
 
+- remove json rendering from project and render to samplebeats root
 - retire tools and old cli
 - table for rendering
 - list params

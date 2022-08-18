@@ -6,7 +6,7 @@ from rv.modules.reverb import Reverb as RVReverb
 from octavox.modules.sampler import SVSampler
 from octavox.modules.project import SVProject
 
-import json, math, os, random, yaml
+import math, os, random, yaml
 
 Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
 
@@ -482,9 +482,7 @@ class Patches(list):
                nbreaks=0,
                modconfig=ModConfig):
         for path in ["tmp",
-                     "tmp/samplebeats",
-                     "tmp/samplebeats/projects",
-                     "tmp/samplebeats/patches"]:
+                     "tmp/samplebeats"]:
             if not os.path.exists(path):
                 os.makedirs(path)
         samplekeys=self.sample_keys(nbeats)
@@ -502,13 +500,9 @@ class Patches(list):
                                    banks=banks,
                                    nbeats=nbeats,
                                    nbreaks=nbreaks)
-        projfile="tmp/samplebeats/projects/%s.sunvox" % filename
+        projfile="tmp/samplebeats/%s.sunvox" % filename
         with open(projfile, 'wb') as f:
             project.write_to(f)
-        patchfile="tmp/samplebeats/patches/%s.json" % filename
-        with open(patchfile, 'w') as f:
-            f.write(json.dumps(self,
-                               indent=2))
     
 if __name__=="__main__":
     pass
