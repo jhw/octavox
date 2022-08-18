@@ -1,13 +1,19 @@
-### short
+### short [randomise]
 
-- add titles to table rendering
-
-- randomise to generate filename
-- randomise to 
+- generate filename
+- append to stack
+- action to show stack
+- remove json rendering from project and render to samplebeats root
+- render project and check works
+- action to list stack
+- move mutator to dev
+- retire tools and old cli
 
 ### medium
 
+- add titles to table rendering
 - rename params as env
+
 - sample viewing, blacklisting, replacing
 - merge, arrange
 

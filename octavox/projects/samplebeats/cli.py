@@ -1,3 +1,5 @@
+from octavox.projects.samplebeats.dom import Patches
+
 import cmd, re, sys, yaml
 
 Profiles=yaml.safe_load("""
@@ -177,9 +179,6 @@ class Shell(cmd.Cmd):
         print (table.render(["key", "value"]))
 
     """
-    patches=Patches.randomise(banks=banks,
-                                  slicetemp=kwargs["slicetemp"],
-                                  n=kwargs["npatches"])
         filename="%s-%s-%s" % (datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S"),
                                random.choice(Adjectives),
                                random.choice(Nouns))
@@ -190,17 +189,22 @@ class Shell(cmd.Cmd):
         
     @parse_line()
     def do_randomise(self, *args, **kwargs):
-        print ("randomise")
+        slicetemp=self.params["slicetemp"]["value"]
+        n=self.params["npatches"]["value"]
+        patches=Patches.randomise(banks=self.banks,
+                                  slicetemp=slicetemp,
+                                  n=n)
+        print ("%i patches generated" % len(patches))
 
-    @parse_line()
+    @wrap_action
     def do_mutate(self, *args, **kwargs):
         print ("mutate")
 
-    @parse_line()
+    @wrap_action
     def do_exit(self, *args, **kwargs):
-        return self.do_quit(arg)
+        return self.do_quit(*args, **kwargs)
 
-    @parse_line()
+    @wrap_action
     def do_quit(self, *args, **kwargs):
         print ("exiting")
         return True
