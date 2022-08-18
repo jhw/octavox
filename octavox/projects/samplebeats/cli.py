@@ -122,7 +122,7 @@ class Shell(cmd.Cmd):
 
     @wrap_action
     @parse_line(keys=["pat", "value"])
-    def do_setparam(self, pat, value):
+    def do_setparam(self, pat, value, profiles=Profiles):
         def validate_type(value, param):
             def is_number(value):
                 return type(value) in [int, float]
@@ -146,6 +146,9 @@ class Shell(cmd.Cmd):
         validate_minmax(value, param)
         param["value"]=value
         print ("%s=%s" % (key, param["value"]))
+        if key=="profile":
+            print ("updating bank profile")
+            self.banks.profile=profiles[value]
 
     @wrap_action
     @parse_line(keys=["pat"])

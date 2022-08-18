@@ -1,12 +1,11 @@
 ### short
 
-- changing profile changes bank.profile
-
 - list params
 
 ### medium
 
 - tools to inspect/mute/switch specific samples
+
 - merge, arrange
 
 - layout switch to complement shuffle
@@ -23,6 +22,7 @@
 
 ### thoughts
 
+- better ways to update bank profile ?
 - remove equalisers ?
   - they are useful even if you don't use them
 - rename s3 bucket ?
@@ -75,6 +75,7 @@
 
 ### done
 
+- changing profile changes bank.profile
 - __main__ to initialise Bank and pass to cli
 - Parameters class
 - param lookup function
