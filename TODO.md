@@ -1,10 +1,11 @@
 ### short
 
-- min/max param support
 - pass bank to cli
+  - how do you change profile ?
+
+- Parameters class
+- param lookup function
 - list params
-- remove existing cli
-- stop dumping patch to JSON
 
 ### medium
 
@@ -77,6 +78,7 @@
 
 ### done
 
+- min/max param support
 - enum type support
 - add profile to list of params
 - define number type

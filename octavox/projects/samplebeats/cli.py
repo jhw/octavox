@@ -11,27 +11,41 @@ profile:
 slicetemp: 
   type: number
   value: 1
+  min: 0
+  max: 1
 dslices: 
   type: number
   value: 0.5
+  min: 0
+  max: 1
 dpat: 
   type: number
   value: 0.5
+  min: 0
+  max: 1
 dmute: 
   type: number
   value: 0.0
+  min: 0
+  max: 1
 dseed: 
   type: number
   value: 0.5
+  min: 0
+  max: 1
 dstyle: 
   type: number
   value: 0.5
+  min: 0
+  max: 1
 nbeats: 
   type: int
   value: 16
+  min: 4
 npatches: 
   type: int
   value: 64
+  min: 4
 """)
 
 class SamplebeatsShell(cmd.Cmd):
@@ -88,6 +102,10 @@ class SamplebeatsShell(cmd.Cmd):
                 kwargs["options"]=param["options"]
             if not fn(**kwargs):
                 raise RuntimeError("%s is invalid %s value" % (value, key))
+            if "min" in param and value < param["min"]:
+                raise RuntimeError("%s exceeds %s min value" % (value, key))
+            if "max" in param and value > param["max"]:
+                raise RuntimeError("%s exceeds %s max value" % (value, key))
         if key not in self.params:
             raise RuntimeError("%s not found" % key)
         param=self.params[key]
