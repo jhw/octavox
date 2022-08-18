@@ -482,7 +482,7 @@ class Patches(list):
                nbreaks=0,
                modconfig=ModConfig):
         for path in ["tmp",
-                     "tmp/samplebeats"]:
+                     "tmp/slicebeats"]:
             if not os.path.exists(path):
                 os.makedirs(path)
         samplekeys=self.sample_keys(nbeats)
@@ -500,7 +500,7 @@ class Patches(list):
                                    banks=banks,
                                    nbeats=nbeats,
                                    nbreaks=nbreaks)
-        projfile="tmp/samplebeats/%s.sunvox" % filename
+        projfile="tmp/slicebeats/%s.sunvox" % filename
         with open(projfile, 'wb') as f:
             project.write_to(f)
     

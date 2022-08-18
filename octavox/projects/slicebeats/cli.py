@@ -1,4 +1,4 @@
-from octavox.projects.samplebeats.dom import Patches
+from octavox.projects.slicebeats.dom import Patches
 
 import cmd, re, sys, yaml
 
@@ -97,7 +97,7 @@ class Table(list):
 
 class Shell(cmd.Cmd):
 
-    intro="Welcome to Octavox Samplebeats :)"
+    intro="Welcome to Octavox Slicebeats :)"
 
     prompt=">>> "
 

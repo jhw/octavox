@@ -4,8 +4,6 @@
 - append to stack
 - action to list stack
 
-- rename as slicebeats
-
 ### medium
 
 - add titles to table rendering
@@ -81,6 +79,7 @@
 
 ### done
 
+- rename as slicebeats
 - remove json rendering from project and render to samplebeats root
 - retire tools and old cli
 - table for rendering
