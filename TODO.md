@@ -1,6 +1,5 @@
 ### short
 
-- __main__ to initialise Bank and pass to cli
 - changing profile changes bank.profile
 
 - list params
@@ -76,6 +75,7 @@
 
 ### done
 
+- __main__ to initialise Bank and pass to cli
 - Parameters class
 - param lookup function
 - min/max param support

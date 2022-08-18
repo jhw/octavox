@@ -1,4 +1,4 @@
-import cmd, re, yaml
+import cmd, re, sys, yaml
 
 Profiles=yaml.safe_load("""
 default:
@@ -87,8 +87,9 @@ class Shell(cmd.Cmd):
 
     prompt=">>> "
 
-    def __init__(self, params=Parameters):
+    def __init__(self, banks, params=Parameters):
         cmd.Cmd.__init__(self)
+        self.banks=banks
         self.params=params
         self.stack=[]
 
@@ -122,7 +123,7 @@ class Shell(cmd.Cmd):
     @wrap_action
     @parse_line(keys=["pat", "value"])
     def do_setparam(self, pat, value):
-        def validate(value, param):
+        def validate_type(value, param):
             def is_number(value):
                 return type(value) in [int, float]
             def is_int(value):
@@ -135,12 +136,14 @@ class Shell(cmd.Cmd):
                 kwargs["options"]=param["options"]
             if not fn(**kwargs):
                 raise RuntimeError("%s is invalid %s value" % (value, key))
+        def validate_minmax(value, param):
             if "min" in param and value < param["min"]:
                 raise RuntimeError("%s exceeds %s min value" % (value, key))
             if "max" in param and value > param["max"]:
                 raise RuntimeError("%s exceeds %s max value" % (value, key))
         key, param = self.params.lookup(pat)
-        validate(value, param)
+        validate_type(value, param)
+        validate_minmax(value, param)
         param["value"]=value
         print ("%s=%s" % (key, param["value"]))
 
@@ -168,4 +171,16 @@ class Shell(cmd.Cmd):
         return True
 
 if __name__=="__main__":
-    Shell().cmdloop()
+    try:
+        if len(sys.argv) < 2:
+            raise RuntimeError("please enter profile")
+        pfname=sys.argv[1]
+        if pfname not in Profiles:
+            raise RuntimeError("profile is invalid")
+        profile=Profiles[pfname]
+        from octavox.samples.banks.pico import PicoBanks
+        banks=PicoBanks(profile=profile,
+                        root="tmp/banks/pico")
+        Shell(banks).cmdloop()
+    except RuntimeError as error:
+        print ("error: %s" % str(error))
