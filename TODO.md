@@ -1,13 +1,12 @@
 ### short [randomise]
 
+- use default as default cli main arg
 - action to list stack
-
 - npatches should passed as arg to action
 
 ### medium
 
 - add titles to table rendering
-- rename params as env
 
 - sample viewing, blacklisting, replacing
 - merge, arrange
@@ -79,6 +78,7 @@
 
 ### done
 
+- rename params as env
 - remove equalisers
 - append to stack
 - generate filename

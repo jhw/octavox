@@ -113,10 +113,10 @@ class Shell(cmd.Cmd):
 
     prompt=">>> "
 
-    def __init__(self, banks, params=Parameters):
+    def __init__(self, banks, env=Parameters):
         cmd.Cmd.__init__(self)
         self.banks=banks
-        self.params=params
+        self.env=env
         self.stack=[]
 
     def wrap_action(fn):
@@ -167,7 +167,7 @@ class Shell(cmd.Cmd):
                 raise RuntimeError("%s exceeds %s min value" % (value, key))
             if "max" in param and value > param["max"]:
                 raise RuntimeError("%s exceeds %s max value" % (value, key))
-        key, param = self.params.lookup(pat)
+        key, param = self.env.lookup(pat)
         validate_type(value, param)
         validate_minmax(value, param)
         param["value"]=value
@@ -179,14 +179,14 @@ class Shell(cmd.Cmd):
     @wrap_action
     @parse_line(keys=["pat"])
     def do_getparam(self, pat):
-        key, param = self.params.lookup(pat)
+        key, param = self.env.lookup(pat)
         print ("%s=%s" % (key, param["value"]))
 
     @wrap_action
-    def do_listparams(self, *args, **kwargs):
+    def do_listenv(self, *args, **kwargs):
         table=Table(sorted([{"key": k,
                              "value": v["value"]}
-                            for k, v in self.params.items()],
+                            for k, v in self.env.items()],
                            key=lambda x: x["key"]))
         print (table.render(["key", "value"]))
 
@@ -198,14 +198,14 @@ class Shell(cmd.Cmd):
         
     @parse_line()
     def do_randomise(self, *args, **kwargs):
-        slicetemp=self.params["slicetemp"]["value"]
-        n=self.params["npatches"]["value"]
+        slicetemp=self.env["slicetemp"]["value"]
+        n=self.env["npatches"]["value"]
         patches=Patches.randomise(banks=self.banks,
                                   slicetemp=slicetemp,
                                   n=n)
         filename=random_filename()
         self.stack.append((filename, patches))
-        nbeats=self.params["nbeats"]["value"]
+        nbeats=self.env["nbeats"]["value"]
         patches.render(banks=self.banks,
                        nbeats=nbeats,
                        filename=filename)
