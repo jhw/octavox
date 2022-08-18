@@ -1,12 +1,10 @@
 ### short
 
-- enum type support
-- add profile to list of params
 - min/max param support
+- pass bank to cli
 - list params
-
-- stop dumping patch to JSON
 - remove existing cli
+- stop dumping patch to JSON
 
 ### medium
 
@@ -79,6 +77,8 @@
 
 ### done
 
+- enum type support
+- add profile to list of params
 - define number type
 - functional type validators
 - remove hypens in action name

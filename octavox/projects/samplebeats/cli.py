@@ -1,6 +1,13 @@
 import cmd, re, yaml
 
 Parameters=yaml.safe_load("""
+profile:
+  type: enum
+  value: default
+  options:
+  - strict
+  - default
+  - wild
 slicetemp: 
   type: number
   value: 1
@@ -68,25 +75,33 @@ class SamplebeatsShell(cmd.Cmd):
     @wrap_action
     @parse_line(keys=["key", "value"])
     def do_setparam(self, key, value):
-        def is_number(value):
-            return type(value) in [int, float]
-        def is_int(value):
-            return isinstance(value, int)        
+        def validate(value, param):
+            def is_number(value):
+                return type(value) in [int, float]
+            def is_int(value):
+                return isinstance(value, int)
+            def is_enum(value, options):
+                return value in options
+            fn=eval("is_%s" % param["type"])
+            kwargs={"value": value}
+            if param["type"]=="enum":
+                kwargs["options"]=param["options"]
+            if not fn(**kwargs):
+                raise RuntimeError("%s is invalid %s value" % (value, key))
         if key not in self.params:
             raise RuntimeError("%s not found" % key)
-        validfn=eval("is_%s" % self.params[key]["type"])
-        validkwargs={"value": value}
-        if not validfn(**validkwargs):
-            raise RuntimeError("% is invalid %s value" % (value, key, value))
-        self.params[key]["value"]=value
-        print ("%s=%s" % (key, self.params[key]["value"]))
+        param=self.params[key]
+        validate(value, param)
+        param["value"]=value
+        print ("%s=%s" % (key, param["value"]))
 
     @wrap_action
     @parse_line(keys=["key"])
     def do_getparam(self, key):
         if key not in self.params:
             raise RuntimeError("%s not found" % key)
-        print ("%s=%s" % (key, self.params[key]["value"]))
+        param=self.params[key]
+        print ("%s=%s" % (key, param["value"]))
     
     @parse_line()
     def do_randomise(self, *args, **kwargs):
