@@ -190,12 +190,6 @@ class Shell(cmd.Cmd):
                            key=lambda x: x["key"]))
         print (table.render(["key", "value"]))
 
-    """
-        patches.render(banks=banks,
-                       nbeats=kwargs["nbeats"],
-                       filename=filename)
-    """
-        
     @parse_line()
     def do_randomise(self, *args, **kwargs):
         slicetemp=self.env["slicetemp"]["value"]
@@ -226,9 +220,7 @@ class Shell(cmd.Cmd):
 
 if __name__=="__main__":
     try:
-        if len(sys.argv) < 2:
-            raise RuntimeError("please enter profile")
-        pfname=sys.argv[1]
+        pfname="default" if len(sys.argv) < 2 else sys.argv[1]
         if pfname not in Profiles:
             raise RuntimeError("profile is invalid")
         profile=Profiles[pfname]

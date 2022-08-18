@@ -1,6 +1,5 @@
 ### short [randomise]
 
-- use default as default cli main arg
 - action to list stack
 - npatches should passed as arg to action
 - outpit is getting overridden
@@ -79,6 +78,7 @@
 
 ### done
 
+- use default as default cli main arg
 - rename params as env
 - remove equalisers
 - append to stack
