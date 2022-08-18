@@ -81,7 +81,7 @@ npatches:
   min: 4
 """))
 
-class SamplebeatsShell(cmd.Cmd):
+class Shell(cmd.Cmd):
 
     intro="Welcome to Octavox Samplebeats :)"
 
@@ -168,4 +168,4 @@ class SamplebeatsShell(cmd.Cmd):
         return True
 
 if __name__=="__main__":
-    SamplebeatsShell().cmdloop()
+    Shell().cmdloop()
