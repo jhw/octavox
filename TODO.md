@@ -1,8 +1,8 @@
 ### short [randomise]
 
+- how to validate npatches as int if passed to command line
 - action to list stack
-- npatches should passed as arg to action
-- outpit is getting overridden
+- output module is getting overridden
 - add titles to table rendering
 
 ### medium
