@@ -81,6 +81,18 @@ npatches:
   min: 4
 """))
 
+class Table(list):
+
+    def __init__(self, items=[]):
+        list.__init__(self, items)
+
+    def render(self, keys, width=16):
+        def format_value(value, width):
+            return value[:width] if len(value) > width else value+" ".join(['' for i in range(width-len(value))])
+        return "\n".join([" ".join([format_value(str(item[key]) if key in item else '', width)
+                                    for key in keys])
+                          for item in self])
+
 class Shell(cmd.Cmd):
 
     intro="Welcome to Octavox Samplebeats :)"
@@ -155,7 +167,15 @@ class Shell(cmd.Cmd):
     def do_getparam(self, pat):
         key, param = self.params.lookup(pat)
         print ("%s=%s" % (key, param["value"]))
-    
+
+    @wrap_action
+    def do_listparams(self, *args, **kwargs):
+        table=Table(sorted([{"key": k,
+                             "value": v["value"]}
+                            for k, v in self.params.items()],
+                           key=lambda x: x["key"]))
+        print (table.render(["key", "value"]))
+        
     @parse_line()
     def do_randomise(self, *args, **kwargs):
         print ("randomise")

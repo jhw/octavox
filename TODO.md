@@ -1,10 +1,10 @@
 ### short
 
-- list params
+- add titles to table rendering
 
 ### medium
 
-- tools to inspect/mute/switch specific samples
+- sample viewing, blacklisting, replacing
 
 - merge, arrange
 
@@ -75,6 +75,8 @@
 
 ### done
 
+- table for rendering
+- list params
 - changing profile changes bank.profile
 - __main__ to initialise Bank and pass to cli
 - Parameters class
