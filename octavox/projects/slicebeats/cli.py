@@ -146,8 +146,18 @@ class Shell(cmd.Cmd):
             return wrapped
         return decorator
 
+    def validate_param(config):
+        def decorator(fn):
+            def wrapped(self, *args, **kwargs):
+                pat, value = kwargs["pat"], kwargs["value"]
+                print ("%s=%s" % (pat, value))
+                return fn(self, *args, **kwargs)
+            return wrapped
+        return decorator
+        
     @wrap_action
     @parse_line(keys=["pat", "value"])
+    @validate_param(None)
     def do_setparam(self, pat, value, profiles=Profiles):
         def validate_type(value, param):
             def is_number(value):
