@@ -1,6 +1,8 @@
 ### short [randomise]
 
-- how to validate npatches as int if passed to command line
+- validate_int decorator
+- convert npatches to be passws as command line arg
+
 - action to list stack
 - output module is getting overridden
 - add titles to table rendering
@@ -78,6 +80,7 @@
 
 ### done
 
+- how to validate npatches as int if passed to command line
 - use default as default cli main arg
 - rename params as env
 - remove equalisers

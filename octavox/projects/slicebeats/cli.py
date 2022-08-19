@@ -146,20 +146,8 @@ class Shell(cmd.Cmd):
             return wrapped
         return decorator
 
-    def validate_param(config):
-        def decorator(fn):
-            def wrapped(self, *args, **kwargs):
-                pat, value = kwargs["pat"], kwargs["value"]
-                print ("%s=%s" % (pat, value))
-                return fn(self, *args, **kwargs)
-            return wrapped
-        return decorator
-        
-    @wrap_action
-    @parse_line(keys=["pat", "value"])
-    @validate_param(None)
-    def do_setparam(self, pat, value, profiles=Profiles):
-        def validate_type(value, param):
+    def validate_param(fn):
+        def validate_type(key, value, param):
             def is_number(value):
                 return type(value) in [int, float]
             def is_int(value):
@@ -172,14 +160,24 @@ class Shell(cmd.Cmd):
                 kwargs["options"]=param["options"]
             if not fn(**kwargs):
                 raise RuntimeError("%s is invalid %s value" % (value, key))
-        def validate_minmax(value, param):
+        def validate_minmax(key, value, param):
             if "min" in param and value < param["min"]:
                 raise RuntimeError("%s exceeds %s min value" % (value, key))
             if "max" in param and value > param["max"]:
                 raise RuntimeError("%s exceeds %s max value" % (value, key))
+        def wrapped(self, *args, **kwargs):
+            pat, value = kwargs["pat"], kwargs["value"]
+            key, param = self.env.lookup(pat)
+            validate_type(key, value, param)
+            validate_minmax(key, value, param)
+            return fn(self, *args, **kwargs)
+        return wrapped
+        
+    @wrap_action
+    @parse_line(keys=["pat", "value"])
+    @validate_param
+    def do_setparam(self, pat, value, profiles=Profiles):
         key, param = self.env.lookup(pat)
-        validate_type(value, param)
-        validate_minmax(value, param)
         param["value"]=value
         print ("%s=%s" % (key, param["value"]))
         if key=="profile":
