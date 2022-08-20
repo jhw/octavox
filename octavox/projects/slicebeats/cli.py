@@ -81,10 +81,6 @@ nbeats:
   type: int
   value: 16
   min: 4
-npatches: 
-  type: int
-  value: 16
-  min: 4
 """))
 
 class Table(list):

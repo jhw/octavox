@@ -1,6 +1,5 @@
 ### short [randomise]
 
-- replace npatches in params
 - validate int decorator
 
 - mutator
@@ -82,6 +81,7 @@
 
 ### done
 
+- replace npatches in params
 - randomise to take npatches
 - how to validate npatches as int if passed to command line
 - use default as default cli main arg
