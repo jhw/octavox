@@ -3,7 +3,6 @@
 - action to list stack
 - stack goto/head
 
-- output module is getting overridden
 - add titles to table rendering
 
 ### medium
@@ -80,6 +79,8 @@
 
 ### done
 
+- output module is getting overridden
+  - try bigger grid
 - initialise banks with None profile and populate on cli initialisation
 - render_patches decorator
 - mutator args

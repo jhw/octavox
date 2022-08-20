@@ -65,7 +65,7 @@ class ModGrid(dict):
     
     @classmethod
     def randomise(self, modnames):
-        sz=int(math.ceil(len(modnames)**0.5))
+        sz=1+int(math.ceil(len(modnames)**0.5)) # NB +1 to ensure decent amount of whitespace in which to move cells around
         coords=sorted(ModGrid.all(sz),
                       key=lambda x: random.random())[:len(modnames)]
         return ModGrid(sz=sz,
