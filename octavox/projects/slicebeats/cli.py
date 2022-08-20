@@ -198,13 +198,13 @@ class Shell(cmd.Cmd):
                            key=lambda x: x["key"]))
         print (table.render(["key", "value"]))
 
-    @parse_line()
-    def do_randomise(self, *args, **kwargs):
+    @wrap_action
+    @parse_line(keys=["npatches"])
+    def do_randomise(self, npatches):
         slicetemp=self.env["slicetemp"]["value"]
-        n=self.env["npatches"]["value"]
         patches=Patches.randomise(banks=self.banks,
                                   slicetemp=slicetemp,
-                                  n=n)
+                                  n=npatches)
         filename=random_filename()
         self.stack.append((filename, patches))
         nbeats=self.env["nbeats"]["value"]
