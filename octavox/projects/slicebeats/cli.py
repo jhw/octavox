@@ -226,8 +226,17 @@ class Shell(cmd.Cmd):
         print (filename)
 
     @wrap_action
-    def do_mutate(self, *args, **kwargs):
-        print ("mutate")
+    @parse_line(keys=["i", "npatches"])
+    @validate_int({"name": "i",
+                   "min": 0})
+    @validate_int({"name": "npatches",
+                   "min": 1})
+    def do_mutate(self, i, npatches):
+        if self.stack==[]:
+            raise RuntimeError("stack is empty")
+        roots=self.stack[-1][-1]
+        root=roots[i % len(roots)]
+        print (root)
 
     @wrap_action
     def do_exit(self, *args, **kwargs):
