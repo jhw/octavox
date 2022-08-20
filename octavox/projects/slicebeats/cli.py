@@ -236,7 +236,19 @@ class Shell(cmd.Cmd):
             raise RuntimeError("stack is empty")
         roots=self.stack[-1][-1]
         root=roots[i % len(roots)]
-        print (root)
+        limits={k: self.env["d%s" % k]["value"]
+                for k in "slices|pat|mute|seed|style".split("|")}
+        slicetemp=self.env["slicetemp"]["value"]
+        patches=Patches([root]+[root.clone().mutate(limits=limits,
+                                                    slicetemp=slicetemp)
+                                for i in range(npatches-1)])
+        filename=random_filename()
+        self.stack.append((filename, patches))
+        nbeats=self.env["nbeats"]["value"]
+        patches.render(banks=self.banks,
+                       nbeats=nbeats,
+                       filename=filename)
+        print (filename)
 
     @wrap_action
     def do_exit(self, *args, **kwargs):

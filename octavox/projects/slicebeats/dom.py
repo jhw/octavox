@@ -426,6 +426,7 @@ class Patch(dict):
             for machine in slice["machines"]:
                 machine.randomise_style(limits["style"])
                 machine.randomise_seed(limits["seed"])
+        return self
     
     def render(self, nbeats):
         struct={"n": nbeats,

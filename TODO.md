@@ -1,8 +1,7 @@
 ### short [randomise]
 
-- mutator args
-- mutator body
-
+- render_patches decorator
+- initialise banks with None profile and populate on cli initialisation
 - action to list stack
 - stack goto/head
 
@@ -28,6 +27,8 @@
 
 ### thoughts
 
+- pre- populate stack from file ?
+  - not possible as stuff isn't saved
 - better ways to update bank profile ?
 - remove equalisers ?
   - they are useful even if you don't use them
@@ -81,6 +82,8 @@
 
 ### done
 
+- mutator args
+- mutator body
 - validate int decorator
 - replace npatches in params
 - randomise to take npatches
