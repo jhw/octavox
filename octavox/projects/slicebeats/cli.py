@@ -194,8 +194,24 @@ class Shell(cmd.Cmd):
                            key=lambda x: x["key"]))
         print (table.render(["key", "value"]))
 
+    def validate_int(config):
+        def decorator(fn):
+            def wrapped(self, *args, **kwargs):
+                if config["name"] not in kwargs:
+                    raise RuntimeError("%s not found" % config["name"])
+                value=kwargs[config["name"]]
+                if not isinstance(value, int):
+                    raise RuntimeError("%s is not an integer" % config["name"])
+                if "min" in config and value < config["min"]:
+                    raise RuntimeError("%s exceeds minimum" % config["name"])
+                return fn(self, *args, **kwargs)
+            return wrapped
+        return decorator
+        
     @wrap_action
     @parse_line(keys=["npatches"])
+    @validate_int({"name": "npatches",
+                   "min": 1})
     def do_randomise(self, npatches):
         slicetemp=self.env["slicetemp"]["value"]
         patches=Patches.randomise(banks=self.banks,

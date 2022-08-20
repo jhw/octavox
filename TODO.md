@@ -1,18 +1,18 @@
 ### short [randomise]
 
-- validate int decorator
-
-- mutator
+- mutator args
+- mutator body
 
 - action to list stack
+- stack goto/head
+
 - output module is getting overridden
 - add titles to table rendering
 
 ### medium
 
-- sample viewing, blacklisting, replacing
-- merge, arrange
-
+- sample viewing/blacklisting/replacing
+- merge/blend 
 - layout switch to complement shuffle
 
 ### long
@@ -81,6 +81,7 @@
 
 ### done
 
+- validate int decorator
 - replace npatches in params
 - randomise to take npatches
 - how to validate npatches as int if passed to command line
