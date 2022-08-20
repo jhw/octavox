@@ -207,23 +207,29 @@ class Shell(cmd.Cmd):
                 return fn(self, *args, **kwargs)
             return wrapped
         return decorator
-        
+
+    def render_patches(fn):
+        def wrapped(self, *args, **kwargs):
+            patches=fn(self, *args, **kwargs)
+            filename=random_filename()
+            self.stack.append((filename, patches))
+            nbeats=self.env["nbeats"]["value"]
+            patches.render(banks=self.banks,
+                           nbeats=nbeats,
+                           filename=filename)
+            print (filename)
+        return wrapped
+    
     @wrap_action
     @parse_line(keys=["npatches"])
     @validate_int({"name": "npatches",
                    "min": 1})
+    @render_patches
     def do_randomise(self, npatches):
         slicetemp=self.env["slicetemp"]["value"]
-        patches=Patches.randomise(banks=self.banks,
-                                  slicetemp=slicetemp,
-                                  n=npatches)
-        filename=random_filename()
-        self.stack.append((filename, patches))
-        nbeats=self.env["nbeats"]["value"]
-        patches.render(banks=self.banks,
-                       nbeats=nbeats,
-                       filename=filename)
-        print (filename)
+        return Patches.randomise(banks=self.banks,
+                                 slicetemp=slicetemp,
+                                 n=npatches)
 
     @wrap_action
     @parse_line(keys=["i", "npatches"])
@@ -231,6 +237,7 @@ class Shell(cmd.Cmd):
                    "min": 0})
     @validate_int({"name": "npatches",
                    "min": 1})
+    @render_patches
     def do_mutate(self, i, npatches):
         if self.stack==[]:
             raise RuntimeError("stack is empty")
@@ -239,16 +246,9 @@ class Shell(cmd.Cmd):
         limits={k: self.env["d%s" % k]["value"]
                 for k in "slices|pat|mute|seed|style".split("|")}
         slicetemp=self.env["slicetemp"]["value"]
-        patches=Patches([root]+[root.clone().mutate(limits=limits,
-                                                    slicetemp=slicetemp)
-                                for i in range(npatches-1)])
-        filename=random_filename()
-        self.stack.append((filename, patches))
-        nbeats=self.env["nbeats"]["value"]
-        patches.render(banks=self.banks,
-                       nbeats=nbeats,
-                       filename=filename)
-        print (filename)
+        return Patches([root]+[root.clone().mutate(limits=limits,
+                                                   slicetemp=slicetemp)
+                               for i in range(npatches-1)])
 
     @wrap_action
     def do_exit(self, *args, **kwargs):
