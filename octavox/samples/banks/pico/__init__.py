@@ -5,7 +5,7 @@ import random, yaml
 class PicoBanks(SVBanks):
 
     def __init__(self,
-                 profile,
+                 profile=None,
                  root="tmp/banks/pico",
                  indexfile="octavox/samples/banks/pico/curated.yaml"):
         SVBanks.__init__(self, root)

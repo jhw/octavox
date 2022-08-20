@@ -4,7 +4,7 @@ from octavox.projects import Nouns, Adjectives
 
 from datetime import datetime
 
-import cmd, random, re, sys, yaml
+import cmd, random, re, yaml
 
 Profiles=yaml.safe_load("""
 default:
@@ -112,6 +112,8 @@ class Shell(cmd.Cmd):
     def __init__(self, banks, env=Parameters):
         cmd.Cmd.__init__(self)
         self.banks=banks
+        profilename=env["profile"]["value"]
+        self.banks.profile=Profiles[profilename]
         self.env=env
         self.stack=[]
 
@@ -261,13 +263,8 @@ class Shell(cmd.Cmd):
 
 if __name__=="__main__":
     try:
-        pfname="default" if len(sys.argv) < 2 else sys.argv[1]
-        if pfname not in Profiles:
-            raise RuntimeError("profile is invalid")
-        profile=Profiles[pfname]
         from octavox.samples.banks.pico import PicoBanks
-        banks=PicoBanks(profile=profile,
-                        root="tmp/banks/pico")
+        banks=PicoBanks()
         Shell(banks).cmdloop()
     except RuntimeError as error:
         print ("error: %s" % str(error))

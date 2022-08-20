@@ -1,6 +1,5 @@
 ### short [randomise]
 
-- initialise banks with None profile and populate on cli initialisation
 - action to list stack
 - stack goto/head
 
@@ -81,6 +80,7 @@
 
 ### done
 
+- initialise banks with None profile and populate on cli initialisation
 - render_patches decorator
 - mutator args
 - mutator body
