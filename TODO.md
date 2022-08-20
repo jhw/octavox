@@ -1,15 +1,13 @@
 ### short [randomise]
 
-- action to list stack
-- stack goto/head
-
 - add titles to table rendering
+- `liststack` action
+- stack goto/head
+- `blend` action
 
 ### medium
 
 - sample viewing/blacklisting/replacing
-- merge/blend 
-- layout switch to complement shuffle
 
 ### long
 
@@ -24,11 +22,10 @@
 
 ### thoughts
 
+- layout switch to complement shuffle ?
+  - not worth it
 - pre- populate stack from file ?
   - not possible as stuff isn't saved
-- better ways to update bank profile ?
-- remove equalisers ?
-  - they are useful even if you don't use them
 - rename s3 bucket ?
   - not worth it
 - manually curate pico samples ?

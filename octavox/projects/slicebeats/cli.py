@@ -1,4 +1,4 @@
-from octavox.projects.slicebeats.dom import Patches
+from octavox.projects.slicebeats.model import Patches
 
 from octavox.projects import Nouns, Adjectives
 
