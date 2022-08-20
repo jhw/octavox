@@ -1,7 +1,10 @@
 ### short [randomise]
 
-- validate_int decorator
-- convert npatches to be passws as command line arg
+- randomise to take npatches
+- validate int decorator
+- replace npatches in params
+
+- mutator
 
 - action to list stack
 - output module is getting overridden
