@@ -64,7 +64,7 @@ dpat:
   max: 1
 dmute: 
   type: number
-  value: 0.0
+  value: 0.25
   min: 0
   max: 1
 dseed: 
@@ -126,11 +126,24 @@ class Shell(cmd.Cmd):
         return wrapped
                        
     def parse_line(keys=[]):
+        def parse_intarray(v):
+            buf=[]
+            for chunk in v.split("|"):
+                tokens=[int(tok)
+                        for tok in chunk.split("x")]
+                if len(tokens)==1:
+                    buf.append(tokens[0])
+                else:
+                    buf+=[tokens[1]
+                          for i in range(tokens[0])]
+            return buf
         def optimistic_parse(v):
             if re.search("^\\-?\\d+$", v):
                 return int(v)
             elif re.search("^\\-?\\d+(\\.\\d+)?$", v):
                 return float(v)
+            elif re.search("^(((\\d+x\\d+)|\\d+)\\|)*((\\d+x\\d+)|(\\d+))$", v):
+                return parse_intarray(v)                                       
             else:
                 return v
         def decorator(fn):            
@@ -210,6 +223,23 @@ class Shell(cmd.Cmd):
             return wrapped
         return decorator
 
+    def validate_intarray(config):
+        def decorator(fn):
+            def wrapped(self, *args, **kwargs):
+                if config["name"] not in kwargs:
+                    raise RuntimeError("%s not found" % config["name"])
+                value=kwargs[config["name"]]
+                if not isinstance(value, list):
+                    raise RuntimeError("%s is not an array" % config["name"])
+                for v in value:
+                    if not isinstance(v, int):
+                        raise RuntimeError("%s contains non- int values" % config["name"])
+                    if "min" in config and v < config["min"]:
+                        raise RuntimeError("%s constains values exceeding minimum" % config["name"])
+                return fn(self, *args, **kwargs)
+            return wrapped
+        return decorator
+
     def render_patches(fn):
         def wrapped(self, *args, **kwargs):
             patches=fn(self, *args, **kwargs)
@@ -252,6 +282,15 @@ class Shell(cmd.Cmd):
                                                    slicetemp=slicetemp)
                                for i in range(npatches-1)])
 
+    @wrap_action
+    @parse_line(keys=["I", "npatches"])
+    @validate_intarray({"name": "I",
+                        "min": 0})
+    @validate_int({"name": "npatches",
+                   "min": 1})
+    def do_blend(self, I, npatches):
+        print (I, npatches)
+    
     @wrap_action
     def do_exit(self, *args, **kwargs):
         return self.do_quit(*args, **kwargs)

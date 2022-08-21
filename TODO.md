@@ -1,13 +1,12 @@
-### short [randomise]
+### short
 
+- action to filter selected slices
 
-- int array pattern
-- parse int array
-- blend action taking int array, npatches
-- action to filter slices from all 
+- complete blend action
 
 ### medium
 
+- arranger
 - stack listing and navigation
 - sample viewing/blacklisting/replacing
 
@@ -17,7 +16,7 @@
 - vitling 303
 - city dreams bass
 - sunvox reverb chords
-- native 909
+- native instruments 909
 - sunsynth packaging
 
 ### thoughts
