@@ -1,27 +1,29 @@
 ### short [randomise]
 
-- add titles to table rendering
-- `liststack` action
-- stack goto/head
-- `blend` action
+
+- int array pattern
+- parse int array
+- blend action taking int array, npatches
+- action to filter slices from all 
 
 ### medium
 
+- stack listing and navigation
 - sample viewing/blacklisting/replacing
 
 ### long
 
-- sunsynth packaging
-
+- euclidian/bjorklund beats
 - vitling 303
 - city dreams bass
-- euclidian/bjorklund beats
 - sunvox reverb chords
-- sunvox kicker
-- noise hats
+- native 909
+- sunsynth packaging
 
 ### thoughts
 
+- add titles to table rendering ?
+  - not sure it's worth it
 - layout switch to complement shuffle ?
   - not worth it
 - pre- populate stack from file ?
