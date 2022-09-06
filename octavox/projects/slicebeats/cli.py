@@ -62,11 +62,6 @@ dpat:
   value: 0.5
   min: 0
   max: 1
-dmute: 
-  type: number
-  value: 0.25
-  min: 0
-  max: 1
 dseed: 
   type: number
   value: 0.5
@@ -282,7 +277,7 @@ class Shell(cmd.Cmd):
         roots=self.stack[-1][-1]
         root=roots[i % len(roots)]
         limits={k: self.env["d%s" % k]["value"]
-                for k in "slices|pat|mute|seed|style".split("|")}
+                for k in "slices|pat|seed|style".split("|")}
         slicetemp=self.env["slicetemp"]["value"]
         return Patches([root]+[root.clone().mutate(limits=limits,
                                                    slicetemp=slicetemp)

@@ -375,11 +375,6 @@ class Tracks(dict):
             if random.random() < limit:
                 self["patterns"][key]=patterns.randomise(slicetemp)
 
-    def randomise_mutes(self, limit):
-        self["mutes"]=[key for key in self["keys"]
-                       if random.random() < limit
-                       and key!="ec"]
-
     def shuffle_slices(self, limit):
         if random.random() < limit:
             random.shuffle(self["slices"])
@@ -420,7 +415,6 @@ class Patch(dict):
 
     def mutate(self, limits, slicetemp):
         self["tracks"].randomise_pattern(limits["pat"], slicetemp)
-        self["tracks"].randomise_mutes(limits["mute"])
         self["tracks"].shuffle_slices(limits["slices"])
         for slice in self["tracks"]["slices"]:
             for machine in slice["machines"]:

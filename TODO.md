@@ -1,13 +1,16 @@
 ### short
 
-- remove mutation mutes
 - complete blender
 - expander
 
 ### medium
 
-- stack listing and navigation
-- sample viewing/blacklisting/replacing
+- action to view sample mapping
+- action to play a sample
+- action to randomise a sample
+
+- stack offset variable
+- ability to view current place in stack
 
 ### long
 
@@ -76,6 +79,7 @@
 
 ### done
 
+- remove mutation mutes
 - output module is getting overridden
   - try bigger grid
 - initialise banks with None profile and populate on cli initialisation
