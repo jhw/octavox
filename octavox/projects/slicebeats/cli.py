@@ -124,7 +124,14 @@ class Shell(cmd.Cmd):
             except RuntimeError as error:
                 print ("error: %s" % str(error))
         return wrapped
-                       
+
+    def assert_stack(fn):
+        def wrapped(self, *args, **kwargs):
+            if self.stack==[]:
+                raise RuntimeError("stack is empty")
+            return fn(self, *args, **kwargs)
+        return wrapped
+
     def parse_line(keys=[]):
         def parse_intarray(v):
             buf=[]
@@ -239,7 +246,7 @@ class Shell(cmd.Cmd):
                 return fn(self, *args, **kwargs)
             return wrapped
         return decorator
-
+    
     def render_patches(fn):
         def wrapped(self, *args, **kwargs):
             patches=fn(self, *args, **kwargs)
@@ -264,6 +271,7 @@ class Shell(cmd.Cmd):
                                  n=npatches)
 
     @wrap_action
+    @assert_stack
     @parse_line(keys=["i", "npatches"])
     @validate_int({"name": "i",
                    "min": 0})
@@ -271,8 +279,6 @@ class Shell(cmd.Cmd):
                    "min": 1})
     @render_patches
     def do_mutate(self, i, npatches):
-        if self.stack==[]:
-            raise RuntimeError("stack is empty")
         roots=self.stack[-1][-1]
         root=roots[i % len(roots)]
         limits={k: self.env["d%s" % k]["value"]
@@ -283,11 +289,13 @@ class Shell(cmd.Cmd):
                                for i in range(npatches-1)])
 
     @wrap_action
+    @assert_stack
     @parse_line(keys=["I", "npatches"])
     @validate_intarray({"name": "I",
                         "min": 0})
     @validate_int({"name": "npatches",
                    "min": 1})
+    # @render_patches
     def do_blend(self, I, npatches):
         print (I, npatches)
     

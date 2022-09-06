@@ -1,12 +1,11 @@
 ### short
 
-- action to filter selected slices
-
-- complete blend action
+- remove mutation mutes
+- complete blender
+- expander
 
 ### medium
 
-- arranger
 - stack listing and navigation
 - sample viewing/blacklisting/replacing
 
