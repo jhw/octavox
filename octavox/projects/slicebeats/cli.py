@@ -110,7 +110,8 @@ class Shell(cmd.Cmd):
         profilename=env["profile"]["value"]
         self.banks.profile=Profiles[profilename]
         self.env=env
-        self.stack=[]
+        self.filename=None
+        self.project=None
 
     def wrap_action(fn):
         def wrapped(self, *args, **kwargs):
@@ -120,10 +121,10 @@ class Shell(cmd.Cmd):
                 print ("error: %s" % str(error))
         return wrapped
 
-    def assert_stack(fn):
+    def assert_project(fn):
         def wrapped(self, *args, **kwargs):
-            if self.stack==[]:
-                raise RuntimeError("stack is empty")
+            if not self.project:
+                raise RuntimeError("no project found")
             return fn(self, *args, **kwargs)
         return wrapped
 
@@ -244,15 +245,14 @@ class Shell(cmd.Cmd):
     
     def render_patches(fn):
         def wrapped(self, *args, **kwargs):
-            patches=fn(self, *args, **kwargs)
-            filename=random_filename()
-            self.stack.append((filename, patches))
+            self.project=fn(self, *args, **kwargs)
+            self.filename=random_filename()
+            print (self.filename)
             nbeats=self.env["nbeats"]["value"]
-            patches.render_sunvox(banks=self.banks,
-                                  nbeats=nbeats,
-                                  filename=filename)
-            patches.render_json(filename=filename)
-            print (filename)
+            self.project.render_sunvox(banks=self.banks,
+                                       nbeats=nbeats,
+                                       filename=self.filename)
+            self.project.render_json(filename=self.filename)
         return wrapped
     
     @wrap_action
@@ -267,7 +267,7 @@ class Shell(cmd.Cmd):
                                  n=npatches)
 
     @wrap_action
-    @assert_stack
+    @assert_project
     @parse_line(keys=["i", "npatches"])
     @validate_int({"name": "i",
                    "min": 0})
@@ -275,7 +275,7 @@ class Shell(cmd.Cmd):
                    "min": 1})
     @render_patches
     def do_mutate(self, i, npatches):
-        roots=self.stack[-1][-1]
+        roots=self.project
         root=roots[i % len(roots)]
         limits={k: self.env["d%s" % k]["value"]
                 for k in "slices|pat|seed|style".split("|")}
@@ -295,7 +295,7 @@ class Shell(cmd.Cmd):
 
 if __name__=="__main__":
     try:
-        from octavox.samples.banks.pico import PicoBanks
+        from octavox.banks.pico import PicoBanks
         banks=PicoBanks()
         Shell(banks).cmdloop()
     except RuntimeError as error:
