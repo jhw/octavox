@@ -1,7 +1,9 @@
 ### short
 
-- complete load function
+- remove pico- prefix from saved s3 files
+  - test upload/download again
 
+- complete load function
 - add patch break variable to params
 
 ### medium
