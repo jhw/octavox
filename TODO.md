@@ -8,10 +8,10 @@
 
 ### medium
 
-- remove blender
-- add chainer
-  - mutes
+- add chainer with mutes
+- investigate patch breaks
 
 ### done
 
+- remove blender
 - maintain internal stack of patches
