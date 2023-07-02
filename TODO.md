@@ -1,8 +1,6 @@
 ### short
 
-- include generator in filename
 - add load function to load json from file
-- test mutating a loaded file
 
 ### medium
 
@@ -11,6 +9,7 @@
 
 ### done
 
+- include generator in filename
 - remove stack
 - fix need to remove pico- when downloading sample files
 - save patches to json

@@ -93,10 +93,11 @@ class Table(list):
 def timestamp():
     return datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
 
-def random_filename():
-    return "%s-%s-%s" % (timestamp(),
-                         random.choice(Adjectives),
-                         random.choice(Nouns))
+def random_filename(generator):
+    return "%s-%s-%s-%s" % (timestamp(),
+                            generator,
+                            random.choice(Adjectives),
+                            random.choice(Nouns))
     
 class Shell(cmd.Cmd):
 
@@ -243,23 +244,25 @@ class Shell(cmd.Cmd):
             return wrapped
         return decorator
     
-    def render_patches(fn):
-        def wrapped(self, *args, **kwargs):
-            self.project=fn(self, *args, **kwargs)
-            self.filename=random_filename()
-            print (self.filename)
-            nbeats=self.env["nbeats"]["value"]
-            self.project.render_sunvox(banks=self.banks,
-                                       nbeats=nbeats,
-                                       filename=self.filename)
-            self.project.render_json(filename=self.filename)
-        return wrapped
+    def render_patches(generator):
+        def decorator(fn):
+            def wrapped(self, *args, **kwargs):
+                self.project=fn(self, *args, **kwargs)
+                self.filename=random_filename(generator)
+                nbeats=self.env["nbeats"]["value"]
+                self.project.render_sunvox(banks=self.banks,
+                                           nbeats=nbeats,
+                                           filename=self.filename)
+                self.project.render_json(filename=self.filename)
+                print (self.filename)
+            return wrapped
+        return decorator
     
     @wrap_action
     @parse_line(keys=["npatches"])
     @validate_int({"name": "npatches",
                    "min": 1})
-    @render_patches
+    @render_patches("randomiser")
     def do_randomise(self, npatches):
         slicetemp=self.env["slicetemp"]["value"]
         return Patches.randomise(banks=self.banks,
@@ -273,7 +276,7 @@ class Shell(cmd.Cmd):
                    "min": 0})
     @validate_int({"name": "npatches",
                    "min": 1})
-    @render_patches
+    @render_patches("mutator")
     def do_mutate(self, i, npatches):
         roots=self.project
         root=roots[i % len(roots)]
