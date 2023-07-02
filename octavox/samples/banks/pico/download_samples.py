@@ -7,9 +7,10 @@ def download_samples(s3, bucketname):
         if "Contents" in struct:
             for obj in struct["Contents"]:
                 print (obj["Key"])
+                filename=obj["Key"].replace("pico-", "")
                 s3.download_file(bucketname,
                                  obj["Key"],
-                                 "tmp/banks/pico/%s" % obj["Key"])
+                                 "tmp/banks/pico/%s" % filename)
 
 if __name__=="__main__":
     try:

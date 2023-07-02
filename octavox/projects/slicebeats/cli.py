@@ -248,9 +248,10 @@ class Shell(cmd.Cmd):
             filename=random_filename()
             self.stack.append((filename, patches))
             nbeats=self.env["nbeats"]["value"]
-            patches.render(banks=self.banks,
-                           nbeats=nbeats,
-                           filename=filename)
+            patches.render_sunvox(banks=self.banks,
+                                  nbeats=nbeats,
+                                  filename=filename)
+            patches.render_json(filename=filename)
             print (filename)
         return wrapped
     

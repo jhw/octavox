@@ -5,7 +5,7 @@ from rv.modules.reverb import Reverb as RVReverb
 from octavox.modules.sampler import SVSampler
 from octavox.modules.project import SVProject
 
-import math, os, random, yaml
+import json, math, os, random, yaml
 
 Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
 
@@ -460,13 +460,31 @@ class Patches(list):
                          key=sorter)
                 for k, v in samplekeys.items()}
 
-    def render(self, banks, nbeats, filename,
-               nbreaks=0,
-               modconfig=ModConfig):
-        for path in ["tmp",
-                     "tmp/slicebeats"]:
-            if not os.path.exists(path):
-                os.makedirs(path)
+    def init_paths(paths):
+        def decorator(fn):
+            def wrapped(*args, **kwargs):
+                for path in paths:
+                    if not os.path.exists(path):
+                        os.makedirs(path)
+                return fn(*args, **kwargs)
+            return wrapped
+        return decorator
+
+    @init_paths(["tmp",
+                 "tmp/slicebeats",
+                 "tmp/slicebeats/json"])
+    def render_json(self, filename):
+        projfile="tmp/slicebeats/json/%s.json" % filename
+        with open(projfile, 'w') as f:
+            f.write(json.dumps(self,
+                               indent=2))
+    
+    @init_paths(["tmp",
+                 "tmp/slicebeats",
+                 "tmp/slicebeats/sunvox"])
+    def render_sunvox(self, banks, nbeats, filename,
+                      nbreaks=0,
+                      modconfig=ModConfig):
         samplekeys=self.sample_keys(nbeats)
         for mod in modconfig["modules"]:
             klass=eval(mod["classname"])
@@ -482,7 +500,7 @@ class Patches(list):
                                    banks=banks,
                                    nbeats=nbeats,
                                    nbreaks=nbreaks)
-        projfile="tmp/slicebeats/%s.sunvox" % filename
+        projfile="tmp/slicebeats/sunvox/%s.sunvox" % filename
         with open(projfile, 'wb') as f:
             project.write_to(f)
     
