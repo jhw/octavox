@@ -284,17 +284,6 @@ class Shell(cmd.Cmd):
                                for i in range(npatches-1)])
 
     @wrap_action
-    @assert_stack
-    @parse_line(keys=["I", "npatches"])
-    @validate_intarray({"name": "I",
-                        "min": 0})
-    @validate_int({"name": "npatches",
-                   "min": 1})
-    # @render_patches
-    def do_blend(self, I, npatches):
-        print (I, npatches)
-    
-    @wrap_action
     def do_exit(self, *args, **kwargs):
         return self.do_quit(*args, **kwargs)
 
