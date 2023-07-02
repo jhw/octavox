@@ -1,11 +1,12 @@
 ### short
 
-- add load function to load json from file
+- complete load function
+
+- add patch break variable to params
 
 ### medium
 
 - add chainer with mutes
-- investigate patch breaks
 
 ### done
 

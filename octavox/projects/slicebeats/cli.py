@@ -78,7 +78,7 @@ nbeats:
   min: 4
 """))
 
-class Table(list):
+class KwikTable(list):
 
     def __init__(self, items=[]):
         list.__init__(self, items)
@@ -206,11 +206,11 @@ class Shell(cmd.Cmd):
         print ("%s=%s" % (key, param["value"]))
 
     @wrap_action
-    def do_listenv(self, *args, **kwargs):
-        table=Table(sorted([{"key": k,
-                             "value": v["value"]}
-                            for k, v in self.env.items()],
-                           key=lambda x: x["key"]))
+    def do_listparams(self, *args, **kwargs):
+        table=KwikTable(sorted([{"key": k,
+                                 "value": v["value"]}
+                                for k, v in self.env.items()],
+                               key=lambda x: x["key"]))
         print (table.render(["key", "value"]))
 
     def validate_int(config):
@@ -286,6 +286,11 @@ class Shell(cmd.Cmd):
         return Patches([root]+[root.clone().mutate(limits=limits,
                                                    slicetemp=slicetemp)
                                for i in range(npatches-1)])
+
+    @wrap_action
+    @parse_line(keys=["frag"])
+    def do_load(self, frag):
+        print (frag)
 
     @wrap_action
     def do_exit(self, *args, **kwargs):
