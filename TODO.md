@@ -1,14 +1,17 @@
 ### short
 
-- complete load function
+- simplify os.makedirs
 - add patch break variable to params
+- complete load function
 
 ### medium
 
 - add chainer with mutes
+- custom sample pools
 
 ### done
 
+- don't store self.filenmae
 - remove pico- prefix from saved s3 files
   - test upload/download again
 - include generator in filename

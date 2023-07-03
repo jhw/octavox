@@ -111,7 +111,6 @@ class Shell(cmd.Cmd):
         profilename=env["profile"]["value"]
         self.banks.profile=Profiles[profilename]
         self.env=env
-        self.filename=None
         self.project=None
 
     def wrap_action(fn):
@@ -247,14 +246,15 @@ class Shell(cmd.Cmd):
     def render_patches(generator):
         def decorator(fn):
             def wrapped(self, *args, **kwargs):
-                self.project=fn(self, *args, **kwargs)
-                self.filename=random_filename(generator)
+
+                filename=random_filename(generator)
+                print (filename)
                 nbeats=self.env["nbeats"]["value"]
+                self.project=fn(self, *args, **kwargs)
+                self.project.render_json(filename=filename)
                 self.project.render_sunvox(banks=self.banks,
                                            nbeats=nbeats,
-                                           filename=self.filename)
-                self.project.render_json(filename=self.filename)
-                print (self.filename)
+                                           filename=filename)
             return wrapped
         return decorator
     
