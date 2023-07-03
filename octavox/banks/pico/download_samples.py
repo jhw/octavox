@@ -18,9 +18,7 @@ if __name__=="__main__":
             raise RuntimeError("please enter bucket name")
         bucketname=sys.argv[1]
         s3=boto3.client("s3")
-        for path in ["tmp",
-                     "tmp/banks",
-                     "tmp/banks/pico"]:
+        for path in ["tmp/banks/pico"]:
             if not os.path.exists(path):
                 os.makedirs(path)            
         download_samples(s3, bucketname)

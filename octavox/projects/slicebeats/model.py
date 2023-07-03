@@ -470,18 +470,14 @@ class Patches(list):
             return wrapped
         return decorator
 
-    @init_paths(["tmp",
-                 "tmp/slicebeats",
-                 "tmp/slicebeats/json"])
+    @init_paths(["tmp/slicebeats/json"])
     def render_json(self, filename):
         projfile="tmp/slicebeats/json/%s.json" % filename
         with open(projfile, 'w') as f:
             f.write(json.dumps(self,
                                indent=2))
     
-    @init_paths(["tmp",
-                 "tmp/slicebeats",
-                 "tmp/slicebeats/sunvox"])
+    @init_paths(["tmp/slicebeats/sunvox"])
     def render_sunvox(self, banks, nbeats, filename,
                       nbreaks=0,
                       modconfig=ModConfig):

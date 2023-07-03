@@ -1,10 +1,10 @@
-from octavox.projects.slicebeats.model import Patches
+from octavox.projects.slicebeats.model import Patch, Patches
 
 from octavox.projects import Nouns, Adjectives
 
 from datetime import datetime
 
-import cmd, random, re, yaml
+import cmd, json, os, random, re, yaml
 
 Profiles=yaml.safe_load("""
 default:
@@ -76,6 +76,10 @@ nbeats:
   type: int
   value: 16
   min: 4
+nbreaks: 
+  type: int
+  value: 0
+  min: 0
 """))
 
 class KwikTable(list):
@@ -129,24 +133,11 @@ class Shell(cmd.Cmd):
         return wrapped
 
     def parse_line(keys=[]):
-        def parse_intarray(v):
-            buf=[]
-            for chunk in v.split("|"):
-                tokens=[int(tok)
-                        for tok in chunk.split("x")]
-                if len(tokens)==1:
-                    buf.append(tokens[0])
-                else:
-                    buf+=[tokens[1]
-                          for i in range(tokens[0])]
-            return buf
         def optimistic_parse(v):
             if re.search("^\\-?\\d+$", v):
                 return int(v)
             elif re.search("^\\-?\\d+(\\.\\d+)?$", v):
                 return float(v)
-            elif re.search("^(((\\d+x\\d+)|\\d+)\\|)*((\\d+x\\d+)|(\\d+))$", v):
-                return parse_intarray(v)                                       
             else:
                 return v
         def decorator(fn):            
@@ -226,34 +217,20 @@ class Shell(cmd.Cmd):
             return wrapped
         return decorator
 
-    def validate_intarray(config):
-        def decorator(fn):
-            def wrapped(self, *args, **kwargs):
-                if config["name"] not in kwargs:
-                    raise RuntimeError("%s not found" % config["name"])
-                value=kwargs[config["name"]]
-                if not isinstance(value, list):
-                    raise RuntimeError("%s is not an array" % config["name"])
-                for v in value:
-                    if not isinstance(v, int):
-                        raise RuntimeError("%s contains non- int values" % config["name"])
-                    if "min" in config and v < config["min"]:
-                        raise RuntimeError("%s constains values exceeding minimum" % config["name"])
-                return fn(self, *args, **kwargs)
-            return wrapped
-        return decorator
-    
     def render_patches(generator):
         def decorator(fn):
             def wrapped(self, *args, **kwargs):
 
                 filename=random_filename(generator)
                 print (filename)
-                nbeats=self.env["nbeats"]["value"]
+
                 self.project=fn(self, *args, **kwargs)
                 self.project.render_json(filename=filename)
+                nbeats, nbreaks = (self.env["nbeats"]["value"],
+                                   self.env["nbreaks"]["value"])
                 self.project.render_sunvox(banks=self.banks,
                                            nbeats=nbeats,
+                                           nbreaks=nbreaks,
                                            filename=filename)
             return wrapped
         return decorator
@@ -269,6 +246,23 @@ class Shell(cmd.Cmd):
                                  slicetemp=slicetemp,
                                  n=npatches)
 
+    @wrap_action
+    @parse_line(keys=["frag"])
+    def do_load(self, frag, dirname="tmp/slicebeats/json"):
+        matches=[filename for filename in os.listdir(dirname)
+                 if frag in filename]
+        if matches==[]:
+            print ("no matches")
+        elif len(matches)==1:
+            filename=matches.pop()
+            print (filename)
+            abspath="%s/%s" % (dirname, filename)
+            patches=json.loads(open(abspath).read())
+            self.project=Patches([Patch(**patch)
+                                  for patch in patches])
+        else:
+            print ("multiple matches")
+    
     @wrap_action
     @assert_project
     @parse_line(keys=["i", "npatches"])
@@ -286,11 +280,6 @@ class Shell(cmd.Cmd):
         return Patches([root]+[root.clone().mutate(limits=limits,
                                                    slicetemp=slicetemp)
                                for i in range(npatches-1)])
-
-    @wrap_action
-    @parse_line(keys=["frag"])
-    def do_load(self, frag):
-        print (frag)
 
     @wrap_action
     def do_exit(self, *args, **kwargs):

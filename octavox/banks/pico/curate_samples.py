@@ -79,18 +79,14 @@ def generate(packname, packfile, samples):
 
 if __name__=="__main__":
     try:
-        if not os.path.exists("tmp"):
-            os.mkdir("tmp")
+        for path in ["tmp/banks/pico"]:
+            if not os.path.exists(path):
+                os.makedirs(path)            
         samples={}
         for packname, packfile in pack_list().items():
             print (packname)
             bankname=packname.replace(" ", "-").lower()
             generate(bankname, packfile, samples)
-        for path in ["tmp",
-                     "tmp/banks",
-                     "tmp/banks/pico"]:
-            if not os.path.exists(path):
-                os.makedirs(path)            
         with open("tmp/banks/pico/curated.yaml", 'w') as f:            
             f.write(yaml.safe_dump(samples,
                                    default_flow_style=False))

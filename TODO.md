@@ -1,16 +1,18 @@
 ### short
 
-- simplify os.makedirs
-- add patch break variable to params
-- complete load function
+- add chainer with mutes
 
 ### medium
 
-- add chainer with mutes
+- sunvox 2.1
 - custom sample pools
 
 ### done
 
+- complete load function
+- add breaks variable
+- add bool support
+- simplify os.makedirs
 - don't store self.filenmae
 - remove pico- prefix from saved s3 files
   - test upload/download again
