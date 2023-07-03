@@ -9,7 +9,7 @@ def upload_samples(s3, bucketname):
         print (filename)
         s3.upload_file("tmp/banks/pico/%s" % filename,
                        bucketname,
-                            filename)
+                       filename)
     
 if __name__=="__main__":
     try:

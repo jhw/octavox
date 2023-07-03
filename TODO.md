@@ -1,8 +1,5 @@
 ### short
 
-- remove pico- prefix from saved s3 files
-  - test upload/download again
-
 - complete load function
 - add patch break variable to params
 
@@ -12,6 +9,8 @@
 
 ### done
 
+- remove pico- prefix from saved s3 files
+  - test upload/download again
 - include generator in filename
 - remove stack
 - fix need to remove pico- when downloading sample files
