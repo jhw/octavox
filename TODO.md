@@ -1,15 +1,16 @@
 ### short
 
-- refactor breaks so they are not voids
-- add chainer with mutes
+- add apply() decorator to attach project, blanks
+- sunvox 2.1
+- chainer with mutes
 
 ### medium
 
-- sunvox 2.1
 - custom sample pools
 
 ### done
 
+- refactor breaks so they are not voids
 - complete load function
 - add breaks variable
 - add bool support

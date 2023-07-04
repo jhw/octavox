@@ -180,13 +180,12 @@ class SVProject:
                 for track in patch["tracks"]]
         
     def init_pattern(self,
+                     patterns,
                      modules,
                      controllers,
                      patch,
                      offset,
                      color,
-                     nbreaks,
-                     breaksz=BreakSz,
                      height=Height):
         grid=self.init_grid(patch)
         def notefn(self, j, i):
@@ -198,9 +197,25 @@ class SVProject:
                         y_size=height,
                         bg_color=color)
         rvpat.set_via_fn(notefn)
+        patterns.append(rvpat)
         offset.increment(patch["n"])
-        offset.increment(nbreaks*breaksz)
-        return rvpat
+
+    def init_blank(self,
+                   patterns,
+                   patch,
+                   offset,
+                   color,
+                   height=Height):
+        def notefn(self, j, i):
+            return RVNote()
+        rvpat=RVPattern(lines=patch["n"],
+                        tracks=len(patch["tracks"]),
+                        x=offset.value,
+                        y_size=height,
+                        bg_color=color)
+        rvpat.set_via_fn(notefn)
+        patterns.append(rvpat)
+        offset.increment(patch["n"])                
 
     def init_controllers(self, modules):
         controllers={}
@@ -218,13 +233,17 @@ class SVProject:
         for i, _patch in enumerate(patches):
             patch=_patch.render(nbeats)
             color=self.new_color() if 0==i%4 else self.mutate_color(color)
-            pattern=self.init_pattern(modules,
-                                      controllers,
-                                      patch,
-                                      offset,
-                                      color,
-                                      nbreaks)
-            patterns.append(pattern)
+            self.init_pattern(patterns,
+                              modules,
+                              controllers,
+                              patch,
+                              offset,
+                              color)            
+            for i in range(nbreaks):
+                self.init_blank(patterns,
+                                patch,
+                                offset,
+                                color)
         return patterns
 
     def render(self,
