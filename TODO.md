@@ -1,12 +1,18 @@
 ### short
 
-- add apply() decorator to attach project, blanks
-- sunvox 2.1
 - chainer with mutes
+
+### pending
+
+- sunvox 2.1
 
 ### medium
 
 - custom sample pools
+
+### thoughts
+
+- add apply() decorator to attach project, blanks
 
 ### done
 
