@@ -180,7 +180,6 @@ class SVProject:
                 for track in patch["tracks"]]
         
     def init_pattern(self,
-                     proj,
                      modules,
                      controllers,
                      patch,
@@ -212,15 +211,14 @@ class SVProject:
                 controllers[mod.name][controller.name]=controller.number
         return controllers
 
-    def init_patterns(self, proj, modules, patches, nbeats, nbreaks):
+    def init_patterns(self, modules, patches, nbeats, nbreaks):
         controllers=self.init_controllers(modules)
         offset=SVOffset()
         patterns, color = [], None
         for i, _patch in enumerate(patches):
             patch=_patch.render(nbeats)
             color=self.new_color() if 0==i%4 else self.mutate_color(color)
-            pattern=self.init_pattern(proj,
-                                      modules,
+            pattern=self.init_pattern(modules,
                                       controllers,
                                       patch,
                                       offset,
@@ -241,7 +239,7 @@ class SVProject:
         proj.global_volume=globalz["volume"]
         modules=self.init_modules(proj, modconfig)
         self.link_modules(proj, modconfig, modules)
-        proj.patterns=self.init_patterns(proj, modules, patches, nbeats, nbreaks)
+        proj.patterns=self.init_patterns(modules, patches, nbeats, nbreaks)
         return proj
 
 if __name__=="__main__":
