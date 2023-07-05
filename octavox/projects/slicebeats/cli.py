@@ -76,10 +76,6 @@ nbeats:
   type: int
   value: 16
   min: 4
-nbreaks: 
-  type: int
-  value: 0
-  min: 0
 """))
 
 class KwikTable(list):
@@ -217,15 +213,14 @@ class Shell(cmd.Cmd):
             return wrapped
         return decorator
 
-    def render_patches(generator):
+    def render_patches(generator, nbreaks=0):
         def decorator(fn):
             def wrapped(self, *args, **kwargs):
                 filename=random_filename(generator)
                 print (filename)
                 self.project=fn(self, *args, **kwargs)
                 self.project.render_json(filename=filename)
-                nbeats, nbreaks = (self.env["nbeats"]["value"],
-                                   self.env["nbreaks"]["value"])
+                nbeats=self.env["nbeats"]["value"]
                 self.project.render_sunvox(banks=self.banks,
                                            nbeats=nbeats,
                                            nbreaks=nbreaks,
@@ -237,7 +232,7 @@ class Shell(cmd.Cmd):
     @parse_line(keys=["npatches"])
     @validate_int({"name": "npatches",
                    "min": 1})
-    @render_patches("randomiser")
+    @render_patches(generator="randomiser")
     def do_randomise(self, npatches):
         slicetemp=self.env["slicetemp"]["value"]
         return Patches.randomise(banks=self.banks,
@@ -263,18 +258,12 @@ class Shell(cmd.Cmd):
 
     @wrap_action
     @assert_project
-    @render_patches("clone")
-    def do_save(self, foo="bar"):
-        return Patches(self.project)
-            
-    @wrap_action
-    @assert_project
     @parse_line(keys=["i", "npatches"])
     @validate_int({"name": "i",
                    "min": 0})
     @validate_int({"name": "npatches",
                    "min": 1})
-    @render_patches("mutator")
+    @render_patches(generator="mutator")
     def do_mutate(self, i, npatches):
         roots=self.project
         root=roots[i % len(roots)]
@@ -292,7 +281,8 @@ class Shell(cmd.Cmd):
                    "min": 0})
     @validate_int({"name": "npatches",
                    "min": 1})
-    @render_patches("chain")
+    @render_patches(generator="chain",
+                    nbreaks=1)
     def do_chain(self, i, npatches,
                  instruments="kk|sn|ht".split("|")):
         # initialise
