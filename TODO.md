@@ -1,9 +1,10 @@
 ### short
 
-- define instruments and solos
 
 - insert nbreaks automatically but for chain only
   - remove parameter
+
+- remove save
 
 ### v1-2
 
@@ -15,6 +16,7 @@
 
 ### done
 
+- define instruments and solos
 - chainer to force samples to be the same as mute
 - saving
 - chainer with mutes

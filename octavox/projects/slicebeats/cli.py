@@ -293,8 +293,9 @@ class Shell(cmd.Cmd):
     @validate_int({"name": "npatches",
                    "min": 1})
     @render_patches("chain")
-    def do_chain(self, i, npatches):
-        # initialise root
+    def do_chain(self, i, npatches,
+                 instruments="kk|sn|ht".split("|")):
+        # initialise
         roots=self.project
         root=roots[i % len(roots)]
         samples=[slice["samples"]                 
@@ -313,13 +314,14 @@ class Shell(cmd.Cmd):
                 slice["samples"]=samples[i % len(samples)]
             chain.append(mutation)
         # add mutes
-        for mutes in ["sn|ht", # kk
-                      "kk|ht", # sn
-                      "kk|sn"]: # ht
+        for solo in instruments:
+            mutes=[inst for inst in instruments
+                   if inst!=solo]
             for mutation in chain[:nmutations]:
                 clone=mutation.clone()
-                clone["tracks"]["mutes"]=mutes.split("|")
+                clone["tracks"]["mutes"]=mutes
                 chain.append(clone)
+        # return
         return chain
     
     @wrap_action
