@@ -1,16 +1,14 @@
 ### short
 
-- saving
-- chainer with mutes
+- why does save() need dummy arg?
 
 ### pending
 
 - sunvox 2.1
 
-### medium
+### v1-2
 
-- why does save() need dummy arg?
-- custom sample pools
+- refactor samples pools; add custom versions
 
 ### thoughts
 
@@ -18,6 +16,9 @@
 
 ### done
 
+- chainer to force samples to be the same as mute
+- saving
+- chainer with mutes
 - refactor breaks so they are not voids
 - complete load function
 - add breaks variable

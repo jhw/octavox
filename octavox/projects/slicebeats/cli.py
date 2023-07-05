@@ -286,6 +286,43 @@ class Shell(cmd.Cmd):
                                for i in range(npatches-1)])
 
     @wrap_action
+    @assert_project
+    @parse_line(keys=["i", "npatches"])
+    @validate_int({"name": "i",
+                   "min": 0})
+    @validate_int({"name": "npatches",
+                   "min": 1})
+    @render_patches("chain")
+    def do_chain(self, i, npatches):
+        # initialise root
+        roots=self.project
+        root=roots[i % len(roots)]
+        samples=[slice["samples"]                 
+                 for slice in root["tracks"]["slices"]]
+        chain=Patches([root])
+        nmutations=int(npatches/4)                
+        # generate mutations
+        limits={k: self.env["d%s" % k]["value"]
+                for k in "slices|pat|seed|style".split("|")}
+        slicetemp=self.env["slicetemp"]["value"]
+        for i in range(nmutations-1):
+            mutation=root.clone().mutate(limits=limits,
+                                         slicetemp=slicetemp)
+            # override samples
+            for i, slice in enumerate(mutation["tracks"]["slices"]):
+                slice["samples"]=samples[i % len(samples)]
+            chain.append(mutation)
+        # add mutes
+        for mutes in ["sn|ht", # kk
+                      "kk|ht", # sn
+                      "kk|sn"]: # ht
+            for mutation in chain[:nmutations]:
+                clone=mutation.clone()
+                clone["tracks"]["mutes"]=mutes.split("|")
+                chain.append(clone)
+        return chain
+    
+    @wrap_action
     def do_exit(self, *args, **kwargs):
         return self.do_quit(*args, **kwargs)
 
