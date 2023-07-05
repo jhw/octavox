@@ -1,10 +1,9 @@
 ### short
 
-- why does save() need dummy arg?
+- define instruments and solos
 
-### pending
-
-- sunvox 2.1
+- insert nbreaks automatically but for chain only
+  - remove parameter
 
 ### v1-2
 
