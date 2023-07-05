@@ -1,10 +1,11 @@
 ### short
 
-- remove save
+### medium [v1-2]
 
-### v1-2
-
-- refactor samples pools; add custom versions
+- degrading
+- add custom sample pools
+  - may require refactoring of existing samples structure
+- sample similarity clustering  
 
 ### thoughts
 
@@ -12,6 +13,7 @@
 
 ### done
 
+- remove save
 - insert nbreaks automatically but for chain only
   - remove parameter
 - define instruments and solos

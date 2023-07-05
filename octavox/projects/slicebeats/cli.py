@@ -281,7 +281,7 @@ class Shell(cmd.Cmd):
                    "min": 0})
     @validate_int({"name": "npatches",
                    "min": 1})
-    @render_patches(generator="chain",
+    @render_patches(generator="chainer",
                     nbreaks=1)
     def do_chain(self, i, npatches,
                  instruments="kk|sn|ht".split("|")):
