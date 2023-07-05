@@ -1,5 +1,6 @@
 ### short
 
+- saving
 - chainer with mutes
 
 ### pending
@@ -8,6 +9,7 @@
 
 ### medium
 
+- why does save() need dummy arg?
 - custom sample pools
 
 ### thoughts

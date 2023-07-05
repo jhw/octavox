@@ -220,10 +220,8 @@ class Shell(cmd.Cmd):
     def render_patches(generator):
         def decorator(fn):
             def wrapped(self, *args, **kwargs):
-
                 filename=random_filename(generator)
                 print (filename)
-
                 self.project=fn(self, *args, **kwargs)
                 self.project.render_json(filename=filename)
                 nbeats, nbreaks = (self.env["nbeats"]["value"],
@@ -262,7 +260,13 @@ class Shell(cmd.Cmd):
                                   for patch in patches])
         else:
             print ("multiple matches")
-    
+
+    @wrap_action
+    @assert_project
+    @render_patches("clone")
+    def do_save(self, foo="bar"):
+        return Patches(self.project)
+            
     @wrap_action
     @assert_project
     @parse_line(keys=["i", "npatches"])
