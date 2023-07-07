@@ -1,14 +1,16 @@
 ### short
 
+- make nbeats an environment variable
+
 ### medium [v1-2]
 
 - degrading
-- add custom sample pools
+- custom sample pools
   - may require refactoring of existing samples structure
-- sample similarity clustering  
 
 ### thoughts
 
+- sample similarity clustering?
 - add apply() decorator to attach project, blanks
 
 ### done
