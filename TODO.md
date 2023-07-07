@@ -1,6 +1,7 @@
 ### short
 
 - make nbeats an environment variable
+- limit to particular pico bank
 
 ### medium [v1-2]
 
