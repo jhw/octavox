@@ -1,2 +1,0 @@
-- https://www.talkenglish.com/vocabulary/top-1500-nouns.aspx 
-- https://www.talkenglish.com/vocabulary/top-500-adjectives.aspx 

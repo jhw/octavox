@@ -2,61 +2,13 @@ from rv.modules.sampler import Sampler as RVSampler
 
 from rv.note import NOTE as RVNOTE
 
-import os, random, re, warnings, zipfile
+import warnings
 
 # from scipy.io import wavfile
 from octavox.modules.utils import wavfile
 
 warnings.simplefilter("ignore", wavfile.WavFileWarning)
 
-Sampler="Sampler"
-
-class SVBanks(dict):
-
-    def __init__(self,
-                 root,
-                 filterfn=lambda x: x.endswith(".zip")):
-        dict.__init__(self)        
-        def keyfn(item):
-            return item.split(".")[0]
-        for filename in os.listdir(root):
-            if not filterfn(filename):
-                continue
-            key=keyfn(filename)
-            path="%s/%s" % (root, filename)
-            self[key]=zipfile.ZipFile(path)
-        
-    """
-    - find sample wavfile associated with particular bank and id
-    - note is an index, not the name of the wavfile itself
-    - note wavfiles are sorted by name in this index
-    - this is done so you can index samples from zero, rather than the pico filename convention which starts them at one
-    """
-        
-    def get_wavfile(self, key):
-        def sorter(zf):
-            stub=zf.filename.split(".")[0]
-            return int(stub) if re.search("^\\d+$", stub) else stub
-        def lookup(self, bank, id):
-            if bank not in self:
-                raise RuntimeError("bank %s not found" % bank)
-            wavfiles=sorted(self[bank].infolist(),
-                            key=sorter)
-            if id >= len(wavfiles):
-                raise RuntimeError("id %i exceeds bank size" % id)
-            return wavfiles[id]
-        bank, id = key.split(":")
-        wavfile=lookup(self, bank, int(id))
-        return self[bank].open(wavfile, 'r')
-
-    @property
-    def random_key(self):
-        modnames=list(self.keys())
-        mod=random.choice(modnames)
-        n=len(self[mod].infolist())
-        i=random.choice(range(n))
-        return "%s:%i" % (mod, i)
-    
 class SVSampler(RVSampler):
 
     def __init__(self, samplekeys, banks, maxslots=120, *args, **kwargs):                
@@ -106,5 +58,5 @@ class SVSampler(RVSampler):
         return sample
 
 if __name__=="__main__":
-    print (SVBanks.load("tmp/banks/pico"))
+    pass
             
