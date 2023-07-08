@@ -1,6 +1,6 @@
 ### short [picobeats]
 
-- curation script
+- avoid glitch match
 
 ### medium
 
@@ -17,6 +17,7 @@
 
 ### done
 
+- curation script
 - remove s3 stuff
 - download into local banks directory with unchanged names
 - rename slicebeats as picobeats
