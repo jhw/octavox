@@ -1,13 +1,14 @@
-### short
+### short [picobeats]
+
+- download into local banks directory with unchanged names
+- script to curate
+
+### medium
 
 - make nbeats an environment variable
-- limit to particular pico bank
 
-### medium [v1-2]
-
-- degrading
+- degrade
 - custom sample pools
-  - may require refactoring of existing samples structure
 
 ### thoughts
 
@@ -16,6 +17,7 @@
 
 ### done
 
+- rename slicebeats as picobeats
 - remove save
 - insert nbreaks automatically but for chain only
   - remove parameter

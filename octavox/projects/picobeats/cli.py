@@ -1,4 +1,4 @@
-from octavox.projects.slicebeats.model import Patch, Patches
+from octavox.projects.picobeats.model import Patch, Patches
 
 from octavox.projects import Nouns, Adjectives
 
@@ -101,7 +101,7 @@ def random_filename(generator):
     
 class Shell(cmd.Cmd):
 
-    intro="Welcome to Octavox Slicebeats :)"
+    intro="Welcome to Octavox Picobeats :)"
 
     prompt=">>> "
 
@@ -241,7 +241,7 @@ class Shell(cmd.Cmd):
 
     @wrap_action
     @parse_line(keys=["frag"])
-    def do_load(self, frag, dirname="tmp/slicebeats/json"):
+    def do_load(self, frag, dirname="tmp/picobeats/json"):
         matches=[filename for filename in os.listdir(dirname)
                  if frag in filename]
         if matches==[]:
