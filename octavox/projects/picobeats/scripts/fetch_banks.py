@@ -23,7 +23,7 @@ def filter_blocks(buf):
             for i, block in enumerate(buf.split(b"\202\244name")[1:])]
 
 def generate(packname, packfile):
-    zfname="tmp/banks/pico/%s.zip" % packname.replace(" ", "-").lower()
+    zfname="tmp/picobeats/banks/%s.zip" % packname.replace(" ", "-").lower()
     zf=zipfile.ZipFile(zfname, 'w')
     buf=fetch_bin(packfile)
     blocks=filter_blocks(buf)

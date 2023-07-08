@@ -5,6 +5,7 @@
 
 ### medium
 
+- clean up raw pico wav names
 - make nbeats an environment variable
 
 - degrade
