@@ -1,6 +1,6 @@
 ### short [picobeats]
 
-- download into local banks directory with unchanged names
+- remove s3 stuff
 - script to curate
 
 ### medium
@@ -17,6 +17,7 @@
 
 ### done
 
+- download into local banks directory with unchanged names
 - rename slicebeats as picobeats
 - remove save
 - insert nbreaks automatically but for chain only
