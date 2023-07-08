@@ -2,8 +2,12 @@
 
 - avoid glitch match
 
+- refactor SVBanks/PicoBanks implementation
+  - new implementation needs to use banks and pools
+
 ### medium
 
+- remove cli profile variable
 - clean up raw pico wav names
 - make nbeats an environment variable
 
