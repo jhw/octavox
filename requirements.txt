@@ -1,6 +1,3 @@
-awscli
-botocore
-boto3
 git+https://github.com//metrasynth/radiant-voices
 lxml # for parsing of nouns, adjectives in dev
 numpy

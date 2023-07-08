@@ -1,7 +1,6 @@
 ### short [picobeats]
 
-- remove s3 stuff
-- script to curate
+- curation script
 
 ### medium
 
@@ -18,6 +17,7 @@
 
 ### done
 
+- remove s3 stuff
 - download into local banks directory with unchanged names
 - rename slicebeats as picobeats
 - remove save
