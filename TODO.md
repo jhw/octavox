@@ -1,11 +1,10 @@
 ### short [picobeats]
 
-- avoid glitch match
-
-- banks.pools refactoring
+- samples
 
 ### medium
 
+- avoid glitch match
 - remove cli profile variable
 - make nbeats an environment variable
 

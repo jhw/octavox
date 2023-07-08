@@ -2,7 +2,7 @@ import os, re, yaml, zipfile
 
 BanksDir="octavox/projects/picobeats/banks"
 
-Patterns=yaml.safe_load("""
+DefaultPatterns=yaml.safe_load("""
 kk:
   - kick
   - kik
@@ -27,7 +27,7 @@ ht:
   - prc
 """)
 
-def matches(text, patterns=Patterns):
+def matches(text, patterns):
     text=text.lower()
     for key in patterns:
         for pat in patterns[key]:
@@ -35,13 +35,13 @@ def matches(text, patterns=Patterns):
                 return key
     return None
 
-def curate_banks(dirname=BanksDir):
+def curate_pool(patterns, dirname=BanksDir):
     pool={}
     for filename in os.listdir(dirname):
         zf=zipfile.ZipFile("%s/%s" % (dirname,
                                       filename))
         for item in zf.infolist():
-            key=matches(item.filename)
+            key=matches(item.filename, patterns)
             if key:
                 pool.setdefault(key, [])
                 pool[key].append([filename,
@@ -49,7 +49,10 @@ def curate_banks(dirname=BanksDir):
     return pool
                 
 if __name__=="__main__":
-    pool=curate_banks()
-    import json
-    print (json.dumps(pool,
-                      indent=2))
+    for path in ["tmp/picobeats/pools"]:
+        if not os.path.exists(path):
+            os.makedirs(path)            
+    pool=curate_pool(patterns=DefaultPatterns)
+    with open("tmp/picobeats/pools/default.yaml", 'w') as f:
+        f.write(yaml.safe_dump(pool,
+                               default_flow_style=False))
