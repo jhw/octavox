@@ -1,4 +1,4 @@
-import os, random, zipfile
+import os, random, yaml, zipfile
 
 Instruments="kk|sn|ht".split("|")
 
@@ -33,15 +33,21 @@ class SimplePool(PoolBase):
 
 class CuratedPool(PoolBase):
 
-    def __init__(self, banks, bankfile):
+    def __init__(self, bankfile):
         PoolBase.__init__(self)
-                        
+        self.mapping=yaml.safe_load(open(bankfile).read())
+                
 if __name__=="__main__":
     def test_simple_pool(banks, bankfile="default.zip"):
         pool=SimplePool(banks, bankfile)
         item=pool.randomise(banks, "kk")        
-        with open("tmp/%s" % item[1], 'wb') as f:
-            f.write(banks.lookup(item).read())    
+        with open("tmp/%s" % item[1], 'wb') as f:            
+            f.write(banks.lookup(item).read())
+    def test_curated_pool(banks, mappingfile="octavox/projects/picobeats/pools/default.yaml"):
+        pool=CuratedPool(mappingfile)
+        item=pool.randomise(banks, "kk")        
+        with open("tmp/%s" % item[1], 'wb') as f:            
+            f.write(banks.lookup(item).read())                          
     banks=Banks("octavox/projects/picobeats/banks")
-    test_simple_pool(banks)
-
+    # test_simple_pool(banks)
+    test_curated_pool(banks)

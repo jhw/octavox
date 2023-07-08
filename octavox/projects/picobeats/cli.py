@@ -6,24 +6,6 @@ from datetime import datetime
 
 import cmd, json, os, random, re, yaml
 
-Profiles=yaml.safe_load("""
-default:
-  kk: 0.7
-  sn: 0.7
-  oh: 0.4
-  ch: 0.4
-strict:
-  kk: 1.0
-  sn: 1.0
-  oh: 0.8
-  ch: 0.8
-wild:
-  kk: 0.4
-  sn: 0.4
-  oh: 0.2
-  ch: 0.2
-""")
-
 class Parameterz(dict):
 
     def __init__(self, item={}):
@@ -40,13 +22,6 @@ class Parameterz(dict):
         return (key, self[key])            
         
 Parameters=Parameterz(yaml.safe_load("""
-profile:
-  type: enum
-  value: default
-  options:
-  - strict
-  - default
-  - wild
 slicetemp: 
   type: number
   value: 1
@@ -108,8 +83,6 @@ class Shell(cmd.Cmd):
     def __init__(self, banks, env=Parameters):
         cmd.Cmd.__init__(self)
         self.banks=banks
-        profilename=env["profile"]["value"]
-        self.banks.profile=Profiles[profilename]
         self.env=env
         self.project=None
 
@@ -177,13 +150,10 @@ class Shell(cmd.Cmd):
     @wrap_action
     @parse_line(keys=["pat", "value"])
     @validate_param
-    def do_setparam(self, pat, value, profiles=Profiles):
+    def do_setparam(self, pat, value):
         key, param = self.env.lookup(pat)
         param["value"]=value
         print ("%s=%s" % (key, param["value"]))
-        if key=="profile":
-            print ("updating bank profile")
-            self.banks.profile=profiles[value]
 
     @wrap_action
     @parse_line(keys=["pat"])

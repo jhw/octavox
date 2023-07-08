@@ -1,13 +1,13 @@
 ### short [picobeats]
 
-- samples
+- model samples.randomise must be passed banks and pool
+- cli to initialise pools
+- variable to switch pool
 
 ### medium
 
-- avoid glitch match
-- remove cli profile variable
 - make nbeats an environment variable
-
+- avoid glitch match in curation of default pool
 - degrade
 - custom sample pools
 
@@ -19,6 +19,7 @@
 
 ### done
 
+- remove cli profile variable
 - curation script
 - remove s3 stuff
 - download into local banks directory with unchanged names
