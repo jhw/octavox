@@ -10,7 +10,8 @@ class Banks(dict):
             path="%s/%s" % (root, bankfile)
             self[bankfile]=zipfile.ZipFile(path)
 
-    def lookup(self, bankfile, wavfile):
+    def lookup(self, item):
+        bankfile, wavfile = item
         return self[bankfile].open(wavfile, 'r')
             
 class PoolBase:
@@ -25,7 +26,7 @@ class SimplePool(PoolBase):
 
     def __init__(self, banks, bankfile, instruments=Instruments):
         PoolBase.__init__(self)
-        samplekeys=[item.filename
+        samplekeys=[[bankfile, item.filename]
                     for item in banks[bankfile].infolist()]
         self.mapping={instrument:samplekeys
                       for instrument in instruments}
@@ -38,9 +39,9 @@ class CuratedPool(PoolBase):
 if __name__=="__main__":
     def test_simple_pool(banks, bankfile="default.zip"):
         pool=SimplePool(banks, bankfile)
-        wavfile=pool.randomise(banks, "kk")
-        with open("tmp/%s" % wavfile, 'wb') as f:
-            f.write(banks.lookup(bankfile, wavfile).read())    
+        item=pool.randomise(banks, "kk")        
+        with open("tmp/%s" % item[1], 'wb') as f:
+            f.write(banks.lookup(item).read())    
     banks=Banks("octavox/projects/picobeats/banks")
     test_simple_pool(banks)
 
