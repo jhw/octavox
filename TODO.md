@@ -2,13 +2,11 @@
 
 - avoid glitch match
 
-- refactor SVBanks/PicoBanks implementation
-  - new implementation needs to use banks and pools
+- banks.pools refactoring
 
 ### medium
 
 - remove cli profile variable
-- clean up raw pico wav names
 - make nbeats an environment variable
 
 - degrade
@@ -16,8 +14,9 @@
 
 ### thoughts
 
+- clean up raw pico wav names?
+  - not clear it's required
 - sample similarity clustering?
-- add apply() decorator to attach project, blanks
 
 ### done
 
