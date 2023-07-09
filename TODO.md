@@ -1,6 +1,5 @@
 ### short [picobeats]
 
-- check what original Banks.randomise fn returned
 - cli to initialise pools
 - cli poolname variable
 - pass banks and pool to model

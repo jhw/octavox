@@ -1,6 +1,6 @@
 import os, random, re, yaml, zipfile
 
-Instruments="kk|sn|ht".split("|")
+Instruments="kk|sn|oh|ch".split("|")
 
 Patterns=yaml.safe_load("""
 kk:
@@ -17,12 +17,18 @@ sn:
   - clp
   - cp
   - hc
-ht:
+oh:
   - open
-  - closed
   - hat
   - ht 
   - oh
+  - perc
+  - ussion
+  - prc
+ch:
+  - closed
+  - hat
+  - ht 
   - " ch" # else will match glitch; but still matches chord unfortunately
   - perc
   - ussion
@@ -34,7 +40,7 @@ class Pool(dict):
     def __init__(self, item={}):
         dict.__init__(self, item)
 
-    def is_valid(self, limit=4):
+    def is_valid(self, limit=2):
         for items in self.values():
             if len(items) < limit:
                 return False
@@ -45,6 +51,10 @@ class Pool(dict):
             self.setdefault(key, [])
             self[key]+=pool[key]
         return self
+
+    def randomise(self, instruments=Instruments):
+        return {inst:random.choice(self[inst])
+                for inst in instruments}
     
 class Pools(dict):
 
@@ -98,7 +108,7 @@ class Bank:
                 for pat in patterns[inst]:
                     if re.search(pat, wavfile, re.I):
                         pool[inst].append([self.name, wavfile])
-                        break
+                        # break
         return pool
                 
 class Banks(dict):
@@ -134,4 +144,5 @@ class Banks(dict):
 if __name__=="__main__":
     banks=Banks("octavox/projects/picobeats/banks")
     pools=banks.spawn_pools().cull()
-    print (pools.keys())
+    # print (pools.keys())
+    print (pools["global-curated"].randomise())
