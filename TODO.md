@@ -1,6 +1,5 @@
 ### short [picobeats]
 
-- banks function to return file handle for bankname/wavfile
 - check what original Banks.randomise fn returned
 - cli to initialise pools
 - cli poolname variable
@@ -20,6 +19,7 @@
 
 ### done
 
+- banks function to return file handle for bankname/wavfile
 - pools.trim to reject anything too small
 - pools.spawn_free/curated to add global pools
 - remove cli profile variable

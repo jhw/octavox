@@ -23,8 +23,9 @@ ht:
   - hat
   - ht 
   - oh
-  - " ch" # else will match glitch
+  - " ch" # else will match glitch; but still matches chord unfortunately
   - perc
+  - ussion
   - prc
 """)
 
@@ -121,7 +122,15 @@ class Banks(dict):
             key="global-%s" % attr
             pools[key]=poolsfn()
         return pools
-                            
+
+    """
+    - should be renamed as open?
+    """
+    
+    def lookup(self, item):
+        bankfile, wavfile = item
+        return self[bankfile].zipfile.open(wavfile, 'r')
+    
 if __name__=="__main__":
     banks=Banks("octavox/projects/picobeats/banks")
     pools=banks.spawn_pools().cull()
