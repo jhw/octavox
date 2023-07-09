@@ -39,11 +39,30 @@ class Pool(dict):
                 return False
         return True
 
+    def add(self, pool):
+        for key in pool:
+            self.setdefault(key, [])
+            self[key]+=pool[key]
+        return self
+    
 class Pools(dict):
 
     def __init__(self, item={}):
         dict.__init__(self, item)
-    
+
+    def aggregate(self, suffix):
+        parent=Pool()
+        for key, pool in self.items():
+            if key.endswith(suffix):
+                parent.add(pool)
+        return parent
+
+    def spawn_free(self):
+        return self.aggregate("free")
+
+    def spawn_curated(self):
+        return self.aggregate("curated")
+        
 class Bank:
 
     def __init__(self, name, zipfile):
@@ -85,12 +104,15 @@ class Banks(dict):
             self[name]=bank
 
     def spawn_pools(self):
-        pools={}
-        for bankname, bank in self.items():
-            for attr in ["free", "curated"]:
-                poolfn=getattr(bank, "spawn_%s" % attr)
+        pools=Pools()
+        for attr in ["free", "curated"]:
+            for bankname, bank in self.items():
+                bankfn=getattr(bank, "spawn_%s" % attr)
                 key="%s-%s" % (bankname, attr)
-                pools[key]=poolfn()
+                pools[key]=bankfn()
+            poolsfn=getattr(pools, "spawn_%s" % attr)
+            key="global-%s" % attr
+            pools[key]=poolsfn()
         return pools
                             
 if __name__=="__main__":
