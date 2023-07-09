@@ -62,6 +62,13 @@ class Pools(dict):
 
     def spawn_curated(self):
         return self.aggregate("curated")
+
+    def cull(self):
+        pools=Pools()
+        for k, v in self.items():
+            if v.is_valid():
+                pools[k]=v
+        return pools
         
 class Bank:
 
@@ -117,5 +124,5 @@ class Banks(dict):
                             
 if __name__=="__main__":
     banks=Banks("octavox/projects/picobeats/banks")
-    pools=banks.spawn_pools()
+    pools=banks.spawn_pools().cull()
     print (pools.keys())
