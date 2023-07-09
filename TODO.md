@@ -1,15 +1,18 @@
 ### short [picobeats]
 
-- model samples.randomise must be passed banks and pool
+- pools.spawn_free/curated to add global pools
+- pools.trim to reject anything too small
+- banks function to return file handle for bankname/wavfile
+- check what original Banks.randomise fn returned
 - cli to initialise pools
-- variable to switch pool
+- cli poolname variable
+- pass banks and pool to model
 
 ### medium
 
 - make nbeats an environment variable
-- avoid glitch match in curation of default pool
-- degrade
 - custom sample pools
+- degrade
 
 ### thoughts
 
