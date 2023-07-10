@@ -452,12 +452,8 @@ class Patches(list):
                     if "key" in trig:
                         key=trig["mod"][:2].lower() # change?
                         samplekeys.setdefault(key, set())
-                        samplekeys[key].add(trig["key"])
-        def sorter(key):
-            tokens=key.split(":")
-            return "%s%03d" % (tokens[0], int(tokens[1]))
-        return {k:sorted(list(v),
-                         key=sorter)
+                        samplekeys[key].add(tuple(trig["key"])) # NB tuple()
+        return {k:list(v)
                 for k, v in samplekeys.items()}
 
     def init_paths(paths):

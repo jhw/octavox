@@ -2,6 +2,7 @@
 
 - move banks into /octavox/banks/pico where they can be shared
   - Banks class also
+- cli variable to list pools
 - add abbreviation matching for cli enums  
 - make nbeats an environment variable
 

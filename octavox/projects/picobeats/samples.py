@@ -133,11 +133,7 @@ class Banks(dict):
             pools[key]=poolsfn()
         return pools
 
-    """
-    - should be renamed as open?
-    """
-    
-    def lookup(self, item):
+    def get_wavfile(self, item):
         bankfile, wavfile = item
         return self[bankfile].zipfile.open(wavfile, 'r')
     
