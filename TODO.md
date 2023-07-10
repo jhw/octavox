@@ -1,15 +1,13 @@
 ### short [picobeats]
 
-- move banks into /octavox/banks/pico where they can be shared
-  - Banks class also
-- cli variable to list pools
-- add abbreviation matching for cli enums  
 - make nbeats an environment variable
+- cli variable to list pools
+- add abbreviation matching for cli enums
 
 ### medium
 
 - custom sample pools
-- degrade
+- degrading
 
 ### thoughts
 
@@ -19,6 +17,8 @@
 
 ### done
 
+- move banks into /octavox/banks/pico where they can be shared
+  - Banks class also
 - pass banks and pool to model
 - cli to initialise pools
 - cli poolname variable

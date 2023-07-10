@@ -39,7 +39,7 @@ def generate(packname, packfile):
 
 if __name__=="__main__":
     try:
-        for path in ["tmp/picobeats/banks"]:
+        for path in ["tmp/banks/pico"]:
             if not os.path.exists(path):
                 os.makedirs(path)            
         for packname, packfile in pack_list().items():

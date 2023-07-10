@@ -17,6 +17,9 @@ sn:
   - clp
   - cp
   - hc
+  - rim
+  - plip
+  - rs
 oh:
   - open
   - hat

@@ -8,7 +8,7 @@ from datetime import datetime
 
 import cmd, json, os, random, re, yaml
 
-class Parameterz(dict):
+class Parameters(dict):
 
     def __init__(self, item={}):
         dict.__init__(self, item)
@@ -23,7 +23,7 @@ class Parameterz(dict):
         key=keys.pop()
         return (key, self[key])            
         
-Parameters=Parameterz(yaml.safe_load("""
+Params=Parameters(yaml.safe_load("""
 slicetemp: 
   type: number
   value: 1
@@ -74,7 +74,7 @@ class Shell(cmd.Cmd):
                  banks,
                  pools,
                  poolname=DefaultPool,
-                 env=Parameters):
+                 env=Params):
         cmd.Cmd.__init__(self)
         self.banks=banks
         self.pools=pools
@@ -291,7 +291,7 @@ class Shell(cmd.Cmd):
 
 if __name__=="__main__":
     try:
-        banks=Banks("octavox/projects/picobeats/banks")
+        banks=Banks("octavox/banks/pico")
         pools=banks.spawn_pools().cull()
         Shell(banks=banks,
               pools=pools).cmdloop()
