@@ -53,23 +53,9 @@ nbeats:
   min: 4
 """))
 
-class KwikTable(list):
-
-    def __init__(self, items=[]):
-        list.__init__(self, items)
-
-    def render(self, keys, width=16):
-        def format_value(value, width):
-            return value[:width] if len(value) > width else value+" ".join(['' for i in range(width-len(value))])
-        return "\n".join([" ".join([format_value(str(item[key]) if key in item else '', width)
-                                    for key in keys])
-                          for item in self])
-
-def timestamp():
-    return datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
-
 def random_filename(generator):
-    return "%s-%s-%s-%s" % (timestamp(),
+    ts=datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
+    return "%s-%s-%s-%s" % (ts,
                             generator,
                             random.choice(Adjectives),
                             random.choice(Nouns))
@@ -163,11 +149,8 @@ class Shell(cmd.Cmd):
 
     @wrap_action
     def do_listparams(self, *args, **kwargs):
-        table=KwikTable(sorted([{"key": k,
-                                 "value": v["value"]}
-                                for k, v in self.env.items()],
-                               key=lambda x: x["key"]))
-        print (table.render(["key", "value"]))
+        print (yaml.safe_dump({k:v["value"]
+                               for k, v in self.env.items()}))
 
     def validate_int(config):
         def decorator(fn):
@@ -295,8 +278,6 @@ class Shell(cmd.Cmd):
 
 if __name__=="__main__":
     try:
-        from octavox.banks.pico import PicoBanks
-        banks=PicoBanks()
-        Shell(banks).cmdloop()
+        Shell(banks=None).cmdloop()
     except RuntimeError as error:
         print ("error: %s" % str(error))
