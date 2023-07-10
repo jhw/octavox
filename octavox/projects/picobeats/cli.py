@@ -1,3 +1,5 @@
+from octavox.projects.picobeats.samples import Banks, Pools
+
 from octavox.projects.picobeats.model import Patch, Patches
 
 from octavox.projects import Nouns, Adjectives
@@ -53,6 +55,8 @@ nbeats:
   min: 4
 """))
 
+DefaultPool="global-curated"
+
 def random_filename(generator):
     ts=datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
     return "%s-%s-%s-%s" % (ts,
@@ -66,9 +70,17 @@ class Shell(cmd.Cmd):
 
     prompt=">>> "
 
-    def __init__(self, banks, env=Parameters):
+    def __init__(self,
+                 banks,
+                 pools,
+                 poolname=DefaultPool,
+                 env=Parameters):
         cmd.Cmd.__init__(self)
         self.banks=banks
+        self.pools=pools
+        env["samples"]={"type": "enum",
+                        "value": poolname,
+                        "options": sorted(list(pools.keys()))}
         self.env=env
         self.project=None
 
@@ -188,7 +200,8 @@ class Shell(cmd.Cmd):
     @render_patches(generator="randomiser")
     def do_randomise(self, npatches):
         slicetemp=self.env["slicetemp"]["value"]
-        return Patches.randomise(banks=self.banks,
+        pool=self.pools[self.env["samples"]["value"]]
+        return Patches.randomise(pool=pool,
                                  slicetemp=slicetemp,
                                  n=npatches)
 
@@ -278,6 +291,9 @@ class Shell(cmd.Cmd):
 
 if __name__=="__main__":
     try:
-        Shell(banks=None).cmdloop()
+        banks=Banks("octavox/projects/picobeats/banks")
+        pools=banks.spawn_pools().cull()
+        Shell(banks=banks,
+              pools=pools).cmdloop()
     except RuntimeError as error:
         print ("error: %s" % str(error))

@@ -1,12 +1,36 @@
 ### short [picobeats]
 
-- cli to initialise pools
-- cli poolname variable
-- pass banks and pool to model
+- test lifecycle
+
+```
+Traceback (most recent call last):
+  File "octavox/projects/picobeats/cli.py", line 296, in <module>
+    Shell(banks=banks,
+  File "/Users/jhw/.pyenv/versions/3.8.11/lib/python3.8/cmd.py", line 138, in cmdloop
+    stop = self.onecmd(line)
+  File "/Users/jhw/.pyenv/versions/3.8.11/lib/python3.8/cmd.py", line 217, in onecmd
+    return func(arg)
+  File "octavox/projects/picobeats/cli.py", line 90, in wrapped
+    return fn(self, *args, **kwargs)
+  File "octavox/projects/picobeats/cli.py", line 117, in wrapped
+    return fn(self, *[], **kwargs)
+  File "octavox/projects/picobeats/cli.py", line 177, in wrapped
+    return fn(self, *args, **kwargs)
+  File "octavox/projects/picobeats/cli.py", line 189, in wrapped
+    self.project.render_sunvox(banks=self.banks,
+  File "/Users/jhw/work/octavox/octavox/projects/picobeats/model.py", line 469, in wrapped
+    return fn(*args, **kwargs)
+  File "/Users/jhw/work/octavox/octavox/projects/picobeats/model.py", line 484, in render_sunvox
+    samplekeys=self.sample_keys(nbeats)
+  File "/Users/jhw/work/octavox/octavox/projects/picobeats/model.py", line 455, in sample_keys
+    samplekeys[key].add(trig["key"])
+TypeError: unhashable type: 'list'
+```
+
+- make nbeats an environment variable
 
 ### medium
 
-- make nbeats an environment variable
 - custom sample pools
 - degrade
 
@@ -18,6 +42,9 @@
 
 ### done
 
+- pass banks and pool to model
+- cli to initialise pools
+- cli poolname variable
 - banks function to return file handle for bankname/wavfile
 - pools.trim to reject anything too small
 - pools.spawn_free/curated to add global pools

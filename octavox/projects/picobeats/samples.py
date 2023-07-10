@@ -144,5 +144,6 @@ class Banks(dict):
 if __name__=="__main__":
     banks=Banks("octavox/projects/picobeats/banks")
     pools=banks.spawn_pools().cull()
-    # print (pools.keys())
+    print (pools.keys())
+    print ()
     print (pools["global-curated"].randomise())
