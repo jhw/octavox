@@ -1,17 +1,23 @@
 ### short [picobeats]
 
-- include pool name in output filename (?)
-- resolve tension between pools and samples naming
-- env to auto- check pool names when setting sample param
-- add abbreviation matching for cli enums
+- make (bank, wavfile) a tuple on creation
+  - remove tuple recasting
+- rename samples as poolname
+- replace enum support with string
+  - special setparam code to validate pools
+- randomiser filename to include pool name
+- cli to clone pool
+- cli to update pool
 
 ### medium
 
-- custom sample pools
+- add abbreviation matching for cli enums
 - degrading
+- stops
 
 ### thoughts
 
+- include pool name in output filename?
 - sample similarity clustering?
 
 ### done
