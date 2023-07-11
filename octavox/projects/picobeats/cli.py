@@ -53,6 +53,10 @@ nbeats:
   type: int
   value: 16
   min: 4
+npatches:
+  type: int
+  value: 32
+  min: 4
 """))
 
 DefaultPool="global-curated"
@@ -194,13 +198,11 @@ class Shell(cmd.Cmd):
         return decorator
     
     @wrap_action
-    @parse_line(keys=["npatches"])
-    @validate_int({"name": "npatches",
-                   "min": 1})
     @render_patches(generator="randomiser")
-    def do_randomise(self, npatches):
-        slicetemp=self.env["slicetemp"]["value"]
+    def do_randomise(self, *args):
         pool=self.pools[self.env["samples"]["value"]]
+        slicetemp=self.env["slicetemp"]["value"]
+        npatches=self.env["npatches"]["value"]
         return Patches.randomise(pool=pool,
                                  slicetemp=slicetemp,
                                  n=npatches)
@@ -224,39 +226,36 @@ class Shell(cmd.Cmd):
 
     @wrap_action
     @assert_project
-    @parse_line(keys=["i", "npatches"])
+    @parse_line(keys=["i"])
     @validate_int({"name": "i",
                    "min": 0})
-    @validate_int({"name": "npatches",
-                   "min": 1})
     @render_patches(generator="mutator")
-    def do_mutate(self, i, npatches):
+    def do_mutate(self, i):
         roots=self.project
         root=roots[i % len(roots)]
         limits={k: self.env["d%s" % k]["value"]
                 for k in "slices|pat|seed|style".split("|")}
         slicetemp=self.env["slicetemp"]["value"]
+        npatches=self.env["npatches"]["value"]
         return Patches([root]+[root.clone().mutate(limits=limits,
                                                    slicetemp=slicetemp)
                                for i in range(npatches-1)])
 
     @wrap_action
     @assert_project
-    @parse_line(keys=["i", "npatches"])
+    @parse_line(keys=["i"])
     @validate_int({"name": "i",
                    "min": 0})
-    @validate_int({"name": "npatches",
-                   "min": 1})
     @render_patches(generator="chainer",
                     nbreaks=1)
-    def do_chain(self, i, npatches,
-                 instruments="kk|sn|ht".split("|")):
+    def do_chain(self, i, instruments="kk|sn|ht".split("|")):
         # initialise
         roots=self.project
         root=roots[i % len(roots)]
         samples=[slice["samples"]                 
                  for slice in root["tracks"]["slices"]]
         chain=Patches([root])
+        npatches=self.env["npatches"]["value"]
         nmutations=int(npatches/4)                
         # generate mutations
         limits={k: self.env["d%s" % k]["value"]
