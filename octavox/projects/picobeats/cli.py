@@ -57,9 +57,10 @@ npatches:
   type: int
   value: 32
   min: 4
+poolname:
+  type: str
+  value: global-curated
 """))
-
-DefaultPool="global-curated"
 
 def random_filename(generator):
     ts=datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
@@ -77,14 +78,10 @@ class Shell(cmd.Cmd):
     def __init__(self,
                  banks,
                  pools,
-                 poolname=DefaultPool,
                  env=Params):
         cmd.Cmd.__init__(self)
         self.banks=banks
         self.pools=pools
-        env["samples"]={"type": "enum",
-                        "value": poolname,
-                        "options": sorted(list(pools.keys()))}
         self.env=env
         self.project=None
 
@@ -128,12 +125,10 @@ class Shell(cmd.Cmd):
                 return type(value) in [int, float]
             def is_int(value):
                 return isinstance(value, int)
-            def is_enum(value, options):
-                return value in options
+            def is_str(value):
+                return True
             fn=eval("is_%s" % param["type"])
             kwargs={"value": value}
-            if param["type"]=="enum":
-                kwargs["options"]=param["options"]
             if not fn(**kwargs):
                 raise RuntimeError("%s is invalid %s value" % (value, key))
         def validate_minmax(key, value, param):
@@ -154,6 +149,9 @@ class Shell(cmd.Cmd):
     @validate_param
     def do_setparam(self, pat, value):
         key, param = self.env.lookup(pat)
+        if (key=="poolname" and
+            value not in self.pools):
+            raise RuntimeError("pool not found")
         param["value"]=value
         print ("%s=%s" % (key, param["value"]))
 
@@ -204,10 +202,10 @@ class Shell(cmd.Cmd):
     @wrap_action
     @render_patches(generator="randomiser")
     def do_randomise(self, *args, **kwargs):
-        pool=self.pools[self.env["samples"]["value"]]
+        poolname=self.pools[self.env["poolname"]["value"]]
         slicetemp=self.env["slicetemp"]["value"]
         npatches=self.env["npatches"]["value"]
-        return Patches.randomise(pool=pool,
+        return Patches.randomise(pool=poolname,
                                  slicetemp=slicetemp,
                                  n=npatches)
 

@@ -1,27 +1,30 @@
-### short [picobeats]
+### short 
 
-- make (bank, wavfile) a tuple on creation
-  - remove tuple recasting
-- rename samples as poolname
-- replace enum support with string
-  - special setparam code to validate pools
-- randomiser filename to include pool name
-- cli to clone pool
-- cli to update pool
+- add poolname abbreviation matching
+- clone pool
+- update pool
 
 ### medium
 
-- add abbreviation matching for cli enums
+
 - degrading
 - stops
 
 ### thoughts
 
+- rename samples as poolname
+- randomiser filename to include pool name?
+  - feels like over- optimisation
+- make (bank, wavfile) a tuple on creation?
+  - but then u can't save to JSON
+  - at least not without custom encode/decode
 - include pool name in output filename?
 - sample similarity clustering?
 
 ### done
 
+- replace enum support with string
+  - special setparam code to validate pools
 - cli variable to list pools
 - make nbeats an environment variable
 - move banks into /octavox/banks/pico where they can be shared
