@@ -168,6 +168,10 @@ class Shell(cmd.Cmd):
         print (yaml.safe_dump({k:v["value"]
                                for k, v in self.env.items()}))
 
+    @wrap_action
+    def do_listpools(self, *args, **kwargs):
+        print (yaml.safe_dump(sorted(list(self.pools.keys()))))
+        
     def validate_int(config):
         def decorator(fn):
             def wrapped(self, *args, **kwargs):
@@ -199,7 +203,7 @@ class Shell(cmd.Cmd):
     
     @wrap_action
     @render_patches(generator="randomiser")
-    def do_randomise(self, *args):
+    def do_randomise(self, *args, **kwargs):
         pool=self.pools[self.env["samples"]["value"]]
         slicetemp=self.env["slicetemp"]["value"]
         npatches=self.env["npatches"]["value"]

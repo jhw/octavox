@@ -1,6 +1,8 @@
 ### short [picobeats]
 
-- cli variable to list pools
+- include pool name in output filename (?)
+- resolve tension between pools and samples naming
+- env to auto- check pool names when setting sample param
 - add abbreviation matching for cli enums
 
 ### medium
@@ -10,12 +12,11 @@
 
 ### thoughts
 
-- clean up raw pico wav names?
-  - not clear it's required
 - sample similarity clustering?
 
 ### done
 
+- cli variable to list pools
 - make nbeats an environment variable
 - move banks into /octavox/banks/pico where they can be shared
   - Banks class also
