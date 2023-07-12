@@ -1,12 +1,15 @@
 ### short 
 
-- reduce default temperatures
+- env and pool to share common base with abbreviation lookup
+- ability to specify a series of roots for chaining
+  - intarray
+
+
 - clone, update pool
 
 ### medium
 
-- ability to specify a series of roots for chaining
-- degrading
+- degrading/density
 - stops
 
 ### thoughts
@@ -20,6 +23,7 @@
 
 ### done
 
+- reduce default temperatures
 - rename samples as poolname
 - add poolname abbreviation matching
 - replace enum support with string
