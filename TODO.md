@@ -1,28 +1,27 @@
 ### short 
 
-- add poolname abbreviation matching
-- clone pool
-- update pool
+- reduce default temperatures
+- clone, update pool
 
 ### medium
 
-
+- ability to specify a series of roots for chaining
 - degrading
 - stops
 
 ### thoughts
 
-- rename samples as poolname
 - randomiser filename to include pool name?
   - feels like over- optimisation
 - make (bank, wavfile) a tuple on creation?
   - but then u can't save to JSON
   - at least not without custom encode/decode
-- include pool name in output filename?
 - sample similarity clustering?
 
 ### done
 
+- rename samples as poolname
+- add poolname abbreviation matching
 - replace enum support with string
   - special setparam code to validate pools
 - cli variable to list pools

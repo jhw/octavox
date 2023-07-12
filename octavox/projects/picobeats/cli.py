@@ -143,16 +143,13 @@ class Shell(cmd.Cmd):
             validate_minmax(key, value, param)
             return fn(self, *args, **kwargs)
         return wrapped
-        
+
     @wrap_action
     @parse_line(keys=["pat", "value"])
     @validate_param
     def do_setparam(self, pat, value):
         key, param = self.env.lookup(pat)
-        if (key=="poolname" and
-            value not in self.pools):
-            raise RuntimeError("pool not found")
-        param["value"]=value
+        param["value"]=self.pools.lookup(value) if key=="poolname" else value
         print ("%s=%s" % (key, param["value"]))
 
     @wrap_action

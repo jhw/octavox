@@ -38,6 +38,25 @@ ch:
   - prc
 """)
 
+"""
+- https://stackoverflow.com/questions/7331462/check-if-a-string-is-a-possible-abbrevation-for-a-name
+"""
+
+def is_abbrev(abbrev, text):
+    abbrev=abbrev.lower()
+    text=text.lower()
+    words=text.split()
+    if not abbrev:
+        return True
+    if abbrev and not text:
+        return False
+    if abbrev[0]!=text[0]:
+        return False
+    else:
+        return (is_abbrev(abbrev[1:],' '.join(words[1:])) or
+                any(is_abbrev(abbrev[1:],text[i+1:])
+                    for i in range(len(words[0]))))
+
 class Pool(dict):
 
     def __init__(self, item={}):
@@ -83,6 +102,18 @@ class Pools(dict):
             if v.is_valid():
                 pools[k]=v
         return pools
+
+    def lookup(self, abbrev):
+        matches=[]
+        for key in self:
+            if is_abbrev(abbrev, key):
+                matches.append(key)
+        if matches==[]:
+            raise RuntimeError("no pools found")
+        elif len(matches) > 1:
+            raise RuntimeError("multiple pools found")
+        else:
+            return matches.pop()
         
 class Bank:
 
