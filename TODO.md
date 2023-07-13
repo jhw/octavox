@@ -1,15 +1,12 @@
 ### short 
 
-- env and pool to share common base with abbreviation lookup
-- ability to specify a series of roots for chaining
-  - intarray
-
-
-- clone, update pool
+- density
+- intarray support
+- ability to send list of roots for chaining
 
 ### medium
 
-- degrading/density
+- clone, update pool
 - stops
 
 ### thoughts
@@ -23,6 +20,7 @@
 
 ### done
 
+- env and pool to share common base with abbreviation lookup
 - reduce default temperatures
 - rename samples as poolname
 - add poolname abbreviation matching

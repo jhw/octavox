@@ -2,7 +2,7 @@ from octavox.projects.picobeats.samples import Banks, Pools
 
 from octavox.projects.picobeats.model import Patch, Patches
 
-from octavox.projects import Nouns, Adjectives
+from octavox.projects import Nouns, Adjectives, is_abbrev
 
 from datetime import datetime
 
@@ -13,15 +13,17 @@ class Parameters(dict):
     def __init__(self, item={}):
         dict.__init__(self, item)
 
-    def lookup(self, pat):
-        keys=[key for key in self
-              if pat in key]
-        if keys==[]:
-            raise RuntimeError("%s not found" % pat)
-        elif len(keys) > 1:
-            raise RuntimeError("multiple key matches for %s" % pat)
-        key=keys.pop()
-        return (key, self[key])            
+    def lookup(self, abbrev):
+        matches=[]
+        for key in self:
+            if is_abbrev(abbrev, key):
+                matches.append(key)
+        if matches==[]:
+            raise RuntimeError("%s not found" % abbrev)
+        elif len(matches) > 1:
+            raise RuntimeError("multiple key matches for %s" % abbrev)
+        key=matches.pop()
+        return (key, self[key])  
         
 Params=Parameters(yaml.safe_load("""
 slicetemp: 
