@@ -199,7 +199,7 @@ class Shell(cmd.Cmd):
         return decorator
     
     @wrap_action
-    @render_patches(generator="randomiser")
+    @render_patches(generator="random")
     def do_randomise(self, *args, **kwargs):
         poolname=self.pools[self.env["poolname"]["value"]]
         slicetemp=self.env["slicetemp"]["value"]
@@ -230,7 +230,7 @@ class Shell(cmd.Cmd):
     @parse_line(keys=["i"])
     @validate_int({"name": "i",
                    "min": 0})
-    @render_patches(generator="mutator")
+    @render_patches(generator="mutation")
     def do_mutate(self, i):
         roots=self.project
         root=roots[i % len(roots)]
@@ -247,7 +247,7 @@ class Shell(cmd.Cmd):
     @parse_line(keys=["i"])
     @validate_int({"name": "i",
                    "min": 0})
-    @render_patches(generator="chainer",
+    @render_patches(generator="chain",
                     nbreaks=1)
     def do_chain(self, i, instruments="kk|sn|ht".split("|")):
         # initialise
@@ -275,7 +275,7 @@ class Shell(cmd.Cmd):
                    if inst!=solo]
             for mutation in chain[:nmutations]:
                 clone=mutation.clone()
-                clone["tracks"]["mutes"]=mutes
+                clone["mutes"]=mutes
                 chain.append(clone)
         # return
         return chain

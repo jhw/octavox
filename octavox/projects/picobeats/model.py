@@ -357,9 +357,8 @@ class Tracks(dict):
                       slices=Slices.randomise(keys, pool),
                       patterns=PatternMap.randomise(keys, slicetemp))
         
-    def __init__(self, keys, slices, patterns, mutes=[]):
+    def __init__(self, keys, slices, patterns):
         dict.__init__(self, {"keys": keys,
-                             "mutes": mutes,
                              "slices": Slices(slices),
                              "patterns": PatternMap(patterns)})
 
@@ -377,10 +376,10 @@ class Tracks(dict):
         if random.random() < limit:
             random.shuffle(self["slices"])
                 
-    def render(self, nbeats, config=MachineConfig):
+    def render(self, nbeats, mutes, config=MachineConfig):
         notes={}
         for key in self["keys"]:
-            if key not in self["mutes"]:
+            if key not in mutes:
                 genkey=config[key]["generator"]
                 pattern=self["patterns"][key]
                 multiplier=int(nbeats/pattern.size)
@@ -391,7 +390,13 @@ class Tracks(dict):
                     slice.render(notes, key, genkey, nsamplebeats, offset)
                     offset+=nsamplebeats
         return notes
-                
+
+"""
+- mutes is a field which is empty by default but overridable at runtime by the cli
+- it doesn't prevent generation of muted tracks (as this may mess up random ordering) but avoids them being rendered at the tracks level
+- note how mutes needs to be applied at the (local) patch level (not at the global level) in order to go chaining
+"""
+    
 class Patch(dict):
 
     @classmethod
@@ -400,11 +405,13 @@ class Patch(dict):
                                              pool,
                                              slicetemp))
     
-    def __init__(self, tracks):
-        dict.__init__(self, {"tracks": Tracks(**tracks)})
+    def __init__(self, tracks, mutes=[]):
+        dict.__init__(self, {"tracks": Tracks(**tracks),
+                             "mutes": mutes})
 
     def clone(self):
-        return Patch(tracks=self["tracks"].clone())
+        return Patch(tracks=self["tracks"].clone(),
+                     mutes=list(self["mutes"]))
 
     def mutate(self, limits, slicetemp):
         self["tracks"].randomise_pattern(limits["pat"], slicetemp)
@@ -417,8 +424,9 @@ class Patch(dict):
     
     def render(self, nbeats):
         struct={"n": nbeats,
-               "tracks": []}
-        struct["tracks"]+=list(self["tracks"].render(nbeats).values())
+                "tracks": []}
+        struct["tracks"]+=list(self["tracks"].render(nbeats=nbeats,
+                                                     mutes=self["mutes"]).values())
         return struct
         
 class Patches(list):

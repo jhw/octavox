@@ -1,17 +1,14 @@
-### short 
-
-- density
-- intarray support
-- ability to send list of roots for chaining
+### short [simplify mutes]
 
 ### medium
 
-- simplify mutes?
+- density
+- chain to use list of roots -> intarray support
 - clone, update pool
-- stops
 
 ### thoughts
 
+- sunvox stops?
 - randomiser filename to include pool name?
   - feels like over- optimisation
 - make (bank, wavfile) a tuple on creation?
