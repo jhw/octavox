@@ -6,6 +6,7 @@
 
 ### medium
 
+- simplify mutes?
 - clone, update pool
 - stops
 
