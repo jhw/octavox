@@ -8,7 +8,7 @@ from datetime import datetime
 
 import cmd, json, os, random, re, yaml
 
-class Parameters(dict):
+class Environment(dict):
 
     def __init__(self, item={}):
         dict.__init__(self, item)
@@ -25,7 +25,7 @@ class Parameters(dict):
         key=matches.pop()
         return (key, self[key])  
         
-Params=Parameters(yaml.safe_load("""
+Env=Environment(yaml.safe_load("""
 slicetemp: 
   type: number
   value: 1
@@ -80,7 +80,7 @@ class Shell(cmd.Cmd):
     def __init__(self,
                  banks,
                  pools,
-                 env=Params):
+                 env=Env):
         cmd.Cmd.__init__(self)
         self.banks=banks
         self.pools=pools
