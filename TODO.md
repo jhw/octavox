@@ -1,9 +1,14 @@
-### short [simplify mutes]
+### short
+
+- track- level render block
+  - mutes, nbeats, nbreaks
 
 ### medium
 
+- list, array support
+- pass list of global mutes
+- pass array of roots to chain
 - density
-- chain to use list of roots -> intarray support
 - clone, update pool
 
 ### thoughts
