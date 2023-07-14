@@ -1,7 +1,5 @@
 ### short
 
-- abstract sample filtering into patch
-
 - list, array support
 - pass list of global mutes
 - pass array of roots to chain
@@ -13,6 +11,8 @@
 
 ### thoughts
 
+- abstract sample filtering into patch? 
+  - not possible because patch needs rendering before filterig
 - track- level render block?
   - mutes, nbeats, nbreaks?
   - not sure it makes sense
