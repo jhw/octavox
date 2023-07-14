@@ -392,9 +392,7 @@ class Tracks(dict):
         return notes
 
 """
-- mutes is a field which is empty by default but overridable at runtime by the cli
-- it doesn't prevent generation of muted tracks (as this may mess up random ordering) but avoids them being rendered at the tracks level
-- note how mutes needs to be applied at the (local) patch level (not at the global level) in order to go chaining
+- mutes is an empty list by default, overrideable at runtime by cli
 """
     
 class Patch(dict):
@@ -423,11 +421,9 @@ class Patch(dict):
         return self
     
     def render(self, nbeats):
-        struct={"n": nbeats,
-                "tracks": []}
-        struct["tracks"]+=list(self["tracks"].render(nbeats=nbeats,
-                                                     mutes=self["mutes"]).values())
-        return struct
+        return {"n": nbeats,
+                "tracks": list(self["tracks"].render(nbeats=nbeats,
+                                                     mutes=self["mutes"]).values())}
         
 class Patches(list):
 
@@ -443,14 +439,20 @@ class Patches(list):
         list.__init__(self, [Patch(**patch)
                              for patch in patches])
 
-    def sample_keys(self, nbeats):
+    """
+    - unfortunately track needs to be rendered before samples can be filtered
+    - because not all samples are used post- rendering, and there are limited sample slots
+    - also because patches may share samples
+    """
+        
+    def filter_samples(self, nbeats):
         samplekeys={}
         for patch in self:
             for track in patch.render(nbeats)["tracks"]:
                 for trig in track:
                     if "key" in trig:
-                        key=trig["mod"][:2].lower() # change?
-                        samplekeys.setdefault(key, set())
+                        key=trig["mod"][:2].lower()
+                        samplekeys.setdefault(key, set()) # NB set()
                         samplekeys[key].add(tuple(trig["key"])) # NB tuple()
         return {k:list(v)
                 for k, v in samplekeys.items()}
@@ -476,7 +478,7 @@ class Patches(list):
     def render_sunvox(self, banks, nbeats, filename,
                       nbreaks=0,
                       modconfig=ModConfig):
-        samplekeys=self.sample_keys(nbeats)
+        samplekeys=self.filter_samples(nbeats)
         for mod in modconfig["modules"]:
             klass=eval(mod["classname"])
             if "Sampler" in mod["name"]:
@@ -486,11 +488,12 @@ class Patches(list):
             else:
                 kwargs={}
             mod["instance"]=klass(**kwargs)
+        renderinfo={"nbeats": nbeats,
+                    "nbreaks": nbreaks}
         project=SVProject().render(patches=self,
                                    modconfig=modconfig,
                                    banks=banks,
-                                   nbeats=nbeats,
-                                   nbreaks=nbreaks)
+                                   renderinfo=renderinfo)
         projfile="tmp/picobeats/sunvox/%s.sunvox" % filename
         with open(projfile, 'wb') as f:
             project.write_to(f)

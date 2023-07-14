@@ -1,18 +1,21 @@
 ### short
 
-- track- level render block
-  - mutes, nbeats, nbreaks
-
-### medium
+- abstract sample filtering into patch
 
 - list, array support
 - pass list of global mutes
 - pass array of roots to chain
+
+### medium
+
 - density
 - clone, update pool
 
 ### thoughts
 
+- track- level render block?
+  - mutes, nbeats, nbreaks?
+  - not sure it makes sense
 - sunvox stops?
 - randomiser filename to include pool name?
   - feels like over- optimisation
