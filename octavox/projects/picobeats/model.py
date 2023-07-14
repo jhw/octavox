@@ -488,12 +488,11 @@ class Patches(list):
             else:
                 kwargs={}
             mod["instance"]=klass(**kwargs)
-        renderinfo={"nbeats": nbeats,
-                    "nbreaks": nbreaks}
         project=SVProject().render(patches=self,
                                    modconfig=modconfig,
                                    banks=banks,
-                                   renderinfo=renderinfo)
+                                   nbeats=nbeats,
+                                   nbreaks=nbreaks)
         projfile="tmp/picobeats/sunvox/%s.sunvox" % filename
         with open(projfile, 'wb') as f:
             project.write_to(f)

@@ -26,6 +26,7 @@
 
 ### done
 
+- revert renderinfo
 - env and pool to share common base with abbreviation lookup
 - reduce default temperatures
 - rename samples as poolname
