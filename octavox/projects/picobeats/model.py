@@ -232,27 +232,28 @@ class SampleHoldGenerator:
         for i in range(n):
             fn(q, i)
 
-    def append(fn):
-        def wrapped(self, *args, **kwargs):
-            trig=fn(self, *args, **kwargs)
-            self.notes.setdefault(self.key, [])
-            self.notes[self.key].append(trig)
+    def handle(fn):
+        def wrapped(self, q, i, **kwargs):
+            values=fn(self, q, i, **kawargs)
+            for k, v in values:
+                trig={"mod": self.mod,
+                      "ctrl": k,
+                      "v": v,
+                      "i": i+self.offset}
+                self.notes.setdefault(self.key, [])
+                self.notes[self.key].append(trig)
         return wrapped
 
-    @append
-    def expand(self, k, i, v):
-        return {"mod": self.mod,
-                "ctrl": k,
-                "v": v,
-                "i": i+self.offset}
-
+    @handle
     def sample_hold(self, q, i):
+        values=[]
         if 0 == i % self.step:
-            for ctrl in "wet|feedback".split("|"):
-                floor, ceil = self.ranges[ctrl]
+            for k in "wet|feedback".split("|"):
+                floor, ceil = self.ranges[k]
                 v0=floor+(ceil-floor)*q.random()
                 v=self.inc*int(0.5+v0/self.inc)
-                self.expand(ctrl, i, v)
+                values.append((k, v))
+        return values
             
 class Machine(dict):
 
