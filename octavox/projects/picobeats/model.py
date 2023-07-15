@@ -234,7 +234,7 @@ class SampleHoldGenerator:
 
     def handle(fn):
         def wrapped(self, q, i, **kwargs):
-            values=fn(self, q, i, **kawargs)
+            values=fn(self, q, i, **kwargs)
             for k, v in values:
                 trig={"mod": self.mod,
                       "ctrl": k,
