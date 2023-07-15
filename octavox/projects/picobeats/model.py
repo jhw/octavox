@@ -137,22 +137,23 @@ class Samples(dict):
         
 class VitlingGenerator:
 
-    def __init__(self, key, offset, samples, volume=1):
+    def __init__(self, key, offset, samples, notes, volume=1):
         self.key=key
         self.offset=offset
         self.samples=samples
+        self.notes=notes
         self.volume=volume
 
-    def generate(self, notes, style, q, n):
+    def generate(self, style, q, n):
         fn=getattr(self, style)
         for i in range(n):
-            fn(notes, q, i)
+            fn(q, i)
 
     def append(fn):
-        def wrapped(self, notes, *args, **kwargs):
+        def wrapped(self, *args, **kwargs):
             trig=fn(self, *args, **kwargs)
-            notes.setdefault(self.key, [])
-            notes[self.key].append(trig)
+            self.notes.setdefault(self.key, [])
+            self.notes[self.key].append(trig)
         return wrapped
             
     @append
@@ -163,73 +164,74 @@ class VitlingGenerator:
                 "vel": self.volume*volume,
                 "i": i+self.offset}
 
-    def fourfloor(self, notes, q, i, k=Kick):
+    def fourfloor(self, q, i, k=Kick):
         if i % 4 == 0:
-            self.expand(notes, q, i, (k, 0.9))
+            self.expand(q, i, (k, 0.9))
         elif i % 2 == 0 and q.random() < 0.1:
-            self.expand(notes, q, i, (k, 0.6))
+            self.expand(q, i, (k, 0.6))
 
-    def electro(self, notes, q, i, k=Kick):
+    def electro(self, q, i, k=Kick):
         if i == 0:
-            self.expand(notes, q, i, (k, 1))
+            self.expand(q, i, (k, 1))
         elif ((i % 2 == 0 and i % 8 != 4 and q.random() < 0.5) or
               q.random() < 0.05):
-            self.expand(notes, q, i, (k, 0.9*q.random()))
+            self.expand(q, i, (k, 0.9*q.random()))
 
-    def triplets(self, notes, q, i, k=Kick):
+    def triplets(self, q, i, k=Kick):
         if i % 16  in [0, 3, 6, 9, 14]:
-           self.expand(notes, q, i, (k, 1))
+           self.expand(q, i, (k, 1))
            
-    def backbeat(self, notes, q, i, k=Snare):
+    def backbeat(self, q, i, k=Snare):
         if i % 8 == 4:
-            self.expand(notes, q, i, (k, 1))
+            self.expand(q, i, (k, 1))
 
-    def skip(self, notes, q, i, k=Snare):
+    def skip(self, q, i, k=Snare):
         if i % 8 in [3, 6]:
-            self.expand(notes, q, i, (k, 0.6+0.4*q.random()))
+            self.expand(q, i, (k, 0.6+0.4*q.random()))
         elif i % 2 == 0 and q.random() < 0.2:
-            self.expand(notes, q, i, (k, 0.4+0.2*q.random()))
+            self.expand(q, i, (k, 0.4+0.2*q.random()))
         elif q.random() < 0.1:
-            self.expand(notes, q, i, (k, 0.2+0.2*q.random()))
+            self.expand(q, i, (k, 0.2+0.2*q.random()))
 
-    def offbeats(self, notes, q, i,
+    def offbeats(self, q, i,
                  ko=OpenHat,
                  kc=ClosedHat):
         if i % 4 == 2:
-            self.expand(notes, q, i, (ko, 0.4))
+            self.expand(q, i, (ko, 0.4))
         elif q.random() < 0.3:
             k=ko if q.random() < 0.5 else kc
-            self.expand(notes, q, i, (kc, 0.2*q.random()))
+            self.expand(q, i, (kc, 0.2*q.random()))
 
-    def closed(self, notes, q, i, k=ClosedHat):
+    def closed(self, q, i, k=ClosedHat):
         if i % 2 == 0:
-            self.expand(notes, q, i, (k, 0.4))
+            self.expand(q, i, (k, 0.4))
         elif q.random() < 0.5:
-            self.expand(notes, q, i, (k, 0.3*q.random()))
+            self.expand(q, i, (k, 0.3*q.random()))
 
 class SampleHoldGenerator:
 
-    def __init__(self, key, offset, ranges,
+    def __init__(self, key, offset, ranges, notes,
                  mod="Echo",
                  inc=0.25,
                  step=4):
         self.key=key
         self.offset=offset
         self.ranges=ranges
+        self.notes=notes
         self.mod=mod
         self.inc=inc
         self.step=step
     
-    def generate(self, notes, style, q, n):
+    def generate(self, style, q, n):
         fn=getattr(self, style)
         for i in range(n):
-            fn(notes, q, i)
+            fn(q, i)
 
     def append(fn):
-        def wrapped(self, notes, *args, **kwargs):
+        def wrapped(self, *args, **kwargs):
             trig=fn(self, *args, **kwargs)
-            notes.setdefault(self.key, [])
-            notes[self.key].append(trig)
+            self.notes.setdefault(self.key, [])
+            self.notes[self.key].append(trig)
         return wrapped
 
     @append
@@ -239,13 +241,13 @@ class SampleHoldGenerator:
                 "v": v,
                 "i": i+self.offset}
 
-    def sample_hold(self, notes, q, i):
+    def sample_hold(self, q, i):
         if 0 == i % self.step:
             for ctrl in "wet|feedback".split("|"):
                 floor, ceil = self.ranges[ctrl]
                 v0=floor+(ceil-floor)*q.random()
                 v=self.inc*int(0.5+v0/self.inc)
-                self.expand(notes, ctrl, i, v)
+                self.expand(ctrl, i, v)
             
 class Machine(dict):
 
@@ -265,9 +267,8 @@ class Machine(dict):
         if random.random() < limit:
             self["style"]=random.choice(styles)
 
-    def render(self, notes, nbeats, generator):
-        generator.generate(notes=notes,
-                           n=nbeats,
+    def render(self, nbeats, generator):
+        generator.generate(n=nbeats,
                            q=Q(self["seed"]),
                            style=self["style"])
     
@@ -308,30 +309,31 @@ class Slice(dict):
                      machines=self["machines"].clone())
         
     def generator_kwargs(fn):
-        def wrapped(self, key, offset):
-            resp=fn(self, key, offset)
+        def wrapped(self, key, offset, notes):
+            resp=fn(self, key, offset, notes)
             resp.update({"key": key,
-                         "offset": offset})
+                         "offset": offset,
+                         "notes": notes})
             return resp
         return wrapped
 
     @generator_kwargs
-    def vitling_kwargs(self, key, offset):
-        return {"samples": self["samples"]}
+    def vitling_kwargs(self, key, offset, notes):
+        return {"samples": self["samples"]}                
 
     @generator_kwargs
-    def sample_hold_kwargs(self, key, offset):
+    def sample_hold_kwargs(self, key, offset, notes):
         return {"ranges": {"wet": [0, 1],
                            "feedback": [0, 1]}}
             
     def render(self, notes, key, genkey, nbeats, offset):
         genkwargsfn=getattr(self, "%s_kwargs" % genkey)
-        genkwargs=genkwargsfn(key, offset)
+        genkwargs=genkwargsfn(key, offset, notes)
         genclass=eval(hungarorise("%s_generator" % genkey))
         generator=genclass(**genkwargs)
         machine={machine["key"]:machine
                  for machine in self["machines"]}[key]
-        machine.render(notes, nbeats, generator)
+        machine.render(nbeats, generator)
             
 class Slices(list):
 
