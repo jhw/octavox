@@ -1,10 +1,11 @@
-### short
+### short [abstract vitling]
 
-- pass list of global mutes
-- pass array of roots to chain
+- convert append/expand into dual decorator strategy
 
 ### medium
 
+- pass list of global mutes
+- pass array of roots to chain
 - density
 - combine parsing of line with parameter validation
 - clone, update pool
