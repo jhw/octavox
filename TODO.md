@@ -1,12 +1,12 @@
 ### short
 
-- list, array support
 - pass list of global mutes
 - pass array of roots to chain
 
 ### medium
 
 - density
+- combine parsing of line with parameter validation
 - clone, update pool
 
 ### thoughts
@@ -26,6 +26,7 @@
 
 ### done
 
+- list, array support
 - revert renderinfo
 - env and pool to share common base with abbreviation lookup
 - reduce default temperatures
