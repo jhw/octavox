@@ -102,14 +102,20 @@ class Shell(cmd.Cmd):
             return fn(self, *args, **kwargs)
         return wrapped
 
+    """
+    - floats and negative number support currently not required
+    """
+    
     def parse_line(keys=[]):
-        def optimistic_parse(v):
-            if re.search("^\\-?\\d+$", v):
-                return int(v)
-            elif re.search("^\\-?\\d+(\\.\\d+)?$", v):
-                return float(v)
+        def optimistic_parse(V):
+            if re.search("^(\\d+\\|)+\\d+$", V): # array
+                return [int(v) for v in V.split("|")]
+            elif re.search("^(\\D+\\|)+\\D+$", V): # list
+                return V.split("|")
+            elif re.search("^\\d+$", V): # int
+                return int(V)
             else:
-                return v
+                return V
         def decorator(fn):            
             def wrapped(self, line):
                 args=[tok for tok in line.split(" ") if tok!='']
@@ -121,6 +127,53 @@ class Shell(cmd.Cmd):
             return wrapped
         return decorator
 
+    def validate_int_arg(config):
+        def decorator(fn):
+            def wrapped(self, *args, **kwargs):
+                if config["name"] not in kwargs:
+                    raise RuntimeError("%s not found" % config["name"])
+                value=kwargs[config["name"]]
+                if not isinstance(value, int):
+                    raise RuntimeError("%s is not an integer" % config["name"])
+                if "min" in config and value < config["min"]:
+                    raise RuntimeError("%s exceeds minimum" % config["name"])
+                return fn(self, *args, **kwargs)
+            return wrapped
+        return decorator
+
+    def validate_array_arg(config):
+        def decorator(fn):
+            def wrapped(self, *args, **kwargs):
+                if config["name"] not in kwargs:
+                    raise RuntimeError("%s not found" % config["name"])
+                value=kwargs[config["name"]]
+                if not isinstance(value, int):
+                    raise RuntimeError("%s is not an array" % config["name"])
+                for v in value:
+                    if not isinstance(v, int):
+                        raise RuntimeError("%s is not an array" % config["name"])
+                    if "min" in config and v < config["min"]:
+                        raise RuntimeError("%s exceeds minimum" % config["name"])
+                return fn(self, *args, **kwargs)
+            return wrapped
+        return decorator
+
+    def validate_list_arg(config):
+        def decorator(fn):
+            def wrapped(self, *args, **kwargs):
+                if config["name"] not in kwargs:
+                    raise RuntimeError("%s not found" % config["name"])
+                value=kwargs[config["name"]]
+                if not isinstance(value, int):
+                    raise RuntimeError("%s is not a list" % config["name"])
+                return fn(self, *args, **kwargs)
+            return wrapped
+        return decorator
+    
+    """
+    - no need for array and list support here
+    """
+    
     def validate_param(fn):
         def validate_type(key, value, param):
             def is_number(value):
@@ -168,21 +221,7 @@ class Shell(cmd.Cmd):
     @wrap_action
     def do_listpools(self, *args, **kwargs):
         print (yaml.safe_dump(sorted(list(self.pools.keys()))))
-        
-    def validate_int(config):
-        def decorator(fn):
-            def wrapped(self, *args, **kwargs):
-                if config["name"] not in kwargs:
-                    raise RuntimeError("%s not found" % config["name"])
-                value=kwargs[config["name"]]
-                if not isinstance(value, int):
-                    raise RuntimeError("%s is not an integer" % config["name"])
-                if "min" in config and value < config["min"]:
-                    raise RuntimeError("%s exceeds minimum" % config["name"])
-                return fn(self, *args, **kwargs)
-            return wrapped
-        return decorator
-
+                    
     def render_patches(generator, nbreaks=0):
         def decorator(fn):
             def wrapped(self, *args, **kwargs):
@@ -228,8 +267,8 @@ class Shell(cmd.Cmd):
     @wrap_action
     @assert_project
     @parse_line(keys=["i"])
-    @validate_int({"name": "i",
-                   "min": 0})
+    @validate_int_arg({"name": "i",
+                       "min": 0})
     @render_patches(generator="mutation")
     def do_mutate(self, i):
         roots=self.project
@@ -245,8 +284,8 @@ class Shell(cmd.Cmd):
     @wrap_action
     @assert_project
     @parse_line(keys=["i"])
-    @validate_int({"name": "i",
-                   "min": 0})
+    @validate_int_arg({"name": "i",
+                       "min": 0})
     @render_patches(generator="chain",
                     nbreaks=1)
     def do_chain(self, i, instruments="kk|sn|ht".split("|")):
