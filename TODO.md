@@ -1,6 +1,6 @@
-### short [abstract vitling]
+### short [abstract beats generation]
 
-- convert append/expand into dual decorator strategy
+- wet changes not being rendered
 
 ### medium
 
@@ -27,6 +27,7 @@
 
 ### done
 
+- convert append/expand into dual decorator strategy
 - list, array support
 - revert renderinfo
 - env and pool to share common base with abbreviation lookup
