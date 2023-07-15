@@ -148,58 +148,64 @@ class VitlingGenerator:
         for i in range(n):
             fn(notes, q, i)
 
-    def add(self, notes, q, k, i, v):
-        notes.setdefault(k, [])
+    def append(fn):
+        def wrapped(self, notes, *args, **kwargs):
+            trig=fn(self, *args, **kwargs)
+            notes.setdefault(self.key, [])
+            notes[self.key].append(trig)
+        return wrapped
+            
+    @append
+    def expand(self, q, i, v):
         samplekey, volume = v
-        trig={"mod": "%sSampler" % k.upper(),              
-              "key": self.samples[samplekey],
-              "vel": self.volume*volume,
-              "i": i+self.offset}
-        notes[k].append(trig)
+        return {"mod": "%sSampler" % self.key.upper(),              
+                "key": self.samples[samplekey],
+                "vel": self.volume*volume,
+                "i": i+self.offset}
 
     def fourfloor(self, notes, q, i, k=Kick):
         if i % 4 == 0:
-            self.add(notes, q, self.key, i, (k, 0.9))
+            self.expand(notes, q, i, (k, 0.9))
         elif i % 2 == 0 and q.random() < 0.1:
-            self.add(notes, q, self.key, i, (k, 0.6))
+            self.expand(notes, q, i, (k, 0.6))
 
     def electro(self, notes, q, i, k=Kick):
         if i == 0:
-            self.add(notes, q, self.key, i, (k, 1))
+            self.expand(notes, q, i, (k, 1))
         elif ((i % 2 == 0 and i % 8 != 4 and q.random() < 0.5) or
               q.random() < 0.05):
-            self.add(notes, q, self.key, i, (k, 0.9*q.random()))
+            self.expand(notes, q, i, (k, 0.9*q.random()))
 
     def triplets(self, notes, q, i, k=Kick):
         if i % 16  in [0, 3, 6, 9, 14]:
-           self.add(notes, q, self.key, i, (k, 1))
+           self.expand(notes, q, i, (k, 1))
            
     def backbeat(self, notes, q, i, k=Snare):
         if i % 8 == 4:
-            self.add(notes, q, self.key, i, (k, 1))
+            self.expand(notes, q, i, (k, 1))
 
     def skip(self, notes, q, i, k=Snare):
         if i % 8 in [3, 6]:
-            self.add(notes, q, self.key, i, (k, 0.6+0.4*q.random()))
+            self.expand(notes, q, i, (k, 0.6+0.4*q.random()))
         elif i % 2 == 0 and q.random() < 0.2:
-            self.add(notes, q, self.key, i, (k, 0.4+0.2*q.random()))
+            self.expand(notes, q, i, (k, 0.4+0.2*q.random()))
         elif q.random() < 0.1:
-            self.add(notes, q, self.key, i, (k, 0.2+0.2*q.random()))
+            self.expand(notes, q, i, (k, 0.2+0.2*q.random()))
 
     def offbeats(self, notes, q, i,
                  ko=OpenHat,
                  kc=ClosedHat):
         if i % 4 == 2:
-            self.add(notes, q, self.key, i, (ko, 0.4))
+            self.expand(notes, q, i, (ko, 0.4))
         elif q.random() < 0.3:
             k=ko if q.random() < 0.5 else kc
-            self.add(notes, q, self.key, i, (kc, 0.2*q.random()))
+            self.expand(notes, q, i, (kc, 0.2*q.random()))
 
     def closed(self, notes, q, i, k=ClosedHat):
         if i % 2 == 0:
-            self.add(notes, q, self.key, i, (k, 0.4))
+            self.expand(notes, q, i, (k, 0.4))
         elif q.random() < 0.5:
-            self.add(notes, q, self.key, i, (k, 0.3*q.random()))
+            self.expand(notes, q, i, (k, 0.3*q.random()))
 
 class SampleHoldGenerator:
 
@@ -219,13 +225,19 @@ class SampleHoldGenerator:
         for i in range(n):
             fn(notes, q, i)
 
-    def add(self, notes, k, i, v):
-        notes.setdefault(k, [])
-        trig={"mod": self.mod,
-              "ctrl": k,
-              "v": v,
-              "i": i+self.offset}
-        notes[k].append(trig)
+    def append(fn):
+        def wrapped(self, notes, *args, **kwargs):
+            trig=fn(self, *args, **kwargs)
+            notes.setdefault(self.key, [])
+            notes[self.key].append(trig)
+        return wrapped
+
+    @append
+    def expand(self, k, i, v):
+        return {"mod": self.mod,
+                "ctrl": k,
+                "v": v,
+                "i": i+self.offset}
 
     def sample_hold(self, notes, q, i):
         if 0 == i % self.step:
@@ -233,7 +245,7 @@ class SampleHoldGenerator:
                 floor, ceil = self.ranges[ctrl]
                 v0=floor+(ceil-floor)*q.random()
                 v=self.inc*int(0.5+v0/self.inc)
-                self.add(notes, ctrl, i, v)
+                self.expand(notes, ctrl, i, v)
             
 class Machine(dict):
 
