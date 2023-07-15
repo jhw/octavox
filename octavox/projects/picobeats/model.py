@@ -149,64 +149,69 @@ class VitlingGenerator:
         for i in range(n):
             fn(q, i)
 
-    def append(fn):
-        def wrapped(self, *args, **kwargs):
-            trig=fn(self, *args, **kwargs)
-            self.notes.setdefault(self.key, [])
-            self.notes[self.key].append(trig)
+    def handle(fn):
+        def wrapped(self, q, i, **kwargs):
+            v=fn(self, q, i, **kwargs)
+            if v:
+                samplekey, volume = v
+                trig={"mod": "%sSampler" % self.key.upper(),              
+                      "key": self.samples[samplekey],
+                      "vel": self.volume*volume,
+                      "i": i+self.offset}
+                self.notes.setdefault(self.key, [])
+                self.notes[self.key].append(trig)
         return wrapped
-            
-    @append
-    def expand(self, q, i, v):
-        samplekey, volume = v
-        return {"mod": "%sSampler" % self.key.upper(),              
-                "key": self.samples[samplekey],
-                "vel": self.volume*volume,
-                "i": i+self.offset}
-
+    
+    @handle
     def fourfloor(self, q, i, k=Kick):
         if i % 4 == 0:
-            self.expand(q, i, (k, 0.9))
+            return (k, 0.9)
         elif i % 2 == 0 and q.random() < 0.1:
-            self.expand(q, i, (k, 0.6))
+            return (k, 0.6)
 
+    @handle
     def electro(self, q, i, k=Kick):
         if i == 0:
-            self.expand(q, i, (k, 1))
+            return (k, 1)
         elif ((i % 2 == 0 and i % 8 != 4 and q.random() < 0.5) or
               q.random() < 0.05):
-            self.expand(q, i, (k, 0.9*q.random()))
+            return (k, 0.9*q.random())
 
+    @handle
     def triplets(self, q, i, k=Kick):
         if i % 16  in [0, 3, 6, 9, 14]:
-           self.expand(q, i, (k, 1))
-           
+            return (k, 1)
+
+    @handle
     def backbeat(self, q, i, k=Snare):
         if i % 8 == 4:
-            self.expand(q, i, (k, 1))
+            return (k, 1)
 
+    @handle
     def skip(self, q, i, k=Snare):
         if i % 8 in [3, 6]:
-            self.expand(q, i, (k, 0.6+0.4*q.random()))
+            return (k, 0.6+0.4*q.random())
         elif i % 2 == 0 and q.random() < 0.2:
-            self.expand(q, i, (k, 0.4+0.2*q.random()))
+            return (k, 0.4+0.2*q.random())
         elif q.random() < 0.1:
-            self.expand(q, i, (k, 0.2+0.2*q.random()))
+            return (k, 0.2+0.2*q.random())
 
+    @handle
     def offbeats(self, q, i,
                  ko=OpenHat,
                  kc=ClosedHat):
         if i % 4 == 2:
-            self.expand(q, i, (ko, 0.4))
+            return (ko, 0.4)
         elif q.random() < 0.3:
             k=ko if q.random() < 0.5 else kc
-            self.expand(q, i, (kc, 0.2*q.random()))
+            return (kc, 0.2*q.random())
 
+    @handle
     def closed(self, q, i, k=ClosedHat):
         if i % 2 == 0:
-            self.expand(q, i, (k, 0.4))
+            return (k, 0.4)
         elif q.random() < 0.5:
-            self.expand(q, i, (k, 0.3*q.random()))
+            return (k, 0.3*q.random())
 
 class SampleHoldGenerator:
 
