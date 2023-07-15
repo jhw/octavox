@@ -1,10 +1,16 @@
 ### short [abstract beats generation]
 
-- wet changes not being rendered
+- separate lfos for echo wet and feedback
+
+- revert s&h array support
+- revert s&h inserting beats into notes with controller key
+- ec generator config shouldn't need `styles` variable
+
+- consider generator base class
+- consider if @handle decorator is consistent with moving vitling code to separate module
 
 ### medium
 
-- pass list of global mutes
 - pass array of roots to chain
 - density
 - combine parsing of line with parameter validation
@@ -12,6 +18,10 @@
 
 ### thoughts
 
+- global mutes?
+  - doesn't make much sense
+  - can mute track in UI when experimenting
+  - can ignore track when using OT as you have all tracks independently
 - abstract sample filtering into patch? 
   - not possible because patch needs rendering before filterig
 - track- level render block?
@@ -27,6 +37,7 @@
 
 ### done
 
+- wet changes not being rendered
 - convert append/expand into dual decorator strategy
 - list, array support
 - revert renderinfo

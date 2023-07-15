@@ -232,6 +232,13 @@ class SampleHoldGenerator:
         for i in range(n):
             fn(q, i)
 
+    """
+    - this differs from vitling handler in a number of "interesting" ways
+      - supports array outputs rather than scalar
+      - stores outputs in notes with controller keys not track keys
+      - hardcodes wet and feedback controller names
+    """
+            
     def handle(fn):
         def wrapped(self, q, i, **kwargs):
             values=fn(self, q, i, **kwargs)
@@ -240,8 +247,8 @@ class SampleHoldGenerator:
                       "ctrl": k,
                       "v": v,
                       "i": i+self.offset}
-                self.notes.setdefault(self.key, [])
-                self.notes[self.key].append(trig)
+                self.notes.setdefault(k, [])
+                self.notes[k].append(trig)
         return wrapped
 
     @handle
