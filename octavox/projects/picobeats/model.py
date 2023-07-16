@@ -63,6 +63,9 @@ ht:
   styles:
   - offbeats
   - closed
+""")
+
+LfoConfig=yaml.safe_load("""
 ec:
   generator: sample_hold
   styles:
@@ -288,7 +291,7 @@ class Machine(dict):
 class Machines(list):
 
     @classmethod
-    def randomise(self, keys, config=MachineConfig):
+    def randomise(self, config=MachineConfig):
         def init_seed(key):
             return int(1e8*random.random())
         def init_style(key):
@@ -297,7 +300,7 @@ class Machines(list):
         return Machines([{"key": key,
                           "seed": init_seed(key),
                           "style": init_style(key)}
-                         for key in keys])
+                         for key in config])
 
     def __init__(self, machines):
         list.__init__(self, [Machine(machine)
@@ -305,21 +308,69 @@ class Machines(list):
 
     def clone(self):
         return Machines(self)
+
+class Lfo(dict):
+
+    def __init__(self, item):
+        dict.__init__(self, item)
+
+    def clone(self):
+        return Lfo(self)
+        
+    def randomise_seed(self, limit):
+        if random.random() < limit:
+            seed=int(1e8*random.random())
+            self["seed"]=seed
+
+    def randomise_style(self, limit, config=LfoConfig):
+        styles=config[self["key"]]["styles"]
+        if random.random() < limit:
+            self["style"]=random.choice(styles)
+
+    def render(self, nbeats, generator):
+        generator.generate(n=nbeats,
+                           q=Q(self["seed"]),
+                           style=self["style"])
+    
+class Lfos(list):
+
+    @classmethod
+    def randomise(self, config=LfoConfig):
+        def init_seed(key):
+            return int(1e8*random.random())
+        def init_style(key):
+            styles=config[key]["styles"]
+            return random.choice(styles)
+        return Lfos([{"key": key,
+                      "seed": init_seed(key),
+                      "style": init_style(key)}
+                     for key in config])
+
+    def __init__(self, lfos):
+        list.__init__(self, [Lfo(lfo)
+                             for lfo in lfos])
+
+    def clone(self):
+        return Lfos(self)
+
         
 class Slice(dict):
 
     @classmethod
-    def randomise(self, keys, pool):
+    def randomise(self, pool):
         return Slice(samples=Samples.randomise(pool),
-                     machines=Machines.randomise(keys))
+                     machines=Machines.randomise(),
+                     lfos=Lfos.randomise())
     
-    def __init__(self, samples, machines):
+    def __init__(self, samples, machines, lfos):
         dict.__init__(self, {"samples": Samples(samples),
-                             "machines": Machines(machines)})
+                             "machines": Machines(machines),
+                             "lfos": Lfos(lfos)})
 
     def clone(self):
         return Slice(samples=self["samples"].clone(),
-                     machines=self["machines"].clone())
+                     machines=self["machines"].clone(),
+                     lfos=self["lfos"].clone())
         
     def generator_kwargs(fn):
         def wrapped(self, key, offset, notes):
@@ -339,7 +390,7 @@ class Slice(dict):
         return {"ranges": {"wet": [0, 1],
                            "feedback": [0, 1]}}
             
-    def render(self, notes, key, genkey, nbeats, offset):
+    def render_machine(self, notes, key, genkey, nbeats, offset):
         genkwargsfn=getattr(self, "%s_kwargs" % genkey)
         genkwargs=genkwargsfn(key, offset, notes)
         genclass=eval(hungarorise("%s_generator" % genkey))
@@ -347,12 +398,22 @@ class Slice(dict):
         machine={machine["key"]:machine
                  for machine in self["machines"]}[key]
         machine.render(nbeats, generator)
+
+    def render_lfo(self, notes, key, genkey, nbeats, offset):
+        genkwargsfn=getattr(self, "%s_kwargs" % genkey)
+        genkwargs=genkwargsfn(key, offset, notes)
+        genclass=eval(hungarorise("%s_generator" % genkey))
+        generator=genclass(**genkwargs)
+        lfo={lfo["key"]:lfo
+             for lfo in self["lfos"]}[key]
+        lfo.render(nbeats, generator)
+
             
 class Slices(list):
 
     @classmethod
-    def randomise(self, keys, pool, n=4):
-        return Slices([Slice.randomise(keys, pool)
+    def randomise(self, pool, n=4):
+        return Slices([Slice.randomise(pool)
                        for i in range(n)])
     
     def __init__(self, slices):
@@ -365,7 +426,7 @@ class Slices(list):
 class PatternMap(dict):
 
     @classmethod
-    def randomise(self, keys, slicetemp, patterns=Breakbeats):
+    def randomise(self, slicetemp, patterns=Breakbeats, keys="kk|sn|ht|ec".split("|")):
         return PatternMap({key:patterns.randomise(slicetemp)
                            for key in keys})
     
@@ -379,23 +440,20 @@ class PatternMap(dict):
 class Tracks(dict):
 
     @classmethod
-    def randomise(self, keys, pool, slicetemp):
-        return Tracks(keys=keys,
-                      slices=Slices.randomise(keys, pool),
-                      patterns=PatternMap.randomise(keys, slicetemp))
+    def randomise(self, pool, slicetemp):
+        return Tracks(slices=Slices.randomise(pool),
+                      patterns=PatternMap.randomise(slicetemp))
         
-    def __init__(self, keys, slices, patterns):
-        dict.__init__(self, {"keys": keys,
-                             "slices": Slices(slices),
+    def __init__(self, slices, patterns):
+        dict.__init__(self, {"slices": Slices(slices),
                              "patterns": PatternMap(patterns)})
 
     def clone(self):
-        return Tracks(keys=list(self["keys"]),
-                      slices=self["slices"].clone(),
+        return Tracks(slices=self["slices"].clone(),
                       patterns=self["patterns"].clone())
 
     def randomise_pattern(self, limit, slicetemp, patterns=Breakbeats):
-        for key in self["keys"]:
+        for key in "kk|sn|ht".split("|"):
             if random.random() < limit:
                 self["patterns"][key]=patterns.randomise(slicetemp)
 
@@ -403,18 +461,33 @@ class Tracks(dict):
         if random.random() < limit:
             random.shuffle(self["slices"])
                 
-    def render(self, nbeats, mutes, config=MachineConfig):
+    def render(self, nbeats, mutes,
+               machineconfig=MachineConfig,
+               lfoconfig=LfoConfig):
         notes={}
-        for key in self["keys"]:
+        # machines
+        for key in machineconfig:
             if key not in mutes:
-                genkey=config[key]["generator"]
+                genkey=machineconfig[key]["generator"]
                 pattern=self["patterns"][key]
                 multiplier=int(nbeats/pattern.size)
                 offset=0
                 for item in pattern.expanded:
                     slice=self["slices"][item["i"]]
                     nsamplebeats=item["n"]*multiplier
-                    slice.render(notes, key, genkey, nsamplebeats, offset)
+                    slice.render_machine(notes, key, genkey, nsamplebeats, offset)
+                    offset+=nsamplebeats
+        # lfos
+        for key in lfoconfig:
+            if key not in mutes:
+                genkey=lfoconfig[key]["generator"]
+                pattern=self["patterns"][key]
+                multiplier=int(nbeats/pattern.size)
+                offset=0
+                for item in pattern.expanded:
+                    slice=self["slices"][item["i"]]
+                    nsamplebeats=item["n"]*multiplier
+                    slice.render_lfo(notes, key, genkey, nsamplebeats, offset)
                     offset+=nsamplebeats
         return notes
 
@@ -425,9 +498,8 @@ class Tracks(dict):
 class Patch(dict):
 
     @classmethod
-    def randomise(self, keys, pool, slicetemp):
-        return Patch(tracks=Tracks.randomise(keys,
-                                             pool,
+    def randomise(self, pool, slicetemp):
+        return Patch(tracks=Tracks.randomise(pool,
                                              slicetemp))
     
     def __init__(self, tracks, mutes=[]):
@@ -445,6 +517,9 @@ class Patch(dict):
             for machine in slice["machines"]:
                 machine.randomise_style(limits["style"])
                 machine.randomise_seed(limits["seed"])
+            for lfo in slice["lfos"]:
+                lfo.randomise_style(limits["style"])
+                lfo.randomise_seed(limits["seed"])
         return self
     
     def render(self, nbeats):
@@ -455,10 +530,8 @@ class Patch(dict):
 class Patches(list):
 
     @classmethod
-    def randomise(self, pool, slicetemp, n,
-                  keys= "kk|sn|ht|ec".split("|")):
-        return Patches([Patch.randomise(keys,
-                                        pool,
+    def randomise(self, pool, slicetemp, n):
+        return Patches([Patch.randomise(pool,
                                         slicetemp)
                         for i in range(n)])
     
