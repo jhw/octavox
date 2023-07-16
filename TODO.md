@@ -1,6 +1,7 @@
 ### short [lfos]
 
 - second feedback lfo
+- simplify slice render_machine/lfo boundary between machine/lfo and generator
 - replace hardcoded instrument lists with config refs
 - lfo rendering to bypass slices
 - rename machines as sequencers
