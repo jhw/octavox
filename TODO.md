@@ -1,16 +1,11 @@
 ### short
 
-
 - tracks to iterate over slices and lfos not config items
-- remove cli list support
-- lfo json needs to include type and args (range, intervals)
-- notes should be list not dict -> can key passing be removed?
-- runtine checkes for mod/ctrl refs in lfo config
+- notes should be list not dict
 
 ### medium
 
-- add lfos for delay dry and delay
-- make lfo interval a random variable
+- remove cli list support
 - watcher to check code is working
 - pass array of roots to chain
 - bjorklund beat generator
@@ -20,6 +15,8 @@
 
 ### thoughts
 
+- runtine checkes for mod/ctrl refs in lfo config?
+   - probably overkill
 - global mutes?
   - doesn't make much sense
   - can mute track in UI when experimenting
@@ -39,6 +36,7 @@
 
 ### done
 
+- lfo json needs to include type and args (range, intervals)
 - name parameters when you have long lists
 - rename/remove vitling generator
 - move lfos from slices to tracks

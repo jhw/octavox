@@ -68,9 +68,15 @@ LfoConfig=yaml.safe_load("""
 ec0:
   mod: Echo
   ctrl: wet
+  range: [0, 1]
+  increment: 0.25
+  step: 4
 ec1:
   mod: Echo
   ctrl: feedback
+  range: [0, 1]
+  increment: 0.25
+  step: 4
 """)
 
 def Q(seed):
@@ -194,15 +200,13 @@ class BeatMachine:
 
 class SampleAndHoldMachine:
 
-    def __init__(self, key, range, notes, mod, ctrl,
-                 inc=0.25,
-                 step=4):
+    def __init__(self, key, range, notes, mod, ctrl, increment, step):
         self.key=key
         self.range=range
         self.notes=notes
         self.mod=mod
         self.ctrl=ctrl
-        self.inc=inc
+        self.increment=increment
         self.step=step
     
     def generate(self, q, n, style="sample_hold"):
@@ -227,7 +231,7 @@ class SampleAndHoldMachine:
         if 0 == i % self.step:
             floor, ceil = self.range
             v0=floor+(ceil-floor)*q.random()
-            return self.inc*int(0.5+v0/self.inc)
+            return self.increment*int(0.5+v0/self.increment)
             
 class Sequencer(dict):
 
@@ -416,9 +420,11 @@ class Tracks(dict):
         for key, generator in config.items():
             machine=SampleAndHoldMachine(mod=generator["mod"],
                                          ctrl=generator["ctrl"],
+                                         range=generator["range"],
+                                         increment=generator["increment"],
+                                         step=generator["step"],
                                          key=key,
-                                         notes=notes,
-                                         range=[0, 1])
+                                         notes=notes)
             lfo=self.lfo_map[key]
             lfo.render(nbeats, machine)
 
