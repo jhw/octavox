@@ -222,11 +222,10 @@ class VitlingGenerator:
 
 class SampleHoldGenerator:
 
-    def __init__(self, key, offset, range, notes, mod, ctrl,
+    def __init__(self, key, range, notes, mod, ctrl,
                  inc=0.25,
                  step=4):
         self.key=key
-        self.offset=offset
         self.range=range
         self.notes=notes
         self.mod=mod
@@ -246,7 +245,7 @@ class SampleHoldGenerator:
                 trig={"mod": self.mod,
                       "ctrl": self.ctrl,
                       "v": v,
-                      "i": i+self.offset}
+                      "i": i}
                 self.notes.setdefault(self.key, [])
                 self.notes[self.key].append(trig)
         return wrapped
@@ -367,11 +366,10 @@ class Slice(dict):
                  for machine in self["machines"]}[key]
         machine.render(nbeats, geninstance)
 
-    def render_lfo(self, notes, key, generator, nbeats, offset):
+    def render_lfo(self, notes, key, generator, nbeats):
         genkwargs={"mod": generator["mod"],
                    "ctrl": generator["ctrl"],
                    "key": key,
-                   "offset": offset,
                    "notes": notes,
                    "range": [0, 1]}
         genkey=generator["generator"]
@@ -449,7 +447,7 @@ class Tracks(dict):
     def render_lfos(self, notes, nbeats,
                     config=LfoConfig):
         for key, generator in config.items():
-            self["slices"][0].render_lfo(notes, key, generator, nbeats, 0)
+            self["slices"][0].render_lfo(notes, key, generator, nbeats)
 
                     
     def render(self, nbeats, mutes):

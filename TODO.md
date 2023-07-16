@@ -1,6 +1,5 @@
 ### short [lfos]
 
-- eliminate lfo offsets
 - zero ctrl values not being rendered
 - runtine checkes for mod/ctrl refs in lfo config
 - simplify slice render_machine/lfo boundary between machine/lfo and generator
@@ -9,7 +8,9 @@
 
 ### medium
 
+- watcher to check code is working
 - abstract vitling beats into common vitling909 module
+- remove cli list support
 - pass array of roots to chain
 - density
 - combine parsing of line with parameter validation
@@ -36,6 +37,7 @@
 
 ### done
 
+- eliminate lfo offsets
 - eliminate pattern code from slice rendering
 - replace hardcoded instrument lists with config refs
 - second feedback lfo
