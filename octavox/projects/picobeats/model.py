@@ -334,7 +334,6 @@ class Lfos(list):
 
     def clone(self):
         return Lfos(self)
-
         
 class Slice(dict):
 
