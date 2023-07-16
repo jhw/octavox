@@ -1,6 +1,7 @@
 ### short [lfos]
 
-- eliminate pattern code from slice rendering
+- eliminate lfo offsets
+- zero ctrl values not being rendered
 - runtine checkes for mod/ctrl refs in lfo config
 - simplify slice render_machine/lfo boundary between machine/lfo and generator
 - lfo rendering to bypass slices
@@ -35,6 +36,7 @@
 
 ### done
 
+- eliminate pattern code from slice rendering
 - replace hardcoded instrument lists with config refs
 - second feedback lfo
 - define lfo mod, controller in config

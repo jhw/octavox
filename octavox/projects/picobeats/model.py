@@ -449,15 +449,8 @@ class Tracks(dict):
     def render_lfos(self, notes, nbeats,
                     config=LfoConfig):
         for key, generator in config.items():
-            # pattern=self["patterns"][key]
-            pattern=list(self["patterns"].values())[0] # TEMP
-            multiplier=int(nbeats/pattern.size)
-            offset=0
-            for item in pattern.expanded:
-                slice=self["slices"][item["i"]]
-                nsamplebeats=item["n"]*multiplier
-                slice.render_lfo(notes, key, generator, nsamplebeats, offset)
-                offset+=nsamplebeats
+            self["slices"][0].render_lfo(notes, key, generator, nbeats, 0)
+
                     
     def render(self, nbeats, mutes):
         notes={}
