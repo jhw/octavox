@@ -409,20 +409,18 @@ class Tracks(dict):
         return {lfo["key"]:lfo
                 for lfo in self["lfos"]}
 
-    def render_lfo(self, notes, key, generator, nbeats):
-        genkwargs={"mod": generator["mod"],
-                   "ctrl": generator["ctrl"],
-                   "key": key,
-                   "notes": notes,
-                   "range": [0, 1]}
-        machine=SampleAndHoldLfo(**genkwargs)
-        lfo=self.lfo_map[key]
-        lfo.render(nbeats, machine)
-                
     def render_lfos(self, notes, nbeats,
                     config=LfoConfig):
         for key, generator in config.items():
-            self.render_lfo(notes, key, generator, nbeats)
+            genkwargs={"mod": generator["mod"],
+                       "ctrl": generator["ctrl"],
+                       "key": key,
+                       "notes": notes,
+                       "range": [0, 1]}
+            machine=SampleAndHoldLfo(**genkwargs)
+            lfo=self.lfo_map[key]
+            lfo.render(nbeats, machine)
+
                     
     def render(self, nbeats, mutes):
         notes={}
