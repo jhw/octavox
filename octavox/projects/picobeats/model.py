@@ -175,29 +175,23 @@ class BeatMachine:
     @handle
     def fourfloor(self, q, i, k=Kick):
         return vitling.fourfloor(q, i, k)
-
     @handle
     def electro(self, q, i, k=Kick):
         return vitling.electro(q, i, k)
-
     @handle
     def triplets(self, q, i, k=Kick):
         return vitling.triplets(q, i, k)
-
     @handle
     def backbeat(self, q, i, k=Snare):
         return vitling.backbeat(q, i, k)
-
     @handle
     def skip(self, q, i, k=Snare):
         return vitling.skip(q, i, k)
-
     @handle
     def offbeats(self, q, i,
                  ko=OpenHat,
                  kc=ClosedHat):
         return vitling.offbeats(q, i, ko, kc)    
-
     @handle
     def closed(self, q, i, k=ClosedHat):
         return vitling.closed(q, i, k)
@@ -257,8 +251,8 @@ class Sequencer(dict):
 
     def render(self, nbeats, machine):
         machine.generate(n=nbeats,
-                           q=Q(self["seed"]),
-                           style=self["style"])
+                         q=Q(self["seed"]),
+                         style=self["style"])
     
 class Sequencers(list):
 
@@ -401,15 +395,15 @@ class Tracks(dict):
             
     def render_sequencers(self, notes, nbeats, mutes,
                         config=SequencerConfig):
-        for key, generator in config.items():
+        for key, item in config.items():
             if key not in mutes:
                 pattern=self["patterns"][key]
                 multiplier=int(nbeats/pattern.size)
                 offset=0
-                for item in pattern.expanded:
-                    slice=self["slices"][item["i"]]
-                    nsamplebeats=item["n"]*multiplier
-                    slice.render_sequencer(mod=generator["mod"],
+                for pat in pattern.expanded:
+                    slice=self["slices"][pat["i"]]
+                    nsamplebeats=pat["n"]*multiplier
+                    slice.render_sequencer(mod=item["mod"],
                                            notes=notes,
                                            key=key,
                                            nbeats=nsamplebeats,
@@ -423,12 +417,12 @@ class Tracks(dict):
 
     def render_lfos(self, notes, nbeats,
                     config=LfoConfig):
-        for key, generator in config.items():
-            machine=SampleAndHoldMachine(mod=generator["mod"],
-                                         ctrl=generator["ctrl"],
-                                         range=generator["range"],
-                                         increment=generator["increment"],
-                                         step=generator["step"],
+        for key, item in config.items():
+            machine=SampleAndHoldMachine(mod=item["mod"],
+                                         ctrl=item["ctrl"],
+                                         range=item["range"],
+                                         increment=item["increment"],
+                                         step=item["step"],
                                          key=key,
                                          notes=notes)
             lfo=self.lfo_map[key]
