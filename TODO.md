@@ -1,10 +1,10 @@
 ### short [lfos]
 
+- move lfos from slices to tracks
 - zero ctrl values not being rendered
 - runtine checkes for mod/ctrl refs in lfo config
 - simplify slice render_machine/lfo boundary between machine/lfo and generator
-- lfo rendering to bypass slices
-- rename machines as sequencers
+- lfo json needs to include type and args (range, intervals)
 
 ### medium
 
@@ -37,6 +37,7 @@
 
 ### done
 
+- rename machines as sequencers
 - eliminate lfo offsets
 - eliminate pattern code from slice rendering
 - replace hardcoded instrument lists with config refs
