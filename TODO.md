@@ -1,6 +1,5 @@
 ### short [lfos]
 
-- define lfo mod, controller in config
 - second feedback lfo
 - replace hardcoded instrument lists with config refs
 - lfo rendering to bypass slices
@@ -35,6 +34,7 @@
 
 ### done
 
+- define lfo mod, controller in config
 - separate machine kwargs code at slice level
 - remove lfo style
 - remove lfo array support

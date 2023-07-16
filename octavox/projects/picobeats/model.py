@@ -68,6 +68,8 @@ ht:
 LfoConfig=yaml.safe_load("""
 ec:
   generator: sample_hold
+  mod: Echo
+  ctrl: wet
 """)
 
 def Q(seed):
@@ -216,8 +218,7 @@ class VitlingGenerator:
 
 class SampleHoldGenerator:
 
-    def __init__(self, key, offset, range, notes,
-                 mod="Echo",
+    def __init__(self, key, offset, range, notes, mod, ctrl,
                  inc=0.25,
                  step=4):
         self.key=key
@@ -225,6 +226,7 @@ class SampleHoldGenerator:
         self.range=range
         self.notes=notes
         self.mod=mod
+        self.ctrl=ctrl
         self.inc=inc
         self.step=step
     
@@ -234,11 +236,11 @@ class SampleHoldGenerator:
             fn(q, i)
 
     def handle(fn):
-        def wrapped(self, q, i, k="wet", **kwargs):
+        def wrapped(self, q, i, **kwargs):
             v=fn(self, q, i, **kwargs)
             if v:
                 trig={"mod": self.mod,
-                      "ctrl": k,
+                      "ctrl": self.ctrl,
                       "v": v,
                       "i": i+self.offset}
                 self.notes.setdefault(self.key, [])
@@ -362,7 +364,9 @@ class Slice(dict):
         machine.render(nbeats, geninstance)
 
     def render_lfo(self, notes, key, generator, nbeats, offset):
-        genkwargs={"key": key,
+        genkwargs={"mod": generator["mod"],
+                   "ctrl": generator["ctrl"],
+                   "key": key,
                    "offset": offset,
                    "notes": notes,
                    "range": [0, 1]}
