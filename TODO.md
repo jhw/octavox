@@ -1,12 +1,9 @@
 ### short [lfos]
 
-- remove lfo style
-- two separate lfos
-- remove lfo array support
-- define lfo field in config
-- remove hardcoded instrument lists where possible
-- try and combine machine, lfo handling
-- slices to apply to machines onlt
+- define lfo mod, controller in config
+- second feedback lfo
+- replace hardcoded instrument lists with config refs
+- lfos to bypass slice rendering
 
 ### medium
 
@@ -36,6 +33,8 @@
 
 ### done
 
+- remove lfo style
+- remove lfo array support
 - wet changes not being rendered
 - convert append/expand into dual decorator strategy
 - list, array support

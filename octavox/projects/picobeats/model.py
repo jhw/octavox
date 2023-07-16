@@ -216,13 +216,13 @@ class VitlingGenerator:
 
 class SampleHoldGenerator:
 
-    def __init__(self, key, offset, ranges, notes,
+    def __init__(self, key, offset, range, notes,
                  mod="Echo",
                  inc=0.25,
                  step=4):
         self.key=key
         self.offset=offset
-        self.ranges=ranges
+        self.range=range
         self.notes=notes
         self.mod=mod
         self.inc=inc
@@ -233,13 +233,6 @@ class SampleHoldGenerator:
         for i in range(n):
             fn(q, i)
 
-    """
-    - this differs from vitling handler in a number of "interesting" ways
-      - supports array outputs rather than scalar
-      - stores outputs in notes with controller keys not track keys
-      - hardcodes wet and feedback controller names
-    """
-            
     def handle(fn):
         def wrapped(self, q, i, k="wet", **kwargs):
             v=fn(self, q, i, **kwargs)
@@ -253,9 +246,9 @@ class SampleHoldGenerator:
         return wrapped
 
     @handle
-    def sample_hold(self, q, i, k="wet"):
+    def sample_hold(self, q, i):
         if 0 == i % self.step:
-            floor, ceil = self.ranges[k]
+            floor, ceil = self.range
             v0=floor+(ceil-floor)*q.random()
             return self.inc*int(0.5+v0/self.inc)
             
@@ -371,8 +364,7 @@ class Slice(dict):
 
     @generator_kwargs
     def sample_hold_kwargs(self, key, offset, notes):
-        return {"ranges": {"wet": [0, 1],
-                           "feedback": [0, 1]}}
+        return {"range": [0, 1]}
             
     def render_machine(self, notes, key, genkey, nbeats, offset):
         genkwargsfn=getattr(self, "%s_kwargs" % genkey)
@@ -391,7 +383,6 @@ class Slice(dict):
         lfo={lfo["key"]:lfo
              for lfo in self["lfos"]}[key]
         lfo.render(nbeats, generator)
-
             
 class Slices(list):
 
