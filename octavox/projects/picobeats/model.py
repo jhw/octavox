@@ -50,15 +50,18 @@ links:
 
 SequencerConfig=yaml.safe_load("""
 kk:
+  mod: KKSampler
   styles:
   - fourfloor
   - electro
   - triplets
 sn:
+  mod: SNSampler
   styles:
   - backbeat
   - skip
 ht:
+  mod: HTSampler
   styles:
   - offbeats
   - closed
@@ -143,7 +146,8 @@ class Samples(dict):
         
 class BeatMachine:
 
-    def __init__(self, key, offset, samples, notes, volume=1):
+    def __init__(self, mod, key, offset, samples, notes, volume=1):
+        self.mod=mod
         self.key=key
         self.offset=offset
         self.samples=samples
@@ -160,7 +164,7 @@ class BeatMachine:
             v=fn(self, q, i, **kwargs)
             if v!=None: # explicit because could return zero
                 samplekey, volume = v
-                trig={"mod": "%sSampler" % self.key.upper(),              
+                trig={"mod": self.mod,
                       "key": self.samples[samplekey],
                       "vel": self.volume*volume,
                       "i": i+self.offset}
@@ -266,9 +270,9 @@ class Sequencers(list):
             styles=config[key]["styles"]
             return random.choice(styles)
         return Sequencers([{"key": key,
-                          "seed": init_seed(key),
-                          "style": init_style(key)}
-                         for key in config])
+                            "seed": init_seed(key),
+                            "style": init_style(key)}
+                           for key in config])
 
     def __init__(self, sequencers):
         list.__init__(self, [Sequencer(sequencer)
@@ -331,8 +335,9 @@ class Slice(dict):
         return {sequencer["key"]:sequencer
                 for sequencer in self["sequencers"]}
      
-    def render_sequencer(self, notes, key, nbeats, offset):
-        machine=BeatMachine(key=key,
+    def render_sequencer(self, mod, notes, key, nbeats, offset):
+        machine=BeatMachine(mod=mod,
+                            key=key,
                             offset=offset,
                             notes=notes,
                             samples=self["samples"])
@@ -404,7 +409,8 @@ class Tracks(dict):
                 for item in pattern.expanded:
                     slice=self["slices"][item["i"]]
                     nsamplebeats=item["n"]*multiplier
-                    slice.render_sequencer(notes=notes,
+                    slice.render_sequencer(mod=generator["mod"],
+                                           notes=notes,
                                            key=key,
                                            nbeats=nsamplebeats,
                                            offset=offset)
