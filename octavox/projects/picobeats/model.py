@@ -353,7 +353,17 @@ class Slice(dict):
         return Slice(samples=self["samples"].clone(),
                      sequencers=self["sequencers"].clone(),
                      lfos=self["lfos"].clone())
-        
+
+    @property
+    def sequencer_map(self):
+        return {sequencer["key"]:sequencer
+                for sequencer in self["sequencers"]}
+
+    @property
+    def lfo_map(self):
+        return {lfo["key"]:lfo
+                for lfo in self["lfos"]}
+     
     def render_sequencer(self, notes, key, generator, nbeats, offset):
         genkwargs={"key": key,
                    "offset": offset,
@@ -362,8 +372,7 @@ class Slice(dict):
         genkey=generator["generator"]
         genclass=eval(hungarorise("%s_generator" % genkey))
         geninstance=genclass(**genkwargs)
-        sequencer={sequencer["key"]:sequencer
-                 for sequencer in self["sequencers"]}[key]
+        sequencer=self.sequencer_map[key]
         sequencer.render(nbeats, geninstance)
 
     def render_lfo(self, notes, key, generator, nbeats):
@@ -375,8 +384,7 @@ class Slice(dict):
         genkey=generator["generator"]
         genclass=eval(hungarorise("%s_generator" % genkey))
         geninstance=genclass(**genkwargs)
-        lfo={lfo["key"]:lfo
-             for lfo in self["lfos"]}[key]
+        lfo=self.lfo_map[key]
         lfo.render(nbeats, geninstance)
             
 class Slices(list):
