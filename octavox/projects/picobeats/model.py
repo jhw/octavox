@@ -50,18 +50,15 @@ links:
 
 SequencerConfig=yaml.safe_load("""
 kk:
-  generator: vitling
   styles:
   - fourfloor
   - electro
   - triplets
 sn:
-  generator: vitling
   styles:
   - backbeat
   - skip
 ht:
-  generator: vitling
   styles:
   - offbeats
   - closed
@@ -69,11 +66,9 @@ ht:
 
 LfoConfig=yaml.safe_load("""
 ec0:
-  generator: sample_hold
   mod: Echo
   ctrl: wet
 ec1:
-  generator: sample_hold
   mod: Echo
   ctrl: feedback
 """)
@@ -139,9 +134,8 @@ class Samples(dict):
 
     def clone(self):
         return Samples(self)
-
         
-class VitlingGenerator:
+class BeatSequencer:
 
     def __init__(self, key, offset, samples, notes, volume=1):
         self.key=key
@@ -198,7 +192,7 @@ class VitlingGenerator:
     def closed(self, q, i, k=ClosedHat):
         return vitling.closed(q, i, k)
 
-class SampleHoldGenerator:
+class SampleAndHoldLfo:
 
     def __init__(self, key, range, notes, mod, ctrl,
                  inc=0.25,
@@ -338,11 +332,9 @@ class Slice(dict):
                    "offset": offset,
                    "notes": notes,
                    "samples": self["samples"]}
-        genkey=generator["generator"]
-        genclass=eval(hungarorise("%s_generator" % genkey))
-        geninstance=genclass(**genkwargs)
+        machine=BeatSequencer(**genkwargs)
         sequencer=self.sequencer_map[key]
-        sequencer.render(nbeats, geninstance)
+        sequencer.render(nbeats, machine)
 
 class Slices(list):
 
@@ -423,11 +415,9 @@ class Tracks(dict):
                    "key": key,
                    "notes": notes,
                    "range": [0, 1]}
-        genkey=generator["generator"]
-        genclass=eval(hungarorise("%s_generator" % genkey))
-        geninstance=genclass(**genkwargs)
+        machine=SampleAndHoldLfo(**genkwargs)
         lfo=self.lfo_map[key]
-        lfo.render(nbeats, geninstance)
+        lfo.render(nbeats, machine)
                 
     def render_lfos(self, notes, nbeats,
                     config=LfoConfig):
