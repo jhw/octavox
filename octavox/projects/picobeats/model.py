@@ -5,6 +5,8 @@ from rv.modules.reverb import Reverb as RVReverb
 from octavox.modules.sampler import SVSampler
 from octavox.modules.project import SVProject
 
+import octavox.modules.patterns.vitling909 as vitling
+
 import json, math, os, random, yaml
 
 Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
@@ -138,9 +140,6 @@ class Samples(dict):
     def clone(self):
         return Samples(self)
 
-"""
-- https://github.com/vitling/acid-banger/blob/main/src/pattern.ts
-"""
         
 class VitlingGenerator:
 
@@ -171,54 +170,33 @@ class VitlingGenerator:
     
     @handle
     def fourfloor(self, q, i, k=Kick):
-        if i % 4 == 0:
-            return (k, 0.9)
-        elif i % 2 == 0 and q.random() < 0.1:
-            return (k, 0.6)
+        return vitling.fourfloor(q, i, k)
 
     @handle
     def electro(self, q, i, k=Kick):
-        if i == 0:
-            return (k, 1)
-        elif ((i % 2 == 0 and i % 8 != 4 and q.random() < 0.5) or
-              q.random() < 0.05):
-            return (k, 0.9*q.random())
+        return vitling.electro(q, i, k)
 
     @handle
     def triplets(self, q, i, k=Kick):
-        if i % 16  in [0, 3, 6, 9, 14]:
-            return (k, 1)
+        return vitling.triplets(q, i, k)
 
     @handle
     def backbeat(self, q, i, k=Snare):
-        if i % 8 == 4:
-            return (k, 1)
+        return vitling.backbeat(q, i, k)
 
     @handle
     def skip(self, q, i, k=Snare):
-        if i % 8 in [3, 6]:
-            return (k, 0.6+0.4*q.random())
-        elif i % 2 == 0 and q.random() < 0.2:
-            return (k, 0.4+0.2*q.random())
-        elif q.random() < 0.1:
-            return (k, 0.2+0.2*q.random())
+        return vitling.skip(q, i, k)
 
     @handle
     def offbeats(self, q, i,
                  ko=OpenHat,
                  kc=ClosedHat):
-        if i % 4 == 2:
-            return (ko, 0.4)
-        elif q.random() < 0.3:
-            k=ko if q.random() < 0.5 else kc
-            return (kc, 0.2*q.random())
+        return vitling.offbeats(q, i, ko, kc)    
 
     @handle
     def closed(self, q, i, k=ClosedHat):
-        if i % 2 == 0:
-            return (k, 0.4)
-        elif q.random() < 0.5:
-            return (k, 0.3*q.random())
+        return vitling.closed(q, i, k)
 
 class SampleHoldGenerator:
 

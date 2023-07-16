@@ -1,17 +1,20 @@
 ### short [lfos]
 
-- simplify slice render_machine/lfo boundary between machine/lfo and generator
 - move lfos from slices to tracks
+
+- rename/remove vitling generator
+- simplify slice render_machine/lfo boundary between machine/lfo and generator
 - runtine checkes for mod/ctrl refs in lfo config
 - lfo json needs to include type and args (range, intervals)
 
 ### medium
 
+- add lfos for delay dry and delay
+- make lfo interval variable
 - watcher to check code is working
-- abstract vitling beats into common vitling909 module
 - remove cli list support
 - pass array of roots to chain
-- density
+- density parameter
 - combine parsing of line with parameter validation
 - clone, update pool
 
@@ -36,6 +39,7 @@
 
 ### done
 
+- abstract vitling beats into common vitling909 module
 - zero ctrl values not being rendered
 - rename machines as sequencers
 - eliminate lfo offsets
