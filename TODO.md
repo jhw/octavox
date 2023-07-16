@@ -1,16 +1,16 @@
 ### short
 
+- remove cli list support
+- lfo json needs to include type and args (range, intervals)
 - name parameters when you have long lists
 - notes should be list not dict
 - runtine checkes for mod/ctrl refs in lfo config
-- lfo json needs to include type and args (range, intervals)
 
 ### medium
 
 - add lfos for delay dry and delay
-- make lfo interval variable
+- make lfo interval a random variable
 - watcher to check code is working
-- remove cli list support
 - pass array of roots to chain
 - density parameter
 - combine parsing of line with parameter validation
