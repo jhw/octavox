@@ -4,6 +4,7 @@
 - second feedback lfo
 - replace hardcoded instrument lists with config refs
 - lfo rendering to bypass slices
+- rename machines as sequencers
 
 ### medium
 
