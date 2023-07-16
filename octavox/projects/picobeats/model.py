@@ -68,8 +68,6 @@ ht:
 LfoConfig=yaml.safe_load("""
 ec:
   generator: sample_hold
-  styles:
-  - sample_hold
 """)
 
 def Q(seed):
@@ -230,7 +228,7 @@ class SampleHoldGenerator:
         self.inc=inc
         self.step=step
     
-    def generate(self, style, q, n):
+    def generate(self, q, n, style="sample_hold"):
         fn=getattr(self, style)
         for i in range(n):
             fn(q, i)
@@ -243,27 +241,23 @@ class SampleHoldGenerator:
     """
             
     def handle(fn):
-        def wrapped(self, q, i, **kwargs):
-            values=fn(self, q, i, **kwargs)
-            for k, v in values:
+        def wrapped(self, q, i, k="wet", **kwargs):
+            v=fn(self, q, i, **kwargs)
+            if v:
                 trig={"mod": self.mod,
                       "ctrl": k,
                       "v": v,
                       "i": i+self.offset}
-                self.notes.setdefault(k, [])
-                self.notes[k].append(trig)
+                self.notes.setdefault(self.key, [])
+                self.notes[self.key].append(trig)
         return wrapped
 
     @handle
-    def sample_hold(self, q, i):
-        values=[]
+    def sample_hold(self, q, i, k="wet"):
         if 0 == i % self.step:
-            for k in "wet|feedback".split("|"):
-                floor, ceil = self.ranges[k]
-                v0=floor+(ceil-floor)*q.random()
-                v=self.inc*int(0.5+v0/self.inc)
-                values.append((k, v))
-        return values
+            floor, ceil = self.ranges[k]
+            v0=floor+(ceil-floor)*q.random()
+            return self.inc*int(0.5+v0/self.inc)
             
 class Machine(dict):
 
@@ -322,15 +316,9 @@ class Lfo(dict):
             seed=int(1e8*random.random())
             self["seed"]=seed
 
-    def randomise_style(self, limit, config=LfoConfig):
-        styles=config[self["key"]]["styles"]
-        if random.random() < limit:
-            self["style"]=random.choice(styles)
-
     def render(self, nbeats, generator):
         generator.generate(n=nbeats,
-                           q=Q(self["seed"]),
-                           style=self["style"])
+                           q=Q(self["seed"]))
     
 class Lfos(list):
 
@@ -338,12 +326,8 @@ class Lfos(list):
     def randomise(self, config=LfoConfig):
         def init_seed(key):
             return int(1e8*random.random())
-        def init_style(key):
-            styles=config[key]["styles"]
-            return random.choice(styles)
         return Lfos([{"key": key,
-                      "seed": init_seed(key),
-                      "style": init_style(key)}
+                      "seed": init_seed(key)}
                      for key in config])
 
     def __init__(self, lfos):
@@ -518,7 +502,6 @@ class Patch(dict):
                 machine.randomise_style(limits["style"])
                 machine.randomise_seed(limits["seed"])
             for lfo in slice["lfos"]:
-                lfo.randomise_style(limits["style"])
                 lfo.randomise_seed(limits["seed"])
         return self
     
