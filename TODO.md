@@ -1,8 +1,9 @@
 ### short [lfos]
 
-- second feedback lfo
-- simplify slice render_machine/lfo boundary between machine/lfo and generator
 - replace hardcoded instrument lists with config refs
+- eliminate pattern code from slice rendering
+- runtine checkes for mod/ctrl refs in lfo config
+- simplify slice render_machine/lfo boundary between machine/lfo and generator
 - lfo rendering to bypass slices
 - rename machines as sequencers
 
@@ -35,6 +36,7 @@
 
 ### done
 
+- second feedback lfo
 - define lfo mod, controller in config
 - separate machine kwargs code at slice level
 - remove lfo style

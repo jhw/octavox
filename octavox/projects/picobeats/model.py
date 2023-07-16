@@ -66,10 +66,14 @@ ht:
 """)
 
 LfoConfig=yaml.safe_load("""
-ec:
+ec0:
   generator: sample_hold
   mod: Echo
   ctrl: wet
+ec1:
+  generator: sample_hold
+  mod: Echo
+  ctrl: feedback
 """)
 
 def Q(seed):
@@ -445,7 +449,8 @@ class Tracks(dict):
     def render_lfos(self, notes, nbeats,
                     config=LfoConfig):
         for key, generator in config.items():
-            pattern=self["patterns"][key]
+            # pattern=self["patterns"][key]
+            pattern=list(self["patterns"].values())[0] # TEMP
             multiplier=int(nbeats/pattern.size)
             offset=0
             for item in pattern.expanded:
