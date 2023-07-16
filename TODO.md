@@ -1,13 +1,12 @@
-### short [abstract beats generation]
+### short [lfos]
 
-- separate lfos for echo wet and feedback
-
-- revert s&h array support
-- revert s&h inserting beats into notes with controller key
-- ec generator config shouldn't need `styles` variable
-
-- consider generator base class
-- consider if @handle decorator is consistent with moving vitling code to separate module
+- remove lfo style
+- two separate lfos
+- remove lfo array support
+- define lfo field in config
+- remove hardcoded instrument lists where possible
+- try and combine machine, lfo handling
+- slices to apply to machines onlt
 
 ### medium
 
