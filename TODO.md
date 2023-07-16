@@ -1,6 +1,5 @@
 ### short [lfos]
 
-- replace hardcoded instrument lists with config refs
 - eliminate pattern code from slice rendering
 - runtine checkes for mod/ctrl refs in lfo config
 - simplify slice render_machine/lfo boundary between machine/lfo and generator
@@ -36,6 +35,7 @@
 
 ### done
 
+- replace hardcoded instrument lists with config refs
 - second feedback lfo
 - define lfo mod, controller in config
 - separate machine kwargs code at slice level

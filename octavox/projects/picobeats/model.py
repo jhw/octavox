@@ -398,9 +398,9 @@ class Slices(list):
 class PatternMap(dict):
 
     @classmethod
-    def randomise(self, slicetemp, patterns=Breakbeats, keys="kk|sn|ht|ec".split("|")):
+    def randomise(self, slicetemp, patterns=Breakbeats, config=MachineConfig):
         return PatternMap({key:patterns.randomise(slicetemp)
-                           for key in keys})
+                           for key in config})
     
     def __init__(self, item={}):
         dict.__init__(self, {k: Pattern(v)
@@ -424,8 +424,8 @@ class Tracks(dict):
         return Tracks(slices=self["slices"].clone(),
                       patterns=self["patterns"].clone())
 
-    def randomise_pattern(self, limit, slicetemp, patterns=Breakbeats):
-        for key in "kk|sn|ht".split("|"):
+    def randomise_pattern(self, limit, slicetemp, patterns=Breakbeats, config=MachineConfig):
+        for key in config:
             if random.random() < limit:
                 self["patterns"][key]=patterns.randomise(slicetemp)
 
