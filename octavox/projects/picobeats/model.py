@@ -135,7 +135,7 @@ class Samples(dict):
     def clone(self):
         return Samples(self)
         
-class BeatSequencer:
+class BeatMachine:
 
     def __init__(self, key, offset, samples, notes, volume=1):
         self.key=key
@@ -192,7 +192,7 @@ class BeatSequencer:
     def closed(self, q, i, k=ClosedHat):
         return vitling.closed(q, i, k)
 
-class SampleAndHoldLfo:
+class SampleAndHoldMachine:
 
     def __init__(self, key, range, notes, mod, ctrl,
                  inc=0.25,
@@ -247,8 +247,8 @@ class Sequencer(dict):
         if random.random() < limit:
             self["style"]=random.choice(styles)
 
-    def render(self, nbeats, generator):
-        generator.generate(n=nbeats,
+    def render(self, nbeats, machine):
+        machine.generate(n=nbeats,
                            q=Q(self["seed"]),
                            style=self["style"])
     
@@ -286,8 +286,8 @@ class Lfo(dict):
             seed=int(1e8*random.random())
             self["seed"]=seed
 
-    def render(self, nbeats, generator):
-        generator.generate(n=nbeats,
+    def render(self, nbeats, machine):
+        machine.generate(n=nbeats,
                            q=Q(self["seed"]))
     
 class Lfos(list):
@@ -327,12 +327,11 @@ class Slice(dict):
         return {sequencer["key"]:sequencer
                 for sequencer in self["sequencers"]}
      
-    def render_sequencer(self, notes, key, generator, nbeats, offset):
-        genkwargs={"key": key,
-                   "offset": offset,
-                   "notes": notes,
-                   "samples": self["samples"]}
-        machine=BeatSequencer(**genkwargs)
+    def render_sequencer(self, notes, key, nbeats, offset):
+        machine=BeatMachine(key=key,
+                            offset=offset,
+                            notes=notes,
+                            samples=self["samples"])
         sequencer=self.sequencer_map[key]
         sequencer.render(nbeats, machine)
 
@@ -401,7 +400,10 @@ class Tracks(dict):
                 for item in pattern.expanded:
                     slice=self["slices"][item["i"]]
                     nsamplebeats=item["n"]*multiplier
-                    slice.render_sequencer(notes, key, generator, nsamplebeats, offset)
+                    slice.render_sequencer(notes=notes,
+                                           key=key,
+                                           nbeats=nsamplebeats,
+                                           offset=offset)
                     offset+=nsamplebeats
 
     @property
@@ -412,20 +414,22 @@ class Tracks(dict):
     def render_lfos(self, notes, nbeats,
                     config=LfoConfig):
         for key, generator in config.items():
-            genkwargs={"mod": generator["mod"],
-                       "ctrl": generator["ctrl"],
-                       "key": key,
-                       "notes": notes,
-                       "range": [0, 1]}
-            machine=SampleAndHoldLfo(**genkwargs)
+            machine=SampleAndHoldMachine(mod=generator["mod"],
+                                         ctrl=generator["ctrl"],
+                                         key=key,
+                                         notes=notes,
+                                         range=[0, 1])
             lfo=self.lfo_map[key]
             lfo.render(nbeats, machine)
 
                     
     def render(self, nbeats, mutes):
         notes={}
-        self.render_sequencers(notes, nbeats, mutes)
-        self.render_lfos(notes, nbeats)
+        self.render_sequencers(notes=notes,
+                               nbeats=nbeats,
+                               mutes=mutes)
+        self.render_lfos(notes=notes,
+                         nbeats=nbeats)
         return notes
 
 """

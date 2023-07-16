@@ -1,9 +1,10 @@
 ### short
 
+
+- tracks to iterate over slices and lfos not config items
 - remove cli list support
 - lfo json needs to include type and args (range, intervals)
-- name parameters when you have long lists
-- notes should be list not dict
+- notes should be list not dict -> can key passing be removed?
 - runtine checkes for mod/ctrl refs in lfo config
 
 ### medium
@@ -12,6 +13,7 @@
 - make lfo interval a random variable
 - watcher to check code is working
 - pass array of roots to chain
+- bjorklund beat generator
 - density parameter
 - combine parsing of line with parameter validation
 - clone, update pool
@@ -37,6 +39,7 @@
 
 ### done
 
+- name parameters when you have long lists
 - rename/remove vitling generator
 - move lfos from slices to tracks
 - abstract vitling beats into common vitling909 module
