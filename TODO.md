@@ -1,7 +1,6 @@
-### short [lfos]
+### short
 
-- move lfos from slices to tracks
-
+- notes should be list not dict
 - rename/remove vitling generator
 - simplify slice render_machine/lfo boundary between machine/lfo and generator
 - runtine checkes for mod/ctrl refs in lfo config
@@ -39,6 +38,7 @@
 
 ### done
 
+- move lfos from slices to tracks
 - abstract vitling beats into common vitling909 module
 - zero ctrl values not being rendered
 - rename machines as sequencers
