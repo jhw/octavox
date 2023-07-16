@@ -3,10 +3,11 @@
 - define lfo mod, controller in config
 - second feedback lfo
 - replace hardcoded instrument lists with config refs
-- lfos to bypass slice rendering
+- lfo rendering to bypass slices
 
 ### medium
 
+- abstract vitling beats into common vitling909 module
 - pass array of roots to chain
 - density
 - combine parsing of line with parameter validation
@@ -33,6 +34,7 @@
 
 ### done
 
+- separate machine kwargs code at slice level
 - remove lfo style
 - remove lfo array support
 - wet changes not being rendered

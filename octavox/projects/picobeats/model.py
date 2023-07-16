@@ -349,26 +349,11 @@ class Slice(dict):
                      machines=self["machines"].clone(),
                      lfos=self["lfos"].clone())
         
-    def generator_kwargs(fn):
-        def wrapped(self, key, offset, notes):
-            resp=fn(self, key, offset, notes)
-            resp.update({"key": key,
-                         "offset": offset,
-                         "notes": notes})
-            return resp
-        return wrapped
-
-    @generator_kwargs
-    def vitling_kwargs(self, key, offset, notes):
-        return {"samples": self["samples"]}                
-
-    @generator_kwargs
-    def sample_hold_kwargs(self, key, offset, notes):
-        return {"range": [0, 1]}
-            
     def render_machine(self, notes, key, genkey, nbeats, offset):
-        genkwargsfn=getattr(self, "%s_kwargs" % genkey)
-        genkwargs=genkwargsfn(key, offset, notes)
+        genkwargs={"key": key,
+                   "offset": offset,
+                   "notes": notes,
+                   "samples": self["samples"]}
         genclass=eval(hungarorise("%s_generator" % genkey))
         generator=genclass(**genkwargs)
         machine={machine["key"]:machine
@@ -376,8 +361,10 @@ class Slice(dict):
         machine.render(nbeats, generator)
 
     def render_lfo(self, notes, key, genkey, nbeats, offset):
-        genkwargsfn=getattr(self, "%s_kwargs" % genkey)
-        genkwargs=genkwargsfn(key, offset, notes)
+        genkwargs={"key": key,
+                   "offset": offset,
+                   "notes": notes,
+                   "range": [0, 1]}
         genclass=eval(hungarorise("%s_generator" % genkey))
         generator=genclass(**genkwargs)
         lfo={lfo["key"]:lfo
@@ -435,15 +422,12 @@ class Tracks(dict):
     def shuffle_slices(self, limit):
         if random.random() < limit:
             random.shuffle(self["slices"])
-                
-    def render(self, nbeats, mutes,
-               machineconfig=MachineConfig,
-               lfoconfig=LfoConfig):
-        notes={}
-        # machines
-        for key in machineconfig:
+
+    def render_machines(self, notes, nbeats, mutes,
+                        config=MachineConfig):
+        for key in config:
             if key not in mutes:
-                genkey=machineconfig[key]["generator"]
+                genkey=config[key]["generator"]
                 pattern=self["patterns"][key]
                 multiplier=int(nbeats/pattern.size)
                 offset=0
@@ -452,18 +436,24 @@ class Tracks(dict):
                     nsamplebeats=item["n"]*multiplier
                     slice.render_machine(notes, key, genkey, nsamplebeats, offset)
                     offset+=nsamplebeats
-        # lfos
-        for key in lfoconfig:
-            if key not in mutes:
-                genkey=lfoconfig[key]["generator"]
-                pattern=self["patterns"][key]
-                multiplier=int(nbeats/pattern.size)
-                offset=0
-                for item in pattern.expanded:
-                    slice=self["slices"][item["i"]]
-                    nsamplebeats=item["n"]*multiplier
-                    slice.render_lfo(notes, key, genkey, nsamplebeats, offset)
-                    offset+=nsamplebeats
+
+    def render_lfos(self, notes, nbeats,
+                    config=LfoConfig):
+        for key in config:
+            genkey=config[key]["generator"]
+            pattern=self["patterns"][key]
+            multiplier=int(nbeats/pattern.size)
+            offset=0
+            for item in pattern.expanded:
+                slice=self["slices"][item["i"]]
+                nsamplebeats=item["n"]*multiplier
+                slice.render_lfo(notes, key, genkey, nsamplebeats, offset)
+                offset+=nsamplebeats
+                    
+    def render(self, nbeats, mutes):
+        notes={}
+        self.render_machines(notes, nbeats, mutes)
+        self.render_lfos(notes, nbeats)
         return notes
 
 """
