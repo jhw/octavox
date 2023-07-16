@@ -159,7 +159,7 @@ class VitlingGenerator:
     def handle(fn):
         def wrapped(self, q, i, **kwargs):
             v=fn(self, q, i, **kwargs)
-            if v:
+            if v!=None: # explicit because could return zero
                 samplekey, volume = v
                 trig={"mod": "%sSampler" % self.key.upper(),              
                       "key": self.samples[samplekey],
@@ -241,7 +241,7 @@ class SampleHoldGenerator:
     def handle(fn):
         def wrapped(self, q, i, **kwargs):
             v=fn(self, q, i, **kwargs)
-            if v:
+            if v!=None: # explicit because could return zero
                 trig={"mod": self.mod,
                       "ctrl": self.ctrl,
                       "v": v,
