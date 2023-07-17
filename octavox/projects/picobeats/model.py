@@ -240,14 +240,14 @@ class Sequencer(dict):
             self["seed"]=seed
 
     def randomise_style(self, limit,
-                        config={item["key"]: item
-                                for item in SequencerConfig}):
+                        config={params["key"]: params
+                                for params in SequencerConfig}):
         styles=config[self["key"]]["styles"]
         if random.random() < limit:
             self["style"]=random.choice(styles)
 
-    def render(self, nbeats, item, notes, offset, samples):
-        BeatMachine(**item).generate(n=nbeats,
+    def render(self, nbeats, params, notes, offset, samples):
+        BeatMachine(**params).generate(n=nbeats,
                                      q=Q(self["seed"]),
                                      style=self["style"],
                                      notes=notes,
@@ -258,10 +258,10 @@ class Sequencers(list):
 
     @classmethod
     def randomise(self, config=SequencerConfig):
-        return Sequencers([{"key": item["key"],
+        return Sequencers([{"key": params["key"],
                             "seed": int(1e8*random.random()),
-                            "style": random.choice(item["styles"])}
-                           for item in config])
+                            "style": random.choice(params["styles"])}
+                           for params in config])
 
     def __init__(self, sequencers):
         list.__init__(self, [Sequencer(sequencer)
@@ -283,8 +283,8 @@ class Lfo(dict):
             seed=int(1e8*random.random())
             self["seed"]=seed
 
-    def render(self, item, nbeats, notes):
-        SampleAndHoldMachine(**item).generate(n=nbeats,
+    def render(self, params, nbeats, notes):
+        SampleAndHoldMachine(**params).generate(n=nbeats,
                                               q=Q(self["seed"]),
                                               notes=notes)
     
@@ -292,9 +292,9 @@ class Lfos(list):
 
     @classmethod
     def randomise(self, config=LfoConfig):
-        return Lfos([{"key": item["key"],
+        return Lfos([{"key": params["key"],
                       "seed": int(1e8*random.random())}
-                     for item in config])
+                     for params in config])
 
     def __init__(self, lfos):
         list.__init__(self, [Lfo(lfo)
@@ -317,16 +317,13 @@ class Slice(dict):
     def clone(self):
         return Slice(samples=self["samples"].clone(),
                      sequencers=self["sequencers"].clone())
-
-    @property
-    def sequencer_map(self):
-        return {sequencer["key"]:sequencer
-                for sequencer in self["sequencers"]}
-     
-    def render_sequencer(self, item, notes, nbeats, offset):
-        sequencer=self.sequencer_map[item["key"]]
+    
+    def render_sequencer(self, params, notes, nbeats, offset):
+        sequencers={sequencer["key"]:sequencer
+                    for sequencer in self["sequencers"]}
+        sequencer=sequencers[params["key"]]
         sequencer.render(nbeats=nbeats,
-                         item=item,
+                         params=params,
                          notes=notes,
                          offset=offset,
                          samples=self["samples"])
@@ -351,8 +348,8 @@ class PatternMap(dict):
     def randomise(self, slicetemp,
                   patterns=Breakbeats,
                   config=SequencerConfig):
-        return PatternMap({item["key"]:patterns.randomise(slicetemp)
-                           for item in config})
+        return PatternMap({params["key"]:patterns.randomise(slicetemp)
+                           for params in config})
     
     def __init__(self, item={}):
         dict.__init__(self, {k: Pattern(v)
@@ -380,9 +377,9 @@ class Tracks(dict):
                       lfos=self["lfos"].clone())
 
     def randomise_pattern(self, limit, slicetemp, patterns=Breakbeats, config=SequencerConfig):
-        for item in config:
+        for params in config:
             if random.random() < limit:
-                self["patterns"][item["key"]]=patterns.randomise(slicetemp)
+                self["patterns"][params["key"]]=patterns.randomise(slicetemp)
 
     def shuffle_slices(self, limit):
         if random.random() < limit:
@@ -390,25 +387,25 @@ class Tracks(dict):
             
     def render_sequencers(self, notes, nbeats, mutes,
                           config=SequencerConfig):
-        for item in config:
-            if item["key"] not in mutes:
-                pattern=self["patterns"][item["key"]]
+        for params in config:
+            if params["key"] not in mutes:
+                pattern=self["patterns"][params["key"]]
                 multiplier=int(nbeats/pattern.size)
                 offset=0
                 for pat in pattern.expanded:
                     slice=self["slices"][pat["i"]]
                     nsamplebeats=pat["n"]*multiplier
-                    slice.render_sequencer(item=item,
+                    slice.render_sequencer(params=params,
                                            notes=notes,
                                            nbeats=nsamplebeats,
                                            offset=offset)
                     offset+=nsamplebeats
 
     def render_lfos(self, notes, nbeats,
-                    config={lfo["key"]:lfo
-                            for lfo in LfoConfig}):
+                    config={params["key"]:params
+                            for params in LfoConfig}):
         for lfo in self["lfos"]:
-            lfo.render(item=config[lfo["key"]],
+            lfo.render(params=config[lfo["key"]],
                        nbeats=nbeats,
                        notes=notes)
         
