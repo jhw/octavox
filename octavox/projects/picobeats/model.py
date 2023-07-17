@@ -156,7 +156,7 @@ class BeatMachine:
         for i in range(n):
             fn(q, i, notes, offset, samples)
 
-    def handle(fn):
+    def apply(fn):
         def wrapped(self, q, i, notes, offset, samples):
             v=fn(self, q, i, notes, offset, samples)
             if v!=None: # explicit because could return zero
@@ -169,27 +169,27 @@ class BeatMachine:
                 notes[self.key].append(trig)
         return wrapped
     
-    @handle
+    @apply
     def fourfloor(self, q, i, *args, k=Kick):
         return vitling.fourfloor(q, i, k)
-    @handle
+    @apply
     def electro(self, q, i, *args, k=Kick):
         return vitling.electro(q, i, k)
-    @handle
+    @apply
     def triplets(self, q, i, *args, k=Kick):
         return vitling.triplets(q, i, k)
-    @handle
+    @apply
     def backbeat(self, q, i, *args, k=Snare):
         return vitling.backbeat(q, i, k)
-    @handle
+    @apply
     def skip(self, q, i, *args, k=Snare):
         return vitling.skip(q, i, k)
-    @handle
+    @apply
     def offbeats(self, q, i, *args,
                  ko=OpenHat,
                  kc=ClosedHat):
         return vitling.offbeats(q, i, ko, kc)    
-    @handle
+    @apply
     def closed(self, q, i, *args, k=ClosedHat):
         return vitling.closed(q, i, k)
 
@@ -203,12 +203,11 @@ class SampleAndHoldMachine:
         self.increment=increment
         self.step=step
     
-    def generate(self, q, n, notes, style="sample_hold"):
-        fn=getattr(self, style)
+    def generate(self, q, n, notes):
         for i in range(n):
-            fn(q, i, notes)
+            self.sample_hold(q, i, notes)
 
-    def handle(fn):
+    def apply(fn):
         def wrapped(self, q, i, notes):
             v=fn(self, q, i, notes)
             if v!=None: # explicit because could return zero
@@ -220,8 +219,8 @@ class SampleAndHoldMachine:
                 notes[self.key].append(trig)
         return wrapped
 
-    @handle
-    def sample_hold(self, q, i, notes):
+    @apply
+    def sample_hold(self, q, i, *args):
         if 0 == i % self.step:
             floor, ceil = self.range
             v0=floor+(ceil-floor)*q.random()
@@ -247,13 +246,13 @@ class Sequencer(dict):
         if random.random() < limit:
             self["style"]=random.choice(styles)
 
-    def render(self, nbeats, machine, notes, offset, samples):
-        machine.generate(n=nbeats,
-                         q=Q(self["seed"]),
-                         style=self["style"],
-                         notes=notes,
-                         offset=offset,
-                         samples=samples)
+    def render(self, nbeats, item, notes, offset, samples):
+        BeatMachine(**item).generate(n=nbeats,
+                                     q=Q(self["seed"]),
+                                     style=self["style"],
+                                     notes=notes,
+                                     offset=offset,
+                                     samples=samples)
     
 class Sequencers(list):
 
@@ -284,10 +283,10 @@ class Lfo(dict):
             seed=int(1e8*random.random())
             self["seed"]=seed
 
-    def render(self, nbeats, machine, notes):
-        machine.generate(n=nbeats,
-                         q=Q(self["seed"]),
-                         notes=notes)
+    def render(self, item, nbeats, notes):
+        SampleAndHoldMachine(**item).generate(n=nbeats,
+                                              q=Q(self["seed"]),
+                                              notes=notes)
     
 class Lfos(list):
 
@@ -325,10 +324,9 @@ class Slice(dict):
                 for sequencer in self["sequencers"]}
      
     def render_sequencer(self, item, notes, nbeats, offset):
-        machine=BeatMachine(**item)
         sequencer=self.sequencer_map[item["key"]]
         sequencer.render(nbeats=nbeats,
-                         machine=machine,
+                         item=item,
                          notes=notes,
                          offset=offset,
                          samples=self["samples"])
@@ -414,10 +412,9 @@ class Tracks(dict):
     def render_lfos(self, notes, nbeats,
                     config=LfoConfig):
         for item in config:
-            machine=SampleAndHoldMachine(**item)
             lfo=self.lfo_map[item["key"]]
-            lfo.render(nbeats=nbeats,
-                       machine=machine,
+            lfo.render(item=item,
+                       nbeats=nbeats,
                        notes=notes)
 
                     
