@@ -146,54 +146,52 @@ class Samples(dict):
         
 class BeatMachine:
 
-    def __init__(self, mod, key, offset, samples, notes, volume=1):
+    def __init__(self, mod, key, samples, volume=1):
         self.mod=mod
         self.key=key
-        self.offset=offset
         self.samples=samples
-        self.notes=notes
         self.volume=volume
 
-    def generate(self, style, q, n):
+    def generate(self, style, q, n, notes, offset):
         fn=getattr(self, style)
         for i in range(n):
-            fn(q, i)
+            fn(q, i, notes, offset)
 
     def handle(fn):
-        def wrapped(self, q, i, **kwargs):
-            v=fn(self, q, i, **kwargs)
+        def wrapped(self, q, i, notes, offset, **kwargs):
+            v=fn(self, q, i, notes, offset, **kwargs)
             if v!=None: # explicit because could return zero
                 samplekey, volume = v
                 trig={"mod": self.mod,
                       "key": self.samples[samplekey],
                       "vel": self.volume*volume,
-                      "i": i+self.offset}
-                self.notes.setdefault(self.key, [])
-                self.notes[self.key].append(trig)
+                      "i": i+offset}
+                notes.setdefault(self.key, [])
+                notes[self.key].append(trig)
         return wrapped
     
     @handle
-    def fourfloor(self, q, i, k=Kick):
+    def fourfloor(self, q, i, notes, offset, k=Kick):
         return vitling.fourfloor(q, i, k)
     @handle
-    def electro(self, q, i, k=Kick):
+    def electro(self, q, i, notes, offset, k=Kick):
         return vitling.electro(q, i, k)
     @handle
-    def triplets(self, q, i, k=Kick):
+    def triplets(self, q, i, notes, offset, k=Kick):
         return vitling.triplets(q, i, k)
     @handle
-    def backbeat(self, q, i, k=Snare):
+    def backbeat(self, q, i, notes, offset, k=Snare):
         return vitling.backbeat(q, i, k)
     @handle
-    def skip(self, q, i, k=Snare):
+    def skip(self, q, i, notes, offset, k=Snare):
         return vitling.skip(q, i, k)
     @handle
-    def offbeats(self, q, i,
+    def offbeats(self, q, i, notes, offset,
                  ko=OpenHat,
                  kc=ClosedHat):
         return vitling.offbeats(q, i, ko, kc)    
     @handle
-    def closed(self, q, i, k=ClosedHat):
+    def closed(self, q, i, notes, offset, k=ClosedHat):
         return vitling.closed(q, i, k)
 
 class SampleAndHoldMachine:
@@ -249,10 +247,12 @@ class Sequencer(dict):
         if random.random() < limit:
             self["style"]=random.choice(styles)
 
-    def render(self, nbeats, machine):
+    def render(self, nbeats, machine, notes, offset):
         machine.generate(n=nbeats,
                          q=Q(self["seed"]),
-                         style=self["style"])
+                         style=self["style"],
+                         notes=notes,
+                         offset=offset)
     
 class Sequencers(list):
 
@@ -332,11 +332,12 @@ class Slice(dict):
     def render_sequencer(self, mod, notes, key, nbeats, offset):
         machine=BeatMachine(mod=mod,
                             key=key,
-                            offset=offset,
-                            notes=notes,
                             samples=self["samples"])
         sequencer=self.sequencer_map[key]
-        sequencer.render(nbeats, machine)
+        sequencer.render(nbeats=nbeats,
+                         machine=machine,
+                         notes=notes,
+                         offset=offset)
 
 class Slices(list):
 
