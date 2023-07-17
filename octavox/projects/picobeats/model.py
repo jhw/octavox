@@ -146,7 +146,7 @@ class Samples(dict):
         
 class BeatMachine:
 
-    def __init__(self, mod, key, volume=1):
+    def __init__(self, mod, key, volume=1, **kwargs):
         self.mod=mod
         self.key=key
         self.volume=volume
@@ -195,7 +195,7 @@ class BeatMachine:
 
 class SampleAndHoldMachine:
 
-    def __init__(self, key, range, mod, ctrl, increment, step):
+    def __init__(self, key, range, mod, ctrl, increment, step, **kwargs):
         self.key=key
         self.range=range
         self.mod=mod
@@ -324,9 +324,7 @@ class Slice(dict):
         return {sequencer["key"]:sequencer
                 for sequencer in self["sequencers"]}
      
-    def render_sequencer(self, mod, notes, key, nbeats, offset):
-        machine=BeatMachine(mod=mod,
-                            key=key)
+    def render_sequencer(self, key, machine, notes, nbeats, offset):
         sequencer=self.sequencer_map[key]
         sequencer.render(nbeats=nbeats,
                          machine=machine,
@@ -392,7 +390,7 @@ class Tracks(dict):
             random.shuffle(self["slices"])
             
     def render_sequencers(self, notes, nbeats, mutes,
-                        config=SequencerConfig):
+                          config=SequencerConfig):
         for item in config:
             if item["key"] not in mutes:
                 pattern=self["patterns"][item["key"]]
@@ -401,9 +399,10 @@ class Tracks(dict):
                 for pat in pattern.expanded:
                     slice=self["slices"][pat["i"]]
                     nsamplebeats=pat["n"]*multiplier
-                    slice.render_sequencer(mod=item["mod"],
+                    machine=BeatMachine(**item)
+                    slice.render_sequencer(key=item["key"],
+                                           machine=machine,
                                            notes=notes,
-                                           key=item["key"],
                                            nbeats=nsamplebeats,
                                            offset=offset)
                     offset+=nsamplebeats
@@ -416,12 +415,7 @@ class Tracks(dict):
     def render_lfos(self, notes, nbeats,
                     config=LfoConfig):
         for item in config:
-            machine=SampleAndHoldMachine(mod=item["mod"],
-                                         ctrl=item["ctrl"],
-                                         range=item["range"],
-                                         increment=item["increment"],
-                                         step=item["step"],
-                                         key=item["key"])
+            machine=SampleAndHoldMachine(**item)
             lfo=self.lfo_map[item["key"]]
             lfo.render(nbeats=nbeats,
                        machine=machine,

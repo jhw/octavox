@@ -1,12 +1,8 @@
 ### short
 
-- tracks to iterate over slices and lfos not config items
-- notes should be list not dict
-
 ### medium
 
 - remove cli list support
-- watcher to check code is working
 - pass array of roots to chain
 - bjorklund beat generator
 - density parameter
@@ -15,6 +11,12 @@
 
 ### thoughts
 
+- watcher to check code is working?
+  - seems like overkill
+- tracks to iterate over slices and lfos not config items?
+  - dunno
+- notes should be list not dict?
+  - dunno
 - runtine checkes for mod/ctrl refs in lfo config?
    - probably overkill
 - global mutes?
