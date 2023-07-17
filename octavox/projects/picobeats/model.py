@@ -404,18 +404,14 @@ class Tracks(dict):
                                            offset=offset)
                     offset+=nsamplebeats
 
-    @property
-    def lfo_map(self):
-        return {lfo["key"]:lfo
-                for lfo in self["lfos"]}
-
     def render_lfos(self, notes, nbeats,
-                    config=LfoConfig):
-        for item in config:
-            lfo=self.lfo_map[item["key"]]
-            lfo.render(item=item,
+                    config={lfo["key"]:lfo
+                            for lfo in LfoConfig}):
+        for lfo in self["lfos"]:
+            lfo.render(item=config[lfo["key"]],
                        nbeats=nbeats,
                        notes=notes)
+        
                     
     def render(self, nbeats, mutes):
         notes={}
