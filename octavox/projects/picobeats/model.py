@@ -303,6 +303,12 @@ class Lfos(list):
     def clone(self):
         return Lfos(self)
 
+"""
+- just because a slice is defined doesn't mean it is used
+- rendering is controlled by slice pattern, which may ignore certain slices
+- this allows room for mutation - using more from the space of randomly chose parameters
+"""
+    
 class Slice(dict):
 
     @classmethod
