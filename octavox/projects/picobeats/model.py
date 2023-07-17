@@ -324,8 +324,9 @@ class Slice(dict):
         return {sequencer["key"]:sequencer
                 for sequencer in self["sequencers"]}
      
-    def render_sequencer(self, key, machine, notes, nbeats, offset):
-        sequencer=self.sequencer_map[key]
+    def render_sequencer(self, item, notes, nbeats, offset):
+        machine=BeatMachine(**item)
+        sequencer=self.sequencer_map[item["key"]]
         sequencer.render(nbeats=nbeats,
                          machine=machine,
                          notes=notes,
@@ -399,9 +400,7 @@ class Tracks(dict):
                 for pat in pattern.expanded:
                     slice=self["slices"][pat["i"]]
                     nsamplebeats=pat["n"]*multiplier
-                    machine=BeatMachine(**item)
-                    slice.render_sequencer(key=item["key"],
-                                           machine=machine,
+                    slice.render_sequencer(item=item,
                                            notes=notes,
                                            nbeats=nsamplebeats,
                                            offset=offset)
