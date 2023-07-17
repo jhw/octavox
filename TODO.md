@@ -1,15 +1,15 @@
 ### short
 
-- relationship between sequencer/lfo Objects and the config items that are used to instantiate them
+- remove cli list support
+- pass array of roots to chain
 
 ### medium
 
-- remove cli list support
-- pass array of roots to chain
-- bjorklund beat generator
 - density parameter
 - combine parsing of line with parameter validation
 - clone, update pool
+
+- bjorklund beat generator
 
 ### thoughts
 
@@ -40,6 +40,7 @@
 
 ### done
 
+- relationship between sequencer/lfo Objects and the config items that are used to instantiate them
 - lfo json needs to include type and args (range, intervals)
 - name parameters when you have long lists
 - rename/remove vitling generator

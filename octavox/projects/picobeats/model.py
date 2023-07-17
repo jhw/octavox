@@ -302,7 +302,7 @@ class Lfos(list):
 
     def clone(self):
         return Lfos(self)
-        
+
 class Slice(dict):
 
     @classmethod
@@ -317,6 +317,12 @@ class Slice(dict):
     def clone(self):
         return Slice(samples=self["samples"].clone(),
                      sequencers=self["sequencers"].clone())
+
+    """
+    - tracks are rendered one at a time, iterating through slices with a single key at a time
+    - hence slice needs params so it can look up current track
+    - note all samples are passed to rendered as a single track might use more than one sample (eg open/closed hats)
+    """
     
     def render_sequencer(self, params, notes, nbeats, offset):
         sequencers={sequencer["key"]:sequencer
@@ -384,6 +390,11 @@ class Tracks(dict):
     def shuffle_slices(self, limit):
         if random.random() < limit:
             random.shuffle(self["slices"])
+
+    """
+    - tracks are rendered one at a time, iterating through slices with a single key at a time
+    - hence slice needs params so it can look up current track
+    """
             
     def render_sequencers(self, notes, nbeats, mutes,
                           config=SequencerConfig):
