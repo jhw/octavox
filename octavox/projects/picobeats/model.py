@@ -157,8 +157,8 @@ class BeatMachine:
             fn(q, i, notes, offset, samples)
 
     def handle(fn):
-        def wrapped(self, q, i, notes, offset, samples, **kwargs):
-            v=fn(self, q, i, notes, offset, samples, **kwargs)
+        def wrapped(self, q, i, notes, offset, samples):
+            v=fn(self, q, i, notes, offset, samples)
             if v!=None: # explicit because could return zero
                 samplekey, volume = v
                 trig={"mod": self.mod,
@@ -170,27 +170,27 @@ class BeatMachine:
         return wrapped
     
     @handle
-    def fourfloor(self, q, i, notes, offset, samples, k=Kick):
+    def fourfloor(self, q, i, *args, k=Kick):
         return vitling.fourfloor(q, i, k)
     @handle
-    def electro(self, q, i, notes, offset, samples, k=Kick):
+    def electro(self, q, i, *args, k=Kick):
         return vitling.electro(q, i, k)
     @handle
-    def triplets(self, q, i, notes, offset, samples, k=Kick):
+    def triplets(self, q, i, *args, k=Kick):
         return vitling.triplets(q, i, k)
     @handle
-    def backbeat(self, q, i, notes, offset, samples, k=Snare):
+    def backbeat(self, q, i, *args, k=Snare):
         return vitling.backbeat(q, i, k)
     @handle
-    def skip(self, q, i, notes, offset, samples, k=Snare):
+    def skip(self, q, i, *args, k=Snare):
         return vitling.skip(q, i, k)
     @handle
-    def offbeats(self, q, i, notes, offset, samples,
+    def offbeats(self, q, i, *args,
                  ko=OpenHat,
                  kc=ClosedHat):
         return vitling.offbeats(q, i, ko, kc)    
     @handle
-    def closed(self, q, i, notes, offset, samples, k=ClosedHat):
+    def closed(self, q, i, *args, k=ClosedHat):
         return vitling.closed(q, i, k)
 
 class SampleAndHoldMachine:
@@ -209,8 +209,8 @@ class SampleAndHoldMachine:
             fn(q, i, notes)
 
     def handle(fn):
-        def wrapped(self, q, i, notes, **kwargs):
-            v=fn(self, q, i, notes, **kwargs)
+        def wrapped(self, q, i, notes):
+            v=fn(self, q, i, notes)
             if v!=None: # explicit because could return zero
                 trig={"mod": self.mod,
                       "ctrl": self.ctrl,
@@ -351,7 +351,9 @@ class Slices(list):
 class PatternMap(dict):
 
     @classmethod
-    def randomise(self, slicetemp, patterns=Breakbeats, config=SequencerConfig):
+    def randomise(self, slicetemp,
+                  patterns=Breakbeats,
+                  config=SequencerConfig):
         return PatternMap({item["key"]:patterns.randomise(slicetemp)
                            for item in config})
     
