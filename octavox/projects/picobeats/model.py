@@ -257,14 +257,9 @@ class Sequencers(list):
 
     @classmethod
     def randomise(self, config=SequencerConfig):
-        def init_seed(key):
-            return int(1e8*random.random())
-        def init_style(key):
-            styles=config[key]["styles"]
-            return random.choice(styles)
         return Sequencers([{"key": key,
-                            "seed": init_seed(key),
-                            "style": init_style(key)}
+                            "seed": int(1e8*random.random()),
+                            "style": random.choice(config[key]["styles"])}
                            for key in config])
 
     def __init__(self, sequencers):
@@ -296,10 +291,8 @@ class Lfos(list):
 
     @classmethod
     def randomise(self, config=LfoConfig):
-        def init_seed(key):
-            return int(1e8*random.random())
         return Lfos([{"key": key,
-                      "seed": init_seed(key)}
+                      "seed": int(1e8*random.random())}
                      for key in config])
 
     def __init__(self, lfos):
