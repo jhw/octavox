@@ -1,5 +1,7 @@
 ### short
 
+- relationship between sequencer/lfo Objects and the config items that are used to instantiate them
+
 ### medium
 
 - remove cli list support

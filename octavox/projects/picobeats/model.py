@@ -416,7 +416,6 @@ class Tracks(dict):
             lfo.render(item=item,
                        nbeats=nbeats,
                        notes=notes)
-
                     
     def render(self, nbeats, mutes):
         notes={}
