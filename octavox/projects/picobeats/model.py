@@ -196,34 +196,33 @@ class BeatMachine:
 
 class SampleAndHoldMachine:
 
-    def __init__(self, key, range, notes, mod, ctrl, increment, step):
+    def __init__(self, key, range, mod, ctrl, increment, step):
         self.key=key
         self.range=range
-        self.notes=notes
         self.mod=mod
         self.ctrl=ctrl
         self.increment=increment
         self.step=step
     
-    def generate(self, q, n, style="sample_hold"):
+    def generate(self, q, n, notes, style="sample_hold"):
         fn=getattr(self, style)
         for i in range(n):
-            fn(q, i)
+            fn(q, i, notes)
 
     def handle(fn):
-        def wrapped(self, q, i, **kwargs):
-            v=fn(self, q, i, **kwargs)
+        def wrapped(self, q, i, notes, **kwargs):
+            v=fn(self, q, i, notes, **kwargs)
             if v!=None: # explicit because could return zero
                 trig={"mod": self.mod,
                       "ctrl": self.ctrl,
                       "v": v,
                       "i": i}
-                self.notes.setdefault(self.key, [])
-                self.notes[self.key].append(trig)
+                notes.setdefault(self.key, [])
+                notes[self.key].append(trig)
         return wrapped
 
     @handle
-    def sample_hold(self, q, i):
+    def sample_hold(self, q, i, notes):
         if 0 == i % self.step:
             floor, ceil = self.range
             v0=floor+(ceil-floor)*q.random()
@@ -288,9 +287,10 @@ class Lfo(dict):
             seed=int(1e8*random.random())
             self["seed"]=seed
 
-    def render(self, nbeats, machine):
+    def render(self, nbeats, machine, notes):
         machine.generate(n=nbeats,
-                           q=Q(self["seed"]))
+                         q=Q(self["seed"]),
+                         notes=notes)
     
 class Lfos(list):
 
@@ -424,10 +424,11 @@ class Tracks(dict):
                                          range=item["range"],
                                          increment=item["increment"],
                                          step=item["step"],
-                                         key=key,
-                                         notes=notes)
+                                         key=key)
             lfo=self.lfo_map[key]
-            lfo.render(nbeats, machine)
+            lfo.render(nbeats=nbeats,
+                       machine=machine,
+                       notes=notes)
 
                     
     def render(self, nbeats, mutes):
