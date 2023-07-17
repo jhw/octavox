@@ -49,18 +49,18 @@ links:
 """)
 
 SequencerConfig=yaml.safe_load("""
-kk:
+- key: kk
   mod: KKSampler
   styles:
   - fourfloor
   - electro
   - triplets
-sn:
+- key: sn
   mod: SNSampler
   styles:
   - backbeat
   - skip
-ht:
+- key: ht
   mod: HTSampler
   styles:
   - offbeats
@@ -68,13 +68,13 @@ ht:
 """)
 
 LfoConfig=yaml.safe_load("""
-ec0:
+- key: ec0
   mod: Echo
   ctrl: wet
   range: [0, 1]
   increment: 0.25
   step: 4
-ec1:
+- key: ec1
   mod: Echo
   ctrl: feedback
   range: [0, 1]
@@ -241,7 +241,9 @@ class Sequencer(dict):
             seed=int(1e8*random.random())
             self["seed"]=seed
 
-    def randomise_style(self, limit, config=SequencerConfig):
+    def randomise_style(self, limit,
+                        config={item["key"]: item
+                                for item in SequencerConfig}):
         styles=config[self["key"]]["styles"]
         if random.random() < limit:
             self["style"]=random.choice(styles)
@@ -257,10 +259,10 @@ class Sequencers(list):
 
     @classmethod
     def randomise(self, config=SequencerConfig):
-        return Sequencers([{"key": key,
+        return Sequencers([{"key": item["key"],
                             "seed": int(1e8*random.random()),
-                            "style": random.choice(config[key]["styles"])}
-                           for key in config])
+                            "style": random.choice(item["styles"])}
+                           for item in config])
 
     def __init__(self, sequencers):
         list.__init__(self, [Sequencer(sequencer)
@@ -291,9 +293,9 @@ class Lfos(list):
 
     @classmethod
     def randomise(self, config=LfoConfig):
-        return Lfos([{"key": key,
+        return Lfos([{"key": item["key"],
                       "seed": int(1e8*random.random())}
-                     for key in config])
+                     for item in config])
 
     def __init__(self, lfos):
         list.__init__(self, [Lfo(lfo)
@@ -350,8 +352,8 @@ class PatternMap(dict):
 
     @classmethod
     def randomise(self, slicetemp, patterns=Breakbeats, config=SequencerConfig):
-        return PatternMap({key:patterns.randomise(slicetemp)
-                           for key in config})
+        return PatternMap({item["key"]:patterns.randomise(slicetemp)
+                           for item in config})
     
     def __init__(self, item={}):
         dict.__init__(self, {k: Pattern(v)
@@ -379,9 +381,9 @@ class Tracks(dict):
                       lfos=self["lfos"].clone())
 
     def randomise_pattern(self, limit, slicetemp, patterns=Breakbeats, config=SequencerConfig):
-        for key in config:
+        for item in config:
             if random.random() < limit:
-                self["patterns"][key]=patterns.randomise(slicetemp)
+                self["patterns"][item["key"]]=patterns.randomise(slicetemp)
 
     def shuffle_slices(self, limit):
         if random.random() < limit:
@@ -389,9 +391,9 @@ class Tracks(dict):
             
     def render_sequencers(self, notes, nbeats, mutes,
                         config=SequencerConfig):
-        for key, item in config.items():
-            if key not in mutes:
-                pattern=self["patterns"][key]
+        for item in config:
+            if item["key"] not in mutes:
+                pattern=self["patterns"][item["key"]]
                 multiplier=int(nbeats/pattern.size)
                 offset=0
                 for pat in pattern.expanded:
@@ -399,7 +401,7 @@ class Tracks(dict):
                     nsamplebeats=pat["n"]*multiplier
                     slice.render_sequencer(mod=item["mod"],
                                            notes=notes,
-                                           key=key,
+                                           key=item["key"],
                                            nbeats=nsamplebeats,
                                            offset=offset)
                     offset+=nsamplebeats
@@ -411,14 +413,14 @@ class Tracks(dict):
 
     def render_lfos(self, notes, nbeats,
                     config=LfoConfig):
-        for key, item in config.items():
+        for item in config:
             machine=SampleAndHoldMachine(mod=item["mod"],
                                          ctrl=item["ctrl"],
                                          range=item["range"],
                                          increment=item["increment"],
                                          step=item["step"],
-                                         key=key)
-            lfo=self.lfo_map[key]
+                                         key=item["key"])
+            lfo=self.lfo_map[item["key"]]
             lfo.render(nbeats=nbeats,
                        machine=machine,
                        notes=notes)
