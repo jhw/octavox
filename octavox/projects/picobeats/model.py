@@ -226,13 +226,19 @@ class SampleAndHoldMachine:
             v0=floor+(ceil-floor)*q.random()
             return self.increment*int(0.5+v0/self.increment)
             
-class Sequencer(dict):
+class Track(dict):
 
+    @classmethod
+    def randomise(self, params):
+        return Track({"key": params["key"],
+                      "seed": int(1e8*random.random()),
+                      "style": random.choice(params["styles"])})
+    
     def __init__(self, item):
         dict.__init__(self, item)
 
     def clone(self):
-        return Sequencer(self)
+        return Track(self)
         
     def randomise_seed(self, limit):
         if random.random() < limit:
@@ -241,37 +247,40 @@ class Sequencer(dict):
 
     def randomise_style(self, limit,
                         config={params["key"]: params
-                                for params in SequencerConfig}):
+                                for params in TrackConfig}):
         styles=config[self["key"]]["styles"]
         if random.random() < limit:
             self["style"]=random.choice(styles)
 
-    def render(self, nbeats, params, notes, offset, samples):
+    def render(self, nbeats, params, notes, samples, offset=0):
         BeatMachine(**params).generate(n=nbeats,
-                                     q=Q(self["seed"]),
-                                     style=self["style"],
-                                     notes=notes,
-                                     offset=offset,
-                                     samples=samples)
+                                       q=Q(self["seed"]),
+                                       style=self["style"],
+                                       notes=notes,
+                                       offset=offset,
+                                       samples=samples)
     
-class Sequencers(list):
+class Tracks(list):
 
     @classmethod
-    def randomise(self, config=SequencerConfig):
-        return Sequencers([{"key": params["key"],
-                            "seed": int(1e8*random.random()),
-                            "style": random.choice(params["styles"])}
-                           for params in config])
+    def randomise(self, config=TrackConfig):
+        return Tracks([Track.randomise(params)
+                       for params in config])
 
-    def __init__(self, sequencers):
-        list.__init__(self, [Sequencer(sequencer)
-                             for sequencer in sequencers])
+    def __init__(self, tracks):
+        list.__init__(self, [Track(track)
+                             for track in tracks])
 
     def clone(self):
-        return Sequencers(self)
+        return Tracks(self)
 
 class Lfo(dict):
 
+    @classmethod
+    def randomise(self, params):
+        return Lfo({"key": params["key"],
+                    "seed": int(1e8*random.random())})
+    
     def __init__(self, item):
         dict.__init__(self, item)
 
@@ -285,15 +294,13 @@ class Lfo(dict):
 
     def render(self, params, nbeats, notes):
         SampleAndHoldMachine(**params).generate(n=nbeats,
-                                              q=Q(self["seed"]),
-                                              notes=notes)
-    
+                                                q=Q(self["seed"]),
+                                                notes=notes)    
 class Lfos(list):
 
     @classmethod
     def randomise(self, config=LfoConfig):
-        return Lfos([{"key": params["key"],
-                      "seed": int(1e8*random.random())}
+        return Lfos([Lfo.randomise(params)
                      for params in config])
 
     def __init__(self, lfos):
@@ -303,121 +310,29 @@ class Lfos(list):
     def clone(self):
         return Lfos(self)
 
-"""
-- just because a slice is defined doesn't mean it is used
-- rendering is controlled by slice pattern, which may ignore certain slices
-- this allows room for mutation - using more from the space of randomly chose parameters
-"""
-    
-class Slice(dict):
+class Patch(dict):
 
     @classmethod
     def randomise(self, pool):
-        return Slice(samples=Samples.randomise(pool),
-                     sequencers=Sequencers.randomise())
-    
-    def __init__(self, samples, sequencers):
-        dict.__init__(self, {"samples": Samples(samples),
-                             "sequencers": Sequencers(sequencers)})
-
-    def clone(self):
-        return Slice(samples=self["samples"].clone(),
-                     sequencers=self["sequencers"].clone())
-
-    """
-    - tracks are rendered one at a time, iterating through slices with a single key at a time
-    - hence slice needs params so it can look up current track
-    - note all samples are passed to rendered as a single track might use more than one sample (eg open/closed hats)
-    """
-    
-    def render_sequencer(self, params, notes, nbeats, offset):
-        sequencers={sequencer["key"]:sequencer
-                    for sequencer in self["sequencers"]}
-        sequencer=sequencers[params["key"]]
-        sequencer.render(nbeats=nbeats,
-                         params=params,
-                         notes=notes,
-                         offset=offset,
-                         samples=self["samples"])
-
-class Slices(list):
-
-    @classmethod
-    def randomise(self, pool, n=4):
-        return Slices([Slice.randomise(pool)
-                       for i in range(n)])
-    
-    def __init__(self, slices):
-        list.__init__(self, [Slice(**slice)
-                             for slice in slices])
-
-    def clone(self):
-        return Slices(self)
-    
-class PatternMap(dict):
-
-    @classmethod
-    def randomise(self, slicetemp,
-                  patterns=Breakbeats,
-                  config=SequencerConfig):
-        return PatternMap({params["key"]:patterns.randomise(slicetemp)
-                           for params in config})
-    
-    def __init__(self, item={}):
-        dict.__init__(self, {k: Pattern(v)
-                             for k, v in item.items()})
-
-    def clone(self):
-        return PatternMap(item=self)
+        return Patch(tracks=Tracks.randomise(pool),
+                     lfos=Lfos.randomise())
         
-class Tracks(dict):
-
-    @classmethod
-    def randomise(self, pool, slicetemp):
-        return Tracks(slices=Slices.randomise(pool),
-                      patterns=PatternMap.randomise(slicetemp),
-                      lfos=Lfos.randomise())
-        
-    def __init__(self, slices, patterns, lfos):
-        dict.__init__(self, {"slices": Slices(slices),
-                             "patterns": PatternMap(patterns),
+    def __init__(self, tracks, lfos):
+        dict.__init__(self, {"tracks": Tracks(tracks),
                              "lfos": Lfos(lfos)})
-
+        
     def clone(self):
-        return Tracks(slices=self["slices"].clone(),
-                      patterns=self["patterns"].clone(),
-                      lfos=self["lfos"].clone())
+        return Patch(tracks=self["tracks"].clone(),
+                    lfos=self["lfos"].clone())
 
-    def randomise_pattern(self, limit, slicetemp, patterns=Breakbeats, config=SequencerConfig):
-        for params in config:
-            if random.random() < limit:
-                self["patterns"][params["key"]]=patterns.randomise(slicetemp)
-
-    def shuffle_slices(self, limit):
-        if random.random() < limit:
-            random.shuffle(self["slices"])
-
-    """
-    - tracks are rendered one at a time, iterating through slices with a single key at a time
-    - hence slice needs params so it can look up current track
-    """
-            
-    def render_sequencers(self, notes, nbeats, mutes,
-                          config=SequencerConfig):
-        for params in config:
-            if params["key"] not in mutes:
-                pattern=self["patterns"][params["key"]]
-                multiplier=int(nbeats/pattern.size)
-                offset=0
-                for pat in pattern.expanded:
-                    slice=self["slices"][pat["i"]]
-                    nsamplebeats=pat["n"]*multiplier
-                    slice.render_sequencer(params=params,
-                                           notes=notes,
-                                           nbeats=nsamplebeats,
-                                           offset=offset)
-                    offset+=nsamplebeats
-
+    def render_tracks(self, notes, nbeats,
+                      config={params["key"]:params
+                              for params in TrackConfig}):
+        for track in self["tracks"]:
+            track.render(params=config[track["key"]],
+                         nbeats=nbeats,
+                         notes=notes)
+                    
     def render_lfos(self, notes, nbeats,
                     config={params["key"]:params
                             for params in LfoConfig}):
@@ -425,52 +340,22 @@ class Tracks(dict):
             lfo.render(params=config[lfo["key"]],
                        nbeats=nbeats,
                        notes=notes)
-        
-                    
-    def render(self, nbeats, mutes):
-        notes={}
-        self.render_sequencers(notes=notes,
-                               nbeats=nbeats,
-                               mutes=mutes)
-        self.render_lfos(notes=notes,
-                         nbeats=nbeats)
-        return notes
 
-"""
-- mutes is an empty list by default, overrideable at runtime by cli
-"""
-    
-class Patch(dict):
-
-    @classmethod
-    def randomise(self, pool, slicetemp):
-        return Patch(tracks=Tracks.randomise(pool,
-                                             slicetemp))
-    
-    def __init__(self, tracks, mutes=[]):
-        dict.__init__(self, {"tracks": Tracks(**tracks),
-                             "mutes": mutes})
-
-    def clone(self):
-        return Patch(tracks=self["tracks"].clone(),
-                     mutes=list(self["mutes"]))
-
-    def mutate(self, limits, slicetemp):
-        self["tracks"].randomise_pattern(limits["pat"], slicetemp)
-        self["tracks"].shuffle_slices(limits["slices"])
-        for slice in self["tracks"]["slices"]:
-            for sequencer in slice["sequencers"]:
-                sequencer.randomise_style(limits["style"])
-                sequencer.randomise_seed(limits["seed"])
-        for lfo in self["tracks"]["lfos"]:
-            lfo.randomise_seed(limits["seed"])
-        return self
-    
+    """
     def render(self, nbeats):
         return {"n": nbeats,
                 "tracks": list(self["tracks"].render(nbeats=nbeats,
                                                      mutes=self["mutes"]).values())}
-        
+    """
+                                
+    def render(self, nbeats, mutes):
+        notes={}
+        self.render_tracks(notes=notes,
+                           nbeats=nbeats)
+        self.render_lfos(notes=notes,
+                         nbeats=nbeats)
+        return notes
+
 class Patches(list):
 
     @classmethod

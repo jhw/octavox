@@ -1,16 +1,18 @@
-### short
+### short [01-new-slice-model]
 
-- "slicetemp is invalid value"
-- new slice model
+- track needs samples
+- merge machines into track and lfo
+- move render_xxx into tracks, lfos
+- track patterns and offsets
 
 ### medium
 
+- "slicetemp is invalid value"
 - remove cli list support
 - pass array of roots to chain
 - density parameter
 - combine parsing of line with parameter validation
 - clone, update pool
-
 - bjorklund beat generator
 
 ### thoughts
