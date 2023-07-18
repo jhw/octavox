@@ -157,7 +157,7 @@ class Track(dict):
                       "style": random.choice(params["styles"])})
 
     """
-    - volume, pattern, samples, slices
+    - pattern, samples, slices
     """
     
     def __init__(self, item,
@@ -235,6 +235,27 @@ class Track(dict):
     - END MACHINE CODE
     """
 
+    """
+    - old Tracks sequencer code, iterating over slices
+    """
+    
+    def render_sequencers(self, notes, nbeats, mutes,
+                          config=SequencerConfig):
+        for params in config:
+            if params["key"] not in mutes:
+                pattern=self["patterns"][params["key"]]
+                multiplier=int(nbeats/pattern.size)
+                offset=0
+                for pat in pattern.expanded:
+                    slice=self["slices"][pat["i"]]
+                    nsamplebeats=pat["n"]*multiplier
+                    slice.render_sequencer(params=params,
+                                           notes=notes,
+                                           nbeats=nsamplebeats,
+                                           offset=offset)
+                    offset+=nsamplebeats
+
+    
     """
     - render needs to iterate over slices
     - possibly using old tracks render_sequencer code
