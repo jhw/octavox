@@ -144,12 +144,50 @@ class Samples(dict):
     def clone(self):
         return Samples(self)
         
-class BeatMachine:
+class Track(dict):
 
-    def __init__(self, mod, key, volume=1, **kwargs):
-        self.mod=mod
-        self.key=key
-        self.volume=volume
+    """
+    - should Track() be used here, as is also used by contstructor?
+    """
+       
+    @classmethod
+    def randomise(self, params):
+        return Track({"key": params["key"],
+                      "seed": int(1e8*random.random()),
+                      "style": random.choice(params["styles"])})
+
+    """
+    - volume, pattern, samples, slices
+    """
+    
+    def __init__(self, item,
+                 config={params["key"]: params
+                         for params in TrackConfig},
+                 volume=1):
+        dict.__init__(self, item)
+        for attr in params[item["key"]]:
+            if attr!="key":
+                setattr(self, attr, params[attr])
+        self.volume=1
+                
+    def clone(self):
+        return Track(self)
+        
+    def randomise_seed(self, limit):
+        if random.random() < limit:
+            seed=int(1e8*random.random())
+            self["seed"]=seed
+
+    def randomise_style(self, limit,
+                        config={params["key"]: params
+                                for params in TrackConfig}):
+        styles=config[self["key"]]["styles"]
+        if random.random() < limit:
+            self["style"]=random.choice(styles)
+
+    """
+    - START MACHINE CODE
+    """
 
     def generate(self, style, q, n, notes, offset, samples):
         fn=getattr(self, style)
@@ -193,65 +231,15 @@ class BeatMachine:
     def closed(self, q, i, *args, k=ClosedHat):
         return vitling.closed(q, i, k)
 
-class SampleAndHoldMachine:
+    """
+    - END MACHINE CODE
+    """
 
-    def __init__(self, key, range, mod, ctrl, increment, step, **kwargs):
-        self.key=key
-        self.range=range
-        self.mod=mod
-        self.ctrl=ctrl
-        self.increment=increment
-        self.step=step
+    """
+    - render needs to iterate over slices
+    - possibly using old tracks render_sequencer code
+    """
     
-    def generate(self, q, n, notes):
-        for i in range(n):
-            self.sample_hold(q, i, notes)
-
-    def apply(fn):
-        def wrapped(self, q, i, notes):
-            v=fn(self, q, i, notes)
-            if v!=None: # explicit because could return zero
-                trig={"mod": self.mod,
-                      "ctrl": self.ctrl,
-                      "v": v,
-                      "i": i}
-                notes.setdefault(self.key, [])
-                notes[self.key].append(trig)
-        return wrapped
-
-    @apply
-    def sample_hold(self, q, i, *args):
-        if 0 == i % self.step:
-            floor, ceil = self.range
-            v0=floor+(ceil-floor)*q.random()
-            return self.increment*int(0.5+v0/self.increment)
-            
-class Track(dict):
-
-    @classmethod
-    def randomise(self, params):
-        return Track({"key": params["key"],
-                      "seed": int(1e8*random.random()),
-                      "style": random.choice(params["styles"])})
-    
-    def __init__(self, item):
-        dict.__init__(self, item)
-
-    def clone(self):
-        return Track(self)
-        
-    def randomise_seed(self, limit):
-        if random.random() < limit:
-            seed=int(1e8*random.random())
-            self["seed"]=seed
-
-    def randomise_style(self, limit,
-                        config={params["key"]: params
-                                for params in TrackConfig}):
-        styles=config[self["key"]]["styles"]
-        if random.random() < limit:
-            self["style"]=random.choice(styles)
-
     def render(self, nbeats, params, notes, samples, offset=0):
         BeatMachine(**params).generate(n=nbeats,
                                        q=Q(self["seed"]),
@@ -276,6 +264,10 @@ class Tracks(list):
 
 class Lfo(dict):
 
+    """
+    - should Lfo() be used here, as is also used by contstructor?
+    """
+
     @classmethod
     def randomise(self, params):
         return Lfo({"key": params["key"],
@@ -284,6 +276,13 @@ class Lfo(dict):
     def __init__(self, item):
         dict.__init__(self, item)
 
+    def __init__(self, item, config={params["key"]: params
+                                     for params in LfoConfig}):
+        dict.__init__(self, item)
+        for attr in params[item["key"]]:
+            if attr!="key":
+                setattr(self, attr, params[attr])
+        
     def clone(self):
         return Lfo(self)
         
@@ -292,6 +291,38 @@ class Lfo(dict):
             seed=int(1e8*random.random())
             self["seed"]=seed
 
+    """
+    - START MACHINE CODE
+    """
+
+    def generate(self, q, n, notes):
+        for i in range(n):
+            self.sample_hold(q, i, notes)
+
+    def apply(fn):
+        def wrapped(self, q, i, notes):
+            v=fn(self, q, i, notes)
+            if v!=None: # explicit because could return zero
+                trig={"mod": self.mod,
+                      "ctrl": self.ctrl,
+                      "v": v,
+                      "i": i}
+                notes.setdefault(self.key, [])
+                notes[self.key].append(trig)
+        return wrapped
+
+    @apply
+    def sample_hold(self, q, i, *args):
+        if 0 == i % self.step:
+            floor, ceil = self.range
+            v0=floor+(ceil-floor)*q.random()
+            return self.increment*int(0.5+v0/self.increment)
+    
+    """
+    - END MACHINE CODE
+    """
+        
+            
     def render(self, params, nbeats, notes):
         SampleAndHoldMachine(**params).generate(n=nbeats,
                                                 q=Q(self["seed"]),
