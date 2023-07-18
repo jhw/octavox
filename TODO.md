@@ -1,10 +1,12 @@
 ### short
 
-- remove cli list support
-- pass array of roots to chain
+- "slicetemp is invalid value"
+- new slice model
 
 ### medium
 
+- remove cli list support
+- pass array of roots to chain
 - density parameter
 - combine parsing of line with parameter validation
 - clone, update pool
