@@ -147,7 +147,9 @@ class Samples(dict):
 class Track(dict):
 
     """
-    - should Track() be used here, as is also used by contstructor?
+    - should Track() be used here, as is also used by constructor?
+    - needs to initialise slices each with seed, style and samples
+    - also needs to initialise pattern
     """
        
     @classmethod
@@ -156,10 +158,6 @@ class Track(dict):
                       "seed": int(1e8*random.random()),
                       "style": random.choice(params["styles"])})
 
-    """
-    - pattern, samples, slices
-    """
-    
     def __init__(self, item,
                  config={params["key"]: params
                          for params in TrackConfig},
@@ -172,7 +170,10 @@ class Track(dict):
                 
     def clone(self):
         return Track(self)
-        
+
+    # stuff below needs to sit in slice model
+    
+    """
     def randomise_seed(self, limit):
         if random.random() < limit:
             seed=int(1e8*random.random())
@@ -184,15 +185,26 @@ class Track(dict):
         styles=config[self["key"]]["styles"]
         if random.random() < limit:
             self["style"]=random.choice(styles)
-
-    """
-    - START MACHINE CODE
     """
 
     def generate(self, style, q, n, notes, offset, samples):
         fn=getattr(self, style)
         for i in range(n):
             fn(q, i, notes, offset, samples)
+
+    def render(self, notes, nbeats):
+        multiplier=int(nbeats/self["pattern"].size)
+        offset=0
+        for pat in self["pattern"].expanded:
+            slice=self["slices"][pat["i"]]
+            nsamplebeats=pat["n"]*multiplier
+            self.generate(n=nbeats,
+                          q=Q(slice["seed"]),
+                          style=slice["style"],
+                          notes=notes,
+                          offset=offset,
+                          samples=slice["samples"])
+            offset+=nsamplebeats
 
     def apply(fn):
         def wrapped(self, q, i, notes, offset, samples):
@@ -231,44 +243,7 @@ class Track(dict):
     def closed(self, q, i, *args, k=ClosedHat):
         return vitling.closed(q, i, k)
 
-    """
-    - END MACHINE CODE
-    """
-
-    """
-    - old Tracks sequencer code, iterating over slices
-    """
-    
-    def render_sequencers(self, notes, nbeats, mutes,
-                          config=SequencerConfig):
-        for params in config:
-            if params["key"] not in mutes:
-                pattern=self["patterns"][params["key"]]
-                multiplier=int(nbeats/pattern.size)
-                offset=0
-                for pat in pattern.expanded:
-                    slice=self["slices"][pat["i"]]
-                    nsamplebeats=pat["n"]*multiplier
-                    slice.render_sequencer(params=params,
-                                           notes=notes,
-                                           nbeats=nsamplebeats,
-                                           offset=offset)
-                    offset+=nsamplebeats
-
-    
-    """
-    - render needs to iterate over slices
-    - possibly using old tracks render_sequencer code
-    """
-    
-    def render(self, nbeats, params, notes, samples, offset=0):
-        BeatMachine(**params).generate(n=nbeats,
-                                       q=Q(self["seed"]),
-                                       style=self["style"],
-                                       notes=notes,
-                                       offset=offset,
-                                       samples=samples)
-    
+                            
 class Tracks(list):
 
     @classmethod
@@ -286,7 +261,7 @@ class Tracks(list):
 class Lfo(dict):
 
     """
-    - should Lfo() be used here, as is also used by contstructor?
+    - should Lfo() be used here, as is also used by constructor?
     """
 
     @classmethod
@@ -312,13 +287,14 @@ class Lfo(dict):
             seed=int(1e8*random.random())
             self["seed"]=seed
 
-    """
-    - START MACHINE CODE
-    """
-
     def generate(self, q, n, notes):
         for i in range(n):
             self.sample_hold(q, i, notes)
+
+    def render(self, nbeats, notes):
+        self.generate(n=nbeats,
+                      q=Q(self["seed"]),
+                      notes=notes)    
 
     def apply(fn):
         def wrapped(self, q, i, notes):
@@ -338,17 +314,9 @@ class Lfo(dict):
             floor, ceil = self.range
             v0=floor+(ceil-floor)*q.random()
             return self.increment*int(0.5+v0/self.increment)
-    
-    """
-    - END MACHINE CODE
-    """
-        
-            
-    def render(self, params, nbeats, notes):
-        SampleAndHoldMachine(**params).generate(n=nbeats,
-                                                q=Q(self["seed"]),
-                                                notes=notes)    
-class Lfos(list):
+                
+
+    class Lfos(list):
 
     @classmethod
     def randomise(self, config=LfoConfig):

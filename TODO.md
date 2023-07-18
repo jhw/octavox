@@ -1,14 +1,11 @@
 ### short [01-new-slice-model]
 
-- move render_xxx into tracks, lfos
-
-- samples
-- styles
-- slices
-
+- pattern initialisation
+- slice model 
+  - seed, style, samples
+  
 ### medium
 
-- "slicetemp is invalid value"
 - remove cli list support
 - pass array of roots to chain
 - density parameter
@@ -45,6 +42,7 @@
 
 ### done
 
+- move render_xxx into tracks, lfos
 - track patterns and offsets
 - merge machines into track and lfo
 - relationship between sequencer/lfo Objects and the config items that are used to instantiate them
