@@ -105,8 +105,6 @@ class Shell(cmd.Cmd):
         def optimistic_parse(V):
             if re.search("^(\\d+\\|)+\\d+$", V): # array
                 return [int(v) for v in V.split("|")]
-            elif re.search("^(\\D+\\|)+\\D+$", V): # list
-                return V.split("|")
             elif re.search("^\\d+$", V): # int
                 return int(V)
             else:

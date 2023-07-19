@@ -1,13 +1,14 @@
 ### short [01-new-slice-model]
 
-- mutate pattern and complete mutation chain
+- mutate tracks
 - mutes arg
-- avoid dual/overloaded calls to constructors
+
+- check dual/overloaded calls to constructors
 
 ### medium
 
 - should tracks rendering really return n, tracks?
-- remove cli list support
+
 - pass array of roots to chain
 - density parameter
 - combine parsing of line with parameter validation
@@ -43,6 +44,7 @@
 
 ### done
 
+- remove cli list support
 - initialise samples
 - tracks rendering needs to return n, tracks
 - remove slicetemp
