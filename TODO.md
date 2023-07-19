@@ -1,9 +1,14 @@
 ### short [01-new-slice-model]
 
 - pattern initialisation
-- slice model 
-  - seed, style, samples
-  
+- check passing of samples to slice constructor
+- tracks rendering needs to return n, tracks
+- add back mutation methods
+
+- check rendering chain
+- check info saved to json (versus not)
+- check chaining of custom model constructors
+
 ### medium
 
 - remove cli list support
@@ -42,6 +47,8 @@
 
 ### done
 
+- slice model 
+  - seed, style, samples
 - move render_xxx into tracks, lfos
 - track patterns and offsets
 - merge machines into track and lfo

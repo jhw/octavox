@@ -87,10 +87,6 @@ def Q(seed):
     q.seed(seed)
     return q
 
-def hungarorise(text):
-    return "".join([tok.capitalize()
-                    for tok in text.split("_")])
-
 class Pattern(str):
 
     def __init__(self, value):
@@ -112,21 +108,12 @@ class Pattern(str):
         return sum([item["n"]
                     for item in self.expanded])
 
-class Patterns(list):
-
-    def __init__(self, items=[]):
-        list.__init__(self, items)
-
-    def randomise(self, slicetemp):
-        n=1+math.floor(slicetemp*len(self))
-        return random.choice(self[:n])  
-        
-Breakbeats=Patterns([Pattern(pat)
-                     for pat in ["0",
-                                 "3x0|1",
-                                 "0|1|0|1",
-                                 "0|1|0|2",
-                                 "0|1|2|3"]])
+Patterns=[Pattern(pat)
+          for pat in ["0",
+                      "0|0|1|0|",
+                      "3x0|1",
+                      "0|1|0|1",
+                      "0|1|0|2"]]
 
 class Samples(dict):
 
@@ -143,15 +130,54 @@ class Samples(dict):
 
     def clone(self):
         return Samples(self)
-        
+
+class Slice(dict):
+
+    @classmethod
+    def randomise(self, key, pool,
+                  config={params["key"]: params
+                          for params in TrackConfig}):
+        return Slice(samples=Samples.randomise(pool),
+                     seed=int(1e8*random.random()),
+                     style=random.choice(config[key]["styles"]))
+    
+    def __init__(self, samples, seed, style):
+        dict.__init__(self, {"samples": Samples(samples),
+                             "seed": seed,
+                             "style" style})
+
+    def clone(self):
+        return Slice(samples=self["samples"].clone(),
+                     seed=self["seed"],
+                     style=self["style"])
+
+    def randomise_seed(self, limit):
+        if random.random() < limit:
+            seed=int(1e8*random.random())
+            self["seed"]=seed
+
+    def randomise_style(self, key, limit,
+                        config={params["key"]: params
+                                for params in TrackConfig}):
+        if random.random() < limit:
+            self["style"]=random.choice(config[key]["styles"])
+    
+class Slices(list):
+
+    @classmethod
+    def randomise(self, pool, n=4):
+        return Slices([Slice.randomise(pool)
+                       for i in range(n)])
+    
+    def __init__(self, slices):
+        list.__init__(self, [Slice(**slice)
+                             for slice in slices])
+
+    def clone(self):
+        return Slices(self)
+    
 class Track(dict):
 
-    """
-    - should Track() be used here, as is also used by constructor?
-    - needs to initialise slices each with seed, style and samples
-    - also needs to initialise pattern
-    """
-       
     @classmethod
     def randomise(self, params):
         return Track({"key": params["key"],
@@ -170,22 +196,6 @@ class Track(dict):
                 
     def clone(self):
         return Track(self)
-
-    # stuff below needs to sit in slice model
-    
-    """
-    def randomise_seed(self, limit):
-        if random.random() < limit:
-            seed=int(1e8*random.random())
-            self["seed"]=seed
-
-    def randomise_style(self, limit,
-                        config={params["key"]: params
-                                for params in TrackConfig}):
-        styles=config[self["key"]]["styles"]
-        if random.random() < limit:
-            self["style"]=random.choice(styles)
-    """
 
     def generate(self, style, q, n, notes, offset, samples):
         fn=getattr(self, style)
@@ -242,7 +252,6 @@ class Track(dict):
     @apply
     def closed(self, q, i, *args, k=ClosedHat):
         return vitling.closed(q, i, k)
-
                             
 class Tracks(list):
 
@@ -259,10 +268,6 @@ class Tracks(list):
         return Tracks(self)
 
 class Lfo(dict):
-
-    """
-    - should Lfo() be used here, as is also used by constructor?
-    """
 
     @classmethod
     def randomise(self, params):
@@ -315,8 +320,7 @@ class Lfo(dict):
             v0=floor+(ceil-floor)*q.random()
             return self.increment*int(0.5+v0/self.increment)
                 
-
-    class Lfos(list):
+class Lfos(list):
 
     @classmethod
     def randomise(self, config=LfoConfig):
