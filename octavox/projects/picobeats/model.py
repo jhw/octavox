@@ -48,7 +48,7 @@ links:
     - Output
 """)
 
-SequencerConfig=yaml.safe_load("""
+SequenceConfig=yaml.safe_load("""
 - key: kk
   mod: KKSampler
   styles:
@@ -117,10 +117,6 @@ Patterns=[Pattern(pat)
 
 class Samples(dict):
 
-    """
-    - note that sample keys are different from sequencer keys (oh/ch vs ht), so patches should contain unrestricted set
-    """
-    
     @classmethod
     def randomise(self, pool):
         return Samples(pool.randomise())
@@ -144,7 +140,7 @@ class Slice(dict):
     def __init__(self, samples, seed, style):
         dict.__init__(self, {"samples": Samples(samples),
                              "seed": seed,
-                             "style" style})
+                             "style": style})
 
     def clone(self):
         return Slice(samples=self["samples"].clone(),
@@ -165,8 +161,8 @@ class Slice(dict):
 class Slices(list):
 
     @classmethod
-    def randomise(self, pool, n=4):
-        return Slices([Slice.randomise(pool)
+    def randomise(self, key, pool, n=4):
+        return Slices([Slice.randomise(key, pool)
                        for i in range(n)])
     
     def __init__(self, slices):
@@ -182,14 +178,16 @@ class Sequence(dict):
     def randomise(self, params, pool, patterns=Patterns):
         return Sequence({"key": params["key"],
                          "pattern": random.choice(patterns),
-                         "slices": Slices.randomise(pool)})
+                         "slices": Slices.randomise(params["key"],
+                                                    pool)})
 
     def __init__(self, item,
                  config={params["key"]: params
                          for params in SequenceConfig},
                  volume=1):
         dict.__init__(self, item)
-        for attr in params[item["key"]]:
+        params=config[item["key"]]
+        for attr in params:
             if attr!="key":
                 setattr(self, attr, params[attr])
         self.volume=1
@@ -233,8 +231,8 @@ class Sequence(dict):
                       "key": samples[samplekey],
                       "vel": self.volume*volume,
                       "i": i+offset}
-                notes.setdefault(self.key, [])
-                notes[self.key].append(trig)
+                notes.setdefault(self["key"], [])
+                notes[self["key"]].append(trig)
         return wrapped
     
     @apply
@@ -264,9 +262,9 @@ class Sequence(dict):
 class Sequences(list):
 
     @classmethod
-    def randomise(self, config=SequenceConfig):
-        return Sequences([Sequence.randomise(params)
-                       for params in config])
+    def randomise(self, pool, config=SequenceConfig):
+        return Sequences([Sequence.randomise(params, pool)
+                          for params in config])
 
     def __init__(self, sequences):
         list.__init__(self, [Sequence(sequence)
@@ -288,7 +286,8 @@ class Lfo(dict):
     def __init__(self, item, config={params["key"]: params
                                      for params in LfoConfig}):
         dict.__init__(self, item)
-        for attr in params[item["key"]]:
+        params=config[item["key"]]
+        for attr in params:
             if attr!="key":
                 setattr(self, attr, params[attr])
         
@@ -317,8 +316,8 @@ class Lfo(dict):
                       "ctrl": self.ctrl,
                       "v": v,
                       "i": i}
-                notes.setdefault(self.key, [])
-                notes[self.key].append(trig)
+                notes.setdefault(self["key"], [])
+                notes[self["key"]].append(trig)
         return wrapped
 
     @apply
@@ -368,37 +367,36 @@ class Patch(dict):
             lfo.randomise_seed(limits["seed"])
         return self
     
-    def render_sequences(self, notes, nbeats,
+    def render_sequences(self, notes, nbeats, mutes,
                          config={params["key"]:params
                                  for params in SequenceConfig}):
         for sequence in self["sequences"]:
-            sequence.render(params=config[sequence["key"]],
-                            nbeats=nbeats,
-                            notes=notes)
+            if sequence["key"] not in mutes:
+                sequence.render(nbeats=nbeats,
+                                notes=notes)
                     
     def render_lfos(self, notes, nbeats,
                     config={params["key"]:params
                             for params in LfoConfig}):
         for lfo in self["lfos"]:
-            lfo.render(params=config[lfo["key"]],
-                       nbeats=nbeats,
+            lfo.render(nbeats=nbeats,
                        notes=notes)
 
-    def render(self, nbeats, mutes):
+    def render(self, nbeats, mutes=[]):
         notes={}
-        self.render_tracks(notes=notes,
-                           nbeats=nbeats)
+        self.render_sequences(notes=notes,
+                              nbeats=nbeats,
+                              mutes=mutes)
         self.render_lfos(notes=notes,
                          nbeats=nbeats)
         return {"n": nbeats,
-                "tracks": list(notes).values()}
+                "tracks": list(notes.values())}
 
 class Patches(list):
 
     @classmethod
-    def randomise(self, pool, slicetemp, n):
-        return Patches([Patch.randomise(pool,
-                                        slicetemp)
+    def randomise(self, pool, n):
+        return Patches([Patch.randomise(pool)
                         for i in range(n)])
     
     def __init__(self, patches):

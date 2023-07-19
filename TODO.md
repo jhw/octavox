@@ -1,8 +1,10 @@
 ### short [01-new-slice-model]
 
-- mutes arg
-
-- check dual/overloaded calls to constructors
+```
+ File "/Users/jhw/work/octavox/octavox/projects/picobeats/model.py", line 98, in <listcomp>
+    tokens=[int(tok)
+ValueError: invalid literal for int() with base 10: ''
+```
 
 ### medium
 
@@ -43,6 +45,8 @@
 
 ### done
 
+- mutes arg
+- check dual/overloaded calls to constructors
 - mutate tracks
 - remove cli list support
 - initialise samples
