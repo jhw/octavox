@@ -136,7 +136,7 @@ class Slice(dict):
     @classmethod
     def randomise(self, key, pool,
                   config={params["key"]: params
-                          for params in TrackConfig}):
+                          for params in SequenceConfig}):
         return Slice(samples=Samples.randomise(pool),
                      seed=int(1e8*random.random()),
                      style=random.choice(config[key]["styles"]))
@@ -158,7 +158,7 @@ class Slice(dict):
 
     def randomise_style(self, key, limit,
                         config={params["key"]: params
-                                for params in TrackConfig}):
+                                for params in SequenceConfig}):
         if random.random() < limit:
             self["style"]=random.choice(config[key]["styles"])
     
@@ -176,17 +176,16 @@ class Slices(list):
     def clone(self):
         return Slices(self)
     
-class Track(dict):
+class Sequence(dict):
 
     @classmethod
-    def randomise(self, params):
-        return Track({"key": params["key"],
-                      "seed": int(1e8*random.random()),
-                      "style": random.choice(params["styles"])})
+    def randomise(self, params, patterns=Patterns):
+        return Sequence({"key": params["key"],
+                         "pattern": random.choice(patterns)})
 
     def __init__(self, item,
                  config={params["key"]: params
-                         for params in TrackConfig},
+                         for params in SequenceConfig},
                  volume=1):
         dict.__init__(self, item)
         for attr in params[item["key"]]:
@@ -195,7 +194,7 @@ class Track(dict):
         self.volume=1
                 
     def clone(self):
-        return Track(self)
+        return Sequence(self)
 
     def generate(self, style, q, n, notes, offset, samples):
         fn=getattr(self, style)
@@ -253,19 +252,19 @@ class Track(dict):
     def closed(self, q, i, *args, k=ClosedHat):
         return vitling.closed(q, i, k)
                             
-class Tracks(list):
+class Sequences(list):
 
     @classmethod
-    def randomise(self, config=TrackConfig):
-        return Tracks([Track.randomise(params)
+    def randomise(self, config=SequenceConfig):
+        return Sequences([Sequence.randomise(params)
                        for params in config])
 
-    def __init__(self, tracks):
-        list.__init__(self, [Track(track)
-                             for track in tracks])
+    def __init__(self, sequences):
+        list.__init__(self, [Sequence(sequence)
+                             for sequence in sequences])
 
     def clone(self):
-        return Tracks(self)
+        return Sequences(self)
 
 class Lfo(dict):
 
@@ -338,24 +337,24 @@ class Patch(dict):
 
     @classmethod
     def randomise(self, pool):
-        return Patch(tracks=Tracks.randomise(pool),
+        return Patch(sequences=Sequences.randomise(pool),
                      lfos=Lfos.randomise())
         
-    def __init__(self, tracks, lfos):
-        dict.__init__(self, {"tracks": Tracks(tracks),
+    def __init__(self, sequences, lfos):
+        dict.__init__(self, {"sequences": Sequences(sequences),
                              "lfos": Lfos(lfos)})
         
     def clone(self):
-        return Patch(tracks=self["tracks"].clone(),
+        return Patch(sequences=self["sequences"].clone(),
                     lfos=self["lfos"].clone())
 
-    def render_tracks(self, notes, nbeats,
-                      config={params["key"]:params
-                              for params in TrackConfig}):
-        for track in self["tracks"]:
-            track.render(params=config[track["key"]],
-                         nbeats=nbeats,
-                         notes=notes)
+    def render_sequences(self, notes, nbeats,
+                         config={params["key"]:params
+                                 for params in SequenceConfig}):
+        for sequence in self["sequences"]:
+            sequence.render(params=config[sequence["key"]],
+                            nbeats=nbeats,
+                            notes=notes)
                     
     def render_lfos(self, notes, nbeats,
                     config={params["key"]:params

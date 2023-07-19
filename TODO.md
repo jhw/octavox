@@ -1,6 +1,5 @@
 ### short [01-new-slice-model]
 
-- pattern initialisation
 - check passing of samples to slice constructor
 - tracks rendering needs to return n, tracks
 - add back mutation methods
@@ -47,6 +46,7 @@
 
 ### done
 
+- pattern initialisation
 - slice model 
   - seed, style, samples
 - move render_xxx into tracks, lfos
