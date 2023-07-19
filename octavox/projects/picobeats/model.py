@@ -196,6 +196,9 @@ class Sequence(dict):
     def clone(self):
         return Sequence(self)
 
+    def randomise_pattern(self, limits, patterns=Patterns):
+        self["pattern"]=random.choice(patterns)
+    
     def generate(self, style, q, n, notes, offset, samples):
         fn=getattr(self, style)
         for i in range(n):
