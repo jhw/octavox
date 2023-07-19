@@ -26,11 +26,6 @@ class Environment(dict):
         return (key, self[key])  
         
 Env=Environment(yaml.safe_load("""
-slicetemp: 
-  type: number
-  value: 1
-  min: 0
-  max: 1
 dslices: 
   type: number
   value: 0.5
@@ -241,10 +236,8 @@ class Shell(cmd.Cmd):
     @render_patches(generator="random")
     def do_randomise(self, *args, **kwargs):
         poolname=self.pools[self.env["poolname"]["value"]]
-        slicetemp=self.env["slicetemp"]["value"]
         npatches=self.env["npatches"]["value"]
         return Patches.randomise(pool=poolname,
-                                 slicetemp=slicetemp,
                                  n=npatches)
 
     @wrap_action
@@ -275,10 +268,8 @@ class Shell(cmd.Cmd):
         root=roots[i % len(roots)]
         limits={k: self.env["d%s" % k]["value"]
                 for k in "slices|pat|seed|style".split("|")}
-        slicetemp=self.env["slicetemp"]["value"]
         npatches=self.env["npatches"]["value"]
-        return Patches([root]+[root.clone().mutate(limits=limits,
-                                                   slicetemp=slicetemp)
+        return Patches([root]+[root.clone().mutate(limits=limits)
                                for i in range(npatches-1)])
 
     @wrap_action
@@ -300,10 +291,8 @@ class Shell(cmd.Cmd):
         # generate mutations
         limits={k: self.env["d%s" % k]["value"]
                 for k in "slices|pat|seed|style".split("|")}
-        slicetemp=self.env["slicetemp"]["value"]
         for i in range(nmutations-1):
-            mutation=root.clone().mutate(limits=limits,
-                                         slicetemp=slicetemp)
+            mutation=root.clone().mutate(limits=limits)
             # override samples
             for i, slice in enumerate(mutation["tracks"]["slices"]):
                 slice["samples"]=samples[i % len(samples)]

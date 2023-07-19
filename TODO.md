@@ -1,12 +1,10 @@
 ### short [01-new-slice-model]
 
-- check passing of samples to slice constructor
-- tracks rendering needs to return n, tracks
-- add back mutation methods
-
-- check rendering chain
-- check info saved to json (versus not)
-- check chaining of custom model constructors
+- mutes arg
+- initialise samples
+- mutate pattern
+- complete mutation chain
+- avoid dual/overloaded calls to constructors
 
 ### medium
 
@@ -46,6 +44,8 @@
 
 ### done
 
+- tracks rendering needs to return n, tracks
+- remove slicetemp
 - pattern initialisation
 - slice model 
   - seed, style, samples

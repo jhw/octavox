@@ -364,20 +364,14 @@ class Patch(dict):
                        nbeats=nbeats,
                        notes=notes)
 
-    """
-    def render(self, nbeats):
-        return {"n": nbeats,
-                "tracks": list(self["tracks"].render(nbeats=nbeats,
-                                                     mutes=self["mutes"]).values())}
-    """
-                                
     def render(self, nbeats, mutes):
         notes={}
         self.render_tracks(notes=notes,
                            nbeats=nbeats)
         self.render_lfos(notes=notes,
                          nbeats=nbeats)
-        return notes
+        return {"n": nbeats,
+                "tracks": list(notes).values()}
 
 class Patches(list):
 
