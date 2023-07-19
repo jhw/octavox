@@ -179,9 +179,10 @@ class Slices(list):
 class Sequence(dict):
 
     @classmethod
-    def randomise(self, params, patterns=Patterns):
+    def randomise(self, params, pool, patterns=Patterns):
         return Sequence({"key": params["key"],
-                         "pattern": random.choice(patterns)})
+                         "pattern": random.choice(patterns),
+                         "slices": Slices.randomise(pool)})
 
     def __init__(self, item,
                  config={params["key"]: params
@@ -196,9 +197,14 @@ class Sequence(dict):
     def clone(self):
         return Sequence(self)
 
-    def randomise_pattern(self, limits, patterns=Patterns):
-        self["pattern"]=random.choice(patterns)
-    
+    def randomise_pattern(self, limit, patterns=Patterns):
+        if random.random() < limit:
+            self["pattern"]=random.choice(patterns)
+
+    def shuffle_slices(self, limit):
+        if random.random() < limit:
+            random.shuffle(self["slices"])
+
     def generate(self, style, q, n, notes, offset, samples):
         fn=getattr(self, style)
         for i in range(n):
