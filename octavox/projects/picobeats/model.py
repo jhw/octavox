@@ -357,6 +357,17 @@ class Patch(dict):
         return Patch(sequences=self["sequences"].clone(),
                     lfos=self["lfos"].clone())
 
+    def mutate(self, limits):
+        self["sequences"].randomise_pattern(limits["pat"])
+        self["sequences"].shuffle_slices(limits["slices"])
+        for sequence in self["sequences"]:
+            for slice in sequence["slices"]:
+                slice.randomise_style(limits["style"])
+                slice.randomise_seed(limits["seed"])
+        for lfo in self["lfos"]:
+            lfo.randomise_seed(limits["seed"])
+        return self
+    
     def render_sequences(self, notes, nbeats,
                          config={params["key"]:params
                                  for params in SequenceConfig}):

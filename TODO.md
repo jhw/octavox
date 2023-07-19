@@ -1,6 +1,5 @@
 ### short [01-new-slice-model]
 
-- mutate tracks
 - mutes arg
 
 - check dual/overloaded calls to constructors
@@ -44,6 +43,7 @@
 
 ### done
 
+- mutate tracks
 - remove cli list support
 - initialise samples
 - tracks rendering needs to return n, tracks
