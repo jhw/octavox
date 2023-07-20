@@ -211,23 +211,16 @@ class Sequence(dict):
         if random.random() < limit:
             random.shuffle(self["slices"])
 
-    def generate(self, style, q, n, notes, offset, samples):
-        fn=getattr(self, style)
-        for i in range(n):
-            fn(q, i, notes, offset, samples)
-
     def render(self, notes, nbeats):
         multiplier=int(nbeats/self["pattern"].size)
         offset=0
         for pat in self["pattern"].expanded:
             slice=self["slices"][pat["i"]]
+            q=Q(slice["seed"])            
+            fn=getattr(self, slice["style"])
             nsamplebeats=pat["n"]*multiplier
-            self.generate(n=nbeats,
-                          q=Q(slice["seed"]),
-                          style=slice["style"],
-                          notes=notes,
-                          offset=offset,
-                          samples=slice["samples"])
+            for i in range(nsamplebeats):
+                fn(q, i, notes, offset, slice["samples"])
             offset+=nsamplebeats
 
     def apply(fn):
@@ -300,14 +293,10 @@ class Lfo(dict):
             seed=int(1e8*random.random())
             self["seed"]=seed
 
-    def generate(self, q, n, notes):
-        for i in range(n):
-            self.sample_hold(q, i, notes)
-
     def render(self, nbeats, notes):
-        self.generate(n=nbeats,
-                      q=Q(self["seed"]),
-                      notes=notes)    
+        q=Q(self["seed"])
+        for i in range(nbeats):
+            self.sample_hold(q, i, notes)
 
     def apply(fn):
         def wrapped(self, q, i, notes):

@@ -1,20 +1,20 @@
 ### short [01-new-slice-model]
 
-- mutation doesn't seem to be maintaining first pattern
+- review mutation
+- review chaining
 
-- check slice offsets are working
-- add back slice mutation to chaining cli method
-- chain doesn't appear to be muting
-- chain doesn't seem to have much variation
+- density
 
 ### medium
 
 - should tracks rendering really return n, tracks?
 
 - pass array of roots to chain
-- density parameter
 - combine parsing of line with parameter validation
 - clone, update pool
+
+### long
+
 - bjorklund beat generator
 
 ### thoughts
