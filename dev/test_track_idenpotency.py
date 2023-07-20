@@ -1,5 +1,6 @@
 from octavox.projects.picobeats.samples import Banks
-from octavox.projects.picobeats.model import Patches
+
+from octavox.projects.picobeats.model import Patches, Slice
 
 import json
 
@@ -12,7 +13,7 @@ def test_patch(pool):
                       "slices": 0,
                       "style": 0,
                       "seed": 1})
-    r1=json.dumps(p1, sort_keys=True)
+    r1=json.dumps(p0, sort_keys=True) # NB p0
     print (r0==r1)
 
 def test_slice(key, pool):
@@ -20,7 +21,7 @@ def test_slice(key, pool):
     r0=json.dumps(s0, sort_keys=True)
     s1=s0.clone()
     s1.randomise_seed(limit=1)
-    r1=json.dumps(s1, sort_keys=True)
+    r1=json.dumps(s0, sort_keys=True) # NB s0
     print (r0==r1)
 
 if __name__=="__main__":
