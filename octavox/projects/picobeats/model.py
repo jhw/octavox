@@ -171,6 +171,17 @@ class Slices(list):
 
     def clone(self):
         return Slices(self)
+
+def init_machine(config):
+    def decorator(fn):
+        def wrapped(self, item, **kwargs):
+            fn(self, item, **kwargs)
+            params=config[item["key"]]
+            for attr in params:
+                if attr!="key":
+                    setattr(self, attr, params[attr])
+        return wrapped
+    return decorator
     
 class Sequence(dict):
 
@@ -181,15 +192,13 @@ class Sequence(dict):
                          "slices": Slices.randomise(params["key"],
                                                     pool)})
 
+    
+
+    @init_machine(config={params["key"]: params
+                          for params in SequenceConfig})
     def __init__(self, item,
-                 config={params["key"]: params
-                         for params in SequenceConfig},
                  volume=1):
         dict.__init__(self, item)
-        params=config[item["key"]]
-        for attr in params:
-            if attr!="key":
-                setattr(self, attr, params[attr])
         self.volume=1
                 
     def clone(self):
@@ -279,17 +288,11 @@ class Lfo(dict):
     def randomise(self, params):
         return Lfo({"key": params["key"],
                     "seed": int(1e8*random.random())})
-    
+
+    @init_machine(config={params["key"]: params
+                          for params in LfoConfig})    
     def __init__(self, item):
         dict.__init__(self, item)
-
-    def __init__(self, item, config={params["key"]: params
-                                     for params in LfoConfig}):
-        dict.__init__(self, item)
-        params=config[item["key"]]
-        for attr in params:
-            if attr!="key":
-                setattr(self, attr, params[attr])
         
     def clone(self):
         return Lfo(self)

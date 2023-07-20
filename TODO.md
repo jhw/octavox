@@ -1,12 +1,11 @@
 ### short [01-new-slice-model]
 
+- some of the sample offsetting looks very strange (and busy)
 - mutation doesn't seem to be maintaining first pattern
 - add back clice mutation to chaininhg cli method
 - chain doesn't appear to be muting
 - chain doesn't seem to have much variation
 - restrict samples to those used by a particular chain
-- consider not unpacking params at machine level
-  - or doing it in a decorator
 
 ### medium
 
@@ -47,6 +46,8 @@
 
 ### done
 
+- consider not unpacking params at machine level
+  - or doing it in a decorator
 - chaining fails
 - mutation fails
 
