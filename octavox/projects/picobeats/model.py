@@ -110,7 +110,7 @@ class Pattern(str):
 
 Patterns=[Pattern(pat)
           for pat in ["0",
-                      "0|0|1|0|",
+                      "0|0|1|0",
                       "3x0|1",
                       "0|1|0|1",
                       "0|1|0|2"]]
@@ -357,11 +357,12 @@ class Patch(dict):
                     lfos=self["lfos"].clone())
 
     def mutate(self, limits):
-        self["sequences"].randomise_pattern(limits["pat"])
-        self["sequences"].shuffle_slices(limits["slices"])
         for sequence in self["sequences"]:
+            sequence.randomise_pattern(limits["pat"])
+            sequence.shuffle_slices(limits["slices"])
             for slice in sequence["slices"]:
-                slice.randomise_style(limits["style"])
+                slice.randomise_style(sequence["key"],
+                                      limits["style"])
                 slice.randomise_seed(limits["seed"])
         for lfo in self["lfos"]:
             lfo.randomise_seed(limits["seed"])

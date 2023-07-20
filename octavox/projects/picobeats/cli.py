@@ -281,8 +281,10 @@ class Shell(cmd.Cmd):
         # initialise
         roots=self.project
         root=roots[i % len(roots)]
+        """
         samples=[slice["samples"]                 
                  for slice in root["tracks"]["slices"]]
+        """
         chain=Patches([root])
         npatches=self.env["npatches"]["value"]
         nmutations=int(npatches/4)                
@@ -292,8 +294,10 @@ class Shell(cmd.Cmd):
         for i in range(nmutations-1):
             mutation=root.clone().mutate(limits=limits)
             # override samples
+            """
             for i, slice in enumerate(mutation["tracks"]["slices"]):
                 slice["samples"]=samples[i % len(samples)]
+            """
             chain.append(mutation)
         # add mutes
         for solo in instruments:

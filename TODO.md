@@ -1,10 +1,12 @@
 ### short [01-new-slice-model]
 
-```
- File "/Users/jhw/work/octavox/octavox/projects/picobeats/model.py", line 98, in <listcomp>
-    tokens=[int(tok)
-ValueError: invalid literal for int() with base 10: ''
-```
+- mutation doesn't seem to be maintaining first pattern
+- add back clice mutation to chaininhg cli method
+- chain doesn't appear to be muting
+- chain doesn't seem to have much variation
+- restrict samples to those used by a particular chain
+- consider not unpacking params at machine level
+  - or doing it in a decorator
 
 ### medium
 
@@ -44,6 +46,15 @@ ValueError: invalid literal for int() with base 10: ''
 - sample similarity clustering?
 
 ### done
+
+- chaining fails
+- mutation fails
+
+```
+ File "/Users/jhw/work/octavox/octavox/projects/picobeats/model.py", line 98, in <listcomp>
+    tokens=[int(tok)
+ValueError: invalid literal for int() with base 10: ''
+```
 
 - mutes arg
 - check dual/overloaded calls to constructors
