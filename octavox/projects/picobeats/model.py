@@ -11,6 +11,10 @@ import json, math, os, random, yaml
 
 Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
 
+InstrumentMapping={Kick: [Kick],
+                   Snare:  [Snare],
+                   Hats: [OpenHat, ClosedHat]}
+
 ModConfig=yaml.safe_load("""
 modules:
   - name: KKSampler
@@ -50,20 +54,17 @@ links:
 
 SequenceConfig=yaml.safe_load("""
 kk:
-  key: kk
   mod: KKSampler
   styles:
   - fourfloor
   - electro
   - triplets
 sn:
-  key: sn
   mod: SNSampler
   styles:
   - backbeat
   - skip
 ht: 
-  key: ht
   mod: HTSampler
   styles:
   - offbeats
@@ -72,14 +73,12 @@ ht:
 
 LfoConfig=yaml.safe_load("""
 ec0:
-  key: ec0
   mod: Echo
   ctrl: wet
   range: [0, 1]
   increment: 0.25
   step: 4
 ec1:
-  key: ec1
   mod: Echo
   ctrl: feedback
   range: [0, 1]
@@ -123,8 +122,9 @@ Patterns=[Pattern(pat)
 class Samples(dict):
 
     @classmethod
-    def randomise(self, pool):
-        return Samples(pool.randomise())
+    def randomise(self, key, pool, mapping=InstrumentMapping):
+        return Samples({k:v for k, v in pool.randomise().items()
+                        if k in mapping[key]})
 
     def __init__(self, obj):
         dict.__init__(self, obj)
@@ -137,7 +137,7 @@ class Slice(dict):
     @classmethod
     def randomise(self, key, pool,
                   config=SequenceConfig):
-        return Slice(samples=Samples.randomise(pool),
+        return Slice(samples=Samples.randomise(key, pool),
                      seed=int(1e8*random.random()),
                      style=random.choice(config[key]["styles"]))
     
@@ -193,8 +193,6 @@ class Sequence(dict):
                          "pattern": random.choice(patterns),
                          "slices": Slices.randomise(key,
                                                     pool)})
-
-    
 
     @init_machine(config=SequenceConfig)
     def __init__(self, item,
