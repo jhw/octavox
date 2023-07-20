@@ -7,12 +7,12 @@ from octavox.modules.project import SVProject
 
 import octavox.modules.patterns.vitling909 as vitling
 
-import json, math, os, random, yaml
+import json, os, random, yaml
 
 Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
 
 InstrumentMapping={Kick: [Kick],
-                   Snare:  [Snare],
+                   Snare: [Snare],
                    Hats: [OpenHat, ClosedHat]}
 
 ModConfig=yaml.safe_load("""
@@ -378,8 +378,7 @@ class Patch(dict):
                               mutes=mutes)
         self.render_lfos(notes=notes,
                          nbeats=nbeats)
-        return {"n": nbeats,
-                "tracks": list(notes.values())}
+        return list(notes.values())
 
 class Patches(list):
 
@@ -401,7 +400,7 @@ class Patches(list):
     def filter_samples(self, nbeats):
         samplekeys={}
         for patch in self:
-            for track in patch.render(nbeats)["tracks"]:
+            for track in patch.render(nbeats):
                 for trig in track:
                     if "key" in trig:
                         key=trig["mod"][:2].lower()

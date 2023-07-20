@@ -1,14 +1,13 @@
 ### short [01-new-slice-model]
 
+- project -> decorator to attach patch, blank
+
 - review mutation
 - review chaining
 
-- density
-
 ### medium
 
-- should tracks rendering really return n, tracks?
-
+- density
 - pass array of roots to chain
 - combine parsing of line with parameter validation
 - clone, update pool
@@ -46,6 +45,7 @@
 
 ### done
 
+- should tracks rendering really return n, tracks?
 - restrict samples to those used by a particular chain
 - avoid duplicating keys
 - revert to using keys

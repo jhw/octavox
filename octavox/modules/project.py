@@ -177,13 +177,14 @@ class SVProject:
             return SVEffect if "ctrl" in v else SVTrig
         return [{note["i"]:classfn(note)(note)
                  for note in track}
-                for track in patch["tracks"]]
+                for track in patch]
         
     def init_pattern(self,
                      patterns,
                      modules,
                      controllers,
                      patch,
+                     nbeats,
                      offset,
                      color,
                      height=Height):
@@ -191,31 +192,32 @@ class SVProject:
         def notefn(self, j, i):
             return grid[i][j].render(modules,
                                      controllers) if j in grid[i] else RVNote()
-        rvpat=RVPattern(lines=patch["n"],
-                        tracks=len(patch["tracks"]),
+        rvpat=RVPattern(lines=nbeats,
+                        tracks=len(patch),
                         x=offset.value,
                         y_size=height,
                         bg_color=color)
         rvpat.set_via_fn(notefn)
         patterns.append(rvpat)
-        offset.increment(patch["n"])
+        offset.increment(nbeats)
 
     def init_blank(self,
                    patterns,
                    patch,
+                   nbeats,
                    offset,
                    color,
                    height=Height):
         def notefn(self, j, i):
             return RVNote()
-        rvpat=RVPattern(lines=patch["n"],
-                        tracks=len(patch["tracks"]),
+        rvpat=RVPattern(lines=nbeats,
+                        tracks=len(patch),
                         x=offset.value,
                         y_size=height,
                         bg_color=color)
         rvpat.set_via_fn(notefn)
         patterns.append(rvpat)
-        offset.increment(patch["n"])                
+        offset.increment(nbeats)                
 
     def init_controllers(self, modules):
         controllers={}
@@ -233,17 +235,19 @@ class SVProject:
         for i, patch in enumerate(patches):
             rendered=patch.render(nbeats)
             color=self.new_color() if 0==i%4 else self.mutate_color(color)
-            self.init_pattern(patterns,
-                              modules,
-                              controllers,
-                              rendered,
-                              offset,
-                              color)            
+            self.init_pattern(patterns=patterns,
+                              modules=modules,
+                              controllers=controllers,
+                              patch=rendered,
+                              nbeats=nbeats,
+                              offset=offset,
+                              color=color)            
             for i in range(nbreaks):
-                self.init_blank(patterns,
-                                rendered,
-                                offset,
-                                color)
+                self.init_blank(patterns=patterns,
+                                patch=rendered,
+                                nbeats=nbeats,
+                                offset=offset,
+                                color=color)
         return patterns
 
     def render(self,
@@ -256,9 +260,15 @@ class SVProject:
         proj=RVProject()
         proj.initial_bpm=globalz["bpm"]
         proj.global_volume=globalz["volume"]
-        modules=self.init_modules(proj, modconfig)
-        self.link_modules(proj, modconfig, modules)
-        proj.patterns=self.init_patterns(modules, patches, nbeats, nbreaks)
+        modules=self.init_modules(proj=proj,
+                                  modconfig=modconfig)
+        self.link_modules(proj=proj,
+                          modconfig=modconfig,
+                          modules=modules)
+        proj.patterns=self.init_patterns(modules=modules,
+                                         patches=patches,
+                                         nbeats=nbeats,
+                                         nbreaks=nbreaks)
         return proj
 
 if __name__=="__main__":
