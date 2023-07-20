@@ -151,20 +151,8 @@ class Shell(cmd.Cmd):
             return wrapped
         return decorator
 
-    def validate_list_arg(config):
-        def decorator(fn):
-            def wrapped(self, *args, **kwargs):
-                if config["name"] not in kwargs:
-                    raise RuntimeError("%s not found" % config["name"])
-                value=kwargs[config["name"]]
-                if not isinstance(value, int):
-                    raise RuntimeError("%s is not a list" % config["name"])
-                return fn(self, *args, **kwargs)
-            return wrapped
-        return decorator
-    
     """
-    - no need for array and list support here
+    - no need for array support here
     """
     
     def validate_param(fn):
