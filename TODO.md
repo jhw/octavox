@@ -1,8 +1,9 @@
 ### short [01-new-slice-model]
 
-- some of the sample offsetting looks very strange (and busy)
+- avoid duplicating keys
+
 - mutation doesn't seem to be maintaining first pattern
-- add back clice mutation to chaininhg cli method
+- add back slice mutation to chaining cli method
 - chain doesn't appear to be muting
 - chain doesn't seem to have much variation
 - restrict samples to those used by a particular chain
@@ -46,6 +47,8 @@
 
 ### done
 
+- revert to using keys
+- some of the sample offsetting looks very strange (and busy)
 - consider not unpacking params at machine level
   - or doing it in a decorator
 - chaining fails

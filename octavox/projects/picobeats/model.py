@@ -49,18 +49,21 @@ links:
 """)
 
 SequenceConfig=yaml.safe_load("""
-- key: kk
+kk:
+  key: kk
   mod: KKSampler
   styles:
   - fourfloor
   - electro
   - triplets
-- key: sn
+sn:
+  key: sn
   mod: SNSampler
   styles:
   - backbeat
   - skip
-- key: ht
+ht: 
+  key: ht
   mod: HTSampler
   styles:
   - offbeats
@@ -68,13 +71,15 @@ SequenceConfig=yaml.safe_load("""
 """)
 
 LfoConfig=yaml.safe_load("""
-- key: ec0
+ec0:
+  key: ec0
   mod: Echo
   ctrl: wet
   range: [0, 1]
   increment: 0.25
   step: 4
-- key: ec1
+ec1:
+  key: ec1
   mod: Echo
   ctrl: feedback
   range: [0, 1]
@@ -131,8 +136,7 @@ class Slice(dict):
 
     @classmethod
     def randomise(self, key, pool,
-                  config={params["key"]: params
-                          for params in SequenceConfig}):
+                  config=SequenceConfig):
         return Slice(samples=Samples.randomise(pool),
                      seed=int(1e8*random.random()),
                      style=random.choice(config[key]["styles"]))
@@ -153,8 +157,7 @@ class Slice(dict):
             self["seed"]=seed
 
     def randomise_style(self, key, limit,
-                        config={params["key"]: params
-                                for params in SequenceConfig}):
+                        config=SequenceConfig):
         if random.random() < limit:
             self["style"]=random.choice(config[key]["styles"])
     
@@ -178,24 +181,22 @@ def init_machine(config):
             fn(self, item, **kwargs)
             params=config[item["key"]]
             for attr in params:
-                if attr!="key":
-                    setattr(self, attr, params[attr])
+                setattr(self, attr, params[attr])
         return wrapped
     return decorator
     
 class Sequence(dict):
 
     @classmethod
-    def randomise(self, params, pool, patterns=Patterns):
-        return Sequence({"key": params["key"],
+    def randomise(self, key, pool, patterns=Patterns):
+        return Sequence({"key": key,
                          "pattern": random.choice(patterns),
-                         "slices": Slices.randomise(params["key"],
+                         "slices": Slices.randomise(key,
                                                     pool)})
 
     
 
-    @init_machine(config={params["key"]: params
-                          for params in SequenceConfig})
+    @init_machine(config=SequenceConfig)
     def __init__(self, item,
                  volume=1):
         dict.__init__(self, item)
@@ -272,8 +273,8 @@ class Sequences(list):
 
     @classmethod
     def randomise(self, pool, config=SequenceConfig):
-        return Sequences([Sequence.randomise(params, pool)
-                          for params in config])
+        return Sequences([Sequence.randomise(key, pool)
+                          for key in config])
 
     def __init__(self, sequences):
         list.__init__(self, [Sequence(sequence)
@@ -285,12 +286,11 @@ class Sequences(list):
 class Lfo(dict):
 
     @classmethod
-    def randomise(self, params):
-        return Lfo({"key": params["key"],
+    def randomise(self, key):
+        return Lfo({"key": key,
                     "seed": int(1e8*random.random())})
 
-    @init_machine(config={params["key"]: params
-                          for params in LfoConfig})    
+    @init_machine(config=LfoConfig)
     def __init__(self, item):
         dict.__init__(self, item)
         
@@ -334,8 +334,8 @@ class Lfos(list):
 
     @classmethod
     def randomise(self, config=LfoConfig):
-        return Lfos([Lfo.randomise(params)
-                     for params in config])
+        return Lfos([Lfo.randomise(key)
+                     for key in config])
 
     def __init__(self, lfos):
         list.__init__(self, [Lfo(lfo)
@@ -372,16 +372,14 @@ class Patch(dict):
         return self
     
     def render_sequences(self, notes, nbeats, mutes,
-                         config={params["key"]:params
-                                 for params in SequenceConfig}):
+                         config=SequenceConfig):
         for sequence in self["sequences"]:
             if sequence["key"] not in mutes:
                 sequence.render(nbeats=nbeats,
                                 notes=notes)
                     
     def render_lfos(self, notes, nbeats,
-                    config={params["key"]:params
-                            for params in LfoConfig}):
+                    config=LfoConfig):
         for lfo in self["lfos"]:
             lfo.render(nbeats=nbeats,
                        notes=notes)
