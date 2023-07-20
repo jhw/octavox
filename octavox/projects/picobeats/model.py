@@ -209,7 +209,8 @@ class Sequence(dict):
 
     def shuffle_slices(self, limit):
         if random.random() < limit:
-            random.shuffle(self["slices"])
+            # random.shuffle(self["slices"])
+            pass
 
     def render(self, notes, nbeats):
         multiplier=int(nbeats/self["pattern"].size)

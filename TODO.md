@@ -1,11 +1,10 @@
 ### short [01-new-slice-model]
 
-- project -> decorator to attach patch, blank
-
-- review mutation
-- review chaining
+- shuffle_slice break track idempotency
 
 ### medium
+
+- project -> decorator to attach patch, blank
 
 - density
 - pass array of roots to chain
