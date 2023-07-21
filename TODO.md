@@ -5,8 +5,6 @@
 
 ### medium
 
-- project -> decorator to attach patch, blank items
-
 - density
 - pass array of roots to chain
 - combine parsing of line with parameter validation
@@ -45,6 +43,7 @@
 
 ### done
 
+- project -> decorator to attach patch, blank items
 - clone error when mutating a loaded file
 - shuffle_slice break track idempotency
 - should tracks rendering really return n, tracks?

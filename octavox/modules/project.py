@@ -178,7 +178,15 @@ class SVProject:
         return [{note["i"]:classfn(note)(note)
                  for note in track}
                 for track in patch]
-        
+
+    def attach_pattern(fn):
+        def wrapped(*args, **kwargs):
+            rvpat=fn(*args, **kwargs)
+            kwargs["patterns"].append(rvpat)
+            kwargs["offset"].increment(kwargs["nbeats"])
+        return wrapped
+    
+    @attach_pattern
     def init_pattern(self,
                      patterns,
                      modules,
@@ -192,15 +200,13 @@ class SVProject:
         def notefn(self, j, i):
             return grid[i][j].render(modules,
                                      controllers) if j in grid[i] else RVNote()
-        rvpat=RVPattern(lines=nbeats,
+        return RVPattern(lines=nbeats,
                         tracks=len(patch),
-                        x=offset.value,
-                        y_size=height,
-                        bg_color=color)
-        rvpat.set_via_fn(notefn)
-        patterns.append(rvpat)
-        offset.increment(nbeats)
+                         x=offset.value,
+                         y_size=height,
+                         bg_color=color).set_via_fn(notefn)
 
+    @attach_pattern
     def init_blank(self,
                    patterns,
                    patch,
@@ -210,14 +216,11 @@ class SVProject:
                    height=Height):
         def notefn(self, j, i):
             return RVNote()
-        rvpat=RVPattern(lines=nbeats,
-                        tracks=len(patch),
-                        x=offset.value,
-                        y_size=height,
-                        bg_color=color)
-        rvpat.set_via_fn(notefn)
-        patterns.append(rvpat)
-        offset.increment(nbeats)                
+        return RVPattern(lines=nbeats,
+                         tracks=len(patch),
+                         x=offset.value,
+                         y_size=height,
+                         bg_color=color).set_via_fn(notefn)
 
     def init_controllers(self, modules):
         controllers={}
