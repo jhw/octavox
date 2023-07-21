@@ -1,13 +1,14 @@
-### short [01-density]
+### short
 
-- can't seem to update number via cli
-
-### medium
+- setparam code parsing param updates is a complete mess
 
 - refactor cli validators
   - remove optimistic parse
   - iterate over config with matches_xxx, parse_xxx helpers
 
+### medium
+
+- better forcing of echo wet zero option
 - pass array of roots to chain
 - clone, update pool functionality
 
