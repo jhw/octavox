@@ -106,8 +106,6 @@ class Shell(cmd.Cmd):
         def validate_int(item, value):
             if not isinstance(value, int):
                 raise RuntimeError("%s is not an integer" % item["name"])
-            if "min" in item and value < item["min"]:
-                    raise RuntimeError("%s exceeds minimum" % item["name"])
         def decorator(fn):            
             def wrapped(self, line):
                 keys=[item["name"] for item in config]
@@ -216,8 +214,7 @@ class Shell(cmd.Cmd):
     @wrap_action
     @assert_project
     @parse_line(config=[{"name": "i",
-                         "type": "int",
-                         "min": 0}])
+                         "type": "int"}])
     @render_patches(generator="mutation")
     def do_mutate(self, i):
         roots=self.project
@@ -231,8 +228,7 @@ class Shell(cmd.Cmd):
     @wrap_action
     @assert_project
     @parse_line(config=[{"name": "i",
-                         "type": "int",
-                         "min": 0}])
+                         "type": "int"}])
     @render_patches(generator="chain",
                     nbreaks=1)
     def do_chain(self, i, instruments="kk|sn|ht".split("|")):

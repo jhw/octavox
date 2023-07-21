@@ -1,5 +1,7 @@
 ### short
 
+- try eval for validation
+- add array support
 - pass array of roots to chain
 
 ### medium
@@ -43,6 +45,7 @@
 
 ### done
 
+- remove min handling
 - combine parsing of line with parameter validation
 - consider adding back cli chain sample munging
 - chain mutes are not working
