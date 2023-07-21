@@ -11,14 +11,12 @@ if __name__=="__main__":
                          n=32)[0]
     r0a=json.dumps(p0, sort_keys=True)
     p1=p0.clone()
-    p1.mutate(limits={"pat": 0,
-                      "slices": 0,
-                      "style": 0,
+    p1.mutate(limits={"pat": 1,
+                      "slices": 1,
+                      "style": 1,
                       "seed": 1})
     r1=json.dumps(p1, sort_keys=True)
     print (r0a!=r1)
     r0b=json.dumps(p0, sort_keys=True)
     print (r0a==r0b)
-    print (r0a)
-    print (r0b)
 

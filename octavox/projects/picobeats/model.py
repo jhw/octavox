@@ -201,7 +201,9 @@ class Sequence(dict):
         self.volume=1
                 
     def clone(self):
-        return Sequence(self)
+        return Sequence({"key": self["key"],
+                         "pattern": self["pattern"],
+                         "slices": self["slices"].clone()})
 
     def randomise_pattern(self, limit, patterns=Patterns):
         if random.random() < limit:
@@ -273,7 +275,8 @@ class Sequences(list):
                              for sequence in sequences])
 
     def clone(self):
-        return Sequences(self)
+        return Sequences([sequence.clone()
+                          for sequence in self])
 
 class Lfo(dict):
 
@@ -330,7 +333,8 @@ class Lfos(list):
                              for lfo in lfos])
 
     def clone(self):
-        return Lfos(self)
+        return Lfos([lfo.clone()
+                     for lfo in self])
 
 class Patch(dict):
 

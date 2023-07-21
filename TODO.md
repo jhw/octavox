@@ -1,6 +1,6 @@
 ### short [01-new-slice-model]
 
-- shuffle_slice break track idempotency
+- clone error when mutating a loaded file
 
 ### medium
 
@@ -9,7 +9,7 @@
 - density
 - pass array of roots to chain
 - combine parsing of line with parameter validation
-- clone, update pool
+- clone, update pool functionality
 
 ### long
 
@@ -44,6 +44,7 @@
 
 ### done
 
+- shuffle_slice break track idempotency
 - should tracks rendering really return n, tracks?
 - restrict samples to those used by a particular chain
 - avoid duplicating keys
