@@ -164,7 +164,7 @@ class Slice(dict):
 class Slices(list):
 
     @classmethod
-    def randomise(self, key, pool, n=4):
+    def randomise(self, key, pool, n=3):
         return Slices([Slice.randomise(key, pool)
                        for i in range(n)])
     
