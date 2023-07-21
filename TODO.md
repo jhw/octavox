@@ -1,10 +1,10 @@
 ### short [01-new-slice-model]
 
-- clone error when mutating a loaded file
+- chain mutes are not working
+
+- project -> decorator to attach patch, blank items
 
 ### medium
-
-- project -> decorator to attach patch, blank
 
 - density
 - pass array of roots to chain
@@ -44,6 +44,7 @@
 
 ### done
 
+- clone error when mutating a loaded file
 - shuffle_slice break track idempotency
 - should tracks rendering really return n, tracks?
 - restrict samples to those used by a particular chain

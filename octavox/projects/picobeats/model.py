@@ -197,7 +197,9 @@ class Sequence(dict):
     @init_machine(config=SequenceConfig)
     def __init__(self, item,
                  volume=1):
-        dict.__init__(self, item)
+        dict.__init__(self, {"key": item["key"],
+                             "pattern": Pattern(item["pattern"]),
+                             "slices": Slices(item["slices"])})
         self.volume=1
                 
     def clone(self):
