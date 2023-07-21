@@ -1,12 +1,12 @@
-### short [01-new-slice-model]
+### short
 
-- consider adding back cli chain sample munging
+- pass array of roots to chain
 
 ### medium
 
-- density
-- pass array of roots to chain
 - combine parsing of line with parameter validation
+
+- density
 - clone, update pool functionality
 
 ### long
@@ -15,6 +15,9 @@
 
 ### thoughts
 
+- cli chain sample overloading?
+  - I don't think this is necessary now since the number of stored samples has been reduced, there are is less scope for random samples being introduced into mutations
+  - although still some room, given the degrees of freedom of the pattern model
 - watcher to check code is working?
   - seems like overkill
 - tracks to iterate over slices and lfos not config items?
@@ -42,6 +45,7 @@
 
 ### done
 
+- consider adding back cli chain sample munging
 - chain mutes are not working
 - project -> decorator to attach patch, blank items
 - clone error when mutating a loaded file
