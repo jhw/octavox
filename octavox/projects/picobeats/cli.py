@@ -52,7 +52,7 @@ nbeats:
   min: 4
 density:
   type: number
-  value: 0.8
+  value: 0.75
   min: 0
   max: 1
 npatches:

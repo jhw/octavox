@@ -5,6 +5,9 @@
 ### medium
 
 - refactor cli validators
+  - remove optimistic parse
+  - iterate over config with matches_xxx, parse_xxx helpers
+
 - pass array of roots to chain
 - clone, update pool functionality
 
