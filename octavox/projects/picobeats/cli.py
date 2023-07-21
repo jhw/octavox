@@ -97,64 +97,33 @@ class Shell(cmd.Cmd):
             return fn(self, *args, **kwargs)
         return wrapped
 
-    """
-    - floats and negative number support currently not required
-    """
-    
-    def parse_line(keys=[]):
+    def parse_line(config):
         def optimistic_parse(V):
-            if re.search("^(\\d+\\|)+\\d+$", V): # array
-                return [int(v) for v in V.split("|")]
-            elif re.search("^\\d+$", V): # int
+            if re.search("^\\-?\\d+$", V): # int
                 return int(V)
             else:
                 return V
+        def validate_int(item, value):
+            if not isinstance(value, int):
+                raise RuntimeError("%s is not an integer" % item["name"])
+            if "min" in item and value < item["min"]:
+                    raise RuntimeError("%s exceeds minimum" % item["name"])
         def decorator(fn):            
             def wrapped(self, line):
+                keys=[item["name"] for item in config]
                 args=[tok for tok in line.split(" ") if tok!='']
-                if len(args) < len(keys):
+                if len(args) < len(config):
                     raise RuntimeError("please enter %s" % ", ".join(keys))
                 kwargs={k:optimistic_parse(v)
                         for k, v in zip(keys, args[:len(keys)])}
+                for item in config:
+                    if "type" in item:
+                        if item["type"]=="int":
+                            validate_int(item, kwargs[item["name"]])
                 return fn(self, *[], **kwargs)
             return wrapped
         return decorator
-
-    def validate_int_arg(config):
-        def decorator(fn):
-            def wrapped(self, *args, **kwargs):
-                if config["name"] not in kwargs:
-                    raise RuntimeError("%s not found" % config["name"])
-                value=kwargs[config["name"]]
-                if not isinstance(value, int):
-                    raise RuntimeError("%s is not an integer" % config["name"])
-                if "min" in config and value < config["min"]:
-                    raise RuntimeError("%s exceeds minimum" % config["name"])
-                return fn(self, *args, **kwargs)
-            return wrapped
-        return decorator
-
-    def validate_array_arg(config):
-        def decorator(fn):
-            def wrapped(self, *args, **kwargs):
-                if config["name"] not in kwargs:
-                    raise RuntimeError("%s not found" % config["name"])
-                value=kwargs[config["name"]]
-                if not isinstance(value, int):
-                    raise RuntimeError("%s is not an array" % config["name"])
-                for v in value:
-                    if not isinstance(v, int):
-                        raise RuntimeError("%s is not an array" % config["name"])
-                    if "min" in config and v < config["min"]:
-                        raise RuntimeError("%s exceeds minimum" % config["name"])
-                return fn(self, *args, **kwargs)
-            return wrapped
-        return decorator
-
-    """
-    - no need for array support here
-    """
-    
+            
     def validate_param(fn):
         def validate_type(key, value, param):
             def is_number(value):
@@ -181,7 +150,8 @@ class Shell(cmd.Cmd):
         return wrapped
 
     @wrap_action
-    @parse_line(keys=["pat", "value"])
+    @parse_line(config=[{"name": "pat"},
+                        {"name": "value"}])
     @validate_param
     def do_setparam(self, pat, value):
         key, param = self.env.lookup(pat)
@@ -189,7 +159,7 @@ class Shell(cmd.Cmd):
         print ("%s=%s" % (key, param["value"]))
 
     @wrap_action
-    @parse_line(keys=["pat"])
+    @parse_line(config=[{"name": "pat"}])
     def do_getparam(self, pat):
         key, param = self.env.lookup(pat)
         print ("%s=%s" % (key, param["value"]))
@@ -227,7 +197,7 @@ class Shell(cmd.Cmd):
                                  n=npatches)
 
     @wrap_action
-    @parse_line(keys=["frag"])
+    @parse_line(config=[{"name": "frag"}])
     def do_load(self, frag, dirname="tmp/picobeats/json"):
         matches=[filename for filename in os.listdir(dirname)
                  if frag in filename]
@@ -245,9 +215,9 @@ class Shell(cmd.Cmd):
 
     @wrap_action
     @assert_project
-    @parse_line(keys=["i"])
-    @validate_int_arg({"name": "i",
-                       "min": 0})
+    @parse_line(config=[{"name": "i",
+                         "type": "int",
+                         "min": 0}])
     @render_patches(generator="mutation")
     def do_mutate(self, i):
         roots=self.project
@@ -260,9 +230,9 @@ class Shell(cmd.Cmd):
 
     @wrap_action
     @assert_project
-    @parse_line(keys=["i"])
-    @validate_int_arg({"name": "i",
-                       "min": 0})
+    @parse_line(config=[{"name": "i",
+                         "type": "int",
+                         "min": 0}])
     @render_patches(generator="chain",
                     nbreaks=1)
     def do_chain(self, i, instruments="kk|sn|ht".split("|")):

@@ -4,8 +4,6 @@
 
 ### medium
 
-- combine parsing of line with parameter validation
-
 - density
 - clone, update pool functionality
 
@@ -45,6 +43,7 @@
 
 ### done
 
+- combine parsing of line with parameter validation
 - consider adding back cli chain sample munging
 - chain mutes are not working
 - project -> decorator to attach patch, blank items
