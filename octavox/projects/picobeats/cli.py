@@ -99,15 +99,26 @@ class Shell(cmd.Cmd):
 
     def parse_line(config):
         def optimistic_parse(V):
+            if re.search("^(\\-\\d+\\|)\\d+$", V):
+                return [int(v) for v in V.split("|")]
             if re.search("^\\-?\\d+$", V): # int
                 return int(V)
             else:
                 return V
-        def validate_int(item, value):
-            if not isinstance(value, int):
-                raise RuntimeError("%s is not an integer" % item["name"])
-        def decorator(fn):            
+        def decorator(fn):
             def wrapped(self, line):
+                """
+                - use of eval() in lookup means these validators need to be local 
+                """
+                def validate_int(item, V):
+                    if not isinstance(V, int):
+                        raise RuntimeError("%s is not an integer" % item["name"])
+                def validate_array(item, V):
+                    if not isinstance(V, list):
+                        raise RuntimeError("%s is not an array" % item["name"])
+                    for v in V:
+                        if not isinstance(v, int):
+                            raise RuntimeError("%s contains non- integers" % item["name"])
                 keys=[item["name"] for item in config]
                 args=[tok for tok in line.split(" ") if tok!='']
                 if len(args) < len(config):
@@ -116,8 +127,8 @@ class Shell(cmd.Cmd):
                         for k, v in zip(keys, args[:len(keys)])}
                 for item in config:
                     if "type" in item:
-                        if item["type"]=="int":
-                            validate_int(item, kwargs[item["name"]])
+                        valfn=eval("validate_%s" % item["type"])
+                        valfn(item, kwargs[item["name"]])
                 return fn(self, *[], **kwargs)
             return wrapped
         return decorator

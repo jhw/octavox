@@ -390,7 +390,8 @@ class Patch(dict):
                               nbeats=nbeats)
         self.render_lfos(notes=notes,
                          nbeats=nbeats)
-        return list(notes.values())
+        return [notes[key]
+                for key in sorted(notes.keys())]
 
 class Patches(list):
 

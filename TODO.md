@@ -1,7 +1,6 @@
 ### short
 
-- try eval for validation
-- add array support
+- refactor cli validators
 - pass array of roots to chain
 
 ### medium
@@ -45,6 +44,9 @@
 
 ### done
 
+- consider ordering rendered tracks
+- try eval for validation
+- add array support
 - remove min handling
 - combine parsing of line with parameter validation
 - consider adding back cli chain sample munging
