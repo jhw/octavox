@@ -337,20 +337,27 @@ class Lfos(list):
         return Lfos([lfo.clone()
                      for lfo in self])
 
+"""
+- mutes has to be a Patch state variable (and not something passed from cli like nbeats) as it needs to be applied locally to each patch, and not globally
+"""
+    
 class Patch(dict):
 
     @classmethod
     def randomise(self, pool):
         return Patch(sequences=Sequences.randomise(pool),
-                     lfos=Lfos.randomise())
+                     lfos=Lfos.randomise(),
+                     mutes=[])
         
-    def __init__(self, sequences, lfos):
+    def __init__(self, sequences, lfos, mutes):
         dict.__init__(self, {"sequences": Sequences(sequences),
-                             "lfos": Lfos(lfos)})
+                             "lfos": Lfos(lfos),
+                             "mutes": mutes})
         
     def clone(self):
         return Patch(sequences=self["sequences"].clone(),
-                    lfos=self["lfos"].clone())
+                     lfos=self["lfos"].clone(),
+                     mutes=list(self["mutes"]))
 
     def mutate(self, limits):
         for sequence in self["sequences"]:
@@ -364,10 +371,10 @@ class Patch(dict):
             lfo.randomise_seed(limits["seed"])
         return self
     
-    def render_sequences(self, notes, nbeats, mutes,
+    def render_sequences(self, notes, nbeats,
                          config=SequenceConfig):
         for sequence in self["sequences"]:
-            if sequence["key"] not in mutes:
+            if sequence["key"] not in self["mutes"]:
                 sequence.render(nbeats=nbeats,
                                 notes=notes)
                     
@@ -377,11 +384,10 @@ class Patch(dict):
             lfo.render(nbeats=nbeats,
                        notes=notes)
 
-    def render(self, nbeats, mutes=[]):
+    def render(self, nbeats):
         notes={}
         self.render_sequences(notes=notes,
-                              nbeats=nbeats,
-                              mutes=mutes)
+                              nbeats=nbeats)
         self.render_lfos(notes=notes,
                          nbeats=nbeats)
         return list(notes.values())

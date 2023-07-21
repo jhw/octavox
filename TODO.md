@@ -1,6 +1,5 @@
 ### short [01-new-slice-model]
 
-- chain mutes are not working
 - consider adding back cli chain sample munging
 
 ### medium
@@ -43,6 +42,7 @@
 
 ### done
 
+- chain mutes are not working
 - project -> decorator to attach patch, blank items
 - clone error when mutating a loaded file
 - shuffle_slice break track idempotency
