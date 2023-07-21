@@ -14,6 +14,8 @@
 
 ### thoughts
 
+- simplify vitling wrappers?
+  - problem is the need to pass sample keys, different for each track
 - cli chain sample overloading?
   - I don't think this is necessary now since the number of stored samples has been reduced, there are is less scope for random samples being introduced into mutations
   - although still some room, given the degrees of freedom of the pattern model
