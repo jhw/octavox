@@ -1,10 +1,11 @@
 ### short [01-new-slice-model]
 
 - chain mutes are not working
-
-- project -> decorator to attach patch, blank items
+- consider adding back cli chain sample munging
 
 ### medium
+
+- project -> decorator to attach patch, blank items
 
 - density
 - pass array of roots to chain
