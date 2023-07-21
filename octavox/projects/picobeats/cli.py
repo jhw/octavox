@@ -50,6 +50,11 @@ nbeats:
   type: int
   value: 16
   min: 4
+density:
+  type: number
+  value: 0.8
+  min: 0
+  max: 1
 npatches:
   type: int
   value: 32
@@ -190,9 +195,11 @@ class Shell(cmd.Cmd):
                 self.project=fn(self, *args, **kwargs)
                 self.project.render_json(filename=filename)
                 nbeats=self.env["nbeats"]["value"]
+                density=self.env["density"]["value"]
                 self.project.render_sunvox(banks=self.banks,
                                            nbeats=nbeats,
                                            nbreaks=nbreaks,
+                                           density=density,
                                            filename=filename)
             return wrapped
         return decorator

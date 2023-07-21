@@ -1,11 +1,11 @@
-### short
+### short [01-density]
 
-- refactor cli validators
-- pass array of roots to chain
+- can't seem to update number via cli
 
 ### medium
 
-- density
+- refactor cli validators
+- pass array of roots to chain
 - clone, update pool functionality
 
 ### long
@@ -46,6 +46,8 @@
 
 ### done
 
+- density
+- why does it fail with missing sample refs?
 - consider ordering rendered tracks
 - try eval for validation
 - add array support

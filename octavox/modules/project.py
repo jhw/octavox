@@ -231,12 +231,18 @@ class SVProject:
                 controllers[mod.name][controller.name]=controller.number
         return controllers
 
-    def init_patterns(self, modules, patches, nbeats, nbreaks):
+    def init_patterns(self,
+                      modules,
+                      patches,
+                      nbeats,
+                      nbreaks,
+                      density):
         controllers=self.init_controllers(modules)
         offset=SVOffset()
         patterns, color = [], None
         for i, patch in enumerate(patches):
-            rendered=patch.render(nbeats)
+            rendered=patch.render(nbeats=nbeats,
+                                  density=density)
             color=self.new_color() if 0==i%4 else self.mutate_color(color)
             self.init_pattern(patterns=patterns,
                               modules=modules,
@@ -258,6 +264,7 @@ class SVProject:
                modconfig,
                nbeats,
                nbreaks,
+               density,
                banks=None,
                globalz=Globals):
         proj=RVProject()
@@ -271,7 +278,8 @@ class SVProject:
         proj.patterns=self.init_patterns(modules=modules,
                                          patches=patches,
                                          nbeats=nbeats,
-                                         nbreaks=nbreaks)
+                                         nbreaks=nbreaks,
+                                         density=density)
         return proj
 
 if __name__=="__main__":

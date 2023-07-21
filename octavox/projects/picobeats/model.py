@@ -86,6 +86,8 @@ ec1:
   step: 4
 """)
 
+DensitySeed=22682
+
 def Q(seed):
     q=random.Random()
     q.seed(seed)
@@ -184,7 +186,15 @@ def init_machine(config):
                 setattr(self, attr, params[attr])
         return wrapped
     return decorator
-    
+
+"""
+- density must be triggered from a different random generator (q()) from those used by sequences, because render() is called in more than one place
+- firstly by project rendering (in the standard manner), but secondly in a pre- call at the Patches.render() level (to filter all samples used by the tracks, given the limited number of sample spaces and the pattern model (which has some redundancy to permit mutations))
+- if you have child calls to q() which are conditional on parent calls to q() (which is the case if you make a beat call dependent on density) then you risk getting the two sequences which are ostensibly the same, called with different density numbers
+- in particular if you are not storing every single sample in the Sampler slots (because of space considerations) then you may well end up with a reference to a sample (as part of Slice model) where the sample itself isn't contained in the Sampler slots
+- the solution is to have density triggered by an entirely different (and fixed seed) random generator
+"""
+
 class Sequence(dict):
 
     @classmethod
@@ -200,6 +210,7 @@ class Sequence(dict):
         dict.__init__(self, {"key": item["key"],
                              "pattern": Pattern(item["pattern"]),
                              "slices": Slices(item["slices"])})
+        self.qd=Q(seed=DensitySeed) 
         self.volume=1
                 
     def clone(self):
@@ -215,7 +226,7 @@ class Sequence(dict):
         if random.random() < limit:
             random.shuffle(self["slices"])
 
-    def render(self, notes, nbeats):
+    def render(self, notes, nbeats, density):
         multiplier=int(nbeats/self["pattern"].size)
         offset=0
         for pat in self["pattern"].expanded:
@@ -224,7 +235,8 @@ class Sequence(dict):
             fn=getattr(self, slice["style"])
             nsamplebeats=pat["n"]*multiplier
             for i in range(nsamplebeats):
-                fn(q, i, notes, offset, slice["samples"])
+                if self.qd.random() < density:
+                    fn(q, i, notes, offset, slice["samples"])
             offset+=nsamplebeats
 
     def apply(fn):
@@ -371,12 +383,13 @@ class Patch(dict):
             lfo.randomise_seed(limits["seed"])
         return self
     
-    def render_sequences(self, notes, nbeats,
+    def render_sequences(self, notes, nbeats, density,
                          config=SequenceConfig):
         for sequence in self["sequences"]:
             if sequence["key"] not in self["mutes"]:
                 sequence.render(nbeats=nbeats,
-                                notes=notes)
+                                notes=notes,
+                                density=density)
                     
     def render_lfos(self, notes, nbeats,
                     config=LfoConfig):
@@ -384,10 +397,11 @@ class Patch(dict):
             lfo.render(nbeats=nbeats,
                        notes=notes)
 
-    def render(self, nbeats):
+    def render(self, nbeats, density):
         notes={}
         self.render_sequences(notes=notes,
-                              nbeats=nbeats)
+                              nbeats=nbeats,
+                              density=density)
         self.render_lfos(notes=notes,
                          nbeats=nbeats)
         return [notes[key]
@@ -413,7 +427,7 @@ class Patches(list):
     def filter_samples(self, nbeats):
         samplekeys={}
         for patch in self:
-            for track in patch.render(nbeats):
+            for track in patch.render(nbeats, density=1):
                 for trig in track:
                     if "key" in trig:
                         key=trig["mod"][:2].lower()
@@ -440,7 +454,7 @@ class Patches(list):
                                indent=2))
     
     @init_paths(["tmp/picobeats/sunvox"])
-    def render_sunvox(self, banks, nbeats, filename,
+    def render_sunvox(self, banks, nbeats, density, filename,
                       nbreaks=0,
                       modconfig=ModConfig):
         samplekeys=self.filter_samples(nbeats)
@@ -457,7 +471,8 @@ class Patches(list):
                                    modconfig=modconfig,
                                    banks=banks,
                                    nbeats=nbeats,
-                                   nbreaks=nbreaks)
+                                   nbreaks=nbreaks,
+                                   density=density)
         projfile="tmp/picobeats/sunvox/%s.sunvox" % filename
         with open(projfile, 'wb') as f:
             project.write_to(f)
