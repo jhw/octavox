@@ -187,14 +187,6 @@ def init_machine(config):
         return wrapped
     return decorator
 
-"""
-- density must be triggered from a different random generator (q()) from those used by sequences, because render() is called in more than one place
-- firstly by project rendering (in the standard manner), but secondly in a pre- call at the Patches.render() level (to filter all samples used by the tracks, given the limited number of sample spaces and the pattern model (which has some redundancy to permit mutations))
-- if you have child calls to q() which are conditional on parent calls to q() (which is the case if you make a beat call dependent on density) then you risk getting the two sequences which are ostensibly the same, called with different density numbers
-- in particular if you are not storing every single sample in the Sampler slots (because of space considerations) then you may well end up with a reference to a sample (as part of Slice model) where the sample itself isn't contained in the Sampler slots
-- the solution is to have density triggered by an entirely different (and fixed seed) random generator
-"""
-
 class Sequence(dict):
 
     @classmethod

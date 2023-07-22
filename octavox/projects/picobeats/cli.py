@@ -124,12 +124,10 @@ class Shell(cmd.Cmd):
                 print (filename)
                 self.project=fn(self, *args, **kwargs)
                 self.project.render_json(filename=filename)
-                nbeats=self.env["nbeats"]
-                density=self.env["density"]
                 self.project.render_sunvox(banks=self.banks,
-                                           nbeats=nbeats,
+                                           nbeats=self.env["nbeats"],
                                            nbreaks=nbreaks,
-                                           density=density,
+                                           density=self.env["density"],
                                            filename=filename)
             return wrapped
         return decorator
@@ -137,10 +135,8 @@ class Shell(cmd.Cmd):
     @wrap_action
     @render_patches(generator="random")
     def do_randomise(self, *args, **kwargs):
-        poolname=self.pools[self.env["poolname"]]
-        npatches=self.env["npatches"]
-        return Patches.randomise(pool=poolname,
-                                 n=npatches)
+        return Patches.randomise(pool=self.pools[self.env["poolname"]],
+                                 n=self.env["npatches"])
 
     @wrap_action
     @parse_line(config=[{"name": "frag"}])
@@ -168,9 +164,8 @@ class Shell(cmd.Cmd):
         root=roots[i % len(roots)]
         limits={k: self.env["d%s" % k]
                 for k in "slices|pat|seed|style".split("|")}
-        npatches=self.env["npatches"]
         return Patches([root]+[root.clone().mutate(limits=limits)
-                               for i in range(npatches-1)])
+                               for i in range(self.env["npatches"]-1)])
 
     @wrap_action
     @assert_project
@@ -182,8 +177,7 @@ class Shell(cmd.Cmd):
         roots=self.project
         root=roots[i % len(roots)]
         chain=Patches([root])
-        npatches=self.env["npatches"]
-        nmutations=int(npatches/4)                
+        nmutations=int(self.env["npatches"]/4)                
         # generate mutations
         limits={k: self.env["d%s" % k]
                 for k in "slices|pat|seed|style".split("|")}
