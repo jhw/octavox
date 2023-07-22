@@ -6,7 +6,7 @@
 ### medium
 
 - pass array of roots to chain
-- clone, update pool functionality
+- custom pool functionality
 
 ### long
 
