@@ -60,8 +60,6 @@ class Shell(cmd.Cmd):
 
     def parse_line(config):
         def parse_value(V):
-            if re.search("^(\\-?\\d+\\|)+\\d+$", V): # array
-                return [int(v) for v in V.split("|")]
             if re.search("^\\-?\\d+\\.\\d+$", V): # float
                 return float(V)
             elif re.search("^\\-?\\d+$", V): # int
@@ -85,7 +83,7 @@ class Shell(cmd.Cmd):
             
     @parse_line(config=[{"name": "pat"},
                         {"name": "value"}])
-    def do_setparam(self, pat, value):
+    def do_param(self, pat, value):
         try:
             key=self.env.lookup(pat)
             self.env[key]=self.pools.lookup(value) if key=="poolname" else value
@@ -93,10 +91,10 @@ class Shell(cmd.Cmd):
         except RuntimeError as error:
             print ("ERROR: %s" % str(error))
 
-    def do_listparams(self, *args, **kwargs):
+    def do_params(self, *args, **kwargs):
         print (yaml.safe_dump(dict(self.env)))
 
-    def do_listpools(self, *args, **kwargs):
+    def do_pools(self, *args, **kwargs):
         for poolname in sorted(self.pools.keys()):
             print ("- %s [%i]" % (poolname,
                                   self.pools[poolname].size))

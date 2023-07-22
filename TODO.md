@@ -1,17 +1,21 @@
 ### short
 
-- pass array of roots to chain
+- check mutate and chain take negative numbers and use moduko
+
+- init pool to create empty pool
+- clone pool to clone existing pool 
+- add pool to add pool to current pool
+- add sample to add current patch to pool
 
 ### medium
 
-- custom pool functionality
-
 ### long
 
-- bjorklund beat generator
 
 ### thoughts
 
+- pass array of roots to chain?
+  - feels like this is extra complexity for little benefit
 - better forcing of echo wet zero option?
   - no is over- optimised
 - simplify vitling wrappers?
@@ -46,6 +50,8 @@
 
 ### done
 
+- remove array support 
+- remove list prefix from params and pools
 - show pool sizes
 - @wrap_action is not wrapping errors with (eg) bad density values
 - remove env value
