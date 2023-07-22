@@ -57,7 +57,9 @@ class Pool(dict):
     def add(self, pool):
         for key in pool:
             self.setdefault(key, [])
-            self[key]+=pool[key]
+            for item in pool[key]:
+                if item not in self[key]:
+                    self[key].append(item)
         return self
 
     def randomise(self, instruments=Instruments):

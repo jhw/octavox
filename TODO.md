@@ -1,7 +1,5 @@
 ### short
 
-- convert pool to use set
-
 - add pool to add pool to current pool
 - add sample to add current patch to pool
 
@@ -47,6 +45,7 @@
 
 ### done
 
+- convert pool to use set
 - pool clone fails
 - clone pool to clone existing pool 
 - init pool to create empty pool
