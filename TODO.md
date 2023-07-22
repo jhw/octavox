@@ -1,10 +1,10 @@
 ### short
 
-- @wrap_action is not wrapping errors with (eg) bad density values
+- show pool sizes
+- pass array of roots to chain
 
 ### medium
 
-- pass array of roots to chain
 - custom pool functionality
 
 ### long
@@ -47,6 +47,7 @@
 
 ### done
 
+- @wrap_action is not wrapping errors with (eg) bad density values
 - remove env value
 - setparam code parsing param updates is a complete mess
 - refactor cli validators

@@ -6,7 +6,7 @@ from octavox.projects import Nouns, Adjectives, is_abbrev
 
 from datetime import datetime
 
-import cmd, json, os, random, re, yaml
+import cmd, json, os, random, re, traceback, yaml
 
 class Environment(dict):
 
@@ -58,19 +58,12 @@ class Shell(cmd.Cmd):
         self.env=env
         self.project=None
 
-    def wrap_action(fn):
-        def wrapped(self, *args, **kwargs):
-            try:
-                return fn(self, *args, **kwargs)
-            except RuntimeError as error:
-                print ("error: %s" % str(error))
-        return wrapped
-
     def assert_project(fn):
         def wrapped(self, *args, **kwargs):
-            if not self.project:
-                raise RuntimeError("no project found")
-            return fn(self, *args, **kwargs)
+            if self.project:
+                return fn(self, *args, **kwargs)
+            else:
+                print ("no project found")
         return wrapped
 
     def parse_line(config):
@@ -85,60 +78,66 @@ class Shell(cmd.Cmd):
                 return V
         def decorator(fn):
             def wrapped(self, line):
-                keys=[item["name"] for item in config]
-                args=[tok for tok in line.split(" ") if tok!='']
-                if len(args) < len(config):
-                    raise RuntimeError("please enter %s" % ", ".join(keys))
-                kwargs={k:parse_value(v)
-                        for k, v in zip(keys, args[:len(keys)])}
-                return fn(self, *[], **kwargs)
+                try:
+                    keys=[item["name"] for item in config]
+                    args=[tok for tok in line.split(" ") if tok!='']
+                    if len(args) < len(config):
+                        raise RuntimeError("please enter %s" % ", ".join(keys))
+                    kwargs={k:parse_value(v)
+                            for k, v in zip(keys, args[:len(keys)])}
+                    return fn(self, *[], **kwargs)
+                except RuntimeError as error:
+                    print ("ERROR: %s" % str(error))
             return wrapped
         return decorator
             
-    @wrap_action
     @parse_line(config=[{"name": "pat"},
                         {"name": "value"}])
     def do_setparam(self, pat, value):
-        key=self.env.lookup(pat)
-        self.env[key]=self.pools.lookup(value) if key=="poolname" else value
-        print ("%s=%s" % (key, self.env[key]))
+        try:
+            key=self.env.lookup(pat)
+            self.env[key]=self.pools.lookup(value) if key=="poolname" else value
+            print ("%s=%s" % (key, self.env[key]))
+        except RuntimeError as error:
+            print ("ERROR: %s" % str(error))
 
-    @wrap_action
     @parse_line(config=[{"name": "pat"}])
     def do_getparam(self, pat):
-        key=self.env.lookup(pat)
-        print ("%s=%s" % (key, self.env[key]))
+        try:
+            key=self.env.lookup(pat)
+            print ("%s=%s" % (key, self.env[key]))
+        except RuntimeError as error:
+            print ("ERROR: %s" % str(error))
 
-    @wrap_action
     def do_listparams(self, *args, **kwargs):
         print (yaml.safe_dump(dict(self.env)))
 
-    @wrap_action
     def do_listpools(self, *args, **kwargs):
         print (yaml.safe_dump(sorted(list(self.pools.keys()))))
                     
     def render_patches(generator, nbreaks=0):
         def decorator(fn):
             def wrapped(self, *args, **kwargs):
-                filename=random_filename(generator)
-                print (filename)
-                self.project=fn(self, *args, **kwargs)
-                self.project.render_json(filename=filename)
-                self.project.render_sunvox(banks=self.banks,
-                                           nbeats=self.env["nbeats"],
-                                           nbreaks=nbreaks,
-                                           density=self.env["density"],
-                                           filename=filename)
+                try:
+                    filename=random_filename(generator)
+                    print (filename)
+                    self.project=fn(self, *args, **kwargs)
+                    self.project.render_json(filename=filename)
+                    self.project.render_sunvox(banks=self.banks,
+                                               nbeats=self.env["nbeats"],
+                                               nbreaks=nbreaks,
+                                               density=self.env["density"],
+                                               filename=filename)
+                except Exception as error:
+                    print ("EXCEPTION: %s" % ''.join(traceback.TracebackException.from_exception(error).format()))
             return wrapped
         return decorator
 
-    @wrap_action
     @render_patches(generator="random")
     def do_randomise(self, *args, **kwargs):
         return Patches.randomise(pool=self.pools[self.env["poolname"]],
                                  n=self.env["npatches"])
 
-    @wrap_action
     @parse_line(config=[{"name": "frag"}])
     def do_load(self, frag, dirname="tmp/picobeats/json"):
         matches=[filename for filename in os.listdir(dirname)
@@ -155,7 +154,6 @@ class Shell(cmd.Cmd):
         else:
             print ("multiple matches")
 
-    @wrap_action
     @assert_project
     @parse_line(config=[{"name": "i"}])
     @render_patches(generator="mutation")
@@ -167,7 +165,6 @@ class Shell(cmd.Cmd):
         return Patches([root]+[root.clone().mutate(limits=limits)
                                for i in range(self.env["npatches"]-1)])
 
-    @wrap_action
     @assert_project
     @parse_line(config=[{"name": "i"}])
     @render_patches(generator="chain",
@@ -195,20 +192,15 @@ class Shell(cmd.Cmd):
         # return
         return chain
     
-    @wrap_action
     def do_exit(self, *args, **kwargs):
         return self.do_quit(*args, **kwargs)
 
-    @wrap_action
     def do_quit(self, *args, **kwargs):
         print ("exiting")
         return True
 
 if __name__=="__main__":
-    try:
-        banks=Banks("octavox/banks/pico")
-        pools=banks.spawn_pools().cull()
-        Shell(banks=banks,
-              pools=pools).cmdloop()
-    except RuntimeError as error:
-        print ("error: %s" % str(error))
+    banks=Banks("octavox/banks/pico")
+    pools=banks.spawn_pools().cull()
+    Shell(banks=banks,
+          pools=pools).cmdloop()
