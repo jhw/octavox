@@ -1,6 +1,6 @@
 ### short
 
-- pool clone fails
+- convert pool to use set
 
 - add pool to add pool to current pool
 - add sample to add current patch to pool
@@ -47,6 +47,7 @@
 
 ### done
 
+- pool clone fails
 - clone pool to clone existing pool 
 - init pool to create empty pool
 - `chain 1000` followed by `mutate 1000` returns an error
