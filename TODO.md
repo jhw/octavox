@@ -1,7 +1,5 @@
 ### short
 
-- copy to use lookups
-
 ### medium
 
 - add sample to add current patch to pool
@@ -46,6 +44,7 @@
 
 ### done
 
+- copy to use lookups
 - (replace clone with add?)
 - add pool to add pool to current pool
 - convert pool to use set
