@@ -7,8 +7,6 @@
 
 ### medium
 
-- `chain 1000` followed by `mutate 1000` returns an error
-
 ### long
 
 ### thoughts
@@ -49,6 +47,7 @@
 
 ### done
 
+- `chain 1000` followed by `mutate 1000` returns an error
 - check mutate and chain take negative numbers and use moduko
 - remove array support 
 - remove list prefix from params and pools

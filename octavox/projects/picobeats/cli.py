@@ -57,6 +57,7 @@ class Shell(cmd.Cmd):
         self.pools=pools
         self.env=env
         self.project=None
+        self.filename=None
 
     def parse_line(config):
         def parse_value(V):
@@ -91,10 +92,10 @@ class Shell(cmd.Cmd):
         except RuntimeError as error:
             print ("ERROR: %s" % str(error))
 
-    def do_params(self, *args, **kwargs):
+    def do_params(self, _):
         print (yaml.safe_dump(dict(self.env)))
 
-    def do_pools(self, *args, **kwargs):
+    def do_pools(self, _):
         for poolname in sorted(self.pools.keys()):
             print ("- %s [%i]" % (poolname,
                                   self.pools[poolname].size))
@@ -103,22 +104,27 @@ class Shell(cmd.Cmd):
         def decorator(fn):
             def wrapped(self, *args, **kwargs):
                 try:
-                    filename=random_filename(generator)
-                    print ("INFO: %s" % filename)
+                    if (generator=="mutate" and
+                        "chain-" in self.filename):
+                        raise RuntimeError("can't run mutate after chain")
+                    self.filename=random_filename(generator)
+                    print ("INFO: %s" % self.filename)
                     self.project=fn(self, *args, **kwargs)
-                    self.project.render_json(filename=filename)
+                    self.project.render_json(filename=self.filename)
                     self.project.render_sunvox(banks=self.banks,
                                                nbeats=self.env["nbeats"],
                                                nbreaks=nbreaks,
                                                density=self.env["density"],
-                                               filename=filename)
+                                               filename=self.filename)
+                except RuntimeError as error:
+                    print ("ERROR: %s" % str(error))
                 except Exception as error:
                     print ("EXCEPTION: %s" % ''.join(traceback.TracebackException.from_exception(error).format()))
             return wrapped
         return decorator
 
     @render_patches(generator="random")
-    def do_randomise(self, *args, **kwargs):
+    def do_randomise(self, _):
         return Patches.randomise(pool=self.pools[self.env["poolname"]],
                                  n=self.env["npatches"])
 
@@ -139,7 +145,7 @@ class Shell(cmd.Cmd):
             print ("WARNING: multiple matches")
 
     @parse_line(config=[{"name": "i"}])
-    @render_patches(generator="mutation")
+    @render_patches(generator="mutate")
     def do_mutate(self, i):
         roots=self.project
         root=roots[i % len(roots)]
@@ -174,10 +180,13 @@ class Shell(cmd.Cmd):
         # return
         return chain
     
-    def do_exit(self, *args, **kwargs):
-        return self.do_quit(*args, **kwargs)
+    def do_clean(self, _):
+        os.system("rm -rf tmp/picobeats")
+    
+    def do_exit(self, _):
+        return self.do_quit(None)
 
-    def do_quit(self, *args, **kwargs):
+    def do_quit(self, _):
         print ("INFO: exiting")
         return True
 
