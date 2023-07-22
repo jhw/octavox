@@ -1,6 +1,5 @@
 ### short
 
-- remove env value
 - @wrap_action is not wrapping errors with (eg) bad density values
 
 ### medium
@@ -48,6 +47,7 @@
 
 ### done
 
+- remove env value
 - setparam code parsing param updates is a complete mess
 - refactor cli validators
   - remove optimistic parse

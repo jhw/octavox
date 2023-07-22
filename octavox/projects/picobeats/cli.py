@@ -22,26 +22,17 @@ class Environment(dict):
             raise RuntimeError("%s not found" % abbrev)
         elif len(matches) > 1:
             raise RuntimeError("multiple key matches for %s" % abbrev)
-        key=matches.pop()
-        return (key, self[key])  
+        return matches.pop()
         
 Env=Environment(yaml.safe_load("""
-dslices: 
-  value: 0.5
-dpat: 
-  value: 0.5
-dseed: 
-  value: 0.5
-dstyle: 
-  value: 0.5
-nbeats: 
-  value: 16
-density:
-  value: 0.75
-npatches:
-  value: 32
-poolname:
-  value: global-curated
+dslices: 0.5
+dpat: 0.5
+dseed: 0.5
+dstyle: 0.5
+nbeats: 16
+density: 0.75
+npatches: 32
+poolname: global-curated
 """))
 
 def random_filename(generator):
@@ -83,13 +74,15 @@ class Shell(cmd.Cmd):
         return wrapped
 
     def parse_line(config):
-        def parse_value(v):
-            if re.search("^\\-?\\d+\\.\\d+$", v):
-                return float(v)
-            elif re.search("^\\-?\\d+$", v):
-                return int(v)
-            else:
-                return v
+        def parse_value(V):
+            if re.search("^(\\-?\\d+\\|)+\\d+$", V): # array
+                return [int(v) for v in V.split("|")]
+            if re.search("^\\-?\\d+\\.\\d+$", V): # float
+                return float(V)
+            elif re.search("^\\-?\\d+$", V): # int
+                return int(V)
+            else: # str
+                return V
         def decorator(fn):
             def wrapped(self, line):
                 keys=[item["name"] for item in config]
@@ -106,20 +99,19 @@ class Shell(cmd.Cmd):
     @parse_line(config=[{"name": "pat"},
                         {"name": "value"}])
     def do_setparam(self, pat, value):
-        key, param = self.env.lookup(pat)
-        param["value"]=self.pools.lookup(value) if key=="poolname" else value
-        print ("%s=%s" % (key, param["value"]))
+        key=self.env.lookup(pat)
+        self.env[key]=self.pools.lookup(value) if key=="poolname" else value
+        print ("%s=%s" % (key, self.env[key]))
 
     @wrap_action
     @parse_line(config=[{"name": "pat"}])
     def do_getparam(self, pat):
-        key, param = self.env.lookup(pat)
-        print ("%s=%s" % (key, param["value"]))
+        key=self.env.lookup(pat)
+        print ("%s=%s" % (key, self.env[key]))
 
     @wrap_action
     def do_listparams(self, *args, **kwargs):
-        print (yaml.safe_dump({k:v["value"]
-                               for k, v in self.env.items()}))
+        print (yaml.safe_dump(dict(self.env)))
 
     @wrap_action
     def do_listpools(self, *args, **kwargs):
@@ -132,8 +124,8 @@ class Shell(cmd.Cmd):
                 print (filename)
                 self.project=fn(self, *args, **kwargs)
                 self.project.render_json(filename=filename)
-                nbeats=self.env["nbeats"]["value"]
-                density=self.env["density"]["value"]
+                nbeats=self.env["nbeats"]
+                density=self.env["density"]
                 self.project.render_sunvox(banks=self.banks,
                                            nbeats=nbeats,
                                            nbreaks=nbreaks,
@@ -145,8 +137,8 @@ class Shell(cmd.Cmd):
     @wrap_action
     @render_patches(generator="random")
     def do_randomise(self, *args, **kwargs):
-        poolname=self.pools[self.env["poolname"]["value"]]
-        npatches=self.env["npatches"]["value"]
+        poolname=self.pools[self.env["poolname"]]
+        npatches=self.env["npatches"]
         return Patches.randomise(pool=poolname,
                                  n=npatches)
 
@@ -174,9 +166,9 @@ class Shell(cmd.Cmd):
     def do_mutate(self, i):
         roots=self.project
         root=roots[i % len(roots)]
-        limits={k: self.env["d%s" % k]["value"]
+        limits={k: self.env["d%s" % k]
                 for k in "slices|pat|seed|style".split("|")}
-        npatches=self.env["npatches"]["value"]
+        npatches=self.env["npatches"]
         return Patches([root]+[root.clone().mutate(limits=limits)
                                for i in range(npatches-1)])
 
@@ -190,10 +182,10 @@ class Shell(cmd.Cmd):
         roots=self.project
         root=roots[i % len(roots)]
         chain=Patches([root])
-        npatches=self.env["npatches"]["value"]
+        npatches=self.env["npatches"]
         nmutations=int(npatches/4)                
         # generate mutations
-        limits={k: self.env["d%s" % k]["value"]
+        limits={k: self.env["d%s" % k]
                 for k in "slices|pat|seed|style".split("|")}
         for i in range(nmutations-1):
             mutation=root.clone().mutate(limits=limits)
