@@ -1,5 +1,8 @@
 ### short
 
+- copy fdest lookup not working
+  - should lookup prior to creation
+
 ### medium
 
 - add sample to add current patch to pool
