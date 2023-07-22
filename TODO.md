@@ -1,5 +1,7 @@
 ### short
 
+- (replace clone with add?)
+
 - add pool to add pool to current pool
 - add sample to add current patch to pool
 
