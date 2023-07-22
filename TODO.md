@@ -1,7 +1,5 @@
 ### short
 
-- check mutate and chain take negative numbers and use moduko
-
 - init pool to create empty pool
 - clone pool to clone existing pool 
 - add pool to add pool to current pool
@@ -9,8 +7,9 @@
 
 ### medium
 
-### long
+- `chain 1000` followed by `mutate 1000` returns an error
 
+### long
 
 ### thoughts
 
@@ -50,6 +49,7 @@
 
 ### done
 
+- check mutate and chain take negative numbers and use moduko
 - remove array support 
 - remove list prefix from params and pools
 - show pool sizes
