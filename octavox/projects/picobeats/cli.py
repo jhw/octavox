@@ -1,4 +1,4 @@
-from octavox.projects.picobeats.samples import Banks, Pools
+from octavox.projects.picobeats.samples import Banks, Pools, Pool
 
 from octavox.projects.picobeats.model import Patch, Patches
 
@@ -32,7 +32,7 @@ dstyle: 0.5
 nbeats: 16
 density: 0.75
 npatches: 32
-poolname: global-curated
+pool: global-curated
 """))
 
 def random_filename(generator):
@@ -84,10 +84,10 @@ class Shell(cmd.Cmd):
             
     @parse_line(config=[{"name": "pat"},
                         {"name": "value"}])
-    def do_param(self, pat, value):
+    def do_set_param(self, pat, value):
         try:
             key=self.env.lookup(pat)
-            self.env[key]=self.pools.lookup(value) if key=="poolname" else value
+            self.env[key]=self.pools.lookup(value) if key=="pool" else value
             print ("INFO: %s=%s" % (key, self.env[key]))
         except RuntimeError as error:
             print ("ERROR: %s" % str(error))
@@ -125,7 +125,7 @@ class Shell(cmd.Cmd):
 
     @render_patches(generator="random")
     def do_randomise(self, _):
-        return Patches.randomise(pool=self.pools[self.env["poolname"]],
+        return Patches.randomise(pool=self.pools[self.env["pool"]],
                                  n=self.env["npatches"])
 
     @parse_line(config=[{"name": "frag"}])
@@ -179,6 +179,26 @@ class Shell(cmd.Cmd):
                 chain.append(clone)
         # return
         return chain
+
+    @parse_line(config=[{"name": "poolname"}])
+    def do_init_pool(self, poolname):
+        try:
+            if poolname in self.pools:
+                raise RuntimeError("pool already exists")
+            self.pools[poolname]=Pool()
+            self.env["pool"]=poolname
+        except RuntimeError as error:
+            print ("ERROR: %s" % str(error))
+
+    @parse_line(config=[{"name": "poolname"}])
+    def do_clone_pool(self, poolname):
+        try:
+            if poolname in self.pools:
+                raise RuntimeError("pool already exists")
+            self.pools[poolname]=self.pools[self.env["pool"]].clone()
+            self.env["pool"]=poolname
+        except RuntimeError as error:
+            print ("ERROR: %s" % str(error))
     
     def do_clean(self, _):
         os.system("rm -rf tmp/picobeats")

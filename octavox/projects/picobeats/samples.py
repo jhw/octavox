@@ -51,6 +51,9 @@ class Pool(dict):
                 return False
         return True
 
+    def clone(self):
+        return Pool(self)
+    
     def add(self, pool):
         for key in pool:
             self.setdefault(key, [])

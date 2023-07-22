@@ -1,7 +1,7 @@
 ### short
 
-- init pool to create empty pool
-- clone pool to clone existing pool 
+- pool clone fails
+
 - add pool to add pool to current pool
 - add sample to add current patch to pool
 
@@ -47,6 +47,8 @@
 
 ### done
 
+- clone pool to clone existing pool 
+- init pool to create empty pool
 - `chain 1000` followed by `mutate 1000` returns an error
 - check mutate and chain take negative numbers and use moduko
 - remove array support 
