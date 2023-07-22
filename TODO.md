@@ -1,14 +1,10 @@
 ### short
 
-- setparam code parsing param updates is a complete mess
-
-- refactor cli validators
-  - remove optimistic parse
-  - iterate over config with matches_xxx, parse_xxx helpers
+- remove env value
+- @wrap_action is not wrapping errors with (eg) bad density values
 
 ### medium
 
-- better forcing of echo wet zero option
 - pass array of roots to chain
 - clone, update pool functionality
 
@@ -18,6 +14,8 @@
 
 ### thoughts
 
+- better forcing of echo wet zero option?
+  - no is over- optimised
 - simplify vitling wrappers?
   - problem is the need to pass sample keys, different for each track
 - cli chain sample overloading?
@@ -50,6 +48,10 @@
 
 ### done
 
+- setparam code parsing param updates is a complete mess
+- refactor cli validators
+  - remove optimistic parse
+  - iterate over config with matches_xxx, parse_xxx helpers
 - density
 - why does it fail with missing sample refs?
 - consider ordering rendered tracks

@@ -27,40 +27,20 @@ class Environment(dict):
         
 Env=Environment(yaml.safe_load("""
 dslices: 
-  type: number
   value: 0.5
-  min: 0
-  max: 1
 dpat: 
-  type: number
   value: 0.5
-  min: 0
-  max: 1
 dseed: 
-  type: number
   value: 0.5
-  min: 0
-  max: 1
 dstyle: 
-  type: number
   value: 0.5
-  min: 0
-  max: 1
 nbeats: 
-  type: int
   value: 16
-  min: 4
 density:
-  type: number
   value: 0.75
-  min: 0
-  max: 1
 npatches:
-  type: int
   value: 32
-  min: 4
 poolname:
-  type: str
   value: global-curated
 """))
 
@@ -70,7 +50,7 @@ def random_filename(generator):
                             generator,
                             random.choice(Adjectives),
                             random.choice(Nouns))
-    
+
 class Shell(cmd.Cmd):
 
     intro="Welcome to Octavox Picobeats :)"
@@ -103,70 +83,28 @@ class Shell(cmd.Cmd):
         return wrapped
 
     def parse_line(config):
-        def optimistic_parse(V):
-            if re.search("^(\\-\\d+\\|)\\d+$", V):
-                return [int(v) for v in V.split("|")]
-            if re.search("^\\-?\\d+$", V): # int
-                return int(V)
+        def parse_value(v):
+            if re.search("^\\-?\\d+\\.\\d+$", v):
+                return float(v)
+            elif re.search("^\\-?\\d+$", v):
+                return int(v)
             else:
-                return V
+                return v
         def decorator(fn):
             def wrapped(self, line):
-                """
-                - use of eval() in lookup means these validators need to be local 
-                """
-                def validate_int(item, V):
-                    if not isinstance(V, int):
-                        raise RuntimeError("%s is not an integer" % item["name"])
-                def validate_array(item, V):
-                    if not isinstance(V, list):
-                        raise RuntimeError("%s is not an array" % item["name"])
-                    for v in V:
-                        if not isinstance(v, int):
-                            raise RuntimeError("%s contains non- integers" % item["name"])
                 keys=[item["name"] for item in config]
                 args=[tok for tok in line.split(" ") if tok!='']
                 if len(args) < len(config):
                     raise RuntimeError("please enter %s" % ", ".join(keys))
-                kwargs={k:optimistic_parse(v)
+                kwargs={k:parse_value(v)
                         for k, v in zip(keys, args[:len(keys)])}
-                for item in config:
-                    if "type" in item:
-                        valfn=eval("validate_%s" % item["type"])
-                        valfn(item, kwargs[item["name"]])
                 return fn(self, *[], **kwargs)
             return wrapped
         return decorator
             
-    def validate_param(fn):
-        def validate_type(key, value, param):
-            def is_number(value):
-                return type(value) in [int, float]
-            def is_int(value):
-                return isinstance(value, int)
-            def is_str(value):
-                return True
-            fn=eval("is_%s" % param["type"])
-            kwargs={"value": value}
-            if not fn(**kwargs):
-                raise RuntimeError("%s is invalid %s value" % (value, key))
-        def validate_minmax(key, value, param):
-            if "min" in param and value < param["min"]:
-                raise RuntimeError("%s exceeds %s min value" % (value, key))
-            if "max" in param and value > param["max"]:
-                raise RuntimeError("%s exceeds %s max value" % (value, key))
-        def wrapped(self, *args, **kwargs):
-            pat, value = kwargs["pat"], kwargs["value"]
-            key, param = self.env.lookup(pat)
-            validate_type(key, value, param)
-            validate_minmax(key, value, param)
-            return fn(self, *args, **kwargs)
-        return wrapped
-
     @wrap_action
     @parse_line(config=[{"name": "pat"},
                         {"name": "value"}])
-    @validate_param
     def do_setparam(self, pat, value):
         key, param = self.env.lookup(pat)
         param["value"]=self.pools.lookup(value) if key=="poolname" else value
@@ -203,7 +141,7 @@ class Shell(cmd.Cmd):
                                            filename=filename)
             return wrapped
         return decorator
-    
+
     @wrap_action
     @render_patches(generator="random")
     def do_randomise(self, *args, **kwargs):
@@ -231,8 +169,7 @@ class Shell(cmd.Cmd):
 
     @wrap_action
     @assert_project
-    @parse_line(config=[{"name": "i",
-                         "type": "int"}])
+    @parse_line(config=[{"name": "i"}])
     @render_patches(generator="mutation")
     def do_mutate(self, i):
         roots=self.project
@@ -245,8 +182,7 @@ class Shell(cmd.Cmd):
 
     @wrap_action
     @assert_project
-    @parse_line(config=[{"name": "i",
-                         "type": "int"}])
+    @parse_line(config=[{"name": "i"}])
     @render_patches(generator="chain",
                     nbreaks=1)
     def do_chain(self, i, instruments="kk|sn|ht".split("|")):
