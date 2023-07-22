@@ -1,6 +1,5 @@
 ### short
 
-- show pool sizes
 - pass array of roots to chain
 
 ### medium
@@ -47,6 +46,7 @@
 
 ### done
 
+- show pool sizes
 - @wrap_action is not wrapping errors with (eg) bad density values
 - remove env value
 - setparam code parsing param updates is a complete mess

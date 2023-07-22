@@ -60,6 +60,11 @@ class Pool(dict):
     def randomise(self, instruments=Instruments):
         return {inst:random.choice(self[inst])
                 for inst in instruments}
+
+    @property
+    def size(self):
+        return sum([len(list(v))
+                    for v in self.values()])
     
 class Pools(dict):
 

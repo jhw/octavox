@@ -113,7 +113,9 @@ class Shell(cmd.Cmd):
         print (yaml.safe_dump(dict(self.env)))
 
     def do_listpools(self, *args, **kwargs):
-        print (yaml.safe_dump(sorted(list(self.pools.keys()))))
+        for poolname in sorted(self.pools.keys()):
+            print ("- %s [%i]" % (poolname,
+                                  self.pools[poolname].size))
                     
     def render_patches(generator, nbreaks=0):
         def decorator(fn):
