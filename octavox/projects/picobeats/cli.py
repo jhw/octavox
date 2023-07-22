@@ -84,7 +84,7 @@ class Shell(cmd.Cmd):
             
     @parse_line(config=[{"name": "pat"},
                         {"name": "value"}])
-    def do_set_param(self, pat, value):
+    def do_param(self, pat, value):
         try:
             key=self.env.lookup(pat)
             self.env[key]=self.pools.lookup(value) if key=="pool" else value
@@ -180,23 +180,17 @@ class Shell(cmd.Cmd):
         # return
         return chain
 
-    @parse_line(config=[{"name": "poolname"}])
-    def do_init_pool(self, poolname):
+    @parse_line(config=[{"name": "src"},
+                        {"name": "dest"}])
+    def do_copy(self, src, dest):
         try:
-            if poolname in self.pools:
-                raise RuntimeError("pool already exists")
-            self.pools[poolname]=Pool()
-            self.env["pool"]=poolname
-        except RuntimeError as error:
-            print ("ERROR: %s" % str(error))
-
-    @parse_line(config=[{"name": "poolname"}])
-    def do_clone_pool(self, poolname):
-        try:
-            if poolname in self.pools:
-                raise RuntimeError("pool already exists")
-            self.pools[poolname]=self.pools[self.env["pool"]].clone()
-            self.env["pool"]=poolname
+            if src not in pools:
+                raise RuntimeError("src does not exist")
+            if src==dest:
+                raise RuntimeError("src can't be the same as dest")
+            if dest not in self.pools:
+                self.pools[dest]=Pool()
+            self.pools[dest].add(self.pools[src])
         except RuntimeError as error:
             print ("ERROR: %s" % str(error))
     

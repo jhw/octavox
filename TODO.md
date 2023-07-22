@@ -1,11 +1,10 @@
 ### short
 
-- (replace clone with add?)
-
-- add pool to add pool to current pool
-- add sample to add current patch to pool
+- copy to use lookups
 
 ### medium
+
+- add sample to add current patch to pool
 
 ### long
 
@@ -47,6 +46,8 @@
 
 ### done
 
+- (replace clone with add?)
+- add pool to add pool to current pool
 - convert pool to use set
 - pool clone fails
 - clone pool to clone existing pool 
