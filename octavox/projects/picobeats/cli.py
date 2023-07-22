@@ -58,14 +58,6 @@ class Shell(cmd.Cmd):
         self.env=env
         self.project=None
 
-    def assert_project(fn):
-        def wrapped(self, *args, **kwargs):
-            if self.project:
-                return fn(self, *args, **kwargs)
-            else:
-                print ("no project found")
-        return wrapped
-
     def parse_line(config):
         def parse_value(V):
             if re.search("^(\\-?\\d+\\|)+\\d+$", V): # array
@@ -97,15 +89,7 @@ class Shell(cmd.Cmd):
         try:
             key=self.env.lookup(pat)
             self.env[key]=self.pools.lookup(value) if key=="poolname" else value
-            print ("%s=%s" % (key, self.env[key]))
-        except RuntimeError as error:
-            print ("ERROR: %s" % str(error))
-
-    @parse_line(config=[{"name": "pat"}])
-    def do_getparam(self, pat):
-        try:
-            key=self.env.lookup(pat)
-            print ("%s=%s" % (key, self.env[key]))
+            print ("INFO: %s=%s" % (key, self.env[key]))
         except RuntimeError as error:
             print ("ERROR: %s" % str(error))
 
@@ -122,7 +106,7 @@ class Shell(cmd.Cmd):
             def wrapped(self, *args, **kwargs):
                 try:
                     filename=random_filename(generator)
-                    print (filename)
+                    print ("INFO: %s" % filename)
                     self.project=fn(self, *args, **kwargs)
                     self.project.render_json(filename=filename)
                     self.project.render_sunvox(banks=self.banks,
@@ -145,18 +129,17 @@ class Shell(cmd.Cmd):
         matches=[filename for filename in os.listdir(dirname)
                  if frag in filename]
         if matches==[]:
-            print ("no matches")
+            print ("WARNING: no matches")
         elif len(matches)==1:
             filename=matches.pop()
-            print (filename)
+            print ("INFO: %s" % filename)
             abspath="%s/%s" % (dirname, filename)
             patches=json.loads(open(abspath).read())
             self.project=Patches([Patch(**patch)
                                   for patch in patches])
         else:
-            print ("multiple matches")
+            print ("WARNING: multiple matches")
 
-    @assert_project
     @parse_line(config=[{"name": "i"}])
     @render_patches(generator="mutation")
     def do_mutate(self, i):
@@ -167,7 +150,6 @@ class Shell(cmd.Cmd):
         return Patches([root]+[root.clone().mutate(limits=limits)
                                for i in range(self.env["npatches"]-1)])
 
-    @assert_project
     @parse_line(config=[{"name": "i"}])
     @render_patches(generator="chain",
                     nbreaks=1)
@@ -198,7 +180,7 @@ class Shell(cmd.Cmd):
         return self.do_quit(*args, **kwargs)
 
     def do_quit(self, *args, **kwargs):
-        print ("exiting")
+        print ("INFO: exiting")
         return True
 
 if __name__=="__main__":
