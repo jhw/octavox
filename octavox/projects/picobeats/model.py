@@ -9,12 +9,6 @@ import octavox.modules.patterns.vitling909 as vitling
 
 import json, os, random, yaml
 
-Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
-
-InstrumentMapping={Kick: [Kick],
-                   Snare: [Snare],
-                   Hats: [OpenHat, ClosedHat]}
-
 ModConfig=yaml.safe_load("""
 modules:
   - name: KKSampler
@@ -86,6 +80,18 @@ ec1:
   step: 4
 """)
 
+Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
+
+InstrumentMapping={Kick: [Kick],
+                   Snare: [Snare],
+                   Hats: [OpenHat, ClosedHat]}
+
+Patterns=["0",
+          "0|0|1|0",
+          "3x0|1",
+          "0|1|0|1",
+          "0|1|0|2"]
+
 DensitySeed=22682
 
 def Q(seed):
@@ -95,6 +101,10 @@ def Q(seed):
 
 class Pattern(str):
 
+    @classmethod
+    def randomise(self, patterns=Patterns):
+        return Pattern(random.choice(patterns))
+    
     def __init__(self, value):
         str.__init__(value) # NB no self as first arg
 
@@ -113,13 +123,6 @@ class Pattern(str):
     def size(self):
         return sum([item["n"]
                     for item in self.expanded])
-
-Patterns=[Pattern(pat)
-          for pat in ["0",
-                      "0|0|1|0",
-                      "3x0|1",
-                      "0|1|0|1",
-                      "0|1|0|2"]]
 
 class Samples(dict):
 
@@ -190,9 +193,9 @@ def init_machine(config):
 class Sequence(dict):
 
     @classmethod
-    def randomise(self, key, pool, patterns=Patterns):
+    def randomise(self, key, pool):
         return Sequence({"key": key,
-                         "pattern": random.choice(patterns),
+                         "pattern": Pattern.randomise(),
                          "slices": Slices.randomise(key,
                                                     pool)})
 

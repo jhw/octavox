@@ -1,8 +1,5 @@
 ### short
 
-- pattern.randomise classmethod
-- add back slicetemp
-
 - new concat method which takes an array
 
 ### medium
@@ -13,6 +10,8 @@
 
 ### thoughts
 
+- add back slicetemp? 
+  - feels like an over- optimisation, and too much passing stuff around
 - add sample to add current patch to pool?
   - probably overkill
 - pass array of roots to chain?
@@ -51,6 +50,7 @@
 
 ### done
 
+- pattern.randomise classmethod
 - add new cli pool method which sets pool
 - remove pool from params
 - allow param and pool to take blank second arg and work as getters
