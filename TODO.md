@@ -1,7 +1,7 @@
 ### short
 
-- new concat method which takes an array
 - add back slicetemp
+- new concat method which takes an array
 
 ### medium
 
