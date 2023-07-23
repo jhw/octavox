@@ -1,12 +1,11 @@
 ### short
 
-- add new cli pool method which sets pool
-- remove pool from params
-- allow param and pool to take blank second arg and work as getters
-
 - new concat method which takes an array
+- add back slicetemp
 
 ### medium
+
+- breaks for concat action
 
 ### long
 
@@ -50,6 +49,9 @@
 
 ### done
 
+- add new cli pool method which sets pool
+- remove pool from params
+- allow param and pool to take blank second arg and work as getters
 - fix chain 1000 + mutate 1000
 - not convinced chain is generating the right output
 - move int parse above array

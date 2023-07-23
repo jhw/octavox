@@ -32,8 +32,9 @@ dstyle: 0.5
 nbeats: 16
 density: 0.75
 npatches: 32
-pool: global-curated
 """))
+
+DefaultPool="global-curated"
 
 def random_filename(generator):
     ts=datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
@@ -51,6 +52,7 @@ class Shell(cmd.Cmd):
     def __init__(self,
                  banks,
                  pools,
+                 poolname=DefaultPool,
                  env=Env):
         cmd.Cmd.__init__(self)
         self.banks=banks
@@ -58,6 +60,8 @@ class Shell(cmd.Cmd):
         self.env=env
         self.project=None
         self.filename=None
+        self.poolname=poolname
+
 
     def parse_line(config):
         def parse_array(line):
@@ -98,17 +102,27 @@ class Shell(cmd.Cmd):
     def do_param(self, pat, value):
         try:
             key=self.env.lookup(pat)
-            self.env[key]=self.pools.lookup(value) if key=="pool" else value
+            self.env[key]=value
             print ("INFO: %s=%s" % (key, self.env[key]))
         except RuntimeError as error:
             print ("ERROR: %s" % str(error))
 
     def do_params(self, _):
-        print (yaml.safe_dump(dict(self.env)))
+        for key in sorted(self.env.keys()):
+            print ("%s: %s" % (key, self.env[key]))
+            
+    @parse_line(config=[{"name": "poolname"}])
+    def do_pool(self, poolname):
+        try:
+            self.poolname=self.pools.lookup(poolname)
+            print ("INFO: pool=%s" % self.poolname)
+        except RuntimeError as error:
+            print ("ERROR: %s" % str(error))
 
     def do_pools(self, _):
         for poolname in sorted(self.pools.keys()):
-            print ("- %s [%i]" % (poolname,
+            poollabel=poolname.upper() if poolname==self.poolname else poolname
+            print ("- %s [%i]" % (poollabel,
                                   self.pools[poolname].size))
                     
     def render_patches(generator, nbreaks=0):
@@ -133,7 +147,7 @@ class Shell(cmd.Cmd):
 
     @render_patches(generator="random")
     def do_randomise(self, _):
-        return Patches.randomise(pool=self.pools[self.env["pool"]],
+        return Patches.randomise(pool=self.pools[self.poolname],
                                  n=self.env["npatches"])
 
     @parse_line(config=[{"name": "frag"}])
