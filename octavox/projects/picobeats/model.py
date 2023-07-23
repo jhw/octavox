@@ -92,8 +92,6 @@ Patterns=["0",
           "0|1|0|1",
           "0|1|0|2"]
 
-DensitySeed=22682
-
 def Q(seed):
     q=random.Random()
     q.seed(seed)
@@ -205,7 +203,6 @@ class Sequence(dict):
         dict.__init__(self, {"key": item["key"],
                              "pattern": Pattern(item["pattern"]),
                              "slices": Slices(item["slices"])})
-        self.qd=Q(seed=DensitySeed) 
         self.volume=1
                 
     def clone(self):
@@ -213,9 +210,9 @@ class Sequence(dict):
                          "pattern": self["pattern"],
                          "slices": self["slices"].clone()})
 
-    def randomise_pattern(self, limit, patterns=Patterns):
+    def randomise_pattern(self, limit):
         if random.random() < limit:
-            self["pattern"]=random.choice(patterns)
+            self["pattern"]=Pattern.randomise()
 
     def shuffle_slices(self, limit):
         if random.random() < limit:
@@ -230,13 +227,12 @@ class Sequence(dict):
             fn=getattr(self, slice["style"])
             nsamplebeats=pat["n"]*multiplier
             for i in range(nsamplebeats):
-                if self.qd.random() < density:
-                    fn(q, i, notes, offset, slice["samples"])
+                fn(q, i, density, notes, offset, slice["samples"])
             offset+=nsamplebeats
 
     def apply(fn):
-        def wrapped(self, q, i, notes, offset, samples):
-            v=fn(self, q, i, notes, offset, samples)
+        def wrapped(self, q, i, d, notes, offset, samples):
+            v=fn(self, q, i, d, notes, offset, samples)
             if v!=None: # explicit because could return zero
                 samplekey, volume = v
                 trig={"mod": self.mod,
@@ -248,28 +244,28 @@ class Sequence(dict):
         return wrapped
     
     @apply
-    def fourfloor(self, q, i, *args, k=Kick):
-        return vitling.fourfloor(q, i, k)
+    def fourfloor(self, q, i, d, *args, k=Kick):
+        return vitling.fourfloor(q, i, d, k)
     @apply
-    def electro(self, q, i, *args, k=Kick):
-        return vitling.electro(q, i, k)
+    def electro(self, q, i, d, *args, k=Kick):
+        return vitling.electro(q, i, d, k)
     @apply
-    def triplets(self, q, i, *args, k=Kick):
-        return vitling.triplets(q, i, k)
+    def triplets(self, q, i, d, *args, k=Kick):
+        return vitling.triplets(q, i, d, k)
     @apply
-    def backbeat(self, q, i, *args, k=Snare):
-        return vitling.backbeat(q, i, k)
+    def backbeat(self, q, i, d, *args, k=Snare):
+        return vitling.backbeat(q, i, d, k)
     @apply
-    def skip(self, q, i, *args, k=Snare):
-        return vitling.skip(q, i, k)
+    def skip(self, q, i, d, *args, k=Snare):
+        return vitling.skip(q, i, d, k)
     @apply
-    def offbeats(self, q, i, *args,
+    def offbeats(self, q, i, d, *args,
                  ko=OpenHat,
                  kc=ClosedHat):
-        return vitling.offbeats(q, i, ko, kc)    
+        return vitling.offbeats(q, i, d, ko, kc)    
     @apply
-    def closed(self, q, i, *args, k=ClosedHat):
-        return vitling.closed(q, i, k)
+    def closed(self, q, i, d, *args, k=ClosedHat):
+        return vitling.closed(q, i, d, k)
                             
 class Sequences(list):
 
@@ -419,10 +415,11 @@ class Patches(list):
     - also because patches may share samples
     """
         
-    def filter_samples(self, nbeats):
+    def filter_samples(self, nbeats, density):
         samplekeys={}
         for patch in self:
-            for track in patch.render(nbeats, density=1):
+            for track in patch.render(nbeats=nbeats,
+                                      density=density):
                 for trig in track:
                     if "key" in trig:
                         key=trig["mod"][:2].lower()
@@ -456,7 +453,8 @@ class Patches(list):
     def render_sunvox(self, banks, nbeats, density, filename,
                       nbreaks=0,
                       modconfig=ModConfig):
-        samplekeys=self.filter_samples(nbeats)
+        samplekeys=self.filter_samples(nbeats=nbeats,
+                                       density=density)
         for mod in modconfig["modules"]:
             klass=eval(mod["classname"])
             if "Sampler" in mod["name"]:

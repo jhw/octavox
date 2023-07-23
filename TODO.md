@@ -50,6 +50,7 @@
 
 ### done
 
+- remove qd
 - pattern.randomise classmethod
 - add new cli pool method which sets pool
 - remove pool from params
