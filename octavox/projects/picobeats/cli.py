@@ -177,6 +177,13 @@ class Shell(cmd.Cmd):
                                for i in range(self.env["npatches"]-1)])
 
     @parse_line(config=[{"name": "i"}])
+    @render_patches(generator="concat")
+    def do_concat(self, i):
+        I=[i] if not isinstance(i, list) else i
+        return Patches([self.project[i % len(self.project)]
+                       for i in I])
+    
+    @parse_line(config=[{"name": "i"}])
     @render_patches(generator="octachain",
                     nbreaks=1)
     def do_octachain(self, i, instruments="kk|sn|ht".split("|")):

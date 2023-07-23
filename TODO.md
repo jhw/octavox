@@ -1,7 +1,5 @@
 ### short
 
-- new concat method taking array
-
 ### medium
 
 - breaks for concat action
@@ -50,6 +48,7 @@
 
 ### done
 
+- new concat method taking array
 - remove qd
 - pattern.randomise classmethod
 - add new cli pool method which sets pool
