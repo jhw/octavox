@@ -1,7 +1,17 @@
 ### short
 
-- copy fdest lookup not working
+- remove mutate/ chain hack
+- fix copy fdest lookup 
   - should lookup prior to creation
+- rename chain as octachain
+- fix chain 1000 + mutate 1000
+- add AxB array support to cli
+- refactor octachain so takes an array of roots and ignores nbeats
+  - shouldn't run any mutations itself
+- new concat method which takes an array
+- add new cli pool method which sets pool
+- remove pool from params
+- allos param and pool to take blank second arg and work as getters
 
 ### medium
 
