@@ -104,9 +104,6 @@ class Shell(cmd.Cmd):
         def decorator(fn):
             def wrapped(self, *args, **kwargs):
                 try:
-                    if (generator=="mutate" and
-                        "chain-" in self.filename):
-                        raise RuntimeError("can't run mutate after chain")
                     self.filename=random_filename(generator)
                     print ("INFO: %s" % self.filename)
                     self.project=fn(self, *args, **kwargs)

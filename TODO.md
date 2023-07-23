@@ -1,6 +1,5 @@
 ### short
 
-- remove mutate/ chain hack
 - fix copy fdest lookup 
   - should lookup prior to creation
 - rename chain as octachain
@@ -57,6 +56,7 @@
 
 ### done
 
+- remove mutate/ chain hack
 - copy to use lookups
 - (replace clone with add?)
 - add pool to add pool to current pool
