@@ -70,12 +70,12 @@ class Shell(cmd.Cmd):
                     values.append(int(chunk))
             return values
         def parse_value(V):
-            if re.search("^(\\d+(x\\d+)?\\|)*\\d+(x\\d+)?$", V): # array
-                return parse_array(V)
             if re.search("^\\-?\\d+\\.\\d+$", V): # float
                 return float(V)
             elif re.search("^\\-?\\d+$", V): # int
                 return int(V)
+            elif re.search("^(\\d+(x\\d+)?\\|)*\\d+(x\\d+)?$", V): # array
+                return parse_array(V)
             else: # str
                 return V
         def decorator(fn):
@@ -155,8 +155,6 @@ class Shell(cmd.Cmd):
     @parse_line(config=[{"name": "i"}])
     @render_patches(generator="mutate")
     def do_mutate(self, i):
-        if isinstance(i, list):
-            i=i.pop()
         roots=self.project
         root=roots[i % len(roots)]
         limits={k: self.env["d%s" % k]
@@ -167,9 +165,9 @@ class Shell(cmd.Cmd):
     @parse_line(config=[{"name": "I"}])
     @render_patches(generator="octachain",
                     nbreaks=1)
-    def do_octachain2(self, I, instruments="kk|sn|ht".split("|")):
+    def do_octachain(self, I, instruments="kk|sn|ht".split("|")):
         if not isinstance(I, list):
-            I=list(I)
+            I=[I]
         chain=Patches([self.project[i % len(self.project)]
                        for i in I])
         for solo in instruments:

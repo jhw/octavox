@@ -1,10 +1,7 @@
 ### short
 
 - new concat method which takes an array
-
 - fix chain 1000 + mutate 1000
-- code to avoid forcing int|array types at mutate|octachain cli level
-
 - add new cli pool method which sets pool
 - remove pool from params
 - allow param and pool to take blank second arg and work as getters
@@ -53,6 +50,8 @@
 
 ### done
 
+- move int parse above array
+- handle octachain array conversion inline
 - refactor octachain so takes an array of roots 
   - ignores nbeats
   - shouldn't run any mutations itself
