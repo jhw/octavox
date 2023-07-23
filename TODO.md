@@ -1,7 +1,5 @@
 ### short
 
-- fix copy fdest lookup 
-  - should lookup prior to creation
 - fix chain 1000 + mutate 1000
 - add AxB array support to cli
 - refactor octachain so takes an array of roots and ignores nbeats
@@ -55,6 +53,8 @@
 
 ### done
 
+- fix copy fdest lookup 
+  - should lookup prior to creation
 - rename chain as octachain
 - remove mutate/ chain hack
 - copy to use lookups

@@ -181,23 +181,18 @@ class Shell(cmd.Cmd):
                         {"name": "fdest"}])
     def do_copy(self, fsrc, fdest):
         try:
-            def lookup(frag):
+            def lookup(self, frag):
                 try:
                     return self.pools.lookup(frag)
                 except RuntimeError as error:
                     return None
-            src=self.pools.lookup(fsrc)
+            src=lookup(self, fsrc)
             if not src:                
                 raise RuntimeError("src does not exist")
-            if fdest in self.pools:
-                dest=self.pools.lookup(fdest)
-                if not dest:
-                    raise RuntimeError("dest does not exist")
-            else:
+            dest=lookup(self, fdest)
+            if not dest:
                 self.pools[fdest]=Pool()
                 dest=fdest
-            if src==dest:
-                raise RuntimeError("src can't be the same as dest")
             print ("INFO: copying %s to %s" % (src, dest))
             self.pools[dest].add(self.pools[src])
         except RuntimeError as error:
