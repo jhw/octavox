@@ -60,7 +60,18 @@ class Shell(cmd.Cmd):
         self.filename=None
 
     def parse_line(config):
+        def parse_array(line):
+            values=[]
+            for chunk in line.split("|"):
+                if "x" in chunk:
+                    n, v = [int(tok) for tok in chunk.split("x")]
+                    values+=[v for i in range(n)]
+                else:
+                    values.append(int(chunk))
+            return values
         def parse_value(V):
+            if re.search("^(\\d+(x\\d+)?\\|)*\\d+(x\\d+)?$", V): # array
+                return parse_array(V)
             if re.search("^\\-?\\d+\\.\\d+$", V): # float
                 return float(V)
             elif re.search("^\\-?\\d+$", V): # int
@@ -177,6 +188,10 @@ class Shell(cmd.Cmd):
         # return
         return chain
 
+    @parse_line(config=[{"name": "I"}])
+    def do_octachain2(self, I):
+        print (I)
+    
     @parse_line(config=[{"name": "fsrc"},
                         {"name": "fdest"}])
     def do_copy(self, fsrc, fdest):

@@ -1,9 +1,10 @@
 ### short
 
-- fix chain 1000 + mutate 1000
-- add AxB array support to cli
-- refactor octachain so takes an array of roots and ignores nbeats
+- refactor octachain so takes an array of roots 
+  - ignores nbeats
   - shouldn't run any mutations itself
+
+- fix chain 1000 + mutate 1000
 - new concat method which takes an array
 - add new cli pool method which sets pool
 - remove pool from params
@@ -53,6 +54,7 @@
 
 ### done
 
+- add AxB array support to cli
 - fix copy fdest lookup 
   - should lookup prior to creation
 - rename chain as octachain
