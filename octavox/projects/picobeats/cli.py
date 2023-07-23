@@ -155,6 +155,8 @@ class Shell(cmd.Cmd):
     @parse_line(config=[{"name": "i"}])
     @render_patches(generator="mutate")
     def do_mutate(self, i):
+        if isinstance(i, list):
+            i=i.pop()
         roots=self.project
         root=roots[i % len(roots)]
         limits={k: self.env["d%s" % k]
@@ -162,35 +164,22 @@ class Shell(cmd.Cmd):
         return Patches([root]+[root.clone().mutate(limits=limits)
                                for i in range(self.env["npatches"]-1)])
 
-    @parse_line(config=[{"name": "i"}])
+    @parse_line(config=[{"name": "I"}])
     @render_patches(generator="octachain",
                     nbreaks=1)
-    def do_octachain(self, i, instruments="kk|sn|ht".split("|")):
-        # initialise
-        roots=self.project
-        root=roots[i % len(roots)]
-        chain=Patches([root])
-        nmutations=int(self.env["npatches"]/4)                
-        # generate mutations
-        limits={k: self.env["d%s" % k]
-                for k in "slices|pat|seed|style".split("|")}
-        for i in range(nmutations-1):
-            mutation=root.clone().mutate(limits=limits)
-            chain.append(mutation)
-        # add mutes
+    def do_octachain2(self, I, instruments="kk|sn|ht".split("|")):
+        if not isinstance(I, list):
+            I=list(I)
+        chain=Patches([self.project[i % len(self.project)]
+                       for i in I])
         for solo in instruments:
             mutes=[inst for inst in instruments
                    if inst!=solo]
-            for mutation in chain[:nmutations]:
-                clone=mutation.clone()
+            for root in chain[:len(I)]:
+                clone=root.clone()
                 clone["mutes"]=mutes
                 chain.append(clone)
-        # return
         return chain
-
-    @parse_line(config=[{"name": "I"}])
-    def do_octachain2(self, I):
-        print (I)
     
     @parse_line(config=[{"name": "fsrc"},
                         {"name": "fdest"}])
