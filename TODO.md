@@ -1,6 +1,6 @@
 ### short
 
-- new concat method which takes an array
+- new concat method taking array
 
 ### medium
 
