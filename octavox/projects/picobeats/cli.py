@@ -152,9 +152,9 @@ class Shell(cmd.Cmd):
                                for i in range(self.env["npatches"]-1)])
 
     @parse_line(config=[{"name": "i"}])
-    @render_patches(generator="chain",
+    @render_patches(generator="octachain",
                     nbreaks=1)
-    def do_chain(self, i, instruments="kk|sn|ht".split("|")):
+    def do_octachain(self, i, instruments="kk|sn|ht".split("|")):
         # initialise
         roots=self.project
         root=roots[i % len(roots)]
