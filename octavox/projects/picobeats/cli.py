@@ -162,12 +162,11 @@ class Shell(cmd.Cmd):
         return Patches([root]+[root.clone().mutate(limits=limits)
                                for i in range(self.env["npatches"]-1)])
 
-    @parse_line(config=[{"name": "I"}])
+    @parse_line(config=[{"name": "i"}])
     @render_patches(generator="octachain",
                     nbreaks=1)
-    def do_octachain(self, I, instruments="kk|sn|ht".split("|")):
-        if not isinstance(I, list):
-            I=[I]
+    def do_octachain(self, i, instruments="kk|sn|ht".split("|")):
+        I=[i] if not isinstance(i, list) else i
         chain=Patches([self.project[i % len(self.project)]
                        for i in I])
         for solo in instruments:

@@ -444,7 +444,11 @@ class Patches(list):
         with open(projfile, 'w') as f:
             f.write(json.dumps(self,
                                indent=2))
-    
+
+    """
+    - key may not exist in samplekeys if current project is output of a chain where mutes have been applied
+    """
+            
     @init_paths(["tmp/picobeats/sunvox"])
     def render_sunvox(self, banks, nbeats, density, filename,
                       nbreaks=0,
@@ -454,7 +458,7 @@ class Patches(list):
             klass=eval(mod["classname"])
             if "Sampler" in mod["name"]:
                 key=mod["name"][:2].lower() # change?
-                kwargs={"samplekeys": samplekeys[key],
+                kwargs={"samplekeys": samplekeys[key] if key in samplekeys else [], # NB see above
                         "banks": banks}
             else:
                 kwargs={}

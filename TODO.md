@@ -1,10 +1,10 @@
 ### short
 
-- new concat method which takes an array
-- fix chain 1000 + mutate 1000
 - add new cli pool method which sets pool
 - remove pool from params
 - allow param and pool to take blank second arg and work as getters
+
+- new concat method which takes an array
 
 ### medium
 
@@ -50,6 +50,8 @@
 
 ### done
 
+- fix chain 1000 + mutate 1000
+- not convinced chain is generating the right output
 - move int parse above array
 - handle octachain array conversion inline
 - refactor octachain so takes an array of roots 
