@@ -1,6 +1,5 @@
 ### short [01-svdrum]
 
-- notes at beat rendering level re svdrum
 - custom tracks class which contains filter_samples()
 - replace passing of nbeats to init_pattern/blank with property of tracks class
 - runtime module naming checks
