@@ -25,7 +25,15 @@ class SVPatch(dict):
                 if "key" in trig:
                     keys.setdefault(key, set()) # NB set()
                     keys[key].add(tuple(trig["key"])) # NB tuple()
-        
+
+    @property
+    def grid(self):
+        def classfn(v):
+            return SVEffect if "ctrl" in v else SVTrig
+        return [{note["i"]:classfn(note)(note)
+                 for note in track}
+                for key, track in self.items()]
+                    
 class SVTrig(dict):
 
     def __init__(self, item):
@@ -227,13 +235,6 @@ class SVProject:
             proj.connect(modules[src],
                          output if dest==Output else modules[dest])
 
-    def init_grid(self, patch):
-        def classfn(v):
-            return SVEffect if "ctrl" in v else SVTrig
-        return [{note["i"]:classfn(note)(note)
-                 for note in track}
-                for key, track in patch.items()]
-
     def attach_pattern(fn):
         def wrapped(*args, **kwargs):
             rvpat=fn(*args, **kwargs)
@@ -250,7 +251,7 @@ class SVProject:
                      offset,
                      color,
                      height=Height):
-        grid=self.init_grid(patch)
+        grid=patch.grid
         def notefn(self, j, i):
             return grid[i][j].render(modules,
                                      controllers) if j in grid[i] else RVNote()

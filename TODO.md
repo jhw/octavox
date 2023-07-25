@@ -6,7 +6,6 @@
 ### medium
 
 - blacklist
-- move code that converts notes to grid into SVPatch
 - pass config from cli and validate there
 - ability to specify track key when copying
 - sampler to take pitch info
@@ -59,6 +58,7 @@
 
 ### done
 
+- move code that converts notes to grid into SVPatch
 - clean up raw wavfile names 
 - rename patterns as fragments
 - add SnareDrum for completeness
