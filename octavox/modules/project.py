@@ -2,6 +2,16 @@ from rv.api import Project as RVProject
 from rv.pattern import Pattern as RVPattern
 from rv.note import Note as RVNote
 
+# START TEMP CODE
+
+from rv.modules.echo import Echo as RVEcho
+from rv.modules.distortion import Distortion as RVDistortion
+from rv.modules.reverb import Reverb as RVReverb
+
+from octavox.modules.sampler import SVSampler
+
+# END TEMP CODE
+
 import math, random, yaml
 
 Output="Output"
@@ -145,6 +155,36 @@ class SVProject:
             if newbest < best:
                 grid, best = newgrid, newbest
         return grid
+
+    def filter_samples(self,
+                       patches,
+                       nbeats,
+                       density):
+        samplekeys={}
+        for patch in patches:
+            for track in patch.render(nbeats=nbeats,
+                                      density=density):
+                for trig in track:
+                    if "key" in trig:
+                        key=trig["mod"][:2].lower()
+                        samplekeys.setdefault(key, set()) # NB set()
+                        samplekeys[key].add(tuple(trig["key"])) # NB tuple()
+        return {k:list(v)
+                for k, v in samplekeys.items()}
+    
+    def init_modclasses(self,
+                        modconfig,
+                        samplekeys,
+                        banks):
+        for mod in modconfig["modules"]:
+            modclass=eval(mod["classname"])
+            if "Sampler" in mod["name"]:
+                key=mod["name"][:2].lower() # change?
+                kwargs={"samplekeys": samplekeys[key] if key in samplekeys else [],
+                        "banks": banks}
+            else:
+                kwargs={}
+            mod["instance"]=modclass(**kwargs)
     
     def init_modules(self,
                      proj,
@@ -265,11 +305,17 @@ class SVProject:
                nbeats,
                nbreaks,
                density,
-               banks=None,
+               banks,
                globalz=Globals):
         proj=RVProject()
         proj.initial_bpm=globalz["bpm"]
         proj.global_volume=globalz["volume"]
+        samplekeys=self.filter_samples(patches=patches,
+                                       nbeats=nbeats,
+                                       density=density)
+        self.init_modclasses(modconfig=modconfig,
+                             samplekeys=samplekeys,
+                             banks=banks)
         modules=self.init_modules(proj=proj,
                                   modconfig=modconfig)
         self.link_modules(proj=proj,

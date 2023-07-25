@@ -1,8 +1,3 @@
-from rv.modules.echo import Echo as RVEcho
-from rv.modules.distortion import Distortion as RVDistortion
-from rv.modules.reverb import Reverb as RVReverb
-
-from octavox.modules.sampler import SVSampler
 from octavox.modules.project import SVProject
 
 import octavox.modules.patterns.vitling909 as vitling
@@ -409,25 +404,6 @@ class Patches(list):
         list.__init__(self, [Patch(**patch)
                              for patch in patches])
 
-    """
-    - unfortunately track needs to be rendered before samples can be filtered
-    - because not all samples are used post- rendering, and there are limited sample slots
-    - also because patches may share samples
-    """
-        
-    def filter_samples(self, nbeats, density):
-        samplekeys={}
-        for patch in self:
-            for track in patch.render(nbeats=nbeats,
-                                      density=density):
-                for trig in track:
-                    if "key" in trig:
-                        key=trig["mod"][:2].lower()
-                        samplekeys.setdefault(key, set()) # NB set()
-                        samplekeys[key].add(tuple(trig["key"])) # NB tuple()
-        return {k:list(v)
-                for k, v in samplekeys.items()}
-
     def init_paths(paths):
         def decorator(fn):
             def wrapped(*args, **kwargs):
@@ -445,25 +421,10 @@ class Patches(list):
             f.write(json.dumps(self,
                                indent=2))
 
-    """
-    - key may not exist in samplekeys if current project is output of a chain where mutes have been applied
-    """
-            
     @init_paths(["tmp/picobeats/sunvox"])
     def render_sunvox(self, banks, nbeats, density, filename,
                       nbreaks=0,
                       modconfig=ModConfig):
-        samplekeys=self.filter_samples(nbeats=nbeats,
-                                       density=density)
-        for mod in modconfig["modules"]:
-            klass=eval(mod["classname"])
-            if "Sampler" in mod["name"]:
-                key=mod["name"][:2].lower() # change?
-                kwargs={"samplekeys": samplekeys[key] if key in samplekeys else [], # NB see above
-                        "banks": banks}
-            else:
-                kwargs={}
-            mod["instance"]=klass(**kwargs)
         project=SVProject().render(patches=self,
                                    modconfig=modconfig,
                                    banks=banks,
