@@ -1,4 +1,4 @@
-import json, os, urllib.request, zipfile
+import json, os, re, urllib.request, zipfile
 
 PicoDrum="http://data.ericasynths.lv/picodrum/"
 
@@ -22,24 +22,26 @@ def filter_blocks(buf):
     return [format_block(i, block.split(b"<?xpacket begin")[0])
             for i, block in enumerate(buf.split(b"\202\244name")[1:])]
 
+def clean_filename(filename):
+    tokens=filename.split(".")
+    handle, fileext = ".".join(tokens[:-1]), tokens[-1]
+    cleanhandle=" ".join([tok for tok in [re.sub("\\W", "", tok)
+                                          for tok in re.split("\\s", handle)]
+                          if tok!=''])                         
+    return "%s.%s" % (cleanhandle, fileext)
+
 def generate(packname, packfile):
     zfname="tmp/picobeats/banks/%s.zip" % packname.replace(" ", "-").lower()
     zf=zipfile.ZipFile(zfname, 'w')
     buf=fetch_bin(packfile)
     blocks=filter_blocks(buf)
     for i, blockname, block in blocks:
-        """
-        j="0%i" % (i+1) if i < 9 else str(i+1)
-        encoding=blockname.split(b".")[-1].decode("utf-8")        
-        filename="%s.%s" % (j, encoding)
-        zf.writestr(filename, block)
-        """
-        filename=blockname.decode("utf-8")
+        filename=clean_filename(blockname.decode("utf-8"))
         zf.writestr(filename, block)        
 
 if __name__=="__main__":
     try:
-        for path in ["tmp/banks/pico"]:
+        for path in ["tmp/picobeats/banks"]:
             if not os.path.exists(path):
                 os.makedirs(path)            
         for packname, packfile in pack_list().items():
