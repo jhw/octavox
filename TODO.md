@@ -1,13 +1,13 @@
 ### short [01-svdrum]
 
 - abstract single config structure into yaml file
-
 - modify sequence rendering if bank is defined as svdrum 
 - add svdrum curated pool with default curated snares
 - add svdrum kick volume factors
 
 ### medium
 
+- clean up raw wavfile names 
 - sampler to take pitch info
 - don't like naming of `tracks=SVPatch()` in model
 - temperature
