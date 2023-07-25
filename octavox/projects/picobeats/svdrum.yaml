@@ -1,6 +1,20 @@
 kk:
   - - svdrum
-    - 0 
+    - 0
+  - - svdrum
+    - 1
+  - - svdrum
+    - 2 
+  - - svdrum
+    - 3
+  - - svdrum
+    - 12
+  - - svdrum
+    - 13
+  - - svdrum
+    - 14
+  - - svdrum
+    - 15
 sn:
   - - default
     - 28. 7007 HC.wav
@@ -12,8 +26,15 @@ sn:
     - 31. IB HC.wav
 oh:
   - - svdrum
-    - 0 
+    - 4
+  - - svdrum
+    - 5
+  - - svdrum
+    - 16    
 ch:
   - - svdrum
-    - 0 
-
+    - 6 
+  - - svdrum
+    - 17
+  - - svdrum
+    - 18    

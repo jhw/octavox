@@ -1,10 +1,10 @@
 ### short [01-svdrum]
 
-- complete svdrum config
 - add svdrum to list of pools
 
 ### medium
 
+- extend svdrum config
 - svdrum kick volume factors
 - blacklist
 - pass config from cli and validate there
@@ -63,6 +63,7 @@
 
 ### done
 
+- complete svdrum config
 - modify sequence rendering if bank is defined as svdrum 
 - validate sequence modules and keys
 - validate lfo modules
