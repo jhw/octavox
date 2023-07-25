@@ -1,7 +1,6 @@
 ### short [01-svdrum]
 
-- check how sampler indexes samples
-- see if filter_samples could be improved
+- tracks.render() to return list so you maintain key information
 
 - eliminate double call to render
 

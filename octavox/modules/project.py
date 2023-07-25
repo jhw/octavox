@@ -18,7 +18,13 @@ class SVTrig(dict):
     def __init__(self, item):
         dict.__init__(self, item)
 
-    def render(self, modules, controllers,
+    """
+    - NB existence of `key` within a trig indicates a Sampler, which requires a call to lookup() in order to return an `id`
+    """
+        
+    def render(self,
+               modules,
+               controllers,
                volume=128):
         mod=modules[self["mod"]]
         trig=1+(mod.lookup(self["key"]) if "key" in self else self["id"])
@@ -33,7 +39,9 @@ class SVEffect(dict):
     def __init__(self, item):
         dict.__init__(self, item)
         
-    def render(self, modules, controllers,
+    def render(self,
+               modules,
+               controllers,
                ctrlmult=256,
                maxvalue=256*128):
         mod, controller = modules[self["mod"]], controllers[self["mod"]]
@@ -113,19 +121,26 @@ class SVProject:
         return [int(offset+random.random()*(255-offset))
                 for i in range(3)]
     
-    def new_color(self, offset=64, contrast=128, n=16):
+    def new_color(self,
+                  offset=64,
+                  contrast=128,
+                  n=16):
         for i in range(n):
             color=self.random_color(offset)
             if (max(color)-min(color)) > contrast:
                 return color
         return [127 for i in range(3)]
 
-    def mutate_color(self, color, contrast=32):
+    def mutate_color(self,
+                     color,
+                     contrast=32):
         values=range(-contrast, contrast)
         return [min(255, max(0, rgb+random.choice(values)))
                 for rgb in  color]
 
-    def init_layout(self, modconfig, n=1000):
+    def init_layout(self,
+                    modconfig,
+                    n=1000):
         def shuffle(grid, links, q):
             clone=grid.clone()
             clone.shuffle(q)
@@ -200,7 +215,10 @@ class SVProject:
             modules[name]=mod
         return modules
     
-    def link_modules(self, proj, modconfig, modules):
+    def link_modules(self,
+                     proj,
+                     modconfig,
+                     modules):
         output=sorted(proj.modules, key=lambda x: -x.index).pop()
         for src, dest in modconfig["links"]:
             proj.connect(modules[src],
