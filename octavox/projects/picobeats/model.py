@@ -125,6 +125,10 @@ def init_machine(config):
         return wrapped
     return decorator
 
+def Mixer(instkey, samplekey):
+    modname, _ = samplekey
+    return 0.75 if instkey=="kk" and modname=="svdrum" else 1.0
+
 class Sequence(dict):
 
     @classmethod
@@ -138,11 +142,11 @@ class Sequence(dict):
 
     @init_machine(config=Config["sequences"])
     def __init__(self, item,
-                 volume=1):
+                 mixer=Mixer):
         dict.__init__(self, {"key": item["key"],
                              "pattern": Pattern(item["pattern"]),
                              "slices": Slices(item["slices"])})
-        self.volume=volume
+        self.mixer=mixer
                 
     def clone(self):
         return Sequence({"key": self["key"],
@@ -180,9 +184,10 @@ class Sequence(dict):
             v=fn(self, q, i, d, tracks, offset, samples)
             if v!=None: # explicit because could return zero
                 instkey, volume = v
-                trig={"vel": self.volume*volume,
-                      "i": i+offset}
                 samplekey=samples[instkey]
+                volume=self.mixer(instkey, samplekey)
+                trig={"vel": volume,
+                      "i": i+offset}
                 if samplekey[0]!="svdrum":
                     trig["mod"]=self.mod
                     trig["key"]=samplekey

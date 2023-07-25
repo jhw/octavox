@@ -1,6 +1,5 @@
 ### short
 
-- svdrum kick volume factors
 - pattern temperature
 
 ### medium
@@ -58,6 +57,7 @@
 
 ### done
 
+- svdrum kick volume factors
 - refactor sequence render variables
 - move code that converts notes to grid into SVPatch
 - clean up raw wavfile names 
