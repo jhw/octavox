@@ -1,15 +1,13 @@
-### short [01-svdrum]
+### short
 
-- add SnareDrum for completeness
-- create svdrum config dynamically
+- svdrum kick volume factors
+- clean up raw wavfile names 
 
 ### medium
 
-- svdrum kick volume factors
 - blacklist
 - pass config from cli and validate there
 - cli blend() action
-- clean up raw wavfile names 
 - ability to specify track key when copying
 - sampler to take pitch info
 - pattern temperature
@@ -62,6 +60,7 @@
 
 ### done
 
+- add SnareDrum for completeness
 - svdrum trig needs to switch module to drum
   - single drum module?
   - replace sampler with Drum?

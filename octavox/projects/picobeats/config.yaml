@@ -10,6 +10,8 @@ modules:
     key: ht
   - name: KickDrum
     class: rv.modules.drumsynth.DrumSynth
+  - name: SnareDrum
+    class: rv.modules.drumsynth.DrumSynth
   - name: HatDrum
     class: rv.modules.drumsynth.DrumSynth
   - name: Echo
@@ -34,6 +36,8 @@ links:
   - - HatSampler
     - Echo
   - - KickDrum
+    - Echo
+  - - SnareDrum
     - Echo
   - - HatDrum
     - Echo

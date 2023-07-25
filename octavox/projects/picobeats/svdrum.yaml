@@ -15,26 +15,80 @@ kk:
     - 14
   - - svdrum
     - 15
-sn:
-  - - default
-    - 28. 7007 HC.wav
-  - - default
-    - 29. 8008 HC.wav
-  - - default
-    - 30. 9009 HC.wav
-  - - default
-    - 31. IB HC.wav
+  - - svdrum
+    - 24
+  - - svdrum
+    - 25
+  - - svdrum
+    - 26
+  - - svdrum
+    - 27
+  - - svdrum
+    - 36
+  - - svdrum
+    - 37
+  - - svdrum
+    - 38
+  - - svdrum
+    - 39
+  - - svdrum
+    - 48
+  - - svdrum
+    - 49
+  - - svdrum
+    - 50
+  - - svdrum
+    - 51
+  - - svdrum
+    - 60
+  - - svdrum
+    - 61
+  - - svdrum
+    - 62
+  - - svdrum
+    - 63    
+sn: []
 oh:
   - - svdrum
     - 4
   - - svdrum
     - 5
   - - svdrum
-    - 16    
-ch:
-  - - svdrum
-    - 6 
+    - 16
   - - svdrum
     - 17
   - - svdrum
-    - 18    
+    - 28
+  - - svdrum
+    - 29
+  - - svdrum
+    - 40
+  - - svdrum
+    - 41
+  - - svdrum
+    - 52
+  - - svdrum
+    - 53
+  - - svdrum
+    - 64
+  - - svdrum
+    - 65
+ch:
+  - - svdrum
+    - 6
+  - - svdrum
+    - 18
+  - - svdrum
+    - 30
+  - - svdrum
+    - 42
+  - - svdrum
+    - 54
+  - - svdrum
+    - 66
+
+
+
+
+
+

@@ -231,9 +231,14 @@ class Shell(cmd.Cmd):
         print ("INFO: exiting")
         return True
 
+def init_svdrum_curated(pools, sn="default-curated"):
+    pool=yaml.safe_load(open("octavox/projects/picobeats/svdrum.yaml").read())
+    pool["sn"]=pools[sn]["sn"]
+    return Pool(pool)
+    
 if __name__=="__main__":
     banks=Banks("octavox/banks/pico")
     pools=banks.spawn_pools().cull()
-    pools["svdrum-curated"]=Pool(yaml.safe_load(open("octavox/projects/picobeats/svdrum.yaml").read()))
+    pools["svdrum-curated"]=init_svdrum_curated(pools)
     Shell(banks=banks,
           pools=pools).cmdloop()
