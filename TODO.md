@@ -1,6 +1,5 @@
 ### short [01-svdrum]
 
-- modify sequence rendering if bank is defined as svdrum 
 - add svdrum curated pool with default curated snares
 - add svdrum kick volume factors
 
@@ -11,7 +10,7 @@
 - clean up raw wavfile names 
 - ability to specify track key when copying
 - sampler to take pitch info
-- temperature
+- pattern temperature
 
 ### long
 
@@ -61,6 +60,7 @@
 
 ### done
 
+- modify sequence rendering if bank is defined as svdrum 
 - validate sequence modules and keys
 - validate lfo modules
 - abstract single config structure into yaml file
