@@ -424,12 +424,13 @@ class Patches(list):
     def render_sunvox(self, banks, nbeats, density, filename,
                       nbreaks=0,
                       modconfig=ModConfig):
-        project=SVProject().render(patches=self,
+        project=SVProject().render(patches=[patch.render(nbeats=nbeats,
+                                                         density=density)
+                                            for patch in self],
                                    modconfig=modconfig,
                                    banks=banks,
                                    nbeats=nbeats,
-                                   nbreaks=nbreaks,
-                                   density=density)
+                                   nbreaks=nbreaks)
         projfile="tmp/picobeats/sunvox/%s.sunvox" % filename
         with open(projfile, 'wb') as f:
             project.write_to(f)

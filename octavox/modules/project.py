@@ -309,16 +309,12 @@ class SVProject:
                modconfig,
                nbeats,
                nbreaks,
-               density,
                banks,
                globalz=Globals):
         proj=RVProject()
         proj.initial_bpm=globalz["bpm"]
         proj.global_volume=globalz["volume"]
-        rendered=[patch.render(nbeats=nbeats,
-                               density=density)
-                  for patch in patches]                  
-        samplekeys=self.filter_samples(patches=rendered)
+        samplekeys=self.filter_samples(patches=patches)
         self.init_modclasses(modconfig=modconfig,
                              samplekeys=samplekeys,
                              banks=banks)
@@ -328,7 +324,7 @@ class SVProject:
                           modconfig=modconfig,
                           modules=modules)
         proj.patterns=self.init_patterns(modules=modules,
-                                         patches=rendered,
+                                         patches=patches,
                                          nbeats=nbeats,
                                          nbreaks=nbreaks)
         return proj
