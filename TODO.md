@@ -1,6 +1,8 @@
 ### short [01-svdrum]
 
-- add svdrum to list of pools
+- svdrum trig needs to switch module to drum
+  - single drum module?
+  - replace sampler with Drum?
 
 ### medium
 
@@ -63,6 +65,7 @@
 
 ### done
 
+- add svdrum-curated to list of pools
 - complete svdrum config
 - modify sequence rendering if bank is defined as svdrum 
 - validate sequence modules and keys

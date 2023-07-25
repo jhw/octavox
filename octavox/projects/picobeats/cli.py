@@ -234,5 +234,6 @@ class Shell(cmd.Cmd):
 if __name__=="__main__":
     banks=Banks("octavox/banks/pico")
     pools=banks.spawn_pools().cull()
+    pools["svdrum-curated"]=Pool(yaml.safe_load(open("octavox/projects/picobeats/svdrum.yaml").read()))
     Shell(banks=banks,
           pools=pools).cmdloop()
