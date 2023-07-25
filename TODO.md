@@ -1,13 +1,15 @@
 ### short [01-svdrum]
 
+- abstract single config structure into yaml file
+
 - modify sequence rendering if bank is defined as svdrum 
-- add svdrum curated module with default curated snares
+- add svdrum curated pool with default curated snares
 - add svdrum kick volume factors
 
 ### medium
 
+- sampler to take pitch info
 - don't like naming of `tracks=SVPatch()` in model
-
 - temperature
 
 ### long
@@ -55,6 +57,7 @@
 
 ### done
 
+- remove snaredrum as is crap
 - add drum modules
 - runtime module naming checks
 - should be able to rename KKSampler as KickSampler

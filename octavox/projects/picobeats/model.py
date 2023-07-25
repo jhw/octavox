@@ -4,6 +4,10 @@ import octavox.modules.patterns.vitling909 as vitling
 
 import json, os, random, yaml
 
+"""
+- no SnareDrum as is crap
+"""
+
 ModConfig=yaml.safe_load("""
 modules:
   - name: KickSampler
@@ -16,8 +20,6 @@ modules:
     class: octavox.modules.sampler.SVSampler
     key: ht
   - name: KickDrum
-    class: rv.modules.drumsynth.DrumSynth
-  - name: SnareDrum
     class: rv.modules.drumsynth.DrumSynth
   - name: HatDrum
     class: rv.modules.drumsynth.DrumSynth
@@ -43,8 +45,6 @@ links:
   - - HatSampler
     - Echo
   - - KickDrum
-    - Echo
-  - - SnareDrum
     - Echo
   - - HatDrum
     - Echo
