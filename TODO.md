@@ -1,6 +1,6 @@
 ### short [01-svdrum]
 
-- move module instantiation and sanple gathering into project
+- move module instantiation and sample gathering into project
   - you might have to walk a structure iteratively in order to find samples
 
 - load rv modules dynamically
