@@ -132,6 +132,7 @@ class Shell(cmd.Cmd):
                     self.filename=random_filename(generator)
                     print ("INFO: %s" % self.filename)
                     self.project=fn(self, *args, **kwargs)
+                    self.project.validate_config()
                     self.project.render_json(filename=self.filename)
                     self.project.render_sunvox(banks=self.banks,
                                                nbeats=self.env["nbeats"],

@@ -1,4 +1,4 @@
-from octavox.modules.project import SVProject, SVPatch
+from octavox.modules.project import SVProject, SVPatch, Output
 
 import octavox.modules.patterns.vitling909 as vitling
 
@@ -439,6 +439,28 @@ class Patches(list):
         list.__init__(self, [Patch(**patch)
                              for patch in patches])
 
+    def validate_config(self,
+                        modconfig=ModConfig,
+                        seqconfig=SequenceConfig,
+                        lfoconfig=LfoConfig):
+        def validate_sampler_keys():
+            modkeys=[mod["key"] for mod in modconfig["modules"]
+                     if "key" in mod]
+            for key in modkeys:
+                if key not in seqconfig:
+                    raise RuntimeError("key %s missing from sequence config" % key)
+                for key in seqconfig:
+                    if key not in modkeys:
+                        raise RuntimeError("key %s missing from module config" % key)
+        def validate_links():
+            modnames=[Output]+[mod["name"] for mod in modconfig["modules"]]
+            for links in modconfig["links"]:
+                for modname in links:
+                    if modname not in modnames:
+                        raise RuntimeError("unknown module %s in links" % modname)
+        validate_sampler_keys()
+        validate_links()
+                    
     def init_paths(paths):
         def decorator(fn):
             def wrapped(*args, **kwargs):

@@ -1,7 +1,5 @@
 ### short [01-svdrum]
 
-- runtime module naming checks
-
 - add drum modules
 - add svdrum curated module with default curated snares
 - modifiy sequence rendering if bank is defined as svdrum 
@@ -58,6 +56,7 @@
 
 ### done
 
+- runtime module naming checks
 - should be able to rename KKSampler as KickSampler
 - check what happens if you change a module key from kk
   - do you need a runtime check here?
