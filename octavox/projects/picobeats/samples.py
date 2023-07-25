@@ -4,41 +4,9 @@ import os, random, re, yaml, zipfile
 
 Instruments="kk|sn|oh|ch".split("|")
 
-Patterns=yaml.safe_load("""
-kk:
-  - kick
-  - kik
-  - kk
-  - bd
-  - bass
-sn:
-  - snare
-  - sn
-  - sd
-  - clap
-  - clp
-  - cp
-  - hc
-  - rim
-  - plip
-  - rs
-oh:
-  - open
-  - hat
-  - ht 
-  - oh
-  - perc
-  - ussion
-  - prc
-ch:
-  - closed
-  - hat
-  - ht 
-  - " ch" # else will match glitch; but still matches chord unfortunately
-  - perc
-  - ussion
-  - prc
-""")
+Patterns=yaml.safe_load(open("octavox/projects/picobeats/patterns.yaml").read())
+
+SVDrum=yaml.safe_load(open("octavox/projects/picobeats/svdrum.yaml").read())
 
 class Pool(dict):
 

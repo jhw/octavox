@@ -1,10 +1,12 @@
 ### short [01-svdrum]
 
-- add svdrum curated pool with default curated snares
+- complete svdrum config
+- add svdrum to list of pools
 - add svdrum kick volume factors
 
 ### medium
 
+- blacklist
 - pass config from cli and validate there
 - cli blend() action
 - clean up raw wavfile names 
