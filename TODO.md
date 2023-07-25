@@ -1,13 +1,11 @@
 ### short [01-svdrum]
 
-- check master and original versions of vitling offbeats
-
 - complete svdrum config
 - add svdrum to list of pools
-- add svdrum kick volume factors
 
 ### medium
 
+- svdrum kick volume factors
 - blacklist
 - pass config from cli and validate there
 - cli blend() action
@@ -15,6 +13,7 @@
 - ability to specify track key when copying
 - sampler to take pitch info
 - pattern temperature
+- re- check vitling patterns
 
 ### long
 
