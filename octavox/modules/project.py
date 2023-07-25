@@ -162,13 +162,10 @@ class SVProject:
         return grid
 
     def filter_samples(self,
-                       patches,
-                       nbeats,
-                       density):
+                       patches):
         samplekeys={}
         for patch in patches:
-            for key, track in patch.render(nbeats=nbeats,
-                                           density=density).items():
+            for key, track in patch.items():
                 for trig in track:
                     if "key" in trig:
                         samplekeys.setdefault(key, set()) # NB set()
@@ -286,25 +283,22 @@ class SVProject:
                       modules,
                       patches,
                       nbeats,
-                      nbreaks,
-                      density):
+                      nbreaks):
         controllers=self.init_controllers(modules)
         offset=SVOffset()
         patterns, color = [], None
         for i, patch in enumerate(patches):
-            rendered=patch.render(nbeats=nbeats,
-                                  density=density)
             color=self.new_color() if 0==i%4 else self.mutate_color(color)
             self.init_pattern(patterns=patterns,
                               modules=modules,
                               controllers=controllers,
-                              patch=rendered,
+                              patch=patch,
                               nbeats=nbeats,
                               offset=offset,
                               color=color)            
             for i in range(nbreaks):
                 self.init_blank(patterns=patterns,
-                                patch=rendered,
+                                patch=patch,
                                 nbeats=nbeats,
                                 offset=offset,
                                 color=color)
@@ -321,9 +315,10 @@ class SVProject:
         proj=RVProject()
         proj.initial_bpm=globalz["bpm"]
         proj.global_volume=globalz["volume"]
-        samplekeys=self.filter_samples(patches=patches,
-                                       nbeats=nbeats,
-                                       density=density)
+        rendered=[patch.render(nbeats=nbeats,
+                               density=density)
+                  for patch in patches]                  
+        samplekeys=self.filter_samples(patches=rendered)
         self.init_modclasses(modconfig=modconfig,
                              samplekeys=samplekeys,
                              banks=banks)
@@ -333,10 +328,9 @@ class SVProject:
                           modconfig=modconfig,
                           modules=modules)
         proj.patterns=self.init_patterns(modules=modules,
-                                         patches=patches,
+                                         patches=rendered,
                                          nbeats=nbeats,
-                                         nbreaks=nbreaks,
-                                         density=density)
+                                         nbreaks=nbreaks)
         return proj
 
 if __name__=="__main__":

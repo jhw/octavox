@@ -1,9 +1,9 @@
 ### short [01-svdrum]
 
+- move patch rendering back into model
 - notes at beat rendering level re svdrum
 - custom tracks class which contains filter_samples()
-- eliminate double call to render
-
+- replace passing of nbeats to init_pattern/blank with property of tracks class
 - runtime module naming checks
 
 - add drum modules
@@ -60,6 +60,7 @@
 
 ### done
 
+- eliminate double call to render
 - tracks.render() to return dict so you maintain key information
 - load rv/sampler modules dynamically
 - move module instantiation and sample gathering into project
