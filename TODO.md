@@ -1,10 +1,5 @@
 ### short [01-svdrum]
 
-- should be able to rename KKSampler as KickSampler
-
-- check what happens if you change a module key from kk
-  - do you need a runtime check here?
-
 - runtime module naming checks
 
 - add drum modules
@@ -63,6 +58,9 @@
 
 ### done
 
+- should be able to rename KKSampler as KickSampler
+- check what happens if you change a module key from kk
+  - do you need a runtime check here?
 - consider moving filter_samples() into SVTrack
 - consider renaming patch as tracks
 - replace passing of nbeats to init_pattern/blank with property of tracks class

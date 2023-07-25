@@ -6,12 +6,15 @@ import json, os, random, yaml
 
 ModConfig=yaml.safe_load("""
 modules:
-  - name: KKSampler
+  - name: KickSampler
     class: octavox.modules.sampler.SVSampler
-  - name: SNSampler
+    key: kk
+  - name: SnareSampler
     class: octavox.modules.sampler.SVSampler
-  - name: HTSampler
+    key: sn    
+  - name: HatSampler
     class: octavox.modules.sampler.SVSampler
+    key: ht
   - name: Echo
     class: rv.modules.echo.Echo
     defaults:
@@ -27,11 +30,11 @@ modules:
     defaults:
       wet: 4
 links:
-  - - KKSampler
+  - - KickSampler
     - Echo
-  - - SNSampler
+  - - SnareSampler
     - Echo
-  - - HTSampler
+  - - HatSampler
     - Echo
   - - Echo
     - Distortion
@@ -43,18 +46,18 @@ links:
 
 SequenceConfig=yaml.safe_load("""
 kk:
-  mod: KKSampler
+  mod: KickSampler
   styles:
   - fourfloor
   - electro
   - triplets
 sn:
-  mod: SNSampler
+  mod: SnareSampler
   styles:
   - backbeat
   - skip
 ht: 
-  mod: HTSampler
+  mod: HatSampler
   styles:
   - offbeats
   - closed

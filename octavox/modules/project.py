@@ -194,10 +194,9 @@ class SVProject:
         for mod in modconfig["modules"]:
             modclass=init_class(mod)
             kwargs={}
-            if "Sampler" in mod["name"]:
-                key=mod["name"][:2].lower() # change?
-                kwargs={"samplekeys": samplekeys[key] if key in samplekeys else [],
-                        "banks": banks}
+            if mod["class"].endswith("SVSampler"):
+                kwargs={"banks": banks,
+                        "samplekeys": samplekeys[mod["key"]] if mod["key"] in samplekeys else []}
             mod["instance"]=modclass(**kwargs)
     
     def init_modules(self,
