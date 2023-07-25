@@ -13,12 +13,19 @@ volume: 256
 
 BreakSz, Height = 16, 64
 
-class SVTracks(dict):
+class SVPatch(dict):
 
     def __init__(self, nbeats, item={}):
         dict.__init__(self)
         self.nbeats=nbeats
 
+    def filter_samplekeys(self, keys):
+        for key, track in self.items():
+            for trig in track:
+                if "key" in trig:
+                    keys.setdefault(key, set()) # NB set()
+                    keys[key].add(tuple(trig["key"])) # NB tuple()
+        
 class SVTrig(dict):
 
     def __init__(self, item):
@@ -167,17 +174,13 @@ class SVProject:
                 grid, best = newgrid, newbest
         return grid
 
-    def filter_samples(self,
-                       patches):
-        samplekeys={}
+    def filter_samplekeys(self,
+                          patches):
+        keys={}
         for patch in patches:
-            for key, track in patch.items():
-                for trig in track:
-                    if "key" in trig:
-                        samplekeys.setdefault(key, set()) # NB set()
-                        samplekeys[key].add(tuple(trig["key"])) # NB tuple()
+            patch.filter_samplekeys(keys)
         return {k:list(v)
-                for k, v in samplekeys.items()}
+                for k, v in keys.items()}
     
     def init_modclasses(self,
                         modconfig,
@@ -314,7 +317,7 @@ class SVProject:
         proj=RVProject()
         proj.initial_bpm=globalz["bpm"]
         proj.global_volume=globalz["volume"]
-        samplekeys=self.filter_samples(patches=patches)
+        samplekeys=self.filter_samplekeys(patches=patches)
         self.init_modclasses(modconfig=modconfig,
                              samplekeys=samplekeys,
                              banks=banks)

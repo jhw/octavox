@@ -1,4 +1,4 @@
-from octavox.modules.project import SVProject, SVTracks
+from octavox.modules.project import SVProject, SVPatch
 
 import octavox.modules.patterns.vitling909 as vitling
 
@@ -417,7 +417,7 @@ class Patch(dict):
     def render(self,
                nbeats,
                density):
-        tracks=SVTracks(nbeats=nbeats)
+        tracks=SVPatch(nbeats=nbeats)
         self.render_sequences(tracks=tracks,
                               nbeats=nbeats,
                               density=density)

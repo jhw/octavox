@@ -1,6 +1,5 @@
 ### short [01-svdrum]
 
-- custom tracks class which contains filter_samples()
 - runtime module naming checks
 
 - add drum modules
@@ -9,6 +8,8 @@
 - add svdrum kick volume factors
 
 ### medium
+
+- don't like naming of `tracks=SVPatch()` in model
 
 - temperature
 
@@ -57,6 +58,8 @@
 
 ### done
 
+- consider moving filter_samples() into SVTrack
+- consider renaming patch as tracks
 - replace passing of nbeats to init_pattern/blank with property of tracks class
 - move patch rendering back into model
 - eliminate double call to render
