@@ -198,7 +198,7 @@ class Sequence(dict):
         dict.__init__(self, {"key": item["key"],
                              "pattern": Pattern(item["pattern"]),
                              "slices": Slices(item["slices"])})
-        self.volume=1
+        self.volume=volume
                 
     def clone(self):
         return Sequence({"key": self["key"],
