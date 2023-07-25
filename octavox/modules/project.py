@@ -152,21 +152,20 @@ class SVProject:
                 for rgb in  color]
 
     def init_layout(self,
-                    modconfig,
+                    config,
                     n=2000):
-        def shuffle(grid, links, q):
+        def shuffle(config, grid, q):
             clone=grid.clone()
             clone.shuffle(q)
-            distance=clone.rms_distance(links)
+            distance=clone.rms_distance(config["links"])
             return (clone, distance)
         modnames=[Output]+[mod["name"]
-                           for mod in modconfig["modules"]]
+                           for mod in config["modules"]]
         grid=ModGrid.randomise(modnames)
-        links=modconfig["links"]
-        best=grid.rms_distance(links)
+        best=grid.rms_distance(config["links"])
         for i in range(n):
             q=int(math.ceil(len(modnames)*(n-i)/n))
-            clones=sorted([shuffle(grid, links, q)
+            clones=sorted([shuffle(config, grid, q)
                            for i in range(10)],
                           key=lambda x: -x[1])
             newgrid, newbest = clones[-1]
@@ -183,7 +182,7 @@ class SVProject:
                 for k, v in keys.items()}
     
     def init_modclasses(self,
-                        modconfig,
+                        config,
                         samplekeys,
                         banks):
         def init_class(mod):
@@ -191,7 +190,7 @@ class SVProject:
             modpath, classname = ".".join(tokens[:-1]), tokens[-1]
             module=importlib.import_module(modpath)
             return getattr(module, classname)
-        for mod in modconfig["modules"]:
+        for mod in config["modules"]:
             modclass=init_class(mod)
             kwargs={}
             if mod["class"].endswith("SVSampler"):
@@ -201,11 +200,11 @@ class SVProject:
     
     def init_modules(self,
                      proj,
-                     modconfig,
+                     config,
                      multipliers={"x": 1, "y": -2}):
-        positions=self.init_layout(modconfig)
+        positions=self.init_layout(config)
         modules={}
-        for i, moditem in enumerate(modconfig["modules"]):
+        for i, moditem in enumerate(config["modules"]):
             mod, name = moditem["instance"], moditem["name"]
             setattr(mod, "name", name)
             for i, attr in enumerate(["x", "y"]):            
@@ -221,10 +220,10 @@ class SVProject:
     
     def link_modules(self,
                      proj,
-                     modconfig,
+                     config,
                      modules):
         output=sorted(proj.modules, key=lambda x: -x.index).pop()
-        for src, dest in modconfig["links"]:
+        for src, dest in config["links"]:
             proj.connect(modules[src],
                          output if dest==Output else modules[dest])
 
@@ -309,7 +308,7 @@ class SVProject:
 
     def render(self,
                patches,
-               modconfig,
+               config,
                nbreaks,
                banks,
                globalz=Globals):
@@ -317,13 +316,13 @@ class SVProject:
         proj.initial_bpm=globalz["bpm"]
         proj.global_volume=globalz["volume"]
         samplekeys=self.filter_samplekeys(patches=patches)
-        self.init_modclasses(modconfig=modconfig,
+        self.init_modclasses(config=config,
                              samplekeys=samplekeys,
                              banks=banks)
         modules=self.init_modules(proj=proj,
-                                  modconfig=modconfig)
+                                  config=config)
         self.link_modules(proj=proj,
-                          modconfig=modconfig,
+                          config=config,
                           modules=modules)
         proj.patterns=self.init_patterns(modules=modules,
                                          patches=patches,

@@ -8,7 +8,7 @@ import json, os, random, yaml
 - no SnareDrum as is crap
 """
 
-ModConfig=yaml.safe_load("""
+Config=yaml.safe_load("""
 modules:
   - name: KickSampler
     class: octavox.modules.sampler.SVSampler
@@ -54,40 +54,36 @@ links:
     - Reverb
   - - Reverb
     - Output
-""")
-
-SequenceConfig=yaml.safe_load("""
-kk:
-  mod: KickSampler
-  styles:
-  - fourfloor
-  - electro
-  - triplets
-sn:
-  mod: SnareSampler
-  styles:
-  - backbeat
-  - skip
-ht: 
-  mod: HatSampler
-  styles:
-  - offbeats
-  - closed
-""")
-
-LfoConfig=yaml.safe_load("""
-ec0:
-  mod: Echo
-  ctrl: wet
-  range: [0, 1]
-  increment: 0.25
-  step: 4
-ec1:
-  mod: Echo
-  ctrl: feedback
-  range: [0, 1]
-  increment: 0.25
-  step: 4
+sequences:
+  kk:
+    mod: KickSampler
+    styles:
+    - fourfloor
+    - electro
+    - triplets
+  sn:
+    mod: SnareSampler
+    styles:
+    - backbeat
+    - skip
+  ht: 
+    mod: HatSampler
+    styles:
+    - offbeats
+    - closed
+lfos:
+  ec0:
+    mod: Echo
+    ctrl: wet
+    range: [0, 1]
+    increment: 0.25
+    step: 4
+  ec1:
+    mod: Echo
+    ctrl: feedback
+    range: [0, 1]
+    increment: 0.25
+    step: 4
 """)
 
 Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
@@ -154,7 +150,7 @@ class Slice(dict):
     def randomise(self,
                   key,
                   pool,
-                  config=SequenceConfig):
+                  config=Config["sequences"]):
         return Slice(samples=Samples.randomise(key, pool),
                      seed=int(1e8*random.random()),
                      style=random.choice(config[key]["styles"]))
@@ -180,7 +176,7 @@ class Slice(dict):
     def randomise_style(self,
                         key,
                         limit,
-                        config=SequenceConfig):
+                        config=Config["sequences"]):
         if random.random() < limit:
             self["style"]=random.choice(config[key]["styles"])
     
@@ -222,7 +218,7 @@ class Sequence(dict):
                          "slices": Slices.randomise(key,
                                                     pool)})
 
-    @init_machine(config=SequenceConfig)
+    @init_machine(config=Config["sequences"])
     def __init__(self, item,
                  volume=1):
         dict.__init__(self, {"key": item["key"],
@@ -303,7 +299,7 @@ class Sequences(list):
     @classmethod
     def randomise(self,
                   pool,
-                  config=SequenceConfig):
+                  config=Config["sequences"]):
         return Sequences([Sequence.randomise(key, pool)
                           for key in config])
 
@@ -322,7 +318,7 @@ class Lfo(dict):
         return Lfo({"key": key,
                     "seed": int(1e8*random.random())})
 
-    @init_machine(config=LfoConfig)
+    @init_machine(config=Config["lfos"])
     def __init__(self, item):
         dict.__init__(self, item)
         
@@ -361,7 +357,7 @@ class Lfo(dict):
 class Lfos(list):
 
     @classmethod
-    def randomise(self, config=LfoConfig):
+    def randomise(self, config=Config["lfos"]):
         return Lfos([Lfo.randomise(key)
                      for key in config])
 
@@ -414,7 +410,7 @@ class Patch(dict):
                          tracks,
                          nbeats,
                          density,
-                         config=SequenceConfig):
+                         config=Config["sequences"]):
         for sequence in self["sequences"]:
             if sequence["key"] not in self["mutes"]:
                 sequence.render(nbeats=nbeats,
@@ -424,7 +420,7 @@ class Patch(dict):
     def render_lfos(self,
                     tracks,
                     nbeats,
-                    config=LfoConfig):
+                    config=Config["lfos"]):
         for lfo in self["lfos"]:
             lfo.render(nbeats=nbeats,
                        tracks=tracks)
@@ -451,22 +447,19 @@ class Patches(list):
         list.__init__(self, [Patch(**patch)
                              for patch in patches])
 
-    def validate_config(self,
-                        modconfig=ModConfig,
-                        seqconfig=SequenceConfig,
-                        lfoconfig=LfoConfig):
+    def validate_config(self, config=Config):
         def validate_sampler_keys():
-            modkeys=[mod["key"] for mod in modconfig["modules"]
+            modkeys=[mod["key"] for mod in config["modules"]
                      if "key" in mod]
             for key in modkeys:
-                if key not in seqconfig:
+                if key not in config["sequences"]:
                     raise RuntimeError("key %s missing from sequence config" % key)
-                for key in seqconfig:
+                for key in config["sequences"]:
                     if key not in modkeys:
                         raise RuntimeError("key %s missing from module config" % key)
         def validate_links():
-            modnames=[Output]+[mod["name"] for mod in modconfig["modules"]]
-            for links in modconfig["links"]:
+            modnames=[Output]+[mod["name"] for mod in config["modules"]]
+            for links in config["links"]:
                 for modname in links:
                     if modname not in modnames:
                         raise RuntimeError("unknown module %s in links" % modname)
@@ -497,11 +490,11 @@ class Patches(list):
                       density,
                       filename,
                       nbreaks=0,
-                      modconfig=ModConfig):
+                      config=Config):
         project=SVProject().render(patches=[patch.render(nbeats=nbeats,
                                                          density=density)
                                             for patch in self],
-                                   modconfig=modconfig,
+                                   config=config,
                                    banks=banks,
                                    nbreaks=nbreaks)
         projfile="tmp/picobeats/sunvox/%s.sunvox" % filename
