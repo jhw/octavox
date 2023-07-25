@@ -1,5 +1,7 @@
 ### short [01-svdrum]
 
+- check master and original versions of vitling offbeats
+
 - complete svdrum config
 - add svdrum to list of pools
 - add svdrum kick volume factors

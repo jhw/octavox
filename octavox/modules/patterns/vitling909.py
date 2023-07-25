@@ -31,12 +31,12 @@ def skip(q, i, d, k):
     elif q.random() < 0.1*d:
         return (k, 0.2+0.2*q.random())
 
-def offbeats(q, i, d, ko, kc):
+def offbeats(q, i, d, k):
     if i % 4 == 2 and q.random() < d:
-        return (ko, 0.4)
+        return (k[0], 0.4)
     elif q.random() < 0.3*d:
-        k = ko if q.random() < 0.5 else kc
-        return (kc, 0.2*q.random())
+        k = k[0] if q.random() < 0.5 else k[1]
+        return (k, 0.2*q.random())
 
 def closed(q, i, d, k):
     if i % 2 == 0 and q.random() < d:

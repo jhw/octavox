@@ -6,11 +6,9 @@ import json, os, random, yaml
 
 Config=yaml.safe_load(open("octavox/projects/picobeats/config.yaml").read())
 
-Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
-
-InstrumentMapping={Kick: [Kick],
-                   Snare: [Snare],
-                   Hats: [OpenHat, ClosedHat]}
+InstrumentMapping={"kk": ["kk"],
+                   "sn": ["sn"],
+                   "ht": ["oh", "ch"]}
 
 Patterns=["0",
           "0|0|1|0",
@@ -194,27 +192,25 @@ class Sequence(dict):
         return wrapped
     
     @apply
-    def fourfloor(self, q, i, d, *args, k=Kick):
+    def fourfloor(self, q, i, d, *args, k="kk"):
         return vitling.fourfloor(q, i, d, k)
     @apply
-    def electro(self, q, i, d, *args, k=Kick):
+    def electro(self, q, i, d, *args, k="kk"):
         return vitling.electro(q, i, d, k)
     @apply
-    def triplets(self, q, i, d, *args, k=Kick):
+    def triplets(self, q, i, d, *args, k="kk"):
         return vitling.triplets(q, i, d, k)
     @apply
-    def backbeat(self, q, i, d, *args, k=Snare):
+    def backbeat(self, q, i, d, *args, k="sn"):
         return vitling.backbeat(q, i, d, k)
     @apply
-    def skip(self, q, i, d, *args, k=Snare):
+    def skip(self, q, i, d, *args, k="sn"):
         return vitling.skip(q, i, d, k)
     @apply
-    def offbeats(self, q, i, d, *args,
-                 ko=OpenHat,
-                 kc=ClosedHat):
-        return vitling.offbeats(q, i, d, ko, kc)    
+    def offbeats(self, q, i, d, *args, k=["oh", "ch"]):
+        return vitling.offbeats(q, i, d, k)    
     @apply
-    def closed(self, q, i, d, *args, k=ClosedHat):
+    def closed(self, q, i, d, *args, k="ch"):
         return vitling.closed(q, i, d, k)
                             
 class Sequences(list):
