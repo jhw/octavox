@@ -1,11 +1,11 @@
 ### short
 
 - more detailed svdrum mixer
-- check vitling patterns
+
+- pattern temperature?
 
 ### medium
 
-- blacklist
 - pass config from cli and validate there
 - ability to specify track key when copying
 - sampler to take pitch info
@@ -15,7 +15,7 @@
 
 ### thoughts
 
-- pattern temperature?
+- blacklist
   - is over- optimising
 - don't like naming of `tracks=SVPatch()` in model
 - breaks for concat action?
@@ -59,6 +59,7 @@
 
 ### done
 
+- check vitling patterns
 - try forcing more zero echo wet stuff
 - rename patterns.yaml as fragments.yaml?
 - svdrum kick volume factors
