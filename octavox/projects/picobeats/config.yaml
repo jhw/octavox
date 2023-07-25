@@ -71,9 +71,11 @@ lfos:
     range: [0, 1]
     increment: 0.25
     step: 4
+    live: 0.66666
   ec1:
     mod: Echo
     ctrl: feedback
     range: [0, 1]
     increment: 0.25
     step: 4
+    live: 1.0

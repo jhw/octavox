@@ -276,9 +276,12 @@ class Lfo(dict):
     @apply
     def sample_hold(self, q, i, *args):
         if 0 == i % self.step:
-            floor, ceil = self.range
-            v0=floor+(ceil-floor)*q.random()
-            return self.increment*int(0.5+v0/self.increment)
+            if q.random() < self.live:
+                floor, ceil = self.range
+                v0=floor+(ceil-floor)*q.random()
+                return self.increment*int(0.5+v0/self.increment)
+            else:
+                return 0.0
                 
 class Lfos(list):
 

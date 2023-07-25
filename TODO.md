@@ -2,8 +2,6 @@
 
 - more detailed svdrum mixer
 - check vitling patterns
-- try forcing more zero echo wet stuff
-
 
 ### medium
 
@@ -61,6 +59,7 @@
 
 ### done
 
+- try forcing more zero echo wet stuff
 - rename patterns.yaml as fragments.yaml?
 - svdrum kick volume factors
 - refactor sequence render variables
