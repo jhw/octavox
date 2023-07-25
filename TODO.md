@@ -1,13 +1,15 @@
 ### short
 
-### medium
+- svdrum
+- temperature
 
-- breaks for concat action
+### medium
 
 ### long
 
 ### thoughts
 
+- breaks for concat action?
 - add back slicetemp? 
   - feels like an over- optimisation, and too much passing stuff around
 - add sample to add current patch to pool?
