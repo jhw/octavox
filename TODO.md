@@ -1,13 +1,12 @@
 ### short
 
-- rename patterns as fragments
 - svdrum kick volume factors
-- clean up raw wavfile names 
 - pattern temperature
 
 ### medium
 
 - blacklist
+- move code that converts notes to grid into SVPatch
 - pass config from cli and validate there
 - ability to specify track key when copying
 - sampler to take pitch info
@@ -60,6 +59,8 @@
 
 ### done
 
+- clean up raw wavfile names 
+- rename patterns as fragments
 - add SnareDrum for completeness
 - svdrum trig needs to switch module to drum
   - single drum module?
