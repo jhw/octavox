@@ -1,11 +1,12 @@
 ### short
 
+- rename patterns as fragments
 - svdrum kick volume factors
 - clean up raw wavfile names 
+- pattern temperature
 
 ### medium
 
-- pattern temperature
 - blacklist
 - pass config from cli and validate there
 - ability to specify track key when copying

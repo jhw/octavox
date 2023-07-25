@@ -4,7 +4,7 @@ import os, random, re, yaml, zipfile
 
 Instruments="kk|sn|oh|ch".split("|")
 
-Patterns=yaml.safe_load(open("octavox/projects/picobeats/patterns.yaml").read())
+Fragments=yaml.safe_load(open("octavox/projects/picobeats/fragments.yaml").read())
 
 SVDrum=yaml.safe_load(open("octavox/projects/picobeats/svdrum.yaml").read())
 
@@ -95,13 +95,13 @@ class Bank:
 
     def spawn_curated(self,
                       instruments=Instruments,
-                      patterns=Patterns):
+                      fragments=Fragments):
         pool, wavfiles = Pool(), self.wavfiles
         for wavfile in wavfiles:
             for inst in Instruments:
                 pool.setdefault(inst, [])
-                for pat in patterns[inst]:
-                    if re.search(pat, wavfile, re.I):
+                for frag in fragments[inst]:
+                    if re.search(frag, wavfile, re.I):
                         pool[inst].append([self.name, wavfile])
                         # break
         return pool
