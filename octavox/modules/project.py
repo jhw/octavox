@@ -167,11 +167,10 @@ class SVProject:
                        density):
         samplekeys={}
         for patch in patches:
-            for track in patch.render(nbeats=nbeats,
-                                      density=density):
+            for key, track in patch.render(nbeats=nbeats,
+                                           density=density).items():
                 for trig in track:
                     if "key" in trig:
-                        key=trig["mod"][:2].lower()
                         samplekeys.setdefault(key, set()) # NB set()
                         samplekeys[key].add(tuple(trig["key"])) # NB tuple()
         return {k:list(v)
@@ -229,7 +228,7 @@ class SVProject:
             return SVEffect if "ctrl" in v else SVTrig
         return [{note["i"]:classfn(note)(note)
                  for note in track}
-                for track in patch]
+                for key, track in patch.items()]
 
     def attach_pattern(fn):
         def wrapped(*args, **kwargs):

@@ -1,8 +1,10 @@
 ### short [01-svdrum]
 
-- tracks.render() to return list so you maintain key information
-
+- notes at beat rendering level re svdrum
+- custom tracks class which contains filter_samples()
 - eliminate double call to render
+
+- runtime module naming checks
 
 - add drum modules
 - add svdrum curated module with default curated snares
@@ -58,6 +60,7 @@
 
 ### done
 
+- tracks.render() to return dict so you maintain key information
 - load rv/sampler modules dynamically
 - move module instantiation and sample gathering into project
   - you might have to walk a structure iteratively in order to find samples
