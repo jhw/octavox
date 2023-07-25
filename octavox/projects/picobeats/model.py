@@ -180,13 +180,15 @@ class Sequence(dict):
             v=fn(self, q, i, d, tracks, offset, samples)
             if v!=None: # explicit because could return zero
                 samplekey, volume = v
-                trig={"mod": self.mod,
-                      "vel": self.volume*volume,
+                trig={"vel": self.volume*volume,
                       "i": i+offset}
-                if samplekey[0]=="svdrum":
-                    trig["id"]=samplekey[1] # NB
+                sample=samples[samplekey]
+                if sample[0]=="svdrum":
+                    trig["mod"]=self.mod.replace("Sampler", "Drum")
+                    trig["id"]=sample[1]
                 else:
-                    trig["key"]=samples[samplekey]
+                    trig["mod"]=self.mod
+                    trig["key"]=sample
                 tracks.setdefault(self["key"], [])
                 tracks[self["key"]].append(trig)
         return wrapped

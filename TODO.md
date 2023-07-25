@@ -1,12 +1,11 @@
 ### short [01-svdrum]
 
-- svdrum trig needs to switch module to drum
-  - single drum module?
-  - replace sampler with Drum?
+- create svdrum config dynamically
+
+- rename patterns.yaml as fragments.yaml
 
 ### medium
 
-- extend svdrum config
 - svdrum kick volume factors
 - blacklist
 - pass config from cli and validate there
@@ -65,6 +64,9 @@
 
 ### done
 
+- svdrum trig needs to switch module to drum
+  - single drum module?
+  - replace sampler with Drum?
 - add svdrum-curated to list of pools
 - complete svdrum config
 - modify sequence rendering if bank is defined as svdrum 
