@@ -1,9 +1,19 @@
-### short
+### short [01-svdrum]
 
-- svdrum
-- temperature
+- move module instantiation and sanple gathering into project
+  - you might have to walk a structure iteratively in order to find samples
+
+- load rv modules dynamically
+- eliminate double call to render 
+
+- add drum modules
+- add svdrum curated module with default curated snares
+- modifiy sequence rendering if bank is defined as svdrum 
+- add svdrum kick volume factors
 
 ### medium
+
+- temperature
 
 ### long
 
