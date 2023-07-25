@@ -1,7 +1,6 @@
 ### short [01-svdrum]
 
 - custom tracks class which contains filter_samples()
-- replace passing of nbeats to init_pattern/blank with property of tracks class
 - runtime module naming checks
 
 - add drum modules
@@ -58,6 +57,7 @@
 
 ### done
 
+- replace passing of nbeats to init_pattern/blank with property of tracks class
 - move patch rendering back into model
 - eliminate double call to render
 - tracks.render() to return dict so you maintain key information

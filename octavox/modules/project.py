@@ -13,6 +13,12 @@ volume: 256
 
 BreakSz, Height = 16, 64
 
+class SVTracks(dict):
+
+    def __init__(self, nbeats, item={}):
+        dict.__init__(self)
+        self.nbeats=nbeats
+
 class SVTrig(dict):
 
     def __init__(self, item):
@@ -231,7 +237,7 @@ class SVProject:
         def wrapped(*args, **kwargs):
             rvpat=fn(*args, **kwargs)
             kwargs["patterns"].append(rvpat)
-            kwargs["offset"].increment(kwargs["nbeats"])
+            kwargs["offset"].increment(kwargs["patch"].nbeats)
         return wrapped
     
     @attach_pattern
@@ -240,7 +246,6 @@ class SVProject:
                      modules,
                      controllers,
                      patch,
-                     nbeats,
                      offset,
                      color,
                      height=Height):
@@ -248,8 +253,8 @@ class SVProject:
         def notefn(self, j, i):
             return grid[i][j].render(modules,
                                      controllers) if j in grid[i] else RVNote()
-        return RVPattern(lines=nbeats,
-                        tracks=len(patch),
+        return RVPattern(lines=patch.nbeats,
+                         tracks=len(patch),
                          x=offset.value,
                          y_size=height,
                          bg_color=color).set_via_fn(notefn)
@@ -258,13 +263,12 @@ class SVProject:
     def init_blank(self,
                    patterns,
                    patch,
-                   nbeats,
                    offset,
                    color,
                    height=Height):
         def notefn(self, j, i):
             return RVNote()
-        return RVPattern(lines=nbeats,
+        return RVPattern(lines=patch.nbeats,
                          tracks=len(patch),
                          x=offset.value,
                          y_size=height,
@@ -282,7 +286,6 @@ class SVProject:
     def init_patterns(self,
                       modules,
                       patches,
-                      nbeats,
                       nbreaks):
         controllers=self.init_controllers(modules)
         offset=SVOffset()
@@ -293,13 +296,11 @@ class SVProject:
                               modules=modules,
                               controllers=controllers,
                               patch=patch,
-                              nbeats=nbeats,
                               offset=offset,
                               color=color)            
             for i in range(nbreaks):
                 self.init_blank(patterns=patterns,
                                 patch=patch,
-                                nbeats=nbeats,
                                 offset=offset,
                                 color=color)
         return patterns
@@ -307,7 +308,6 @@ class SVProject:
     def render(self,
                patches,
                modconfig,
-               nbeats,
                nbreaks,
                banks,
                globalz=Globals):
@@ -325,7 +325,6 @@ class SVProject:
                           modules=modules)
         proj.patterns=self.init_patterns(modules=modules,
                                          patches=patches,
-                                         nbeats=nbeats,
                                          nbreaks=nbreaks)
         return proj
 

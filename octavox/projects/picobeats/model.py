@@ -1,4 +1,4 @@
-from octavox.modules.project import SVProject
+from octavox.modules.project import SVProject, SVTracks
 
 import octavox.modules.patterns.vitling909 as vitling
 
@@ -120,7 +120,10 @@ class Pattern(str):
 class Samples(dict):
 
     @classmethod
-    def randomise(self, key, pool, mapping=InstrumentMapping):
+    def randomise(self,
+                  key,
+                  pool,
+                  mapping=InstrumentMapping):
         return Samples({k:v for k, v in pool.randomise().items()
                         if k in mapping[key]})
 
@@ -133,13 +136,18 @@ class Samples(dict):
 class Slice(dict):
 
     @classmethod
-    def randomise(self, key, pool,
+    def randomise(self,
+                  key,
+                  pool,
                   config=SequenceConfig):
         return Slice(samples=Samples.randomise(key, pool),
                      seed=int(1e8*random.random()),
                      style=random.choice(config[key]["styles"]))
     
-    def __init__(self, samples, seed, style):
+    def __init__(self,
+                 samples,
+                 seed,
+                 style):
         dict.__init__(self, {"samples": Samples(samples),
                              "seed": seed,
                              "style": style})
@@ -154,7 +162,9 @@ class Slice(dict):
             seed=int(1e8*random.random())
             self["seed"]=seed
 
-    def randomise_style(self, key, limit,
+    def randomise_style(self,
+                        key,
+                        limit,
                         config=SequenceConfig):
         if random.random() < limit:
             self["style"]=random.choice(config[key]["styles"])
@@ -162,7 +172,10 @@ class Slice(dict):
 class Slices(list):
 
     @classmethod
-    def randomise(self, key, pool, n=3):
+    def randomise(self,
+                  key,
+                  pool,
+                  n=3):
         return Slices([Slice.randomise(key, pool)
                        for i in range(n)])
     
@@ -186,7 +199,9 @@ def init_machine(config):
 class Sequence(dict):
 
     @classmethod
-    def randomise(self, key, pool):
+    def randomise(self,
+                  key,
+                  pool):
         return Sequence({"key": key,
                          "pattern": Pattern.randomise(),
                          "slices": Slices.randomise(key,
@@ -213,7 +228,10 @@ class Sequence(dict):
         if random.random() < limit:
             random.shuffle(self["slices"])
 
-    def render(self, notes, nbeats, density):
+    def render(self,
+               tracks,
+               nbeats,
+               density):
         multiplier=int(nbeats/self["pattern"].size)
         offset=0
         for pat in self["pattern"].expanded:
@@ -222,20 +240,23 @@ class Sequence(dict):
             fn=getattr(self, slice["style"])
             nsamplebeats=pat["n"]*multiplier
             for i in range(nsamplebeats):
-                fn(q, i, density, notes, offset, slice["samples"])
+                fn(q, i, density, tracks, offset, slice["samples"])
             offset+=nsamplebeats
 
     def apply(fn):
-        def wrapped(self, q, i, d, notes, offset, samples):
-            v=fn(self, q, i, d, notes, offset, samples)
+        def wrapped(self, q, i, d,
+                    tracks,
+                    offset,
+                    samples):
+            v=fn(self, q, i, d, tracks, offset, samples)
             if v!=None: # explicit because could return zero
                 samplekey, volume = v
                 trig={"mod": self.mod,
                       "key": samples[samplekey],
                       "vel": self.volume*volume,
                       "i": i+offset}
-                notes.setdefault(self["key"], [])
-                notes[self["key"]].append(trig)
+                tracks.setdefault(self["key"], [])
+                tracks[self["key"]].append(trig)
         return wrapped
     
     @apply
@@ -265,7 +286,9 @@ class Sequence(dict):
 class Sequences(list):
 
     @classmethod
-    def randomise(self, pool, config=SequenceConfig):
+    def randomise(self,
+                  pool,
+                  config=SequenceConfig):
         return Sequences([Sequence.randomise(key, pool)
                           for key in config])
 
@@ -296,21 +319,21 @@ class Lfo(dict):
             seed=int(1e8*random.random())
             self["seed"]=seed
 
-    def render(self, nbeats, notes):
+    def render(self, nbeats, tracks):
         q=Q(self["seed"])
         for i in range(nbeats):
-            self.sample_hold(q, i, notes)
+            self.sample_hold(q, i, tracks)
 
     def apply(fn):
-        def wrapped(self, q, i, notes):
-            v=fn(self, q, i, notes)
+        def wrapped(self, q, i, tracks):
+            v=fn(self, q, i, tracks)
             if v!=None: # explicit because could return zero
                 trig={"mod": self.mod,
                       "ctrl": self.ctrl,
                       "v": v,
                       "i": i}
-                notes.setdefault(self["key"], [])
-                notes[self["key"]].append(trig)
+                tracks.setdefault(self["key"], [])
+                tracks[self["key"]].append(trig)
         return wrapped
 
     @apply
@@ -347,7 +370,10 @@ class Patch(dict):
                      lfos=Lfos.randomise(),
                      mutes=[])
         
-    def __init__(self, sequences, lfos, mutes):
+    def __init__(self,
+                 sequences,
+                 lfos,
+                 mutes):
         dict.__init__(self, {"sequences": Sequences(sequences),
                              "lfos": Lfos(lfos),
                              "mutes": mutes})
@@ -369,28 +395,35 @@ class Patch(dict):
             lfo.randomise_seed(limits["seed"])
         return self
     
-    def render_sequences(self, notes, nbeats, density,
+    def render_sequences(self,
+                         tracks,
+                         nbeats,
+                         density,
                          config=SequenceConfig):
         for sequence in self["sequences"]:
             if sequence["key"] not in self["mutes"]:
                 sequence.render(nbeats=nbeats,
-                                notes=notes,
+                                tracks=tracks,
                                 density=density)
                     
-    def render_lfos(self, notes, nbeats,
+    def render_lfos(self,
+                    tracks,
+                    nbeats,
                     config=LfoConfig):
         for lfo in self["lfos"]:
             lfo.render(nbeats=nbeats,
-                       notes=notes)
+                       tracks=tracks)
 
-    def render(self, nbeats, density):
-        notes={}
-        self.render_sequences(notes=notes,
+    def render(self,
+               nbeats,
+               density):
+        tracks=SVTracks(nbeats=nbeats)
+        self.render_sequences(tracks=tracks,
                               nbeats=nbeats,
                               density=density)
-        self.render_lfos(notes=notes,
+        self.render_lfos(tracks=tracks,
                          nbeats=nbeats)
-        return notes
+        return tracks
 
 class Patches(list):
 
@@ -421,7 +454,11 @@ class Patches(list):
                                indent=2))
 
     @init_paths(["tmp/picobeats/sunvox"])
-    def render_sunvox(self, banks, nbeats, density, filename,
+    def render_sunvox(self,
+                      banks,
+                      nbeats,
+                      density,
+                      filename,
                       nbreaks=0,
                       modconfig=ModConfig):
         project=SVProject().render(patches=[patch.render(nbeats=nbeats,
@@ -429,7 +466,6 @@ class Patches(list):
                                             for patch in self],
                                    modconfig=modconfig,
                                    banks=banks,
-                                   nbeats=nbeats,
                                    nbreaks=nbreaks)
         projfile="tmp/picobeats/sunvox/%s.sunvox" % filename
         with open(projfile, 'wb') as f:
