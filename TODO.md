@@ -1,6 +1,9 @@
 ### short
 
-- pattern temperature
+- more detailed svdrum mixer
+- check vitling patterns
+- try forcing more zero echo wet stuff
+
 
 ### medium
 
@@ -14,7 +17,8 @@
 
 ### thoughts
 
-- rename patterns.yaml as fragments.yaml?
+- pattern temperature?
+  - is over- optimising
 - don't like naming of `tracks=SVPatch()` in model
 - breaks for concat action?
 - add back slicetemp? 
@@ -57,6 +61,7 @@
 
 ### done
 
+- rename patterns.yaml as fragments.yaml?
 - svdrum kick volume factors
 - refactor sequence render variables
 - move code that converts notes to grid into SVPatch
