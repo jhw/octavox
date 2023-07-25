@@ -1,8 +1,7 @@
 ### short [01-svdrum]
 
-- add drum modules
+- modify sequence rendering if bank is defined as svdrum 
 - add svdrum curated module with default curated snares
-- modifiy sequence rendering if bank is defined as svdrum 
 - add svdrum kick volume factors
 
 ### medium
@@ -56,6 +55,7 @@
 
 ### done
 
+- add drum modules
 - runtime module naming checks
 - should be able to rename KKSampler as KickSampler
 - check what happens if you change a module key from kk

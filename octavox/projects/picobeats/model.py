@@ -15,6 +15,12 @@ modules:
   - name: HatSampler
     class: octavox.modules.sampler.SVSampler
     key: ht
+  - name: KickDrum
+    class: rv.modules.drumsynth.DrumSynth
+  - name: SnareDrum
+    class: rv.modules.drumsynth.DrumSynth
+  - name: HatDrum
+    class: rv.modules.drumsynth.DrumSynth
   - name: Echo
     class: rv.modules.echo.Echo
     defaults:
@@ -35,6 +41,12 @@ links:
   - - SnareSampler
     - Echo
   - - HatSampler
+    - Echo
+  - - KickDrum
+    - Echo
+  - - SnareDrum
+    - Echo
+  - - HatDrum
     - Echo
   - - Echo
     - Distortion

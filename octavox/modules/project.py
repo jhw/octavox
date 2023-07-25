@@ -153,7 +153,7 @@ class SVProject:
 
     def init_layout(self,
                     modconfig,
-                    n=1000):
+                    n=2000):
         def shuffle(grid, links, q):
             clone=grid.clone()
             clone.shuffle(q)
