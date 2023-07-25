@@ -1,8 +1,6 @@
 ### short
 
-- more detailed svdrum mixer
-
-- pattern temperature?
+- more forensic svdrum mixer levels
 
 ### medium
 
@@ -59,6 +57,7 @@
 
 ### done
 
+- pattern temperature
 - check vitling patterns
 - try forcing more zero echo wet stuff
 - rename patterns.yaml as fragments.yaml?

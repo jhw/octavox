@@ -25,12 +25,13 @@ class Environment(dict):
         return matches.pop()
         
 Env=Environment(yaml.safe_load("""
+temperature: 1.0
+density: 0.75
 dslices: 0.5
 dpat: 0.5
 dseed: 0.5
 dstyle: 0.5
 nbeats: 16
-density: 0.75
 npatches: 32
 """))
 
@@ -149,6 +150,7 @@ class Shell(cmd.Cmd):
     @render_patches(generator="random")
     def do_randomise(self, _):
         return Patches.randomise(pool=self.pools[self.poolname],
+                                 temperature=self.env["temperature"],
                                  n=self.env["npatches"])
 
     @parse_line(config=[{"name": "frag"}])
@@ -174,7 +176,8 @@ class Shell(cmd.Cmd):
         root=roots[i % len(roots)]
         limits={k: self.env["d%s" % k]
                 for k in "slices|pat|seed|style".split("|")}
-        return Patches([root]+[root.clone().mutate(limits=limits)
+        return Patches([root]+[root.clone().mutate(temperature=self.env["temperature"],
+                                                   limits=limits)
                                for i in range(self.env["npatches"]-1)])
 
     @parse_line(config=[{"name": "i"}])

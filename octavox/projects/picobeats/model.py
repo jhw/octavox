@@ -24,8 +24,9 @@ def Q(seed):
 class Pattern(str):
 
     @classmethod
-    def randomise(self, patterns=Patterns):
-        return Pattern(random.choice(patterns))
+    def randomise(self, temperature, patterns=Patterns):
+        n=1+int(temperature*len(patterns))
+        return Pattern(random.choice(patterns[:n]))
     
     def __init__(self, value):
         str.__init__(value) # NB no self as first arg
@@ -69,7 +70,8 @@ class Slice(dict):
                   key,
                   pool,
                   config=Config["sequences"]):
-        return Slice(samples=Samples.randomise(key, pool),
+        return Slice(samples=Samples.randomise(key=key,
+                                               pool=pool),
                      seed=int(1e8*random.random()),
                      style=random.choice(config[key]["styles"]))
     
@@ -105,7 +107,8 @@ class Slices(list):
                   key,
                   pool,
                   n=3):
-        return Slices([Slice.randomise(key, pool)
+        return Slices([Slice.randomise(key=key,
+                                       pool=pool)
                        for i in range(n)])
     
     def __init__(self, slices):
@@ -134,11 +137,12 @@ class Sequence(dict):
     @classmethod
     def randomise(self,
                   key,
+                  temperature,
                   pool):
         return Sequence({"key": key,
-                         "pattern": Pattern.randomise(),
-                         "slices": Slices.randomise(key,
-                                                    pool)})
+                         "pattern": Pattern.randomise(temperature),
+                         "slices": Slices.randomise(key=key,
+                                                    pool=pool)})
 
     @init_machine(config=Config["sequences"])
     def __init__(self, item,
@@ -153,9 +157,9 @@ class Sequence(dict):
                          "pattern": self["pattern"],
                          "slices": self["slices"].clone()})
 
-    def randomise_pattern(self, limit):
+    def randomise_pattern(self, temperature, limit):
         if random.random() < limit:
-            self["pattern"]=Pattern.randomise()
+            self["pattern"]=Pattern.randomise(temperature)
 
     def shuffle_slices(self, limit):
         if random.random() < limit:
@@ -225,8 +229,11 @@ class Sequences(list):
     @classmethod
     def randomise(self,
                   pool,
+                  temperature,
                   config=Config["sequences"]):
-        return Sequences([Sequence.randomise(key, pool)
+        return Sequences([Sequence.randomise(key=key,
+                                             pool=pool,
+                                             temperature=temperature)
                           for key in config])
 
     def __init__(self, sequences):
@@ -305,8 +312,9 @@ class Lfos(list):
 class Patch(dict):
 
     @classmethod
-    def randomise(self, pool):
-        return Patch(sequences=Sequences.randomise(pool),
+    def randomise(self, pool, temperature):
+        return Patch(sequences=Sequences.randomise(pool=pool,
+                                                   temperature=temperature),
                      lfos=Lfos.randomise(),
                      mutes=[])
         
@@ -323,9 +331,10 @@ class Patch(dict):
                      lfos=self["lfos"].clone(),
                      mutes=list(self["mutes"]))
 
-    def mutate(self, limits):
+    def mutate(self, temperature, limits):
         for sequence in self["sequences"]:
-            sequence.randomise_pattern(limits["pat"])
+            sequence.randomise_pattern(temperature=temperature,
+                                       limit=limits["pat"])
             sequence.shuffle_slices(limits["slices"])
             for slice in sequence["slices"]:
                 slice.randomise_style(sequence["key"],
@@ -368,8 +377,9 @@ class Patch(dict):
 class Patches(list):
 
     @classmethod
-    def randomise(self, pool, n):
-        return Patches([Patch.randomise(pool)
+    def randomise(self, pool, temperature, n):
+        return Patches([Patch.randomise(pool=pool,
+                                        temperature=temperature)
                         for i in range(n)])
     
     def __init__(self, patches):
