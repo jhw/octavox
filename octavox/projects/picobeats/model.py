@@ -4,87 +4,7 @@ import octavox.modules.patterns.vitling909 as vitling
 
 import json, os, random, yaml
 
-"""
-- no SnareDrum as is crap
-"""
-
-Config=yaml.safe_load("""
-modules:
-  - name: KickSampler
-    class: octavox.modules.sampler.SVSampler
-    key: kk
-  - name: SnareSampler
-    class: octavox.modules.sampler.SVSampler
-    key: sn    
-  - name: HatSampler
-    class: octavox.modules.sampler.SVSampler
-    key: ht
-  - name: KickDrum
-    class: rv.modules.drumsynth.DrumSynth
-  - name: HatDrum
-    class: rv.modules.drumsynth.DrumSynth
-  - name: Echo
-    class: rv.modules.echo.Echo
-    defaults:
-      dry: 256
-      wet: 256
-      delay: 192
-  - name: Distortion
-    class: rv.modules.distortion.Distortion
-    defaults:
-      power: 64
-  - name: Reverb
-    class: rv.modules.reverb.Reverb
-    defaults:
-      wet: 4
-links:
-  - - KickSampler
-    - Echo
-  - - SnareSampler
-    - Echo
-  - - HatSampler
-    - Echo
-  - - KickDrum
-    - Echo
-  - - HatDrum
-    - Echo
-  - - Echo
-    - Distortion
-  - - Distortion
-    - Reverb
-  - - Reverb
-    - Output
-sequences:
-  kk:
-    mod: KickSampler
-    styles:
-    - fourfloor
-    - electro
-    - triplets
-  sn:
-    mod: SnareSampler
-    styles:
-    - backbeat
-    - skip
-  ht: 
-    mod: HatSampler
-    styles:
-    - offbeats
-    - closed
-lfos:
-  ec0:
-    mod: Echo
-    ctrl: wet
-    range: [0, 1]
-    increment: 0.25
-    step: 4
-  ec1:
-    mod: Echo
-    ctrl: feedback
-    range: [0, 1]
-    increment: 0.25
-    step: 4
-""")
+Config=yaml.safe_load(open("octavox/projects/picobeats/config.yaml").read())
 
 Kick, Snare, Hats, OpenHat, ClosedHat = "kk", "sn", "ht", "oh", "ch"
 
@@ -448,7 +368,7 @@ class Patches(list):
                              for patch in patches])
 
     def validate_config(self, config=Config):
-        def validate_sampler_keys():
+        def validate_sampler_keys(config):
             modkeys=[mod["key"] for mod in config["modules"]
                      if "key" in mod]
             for key in modkeys:
@@ -457,14 +377,14 @@ class Patches(list):
                 for key in config["sequences"]:
                     if key not in modkeys:
                         raise RuntimeError("key %s missing from module config" % key)
-        def validate_links():
+        def validate_module_links(config):
             modnames=[Output]+[mod["name"] for mod in config["modules"]]
             for links in config["links"]:
                 for modname in links:
                     if modname not in modnames:
                         raise RuntimeError("unknown module %s in links" % modname)
-        validate_sampler_keys()
-        validate_links()
+        validate_sampler_keys(config)
+        validate_module_links(config)
                     
     def init_paths(paths):
         def decorator(fn):

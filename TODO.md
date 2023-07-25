@@ -1,21 +1,25 @@
 ### short [01-svdrum]
 
-- abstract single config structure into yaml file
+- validate sequence modules and keys
+- validate lfo modules
+
 - modify sequence rendering if bank is defined as svdrum 
 - add svdrum curated pool with default curated snares
 - add svdrum kick volume factors
 
 ### medium
 
+- cli blend() action
 - clean up raw wavfile names 
+- ability to specify track key when copying
 - sampler to take pitch info
-- don't like naming of `tracks=SVPatch()` in model
 - temperature
 
 ### long
 
 ### thoughts
 
+- don't like naming of `tracks=SVPatch()` in model
 - breaks for concat action?
 - add back slicetemp? 
   - feels like an over- optimisation, and too much passing stuff around
@@ -57,6 +61,7 @@
 
 ### done
 
+- abstract single config structure into yaml file
 - remove snaredrum as is crap
 - add drum modules
 - runtime module naming checks
