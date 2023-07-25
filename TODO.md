@@ -1,8 +1,9 @@
 ### short [01-svdrum]
 
-- load rv/sampler modules dynamically
-- eliminate double call to render 
-- check how sampler indexes samples within project
+- check how sampler indexes samples
+- see if filter_samples could be improved
+
+- eliminate double call to render
 
 - add drum modules
 - add svdrum curated module with default curated snares
@@ -58,6 +59,7 @@
 
 ### done
 
+- load rv/sampler modules dynamically
 - move module instantiation and sample gathering into project
   - you might have to walk a structure iteratively in order to find samples
 - new concat method taking array

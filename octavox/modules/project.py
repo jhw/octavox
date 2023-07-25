@@ -2,17 +2,7 @@ from rv.api import Project as RVProject
 from rv.pattern import Pattern as RVPattern
 from rv.note import Note as RVNote
 
-# START TEMP CODE
-
-from rv.modules.echo import Echo as RVEcho
-from rv.modules.distortion import Distortion as RVDistortion
-from rv.modules.reverb import Reverb as RVReverb
-
-from octavox.modules.sampler import SVSampler
-
-# END TEMP CODE
-
-import math, random, yaml
+import importlib, math, random, yaml
 
 Output="Output"
 
@@ -176,14 +166,18 @@ class SVProject:
                         modconfig,
                         samplekeys,
                         banks):
+        def init_class(mod):
+            tokens=mod["class"].split(".")            
+            modpath, classname = ".".join(tokens[:-1]), tokens[-1]
+            module=importlib.import_module(modpath)
+            return getattr(module, classname)
         for mod in modconfig["modules"]:
-            modclass=eval(mod["classname"])
+            modclass=init_class(mod)
+            kwargs={}
             if "Sampler" in mod["name"]:
                 key=mod["name"][:2].lower() # change?
                 kwargs={"samplekeys": samplekeys[key] if key in samplekeys else [],
                         "banks": banks}
-            else:
-                kwargs={}
             mod["instance"]=modclass(**kwargs)
     
     def init_modules(self,

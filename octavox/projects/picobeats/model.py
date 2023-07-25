@@ -7,23 +7,23 @@ import json, os, random, yaml
 ModConfig=yaml.safe_load("""
 modules:
   - name: KKSampler
-    classname: SVSampler
+    class: octavox.modules.sampler.SVSampler
   - name: SNSampler
-    classname: SVSampler
+    class: octavox.modules.sampler.SVSampler
   - name: HTSampler
-    classname: SVSampler
+    class: octavox.modules.sampler.SVSampler
   - name: Echo
-    classname: RVEcho
+    class: rv.modules.echo.Echo
     defaults:
       dry: 256
       wet: 256
       delay: 192
   - name: Distortion
-    classname: RVDistortion
+    class: rv.modules.distortion.Distortion
     defaults:
       power: 64
   - name: Reverb
-    classname: RVReverb
+    class: rv.modules.reverb.Reverb
     defaults:
       wet: 4
 links:
