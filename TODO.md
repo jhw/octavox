@@ -5,13 +5,12 @@
 
 ### medium
 
+- pattern temperature
 - blacklist
 - pass config from cli and validate there
-- cli blend() action
 - ability to specify track key when copying
 - sampler to take pitch info
-- pattern temperature
-- re- check vitling patterns
+- cli blend() action
 
 ### long
 
