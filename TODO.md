@@ -1,8 +1,7 @@
 ### short [01-svdrum]
 
+- add SnareDrum for completeness
 - create svdrum config dynamically
-
-- rename patterns.yaml as fragments.yaml
 
 ### medium
 
@@ -20,8 +19,7 @@
 
 ### thoughts
 
-- pass config from cli and validate there?
-  - but then you have to pass it everywhere around main, which is a pain
+- rename patterns.yaml as fragments.yaml?
 - don't like naming of `tracks=SVPatch()` in model
 - breaks for concat action?
 - add back slicetemp? 
