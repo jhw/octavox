@@ -1,3 +1,22 @@
+### picobeats api 26/07/23
+
+- randomise patches
+- mutate patch
+- chain patches
+- load project
+- set param
+- show params
+- set pool
+- show pools
+- copy pool
+- show patch
+- show samples
+- clear projects
+
+- fix/unfix/ban/unban sample 
+- show fixes/bans
+- clear fixes/bans 
+
 ### sampler samples indexation 25/07/24
 
 - each sampler only has a limited set of slots

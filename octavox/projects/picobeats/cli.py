@@ -99,10 +99,14 @@ class Shell(cmd.Cmd):
                     print ("ERROR: %s" % str(error))
             return wrapped
         return decorator
-            
+
+    def do_show_params(self, _):
+        for key in sorted(self.env.keys()):
+            print ("%s: %s" % (key, self.env[key]))
+    
     @parse_line(config=[{"name": "pat"},
                         {"name": "value"}])
-    def do_param(self, pat, value):
+    def do_set_param(self, pat, value):
         try:
             key=self.env.lookup(pat)
             self.env[key]=value
@@ -110,23 +114,40 @@ class Shell(cmd.Cmd):
         except RuntimeError as error:
             print ("ERROR: %s" % str(error))
 
-    def do_params(self, _):
-        for key in sorted(self.env.keys()):
-            print ("%s: %s" % (key, self.env[key]))
+    def do_list_pools(self, _):
+        for poolname in sorted(self.pools.keys()):
+            poollabel=poolname.upper() if poolname==self.poolname else poolname
+            print ("- %s [%i]" % (poollabel,
+                                  self.pools[poolname].size))
             
     @parse_line(config=[{"name": "poolname"}])
-    def do_pool(self, poolname):
+    def do_set_pool(self, poolname):
         try:
             self.poolname=self.pools.lookup(poolname)
             print ("INFO: pool=%s" % self.poolname)
         except RuntimeError as error:
             print ("ERROR: %s" % str(error))
 
-    def do_pools(self, _):
-        for poolname in sorted(self.pools.keys()):
-            poollabel=poolname.upper() if poolname==self.poolname else poolname
-            print ("- %s [%i]" % (poollabel,
-                                  self.pools[poolname].size))
+    @parse_line(config=[{"name": "fsrc"},
+                        {"name": "fdest"}])
+    def do_copy_pool(self, fsrc, fdest):
+        try:
+            def lookup(self, frag):
+                try:
+                    return self.pools.lookup(frag)
+                except RuntimeError as error:
+                    return None
+            src=lookup(self, fsrc)
+            if not src:                
+                raise RuntimeError("src does not exist")
+            dest=lookup(self, fdest)
+            if not dest:
+                self.pools[fdest]=Pool()
+                dest=fdest
+            print ("INFO: copying %s to %s" % (src, dest))
+            self.pools[dest].add(self.pools[src])
+        except RuntimeError as error:
+            print ("ERROR: %s" % str(error))
                     
     def render_patches(generator, nbreaks=0):
         def decorator(fn):
@@ -149,13 +170,60 @@ class Shell(cmd.Cmd):
         return decorator
 
     @render_patches(generator="random")
-    def do_randomise(self, _):
+    def do_randomise_patches(self, _):
         return Patches.randomise(pool=self.pools[self.poolname],
                                  temperature=self.env["temperature"],
                                  n=self.env["npatches"])
 
+    @parse_line(config=[{"name": "i"}])
+    @render_patches(generator="concat")
+    def do_concat_patches(self, i):
+        I=[i] if not isinstance(i, list) else i
+        return Patches([self.project[i % len(self.project)]
+                       for i in I])
+
+    @parse_line(config=[{"name": "i"}])
+    @render_patches(generator="chain",
+                    nbreaks=1)
+    def do_chain_patches(self, i, instruments="kk|sn|ht".split("|")):
+        I=[i] if not isinstance(i, list) else i
+        chain=Patches([self.project[i % len(self.project)]
+                       for i in I])
+        for solo in instruments:
+            mutes=[inst for inst in instruments
+                   if inst!=solo]
+            for root in chain[:len(I)]:
+                clone=root.clone()
+                clone["mutes"]=mutes
+                chain.append(clone)
+        return chain
+    
+    @parse_line(config=[{"name": "i"}])
+    @render_patches(generator="mutate")
+    def do_mutate_patch(self, i):
+        roots=self.project
+        root=self.project[i % len(self.project)]
+        limits={k: self.env["d%s" % k]
+                for k in "slices|pat|seed|style".split("|")}
+        return Patches([root]+[root.clone().mutate(temperature=self.env["temperature"],
+                                                   limits=limits)
+                               for i in range(self.env["npatches"]-1)])
+    
+    @parse_line(config=[{"name": "i"}])
+    def do_show_patch(self, i):
+        root=self.project[i % len(self.project)]
+        print (yaml.safe_dump(json.loads(json.dumps(root)), # urgh
+                              default_flow_style=False))
+    
+    @parse_line(config=[{"name": "i"}])
+    def do_show_samples(self, i):
+        root=self.project[i % len(self.project)]
+        for seq in root["sequencers"]:
+            for i, slice in enumerate(seq["slices"]):
+                print (i, slice["samples"])
+    
     @parse_line(config=[{"name": "frag"}])
-    def do_load(self, frag, dirname="tmp/picobeats/json"):
+    def do_load_project(self, frag, dirname="tmp/picobeats/json"):
         matches=[filename for filename in os.listdir(dirname)
                  if frag in filename]
         if matches==[]:
@@ -169,76 +237,8 @@ class Shell(cmd.Cmd):
                                   for patch in patches])
         else:
             print ("WARNING: multiple matches")
-
-    @parse_line(config=[{"name": "i"}])
-    def do_show(self, i):
-        root=self.project[i % len(self.project)]
-        print (yaml.safe_dump(json.loads(json.dumps(root)), # urgh
-                              default_flow_style=False))
-
-    @parse_line(config=[{"name": "i"}])
-    def do_samples(self, i):
-        root=self.project[i % len(self.project)]
-        for seq in root["sequencers"]:
-            for i, slice in enumerate(seq["slices"]):
-                print (i, slice["samples"])
-
-    @parse_line(config=[{"name": "i"}])
-    @render_patches(generator="mutate")
-    def do_mutate(self, i):
-        roots=self.project
-        root=self.project[i % len(self.project)]
-        limits={k: self.env["d%s" % k]
-                for k in "slices|pat|seed|style".split("|")}
-        return Patches([root]+[root.clone().mutate(temperature=self.env["temperature"],
-                                                   limits=limits)
-                               for i in range(self.env["npatches"]-1)])
-
-    @parse_line(config=[{"name": "i"}])
-    @render_patches(generator="concat")
-    def do_concat(self, i):
-        I=[i] if not isinstance(i, list) else i
-        return Patches([self.project[i % len(self.project)]
-                       for i in I])
-    
-    @parse_line(config=[{"name": "i"}])
-    @render_patches(generator="chain",
-                    nbreaks=1)
-    def do_chain(self, i, instruments="kk|sn|ht".split("|")):
-        I=[i] if not isinstance(i, list) else i
-        chain=Patches([self.project[i % len(self.project)]
-                       for i in I])
-        for solo in instruments:
-            mutes=[inst for inst in instruments
-                   if inst!=solo]
-            for root in chain[:len(I)]:
-                clone=root.clone()
-                clone["mutes"]=mutes
-                chain.append(clone)
-        return chain
-    
-    @parse_line(config=[{"name": "fsrc"},
-                        {"name": "fdest"}])
-    def do_copy(self, fsrc, fdest):
-        try:
-            def lookup(self, frag):
-                try:
-                    return self.pools.lookup(frag)
-                except RuntimeError as error:
-                    return None
-            src=lookup(self, fsrc)
-            if not src:                
-                raise RuntimeError("src does not exist")
-            dest=lookup(self, fdest)
-            if not dest:
-                self.pools[fdest]=Pool()
-                dest=fdest
-            print ("INFO: copying %s to %s" % (src, dest))
-            self.pools[dest].add(self.pools[src])
-        except RuntimeError as error:
-            print ("ERROR: %s" % str(error))
-    
-    def do_clean(self, _):
+            
+    def do_clear_projects(self, _):
         os.system("rm -rf tmp/picobeats")
     
     def do_exit(self, _):

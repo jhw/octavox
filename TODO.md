@@ -1,11 +1,14 @@
 ### short
 
-- cli action to dump formatted patch sample grid
-- script to dump pico banks as projects
-- ability to "fix" samples into certain positions
+- complete show samples action by iterating over pattern and dunping formatted row
 
 ### medium
 
+- convert samplekey tuples to strings 
+  - remove file suffixes so you have room for pitch info 
+
+- script to dump pico banks as projects
+- ability to "fix" samples into certain positions
 - validation to check custom sampler classes exist
 - cli blend() action
 - ability to specify track key when copying
@@ -61,6 +64,7 @@
 
 ### done
 
+- implement cli api
 - abstract instruments and fragments from banks.py
 - move banks.py into modules
 - add show() function
