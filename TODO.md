@@ -1,12 +1,14 @@
 ### short
 
-- complete show samples action by iterating over pattern and dunping formatted row
+- convert samplekey tuples to strings 
+- remove file suffixes so you have room for pitch info 
 
 ### medium
 
-- convert samplekey tuples to strings 
-  - remove file suffixes so you have room for pitch info 
-
+- complete show_samples action 
+  - iterate through patterns on a per track basis
+  - concatenate rows
+  
 - script to dump pico banks as projects
 - ability to "fix" samples into certain positions
 - validation to check custom sampler classes exist
@@ -64,6 +66,7 @@
 
 ### done
 
+- complete show samples action by iterating over pattern and dunping formatted row
 - implement cli api
 - abstract instruments and fragments from banks.py
 - move banks.py into modules

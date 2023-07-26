@@ -217,10 +217,20 @@ class Shell(cmd.Cmd):
     
     @parse_line(config=[{"name": "i"}])
     def do_show_samples(self, i):
+        def filter_samples(root):
+            samples=[]
+            for seq in root["sequencers"]:
+                for i, slice in enumerate(seq["slices"]):
+                    if len(samples) < i+1:
+                        samples.append([])
+                    for k, v in slice["samples"].items():
+                        label="%s:%s/%s" % tuple([k]+v)
+                        samples[i].append(label)
+            return samples
         root=self.project[i % len(self.project)]
-        for seq in root["sequencers"]:
-            for i, slice in enumerate(seq["slices"]):
-                print (i, slice["samples"])
+        table=filter_samples(root)
+        for row in table:
+            print ("\t".join(row))
     
     @parse_line(config=[{"name": "frag"}])
     def do_load_project(self, frag, dirname="tmp/picobeats/json"):
