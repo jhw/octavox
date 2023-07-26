@@ -1,7 +1,10 @@
 ### short
 
-- separate banks
-- check custom sampler classes exist
+- abstract instruments and fragments from banks.py
+- move banks.py into modules
+
+- validation to check custom sampler classes exist
+
 - script to dump pico banks as projects
 - cli action to dump formatted patch sample grid
 - ability to "fix" samples into certain positions
