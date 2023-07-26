@@ -171,10 +171,16 @@ class Shell(cmd.Cmd):
             print ("WARNING: multiple matches")
 
     @parse_line(config=[{"name": "i"}])
+    def do_show(self, i):
+        root=self.project[i % len(self.project)]
+        print (yaml.safe_dump(json.loads(json.dumps(root)), # urgh
+                              default_flow_style=False))
+        
+    @parse_line(config=[{"name": "i"}])
     @render_patches(generator="mutate")
     def do_mutate(self, i):
         roots=self.project
-        root=roots[i % len(roots)]
+        root=self.project[i % len(self.project)]
         limits={k: self.env["d%s" % k]
                 for k in "slices|pat|seed|style".split("|")}
         return Patches([root]+[root.clone().mutate(temperature=self.env["temperature"],
@@ -189,9 +195,9 @@ class Shell(cmd.Cmd):
                        for i in I])
     
     @parse_line(config=[{"name": "i"}])
-    @render_patches(generator="octachain",
+    @render_patches(generator="chain",
                     nbreaks=1)
-    def do_octachain(self, i, instruments="kk|sn|ht".split("|")):
+    def do_chain(self, i, instruments="kk|sn|ht".split("|")):
         I=[i] if not isinstance(i, list) else i
         chain=Patches([self.project[i % len(self.project)]
                        for i in I])

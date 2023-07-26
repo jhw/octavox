@@ -60,6 +60,7 @@
 
 ### done
 
+- add show() function
 - more forensic svdrum mixer levels
 - pass config from cli and validate there
 - pattern temperature
