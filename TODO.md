@@ -1,9 +1,10 @@
 ### short
 
+- cli blend() action
+
 ### medium
 
 - ability to specify track key when copying
-- cli blend() action
 
 ### long
 

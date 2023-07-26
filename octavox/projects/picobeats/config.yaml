@@ -47,7 +47,7 @@ links:
     - Reverb
   - - Reverb
     - Output
-sequences:
+sequencers:
   kk:
     mod: KickSampler
     styles:

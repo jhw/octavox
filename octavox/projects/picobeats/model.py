@@ -1,6 +1,6 @@
 from octavox.modules.project import SVProject, SVPatch
 
-import octavox.modules.patterns.vitling909 as vitling
+import octavox.modules.sequences.vitling909 as vitling
 
 import json, os, random, yaml
 
@@ -69,7 +69,7 @@ class Slice(dict):
     def randomise(self,
                   key,
                   pool,
-                  config=Config["sequences"]):
+                  config=Config["sequencers"]):
         return Slice(samples=Samples.randomise(key=key,
                                                pool=pool),
                      seed=int(1e8*random.random()),
@@ -96,7 +96,7 @@ class Slice(dict):
     def randomise_style(self,
                         key,
                         limit,
-                        config=Config["sequences"]):
+                        config=Config["sequencers"]):
         if random.random() < limit:
             self["style"]=random.choice(config[key]["styles"])
     
@@ -133,19 +133,19 @@ def Mixer(instkey, samplekey):
     # return 0.8 if instkey=="kk" and modname=="svdrum" else 1.0
     return 1.0
     
-class Sequence(dict):
+class Sequencer(dict):
 
     @classmethod
     def randomise(self,
                   key,
                   temperature,
                   pool):
-        return Sequence({"key": key,
-                         "pattern": Pattern.randomise(temperature),
-                         "slices": Slices.randomise(key=key,
-                                                    pool=pool)})
+        return Sequencer({"key": key,
+                          "pattern": Pattern.randomise(temperature),
+                          "slices": Slices.randomise(key=key,
+                                                     pool=pool)})
 
-    @init_machine(config=Config["sequences"])
+    @init_machine(config=Config["sequencers"])
     def __init__(self, item,
                  mixer=Mixer):
         dict.__init__(self, {"key": item["key"],
@@ -154,9 +154,9 @@ class Sequence(dict):
         self.mixer=mixer
                 
     def clone(self):
-        return Sequence({"key": self["key"],
-                         "pattern": self["pattern"],
-                         "slices": self["slices"].clone()})
+        return Sequencer({"key": self["key"],
+                          "pattern": self["pattern"],
+                          "slices": self["slices"].clone()})
 
     def randomise_pattern(self, temperature, limit):
         if random.random() < limit:
@@ -225,25 +225,25 @@ class Sequence(dict):
     def closed(self, q, i, d, *args, k="ch"):
         return vitling.closed(q, i, d, k)
                             
-class Sequences(list):
+class Sequencers(list):
 
     @classmethod
     def randomise(self,
                   pool,
                   temperature,
-                  config=Config["sequences"]):
-        return Sequences([Sequence.randomise(key=key,
-                                             pool=pool,
-                                             temperature=temperature)
+                  config=Config["sequencers"]):
+        return Sequencers([Sequencer.randomise(key=key,
+                                               pool=pool,
+                                               temperature=temperature)
                           for key in config])
 
-    def __init__(self, sequences):
-        list.__init__(self, [Sequence(sequence)
-                             for sequence in sequences])
+    def __init__(self, sequencers):
+        list.__init__(self, [Sequencer(sequencer)
+                             for sequencer in sequencers])
 
     def clone(self):
-        return Sequences([sequence.clone()
-                          for sequence in self])
+        return Sequencers([sequencer.clone()
+                           for sequencer in self])
 
 class Lfo(dict):
 
@@ -314,48 +314,48 @@ class Patch(dict):
 
     @classmethod
     def randomise(self, pool, temperature):
-        return Patch(sequences=Sequences.randomise(pool=pool,
-                                                   temperature=temperature),
+        return Patch(sequencers=Sequencers.randomise(pool=pool,
+                                                     temperature=temperature),
                      lfos=Lfos.randomise(),
                      mutes=[])
         
     def __init__(self,
-                 sequences,
+                 sequencers,
                  lfos,
                  mutes):
-        dict.__init__(self, {"sequences": Sequences(sequences),
+        dict.__init__(self, {"sequencers": Sequencers(sequencers),
                              "lfos": Lfos(lfos),
                              "mutes": mutes})
         
     def clone(self):
-        return Patch(sequences=self["sequences"].clone(),
+        return Patch(sequencers=self["sequencers"].clone(),
                      lfos=self["lfos"].clone(),
                      mutes=list(self["mutes"]))
 
     def mutate(self, temperature, limits):
-        for sequence in self["sequences"]:
-            sequence.randomise_pattern(temperature=temperature,
-                                       limit=limits["pat"])
-            sequence.shuffle_slices(limits["slices"])
-            for slice in sequence["slices"]:
-                slice.randomise_style(sequence["key"],
+        for sequencer in self["sequencers"]:
+            sequencer.randomise_pattern(temperature=temperature,
+                                        limit=limits["pat"])
+            sequencer.shuffle_slices(limits["slices"])
+            for slice in sequencer["slices"]:
+                slice.randomise_style(sequencer["key"],
                                       limits["style"])
                 slice.randomise_seed(limits["seed"])
         for lfo in self["lfos"]:
             lfo.randomise_seed(limits["seed"])
         return self
     
-    def render_sequences(self,
-                         tracks,
-                         nbeats,
-                         density,
-                         config=Config["sequences"]):
-        for sequence in self["sequences"]:
-            if sequence["key"] not in self["mutes"]:
-                sequence.render(nbeats=nbeats,
-                                tracks=tracks,
-                                density=density)
-                    
+    def render_sequencers(self,
+                          tracks,
+                          nbeats,
+                          density,
+                          config=Config["sequencers"]):
+        for sequencer in self["sequencers"]:
+            if sequencer["key"] not in self["mutes"]:
+                sequencer.render(nbeats=nbeats,
+                                 tracks=tracks,
+                                 density=density)
+                
     def render_lfos(self,
                     tracks,
                     nbeats,
@@ -368,9 +368,9 @@ class Patch(dict):
                nbeats,
                density):
         tracks=SVPatch(nbeats=nbeats)
-        self.render_sequences(tracks=tracks,
-                              nbeats=nbeats,
-                              density=density)
+        self.render_sequencers(tracks=tracks,
+                               nbeats=nbeats,
+                               density=density)
         self.render_lfos(tracks=tracks,
                          nbeats=nbeats)
         return tracks

@@ -240,9 +240,9 @@ def validate_model_config(config=yaml.safe_load(open("octavox/projects/picobeats
         modkeys=[mod["key"] for mod in config["modules"]
                  if "key" in mod]
         for key in modkeys:
-            if key not in config["sequences"]:
-                raise RuntimeError("key %s missing from sequence config" % key)
-        for key in config["sequences"]:
+            if key not in config["sequencers"]:
+                raise RuntimeError("key %s missing from sequencer config" % key)
+        for key in config["sequencers"]:
             if key not in modkeys:
                 raise RuntimeError("key %s missing from module config" % key)
     def validate_module_links(config):
@@ -253,7 +253,7 @@ def validate_model_config(config=yaml.safe_load(open("octavox/projects/picobeats
                     raise RuntimeError("unknown module %s in links" % modname)
     def validate_module_refs(config):
         modnames=[mod["name"] for mod in config["modules"]]
-        for attr in ["sequences", "lfos"]:
+        for attr in ["sequencers", "lfos"]:
             for item in config[attr].values():
                 if item["mod"] not in modnames:
                     raise RuntimeError("mod %s not found" % item["mod"])
