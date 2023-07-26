@@ -161,7 +161,8 @@ class SVProject:
 
     def init_layout(self,
                     config,
-                    n=2000):
+                    n=1000,
+                    nclones=5):
         def shuffle(config, grid, q):
             clone=grid.clone()
             clone.shuffle(q)
@@ -174,7 +175,7 @@ class SVProject:
         for i in range(n):
             q=int(math.ceil(len(modnames)*(n-i)/n))
             clones=sorted([shuffle(config, grid, q)
-                           for i in range(10)],
+                           for i in range(nclones)],
                           key=lambda x: -x[1])
             newgrid, newbest = clones[-1]
             if newbest < best:

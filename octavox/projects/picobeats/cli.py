@@ -1,4 +1,4 @@
-from octavox.projects.picobeats.samples import Banks, Pools, Pool
+from octavox.projects.picobeats.pools import Banks, Pools, Pool
 
 from octavox.projects.picobeats.model import Patch, Patches
 
