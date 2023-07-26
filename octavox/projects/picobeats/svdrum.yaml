@@ -28,25 +28,21 @@ kk:
   - - svdrum
     - 37
   - - svdrum
-    - 38
-  - - svdrum
-    - 39
-  - - svdrum
     - 48
   - - svdrum
     - 49
-  - - svdrum
-    - 50
-  - - svdrum
-    - 51
   - - svdrum
     - 60
   - - svdrum
     - 61
   - - svdrum
-    - 62
+    - 72
   - - svdrum
-    - 63    
+    - 73
+  - - svdrum
+    - 74
+  - - svdrum
+    - 75
 sn: []
 oh:
   - - svdrum
@@ -73,6 +69,14 @@ oh:
     - 64
   - - svdrum
     - 65
+  - - svdrum
+    - 76
+  - - svdrum
+    - 77
+  - - svdrum
+    - 88
+  - - svdrum
+    - 89
 ch:
   - - svdrum
     - 6
@@ -86,6 +90,12 @@ ch:
     - 54
   - - svdrum
     - 66
+  - - svdrum
+    - 78
+  - - svdrum
+    - 90
+
+
 
 
 

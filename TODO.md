@@ -1,18 +1,20 @@
 ### short
 
-- more forensic svdrum mixer levels
-
 ### medium
 
-- pass config from cli and validate there
 - ability to specify track key when copying
-- sampler to take pitch info
 - cli blend() action
 
 ### long
 
+- sampler to take pitch info
+  - given complexity of RV sampler implementation, probably best for when u have a direct need eg sample bass
+
 ### thoughts
 
+- pass config around?
+  - problem is how to use it in decorators
+  - easier to load at cli level and validate there as it's a yaml file
 - blacklist
   - is over- optimising
 - don't like naming of `tracks=SVPatch()` in model
@@ -57,6 +59,8 @@
 
 ### done
 
+- more forensic svdrum mixer levels
+- pass config from cli and validate there
 - pattern temperature
 - check vitling patterns
 - try forcing more zero echo wet stuff

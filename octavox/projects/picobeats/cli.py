@@ -2,6 +2,8 @@ from octavox.projects.picobeats.samples import Banks, Pools, Pool
 
 from octavox.projects.picobeats.model import Patch, Patches
 
+from octavox.modules.project import Output
+
 from octavox.projects import Nouns, Adjectives, is_abbrev
 
 from datetime import datetime
@@ -133,7 +135,6 @@ class Shell(cmd.Cmd):
                     self.filename=random_filename(generator)
                     print ("INFO: %s" % self.filename)
                     self.project=fn(self, *args, **kwargs)
-                    self.project.validate_config()
                     self.project.render_json(filename=self.filename)
                     self.project.render_sunvox(banks=self.banks,
                                                nbeats=self.env["nbeats"],
@@ -234,14 +235,45 @@ class Shell(cmd.Cmd):
         print ("INFO: exiting")
         return True
 
-def init_svdrum_curated(pools, sn="default-curated"):
-    pool=yaml.safe_load(open("octavox/projects/picobeats/svdrum.yaml").read())
+def validate_model_config(config=yaml.safe_load(open("octavox/projects/picobeats/config.yaml").read())):
+    def validate_track_keys(config):
+        modkeys=[mod["key"] for mod in config["modules"]
+                 if "key" in mod]
+        for key in modkeys:
+            if key not in config["sequences"]:
+                raise RuntimeError("key %s missing from sequence config" % key)
+        for key in config["sequences"]:
+            if key not in modkeys:
+                raise RuntimeError("key %s missing from module config" % key)
+    def validate_module_links(config):
+        modnames=[Output]+[mod["name"] for mod in config["modules"]]
+        for links in config["links"]:
+            for modname in links:
+                if modname not in modnames:
+                    raise RuntimeError("unknown module %s in links" % modname)
+    def validate_module_refs(config):
+        modnames=[mod["name"] for mod in config["modules"]]
+        for attr in ["sequences", "lfos"]:
+            for item in config[attr].values():
+                if item["mod"] not in modnames:
+                    raise RuntimeError("mod %s not found" % item["mod"])
+    validate_track_keys(config)
+    validate_module_links(config)
+    validate_module_refs(config)
+    
+def init_svdrum_curated(pools,
+                        pool=yaml.safe_load(open("octavox/projects/picobeats/svdrum.yaml").read()),
+                        sn="default-curated"):
     pool["sn"]=pools[sn]["sn"]
     return Pool(pool)
     
 if __name__=="__main__":
-    banks=Banks("octavox/banks/pico")
-    pools=banks.spawn_pools().cull()
-    pools["svdrum-curated"]=init_svdrum_curated(pools)
-    Shell(banks=banks,
-          pools=pools).cmdloop()
+    try:
+        banks=Banks("octavox/banks/pico")
+        pools=banks.spawn_pools().cull()
+        pools["svdrum-curated"]=init_svdrum_curated(pools)
+        validate_model_config()
+        Shell(banks=banks,
+              pools=pools).cmdloop()
+    except RuntimeError as error:
+        print ("ERROR: %s" % str(error))

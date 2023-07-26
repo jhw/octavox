@@ -1,4 +1,4 @@
-from octavox.modules.project import SVProject, SVPatch, Output
+from octavox.modules.project import SVProject, SVPatch
 
 import octavox.modules.patterns.vitling909 as vitling
 
@@ -130,8 +130,9 @@ def init_machine(config):
 
 def Mixer(instkey, samplekey):
     modname, _ = samplekey
-    return 0.75 if instkey=="kk" and modname=="svdrum" else 1.0
-
+    # return 0.8 if instkey=="kk" and modname=="svdrum" else 1.0
+    return 1.0
+    
 class Sequence(dict):
 
     @classmethod
@@ -386,32 +387,6 @@ class Patches(list):
         list.__init__(self, [Patch(**patch)
                              for patch in patches])
 
-    def validate_config(self, config=Config):
-        def validate_track_keys(config):
-            modkeys=[mod["key"] for mod in config["modules"]
-                     if "key" in mod]
-            for key in modkeys:
-                if key not in config["sequences"]:
-                    raise RuntimeError("key %s missing from sequence config" % key)
-            for key in config["sequences"]:
-                if key not in modkeys:
-                    raise RuntimeError("key %s missing from module config" % key)
-        def validate_module_links(config):
-            modnames=[Output]+[mod["name"] for mod in config["modules"]]
-            for links in config["links"]:
-                for modname in links:
-                    if modname not in modnames:
-                        raise RuntimeError("unknown module %s in links" % modname)
-        def validate_module_refs(config):
-            modnames=[mod["name"] for mod in config["modules"]]
-            for attr in ["sequences", "lfos"]:
-                for item in config[attr].values():
-                    if item["mod"] not in modnames:
-                        raise RuntimeError("mod %s not found" % item["mod"])
-        validate_track_keys(config)
-        validate_module_links(config)
-        validate_module_refs(config)
-                            
     def init_paths(paths):
         def decorator(fn):
             def wrapped(*args, **kwargs):
