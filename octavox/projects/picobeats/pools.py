@@ -6,8 +6,6 @@ Instruments="kk|sn|oh|ch".split("|")
 
 Fragments=yaml.safe_load(open("octavox/projects/picobeats/fragments.yaml").read())
 
-SVDrum=yaml.safe_load(open("octavox/projects/picobeats/svdrum.yaml").read())
-
 class Pool(dict):
 
     def __init__(self, item={}):
@@ -133,7 +131,7 @@ class Banks(dict):
         return self[bankfile].zipfile.open(wavfile, 'r')
     
 if __name__=="__main__":
-    banks=Banks("octavox/projects/picobeats/banks")
+    banks=Banks("octavox/banks/pico")
     pools=banks.spawn_pools().cull()
     print (pools.keys())
     print ()
