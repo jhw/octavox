@@ -175,7 +175,14 @@ class Shell(cmd.Cmd):
         root=self.project[i % len(self.project)]
         print (yaml.safe_dump(json.loads(json.dumps(root)), # urgh
                               default_flow_style=False))
-        
+
+    @parse_line(config=[{"name": "i"}])
+    def do_samples(self, i):
+        root=self.project[i % len(self.project)]
+        for seq in root["sequencers"]:
+            for i, slice in enumerate(seq["slices"]):
+                print (i, slice["samples"])
+
     @parse_line(config=[{"name": "i"}])
     @render_patches(generator="mutate")
     def do_mutate(self, i):
