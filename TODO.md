@@ -1,16 +1,12 @@
 ### short
 
-- abstract instruments and fragments from banks.py
-- move banks.py into modules
-
-- validation to check custom sampler classes exist
-
-- script to dump pico banks as projects
 - cli action to dump formatted patch sample grid
+- script to dump pico banks as projects
 - ability to "fix" samples into certain positions
 
 ### medium
 
+- validation to check custom sampler classes exist
 - cli blend() action
 - ability to specify track key when copying
 
@@ -65,6 +61,8 @@
 
 ### done
 
+- abstract instruments and fragments from banks.py
+- move banks.py into modules
 - add show() function
 - more forensic svdrum mixer levels
 - pass config from cli and validate there

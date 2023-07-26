@@ -2,6 +2,42 @@ from octavox.projects import is_abbrev
 
 import os, random, re, yaml, zipfile
 
+Fragments=yaml.safe_load("""
+kk:
+  - kick
+  - kik
+  - kk
+  - bd
+  - bass
+sn:
+  - snare
+  - sn
+  - sd
+  - clap
+  - clp
+  - cp
+  - hc
+  - rim
+  - plip
+  - rs
+oh:
+  - open
+  - hat
+  - ht 
+  - oh
+  - perc
+  - ussion
+  - prc
+ch:
+  - closed
+  - hat
+  - ht 
+  - " ch" # else will match glitch; but still matches chord unfortunately
+  - perc
+  - ussion
+  - prc
+""")
+
 class Pool(dict):
 
     def __init__(self, item={}):
@@ -24,7 +60,7 @@ class Pool(dict):
                     self[key].append(item)
         return self
 
-    def randomise(self, instruments):
+    def randomise(self, instruments=Fragments.keys()):
         return {inst:random.choice(self[inst])
                 for inst in instruments}
 
@@ -81,7 +117,7 @@ class Bank:
         return [item.filename
                 for item in self.zipfile.infolist()]
 
-    def spawn_free(self, instruments, fragments):
+    def spawn_free(self, instruments):
         wavfiles=self.wavfiles
         return Pool({inst:[[self.name, wavfile]
                           for wavfile in wavfiles]
@@ -89,7 +125,7 @@ class Bank:
 
     def spawn_curated(self,
                       instruments,
-                      fragments):
+                      fragments=Fragments):
         pool, wavfiles = Pool(), self.wavfiles
         for wavfile in wavfiles:
             for inst in instruments:
@@ -110,15 +146,13 @@ class Banks(dict):
             bank=Bank(name, zipfile.ZipFile(path))
             self[name]=bank
 
-    def spawn_pools(self, instruments, fragments):
+    def spawn_pools(self, instruments=Fragments.keys()):
         pools=Pools()
-        kwargs={"instruments": instruments,
-                "fragments": fragments}
         for attr in ["free", "curated"]:
             for bankname, bank in self.items():
                 bankfn=getattr(bank, "spawn_%s" % attr)
                 key="%s-%s" % (bankname, attr)                
-                pools[key]=bankfn(**kwargs)
+                pools[key]=bankfn(instruments)
             poolsfn=getattr(pools, "spawn_%s" % attr)
             key="global-%s" % attr
             pools[key]=poolsfn()
@@ -130,10 +164,7 @@ class Banks(dict):
     
 if __name__=="__main__":
     banks=Banks("octavox/banks/pico")
-    instruments="kk|sn|oh|ch".split("|")
-    fragments=yaml.safe_load(open("octavox/projects/picobeats/fragments.yaml").read())
-    pools=banks.spawn_pools(instruments=instruments,
-                            fragments=fragments).cull()
+    pools=banks.spawn_pools().cull()
     print (pools.keys())
     print ()
-    print (pools["global-curated"].randomise(instruments))
+    print (pools["global-curated"].randomise())

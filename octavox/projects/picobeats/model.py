@@ -6,8 +6,6 @@ import json, os, random, yaml
 
 Config=yaml.safe_load(open("octavox/projects/picobeats/config.yaml").read())
 
-Instruments="kk|sn|oh|ch".split("|")
-
 InstrumentMapping={"kk": ["kk"],
                    "sn": ["sn"],
                    "ht": ["oh", "ch"]}
@@ -55,9 +53,8 @@ class Samples(dict):
     def randomise(self,
                   key,
                   pool,
-                  instruments=Instruments,
                   mapping=InstrumentMapping):
-        return Samples({k:v for k, v in pool.randomise(instruments).items()
+        return Samples({k:v for k, v in pool.randomise().items()
                         if k in mapping[key]})
 
     def __init__(self, obj):

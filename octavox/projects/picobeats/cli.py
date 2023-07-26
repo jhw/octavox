@@ -1,6 +1,6 @@
-from octavox.projects.picobeats.banks import Banks, Pools, Pool
+from octavox.projects.picobeats.model import Patch, Patches
 
-from octavox.projects.picobeats.model import Patch, Patches, Instruments
+from octavox.modules.banks import Banks, Pools, Pool
 
 from octavox.modules.project import Output
 
@@ -276,9 +276,7 @@ def init_svdrum_curated(pools,
 if __name__=="__main__":
     try:
         banks=Banks("octavox/banks/pico")
-        fragments=yaml.safe_load(open("octavox/projects/picobeats/fragments.yaml").read())
-        pools=banks.spawn_pools(fragments=fragments,
-                                instruments=Instruments).cull()
+        pools=banks.spawn_pools().cull()
         pools["svdrum-curated"]=init_svdrum_curated(pools)
         validate_model_config()
         Shell(banks=banks,
