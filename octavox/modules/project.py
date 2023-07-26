@@ -189,6 +189,10 @@ class SVProject:
             patch.filter_samplekeys(keys)
         return {k:list(v)
                 for k, v in keys.items()}
+
+    """
+    - creation of sampler kwargs may need to change if you have multiple classes of sampler in the future
+    """
     
     def init_modclasses(self,
                         config,
@@ -202,7 +206,7 @@ class SVProject:
         for mod in config["modules"]:
             modclass=init_class(mod)
             kwargs={}
-            if mod["class"].endswith("SVSampler"):
+            if mod["class"].lower().endswith("sampler"):
                 kwargs={"banks": banks,
                         "samplekeys": samplekeys[mod["key"]] if mod["key"] in samplekeys else []}
             mod["instance"]=modclass(**kwargs)

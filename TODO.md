@@ -1,15 +1,17 @@
 ### short
 
-- cli blend() action
+- separate banks
+- check custom sampler classes exist
+- script to dump pico banks as projects
+- cli action to dump formatted patch sample grid
+- ability to "fix" samples into certain positions
 
 ### medium
 
+- cli blend() action
 - ability to specify track key when copying
 
 ### long
-
-- sampler to take pitch info
-  - given complexity of RV sampler implementation, probably best for when u have a direct need eg sample bass
 
 ### thoughts
 

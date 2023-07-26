@@ -45,10 +45,11 @@ class BaseSampler(RVSampler):
 
 """
 - potential for multiple classes of sampler
-- SVSampler takes a series of samples and inserts one per slot, nullifying the default Sunvox pitch incrementation
+- SimpleSampler takes a series of samples and inserts one per slot, nullifying the default Sunvox pitch incrementation
+- future sampler might take a lesser number of samples but use them multiple times with different pitches
 """
     
-class SVSampler(BaseSampler):
+class SimpleSampler(BaseSampler):
 
     def __init__(self, samplekeys, banks, maxslots=120, *args, **kwargs):
         BaseSampler.__init__(self, *args, **kwargs)
