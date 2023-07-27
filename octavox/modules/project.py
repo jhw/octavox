@@ -50,7 +50,8 @@ class SVTrig(dict):
         mod=modules[self["mod"]]
         trig=1+(mod.lookup(self["key"]) if "key" in self else self["id"])
         modid=1+mod.index # NB 1+
-        vel=max(1, int(self["vel"]*volume))
+        notevel=self["vel"] if "vel" in self else 1
+        vel=max(1, int(notevel*volume))
         return RVNote(note=trig,
                       vel=vel,
                       module=modid)

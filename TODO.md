@@ -1,6 +1,5 @@
 ### short
 
-- trig velocity should be an option
 - rename chain as decompile
 
 ### medium
@@ -66,6 +65,7 @@
 
 ### done
 
+- trig velocity should be an option
 - nbreaks should be an option for project rendering
 - script to dump pico banks as projects
 - add sv prefix to banks, pools etc

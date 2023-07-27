@@ -33,12 +33,11 @@ if __name__=="__main__":
         wavfiles=bank.wavfiles
         nbeats=len(wavfiles)
         patch=SVPatch(nbeats=nbeats)
-        patch.setdefault("trig", [])
+        patch["trig"]=[]
         for i, wavfile in enumerate(wavfiles):
             key=SVSampleKey.create(bank=bankname,
                                    file=wavfile)
             trig={"mod": "Sampler",
-                  "vel": 1,
                   "i": i,
                   "key": key}
             patch["trig"].append(trig)
