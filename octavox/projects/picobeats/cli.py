@@ -215,7 +215,7 @@ class Shell(cmd.Cmd):
                               default_flow_style=False))
     
     @parse_line(config=[{"name": "i"}])
-    def do_show_rendered(self, i, instruments=Instruments):
+    def do_show_samples(self, i, instruments=Instruments):
         patch=self.project[i % len(self.project)]
         rendered=patch.render(nbeats=self.env["nbeats"],
                               density=self.env["density"])
@@ -225,11 +225,9 @@ class Shell(cmd.Cmd):
             row=[i]
             for key in instruments:
                 if i in trigs[key]:
-                    if "key" in trigs[key][i]:
-                        value=SVSampleKey(trigs[key][i]["key"])
-                        row.append("%s:%s" % (key, value))
-                    else:
-                        row.append("...")
+                    trig=trigs[key][i]
+                    value=SVSampleKey(trig["key"]) if "key" in trig else "svdrum/%i" % trig["id"]
+                    row.append("%s:%s" % (key, value))
                 else:
                     row.append("...")
             print ("\t".join([str(cell)
@@ -238,7 +236,7 @@ class Shell(cmd.Cmd):
     @parse_line(config=[{"name": "frag"}])
     def do_load_project(self, frag, dirname="tmp/picobeats/json"):
         matches=[filename for filename in os.listdir(dirname)
-                 if frag in filename]
+                 if str(frag) in filename]
         if matches==[]:
             print ("WARNING: no matches")
         elif len(matches)==1:

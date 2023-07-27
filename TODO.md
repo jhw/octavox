@@ -1,9 +1,5 @@
 ### short
 
-- load_project fails if passsed string
-- show_rendered should be show_samples
-- show_rendered doesn't render svdrum trigs
-
 - cli history
 - samples.randomise doesn't need instruments
 - ability to quick view bank list
@@ -71,6 +67,9 @@
 
 ### done
 
+- load_project fails if passsed string
+- show_rendered should be show_samples
+- show_rendered doesn't render svdrum trigs
 - complete show_samples action 
 - check how tmp dirs are being created
 - rename chain as decompile
