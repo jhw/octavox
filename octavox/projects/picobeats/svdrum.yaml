@@ -1,104 +1,96 @@
-kk:
-  - - svdrum
-    - 0
-  - - svdrum
-    - 1
-  - - svdrum
-    - 2 
-  - - svdrum
-    - 3
-  - - svdrum
-    - 12
-  - - svdrum
-    - 13
-  - - svdrum
-    - 14
-  - - svdrum
-    - 15
-  - - svdrum
-    - 24
-  - - svdrum
-    - 25
-  - - svdrum
-    - 26
-  - - svdrum
-    - 27
-  - - svdrum
-    - 36
-  - - svdrum
-    - 37
-  - - svdrum
-    - 48
-  - - svdrum
-    - 49
-  - - svdrum
-    - 60
-  - - svdrum
-    - 61
-  - - svdrum
-    - 72
-  - - svdrum
-    - 73
-  - - svdrum
-    - 74
-  - - svdrum
-    - 75
-sn: []
-oh:
-  - - svdrum
-    - 4
-  - - svdrum
-    - 5
-  - - svdrum
-    - 16
-  - - svdrum
-    - 17
-  - - svdrum
-    - 28
-  - - svdrum
-    - 29
-  - - svdrum
-    - 40
-  - - svdrum
-    - 41
-  - - svdrum
-    - 52
-  - - svdrum
-    - 53
-  - - svdrum
-    - 64
-  - - svdrum
-    - 65
-  - - svdrum
-    - 76
-  - - svdrum
-    - 77
-  - - svdrum
-    - 88
-  - - svdrum
-    - 89
 ch:
-  - - svdrum
-    - 6
-  - - svdrum
-    - 18
-  - - svdrum
-    - 30
-  - - svdrum
-    - 42
-  - - svdrum
-    - 54
-  - - svdrum
-    - 66
-  - - svdrum
-    - 78
-  - - svdrum
-    - 90
-
-
-
-
-
-
-
-
+- id: 6
+  mod: svdrum
+- id: 18
+  mod: svdrum
+- id: 30
+  mod: svdrum
+- id: 42
+  mod: svdrum
+- id: 54
+  mod: svdrum
+- id: 66
+  mod: svdrum
+- id: 78
+  mod: svdrum
+- id: 90
+  mod: svdrum
+kk:
+- id: 0
+  mod: svdrum
+- id: 1
+  mod: svdrum
+- id: 2
+  mod: svdrum
+- id: 3
+  mod: svdrum
+- id: 12
+  mod: svdrum
+- id: 13
+  mod: svdrum
+- id: 14
+  mod: svdrum
+- id: 15
+  mod: svdrum
+- id: 24
+  mod: svdrum
+- id: 25
+  mod: svdrum
+- id: 26
+  mod: svdrum
+- id: 27
+  mod: svdrum
+- id: 36
+  mod: svdrum
+- id: 37
+  mod: svdrum
+- id: 48
+  mod: svdrum
+- id: 49
+  mod: svdrum
+- id: 60
+  mod: svdrum
+- id: 61
+  mod: svdrum
+- id: 72
+  mod: svdrum
+- id: 73
+  mod: svdrum
+- id: 74
+  mod: svdrum
+- id: 75
+  mod: svdrum
+oh:
+- id: 4
+  mod: svdrum
+- id: 5
+  mod: svdrum
+- id: 16
+  mod: svdrum
+- id: 17
+  mod: svdrum
+- id: 28
+  mod: svdrum
+- id: 29
+  mod: svdrum
+- id: 40
+  mod: svdrum
+- id: 41
+  mod: svdrum
+- id: 52
+  mod: svdrum
+- id: 53
+  mod: svdrum
+- id: 64
+  mod: svdrum
+- id: 65
+  mod: svdrum
+- id: 76
+  mod: svdrum
+- id: 77
+  mod: svdrum
+- id: 88
+  mod: svdrum
+- id: 89
+  mod: svdrum
+sn: []

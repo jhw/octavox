@@ -20,11 +20,11 @@ class SVPatch(dict):
         self.nbeats=nbeats
 
     def filter_samplekeys(self, keys):
-        for key, track in self.items():
+        for trackkey, track in self.items():
             for trig in track:
                 if "key" in trig:
-                    keys.setdefault(key, set()) # NB set()
-                    keys[key].add(tuple(trig["key"])) # NB tuple()
+                    keys.setdefault(trackkey, {})
+                    keys[trackkey][str(trig["key"])]=trig["key"]
 
     @property
     def grid(self):
@@ -187,7 +187,7 @@ class SVProject:
         keys={}
         for patch in patches:
             patch.filter_samplekeys(keys)
-        return {k:list(v)
+        return {k:list(v.values())
                 for k, v in keys.items()}
 
     """

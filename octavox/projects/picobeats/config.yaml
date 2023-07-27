@@ -1,12 +1,12 @@
 modules:
   - name: KickSampler
-    class: octavox.modules.samplers.SimpleSampler
+    class: octavox.modules.samplers.SVSlotSampler
     key: kk
   - name: SnareSampler
-    class: octavox.modules.samplers.SimpleSampler
+    class: octavox.modules.samplers.SVSlotSampler
     key: sn    
   - name: HatSampler
-    class: octavox.modules.samplers.SimpleSampler
+    class: octavox.modules.samplers.SVSlotSampler
     key: ht
   - name: KickDrum
     class: rv.modules.drumsynth.DrumSynth

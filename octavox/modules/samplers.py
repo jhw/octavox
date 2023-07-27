@@ -42,20 +42,22 @@ class BaseSampler(RVSampler):
             setattr(sample, key, value)
         self.samples[slot] = sample
         return sample
-
+    
 """
 - potential for multiple classes of sampler
 - SimpleSampler takes a series of samples and inserts one per slot, nullifying the default Sunvox pitch incrementation
 - future sampler might take a lesser number of samples but use them multiple times with different pitches
 """
     
-class SimpleSampler(BaseSampler):
+class SVSlotSampler(BaseSampler):
 
     def __init__(self, samplekeys, banks, maxslots=120, *args, **kwargs):
         BaseSampler.__init__(self, *args, **kwargs)
         if len(samplekeys) > maxslots:
             raise RuntimeError("sampler max slots exceeded")
         self.samplekeys=samplekeys
+        self.samplestrings=[str(samplekey)
+                            for samplekey in samplekeys]
         notes=list(RVNOTE)
         root=notes.index(RVNOTE.C5)
         for i, samplekey in enumerate(self.samplekeys):
@@ -65,8 +67,8 @@ class SimpleSampler(BaseSampler):
             sample=self.samples[i]
             sample.relative_note+=(root-i)
 
-    def lookup(self, key):
-        return self.samplekeys.index(tuple(key))
+    def lookup(self, samplekey):
+        return self.samplestrings.index(str(samplekey))
             
 if __name__=="__main__":
     pass

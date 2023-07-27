@@ -129,8 +129,6 @@ def init_machine(config):
     return decorator
 
 def Mixer(instkey, samplekey):
-    modname, _ = samplekey
-    # return 0.8 if instkey=="kk" and modname=="svdrum" else 1.0
     return 1.0
     
 class Sequencer(dict):
@@ -193,12 +191,12 @@ class Sequencer(dict):
                 volume=self.mixer(instkey, samplekey)
                 trig={"vel": volume,
                       "i": i+offset}
-                if samplekey[0]!="svdrum":
+                if samplekey["mod"]!="svdrum":
                     trig["mod"]=self.mod
                     trig["key"]=samplekey
                 else:
                     trig["mod"]=self.mod.replace("Sampler", "Drum")
-                    trig["id"]=samplekey[1]
+                    trig["id"]=samplekey["id"]
                 tracks.setdefault(self["key"], [])
                 tracks[self["key"]].append(trig)
         return wrapped
