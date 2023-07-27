@@ -17,8 +17,7 @@ links:
 def render_project(banks, bankname, patch, nbeats, config=Config):
     project=SVProject().render(patches=[patch],
                                config=config,
-                               banks=banks,
-                               nbreaks=0)
+                               banks=banks)
     projfile="tmp/picobanks/%s.sunvox" % bankname
     with open(projfile, 'wb') as f:
         project.write_to(f)

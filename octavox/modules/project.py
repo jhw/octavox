@@ -315,8 +315,8 @@ class SVProject:
     def render(self,
                patches,
                config,
-               nbreaks,
                banks,
+               nbreaks=0,
                globalz=Globals):
         proj=RVProject()
         proj.initial_bpm=globalz["bpm"]

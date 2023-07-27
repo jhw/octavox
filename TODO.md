@@ -1,6 +1,5 @@
 ### short
 
-- nbreaks should be an option for project rendering
 - trig velocity should be an option
 - rename chain as decompile
 
@@ -67,6 +66,7 @@
 
 ### done
 
+- nbreaks should be an option for project rendering
 - script to dump pico banks as projects
 - add sv prefix to banks, pools etc
 - add pitch info to samplekey
