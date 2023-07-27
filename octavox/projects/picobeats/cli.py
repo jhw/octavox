@@ -1,6 +1,6 @@
-from octavox.modules.banks import SVBanks, SVPool
+from octavox.modules.banks import SVBanks, SVPool, SVSampleKey
 
-from octavox.projects.picobeats.model import Patch, Patches, Pattern, Instruments
+from octavox.projects.picobeats.model import Patch, Patches, Instruments
 
 from octavox.modules.project import Output
 
@@ -25,7 +25,7 @@ class Environment(dict):
         elif len(matches) > 1:
             raise RuntimeError("multiple key matches for %s" % abbrev)
         return matches.pop()
-        
+
 Env=Environment(yaml.safe_load("""
 temperature: 1.0
 density: 0.75
@@ -185,7 +185,7 @@ class Shell(cmd.Cmd):
     @parse_line(config=[{"name": "i"}])
     @render_patches(generator="decomp",
                     nbreaks=1)
-    def do_decompile_patches(self, i, instruments="kk|sn|ht".split("|")):
+    def do_decompile_patches(self, i, instruments=Instruments):
         I=[i] if not isinstance(i, list) else i
         patches=Patches([self.project[i % len(self.project)]
                        for i in I])
@@ -215,21 +215,26 @@ class Shell(cmd.Cmd):
                               default_flow_style=False))
     
     @parse_line(config=[{"name": "i"}])
-    def do_show_samples(self, i):
-        def filter_samples(patch):
-            samples=[]
-            for seq in patch["sequencers"]:
-                for i, slice in enumerate(seq["slices"]):
-                    if len(samples) < i+1:
-                        samples.append({})
-                    samples[i].update(slice["samples"])
-            return samples
+    def do_show_rendered(self, i, instruments=Instruments):
         patch=self.project[i % len(self.project)]
-        samples=filter_samples(patch)
-        patterns={seq["key"]:Pattern(seq["pattern"].expanded)
-                  for seq in patch["sequencers"]}
-        print (patterns)
-    
+        rendered=patch.render(nbeats=self.env["nbeats"],
+                              density=self.env["density"])
+        trigs={K:{trig["i"]:trig for trig in V}
+               for K, V in rendered.items()}
+        for i in range(self.env["nbeats"]):
+            row=[i]
+            for key in instruments:
+                if i in trigs[key]:
+                    if "key" in trigs[key][i]:
+                        value=SVSampleKey(trigs[key][i]["key"])
+                        row.append("%s:%s" % (key, value))
+                    else:
+                        row.append("...")
+                else:
+                    row.append("...")
+            print ("\t".join([str(cell)
+                              for cell in row]))
+                                
     @parse_line(config=[{"name": "frag"}])
     def do_load_project(self, frag, dirname="tmp/picobeats/json"):
         matches=[filename for filename in os.listdir(dirname)

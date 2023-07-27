@@ -1,11 +1,14 @@
 ### short
 
-- complete show_samples action 
+- cli history
+- samples.randomise doesn't need instruments
+- ability to quick view bank list
 
 ### medium
 
-- cli history
-- ability to "fix" samples into certain positions
+- cli fix samples
+- cli replace samples
+- cli ban samples
 
 ### long
 
@@ -64,6 +67,7 @@
 
 ### done
 
+- complete show_samples action 
 - check how tmp dirs are being created
 - rename chain as decompile
 - trig velocity should be an option
