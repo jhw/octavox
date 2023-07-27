@@ -1,6 +1,6 @@
 from octavox.modules.banks import SVBanks, SVPool
 
-from octavox.projects.picobeats.model import Patch, Patches
+from octavox.projects.picobeats.model import Patch, Patches, Pattern, Instruments
 
 from octavox.modules.project import Output
 
@@ -221,15 +221,14 @@ class Shell(cmd.Cmd):
             for seq in patch["sequencers"]:
                 for i, slice in enumerate(seq["slices"]):
                     if len(samples) < i+1:
-                        samples.append([])
-                    for k, v in slice["samples"].items():
-                        label="%s:%s/%s" % tuple([k]+v)
-                        samples[i].append(label)
+                        samples.append({})
+                    samples[i].update(slice["samples"])
             return samples
         patch=self.project[i % len(self.project)]
-        table=filter_samples(patch)
-        for row in table:
-            print ("\t".join(row))
+        samples=filter_samples(patch)
+        patterns={seq["key"]:Pattern(seq["pattern"].expanded)
+                  for seq in patch["sequencers"]}
+        print (patterns)
     
     @parse_line(config=[{"name": "frag"}])
     def do_load_project(self, frag, dirname="tmp/picobeats/json"):

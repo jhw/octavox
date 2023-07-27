@@ -1,18 +1,18 @@
 ### short
 
+- complete show_samples action 
+
 ### medium
 
-- complete show_samples action 
-  - iterate through patterns on a per track basis
-  - concatenate rows
-
+- cli history
 - ability to "fix" samples into certain positions
-- ability to specify track key when copying
 
 ### long
 
 ### thoughts
 
+- ability to specify track key when copying?
+  - not clear that this is useful if fix() functionality is implemented
 - cli blend() action?
   - hard to know how it should be done or if it would be useful
 - validation to check custom sampler classes exist?
