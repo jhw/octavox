@@ -1,6 +1,8 @@
 ### short
 
-- script to dump pico banks as projects
+- nbreaks should be an option for project rendering
+- trig velocity should be an option
+- rename chain as decompile
 
 ### medium
 
@@ -8,7 +10,6 @@
   - iterate through patterns on a per track basis
   - concatenate rows
 
-- validation to check custom sampler classes exist
 - ability to "fix" samples into certain positions
 - ability to specify track key when copying
 - cli blend() action
@@ -17,6 +18,8 @@
 
 ### thoughts
 
+- validation to check custom sampler classes exist?
+  - is over- optimisation
 - pass config around?
   - problem is how to use it in decorators
   - easier to load at cli level and validate there as it's a yaml file
@@ -64,6 +67,7 @@
 
 ### done
 
+- script to dump pico banks as projects
 - add sv prefix to banks, pools etc
 - add pitch info to samplekey
 - convert samplekey tuples to classes
