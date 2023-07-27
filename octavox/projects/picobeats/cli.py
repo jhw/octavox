@@ -142,7 +142,7 @@ class Shell(cmd.Cmd):
                 raise RuntimeError("src does not exist")
             dest=lookup(self, fdest)
             if not dest:
-                self.pools[fdest]=Pool()
+                self.pools[fdest]=SVPool()
                 dest=fdest
             print ("INFO: copying %s to %s" % (src, dest))
             self.pools[dest].add(self.pools[src])

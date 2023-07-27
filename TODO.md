@@ -1,6 +1,5 @@
 ### short
 
-- validation to check custom sampler classes exist
 - script to dump pico banks as projects
 
 ### medium
@@ -9,9 +8,10 @@
   - iterate through patterns on a per track basis
   - concatenate rows
 
+- validation to check custom sampler classes exist
 - ability to "fix" samples into certain positions
-- cli blend() action
 - ability to specify track key when copying
+- cli blend() action
 
 ### long
 
