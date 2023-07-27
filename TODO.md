@@ -1,7 +1,5 @@
 ### short
 
-- check how tmp dirs are being created
-
 ### medium
 
 - complete show_samples action 
@@ -66,6 +64,7 @@
 
 ### done
 
+- check how tmp dirs are being created
 - rename chain as decompile
 - trig velocity should be an option
 - nbreaks should be an option for project rendering

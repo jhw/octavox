@@ -23,11 +23,8 @@ def render_project(banks, bankname, patch, nbeats, config=Config):
         project.write_to(f)
 
 if __name__=="__main__":
-    for path in ["tmp",
-                 "tmp/banks",
-                 "tmp/banks/pico"]:
-        if not os.path.exists(path):
-            os.mkdir(path)
+    if not os.path.exists("tmp/banks/pico"):
+        os.makedirs("tmp/banks/pico")
     banks=SVBanks("octavox/banks/pico")
     for bankname, bank in banks.items():
         print (bankname)
