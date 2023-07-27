@@ -191,7 +191,7 @@ class Sequencer(dict):
                 volume=self.mixer(instkey, samplekey)
                 trig={"vel": volume,
                       "i": i+offset}
-                if samplekey["mod"]!="svdrum":
+                if samplekey["bank"]!="svdrum":
                     trig["mod"]=self.mod
                     trig["key"]=samplekey
                 else:

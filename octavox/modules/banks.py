@@ -177,9 +177,8 @@ class Banks(dict):
             pools[key]=poolsfn()
         return pools
 
-    def get_wavfile(self, item):
-        bankfile, wavfile = item
-        return self[bankfile].zipfile.open(wavfile, 'r')
+    def get_wavfile(self, samplekey):
+        return self[samplekey["bank"]].zipfile.open(samplekey["file"], 'r')
     
 if __name__=="__main__":
     banks=Banks("octavox/banks/pico")

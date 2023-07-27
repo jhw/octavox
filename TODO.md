@@ -1,7 +1,5 @@
 ### short
 
-- convert samplekey tuples to classes
-
 - script to dump pico banks as projects
 
 ### medium
@@ -10,7 +8,8 @@
   - iterate through patterns on a per track basis
   - concatenate rows
 
-- remove file suffixes so you have room for pitch info 
+- add sv prefix to banks, pools etc
+- add pitch info to samplekey
 - ability to "fix" samples into certain positions
 - validation to check custom sampler classes exist
 - cli blend() action
@@ -67,6 +66,7 @@
 
 ### done
 
+- convert samplekey tuples to classes
 - complete show samples action by iterating over pattern and dunping formatted row
 - implement cli api
 - abstract instruments and fragments from banks.py
