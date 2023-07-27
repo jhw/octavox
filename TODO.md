@@ -1,14 +1,15 @@
 ### short
 
+- fetch pico stuff to add index prefix to filename
+- save pico stuff to picobeats/banks/zipped|projects
+
 - cli history
 - samples.randomise doesn't need instruments
-- ability to quick view bank list
 
 ### medium
 
 - cli fix samples
-- cli replace samples
-- cli ban samples
+- cli replace|ban samples
 
 ### long
 
@@ -67,6 +68,7 @@
 
 ### done
 
+- ability to quick view bank list
 - load_project fails if passsed string
 - show_rendered should be show_samples
 - show_rendered doesn't render svdrum trigs
