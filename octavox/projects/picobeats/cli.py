@@ -287,17 +287,12 @@ def validate_model_config(config=yaml.safe_load(open("octavox/projects/picobeats
     validate_module_links(config)
     validate_module_refs(config)
     
-def init_svdrum_curated(pools,
-                        pool=yaml.safe_load(open("octavox/projects/picobeats/svdrum.yaml").read()),
-                        sn="default-curated"):
-    pool["sn"]=pools[sn]["sn"]
-    return SVPool(pool)
-    
 if __name__=="__main__":
     try:
         banks=SVBanks("octavox/banks/pico")
         pools=banks.spawn_pools().cull()
-        pools["svdrum-curated"]=init_svdrum_curated(pools)
+        pools["svdrum-curated"]=svdrum=SVPool(yaml.safe_load(open("octavox/projects/picobeats/svdrum.yaml").read()))
+        svdrum["sn"]=pools["default-curated"]["sn"] # NB
         validate_model_config()
         Shell(banks=banks,
               pools=pools).cmdloop()
