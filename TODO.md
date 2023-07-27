@@ -1,15 +1,16 @@
 ### short
 
-- convert samplekey tuples to strings 
-- remove file suffixes so you have room for pitch info 
+- convert samplekey tuples to classes
+
+- script to dump pico banks as projects
 
 ### medium
 
 - complete show_samples action 
   - iterate through patterns on a per track basis
   - concatenate rows
-  
-- script to dump pico banks as projects
+
+- remove file suffixes so you have room for pitch info 
 - ability to "fix" samples into certain positions
 - validation to check custom sampler classes exist
 - cli blend() action
