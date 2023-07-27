@@ -1,5 +1,7 @@
 ### short
 
+- check how tmp dirs are being created
+
 ### medium
 
 - complete show_samples action 
@@ -8,12 +10,13 @@
 
 - ability to "fix" samples into certain positions
 - ability to specify track key when copying
-- cli blend() action
 
 ### long
 
 ### thoughts
 
+- cli blend() action?
+  - hard to know how it should be done or if it would be useful
 - validation to check custom sampler classes exist?
   - is over- optimisation
 - pass config around?

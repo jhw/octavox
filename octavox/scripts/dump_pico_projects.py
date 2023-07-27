@@ -18,13 +18,14 @@ def render_project(banks, bankname, patch, nbeats, config=Config):
     project=SVProject().render(patches=[patch],
                                config=config,
                                banks=banks)
-    projfile="tmp/picobanks/%s.sunvox" % bankname
+    projfile="tmp/banks/pico/%s.sunvox" % bankname
     with open(projfile, 'wb') as f:
         project.write_to(f)
 
 if __name__=="__main__":
     for path in ["tmp",
-                 "tmp/picobanks"]:
+                 "tmp/banks",
+                 "tmp/banks/pico"]:
         if not os.path.exists(path):
             os.mkdir(path)
     banks=SVBanks("octavox/banks/pico")
