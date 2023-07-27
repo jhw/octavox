@@ -1,5 +1,7 @@
 ### short
 
+- add sv prefix to banks, pools etc
+- validation to check custom sampler classes exist
 - script to dump pico banks as projects
 
 ### medium
@@ -8,10 +10,7 @@
   - iterate through patterns on a per track basis
   - concatenate rows
 
-- add sv prefix to banks, pools etc
-- add pitch info to samplekey
 - ability to "fix" samples into certain positions
-- validation to check custom sampler classes exist
 - cli blend() action
 - ability to specify track key when copying
 
@@ -66,6 +65,7 @@
 
 ### done
 
+- add pitch info to samplekey
 - convert samplekey tuples to classes
 - complete show samples action by iterating over pattern and dunping formatted row
 - implement cli api

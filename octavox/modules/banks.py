@@ -40,9 +40,15 @@ ch:
 
 class SampleKey(dict):
 
+    @classmethod
+    def create(self, bank, file, pitch=0):
+        return SampleKey({"bank": bank,
+                          "file": file,
+                          "pitch": pitch})
+    
     def __init__(self, item={}):
         dict.__init__(self, item)
-
+        
     def __str__(self):
         suffix=self["file"] if "file" in self else self["id"]
         return "%s/%s" % (self["bank"],
@@ -136,8 +142,8 @@ class Bank:
 
     def spawn_free(self, instruments):
         wavfiles=self.wavfiles
-        return Pool({inst:[SampleKey({"bank": self.name,
-                                      "file": wavfile})
+        return Pool({inst:[SampleKey.create(bank=self.name,
+                                            file=wavfile)
                            for wavfile in wavfiles]
                      for inst in instruments})
 
@@ -150,9 +156,8 @@ class Bank:
                 pool.setdefault(inst, [])
                 for frag in fragments[inst]:
                     if re.search(frag, wavfile, re.I):
-                        samplekey=SampleKey({"bank": self.name,
-                                             "file": wavfile})
-                        pool[inst].append(samplekey)
+                        pool[inst].append(SampleKey.create(bank=self.name,
+                                                           file=wavfile))
         return pool
                 
 class Banks(dict):
