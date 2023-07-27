@@ -1,6 +1,5 @@
 ### short
 
-- add sv prefix to banks, pools etc
 - validation to check custom sampler classes exist
 - script to dump pico banks as projects
 
@@ -65,6 +64,7 @@
 
 ### done
 
+- add sv prefix to banks, pools etc
 - add pitch info to samplekey
 - convert samplekey tuples to classes
 - complete show samples action by iterating over pattern and dunping formatted row

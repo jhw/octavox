@@ -38,13 +38,13 @@ ch:
   - prc
 """)
 
-class SampleKey(dict):
+class SVSampleKey(dict):
 
     @classmethod
     def create(self, bank, file, pitch=0):
-        return SampleKey({"bank": bank,
-                          "file": file,
-                          "pitch": pitch})
+        return SVSampleKey({"bank": bank,
+                            "file": file,
+                            "pitch": pitch})
     
     def __init__(self, item={}):
         dict.__init__(self, item)
@@ -54,16 +54,16 @@ class SampleKey(dict):
         return "%s/%s" % (self["bank"],
                           suffix)
 
-class SampleKeys(list):
+class SVSampleKeys(list):
 
     def __init__(self, items=[]):
-        list.__init__(self, [SampleKey(item)
+        list.__init__(self, [SVSampleKey(item)
                              for item in items])
     
-class Pool(dict):
+class SVPool(dict):
 
     def __init__(self, item={}):
-        dict.__init__(self, {k:SampleKeys(v)
+        dict.__init__(self, {k:SVSampleKeys(v)
                              for k, v in item.items()})
 
     def is_valid(self, limit=2):
@@ -73,7 +73,7 @@ class Pool(dict):
         return True
 
     def clone(self):
-        return Pool(self)
+        return SVPool(self)
     
     def add(self, pool):
         for key in pool:
@@ -92,13 +92,13 @@ class Pool(dict):
         return sum([len(list(v))
                     for v in self.values()])
     
-class Pools(dict):
+class SVPools(dict):
 
     def __init__(self, item={}):
         dict.__init__(self, item)
 
     def aggregate(self, suffix):
-        parent=Pool()
+        parent=SVPool()
         for key, pool in self.items():
             if key.endswith(suffix):
                 parent.add(pool)
@@ -111,7 +111,7 @@ class Pools(dict):
         return self.aggregate("curated")
 
     def cull(self):
-        pools=Pools()
+        pools=SVPools()
         for k, v in self.items():
             if v.is_valid():
                 pools[k]=v
@@ -129,7 +129,7 @@ class Pools(dict):
         else:
             return matches.pop()
         
-class Bank:
+class SVBank:
 
     def __init__(self, name, zipfile):
         self.name=name
@@ -142,36 +142,36 @@ class Bank:
 
     def spawn_free(self, instruments):
         wavfiles=self.wavfiles
-        return Pool({inst:[SampleKey.create(bank=self.name,
-                                            file=wavfile)
-                           for wavfile in wavfiles]
-                     for inst in instruments})
+        return SVPool({inst:[SVSampleKey.create(bank=self.name,
+                                                file=wavfile)
+                             for wavfile in wavfiles]
+                       for inst in instruments})
 
     def spawn_curated(self,
                       instruments,
                       fragments=Fragments):
-        pool, wavfiles = Pool(), self.wavfiles
+        pool, wavfiles = SVPool(), self.wavfiles
         for wavfile in wavfiles:
             for inst in instruments:
                 pool.setdefault(inst, [])
                 for frag in fragments[inst]:
                     if re.search(frag, wavfile, re.I):
-                        pool[inst].append(SampleKey.create(bank=self.name,
-                                                           file=wavfile))
+                        pool[inst].append(SVSampleKey.create(bank=self.name,
+                                                             file=wavfile))
         return pool
                 
-class Banks(dict):
+class SVBanks(dict):
 
     def __init__(self, root):
         dict.__init__(self)        
         for bankfile in os.listdir(root):
             name=bankfile.split(".")[0]
             path="%s/%s" % (root, bankfile)
-            bank=Bank(name, zipfile.ZipFile(path))
+            bank=SVBank(name, zipfile.ZipFile(path))
             self[name]=bank
 
     def spawn_pools(self, instruments=Fragments.keys()):
-        pools=Pools()
+        pools=SVPools()
         for attr in ["free", "curated"]:
             for bankname, bank in self.items():
                 bankfn=getattr(bank, "spawn_%s" % attr)
@@ -186,7 +186,7 @@ class Banks(dict):
         return self[samplekey["bank"]].zipfile.open(samplekey["file"], 'r')
     
 if __name__=="__main__":
-    banks=Banks("octavox/banks/pico")
+    banks=SVBanks("octavox/banks/pico")
     pools=banks.spawn_pools().cull()
     print (pools.keys())
     print ()

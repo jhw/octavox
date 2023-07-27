@@ -1,14 +1,14 @@
-from octavox.projects.picobeats.model import Patch, Patches
+from octavox.modules.banks import SVBanks, SVPool
 
-from octavox.modules.banks import Banks, Pools, Pool
+from octavox.projects.picobeats.model import Patch, Patches
 
 from octavox.modules.project import Output
 
 from octavox.projects import Nouns, Adjectives, is_abbrev
 
-from datetime import datetime
-
 import cmd, json, os, random, re, traceback, yaml
+
+from datetime import datetime
 
 class Environment(dict):
 
@@ -288,11 +288,11 @@ def init_svdrum_curated(pools,
                         pool=yaml.safe_load(open("octavox/projects/picobeats/svdrum.yaml").read()),
                         sn="default-curated"):
     pool["sn"]=pools[sn]["sn"]
-    return Pool(pool)
+    return SVPool(pool)
     
 if __name__=="__main__":
     try:
-        banks=Banks("octavox/banks/pico")
+        banks=SVBanks("octavox/banks/pico")
         pools=banks.spawn_pools().cull()
         pools["svdrum-curated"]=init_svdrum_curated(pools)
         validate_model_config()
