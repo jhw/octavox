@@ -183,43 +183,42 @@ class Shell(cmd.Cmd):
                        for i in I])
 
     @parse_line(config=[{"name": "i"}])
-    @render_patches(generator="chain",
+    @render_patches(generator="decomp",
                     nbreaks=1)
-    def do_chain_patches(self, i, instruments="kk|sn|ht".split("|")):
+    def do_decompile_patches(self, i, instruments="kk|sn|ht".split("|")):
         I=[i] if not isinstance(i, list) else i
-        chain=Patches([self.project[i % len(self.project)]
+        patches=Patches([self.project[i % len(self.project)]
                        for i in I])
         for solo in instruments:
             mutes=[inst for inst in instruments
                    if inst!=solo]
-            for root in chain[:len(I)]:
-                clone=root.clone()
+            for patch in patches[:len(I)]:
+                clone=patch.clone()
                 clone["mutes"]=mutes
-                chain.append(clone)
-        return chain
+                patches.append(clone)
+        return patches
     
     @parse_line(config=[{"name": "i"}])
     @render_patches(generator="mutate")
     def do_mutate_patch(self, i):
-        roots=self.project
-        root=self.project[i % len(self.project)]
+        patch=self.project[i % len(self.project)]
         limits={k: self.env["d%s" % k]
                 for k in "slices|pat|seed|style".split("|")}
-        return Patches([root]+[root.clone().mutate(temperature=self.env["temperature"],
+        return Patches([patch]+[patch.clone().mutate(temperature=self.env["temperature"],
                                                    limits=limits)
                                for i in range(self.env["npatches"]-1)])
     
     @parse_line(config=[{"name": "i"}])
     def do_show_patch(self, i):
-        root=self.project[i % len(self.project)]
-        print (yaml.safe_dump(json.loads(json.dumps(root)), # urgh
+        patch=self.project[i % len(self.project)]
+        print (yaml.safe_dump(json.loads(json.dumps(patch)), # urgh
                               default_flow_style=False))
     
     @parse_line(config=[{"name": "i"}])
     def do_show_samples(self, i):
-        def filter_samples(root):
+        def filter_samples(patch):
             samples=[]
-            for seq in root["sequencers"]:
+            for seq in patch["sequencers"]:
                 for i, slice in enumerate(seq["slices"]):
                     if len(samples) < i+1:
                         samples.append([])
@@ -227,8 +226,8 @@ class Shell(cmd.Cmd):
                         label="%s:%s/%s" % tuple([k]+v)
                         samples[i].append(label)
             return samples
-        root=self.project[i % len(self.project)]
-        table=filter_samples(root)
+        patch=self.project[i % len(self.project)]
+        table=filter_samples(patch)
         for row in table:
             print ("\t".join(row))
     

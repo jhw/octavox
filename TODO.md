@@ -1,7 +1,5 @@
 ### short
 
-- rename chain as decompile
-
 ### medium
 
 - complete show_samples action 
@@ -65,6 +63,7 @@
 
 ### done
 
+- rename chain as decompile
 - trig velocity should be an option
 - nbreaks should be an option for project rendering
 - script to dump pico banks as projects
