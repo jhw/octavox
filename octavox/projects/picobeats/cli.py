@@ -10,29 +10,55 @@ import cmd, json, os, re, readline, traceback, yaml
 
 HistorySize=100
 
-class Shell(cmd.Cmd):
+def parse_line(config):
+    def parse_array(line):
+        values=[]
+        for chunk in line.split("|"):
+            if "x" in chunk:
+                n, v = [int(tok) for tok in chunk.split("x")]
+                values+=[v for i in range(n)]
+            else:
+                values.append(int(chunk))
+        return values
+    def parse_value(V):
+        if re.search("^\\-?\\d+\\.\\d+$", V): # float
+            return float(V)
+        elif re.search("^\\-?\\d+$", V): # int
+            return int(V)
+        elif re.search("^(\\d+(x\\d+)?\\|)*\\d+(x\\d+)?$", V): # array
+            return parse_array(V)
+        else: # str
+            return V
+    def decorator(fn):
+        def wrapped(self, line):
+            try:
+                keys=[item["name"] for item in config]
+                args=[tok for tok in line.split(" ") if tok!='']
+                if len(args) < len(config):
+                    raise RuntimeError("please enter %s" % ", ".join(keys))
+                kwargs={k:parse_value(v)
+                        for k, v in zip(keys, args[:len(keys)])}
+                return fn(self, *[], **kwargs)
+            except RuntimeError as error:
+                print ("ERROR: %s" % str(error))
+        return wrapped
+    return decorator
 
-    intro="Welcome to Octavox Picobeats :)"
+class SVCli(cmd.Cmd):
 
     prompt=">>> "
 
     def __init__(self,
-                 banks,
-                 pools,
-                 poolname,
                  outdir,
                  params,
                  subdirs=["json", "sunvox"],
                  historysize=HistorySize):
         cmd.Cmd.__init__(self)        
-        self.banks=banks
-        self.pools=pools
         self.outdir=outdir
         for subdir in subdirs:
             path="%s/%s" % (outdir, subdir)
             if not os.path.exists(path):
                 os.makedirs(path)
-        self.poolname=poolname
         self.env=SVEnvironment(params)
         self.historyfile=os.path.expanduser("%s/.clihistory" % self.outdir)
         self.historysize=historysize
@@ -43,50 +69,6 @@ class Shell(cmd.Cmd):
         if os.path.exists(self.historyfile):
             readline.read_history_file(self.historyfile)
         
-    def parse_line(config):
-        def parse_array(line):
-            values=[]
-            for chunk in line.split("|"):
-                if "x" in chunk:
-                    n, v = [int(tok) for tok in chunk.split("x")]
-                    values+=[v for i in range(n)]
-                else:
-                    values.append(int(chunk))
-            return values
-        def parse_value(V):
-            if re.search("^\\-?\\d+\\.\\d+$", V): # float
-                return float(V)
-            elif re.search("^\\-?\\d+$", V): # int
-                return int(V)
-            elif re.search("^(\\d+(x\\d+)?\\|)*\\d+(x\\d+)?$", V): # array
-                return parse_array(V)
-            else: # str
-                return V
-        def decorator(fn):
-            def wrapped(self, line):
-                try:
-                    keys=[item["name"] for item in config]
-                    args=[tok for tok in line.split(" ") if tok!='']
-                    if len(args) < len(config):
-                        raise RuntimeError("please enter %s" % ", ".join(keys))
-                    kwargs={k:parse_value(v)
-                            for k, v in zip(keys, args[:len(keys)])}
-                    return fn(self, *[], **kwargs)
-                except RuntimeError as error:
-                    print ("ERROR: %s" % str(error))
-            return wrapped
-        return decorator
-
-    @parse_line(config=[{"name": "frag"}])
-    def do_show_bank(self, frag):
-        try:
-            bankname=self.banks.lookup(str(frag))
-            bank=self.banks[bankname]
-            for wavfile in bank.wavfiles:
-                print (wavfile)
-        except RuntimeError as error:
-            print ("ERROR: %s" % str(error))
-    
     def do_show_params(self, _):
         for key in sorted(self.env.keys()):
             print ("%s: %s" % (key, self.env[key]))
@@ -101,6 +83,65 @@ class Shell(cmd.Cmd):
         except RuntimeError as error:
             print ("ERROR: %s" % str(error))
 
+    def do_list_projects(self, _):
+        for filename in os.listdir(self.outdir+"/json"):
+            print (filename.split(".")[0])
+                        
+    @parse_line(config=[{"name": "frag"}])
+    def do_load_project(self, frag):
+        matches=[filename for filename in os.listdir(self.outdir+"/json")
+                 if str(frag) in filename]
+        if matches==[]:
+            print ("WARNING: no matches")
+        elif len(matches)==1:
+            filename=matches.pop()
+            print ("INFO: %s" % filename)
+            abspath="%s/%s" % (dirname, filename)
+            patches=json.loads(open(abspath).read())
+            self.project=Patches([Patch(**patch)
+                                  for patch in patches])
+        else:
+            print ("WARNING: multiple matches")
+            
+    def do_clear_projects(self, _):
+        os.system("rm -rf %s" % self.outdir)
+    
+    def do_exit(self, _):
+        return self.do_quit(None)
+
+    def do_quit(self, _):
+        print ("INFO: exiting")
+        return True
+
+    def postloop(self):
+        readline.set_history_length(self.historysize)
+        readline.write_history_file(self.historyfile)
+                
+class PicobeatsCli(SVCli):
+
+    intro="Welcome to Octavox Picobeats :)"
+
+    def __init__(self,
+                 banks,
+                 pools,
+                 poolname,
+                 *args,
+                 **kwargs):
+        SVCli.__init__(self, *args, **kwargs)        
+        self.banks=banks
+        self.pools=pools
+        self.poolname=poolname
+
+    @parse_line(config=[{"name": "frag"}])
+    def do_show_bank(self, frag):
+        try:
+            bankname=self.banks.lookup(str(frag))
+            bank=self.banks[bankname]
+            for wavfile in bank.wavfiles:
+                print (wavfile)
+        except RuntimeError as error:
+            print ("ERROR: %s" % str(error))
+    
     def do_list_pools(self, _):
         for poolname in sorted(self.pools.keys()):
             poollabel=poolname.upper() if poolname==self.poolname else poolname
@@ -214,40 +255,6 @@ class Shell(cmd.Cmd):
             print ("\t".join([str(cell)
                               for cell in row]))
 
-    def do_list_projects(self, _):
-        for filename in os.listdir(self.outdir+"/json"):
-            print (filename.split(".")[0])
-                        
-    @parse_line(config=[{"name": "frag"}])
-    def do_load_project(self, frag):
-        matches=[filename for filename in os.listdir(self.outdir+"/json")
-                 if str(frag) in filename]
-        if matches==[]:
-            print ("WARNING: no matches")
-        elif len(matches)==1:
-            filename=matches.pop()
-            print ("INFO: %s" % filename)
-            abspath="%s/%s" % (dirname, filename)
-            patches=json.loads(open(abspath).read())
-            self.project=Patches([Patch(**patch)
-                                  for patch in patches])
-        else:
-            print ("WARNING: multiple matches")
-            
-    def do_clear_projects(self, _):
-        os.system("rm -rf %s" % self.outdir)
-    
-    def do_exit(self, _):
-        return self.do_quit(None)
-
-    def do_quit(self, _):
-        print ("INFO: exiting")
-        return True
-
-    def postloop(self):
-        readline.set_history_length(self.historysize)
-        readline.write_history_file(self.historyfile)
-    
 def validate_model_config(config=yaml.safe_load(open("octavox/projects/picobeats/config.yaml").read())):
     def validate_track_keys(config):
         modkeys=[mod["key"] for mod in config["modules"]
@@ -292,10 +299,10 @@ if __name__=="__main__":
         pools["svdrum-curated"]=svdrum=SVPool(yaml.safe_load(open("octavox/projects/picobeats/svdrum.yaml").read()))
         svdrum["sn"]=pools["default-curated"]["sn"] # NB
         validate_model_config()
-        Shell(outdir="tmp/picobeats",
-              poolname="global-curated",
-              params=Params,
-              banks=banks,
-              pools=pools).cmdloop()
+        PicobeatsCli(outdir="tmp/picobeats",
+                     poolname="global-curated",
+                     params=Params,
+                     banks=banks,
+                     pools=pools).cmdloop()
     except RuntimeError as error:
         print ("ERROR: %s" % str(error))
