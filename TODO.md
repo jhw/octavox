@@ -1,16 +1,16 @@
 ### short
 
 - remove nbreaks
-- remove pitch
-
 - add back wrap_action
-- remove str(frag) to test wrap_action
+  - remove str(frag) to test wrap_action
 
 ### medium
 
-- update README
+- add cli types
 - block model
+
 - cli fix samples
+- update README
 
 ### long
 
@@ -75,6 +75,7 @@
 
 ### done
 
+- remove pitch
 - remove mutes
 - remove decompile and concat
 - SVBankCli

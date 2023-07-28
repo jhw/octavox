@@ -41,10 +41,9 @@ ch:
 class SVSampleKey(dict):
 
     @classmethod
-    def create(self, bank, file, pitch=0):
+    def create(self, bank, file):
         return SVSampleKey({"bank": bank,
-                            "file": file,
-                            "pitch": pitch})
+                            "file": file})
     
     def __init__(self, item={}):
         dict.__init__(self, item)
