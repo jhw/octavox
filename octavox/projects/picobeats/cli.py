@@ -220,13 +220,17 @@ class Shell(cmd.Cmd):
             for key in instruments:
                 if i in trigs[key]:
                     trig=trigs[key][i]
-                    value=SVSampleKey(trig["key"]) if "key" in trig else "svdrum/%i" % trig["id"]
-                    row.append("%s:%s" % (key, value.short_label))
+                    value=SVSampleKey(trig["key"]).short_label if "key" in trig else "sv/%i" % trig["id"]
+                    row.append("%s:%s" % (key, value))
                 else:
                     row.append("...     ")
             print ("\t".join([str(cell)
                               for cell in row]))
-                                
+
+    def do_list_projects(self, _, dirname="tmp/picobeats/json"):
+        for filename in os.listdir(dirname):
+            print (filename.split(".")[0])
+                        
     @parse_line(config=[{"name": "frag"}])
     def do_load_project(self, frag, dirname="tmp/picobeats/json"):
         matches=[filename for filename in os.listdir(dirname)

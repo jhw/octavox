@@ -180,6 +180,18 @@ class SVBanks(dict):
             bank=SVBank(name, zipfile.ZipFile(path))
             self[name]=bank
 
+    def lookup(self, abbrev):
+        matches=[]
+        for key in self:
+            if is_abbrev(abbrev, key):
+                matches.append(key)
+        if matches==[]:
+            raise RuntimeError("no banks found")
+        elif len(matches) > 1:
+            raise RuntimeError("multiple banks found")
+        else:
+            return matches.pop()
+            
     def spawn_pools(self, instruments=Fragments.keys()):
         pools=SVPools()
         for attr in ["free", "curated"]:
