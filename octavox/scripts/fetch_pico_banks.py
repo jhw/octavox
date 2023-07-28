@@ -24,12 +24,14 @@ def filter_blocks(buf):
     return [format_block(i, block.split(b"<?xpacket begin")[0])
             for i, block in enumerate(buf.split(b"\202\244name")[1:])]
 
-def clean_filename(filename):
+def clean_filename(filename, i):
     tokens=filename.split(".")
     handle, fileext = ".".join(tokens[:-1]), tokens[-1]
-    cleanhandle=" ".join([tok for tok in [re.sub("\\W", "", tok)
-                                          for tok in re.split("\\s", handle)]
-                          if tok!=''])                         
+    tokens=[re.sub("\\W", "", tok)
+            for tok in re.split("\\s", re.sub("^\\d+", "", handle))]
+    prefix="0%i" % i if i < 10 else str(i)
+    cleanhandle=" ".join([prefix]+[tok for tok in tokens
+                                   if tok!=''])
     return "%s.%s" % (cleanhandle, fileext)
 
 def generate(packname, packfile, dirname=DirName):
@@ -39,7 +41,7 @@ def generate(packname, packfile, dirname=DirName):
     buf=fetch_bin(packfile)
     blocks=filter_blocks(buf)
     for i, blockname, block in blocks:
-        filename=clean_filename(blockname.decode("utf-8"))
+        filename=clean_filename(blockname.decode("utf-8"), i)
         zf.writestr(filename, block)        
 
 if __name__=="__main__":

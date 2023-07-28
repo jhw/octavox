@@ -1,6 +1,9 @@
 ### short
 
-- fetch pico stuff to add index prefix to filename
+- nero-bellum and pitch-black names aren't being cleaned
+- replace show_patch with show_samples
+- show_samples to dump short name
+
 - s&h step enum
 - cli history
 - samples.randomise doesn't need instruments
@@ -67,6 +70,7 @@
 
 ### done
 
+- fetch pico stuff to add index prefix to filename
 - save pico stuff to picobeats/banks/zipped|projects
 - ability to quick view bank list
 - load_project fails if passsed string
