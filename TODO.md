@@ -1,6 +1,5 @@
 ### short
 
-- remove decompile and concat
 - remove nbreaks
 - remove mutes
 - remove pitch
@@ -77,6 +76,7 @@
 
 ### done
 
+- remove decompile and concat
 - SVBankCli
 - consider if there are other opportunities to abstract cli
 - remove code to create paths on the fly

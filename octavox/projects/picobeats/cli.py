@@ -46,29 +46,6 @@ class PicobeatsCli(SVBankCli):
                                  n=self.env["npatches"])
 
     @parse_line(config=[{"name": "i"}])
-    @render_patches(prefix="concat")
-    def do_concat_patches(self, i):
-        I=[i] if not isinstance(i, list) else i
-        return Patches([self.project[i % len(self.project)]
-                       for i in I])
-
-    @parse_line(config=[{"name": "i"}])
-    @render_patches(prefix="decomp",
-                    nbreaks=1)
-    def do_decompile_patches(self, i, instruments=Instruments):
-        I=[i] if not isinstance(i, list) else i
-        patches=Patches([self.project[i % len(self.project)]
-                       for i in I])
-        for solo in instruments:
-            mutes=[inst for inst in instruments
-                   if inst!=solo]
-            for patch in patches[:len(I)]:
-                clone=patch.clone()
-                clone["mutes"]=mutes
-                patches.append(clone)
-        return patches
-    
-    @parse_line(config=[{"name": "i"}])
     @render_patches(prefix="mutate")
     def do_mutate_patch(self, i):
         patch=self.project[i % len(self.project)]
