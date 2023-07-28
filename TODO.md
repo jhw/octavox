@@ -1,7 +1,6 @@
 ### short
 
 - remove nbreaks
-- remove mutes
 - remove pitch
 
 - add back wrap_action
@@ -76,6 +75,7 @@
 
 ### done
 
+- remove mutes
 - remove decompile and concat
 - SVBankCli
 - consider if there are other opportunities to abstract cli

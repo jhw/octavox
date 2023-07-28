@@ -19,6 +19,22 @@ class PicobeatsCli(SVBankCli):
                  **kwargs):
         SVBankCli.__init__(self, *args, **kwargs)        
 
+    @parse_line(config=[{"name": "frag"}])
+    def do_load_project(self, frag):
+        matches=[filename for filename in os.listdir(self.outdir+"/json")
+                 if str(frag) in filename]
+        if matches==[]:
+            print ("WARNING: no matches")
+        elif len(matches)==1:
+            filename=matches.pop()
+            print ("INFO: %s" % filename)
+            abspath="%s/%s" % (self.outdir+"/json", filename)
+            patches=json.loads(open(abspath).read())
+            self.project=Patches([Patch(**patch)
+                                  for patch in patches])
+        else:
+            print ("WARNING: multiple matches")
+        
     def render_patches(prefix, nbreaks=0):
         def decorator(fn):
             def wrapped(self, *args, **kwargs):

@@ -1,6 +1,6 @@
 from octavox.projects import SVEnvironment
 
-import cmd, os, re, readline
+import cmd, json, os, re, readline
 
 HistorySize=100
 
@@ -80,23 +80,7 @@ class SVBaseCli(cmd.Cmd):
     def do_list_projects(self, _):
         for filename in os.listdir(self.outdir+"/json"):
             print (filename.split(".")[0])
-                        
-    @parse_line(config=[{"name": "frag"}])
-    def do_load_project(self, frag):
-        matches=[filename for filename in os.listdir(self.outdir+"/json")
-                 if str(frag) in filename]
-        if matches==[]:
-            print ("WARNING: no matches")
-        elif len(matches)==1:
-            filename=matches.pop()
-            print ("INFO: %s" % filename)
-            abspath="%s/%s" % (dirname, filename)
-            patches=json.loads(open(abspath).read())
-            self.project=Patches([Patch(**patch)
-                                  for patch in patches])
-        else:
-            print ("WARNING: multiple matches")
-            
+                                    
     def do_clear_projects(self, _):
         os.system("rm -rf %s" % self.outdir)
     

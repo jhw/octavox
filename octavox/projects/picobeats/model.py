@@ -304,31 +304,23 @@ class Lfos(list):
         return Lfos([lfo.clone()
                      for lfo in self])
 
-"""
-- mutes has to be a Patch state variable (and not something passed from cli like nbeats) as it needs to be applied locally to each patch, and not globally
-"""
-    
 class Patch(dict):
 
     @classmethod
     def randomise(self, pool, temperature):
         return Patch(sequencers=Sequencers.randomise(pool=pool,
                                                      temperature=temperature),
-                     lfos=Lfos.randomise(),
-                     mutes=[])
+                     lfos=Lfos.randomise())
         
     def __init__(self,
                  sequencers,
-                 lfos,
-                 mutes):
+                 lfos):
         dict.__init__(self, {"sequencers": Sequencers(sequencers),
-                             "lfos": Lfos(lfos),
-                             "mutes": mutes})
+                             "lfos": Lfos(lfos)})
         
     def clone(self):
         return Patch(sequencers=self["sequencers"].clone(),
-                     lfos=self["lfos"].clone(),
-                     mutes=list(self["mutes"]))
+                     lfos=self["lfos"].clone())
 
     def mutate(self, temperature, limits):
         for sequencer in self["sequencers"]:
@@ -349,10 +341,9 @@ class Patch(dict):
                           density,
                           config=Config["sequencers"]):
         for sequencer in self["sequencers"]:
-            if sequencer["key"] not in self["mutes"]:
-                sequencer.render(nbeats=nbeats,
-                                 tracks=tracks,
-                                 density=density)
+            sequencer.render(nbeats=nbeats,
+                             tracks=tracks,
+                             density=density)
                 
     def render_lfos(self,
                     tracks,
