@@ -1,6 +1,6 @@
 from octavox.modules.project import SVProject, SVPatch
 
-import octavox.modules.sequences.vitling909 as vitling
+import octavox.modules.sequences.vitling909 as nineohnine
 
 import json, os, random, yaml
 
@@ -203,25 +203,25 @@ class Sequencer(dict):
     
     @apply
     def fourfloor(self, q, i, d, *args, k="kk"):
-        return vitling.fourfloor(q, i, d, k)
+        return nineohnine.fourfloor(q, i, d, k)
     @apply
     def electro(self, q, i, d, *args, k="kk"):
-        return vitling.electro(q, i, d, k)
+        return nineohnine.electro(q, i, d, k)
     @apply
     def triplets(self, q, i, d, *args, k="kk"):
-        return vitling.triplets(q, i, d, k)
+        return nineohnine.triplets(q, i, d, k)
     @apply
     def backbeat(self, q, i, d, *args, k="sn"):
-        return vitling.backbeat(q, i, d, k)
+        return nineohnine.backbeat(q, i, d, k)
     @apply
     def skip(self, q, i, d, *args, k="sn"):
-        return vitling.skip(q, i, d, k)
+        return nineohnine.skip(q, i, d, k)
     @apply
     def offbeats(self, q, i, d, *args, k=["oh", "ch"]):
-        return vitling.offbeats(q, i, d, k)    
+        return nineohnine.offbeats(q, i, d, k)    
     @apply
     def closed(self, q, i, d, *args, k="ch"):
-        return vitling.closed(q, i, d, k)
+        return nineohnine.closed(q, i, d, k)
                             
 class Sequencers(list):
 

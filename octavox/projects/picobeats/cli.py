@@ -4,29 +4,11 @@ from octavox.projects.picobeats.model import Patch, Patches, Instruments
 
 from octavox.modules.project import Output
 
-from octavox.projects import Nouns, Adjectives, is_abbrev
+from octavox.projects import SVEnvironment, random_filename
 
-import cmd, json, os, random, re, traceback, yaml
+import cmd, json, os, re, traceback, yaml
 
-from datetime import datetime
-
-class Environment(dict):
-
-    def __init__(self, item={}):
-        dict.__init__(self, item)
-
-    def lookup(self, abbrev):
-        matches=[]
-        for key in self:
-            if is_abbrev(abbrev, key):
-                matches.append(key)
-        if matches==[]:
-            raise RuntimeError("%s not found" % abbrev)
-        elif len(matches) > 1:
-            raise RuntimeError("multiple key matches for %s" % abbrev)
-        return matches.pop()
-
-Env=Environment(yaml.safe_load("""
+Env=SVEnvironment(yaml.safe_load("""
 temperature: 1.0
 density: 0.75
 dslices: 0.5
@@ -38,13 +20,6 @@ npatches: 32
 """))
 
 DefaultPool="global-curated"
-
-def random_filename(generator):
-    ts=datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
-    return "%s-%s-%s-%s" % (ts,
-                            generator,
-                            random.choice(Adjectives),
-                            random.choice(Nouns))
 
 class Shell(cmd.Cmd):
 
@@ -158,11 +133,11 @@ class Shell(cmd.Cmd):
         except RuntimeError as error:
             print ("ERROR: %s" % str(error))
                     
-    def render_patches(generator, nbreaks=0):
+    def render_patches(prefix, nbreaks=0):
         def decorator(fn):
             def wrapped(self, *args, **kwargs):
                 try:
-                    self.filename=random_filename(generator)
+                    self.filename=random_filename(prefix)
                     print ("INFO: %s" % self.filename)
                     self.project=fn(self, *args, **kwargs)
                     self.project.render_json(filename=self.filename)
@@ -178,21 +153,21 @@ class Shell(cmd.Cmd):
             return wrapped
         return decorator
 
-    @render_patches(generator="random")
+    @render_patches(prefix="random")
     def do_randomise_patches(self, _):
         return Patches.randomise(pool=self.pools[self.poolname],
                                  temperature=self.env["temperature"],
                                  n=self.env["npatches"])
 
     @parse_line(config=[{"name": "i"}])
-    @render_patches(generator="concat")
+    @render_patches(prefix="concat")
     def do_concat_patches(self, i):
         I=[i] if not isinstance(i, list) else i
         return Patches([self.project[i % len(self.project)]
                        for i in I])
 
     @parse_line(config=[{"name": "i"}])
-    @render_patches(generator="decomp",
+    @render_patches(prefix="decomp",
                     nbreaks=1)
     def do_decompile_patches(self, i, instruments=Instruments):
         I=[i] if not isinstance(i, list) else i
@@ -208,7 +183,7 @@ class Shell(cmd.Cmd):
         return patches
     
     @parse_line(config=[{"name": "i"}])
-    @render_patches(generator="mutate")
+    @render_patches(prefix="mutate")
     def do_mutate_patch(self, i):
         patch=self.project[i % len(self.project)]
         limits={k: self.env["d%s" % k]

@@ -1,6 +1,5 @@
 ### short
 
-- move SVEnvironment, random_filename to root
 - s&h step enum
 - cli history
 - samples.randomise doesn't need instruments
@@ -67,6 +66,7 @@
 
 ### done
 
+- move SVEnvironment, random_filename to root
 - show_samples to dump short name
 - replace show_patch with show_samples
 - nero-bellum and pitch-black names aren't being cleaned
