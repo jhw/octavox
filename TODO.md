@@ -1,6 +1,5 @@
 ### short
 
-- nero-bellum and pitch-black names aren't being cleaned
 - replace show_patch with show_samples
 - show_samples to dump short name
 
@@ -70,6 +69,7 @@
 
 ### done
 
+- nero-bellum and pitch-black names aren't being cleaned
 - fetch pico stuff to add index prefix to filename
 - save pico stuff to picobeats/banks/zipped|projects
 - ability to quick view bank list

@@ -27,8 +27,8 @@ def filter_blocks(buf):
 def clean_filename(filename, i):
     tokens=filename.split(".")
     handle, fileext = ".".join(tokens[:-1]), tokens[-1]
-    tokens=[re.sub("\\W", "", tok)
-            for tok in re.split("\\s", re.sub("^\\d+", "", handle))]
+    tokens=[re.sub("^\\d+", "", re.sub("\\W", "", tok))
+            for tok in re.split("\\s", handle)]
     prefix="0%i" % i if i < 10 else str(i)
     cleanhandle=" ".join([prefix]+[tok for tok in tokens
                                    if tok!=''])
