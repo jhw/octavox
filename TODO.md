@@ -1,6 +1,5 @@
 ### short
 
-- s&h step enum
 - cli history
 
 ### medium
@@ -12,6 +11,8 @@
 
 ### thoughts
 
+- initialise lfo with randomised step?
+  - not sure it's worth it
 - ability to specify track key when copying?
   - not clear that this is useful if fix() functionality is implemented
 - cli blend() action?
