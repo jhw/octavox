@@ -1,7 +1,7 @@
 ### short
 
-- remove code to create paths on the fly
-- abstract base cli
+- consider if there are other opportunities to abstract cli
+
 - update README
 
 ### medium
@@ -70,6 +70,8 @@
 
 ### done
 
+- remove code to create paths on the fly
+- abstract base cli
 - remove code to create paths on the fly
 - cli to be passed output dir and create directory structure
 - why do you need a numpy requirement?
