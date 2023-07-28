@@ -1,8 +1,13 @@
 ### short
 
-- cli history
+- cli to be passed output dir and create directory structure
+- remove code to create paths on the fly
+- abstract base cli
+- update README
 
 ### medium
+
+- SVSampleKey to include svdrum to avoid cli show_samples hacks
 
 - cli fix samples
 - cli replace|ban samples
@@ -66,6 +71,8 @@
 
 ### done
 
+- why do you need a numpy requirement?
+- cli history
 - move SVEnvironment, random_filename to root
 - show_samples to dump short name
 - replace show_patch with show_samples

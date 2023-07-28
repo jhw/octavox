@@ -1,5 +1,4 @@
 git+https://github.com//metrasynth/radiant-voices
-lxml # for parsing of nouns, adjectives in dev
-numpy
+numpy # for local wavfile implementations
 pyyaml
 

@@ -1,12 +1,12 @@
+from octavox.projects import SVEnvironment, random_filename
+
 from octavox.modules.banks import SVBanks, SVPool, SVSampleKey
 
 from octavox.projects.picobeats.model import Patch, Patches, Instruments
 
 from octavox.modules.project import Output
 
-from octavox.projects import SVEnvironment, random_filename
-
-import cmd, json, os, re, traceback, yaml
+import cmd, json, os, re, readline, traceback, yaml
 
 Env=SVEnvironment(yaml.safe_load("""
 temperature: 1.0
@@ -20,6 +20,8 @@ npatches: 32
 """))
 
 DefaultPool="global-curated"
+
+HistoryFile, HistorySize = os.path.expanduser('tmp/picobeats/.clihistory'), 1000
 
 class Shell(cmd.Cmd):
 
@@ -40,6 +42,10 @@ class Shell(cmd.Cmd):
         self.filename=None
         self.poolname=poolname
 
+    def preloop(self, historyfile=HistoryFile):
+        if os.path.exists(historyfile):
+            readline.read_history_file(historyfile)
+        
     def parse_line(config):
         def parse_array(line):
             values=[]
@@ -241,6 +247,15 @@ class Shell(cmd.Cmd):
         print ("INFO: exiting")
         return True
 
+    def postloop(self,
+                 historyfile=HistoryFile,
+                 historysize=HistorySize):
+        for path in ["tmp/picobeats"]:
+            if not os.path.exists(path):
+                os.makedirs(path)
+        readline.set_history_length(historysize)
+        readline.write_history_file(historyfile)
+    
 def validate_model_config(config=yaml.safe_load(open("octavox/projects/picobeats/config.yaml").read())):
     def validate_track_keys(config):
         modkeys=[mod["key"] for mod in config["modules"]
