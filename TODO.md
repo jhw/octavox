@@ -2,7 +2,6 @@
 
 - s&h step enum
 - cli history
-- samples.randomise doesn't need instruments
 
 ### medium
 
