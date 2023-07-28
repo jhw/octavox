@@ -1,5 +1,8 @@
 ### short
 
+- copy pool followed by randomise patches fails
+- copy pool to set pool
+
 - avoid having to specify @parse_line(config=[])
 - add @parse_line type checking
 

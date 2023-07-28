@@ -156,14 +156,6 @@ class Sequencer(dict):
                           "pattern": self["pattern"],
                           "slices": self["slices"].clone()})
 
-    def randomise_pattern(self, temperature, limit):
-        if random.random() < limit:
-            self["pattern"]=Pattern.randomise(temperature)
-
-    def shuffle_slices(self, limit):
-        if random.random() < limit:
-            random.shuffle(self["slices"])
-
     def render(self,
                tracks,
                nbeats,
@@ -322,11 +314,8 @@ class Patch(dict):
         return Patch(sequencers=self["sequencers"].clone(),
                      lfos=self["lfos"].clone())
 
-    def mutate(self, temperature, limits):
+    def mutate(self, limits):
         for sequencer in self["sequencers"]:
-            sequencer.randomise_pattern(temperature=temperature,
-                                        limit=limits["pat"])
-            sequencer.shuffle_slices(limits["slices"])
             for slice in sequencer["slices"]:
                 slice.randomise_style(sequencer["key"],
                                       limits["style"])

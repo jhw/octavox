@@ -61,10 +61,9 @@ class PicobeatsCli(SVBankCli):
     def do_mutate_patch(self, i):
         patch=self.project[i % len(self.project)]
         limits={k: self.env["d%s" % k]
-                for k in "slices|pat|seed|style".split("|")}
-        return Patches([patch]+[patch.clone().mutate(temperature=self.env["temperature"],
-                                                   limits=limits)
-                               for i in range(self.env["npatches"]-1)])
+                for k in "seed|style".split("|")}
+        return Patches([patch]+[patch.clone().mutate(limits=limits)
+                                for i in range(self.env["npatches"]-1)])
     
     @parse_line(config=[{"name": "i"}])
     def do_show_patch(self, i, instruments=Instruments):
@@ -114,10 +113,8 @@ def validate_config(config):
 Params=yaml.safe_load("""
 temperature: 1.0
 density: 0.75
-dslices: 0.5
-dpat: 0.5
-dseed: 0.5
-dstyle: 0.5
+dseed: 1.0
+dstyle: 0.66666
 nbeats: 16
 npatches: 32
 """)
