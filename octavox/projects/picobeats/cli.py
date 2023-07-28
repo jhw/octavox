@@ -221,9 +221,9 @@ class Shell(cmd.Cmd):
                 if i in trigs[key]:
                     trig=trigs[key][i]
                     value=SVSampleKey(trig["key"]) if "key" in trig else "svdrum/%i" % trig["id"]
-                    row.append("%s:%s" % (key, value))
+                    row.append("%s:%s" % (key, value.short_label))
                 else:
-                    row.append("...")
+                    row.append("...     ")
             print ("\t".join([str(cell)
                               for cell in row]))
                                 

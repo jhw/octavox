@@ -48,11 +48,21 @@ class SVSampleKey(dict):
     
     def __init__(self, item={}):
         dict.__init__(self, item)
-        
-    def __str__(self):
+
+    @property
+    def long_label(self):
         suffix=self["file"] if "file" in self else self["id"]
         return "%s/%s" % (self["bank"],
                           suffix)
+
+    @property
+    def short_label(self, n=2):
+        suffix=self["file"][:n] if "file" in self else self["id"]
+        return "%s/%s" % (self["bank"][:n],
+                          suffix)
+        
+    def __str__(self):
+        return self.long_label
 
 class SVSampleKeys(list):
 
