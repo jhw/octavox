@@ -65,7 +65,6 @@ class Shell(cmd.Cmd):
         self.filename=None
         self.poolname=poolname
 
-
     def parse_line(config):
         def parse_array(line):
             values=[]
@@ -100,6 +99,16 @@ class Shell(cmd.Cmd):
             return wrapped
         return decorator
 
+    @parse_line(config=[{"name": "frag"}])
+    def do_show_bank(self, frag):
+        try:
+            bankname=self.banks.lookup(str(frag))
+            bank=self.banks[bankname]
+            for wavfile in bank.wavfiles:
+                print (wavfile)
+        except RuntimeError as error:
+            print ("ERROR: %s" % str(error))
+    
     def do_show_params(self, _):
         for key in sorted(self.env.keys()):
             print ("%s: %s" % (key, self.env[key]))
@@ -134,7 +143,7 @@ class Shell(cmd.Cmd):
         try:
             def lookup(self, frag):
                 try:
-                    return self.pools.lookup(frag)
+                    return self.pools.lookup(str(frag))
                 except RuntimeError as error:
                     return None
             src=lookup(self, fsrc)
