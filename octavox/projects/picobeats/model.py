@@ -385,24 +385,12 @@ class Patches(list):
         list.__init__(self, [Patch(**patch)
                              for patch in patches])
 
-    def init_paths(paths):
-        def decorator(fn):
-            def wrapped(*args, **kwargs):
-                for path in paths:
-                    if not os.path.exists(path):
-                        os.makedirs(path)
-                return fn(*args, **kwargs)
-            return wrapped
-        return decorator
-
-    @init_paths(["tmp/picobeats/json"])
     def render_json(self, filename):
         projfile="tmp/picobeats/json/%s.json" % filename
         with open(projfile, 'w') as f:
             f.write(json.dumps(self,
                                indent=2))
 
-    @init_paths(["tmp/picobeats/sunvox"])
     def render_sunvox(self,
                       banks,
                       nbeats,

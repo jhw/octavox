@@ -8,20 +8,7 @@ from octavox.modules.project import Output
 
 import cmd, json, os, re, readline, traceback, yaml
 
-Env=SVEnvironment(yaml.safe_load("""
-temperature: 1.0
-density: 0.75
-dslices: 0.5
-dpat: 0.5
-dseed: 0.5
-dstyle: 0.5
-nbeats: 16
-npatches: 32
-"""))
-
-DefaultPool="global-curated"
-
-HistoryFile, HistorySize = os.path.expanduser('tmp/picobeats/.clihistory'), 1000
+HistorySize=100
 
 class Shell(cmd.Cmd):
 
@@ -32,19 +19,29 @@ class Shell(cmd.Cmd):
     def __init__(self,
                  banks,
                  pools,
-                 poolname=DefaultPool,
-                 env=Env):
-        cmd.Cmd.__init__(self)
+                 poolname,
+                 outdir,
+                 params,
+                 subdirs=["json", "sunvox"],
+                 historysize=HistorySize):
+        cmd.Cmd.__init__(self)        
         self.banks=banks
         self.pools=pools
-        self.env=env
+        self.outdir=outdir
+        for subdir in subdirs:
+            path="%s/%s" % (outdir, subdir)
+            if not os.path.exists(path):
+                os.makedirs(path)
+        self.poolname=poolname
+        self.env=SVEnvironment(params)
+        self.historyfile=os.path.expanduser("%s/.clihistory" % self.outdir)
+        self.historysize=historysize
         self.project=None
         self.filename=None
-        self.poolname=poolname
 
-    def preloop(self, historyfile=HistoryFile):
-        if os.path.exists(historyfile):
-            readline.read_history_file(historyfile)
+    def preloop(self):
+        if os.path.exists(self.historyfile):
+            readline.read_history_file(self.historyfile)
         
     def parse_line(config):
         def parse_array(line):
@@ -217,13 +214,13 @@ class Shell(cmd.Cmd):
             print ("\t".join([str(cell)
                               for cell in row]))
 
-    def do_list_projects(self, _, dirname="tmp/picobeats/json"):
-        for filename in os.listdir(dirname):
+    def do_list_projects(self, _):
+        for filename in os.listdir(self.outdir+"/json"):
             print (filename.split(".")[0])
                         
     @parse_line(config=[{"name": "frag"}])
-    def do_load_project(self, frag, dirname="tmp/picobeats/json"):
-        matches=[filename for filename in os.listdir(dirname)
+    def do_load_project(self, frag):
+        matches=[filename for filename in os.listdir(self.outdir+"/json")
                  if str(frag) in filename]
         if matches==[]:
             print ("WARNING: no matches")
@@ -238,7 +235,7 @@ class Shell(cmd.Cmd):
             print ("WARNING: multiple matches")
             
     def do_clear_projects(self, _):
-        os.system("rm -rf tmp/picobeats")
+        os.system("rm -rf %s" % self.outdir)
     
     def do_exit(self, _):
         return self.do_quit(None)
@@ -247,14 +244,9 @@ class Shell(cmd.Cmd):
         print ("INFO: exiting")
         return True
 
-    def postloop(self,
-                 historyfile=HistoryFile,
-                 historysize=HistorySize):
-        for path in ["tmp/picobeats"]:
-            if not os.path.exists(path):
-                os.makedirs(path)
-        readline.set_history_length(historysize)
-        readline.write_history_file(historyfile)
+    def postloop(self):
+        readline.set_history_length(self.historysize)
+        readline.write_history_file(self.historyfile)
     
 def validate_model_config(config=yaml.safe_load(open("octavox/projects/picobeats/config.yaml").read())):
     def validate_track_keys(config):
@@ -281,6 +273,17 @@ def validate_model_config(config=yaml.safe_load(open("octavox/projects/picobeats
     validate_track_keys(config)
     validate_module_links(config)
     validate_module_refs(config)
+
+Params=yaml.safe_load("""
+temperature: 1.0
+density: 0.75
+dslices: 0.5
+dpat: 0.5
+dseed: 0.5
+dstyle: 0.5
+nbeats: 16
+npatches: 32
+""")
     
 if __name__=="__main__":
     try:
@@ -289,7 +292,10 @@ if __name__=="__main__":
         pools["svdrum-curated"]=svdrum=SVPool(yaml.safe_load(open("octavox/projects/picobeats/svdrum.yaml").read()))
         svdrum["sn"]=pools["default-curated"]["sn"] # NB
         validate_model_config()
-        Shell(banks=banks,
+        Shell(outdir="tmp/picobeats",
+              poolname="global-curated",
+              params=Params,
+              banks=banks,
               pools=pools).cmdloop()
     except RuntimeError as error:
         print ("ERROR: %s" % str(error))

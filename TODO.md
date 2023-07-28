@@ -1,6 +1,5 @@
 ### short
 
-- cli to be passed output dir and create directory structure
 - remove code to create paths on the fly
 - abstract base cli
 - update README
@@ -71,6 +70,8 @@
 
 ### done
 
+- remove code to create paths on the fly
+- cli to be passed output dir and create directory structure
 - why do you need a numpy requirement?
 - cli history
 - move SVEnvironment, random_filename to root
