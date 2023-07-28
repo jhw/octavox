@@ -8,7 +8,7 @@ from octavox.projects.picobeats.model import Patch, Patches, Instruments
 
 from octavox.modules.project import Output
 
-import json, os, traceback, yaml
+import json, os, yaml
 
 class PicobeatsCli(SVBankCli):
 
@@ -22,7 +22,7 @@ class PicobeatsCli(SVBankCli):
     @parse_line(config=[{"name": "frag"}])
     def do_load_project(self, frag):
         matches=[filename for filename in os.listdir(self.outdir+"/json")
-                 if str(frag) in filename]
+                 if frag in filename]
         if matches==[]:
             print ("WARNING: no matches")
         elif len(matches)==1:
@@ -38,24 +38,20 @@ class PicobeatsCli(SVBankCli):
     def render_patches(prefix):
         def decorator(fn):
             def wrapped(self, *args, **kwargs):
-                try:
-                    self.filename=random_filename(prefix)
-                    print ("INFO: %s" % self.filename)
-                    self.project=fn(self, *args, **kwargs)
-                    self.project.render_json(filename=self.filename)
-                    self.project.render_sunvox(banks=self.banks,
-                                               nbeats=self.env["nbeats"],
-                                               density=self.env["density"],
-                                               filename=self.filename)
-                except RuntimeError as error:
-                    print ("ERROR: %s" % str(error))
-                except Exception as error:
-                    print ("EXCEPTION: %s" % ''.join(traceback.TracebackException.from_exception(error).format()))
+                self.filename=random_filename(prefix)
+                print ("INFO: %s" % self.filename)
+                self.project=fn(self, *args, **kwargs)
+                self.project.render_json(filename=self.filename)
+                self.project.render_sunvox(banks=self.banks,
+                                           nbeats=self.env["nbeats"],
+                                           density=self.env["density"],
+                                           filename=self.filename)
             return wrapped
         return decorator
 
+    @parse_line(config=[])
     @render_patches(prefix="random")
-    def do_randomise_patches(self, _):
+    def do_randomise_patches(self):
         return Patches.randomise(pool=self.pools[self.poolname],
                                  temperature=self.env["temperature"],
                                  n=self.env["npatches"])

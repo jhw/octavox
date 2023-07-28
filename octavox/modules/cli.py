@@ -1,6 +1,8 @@
 from octavox.projects import SVEnvironment
 
-import cmd, json, os, re, readline
+from octavox.modules.banks import SVPool
+
+import cmd, json, os, re, readline, traceback
 
 HistorySize=100
 
@@ -35,6 +37,8 @@ def parse_line(config):
                 return fn(self, *[], **kwargs)
             except RuntimeError as error:
                 print ("ERROR: %s" % str(error))
+            except Exception as error:
+                print ("EXCEPTION: %s" % ''.join(traceback.TracebackException.from_exception(error).format()))
         return wrapped
     return decorator
 
@@ -62,26 +66,26 @@ class SVBaseCli(cmd.Cmd):
     def preloop(self):
         if os.path.exists(self.historyfile):
             readline.read_history_file(self.historyfile)
-        
-    def do_show_params(self, _):
+
+    @parse_line(config=[])
+    def do_show_params(self):
         for key in sorted(self.env.keys()):
             print ("%s: %s" % (key, self.env[key]))
     
     @parse_line(config=[{"name": "pat"},
                         {"name": "value"}])
     def do_set_param(self, pat, value):
-        try:
-            key=self.env.lookup(pat)
-            self.env[key]=value
-            print ("INFO: %s=%s" % (key, self.env[key]))
-        except RuntimeError as error:
-            print ("ERROR: %s" % str(error))
+        key=self.env.lookup(pat)
+        self.env[key]=value
+        print ("INFO: %s=%s" % (key, self.env[key]))
 
-    def do_list_projects(self, _):
+    @parse_line(config=[])
+    def do_list_projects(self):
         for filename in os.listdir(self.outdir+"/json"):
             print (filename.split(".")[0])
-                                    
-    def do_clear_projects(self, _):
+
+    @parse_line(config=[])
+    def do_clear_projects(self):
         os.system("rm -rf %s" % self.outdir)
     
     def do_exit(self, _):
@@ -110,15 +114,13 @@ class SVBankCli(SVBaseCli):
 
     @parse_line(config=[{"name": "frag"}])
     def do_show_bank(self, frag):
-        try:
-            bankname=self.banks.lookup(str(frag))
-            bank=self.banks[bankname]
-            for wavfile in bank.wavfiles:
-                print (wavfile)
-        except RuntimeError as error:
-            print ("ERROR: %s" % str(error))
-    
-    def do_list_pools(self, _):
+        bankname=self.banks.lookup(str(frag))
+        bank=self.banks[bankname]
+        for wavfile in bank.wavfiles:
+            print (wavfile)
+
+    @parse_line(config=[])
+    def do_list_pools(self):
         for poolname in sorted(self.pools.keys()):
             poollabel=poolname.upper() if poolname==self.poolname else poolname
             print ("- %s [%i]" % (poollabel,
@@ -126,32 +128,26 @@ class SVBankCli(SVBaseCli):
             
     @parse_line(config=[{"name": "poolname"}])
     def do_set_pool(self, poolname):
-        try:
-            self.poolname=self.pools.lookup(poolname)
-            print ("INFO: pool=%s" % self.poolname)
-        except RuntimeError as error:
-            print ("ERROR: %s" % str(error))
+        self.poolname=self.pools.lookup(poolname)
+        print ("INFO: pool=%s" % self.poolname)
 
     @parse_line(config=[{"name": "fsrc"},
                         {"name": "fdest"}])
     def do_copy_pool(self, fsrc, fdest):
-        try:
-            def lookup(self, frag):
-                try:
-                    return self.pools.lookup(str(frag))
-                except RuntimeError as error:
-                    return None
-            src=lookup(self, fsrc)
-            if not src:                
-                raise RuntimeError("src does not exist")
-            dest=lookup(self, fdest)
-            if not dest:
-                self.pools[fdest]=SVPool()
-                dest=fdest
-            print ("INFO: copying %s to %s" % (src, dest))
-            self.pools[dest].add(self.pools[src])
-        except RuntimeError as error:
-            print ("ERROR: %s" % str(error))
+        def lookup(self, frag):
+            try:
+                return self.pools.lookup(str(frag))
+            except RuntimeError as error:
+                return None
+        src=lookup(self, fsrc)
+        if not src:                
+            raise RuntimeError("src does not exist")
+        dest=lookup(self, fdest)
+        if not dest:
+            self.pools[fdest]=SVPool()
+            dest=fdest
+        print ("INFO: copying %s to %s" % (src, dest))
+        self.pools[dest].add(self.pools[src])
                             
 if __name__=="__main__":
     pass

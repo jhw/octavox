@@ -1,14 +1,17 @@
 ### short
 
-- add back wrap_action
-  - remove str(frag) to test wrap_action
+- avoid having to specify @parse_line(config=[])
+- add @parse_line type checking
+
+- block model
+- new arrange action
+- add back mutes
 
 ### medium
 
-- add cli types
-- block model
-
 - cli fix samples
+- cli mute samples
+
 - update README
 
 ### long
@@ -74,6 +77,8 @@
 
 ### done
 
+- add back wrap_action
+  - remove str(frag) to test wrap_action
 - remove nbreaks
 - remove pitch
 - remove mutes
