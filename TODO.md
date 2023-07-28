@@ -1,14 +1,17 @@
 ### short
 
-- update README
+- remove decompile and concat
+- remove nbreaks
+- remove mutes
+- remove pitch
+
+- add back wrap_action
+- remove str(frag) to test wrap_action
 
 ### medium
 
-- evolve sample
-  - long running density lfo?
-  - mutes and solos?
-  - are mutate and chain really song modes?
-
+- update README
+- block model
 - cli fix samples
 
 ### long
