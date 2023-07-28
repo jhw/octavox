@@ -14,18 +14,27 @@ links:
     - Output
 """)
 
-def render_project(banks, bankname, patch, nbeats, config=Config):
+SrcDirName, DestDirName = ("tmp/banks/pico/zipped",
+                           "tmp/banks/pico/sunvox")
+
+def render_project(banks,
+                   bankname,
+                   patch,
+                   nbeats,
+                   dirname=DestDirName,
+                   config=Config):
     project=SVProject().render(patches=[patch],
                                config=config,
                                banks=banks)
-    projfile="tmp/banks/pico/%s.sunvox" % bankname
+    projfile="%s/%s.sunvox" % (dirname, bankname)
     with open(projfile, 'wb') as f:
         project.write_to(f)
 
 if __name__=="__main__":
-    if not os.path.exists("tmp/banks/pico"):
-        os.makedirs("tmp/banks/pico")
-    banks=SVBanks("octavox/banks/pico")
+    for path in [DestDirName]:
+        if not os.path.exists(path):
+            os.makedirs(path)            
+    banks=SVBanks(SrcDirName)
     for bankname, bank in banks.items():
         print (bankname)
         wavfiles=bank.wavfiles

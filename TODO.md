@@ -1,8 +1,7 @@
 ### short
 
 - fetch pico stuff to add index prefix to filename
-- save pico stuff to picobeats/banks/zipped|projects
-
+- s&h step enum
 - cli history
 - samples.randomise doesn't need instruments
 
@@ -68,6 +67,7 @@
 
 ### done
 
+- save pico stuff to picobeats/banks/zipped|projects
 - ability to quick view bank list
 - load_project fails if passsed string
 - show_rendered should be show_samples

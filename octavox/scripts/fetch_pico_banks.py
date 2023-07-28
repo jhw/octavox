@@ -2,6 +2,8 @@ import json, os, re, urllib.request, zipfile
 
 PicoDrum="http://data.ericasynths.lv/picodrum/"
 
+DirName="tmp/banks/pico/zipped"
+
 def fetch_json(path):
     return json.loads(urllib.request.urlopen(PicoDrum+path).read())
 
@@ -30,8 +32,9 @@ def clean_filename(filename):
                           if tok!=''])                         
     return "%s.%s" % (cleanhandle, fileext)
 
-def generate(packname, packfile):
-    zfname="tmp/picobeats/banks/%s.zip" % packname.replace(" ", "-").lower()
+def generate(packname, packfile, dirname=DirName):
+    zfname="%s/%s.zip" % (dirname,
+                          packname.replace(" ", "-").lower())
     zf=zipfile.ZipFile(zfname, 'w')
     buf=fetch_bin(packfile)
     blocks=filter_blocks(buf)
@@ -41,7 +44,7 @@ def generate(packname, packfile):
 
 if __name__=="__main__":
     try:
-        for path in ["tmp/picobeats/banks"]:
+        for path in [DirName]:
             if not os.path.exists(path):
                 os.makedirs(path)            
         for packname, packfile in pack_list().items():
