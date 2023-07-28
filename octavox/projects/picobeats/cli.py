@@ -2,7 +2,7 @@ from octavox.projects import random_filename
 
 from octavox.modules.banks import SVBanks, SVPool, SVSampleKey
 
-from octavox.modules.cli import SVCli, parse_line
+from octavox.modules.cli import SVBankCli, parse_line
 
 from octavox.projects.picobeats.model import Patch, Patches, Instruments
 
@@ -10,66 +10,15 @@ from octavox.modules.project import Output
 
 import json, os, traceback, yaml
 
-class PicobeatsCli(SVCli):
+class PicobeatsCli(SVBankCli):
 
     intro="Welcome to Picobeats :)"
 
     def __init__(self,
-                 banks,
-                 pools,
-                 poolname,
                  *args,
                  **kwargs):
-        SVCli.__init__(self, *args, **kwargs)        
-        self.banks=banks
-        self.pools=pools
-        self.poolname=poolname
+        SVBankCli.__init__(self, *args, **kwargs)        
 
-    @parse_line(config=[{"name": "frag"}])
-    def do_show_bank(self, frag):
-        try:
-            bankname=self.banks.lookup(str(frag))
-            bank=self.banks[bankname]
-            for wavfile in bank.wavfiles:
-                print (wavfile)
-        except RuntimeError as error:
-            print ("ERROR: %s" % str(error))
-    
-    def do_list_pools(self, _):
-        for poolname in sorted(self.pools.keys()):
-            poollabel=poolname.upper() if poolname==self.poolname else poolname
-            print ("- %s [%i]" % (poollabel,
-                                  self.pools[poolname].size))
-            
-    @parse_line(config=[{"name": "poolname"}])
-    def do_set_pool(self, poolname):
-        try:
-            self.poolname=self.pools.lookup(poolname)
-            print ("INFO: pool=%s" % self.poolname)
-        except RuntimeError as error:
-            print ("ERROR: %s" % str(error))
-
-    @parse_line(config=[{"name": "fsrc"},
-                        {"name": "fdest"}])
-    def do_copy_pool(self, fsrc, fdest):
-        try:
-            def lookup(self, frag):
-                try:
-                    return self.pools.lookup(str(frag))
-                except RuntimeError as error:
-                    return None
-            src=lookup(self, fsrc)
-            if not src:                
-                raise RuntimeError("src does not exist")
-            dest=lookup(self, fdest)
-            if not dest:
-                self.pools[fdest]=SVPool()
-                dest=fdest
-            print ("INFO: copying %s to %s" % (src, dest))
-            self.pools[dest].add(self.pools[src])
-        except RuntimeError as error:
-            print ("ERROR: %s" % str(error))
-                    
     def render_patches(prefix, nbreaks=0):
         def decorator(fn):
             def wrapped(self, *args, **kwargs):

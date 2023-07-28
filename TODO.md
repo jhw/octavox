@@ -1,20 +1,24 @@
 ### short
 
-- SVBankCli
-
 - update README
 
 ### medium
 
-- SVSampleKey to include svdrum to avoid cli show_samples hacks
+- evolve sample
+  - long running density lfo?
+  - mutes and solos?
+  - are mutate and chain really song modes?
 
 - cli fix samples
-- cli replace|ban samples
 
 ### long
 
 ### thoughts
 
+- cli replace|ban samples
+  - may be over optimised
+- SVSampleKey to include svdrum to avoid cli show_samples hacks?
+  - not sure is worth it
 - initialise lfo with randomised step?
   - not sure it's worth it
 - ability to specify track key when copying?
@@ -70,6 +74,7 @@
 
 ### done
 
+- SVBankCli
 - consider if there are other opportunities to abstract cli
 - remove code to create paths on the fly
 - abstract base cli
