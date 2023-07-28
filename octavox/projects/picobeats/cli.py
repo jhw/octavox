@@ -209,13 +209,7 @@ class Shell(cmd.Cmd):
                                for i in range(self.env["npatches"]-1)])
     
     @parse_line(config=[{"name": "i"}])
-    def do_show_patch(self, i):
-        patch=self.project[i % len(self.project)]
-        print (yaml.safe_dump(json.loads(json.dumps(patch)), # urgh
-                              default_flow_style=False))
-    
-    @parse_line(config=[{"name": "i"}])
-    def do_show_samples(self, i, instruments=Instruments):
+    def do_show_patch(self, i, instruments=Instruments):
         patch=self.project[i % len(self.project)]
         rendered=patch.render(nbeats=self.env["nbeats"],
                               density=self.env["density"])

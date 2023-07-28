@@ -1,6 +1,5 @@
 ### short
 
-- replace show_patch with show_samples
 - show_samples to dump short name
 
 - s&h step enum
@@ -19,7 +18,7 @@
 - ability to specify track key when copying?
   - not clear that this is useful if fix() functionality is implemented
 - cli blend() action?
-  - hard to know how it should be done or if it would be useful
+  - hard to know how it should be implemented or if it would be useful
 - validation to check custom sampler classes exist?
   - is over- optimisation
 - pass config around?
@@ -69,6 +68,7 @@
 
 ### done
 
+- replace show_patch with show_samples
 - nero-bellum and pitch-black names aren't being cleaned
 - fetch pico stuff to add index prefix to filename
 - save pico stuff to picobeats/banks/zipped|projects
