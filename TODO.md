@@ -1,6 +1,7 @@
 ### short
 
 - show bank
+- move SVEnvironment to root
 - s&h step enum
 - cli history
 - samples.randomise doesn't need instruments
