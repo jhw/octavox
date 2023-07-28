@@ -1,6 +1,6 @@
 ### short
 
-- consider if there are other opportunities to abstract cli
+- SVBankCli
 
 - update README
 
@@ -70,6 +70,7 @@
 
 ### done
 
+- consider if there are other opportunities to abstract cli
 - remove code to create paths on the fly
 - abstract base cli
 - remove code to create paths on the fly
