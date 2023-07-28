@@ -267,21 +267,6 @@ class SVProject:
                          y_size=height,
                          bg_color=color).set_via_fn(notefn)
 
-    @attach_pattern
-    def init_blank(self,
-                   patterns,
-                   patch,
-                   offset,
-                   color,
-                   height=Height):
-        def notefn(self, j, i):
-            return RVNote()
-        return RVPattern(lines=patch.nbeats,
-                         tracks=len(patch),
-                         x=offset.value,
-                         y_size=height,
-                         bg_color=color).set_via_fn(notefn)
-
     def init_controllers(self, modules):
         controllers={}
         for mod in modules.values():
@@ -293,8 +278,7 @@ class SVProject:
 
     def init_patterns(self,
                       modules,
-                      patches,
-                      nbreaks):
+                      patches):
         controllers=self.init_controllers(modules)
         offset=SVOffset()
         patterns, color = [], None
@@ -306,18 +290,12 @@ class SVProject:
                               patch=patch,
                               offset=offset,
                               color=color)            
-            for i in range(nbreaks):
-                self.init_blank(patterns=patterns,
-                                patch=patch,
-                                offset=offset,
-                                color=color)
         return patterns
 
     def render(self,
                patches,
                config,
                banks,
-               nbreaks=0,
                globalz=Globals):
         proj=RVProject()
         proj.initial_bpm=globalz["bpm"]
@@ -332,8 +310,7 @@ class SVProject:
                           config=config,
                           modules=modules)
         proj.patterns=self.init_patterns(modules=modules,
-                                         patches=patches,
-                                         nbreaks=nbreaks)
+                                         patches=patches)
         return proj
 
 if __name__=="__main__":

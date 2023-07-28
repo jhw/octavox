@@ -1,6 +1,5 @@
 ### short
 
-- remove nbreaks
 - add back wrap_action
   - remove str(frag) to test wrap_action
 
@@ -75,6 +74,7 @@
 
 ### done
 
+- remove nbreaks
 - remove pitch
 - remove mutes
 - remove decompile and concat

@@ -387,14 +387,12 @@ class Patches(list):
                       nbeats,
                       density,
                       filename,
-                      nbreaks=0,
                       config=Config):
         project=SVProject().render(patches=[patch.render(nbeats=nbeats,
                                                          density=density)
                                             for patch in self],
                                    config=config,
-                                   banks=banks,
-                                   nbreaks=nbreaks)
+                                   banks=banks)
         projfile="tmp/picobeats/sunvox/%s.sunvox" % filename
         with open(projfile, 'wb') as f:
             project.write_to(f)

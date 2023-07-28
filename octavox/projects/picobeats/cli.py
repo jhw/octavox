@@ -35,7 +35,7 @@ class PicobeatsCli(SVBankCli):
         else:
             print ("WARNING: multiple matches")
         
-    def render_patches(prefix, nbreaks=0):
+    def render_patches(prefix):
         def decorator(fn):
             def wrapped(self, *args, **kwargs):
                 try:
@@ -45,7 +45,6 @@ class PicobeatsCli(SVBankCli):
                     self.project.render_json(filename=self.filename)
                     self.project.render_sunvox(banks=self.banks,
                                                nbeats=self.env["nbeats"],
-                                               nbreaks=nbreaks,
                                                density=self.env["density"],
                                                filename=self.filename)
                 except RuntimeError as error:
