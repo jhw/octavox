@@ -191,7 +191,7 @@ if __name__=="__main__":
         pools=banks.spawn_pools().cull()
         pools["svdrum-curated"]=svdrum=SVPool(yaml.safe_load(open("octavox/projects/picobeats/svdrum.yaml").read()))
         svdrum["sn"]=pools["default-curated"]["sn"] # NB
-        config=yaml.safe_load(open("octavox/projects/picobeats/config.yaml").read())):
+        config=yaml.safe_load(open("octavox/projects/picobeats/config.yaml").read())
         validate_config(config)
         PicobeatsCli(outdir="tmp/picobeats",
                      poolname="global-curated",
