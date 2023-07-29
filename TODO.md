@@ -1,7 +1,5 @@
 ### short
 
-- SVTrig class
-- encapsulate short_label code in SVTrig
 - pass filenames containing outdir to patches
 
 ### medium
@@ -81,6 +79,8 @@
 
 ### done
 
+- SVTrig class
+- encapsulate short_label code in SVTrig
 - remove SVSampleKey.create
 - add @parse_line type checking
 - avoid having to specify @parse_line(config=[])
