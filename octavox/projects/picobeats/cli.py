@@ -1,5 +1,5 @@
 
-from octavox.modules.banks import SVBanks, SVSampleKey
+from octavox.modules.banks import SVBanks, SVPool
 
 from octavox.modules.cli import SVBankCli, parse_line
 
@@ -81,7 +81,7 @@ class PicobeatsCli(SVBankCli):
             for key in instruments:
                 if i in trigs[key]:
                     trig=trigs[key][i]
-                    value=SVSampleKey(trig["key"]).short_label if "key" in trig else "sv/%i" % trig["id"]
+                    value=trig["key"].short_label if "key" in trig else "sv/%i" % trig["id"]
                     row.append("%s:%s" % (key, value))
                 else:
                     row.append("...     ")
@@ -129,7 +129,7 @@ if __name__=="__main__":
             return yaml.safe_load(open("%s/%s" % (home, filename)).read())
         banks=SVBanks("octavox/banks/pico")
         pools=banks.spawn_pools().cull()
-        pools["svdrum-curated"]=svdrum=load_yaml("svdrum.yaml")
+        pools["svdrum-curated"]=svdrum=SVPool(load_yaml("svdrum.yaml"))
         svdrum["sn"]=pools["default-curated"]["sn"] # NB
         config=load_yaml("config.yaml")
         validate_config(config)
