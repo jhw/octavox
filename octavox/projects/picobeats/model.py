@@ -324,33 +324,17 @@ class Patch(dict):
             lfo.randomise_seed(limits["seed"])
         return self
     
-    def render_sequencers(self,
-                          tracks,
-                          nbeats,
-                          density,
-                          config=Config["sequencers"]):
-        for sequencer in self["sequencers"]:
-            sequencer.render(nbeats=nbeats,
-                             tracks=tracks,
-                             density=density)
-                
-    def render_lfos(self,
-                    tracks,
-                    nbeats,
-                    config=Config["lfos"]):
-        for lfo in self["lfos"]:
-            lfo.render(nbeats=nbeats,
-                       tracks=tracks)
-
     def render(self,
                nbeats,
                density):
         tracks=SVPatch(nbeats=nbeats)
-        self.render_sequencers(tracks=tracks,
-                               nbeats=nbeats,
-                               density=density)
-        self.render_lfos(tracks=tracks,
-                         nbeats=nbeats)
+        for sequencer in self["sequencers"]:
+            sequencer.render(nbeats=nbeats,
+                             tracks=tracks,
+                             density=density)
+        for lfo in self["lfos"]:
+            lfo.render(nbeats=nbeats,
+                       tracks=tracks)
         return tracks
 
 class Patches(list):

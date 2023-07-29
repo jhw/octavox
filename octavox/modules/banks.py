@@ -1,4 +1,4 @@
-from octavox.projects import is_abbrev
+from octavox.modules import is_abbrev
 
 import os, random, re, yaml, zipfile
 

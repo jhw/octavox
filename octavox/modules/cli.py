@@ -1,46 +1,81 @@
-from octavox.projects import SVEnvironment
+from octavox.modules import is_abbrev
 
 from octavox.modules.banks import SVPool
 
-import cmd, json, os, re, readline, traceback
+import cmd, os, re, readline, traceback
 
 HistorySize=100
 
+def matches_float(value):
+    return re.search("^\\-?\\d+(\\.\\d+)?$", value)!=None
+
+def matches_int(value):
+    return re.search("^\\-?\\d+$", value)!=None
+
+def matches_array(value):
+    return re.search("^(\\d+(x\\d+)?\\|)*\\d+(x\\d+)?$", value)!=None
+
+def matches_str(value):
+    return True
+
+def parse_float(value):
+    return float(value)
+
+def parse_int(value):
+    return int(value)
+
+def parse_array(line):
+    values=[]
+    for chunk in line.split("|"):
+        if "x" in chunk:
+            n, v = [int(tok) for tok in chunk.split("x")]
+            values+=[v for i in range(n)]
+        else:
+            values.append(int(chunk))
+    return values
+
+def parse_str(value):
+    return value
+
 def parse_line(config=[]):
-    def parse_array(line):
-        values=[]
-        for chunk in line.split("|"):
-            if "x" in chunk:
-                n, v = [int(tok) for tok in chunk.split("x")]
-                values+=[v for i in range(n)]
-            else:
-                values.append(int(chunk))
-        return values
-    def parse_value(V):
-        if re.search("^\\-?\\d+\\.\\d+$", V): # float
-            return float(V)
-        elif re.search("^\\-?\\d+$", V): # int
-            return int(V)
-        elif re.search("^(\\d+(x\\d+)?\\|)*\\d+(x\\d+)?$", V): # array
-            return parse_array(V)
-        else: # str
-            return V
     def decorator(fn):
         def wrapped(self, line):
             try:
-                keys=[item["name"] for item in config]
                 args=[tok for tok in line.split(" ") if tok!='']
                 if len(args) < len(config):
-                    raise RuntimeError("please enter %s" % ", ".join(keys))
-                kwargs={k:parse_value(v)
-                        for k, v in zip(keys, args[:len(keys)])}
-                return fn(self, *[], **kwargs)
+                    raise RuntimeError("please enter %s" % ", ".join([item["name"]
+                                                                      for item in config]))
+                kwargs={}
+                for item, argval in zip(config, args[:len(config)]):
+                    matcherfn=eval("matches_%s" % item["type"])
+                    if not matcherfn(argval):
+                        raise RuntimeError("%s must be a(n) %s" % (item["name"],
+                                                                   item["type"]))
+                    parserfn=eval("parse_%s" % item["type"])
+                    kwargs[item["name"]]=parserfn(argval)
+                return fn(self, **kwargs)
             except RuntimeError as error:
                 print ("ERROR: %s" % str(error))
             except Exception as error:
                 print ("EXCEPTION: %s" % ''.join(traceback.TracebackException.from_exception(error).format()))
         return wrapped
     return decorator
+
+class SVEnvironment(dict):
+
+    def __init__(self, item={}):
+        dict.__init__(self, item)
+
+    def lookup(self, abbrev):
+        matches=[]
+        for key in self:
+            if is_abbrev(abbrev, key):
+                matches.append(key)
+        if matches==[]:
+            raise RuntimeError("%s not found" % abbrev)
+        elif len(matches) > 1:
+            raise RuntimeError("multiple key matches for %s" % abbrev)
+        return matches.pop()
 
 class SVBaseCli(cmd.Cmd):
 
@@ -74,8 +109,10 @@ class SVBaseCli(cmd.Cmd):
         for key in sorted(self.env.keys()):
             print ("%s: %s" % (key, self.env[key]))
     
-    @parse_line(config=[{"name": "pat"},
-                        {"name": "value"}])
+    @parse_line(config=[{"name": "pat",
+                         "type": "str"},
+                        {"name": "value",
+                         "type": "float"}])
     def do_set_param(self, pat, value):
         key=self.env.lookup(pat)
         self.env[key]=value
@@ -115,7 +152,8 @@ class SVBankCli(SVBaseCli):
         self.pools=pools
         self.poolname=poolname
 
-    @parse_line(config=[{"name": "frag"}])
+    @parse_line(config=[{"name": "frag",
+                         "type": "str"}])
     def do_show_bank(self, frag):
         bankname=self.banks.lookup(str(frag))
         bank=self.banks[bankname]
@@ -130,13 +168,16 @@ class SVBankCli(SVBaseCli):
                                   poolname,
                                   self.pools[poolname].size))
             
-    @parse_line(config=[{"name": "poolname"}])
+    @parse_line(config=[{"name": "poolname",
+                         "type": "str"}])
     def do_set_pool(self, poolname):
         self.poolname=self.pools.lookup(poolname)
         print ("INFO: pool=%s" % self.poolname)
 
-    @parse_line(config=[{"name": "fsrc"},
-                        {"name": "fdest"}])
+    @parse_line(config=[{"name": "fsrc",
+                         "type": "str"},
+                        {"name": "fdest",
+                         "type": "str"}])
     def do_copy_pool(self, fsrc, fdest):
         def lookup(self, frag):
             try:
@@ -154,7 +195,6 @@ class SVBankCli(SVBaseCli):
         self.pools[dest].add(self.pools[src])
         self.poolname=dest
         print ("INFO: pool=%s" % dest)
-
-                            
+                           
 if __name__=="__main__":
     pass

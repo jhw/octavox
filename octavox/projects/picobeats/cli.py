@@ -1,12 +1,13 @@
-from octavox.projects import random_filename
 
-from octavox.modules.banks import SVBanks, SVPool, SVSampleKey
+from octavox.modules.banks import SVBanks, SVSampleKey
 
 from octavox.modules.cli import SVBankCli, parse_line
 
-from octavox.projects.picobeats.model import Patch, Patches, Instruments
-
 from octavox.modules.project import Output
+
+from octavox.projects import random_filename
+
+from octavox.projects.picobeats.model import Patch, Patches, Instruments
 
 import json, os, yaml
 
@@ -19,7 +20,8 @@ class PicobeatsCli(SVBankCli):
                  **kwargs):
         SVBankCli.__init__(self, *args, **kwargs)        
 
-    @parse_line(config=[{"name": "frag"}])
+    @parse_line(config=[{"name": "frag",
+                         "type": "str"}])
     def do_load_project(self, frag):
         matches=[filename for filename in os.listdir(self.outdir+"/json")
                  if frag in filename]
@@ -56,7 +58,8 @@ class PicobeatsCli(SVBankCli):
                                  temperature=self.env["temperature"],
                                  n=self.env["npatches"])
 
-    @parse_line(config=[{"name": "i"}])
+    @parse_line(config=[{"name": "i",
+                         "type": "int"}])
     @render_patches(prefix="mutate")
     def do_mutate_patch(self, i):
         patch=self.project[i % len(self.project)]
@@ -65,7 +68,8 @@ class PicobeatsCli(SVBankCli):
         return Patches([patch]+[patch.clone().mutate(limits=limits)
                                 for i in range(self.env["npatches"]-1)])
     
-    @parse_line(config=[{"name": "i"}])
+    @parse_line(config=[{"name": "i",
+                         "type": "int"}])
     def do_show_patch(self, i, instruments=Instruments):
         patch=self.project[i % len(self.project)]
         rendered=patch.render(nbeats=self.env["nbeats"],
@@ -118,14 +122,16 @@ dstyle: 0.66666
 nbeats: 16
 npatches: 32
 """)
-    
+
 if __name__=="__main__":
     try:
+        def load_yaml(filename, home="octavox/projects/picobeats"):
+            return yaml.safe_load(open("%s/%s" % (home, filename)).read())
         banks=SVBanks("octavox/banks/pico")
         pools=banks.spawn_pools().cull()
-        pools["svdrum-curated"]=svdrum=SVPool(yaml.safe_load(open("octavox/projects/picobeats/svdrum.yaml").read()))
+        pools["svdrum-curated"]=svdrum=load_yaml("svdrum.yaml")
         svdrum["sn"]=pools["default-curated"]["sn"] # NB
-        config=yaml.safe_load(open("octavox/projects/picobeats/config.yaml").read())
+        config=load_yaml("config.yaml")
         validate_config(config)
         PicobeatsCli(outdir="tmp/picobeats",
                      poolname="global-curated",

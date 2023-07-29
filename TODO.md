@@ -1,6 +1,5 @@
 ### short
 
-- add @parse_line type checking
 - block model
 
 ### medium
@@ -75,6 +74,7 @@
 
 ### done
 
+- add @parse_line type checking
 - avoid having to specify @parse_line(config=[])
 - refactor current pool indicator
 - copy pool to set pool
