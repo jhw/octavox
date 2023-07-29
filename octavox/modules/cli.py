@@ -6,7 +6,7 @@ import cmd, json, os, re, readline, traceback
 
 HistorySize=100
 
-def parse_line(config):
+def parse_line(config=[]):
     def parse_array(line):
         values=[]
         for chunk in line.split("|"):
@@ -69,7 +69,7 @@ class SVBaseCli(cmd.Cmd):
         if os.path.exists(self.historyfile):
             readline.read_history_file(self.historyfile)
 
-    @parse_line(config=[])
+    @parse_line()
     def do_show_params(self):
         for key in sorted(self.env.keys()):
             print ("%s: %s" % (key, self.env[key]))
@@ -81,12 +81,12 @@ class SVBaseCli(cmd.Cmd):
         self.env[key]=value
         print ("INFO: %s=%s" % (key, self.env[key]))
 
-    @parse_line(config=[])
+    @parse_line()
     def do_list_projects(self):
         for filename in os.listdir(self.outdir+"/json"):
             print (filename.split(".")[0])
 
-    @parse_line(config=[])
+    @parse_line()
     def do_clean_projects(self):
         os.system("rm -rf %s" % self.outdir)
         self.init_subdirs()
@@ -122,7 +122,7 @@ class SVBankCli(SVBaseCli):
         for wavfile in bank.wavfiles:
             print (wavfile)
 
-    @parse_line(config=[])
+    @parse_line()
     def do_list_pools(self):
         for poolname in sorted(self.pools.keys()):
             prompt=">" if poolname==self.poolname else " "

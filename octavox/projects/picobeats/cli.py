@@ -49,7 +49,7 @@ class PicobeatsCli(SVBankCli):
             return wrapped
         return decorator
 
-    @parse_line(config=[])
+    @parse_line()
     @render_patches(prefix="random")
     def do_randomise_patches(self):
         return Patches.randomise(pool=self.pools[self.poolname],

@@ -1,6 +1,5 @@
 ### short
 
-- avoid having to specify @parse_line(config=[])
 - add @parse_line type checking
 - block model
 
@@ -76,6 +75,7 @@
 
 ### done
 
+- avoid having to specify @parse_line(config=[])
 - refactor current pool indicator
 - copy pool to set pool
 - copy pool followed by randomise patches fails
