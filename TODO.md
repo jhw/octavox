@@ -1,10 +1,8 @@
 ### short
 
-- move cli mutation code into patch or patches
+- move cli mutation code into patch or patches (?)
 
 ### medium
-
-- move randomise and mutate code into patches
 
 - rename patches as blocks and introduce new blocks model
   - replace npatches with blocksize and nblocks
