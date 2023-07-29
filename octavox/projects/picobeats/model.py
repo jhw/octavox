@@ -350,8 +350,7 @@ class Patches(list):
                              for patch in patches])
 
     def render_json(self, filename):
-        projfile="tmp/picobeats/json/%s.json" % filename
-        with open(projfile, 'w') as f:
+        with open(filename, 'w') as f:
             f.write(json.dumps(self,
                                indent=2))
 
@@ -366,8 +365,7 @@ class Patches(list):
                                             for patch in self],
                                    config=config,
                                    banks=banks)
-        projfile="tmp/picobeats/sunvox/%s.sunvox" % filename
-        with open(projfile, 'wb') as f:
+        with open(filename, 'wb') as f:
             project.write_to(f)
     
 if __name__=="__main__":

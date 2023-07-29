@@ -1,6 +1,6 @@
 ### short
 
-- pass filenames containing outdir to patches
+- move cli mutation code into patch or patches
 
 ### medium
 
@@ -20,6 +20,8 @@
 
 ### thoughts
 
+- SVTrg class
+  - not worth it just to replace short label rendering code in cli show_patch
 - cli replace|ban samples
   - may be over optimised
 - SVSampleKey to include svdrum to avoid cli show_samples hacks?
@@ -79,6 +81,7 @@
 
 ### done
 
+- pass filenames containing outdir to patches
 - SVTrig class
 - encapsulate short_label code in SVTrig
 - remove SVSampleKey.create

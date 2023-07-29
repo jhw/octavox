@@ -43,11 +43,15 @@ class PicobeatsCli(SVBankCli):
                 self.filename=random_filename(prefix)
                 print ("INFO: %s" % self.filename)
                 self.project=fn(self, *args, **kwargs)
-                self.project.render_json(filename=self.filename)
+                jsonfilename="%s/json/%s.json" % (self.outdir,
+                                                  self.filename)
+                self.project.render_json(filename=jsonfilename)
+                svfilename="%s/sunvox/%s.sunvox" % (self.outdir,
+                                                    self.filename)                
                 self.project.render_sunvox(banks=self.banks,
                                            nbeats=self.env["nbeats"],
                                            density=self.env["density"],
-                                           filename=self.filename)
+                                           filename=svfilename)
             return wrapped
         return decorator
 
