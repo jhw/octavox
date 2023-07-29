@@ -40,11 +40,6 @@ ch:
 
 class SVSampleKey(dict):
 
-    @classmethod
-    def create(self, bank, file):
-        return SVSampleKey({"bank": bank,
-                            "file": file})
-    
     def __init__(self, item={}):
         dict.__init__(self, item)
 
@@ -151,8 +146,8 @@ class SVBank:
 
     def spawn_free(self, instruments):
         wavfiles=self.wavfiles
-        return SVPool({inst:[SVSampleKey.create(bank=self.name,
-                                                file=wavfile)
+        return SVPool({inst:[SVSampleKey({"bank": self.name,
+                                          "file": wavfile})
                              for wavfile in wavfiles]
                        for inst in instruments})
 
@@ -165,8 +160,8 @@ class SVBank:
                 pool.setdefault(inst, [])
                 for frag in fragments[inst]:
                     if re.search(frag, wavfile, re.I):
-                        pool[inst].append(SVSampleKey.create(bank=self.name,
-                                                             file=wavfile))
+                        pool[inst].append(SVSampleKey({"bank": self.name,
+                                                       "file": wavfile}))
         return pool
                 
 class SVBanks(dict):

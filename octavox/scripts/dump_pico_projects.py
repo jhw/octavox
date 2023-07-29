@@ -42,8 +42,8 @@ if __name__=="__main__":
         patch=SVPatch(nbeats=nbeats)
         patch["trig"]=[]
         for i, wavfile in enumerate(wavfiles):
-            key=SVSampleKey.create(bank=bankname,
-                                   file=wavfile)
+            key=SVSampleKey({"bank": bankname,
+                             "file": wavfile})
             trig={"mod": "Sampler",
                   "i": i,
                   "key": key}

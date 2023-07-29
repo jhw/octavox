@@ -1,8 +1,9 @@
 ### short
 
-- remove SVSampleKey.create
 - initialise SVSampleKey for svdrum pool
 - remove special handling of svdrum at show_patch level
+
+- separate class for svdrum key
 
 ### medium
 
@@ -82,6 +83,7 @@
 
 ### done
 
+- remove SVSampleKey.create
 - add @parse_line type checking
 - avoid having to specify @parse_line(config=[])
 - refactor current pool indicator
