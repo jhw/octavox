@@ -7,6 +7,8 @@
   - refactor randomisation and mutation to iterate over blocks and patches
   - ensure json structure saves blocks and is reloadable
 
+- show_patch to iterate over all track keys and check if is a sample
+
 - cli fix samples
 - cli mute samples
 
