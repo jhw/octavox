@@ -1,13 +1,11 @@
 ### short
 
-- initialise SVSampleKey for svdrum pool
-- remove special handling of svdrum at show_patch level
-
-- separate class for svdrum key
+- SVTrig class
+- encapsulate short_label code in SVTrig
+- pass filenames containing outdir to patches
 
 ### medium
 
-- pass filenames containing outdir to patches
 - move randomise and mutate code into patches
 
 - rename patches as blocks and introduce new blocks model

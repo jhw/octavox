@@ -79,12 +79,13 @@ class PicobeatsCli(SVBankCli):
         for i in range(self.env["nbeats"]):
             row=[i]
             for key in instruments:
-                if i in trigs[key]:
-                    trig=trigs[key][i]
-                    value=trig["key"].short_label if "key" in trig else "sv/%i" % trig["id"]
-                    row.append("%s:%s" % (key, value))
-                else:
-                    row.append("...     ")
+                if key in trigs:
+                    if i in trigs[key]:
+                        trig=trigs[key][i]
+                        value=trig["key"].short_label if "key" in trig else "sv/%i" % trig["id"]
+                        row.append("%s:%s" % (key, value))
+                    else:
+                        row.append("...     ")
             print ("\t".join([str(cell)
                               for cell in row]))
 
