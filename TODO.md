@@ -1,17 +1,25 @@
 ### short
 
-- block model
+- remove SVSampleKey.create
+- initialise SVSampleKey for svdrum pool
+- remove special handling of svdrum at show_patch level
 
 ### medium
 
-- `arrange` action
+- pass filenames containing outdir to patches
+- move randomise and mutate code into patches
+
+- rename patches as blocks and introduce new blocks model
+  - replace npatches with blocksize and nblocks
+  - refactor randomisation and mutation to iterate over blocks and patches
+  - ensure json structure saves blocks and is reloadable
 
 - cli fix samples
 - cli mute samples
 
-- update README
-
 ### long
+
+- update README
 
 ### thoughts
 
