@@ -151,6 +151,9 @@ class SVBankCli(SVBaseCli):
             dest=fdest
         print ("INFO: copying %s to %s" % (src, dest))
         self.pools[dest].add(self.pools[src])
+        self.poolname=dest
+        print ("INFO: pool=%s" % dest)
+
                             
 if __name__=="__main__":
     pass

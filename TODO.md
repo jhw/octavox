@@ -1,15 +1,13 @@
 ### short
 
-- copy pool to set pool
-
+- refactor current pool indicator
 - avoid having to specify @parse_line(config=[])
 - add @parse_line type checking
-
 - block model
-- new arrange action
-- add back mutes
 
 ### medium
+
+- `arrange` action
 
 - cli fix samples
 - cli mute samples
@@ -79,6 +77,7 @@
 
 ### done
 
+- copy pool to set pool
 - copy pool followed by randomise patches fails
 - add back wrap_action
   - remove str(frag) to test wrap_action
