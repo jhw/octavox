@@ -49,20 +49,22 @@ class SVBaseCli(cmd.Cmd):
     def __init__(self,
                  outdir,
                  params,
-                 subdirs=["json", "sunvox"],
                  historysize=HistorySize):
         cmd.Cmd.__init__(self)        
         self.outdir=outdir
-        for subdir in subdirs:
-            path="%s/%s" % (outdir, subdir)
-            if not os.path.exists(path):
-                os.makedirs(path)
+        self.init_subdirs()
         self.env=SVEnvironment(params)
-        self.historyfile=os.path.expanduser("%s/.clihistory" % self.outdir)
-        self.historysize=historysize
         self.project=None
         self.filename=None
+        self.historyfile=os.path.expanduser("%s/.clihistory" % self.outdir)
+        self.historysize=historysize
 
+    def init_subdirs(self, subdirs=["json", "sunvox"]):
+        for subdir in subdirs:
+            path="%s/%s" % (self.outdir, subdir)
+            if not os.path.exists(path):
+                os.makedirs(path)
+        
     def preloop(self):
         if os.path.exists(self.historyfile):
             readline.read_history_file(self.historyfile)
@@ -85,8 +87,9 @@ class SVBaseCli(cmd.Cmd):
             print (filename.split(".")[0])
 
     @parse_line(config=[])
-    def do_clear_projects(self):
+    def do_clean_projects(self):
         os.system("rm -rf %s" % self.outdir)
+        self.init_subdirs()
     
     def do_exit(self, _):
         return self.do_quit(None)

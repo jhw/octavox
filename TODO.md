@@ -1,6 +1,5 @@
 ### short
 
-- copy pool followed by randomise patches fails
 - copy pool to set pool
 
 - avoid having to specify @parse_line(config=[])
@@ -80,6 +79,7 @@
 
 ### done
 
+- copy pool followed by randomise patches fails
 - add back wrap_action
   - remove str(frag) to test wrap_action
 - remove nbreaks
