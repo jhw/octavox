@@ -1,6 +1,7 @@
 ### short
 
-- move cli mutation code into patch or patches (?)
+- simplify mutation
+- move randomisation into cli
 
 ### medium
 

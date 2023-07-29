@@ -66,11 +66,14 @@ class PicobeatsCli(SVBankCli):
                          "type": "int"}])
     @render_patches(prefix="mutate")
     def do_mutate_patch(self, i):
-        patch=self.project[i % len(self.project)]
+        root=self.project[i % len(self.project)]
         limits={k: self.env["d%s" % k]
                 for k in "seed|style".split("|")}
-        return Patches([patch]+[patch.clone().mutate(limits=limits)
-                                for i in range(self.env["npatches"]-1)])
+        patches=Patches([root])
+        for i in range(self.env["npatches"]-1):
+            patch=root.clone().mutate(limits)
+            patches.append(patch)
+        return patches
     
     @parse_line(config=[{"name": "i",
                          "type": "int"}])
