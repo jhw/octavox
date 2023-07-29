@@ -339,13 +339,7 @@ class Patch(dict):
 
 class Patches(list):
 
-    @classmethod
-    def randomise(self, pool, temperature, n):
-        return Patches([Patch.randomise(pool=pool,
-                                        temperature=temperature)
-                        for i in range(n)])
-    
-    def __init__(self, patches):
+    def __init__(self, patches=[]):
         list.__init__(self, [Patch(**patch)
                              for patch in patches])
 

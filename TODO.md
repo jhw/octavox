@@ -1,8 +1,5 @@
 ### short
 
-- simplify mutation
-- move randomisation into cli
-
 ### medium
 
 - rename patches as blocks and introduce new blocks model
@@ -80,6 +77,8 @@
 
 ### done
 
+- simplify mutation
+- move randomisation into cli
 - pass filenames containing outdir to patches
 - SVTrig class
 - encapsulate short_label code in SVTrig

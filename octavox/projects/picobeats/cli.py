@@ -32,7 +32,7 @@ class PicobeatsCli(SVBankCli):
             print ("INFO: %s" % filename)
             abspath="%s/%s" % (self.outdir+"/json", filename)
             patches=json.loads(open(abspath).read())
-            self.project=Patches([Patch(**patch)
+            self.patches=Patches([Patch(**patch)
                                   for patch in patches])
         else:
             print ("WARNING: multiple matches")
@@ -42,13 +42,13 @@ class PicobeatsCli(SVBankCli):
             def wrapped(self, *args, **kwargs):
                 self.filename=random_filename(prefix)
                 print ("INFO: %s" % self.filename)
-                self.project=fn(self, *args, **kwargs)
+                self.patches=fn(self, *args, **kwargs)
                 jsonfilename="%s/json/%s.json" % (self.outdir,
                                                   self.filename)
-                self.project.render_json(filename=jsonfilename)
+                self.patches.render_json(filename=jsonfilename)
                 svfilename="%s/sunvox/%s.sunvox" % (self.outdir,
                                                     self.filename)                
-                self.project.render_sunvox(banks=self.banks,
+                self.patches.render_sunvox(banks=self.banks,
                                            nbeats=self.env["nbeats"],
                                            density=self.env["density"],
                                            filename=svfilename)
@@ -58,15 +58,18 @@ class PicobeatsCli(SVBankCli):
     @parse_line()
     @render_patches(prefix="random")
     def do_randomise_patches(self):
-        return Patches.randomise(pool=self.pools[self.poolname],
-                                 temperature=self.env["temperature"],
-                                 n=self.env["npatches"])
+        patches=Patches()
+        for i in range(self.env["npatches"]):
+            patch=Patch.randomise(pool=self.pools[self.poolname],
+                                  temperature=self.env["temperature"])
+            patches.append(patch)
+        return patches
 
     @parse_line(config=[{"name": "i",
                          "type": "int"}])
     @render_patches(prefix="mutate")
     def do_mutate_patch(self, i):
-        root=self.project[i % len(self.project)]
+        root=self.patches[i % len(self.patches)]
         limits={k: self.env["d%s" % k]
                 for k in "seed|style".split("|")}
         patches=Patches([root])
@@ -78,7 +81,7 @@ class PicobeatsCli(SVBankCli):
     @parse_line(config=[{"name": "i",
                          "type": "int"}])
     def do_show_patch(self, i, instruments=Instruments):
-        patch=self.project[i % len(self.project)]
+        patch=self.patches[i % len(self.patches)]
         rendered=patch.render(nbeats=self.env["nbeats"],
                               density=self.env["density"])
         trigs={K:{trig["i"]:trig for trig in V}
