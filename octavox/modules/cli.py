@@ -125,8 +125,9 @@ class SVBankCli(SVBaseCli):
     @parse_line(config=[])
     def do_list_pools(self):
         for poolname in sorted(self.pools.keys()):
-            poollabel=poolname.upper() if poolname==self.poolname else poolname
-            print ("- %s [%i]" % (poollabel,
+            prompt=">" if poolname==self.poolname else " "
+            print ("%s %s [%i]" % (prompt,
+                                  poolname,
                                   self.pools[poolname].size))
             
     @parse_line(config=[{"name": "poolname"}])
