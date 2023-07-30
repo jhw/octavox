@@ -9,7 +9,7 @@ from octavox.projects import random_filename
 
 from octavox.projects.picobeats.model import Patch, Patches, Instruments
 
-import json, os, yaml
+import json, os, random, yaml
 
 class PicobeatsCli(SVBankCli):
 
@@ -79,7 +79,30 @@ class PicobeatsCli(SVBankCli):
             patch=root.clone().mutate(limits)
             patches.append(patch)
         return patches
-    
+
+    @parse_line(config=[{"name": "I",
+                         "type": "array"}])
+    @render_patches(prefix="arrange")
+    def do_arrange_patches(self, I,
+                           patterns=[[0, 0, 0, 1],
+                                     [0, 0, 1, 0],
+                                     [0, 1, 0, 2]],
+                           mutes=[[] for i in range(3)]+[[key] for key in Instruments]):
+        roots=[self.patches[i % len(self.patches)]
+               for i in I]
+        patches=Patches()
+        for i in range(self.env["nblocks"]):
+            blockpattern=random.choice(patterns)
+            blockpatches=[random.choice(roots)
+                          for i in range(1+max(blockpattern))]
+            blockmute=random.choice(mutes)            
+            for j in range(self.env["blocksize"]):
+                k=blockpattern[j]
+                patch=blockpatches[k].clone()
+                patch["mutes"]=blockmute
+                patches.append(patch)
+        return patches
+                
     @parse_line(config=[{"name": "i",
                          "type": "int"}])
     def do_show_patch(self, i, instruments=Instruments):

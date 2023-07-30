@@ -1,6 +1,6 @@
 ### short
 
-- arrange action
+- remove shortlabel stuff
 
 ### medium
 
@@ -94,6 +94,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- arrange action
 - mutes
 - replace npatches with blocksize and nblocks
 - refactor randomisation and mutation to iterate over blocks and patches
