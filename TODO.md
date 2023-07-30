@@ -1,14 +1,15 @@
 ### short [01-fix-samples]
 
-- pass slice index to samples
+- refactor Samples.randomise 
+  - if i==0 and key in fixes and fixes[key]!=[]
+
+- implement fix_sample, unfix_sample, list_fixes, clean_fixes
+
+- simplify initialisation of fixes via instrument class which allows you to flatten values
 
 ### medium
 
-- cli fix samples
-
 - granular sample demo
-
-- cli mute samples
 
 ### long
 
@@ -16,6 +17,8 @@
 
 ### thoughts
 
+- cli mute/ban samples?
+  - hard to see this has much value if there is a lot of randomisation avaiable
 - params types?
   - not clear it is worth it
 
@@ -96,6 +99,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- pass slice index to samples
 - add bank.lookup
 - remove shortlabel stuff
 - arrange action

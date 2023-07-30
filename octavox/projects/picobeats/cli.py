@@ -16,9 +16,19 @@ class PicobeatsCli(SVBankCli):
     intro="Welcome to Picobeats :)"
 
     def __init__(self,
+                 instruments=Instruments,
                  *args,
                  **kwargs):
-        SVBankCli.__init__(self, *args, **kwargs)        
+        SVBankCli.__init__(self, *args, **kwargs)
+        ### START TEMP CODE
+        def init_fixes(instruments=Instruments):
+            fixes={}
+            for V in instruments.values():
+                for v in V:
+                    fixes[v]=[]
+            return fixes
+        ### END TEMP CODE
+        self.fixes=init_fixes()
 
     @parse_line(config=[{"name": "frag",
                          "type": "str"}])
@@ -62,6 +72,7 @@ class PicobeatsCli(SVBankCli):
         npatches=self.env["nblocks"]*self.env["blocksize"]
         for i in range(npatches):
             patch=Patch.randomise(pool=self.pools[self.poolname],
+                                  fixes=self.fixes,
                                   temperature=self.env["temperature"])
             patches.append(patch)
         return patches

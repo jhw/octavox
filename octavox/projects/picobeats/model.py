@@ -54,6 +54,7 @@ class Samples(dict):
                   i,
                   key,
                   pool,
+                  fixes,
                   instruments=Instruments):
         return Samples({k:v for k, v in pool.randomise().items()
                         if k in instruments[key]})
@@ -71,10 +72,12 @@ class Slice(dict):
                   i,
                   key,
                   pool,
+                  fixes,
                   config=Config["sequencers"]):
         return Slice(samples=Samples.randomise(i=i,
                                                key=key,
-                                               pool=pool),
+                                               pool=pool,
+                                               fixes=fixes),
                      seed=int(1e8*random.random()),
                      style=random.choice(config[key]["styles"]))
     
@@ -109,10 +112,12 @@ class Slices(list):
     def randomise(self,
                   key,
                   pool,
+                  fixes,
                   n=3):
         return Slices([Slice.randomise(i=i,
                                        key=key,
-                                       pool=pool)
+                                       pool=pool,
+                                       fixes=fixes)
                        for i in range(n)])
     
     def __init__(self, slices):
@@ -141,11 +146,13 @@ class Sequencer(dict):
     def randomise(self,
                   key,
                   temperature,
-                  pool):
+                  pool,
+                  fixes):
         return Sequencer({"key": key,
                           "pattern": Pattern.randomise(temperature),
                           "slices": Slices.randomise(key=key,
-                                                     pool=pool)})
+                                                     pool=pool,
+                                                     fixes=fixes)})
 
     @init_machine(config=Config["sequencers"])
     def __init__(self, item,
@@ -224,10 +231,12 @@ class Sequencers(list):
     @classmethod
     def randomise(self,
                   pool,
+                  fixes,
                   temperature,
                   config=Config["sequencers"]):
         return Sequencers([Sequencer.randomise(key=key,
                                                pool=pool,
+                                               fixes=fixes,
                                                temperature=temperature)
                           for key in config])
 
@@ -303,8 +312,9 @@ class Lfos(list):
 class Patch(dict):
 
     @classmethod
-    def randomise(self, pool, temperature):
+    def randomise(self, pool, fixes, temperature):
         return Patch(sequencers=Sequencers.randomise(pool=pool,
+                                                     fixes=fixes,
                                                      temperature=temperature),
                      lfos=Lfos.randomise(),
                      mutes=[])
