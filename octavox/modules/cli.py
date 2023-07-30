@@ -6,7 +6,7 @@ import cmd, os, re, readline, traceback
 
 HistorySize=100
 
-def matches_float(value):
+def matches_number(value):
     return re.search("^\\-?\\d+(\\.\\d+)?$", value)!=None
 
 def matches_int(value):
@@ -18,8 +18,8 @@ def matches_array(value):
 def matches_str(value):
     return True
 
-def parse_float(value):
-    return float(value)
+def parse_number(value):
+    return int(value) if matches_int(value) else float(value)
 
 def parse_int(value):
     return int(value)
@@ -112,7 +112,7 @@ class SVBaseCli(cmd.Cmd):
     @parse_line(config=[{"name": "pat",
                          "type": "str"},
                         {"name": "value",
-                         "type": "float"}])
+                         "type": "number"}])
     def do_set_param(self, pat, value):
         key=self.env.lookup(pat)
         self.env[key]=value

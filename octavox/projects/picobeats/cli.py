@@ -59,7 +59,8 @@ class PicobeatsCli(SVBankCli):
     @render_patches(prefix="random")
     def do_randomise_patches(self):
         patches=Patches()
-        for i in range(self.env["npatches"]):
+        npatches=self.env["nblocks"]*self.env["blocksize"]
+        for i in range(npatches):
             patch=Patch.randomise(pool=self.pools[self.poolname],
                                   temperature=self.env["temperature"])
             patches.append(patch)
@@ -73,7 +74,8 @@ class PicobeatsCli(SVBankCli):
         limits={k: self.env["d%s" % k]
                 for k in "seed|style".split("|")}
         patches=Patches([root])
-        for i in range(self.env["npatches"]-1):
+        npatches=self.env["nblocks"]*self.env["blocksize"]
+        for i in range(npatches-1):
             patch=root.clone().mutate(limits)
             patches.append(patch)
         return patches
@@ -131,7 +133,8 @@ density: 0.75
 dseed: 1.0
 dstyle: 0.66666
 nbeats: 16
-npatches: 32
+blocksize: 4
+nblocks: 8
 """)
 
 if __name__=="__main__":

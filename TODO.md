@@ -1,13 +1,11 @@
 ### short
 
+- ensure json structure saves blocks and is reloadable
+- rename patches as blocks and introduce new blocks model
+
 ### medium
 
-- rename patches as blocks and introduce new blocks model
-  - replace npatches with blocksize and nblocks
-  - refactor randomisation and mutation to iterate over blocks and patches
-  - ensure json structure saves blocks and is reloadable
-
-- show_patch to iterate over all track keys and check if is a sample
+- params types
 
 - cli fix samples
 - cli mute samples
@@ -18,6 +16,8 @@
 
 ### thoughts
 
+- show_patch to iterate over all track keys and check if is a sample?
+  - probably not worth it
 - SVTrg class
   - not worth it just to replace short label rendering code in cli show_patch
 - cli replace|ban samples
@@ -79,6 +79,8 @@
 
 ### done
 
+- replace npatches with blocksize and nblocks
+- refactor randomisation and mutation to iterate over blocks and patches
 - simplify mutation
 - move randomisation into cli
 - pass filenames containing outdir to patches
