@@ -43,18 +43,9 @@ class SVSampleKey(dict):
     def __init__(self, item={}):
         dict.__init__(self, item)
 
-    @property
-    def long_label(self):
+    def __str__(self):
         return "%s/%s" % (self["bank"],
                           self["file"])
-
-    @property
-    def short_label(self, n=2):
-        return "%s/%s" % (self["bank"][:n],
-                          self["file"][:n])
-        
-    def __str__(self):
-        return self.long_label
 
 class SVSampleKeys(list):
 

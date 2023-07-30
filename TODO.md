@@ -1,14 +1,11 @@
 ### short
 
-- remove shortlabel stuff
-
-### medium
+- cli fix samples
 
 - granular sample demo
 
-- params types
+### medium
 
-- cli fix samples
 - cli mute samples
 
 ### long
@@ -16,6 +13,9 @@
 - update README
 
 ### thoughts
+
+- params types?
+  - not clear it is worth it
 
 ```
 >>> show_patch 0
@@ -94,6 +94,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- remove shortlabel stuff
 - arrange action
 - mutes
 - replace npatches with blocksize and nblocks
