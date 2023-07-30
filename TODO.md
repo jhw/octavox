@@ -1,6 +1,7 @@
 ### short [01-fix-samples]
 
-- implement fix_sample, unfix_sample, list_fixes, clean_fixes
+- fix_sample
+- unfix_sample
 
 ### medium
 

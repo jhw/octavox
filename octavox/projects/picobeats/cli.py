@@ -133,6 +133,16 @@ class PicobeatsCli(SVBankCli):
             print ("\t".join([str(cell)
                               for cell in row]))
 
+    @parse_line()
+    def do_list_fixes(self):
+        for k, V in self.fixes.items():
+            for v in V:
+                print ("- %s:%s" % (k, v))
+
+    @parse_line()
+    def do_clean_fixes(self, instruments=Instruments):
+        self.fixes={key:[] for key in flatten(instruments.values())}
+                
 def validate_config(config):
     def validate_track_keys(config):
         modkeys=[mod["key"] for mod in config["modules"]
