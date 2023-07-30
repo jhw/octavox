@@ -1,6 +1,6 @@
 from octavox.modules import is_abbrev
 
-import os, random, re, yaml, zipfile
+import os, re, yaml, zipfile
 
 Fragments=yaml.safe_load("""
 kk:
@@ -75,10 +75,6 @@ class SVPool(dict):
                 if item not in self[key]:
                     self[key].append(item)
         return self
-
-    def randomise(self, instruments=Fragments.keys()):
-        return {inst:random.choice(self[inst])
-                for inst in instruments}
 
     @property
     def size(self):
@@ -206,5 +202,3 @@ if __name__=="__main__":
     banks=SVBanks("octavox/banks/pico")
     pools=banks.spawn_pools().cull()
     print (pools.keys())
-    print ()
-    print (pools["global-curated"].randomise())

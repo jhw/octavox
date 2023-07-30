@@ -1,8 +1,5 @@
 ### short [01-fix-samples]
 
-- refactor Samples.randomise 
-  - if i==0 and key in fixes and fixes[key]!=[]
-
 - implement fix_sample, unfix_sample, list_fixes, clean_fixes
 
 - simplify initialisation of fixes via instrument class which allows you to flatten values
@@ -99,6 +96,9 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- refactor Samples.randomise 
+  - if i==0 and key in fixes and fixes[key]!=[]
+- remove pool.randomise
 - pass slice index to samples
 - add bank.lookup
 - remove shortlabel stuff
