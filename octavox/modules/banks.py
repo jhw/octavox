@@ -133,6 +133,18 @@ class SVBank:
         return [item.filename
                 for item in self.zipfile.infolist()]
 
+    def lookup(self, abbrev):
+        matches=[]
+        for wavfile in self.wavfiles:
+            if is_abbrev(abbrev, wavfile):
+                matches.append(wavfile)
+        if matches==[]:
+            raise RuntimeError("no wavfiles found")
+        elif len(matches) > 1:
+            raise RuntimeError("multiple wavfiles found")
+        else:
+            return matches.pop()
+    
     def spawn_free(self, instruments):
         wavfiles=self.wavfiles
         return SVPool({inst:[SVSampleKey({"bank": self.name,

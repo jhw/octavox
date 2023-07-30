@@ -1,10 +1,12 @@
-### short
+### short [01-fix-samples]
+
+- pass slice index to samples
+
+### medium
 
 - cli fix samples
 
 - granular sample demo
-
-### medium
 
 - cli mute samples
 
@@ -94,6 +96,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- add bank.lookup
 - remove shortlabel stuff
 - arrange action
 - mutes
