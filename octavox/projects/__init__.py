@@ -12,6 +12,6 @@ def random_filename(prefix):
                             random.choice(Adjectives),
                             random.choice(Nouns))
 
-    
+
 if __name__=="__main__":
     pass

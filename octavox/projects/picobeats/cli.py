@@ -11,6 +11,12 @@ from octavox.projects.picobeats.model import Patch, Patches, Instruments
 
 import json, os, random, yaml
 
+def flatten(lists):
+    values=[]
+    for l in lists:
+        values+=l
+    return values
+
 class PicobeatsCli(SVBankCli):
 
     intro="Welcome to Picobeats :)"
@@ -20,15 +26,7 @@ class PicobeatsCli(SVBankCli):
                  *args,
                  **kwargs):
         SVBankCli.__init__(self, *args, **kwargs)
-        ### START TEMP CODE
-        def init_fixes(instruments=Instruments):
-            fixes={}
-            for V in instruments.values():
-                for v in V:
-                    fixes[v]=[]
-            return fixes
-        ### END TEMP CODE
-        self.fixes=init_fixes()
+        self.fixes={key:[] for key in flatten(instruments.values())}
 
     @parse_line(config=[{"name": "frag",
                          "type": "str"}])

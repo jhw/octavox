@@ -1,7 +1,5 @@
 ### short [01-fix-samples]
 
-- simplify initialisation of fixes via instrument class which allows you to flatten values
-
 - implement fix_sample, unfix_sample, list_fixes, clean_fixes
 
 ### medium
@@ -96,6 +94,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- simplify initialisation of fixes via instrument class which allows you to flatten values
 - refactor Samples.randomise 
   - if i==0 and key in fixes and fixes[key]!=[]
 - remove pool.randomise
