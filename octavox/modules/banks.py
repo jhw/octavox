@@ -112,7 +112,7 @@ class SVPools(dict):
             if is_abbrev(abbrev, key):
                 matches.append(key)
         if matches==[]:
-            raise RuntimeError("no pools found")
+            raise RuntimeError("pool not found")
         elif len(matches) > 1:
             raise RuntimeError("multiple pools found")
         else:
@@ -135,7 +135,7 @@ class SVBank:
             if is_abbrev(abbrev, wavfile):
                 matches.append(wavfile)
         if matches==[]:
-            raise RuntimeError("no wavfiles found")
+            raise RuntimeError("wavfile not found")
         elif len(matches) > 1:
             raise RuntimeError("multiple wavfiles found")
         else:
@@ -177,7 +177,7 @@ class SVBanks(dict):
             if is_abbrev(abbrev, key):
                 matches.append(key)
         if matches==[]:
-            raise RuntimeError("no banks found")
+            raise RuntimeError("bank not found")
         elif len(matches) > 1:
             raise RuntimeError("multiple banks found")
         else:

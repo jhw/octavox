@@ -1,4 +1,4 @@
-from octavox.modules.banks import SVBanks, SVPool
+from octavox.modules.banks import SVSampleKey, SVBanks, SVPool
 
 from octavox.modules.cli import SVBankCli, parse_line
 
@@ -140,22 +140,20 @@ class PicobeatsCli(SVBankCli):
 
     @parse_line(config=[{"name": "key",
                          "type": "str"},
-                        {"name": "bankname",
+                        {"name": "bankfrag",
                          "type": "str"},
-                        {"name": "wavfile",
+                        {"name": "wavfrag",
                          "type": "str"}])
-    def do_fix_sample(self, key, bankname, wavfile):
-        print (key, bankname, wavfile)
+    def do_fix_sample(self, key, bankfrag, wavfrag, instruments=Instruments):
+        if key not in instruments:
+            raise RuntimeError("instrument not found")
+        bankname=self.banks.lookup(bankfrag)
+        bank=self.banks[bankname]
+        wavfile=bank.lookup(wavfrag)
+        samplekey=SVSampleKey({"bank": bankname,
+                               "file": wavfile})
+        self.fixes[key].append(samplekey)
 
-    @parse_line(config=[{"name": "key",
-                         "type": "str"},
-                        {"name": "bankname",
-                         "type": "str"},
-                        {"name": "wavfile",
-                         "type": "str"}])
-    def do_unfix_sample(self, key, bankname, wavfile):
-        print (key, bankname, wavfile)
-                
     @parse_line()
     def do_clean_fixes(self, instruments=Instruments):
         self.fixes={key:[] for key in flatten(instruments.values())}

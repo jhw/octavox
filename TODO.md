@@ -1,6 +1,6 @@
 ### short [01-fix-samples]
 
-- fix_sample
+- avoid sample fix duplication
 
 - unfix_sample
 
