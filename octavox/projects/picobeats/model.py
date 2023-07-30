@@ -51,6 +51,7 @@ class Samples(dict):
 
     @classmethod
     def randomise(self,
+                  i,
                   key,
                   pool,
                   instruments=Instruments):
@@ -67,10 +68,12 @@ class Slice(dict):
 
     @classmethod
     def randomise(self,
+                  i,
                   key,
                   pool,
                   config=Config["sequencers"]):
-        return Slice(samples=Samples.randomise(key=key,
+        return Slice(samples=Samples.randomise(i=i,
+                                               key=key,
                                                pool=pool),
                      seed=int(1e8*random.random()),
                      style=random.choice(config[key]["styles"]))
@@ -107,7 +110,8 @@ class Slices(list):
                   key,
                   pool,
                   n=3):
-        return Slices([Slice.randomise(key=key,
+        return Slices([Slice.randomise(i=i,
+                                       key=key,
                                        pool=pool)
                        for i in range(n)])
     
