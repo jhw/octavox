@@ -1,3 +1,14 @@
+### arrange 30/07/23
+
+- take an array input
+- define a random set of patterns and mutes
+- iterate over blocks
+- select random pattern and mute
+- choose random set of patches consistent with pattern
+- insert patches
+- override mutes
+- no mutations!
+
 ### picobeats api 26/07/23
 
 - randomise patches

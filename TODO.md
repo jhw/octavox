@@ -1,18 +1,10 @@
 ### short
 
-```
->>> show_patch 0
-EXCEPTION: Traceback (most recent call last):
-  File "/Users/jhw/work/octavox/octavox/modules/cli.py", line 56, in wrapped
-    return fn(self, **kwargs)
-  File "/Users/jhw/work/octavox/octavox/projects/picobeats/cli.py", line 97, in do_show_patch
-    value=trig["key"].short_label if "key" in trig else "sv/%i" % trig["id"]
-AttributeError: 'dict' object has no attribute 'short_label'
-```
-
-- new arrange action with mutes
+- arrange action
 
 ### medium
+
+- granular sample demo
 
 - params types
 
@@ -24,6 +16,18 @@ AttributeError: 'dict' object has no attribute 'short_label'
 - update README
 
 ### thoughts
+
+```
+>>> show_patch 0
+EXCEPTION: Traceback (most recent call last):
+  File "/Users/jhw/work/octavox/octavox/modules/cli.py", line 56, in wrapped
+    return fn(self, **kwargs)
+  File "/Users/jhw/work/octavox/octavox/projects/picobeats/cli.py", line 97, in do_show_patch
+    value=trig["key"].short_label if "key" in trig else "sv/%i" % trig["id"]
+AttributeError: 'dict' object has no attribute 'short_label'
+```
+
+- ^^^ where did this come from?
 
 - dedicated blocks model?
   - no; think it makes more sense to render at the patches level but then have cli work in blocks
