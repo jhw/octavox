@@ -1,7 +1,16 @@
 ### short
 
-- ensure json structure saves blocks and is reloadable
-- rename patches as blocks and introduce new blocks model
+```
+>>> show_patch 0
+EXCEPTION: Traceback (most recent call last):
+  File "/Users/jhw/work/octavox/octavox/modules/cli.py", line 56, in wrapped
+    return fn(self, **kwargs)
+  File "/Users/jhw/work/octavox/octavox/projects/picobeats/cli.py", line 97, in do_show_patch
+    value=trig["key"].short_label if "key" in trig else "sv/%i" % trig["id"]
+AttributeError: 'dict' object has no attribute 'short_label'
+```
+
+- new arrange action with mutes
 
 ### medium
 
@@ -16,6 +25,8 @@
 
 ### thoughts
 
+- dedicated blocks model?
+  - no; think it makes more sense to render at the patches level but then have cli work in blocks
 - show_patch to iterate over all track keys and check if is a sample?
   - probably not worth it
 - SVTrg class
@@ -79,6 +90,7 @@
 
 ### done
 
+- mutes
 - replace npatches with blocksize and nblocks
 - refactor randomisation and mutation to iterate over blocks and patches
 - simplify mutation

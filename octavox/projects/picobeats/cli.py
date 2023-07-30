@@ -97,7 +97,7 @@ class PicobeatsCli(SVBankCli):
                         value=trig["key"].short_label if "key" in trig else "sv/%i" % trig["id"]
                         row.append("%s:%s" % (key, value))
                     else:
-                        row.append("...     ")
+                        row.append("...")
             print ("\t".join([str(cell)
                               for cell in row]))
 

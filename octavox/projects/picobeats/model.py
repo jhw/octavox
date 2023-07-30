@@ -228,12 +228,12 @@ class Sequencers(list):
                           for key in config])
 
     def __init__(self, sequencers):
-        list.__init__(self, [Sequencer(sequencer)
-                             for sequencer in sequencers])
+        list.__init__(self, [Sequencer(seq)
+                             for seq in sequencers])
 
     def clone(self):
-        return Sequencers([sequencer.clone()
-                           for sequencer in self])
+        return Sequencers([seq.clone()
+                           for seq in self])
 
 class Lfo(dict):
 
@@ -302,22 +302,26 @@ class Patch(dict):
     def randomise(self, pool, temperature):
         return Patch(sequencers=Sequencers.randomise(pool=pool,
                                                      temperature=temperature),
-                     lfos=Lfos.randomise())
+                     lfos=Lfos.randomise(),
+                     mutes=[])
         
     def __init__(self,
                  sequencers,
-                 lfos):
+                 lfos,
+                 mutes):
         dict.__init__(self, {"sequencers": Sequencers(sequencers),
-                             "lfos": Lfos(lfos)})
+                             "lfos": Lfos(lfos),
+                             "mutes": []})
         
     def clone(self):
         return Patch(sequencers=self["sequencers"].clone(),
-                     lfos=self["lfos"].clone())
+                     lfos=self["lfos"].clone(),
+                     mutes=list(self["mutes"]))
 
     def mutate(self, limits):
-        for sequencer in self["sequencers"]:
-            for slice in sequencer["slices"]:
-                slice.randomise_style(sequencer["key"],
+        for seq in self["sequencers"]:
+            for slice in seq["slices"]:
+                slice.randomise_style(seq["key"],
                                       limits["style"])
                 slice.randomise_seed(limits["seed"])
         for lfo in self["lfos"]:
@@ -328,10 +332,11 @@ class Patch(dict):
                nbeats,
                density):
         tracks=SVPatch(nbeats=nbeats)
-        for sequencer in self["sequencers"]:
-            sequencer.render(nbeats=nbeats,
-                             tracks=tracks,
-                             density=density)
+        for seq in self["sequencers"]:
+            if seq["key"] not in self["mutes"]:
+                seq.render(nbeats=nbeats,
+                           tracks=tracks,
+                           density=density)
         for lfo in self["lfos"]:
             lfo.render(nbeats=nbeats,
                        tracks=tracks)
