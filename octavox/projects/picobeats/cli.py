@@ -1,4 +1,3 @@
-
 from octavox.modules.banks import SVBanks, SVPool
 
 from octavox.modules.cli import SVBankCli, parse_line
@@ -139,6 +138,24 @@ class PicobeatsCli(SVBankCli):
             for v in V:
                 print ("- %s:%s" % (k, v))
 
+    @parse_line(config=[{"name": "key",
+                         "type": "str"},
+                        {"name": "bankname",
+                         "type": "str"},
+                        {"name": "wavfile",
+                         "type": "str"}])
+    def do_fix_sample(self, key, bankname, wavfile):
+        print (key, bankname, wavfile)
+
+    @parse_line(config=[{"name": "key",
+                         "type": "str"},
+                        {"name": "bankname",
+                         "type": "str"},
+                        {"name": "wavfile",
+                         "type": "str"}])
+    def do_unfix_sample(self, key, bankname, wavfile):
+        print (key, bankname, wavfile)
+                
     @parse_line()
     def do_clean_fixes(self, instruments=Instruments):
         self.fixes={key:[] for key in flatten(instruments.values())}
