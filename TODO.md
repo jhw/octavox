@@ -1,16 +1,26 @@
 ### short 
 
-- arrange() action
+- custom SVDrumKey class
+  - svdrum pool to be initialised with svdrumkey classes
+  - remove special svdrum support in show_sample
+  - refactor fix_sample to support svdrum
 
-- improve fixes.append
+- convert fixes values to use set()
+  - check set equality operator
+
+### pending
+
+- granular samples
 
 ### medium
 
-- granular sample demo
+- global mutes
 
-### long
+- arrange() action
 
 - update README
+
+### long
 
 ### thoughts
 
