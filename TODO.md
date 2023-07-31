@@ -1,8 +1,8 @@
-### short [01-fix-samples]
+### short 
 
-- avoid sample fix duplication
+- arrange() action
 
-- unfix_sample
+- improve fixes.append
 
 ### medium
 
@@ -14,6 +14,8 @@
 
 ### thoughts
 
+- unfix_sample?
+  - not sure it is required
 - cli mute/ban samples?
   - hard to see this has much value if there is a lot of randomisation avaiable
 - params types?
@@ -96,6 +98,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- avoid sample fix duplication
 - simplify initialisation of fixes via instrument class which allows you to flatten values
 - refactor Samples.randomise 
   - if i==0 and key in fixes and fixes[key]!=[]

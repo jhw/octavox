@@ -16,6 +16,20 @@ def flatten(lists):
         values+=l
     return values
 
+class Fixes(dict):
+
+    @classmethod
+    def create(self, instruments=Instruments):
+        return Fixes({key:[] for key in flatten(instruments.values())})
+    
+    def __init__(self, item={}):
+        dict.__init__(self, item)
+
+    def append(self, key, samplekey):
+        samplekeys=[str(sampkey) for sampkey in self[key]]
+        if str(samplekey) not in samplekeys:
+            self[key].append(samplekey)
+
 class PicobeatsCli(SVBankCli):
 
     intro="Welcome to Picobeats :)"
@@ -25,7 +39,7 @@ class PicobeatsCli(SVBankCli):
                  *args,
                  **kwargs):
         SVBankCli.__init__(self, *args, **kwargs)
-        self.fixes={key:[] for key in flatten(instruments.values())}
+        self.fixes=Fixes.create()
 
     @parse_line(config=[{"name": "frag",
                          "type": "str"}])
@@ -90,9 +104,10 @@ class PicobeatsCli(SVBankCli):
 
     @parse_line(config=[{"name": "I",
                          "type": "array"}])
-    @render_patches(prefix="arrange")
-    def do_arrange_patches(self, I,
-                           patterns=[[0, 0, 0, 1],
+    @render_patches(prefix="scatter")
+    def do_scatter_patches(self, I,
+                           patterns=[[0, 0, 0, 0],
+                                     [0, 0, 0, 1],
                                      [0, 0, 1, 0],
                                      [0, 1, 0, 2]],
                            mutes=[[] for i in range(3)]+[[key] for key in Instruments]):
@@ -152,11 +167,11 @@ class PicobeatsCli(SVBankCli):
         wavfile=bank.lookup(wavfrag)
         samplekey=SVSampleKey({"bank": bankname,
                                "file": wavfile})
-        self.fixes[key].append(samplekey)
+        self.fixes.append(key, samplekey)
 
     @parse_line()
     def do_clean_fixes(self, instruments=Instruments):
-        self.fixes={key:[] for key in flatten(instruments.values())}
+        self.fixes=Fixes.create()
                 
 def validate_config(config):
     def validate_track_keys(config):
