@@ -1,9 +1,6 @@
 ### short 
 
-- custom SVDrumKey class
-  - svdrum pool to be initialised with svdrumkey classes
-  - remove special svdrum support in show_sample
-  - refactor fix_sample to support svdrum
+- treat svdrum as a sample, so can be fixed?
 
 - convert fixes values to use set()
   - check set equality operator
@@ -15,9 +12,7 @@
 ### medium
 
 - global mutes
-
 - arrange() action
-
 - update README
 
 ### long
