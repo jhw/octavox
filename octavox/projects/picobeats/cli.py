@@ -159,8 +159,8 @@ class PicobeatsCli(SVBankCli):
                          "type": "str"},
                         {"name": "wavfrag",
                          "type": "str"}])
-    def do_fix_sample(self, key, bankfrag, wavfrag, instruments=Instruments):
-        if key not in instruments:
+    def do_fix_sample(self, key, bankfrag, wavfrag):
+        if key not in self.fixes:
             raise RuntimeError("instrument not found")
         bankname=self.banks.lookup(bankfrag)
         bank=self.banks[bankname]

@@ -1,15 +1,11 @@
 ### short 
 
-- treat svdrum as a sample, so can be fixed?
-
 - convert fixes values to use set()
   - check set equality operator
 
-### pending
-
-- granular samples
-
 ### medium
+
+- treat svdrum as a sample, so can be fixed?
 
 - global mutes
 - arrange() action

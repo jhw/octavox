@@ -140,9 +140,6 @@ def init_machine(config):
         return wrapped
     return decorator
 
-def Mixer(instkey, samplekey):
-    return 1.0
-    
 class Sequencer(dict):
 
     @classmethod
@@ -158,12 +155,10 @@ class Sequencer(dict):
                                                      fixes=fixes)})
 
     @init_machine(config=Config["sequencers"])
-    def __init__(self, item,
-                 mixer=Mixer):
+    def __init__(self, item):
         dict.__init__(self, {"key": item["key"],
                              "pattern": Pattern(item["pattern"]),
                              "slices": Slices(item["slices"])})
-        self.mixer=mixer
                 
     def clone(self):
         return Sequencer({"key": self["key"],
@@ -194,7 +189,6 @@ class Sequencer(dict):
             if v!=None: # explicit because could return zero
                 instkey, volume = v
                 samplekey=samples[instkey]
-                volume=self.mixer(instkey, samplekey)
                 trig={"vel": volume,
                       "i": i+offset}
                 if samplekey["bank"]!="svdrum":
