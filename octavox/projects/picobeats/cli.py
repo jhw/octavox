@@ -20,15 +20,13 @@ class Fixes(dict):
 
     @classmethod
     def create(self, instruments=Instruments):
-        return Fixes({key:[] for key in flatten(instruments.values())})
+        return Fixes({key:{} for key in flatten(instruments.values())})
     
     def __init__(self, item={}):
         dict.__init__(self, item)
 
-    def append(self, key, samplekey):
-        samplekeys=[str(sampkey) for sampkey in self[key]]
-        if str(samplekey) not in samplekeys:
-            self[key].append(samplekey)
+    def add(self, key, samplekey):
+        self[key][str(samplekey)]=samplekey
 
 class PicobeatsCli(SVBankCli):
 
@@ -150,7 +148,7 @@ class PicobeatsCli(SVBankCli):
     @parse_line()
     def do_list_fixes(self):
         for k, V in self.fixes.items():
-            for v in V:
+            for v in V.values():
                 print ("- %s:%s" % (k, v))
 
     @parse_line(config=[{"name": "key",
@@ -167,7 +165,7 @@ class PicobeatsCli(SVBankCli):
         wavfile=bank.lookup(wavfrag)
         samplekey=SVSampleKey({"bank": bankname,
                                "file": wavfile})
-        self.fixes.append(key, samplekey)
+        self.fixes.add(key, samplekey)
 
     @parse_line()
     def do_clean_fixes(self, instruments=Instruments):

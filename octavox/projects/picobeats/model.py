@@ -58,7 +58,8 @@ class Samples(dict):
                   instruments=Instruments):
         samples={}
         for k in instruments[key]:
-            values=fixes[k] if i==0 and k in fixes and fixes[k]!=[] else pool[k]
+            keyfixes=list(fixes[k].values())
+            values=keyfixes if i==0 and keyfixes!=[] else pool[k]
             samples[k]=random.choice(values)
         return Samples(samples)
             
