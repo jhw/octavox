@@ -1,13 +1,10 @@
 ### short 
 
-- convert fixes values to use set()
-  - check set equality operator
+- global mutes
+- density to be saved as part of state
 
 ### medium
 
-- treat svdrum as a sample, so can be fixed?
-
-- global mutes
 - arrange() action
 - update README
 
@@ -15,6 +12,8 @@
 
 ### thoughts
 
+- treat svdrum as a sample, so can be fixed?
+  - probably too much work
 - unfix_sample?
   - not sure it is required
 - cli mute/ban samples?
@@ -99,6 +98,8 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- convert fixes values to use set()
+  - check set equality operator
 - avoid sample fix duplication
 - simplify initialisation of fixes via instrument class which allows you to flatten values
 - refactor Samples.randomise 
