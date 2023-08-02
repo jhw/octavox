@@ -3,6 +3,12 @@
 - global mutes
 - density to be saved as part of state
 
+### tracker single sample examples
+
+- different cutoffs
+- different slices
+- different pitches
+
 ### medium
 
 - arrange() action
