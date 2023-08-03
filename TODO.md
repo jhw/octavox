@@ -1,6 +1,5 @@
 ### next
 
-- remove density
 - remove temperature
 - remove slices and patterns
 - remove instruments
@@ -111,6 +110,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- remove density
 - remove mutate and scatter
 - remove picobeats refs
 - remove fixes

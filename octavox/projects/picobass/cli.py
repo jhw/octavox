@@ -50,7 +50,6 @@ class PicobassCli(SVBankCli):
                                                     self.filename)                
                 self.patches.render_sunvox(banks=self.banks,
                                            nbeats=self.env["nbeats"],
-                                           density=self.env["density"],
                                            filename=svfilename)
             return wrapped
         return decorator
@@ -94,7 +93,6 @@ def validate_config(config):
 
 Params=yaml.safe_load("""
 temperature: 1.0
-density: 0.75
 dseed: 1.0
 dstyle: 0.66666
 nbeats: 16

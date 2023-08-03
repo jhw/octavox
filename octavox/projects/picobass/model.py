@@ -1,7 +1,5 @@
 from octavox.modules.project import SVProject, SVPatch
 
-import octavox.modules.sequences.vitling909 as nineohnine
-
 import json, os, random, yaml
 
 Config=yaml.safe_load(open("octavox/projects/picobass/config.yaml").read())
@@ -159,8 +157,7 @@ class Sequencer(dict):
 
     def render(self,
                tracks,
-               nbeats,
-               density):
+               nbeats):
         multiplier=int(nbeats/self["pattern"].size)
         offset=0
         for pat in self["pattern"].expanded:
@@ -169,7 +166,7 @@ class Sequencer(dict):
             fn=getattr(self, slice["style"])
             nsamplebeats=pat["n"]*multiplier
             for i in range(nsamplebeats):
-                fn(q, i, density, tracks, offset, slice["samples"])
+                fn(q, i, tracks, offset, slice["samples"])
             offset+=nsamplebeats
 
     def apply(fn):
@@ -189,28 +186,6 @@ class Sequencer(dict):
                 tracks[self["key"]].append(trig)
         return wrapped
     
-    @apply
-    def fourfloor(self, q, i, d, *args, k="kk"):
-        return nineohnine.fourfloor(q, i, d, k)
-    @apply
-    def electro(self, q, i, d, *args, k="kk"):
-        return nineohnine.electro(q, i, d, k)
-    @apply
-    def triplets(self, q, i, d, *args, k="kk"):
-        return nineohnine.triplets(q, i, d, k)
-    @apply
-    def backbeat(self, q, i, d, *args, k="sn"):
-        return nineohnine.backbeat(q, i, d, k)
-    @apply
-    def skip(self, q, i, d, *args, k="sn"):
-        return nineohnine.skip(q, i, d, k)
-    @apply
-    def offbeats(self, q, i, d, *args, k=["oh", "ch"]):
-        return nineohnine.offbeats(q, i, d, k)    
-    @apply
-    def closed(self, q, i, d, *args, k="ch"):
-        return nineohnine.closed(q, i, d, k)
-                            
 class Sequencers(list):
 
     @classmethod
@@ -325,14 +300,12 @@ class Patch(dict):
         return self
     
     def render(self,
-               nbeats,
-               density):
+               nbeats):
         tracks=SVPatch(nbeats=nbeats)
         for seq in self["sequencers"]:
             if seq["key"] not in self["mutes"]:
                 seq.render(nbeats=nbeats,
-                           tracks=tracks,
-                           density=density)
+                           tracks=tracks)
         for lfo in self["lfos"]:
             lfo.render(nbeats=nbeats,
                        tracks=tracks)
@@ -352,11 +325,9 @@ class Patches(list):
     def render_sunvox(self,
                       banks,
                       nbeats,
-                      density,
                       filename,
                       config=Config):
-        project=SVProject().render(patches=[patch.render(nbeats=nbeats,
-                                                         density=density)
+        project=SVProject().render(patches=[patch.render(nbeats=nbeats)
                                             for patch in self],
                                    config=config,
                                    banks=banks)
