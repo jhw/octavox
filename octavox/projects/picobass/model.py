@@ -8,41 +8,10 @@ Instruments={"kk": ["kk"],
              "sn": ["sn"],
              "ht": ["oh", "ch"]}
 
-Patterns=["0",
-          "0|0|1|0",
-          "3x0|1",
-          "0|1|0|1",
-          "0|1|0|2"]
-
 def Q(seed):
     q=random.Random()
     q.seed(seed)
     return q
-
-class Pattern(str):
-
-    @classmethod
-    def randomise(self, patterns=Patterns):
-        return Pattern(random.choice(patterns)
-    
-    def __init__(self, value):
-        str.__init__(value) # NB no self as first arg
-
-    @property
-    def expanded(self):
-        def parse_chunk(chunk):
-            tokens=[int(tok)
-                    for tok in chunk.split("x")]
-            if len(tokens)==1:
-                tokens=[1, tokens[0]]
-            return {k:v for k, v in zip("ni", tokens)}
-        return [parse_chunk(chunk)
-                for chunk in self.split("|")]
-        
-    @property
-    def size(self):
-        return sum([item["n"]
-                    for item in self.expanded])
 
 class Samples(dict):
 
@@ -138,21 +107,19 @@ class Sequencer(dict):
                   key,
                   pool)
         return Sequencer({"key": key,
-                          "pattern": Pattern.randomise(),
                           "slices": Slices.randomise(key=key,
                                                      pool=pool)})
 
     @init_machine(config=Config["sequencers"])
     def __init__(self, item):
         dict.__init__(self, {"key": item["key"],
-                             "pattern": Pattern(item["pattern"]),
                              "slices": Slices(item["slices"])})
                 
     def clone(self):
         return Sequencer({"key": self["key"],
-                          "pattern": self["pattern"],
                           "slices": self["slices"].clone()})
 
+    """
     def render(self,
                tracks,
                nbeats):
@@ -166,6 +133,7 @@ class Sequencer(dict):
             for i in range(nsamplebeats):
                 fn(q, i, tracks, offset, slice["samples"])
             offset+=nsamplebeats
+    """
 
     def apply(fn):
         def wrapped(self, q, i, d,
