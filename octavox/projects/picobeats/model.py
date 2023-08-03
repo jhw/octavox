@@ -190,7 +190,7 @@ class Sequencer(dict):
             if v!=None: # explicit because could return zero
                 instkey, volume = v
                 samplekey=samples[instkey]
-                samplekey["key"]=self["key"] # NB
+                samplekey["mod"]=self.mod
                 trig=SVNoteTrig({"vel": volume,
                                  "i": i+offset})
                 if samplekey["bank"]!="svdrum":
