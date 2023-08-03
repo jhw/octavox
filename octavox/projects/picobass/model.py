@@ -45,33 +45,27 @@ def init_machine(config):
 class Sequencer(dict):
 
     @classmethod
-    def randomise(self,
-                  key,
-                  pool)
-        return Sequencer({"key": key})
+    def randomise(self, key):
+        return Sequencer({"key": key,
+                          "seed": int(1e8*random.random())})
 
     @init_machine(config=Config["sequencers"])
     def __init__(self, item):
-        dict.__init__(self, {"key": item["key"]})
-                
+        dict.__init__(self, item)
+        
     def clone(self):
-        return Sequencer({"key": self["key"]})
+        return Sequencer(self)
 
-    """
-    def render(self,
-               tracks,
-               nbeats):
-        multiplier=int(nbeats/self["pattern"].size)
-        offset=0
-        for pat in self["pattern"].expanded:
-            slice=self["slices"][pat["i"]]
-            q=Q(slice["seed"])            
-            fn=getattr(self, slice["style"])
-            nsamplebeats=pat["n"]*multiplier
-            for i in range(nsamplebeats):
-                fn(q, i, tracks, offset, slice["samples"])
-            offset+=nsamplebeats
-    """
+    def randomise_seed(self, limit):
+        if random.random() < limit:
+            seed=int(1e8*random.random())
+            self["seed"]=seed
+
+    def render(self, nbeats, tracks):
+        q=Q(self["seed"])
+        for i in range(nbeats):
+            # self.sample_hold(q, i, tracks)
+            pass
 
     def apply(fn):
         def wrapped(self, q, i, d,

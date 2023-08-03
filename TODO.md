@@ -1,6 +1,5 @@
 ### next
 
-- remove slices
 - remove instruments
 
 - reduce config to single sampler
@@ -109,6 +108,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- remove slices
 - remove patterns
 - remove mutes
 - remove temperature
