@@ -32,64 +32,6 @@ class Samples(dict):
     def clone(self):
         return Samples(self)
 
-class Slice(dict):
-
-    @classmethod
-    def randomise(self,
-                  i,
-                  key,
-                  pool,
-                  config=Config["sequencers"]):
-        return Slice(samples=Samples.randomise(i=i,
-                                               key=key,
-                                               pool=pool):
-                     seed=int(1e8*random.random()),
-                     style=random.choice(config[key]["styles"]))
-    
-    def __init__(self,
-                 samples,
-                 seed,
-                 style):
-        dict.__init__(self, {"samples": Samples(samples),
-                             "seed": seed,
-                             "style": style})
-
-    def clone(self):
-        return Slice(samples=self["samples"].clone(),
-                     seed=self["seed"],
-                     style=self["style"])
-
-    def randomise_seed(self, limit):
-        if random.random() < limit:
-            seed=int(1e8*random.random())
-            self["seed"]=seed
-
-    def randomise_style(self,
-                        key,
-                        limit,
-                        config=Config["sequencers"]):
-        if random.random() < limit:
-            self["style"]=random.choice(config[key]["styles"])
-    
-class Slices(list):
-
-    @classmethod
-    def randomise(self,
-                  key,
-                  pool,
-                  n=3):
-        return Slices([Slice.randomise(i=i,
-                                       key=key,
-                                       pool=pool)
-                       for i in range(n)])
-    
-    def __init__(self, slices):
-        list.__init__(self, [Slice(**slice)
-                             for slice in slices])
-
-    def clone(self):
-        return Slices(self)
-
 def init_machine(config):
     def decorator(fn):
         def wrapped(self, item, **kwargs):
@@ -106,18 +48,14 @@ class Sequencer(dict):
     def randomise(self,
                   key,
                   pool)
-        return Sequencer({"key": key,
-                          "slices": Slices.randomise(key=key,
-                                                     pool=pool)})
+        return Sequencer({"key": key})
 
     @init_machine(config=Config["sequencers"])
     def __init__(self, item):
-        dict.__init__(self, {"key": item["key"],
-                             "slices": Slices(item["slices"])})
+        dict.__init__(self, {"key": item["key"]})
                 
     def clone(self):
-        return Sequencer({"key": self["key"],
-                          "slices": self["slices"].clone()})
+        return Sequencer({"key": self["key"]})
 
     """
     def render(self,
@@ -248,16 +186,6 @@ class Patch(dict):
         return Patch(sequencers=self["sequencers"].clone(),
                      lfos=self["lfos"].clone())
 
-    def mutate(self, limits):
-        for seq in self["sequencers"]:
-            for slice in seq["slices"]:
-                slice.randomise_style(seq["key"],
-                                      limits["style"])
-                slice.randomise_seed(limits["seed"])
-        for lfo in self["lfos"]:
-            lfo.randomise_seed(limits["seed"])
-        return self
-    
     def render(self,
                nbeats):
         tracks=SVPatch(nbeats=nbeats)
