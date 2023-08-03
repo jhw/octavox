@@ -16,18 +16,6 @@ def flatten(lists):
         values+=l
     return values
 
-class Fixes(dict):
-
-    @classmethod
-    def create(self, instruments=Instruments):
-        return Fixes({key:{} for key in flatten(instruments.values())})
-    
-    def __init__(self, item={}):
-        dict.__init__(self, item)
-
-    def add(self, key, samplekey):
-        self[key][str(samplekey)]=samplekey
-
 class PicobeatsCli(SVBankCli):
 
     intro="Welcome to Picobeats :)"
@@ -37,7 +25,6 @@ class PicobeatsCli(SVBankCli):
                  *args,
                  **kwargs):
         SVBankCli.__init__(self, *args, **kwargs)
-        self.fixes=Fixes.create()
 
     @parse_line(config=[{"name": "frag",
                          "type": "str"}])
@@ -81,7 +68,6 @@ class PicobeatsCli(SVBankCli):
         npatches=self.env["nblocks"]*self.env["blocksize"]
         for i in range(npatches):
             patch=Patch.randomise(pool=self.pools[self.poolname],
-                                  fixes=self.fixes,
                                   temperature=self.env["temperature"])
             patches.append(patch)
         return patches
@@ -145,32 +131,6 @@ class PicobeatsCli(SVBankCli):
             print ("\t".join([str(cell)
                               for cell in row]))
 
-    @parse_line()
-    def do_list_fixes(self):
-        for k, V in self.fixes.items():
-            for v in V.values():
-                print ("- %s:%s" % (k, v))
-
-    @parse_line(config=[{"name": "key",
-                         "type": "str"},
-                        {"name": "bankfrag",
-                         "type": "str"},
-                        {"name": "wavfrag",
-                         "type": "str"}])
-    def do_fix_sample(self, key, bankfrag, wavfrag):
-        if key not in self.fixes:
-            raise RuntimeError("instrument not found")
-        bankname=self.banks.lookup(bankfrag)
-        bank=self.banks[bankname]
-        wavfile=bank.lookup(wavfrag)
-        samplekey=SVSampleKey({"bank": bankname,
-                               "file": wavfile})
-        self.fixes.add(key, samplekey)
-
-    @parse_line()
-    def do_clean_fixes(self, instruments=Instruments):
-        self.fixes=Fixes.create()
-                
 def validate_config(config):
     def validate_track_keys(config):
         modkeys=[mod["key"] for mod in config["modules"]
