@@ -1,14 +1,15 @@
 ### 02-tracks-to-trigs
 
-- remove keys from modules and remove associated validation code
 - new svtrigs class which can render tracks
   - infers keys based on class type, module etc
+
 - convert dict- based SV classes to real classes
 
 ### 01-picobass-master
 
 - pass single pool to cli and check self.banks refs
 
+- replace blocksize and nblocks with npatches
 - refactor samples model
 - find some bass sounds
 - script to slice bass sounds
@@ -110,6 +111,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- remove keys from modules and remove associated validation code
 - replace sample keys with mod names
 - rename svpatch as svtracks
 - extend basecli not poolcli (?)
