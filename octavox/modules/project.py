@@ -13,25 +13,6 @@ volume: 256
 
 BreakSz, Height = 16, 64
 
-class SVPatch(dict):
-
-    def __init__(self, nbeats, item={}):
-        dict.__init__(self)
-        self.nbeats=nbeats
-
-    def filter_samplekeys(self, keys):
-        for trackkey, track in self.items():
-            for trig in track:
-                if "key" in trig:
-                    keys.setdefault(trackkey, {})
-                    keys[trackkey][str(trig["key"])]=trig["key"]
-
-    @property
-    def grid(self):
-        return [{note["i"]:note
-                 for note in track}
-                for key, track in self.items()]
-                    
 class SVNoteTrig(dict):
 
     def __init__(self, item):
@@ -72,6 +53,24 @@ class SVFXTrig(dict):
                       ctl=ctrlid,
                       val=ctrlvalue)
 
+class SVPatch(dict):
+
+    def __init__(self, nbeats, item={}):
+        dict.__init__(self)
+        self.nbeats=nbeats
+
+    def filter_samplekeys(self, keys):
+        for track in self.values():
+            for trig in track:
+                if "key" in trig:
+                    keys[str(trig["key"])]=trig["key"]
+
+    @property
+    def grid(self):
+        return [{note["i"]:note
+                 for note in track}
+                for key, track in self.items()]
+                    
 class SVOffset:
 
     def __init__(self):
@@ -183,11 +182,10 @@ class SVProject:
 
     def filter_samplekeys(self,
                           patches):
-        keys={}
+        samplekeys={}
         for patch in patches:
-            patch.filter_samplekeys(keys)
-        return {k:list(v.values())
-                for k, v in keys.items()}
+            patch.filter_samplekeys(samplekeys)
+        return list(samplekeys.values())
 
     """
     - creation of sampler kwargs may need to change if you have multiple classes of sampler in the future
@@ -207,7 +205,8 @@ class SVProject:
             kwargs={}
             if mod["class"].lower().endswith("sampler"):
                 kwargs={"banks": banks,
-                        "samplekeys": samplekeys[mod["key"]] if mod["key"] in samplekeys else []}
+                        "samplekeys": [samplekey for samplekey in samplekeys
+                                       if samplekey["key"]==mod["key"]]}
             mod["instance"]=modclass(**kwargs)
     
     def init_modules(self,

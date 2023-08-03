@@ -138,8 +138,8 @@ class PicobeatsCli(SVBankCli):
                 if key in trigs:
                     if i in trigs[key]:
                         trig=trigs[key][i]
-                        value=str(trig["key"]) if "key" in trig else "svdrum/%i" % trig["id"]
-                        row.append("%s:%s" % (key, value))
+                        cell=str(trig["key"]) if "key" in trig else "%s:svdrum/%i" % (key, trig["id"])
+                        row.append(cell)
                     else:
                         row.append("...")
             print ("\t".join([str(cell)

@@ -1,4 +1,12 @@
-### next
+### 02-tracks-to-trigs
+
+- rename svpatch as svtracks
+- new svtrigs class which can render tracks
+  - infers keys based on class type, module etc
+- replace sample keys with mod names
+- convert dict- based SV classes to real classes
+
+### 01-picobass-master
 
 - pass single pool to cli and check self.banks refs
 
@@ -7,8 +15,6 @@
 - script to slice bass sounds
 - volume/accent variations
 - separate READMEs
-
-### medium
 
 ### picobeats
 
