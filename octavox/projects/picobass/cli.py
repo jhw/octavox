@@ -60,8 +60,7 @@ class PicobassCli(SVBankCli):
         patches=Patches()
         npatches=self.env["nblocks"]*self.env["blocksize"]
         for i in range(npatches):
-            patch=Patch.randomise(pool=self.pools[self.poolname],
-                                  temperature=self.env["temperature"])
+            patch=Patch.randomise(pool=self.pools[self.poolname])
             patches.append(patch)
         return patches
 
@@ -92,7 +91,6 @@ def validate_config(config):
     validate_module_refs(config)
 
 Params=yaml.safe_load("""
-temperature: 1.0
 dseed: 1.0
 dstyle: 0.66666
 nbeats: 16

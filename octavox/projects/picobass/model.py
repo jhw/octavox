@@ -22,9 +22,8 @@ def Q(seed):
 class Pattern(str):
 
     @classmethod
-    def randomise(self, temperature, patterns=Patterns):
-        n=1+int(temperature*len(patterns))
-        return Pattern(random.choice(patterns[:n]))
+    def randomise(self, patterns=Patterns):
+        return Pattern(random.choice(patterns)
     
     def __init__(self, value):
         str.__init__(value) # NB no self as first arg
@@ -137,10 +136,9 @@ class Sequencer(dict):
     @classmethod
     def randomise(self,
                   key,
-                  temperature,
                   pool)
         return Sequencer({"key": key,
-                          "pattern": Pattern.randomise(temperature),
+                          "pattern": Pattern.randomise(),
                           "slices": Slices.randomise(key=key,
                                                      pool=pool)})
 
@@ -191,11 +189,9 @@ class Sequencers(list):
     @classmethod
     def randomise(self,
                   pool,
-                  temperature,
                   config=Config["sequencers"]):
         return Sequencers([Sequencer.randomise(key=key,
-                                               pool=pool,
-                                               temperature=temperature)
+                                               pool=pool)
                           for key in config])
 
     def __init__(self, sequencers):
@@ -270,9 +266,8 @@ class Lfos(list):
 class Patch(dict):
 
     @classmethod
-    def randomise(self, pool, temperature):
-        return Patch(sequencers=Sequencers.randomise(pool=pool,
-                                                     temperature=temperature),
+    def randomise(self, pool):
+        return Patch(sequencers=Sequencers.randomise(pool=pool)
                      lfos=Lfos.randomise(),
                      mutes=[])
         
