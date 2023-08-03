@@ -1,0 +1,81 @@
+modules:
+  - name: KickSampler
+    class: octavox.modules.samplers.SVSampler
+    key: kk
+  - name: SnareSampler
+    class: octavox.modules.samplers.SVSampler
+    key: sn    
+  - name: HatSampler
+    class: octavox.modules.samplers.SVSampler
+    key: ht
+  - name: KickDrum
+    class: rv.modules.drumsynth.DrumSynth
+  - name: SnareDrum
+    class: rv.modules.drumsynth.DrumSynth
+  - name: HatDrum
+    class: rv.modules.drumsynth.DrumSynth
+  - name: Echo
+    class: rv.modules.echo.Echo
+    defaults:
+      dry: 256
+      wet: 256
+      delay: 192
+  - name: Distortion
+    class: rv.modules.distortion.Distortion
+    defaults:
+      power: 64
+  - name: Reverb
+    class: rv.modules.reverb.Reverb
+    defaults:
+      wet: 4
+links:
+  - - KickSampler
+    - Echo
+  - - SnareSampler
+    - Echo
+  - - HatSampler
+    - Echo
+  - - KickDrum
+    - Echo
+  - - SnareDrum
+    - Echo
+  - - HatDrum
+    - Echo
+  - - Echo
+    - Distortion
+  - - Distortion
+    - Reverb
+  - - Reverb
+    - Output
+sequencers:
+  kk:
+    mod: KickSampler
+    styles:
+    - fourfloor
+    - electro
+    - triplets
+  sn:
+    mod: SnareSampler
+    styles:
+    - backbeat
+    - skip
+  ht: 
+    mod: HatSampler
+    styles:
+    - offbeats
+    - closed
+lfos:
+  ec0:
+    mod: Echo
+    ctrl: wet
+    range: [0, 1]
+    increment: 0.25
+    step: 4
+    live: 0.66666
+  ec1:
+    mod: Echo
+    ctrl: feedback
+    range: [0, 1]
+    increment: 0.25
+    step: 4
+    live: 1.0

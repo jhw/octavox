@@ -1,20 +1,29 @@
-### short 
+### next
 
-- global mutes
-- density to be saved as part of state
+- remove fixes
+- remove svdrum
+- remove mutate and scatter
+- remove slices
+- remove show patch
+- remove instruments
 
-### tracker single sample examples
-
-- different cutoffs
-- different slices
-- different pitches
+- reduce config to single sampler
+- change sequence to mirror lfo
+- extend basecli not poolcli
+- pitch shifter
+- find some bass sounds
+- install pyaudio
+- script to slice bass sounds
+- vitling patterns
 
 ### medium
 
+### picobeats
+
+- global mutes
+- density to be saved as part of state
 - arrange() action
 - update README
-
-### long
 
 ### thoughts
 
