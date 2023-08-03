@@ -53,7 +53,7 @@ class SVFXTrig(dict):
                       ctl=ctrlid,
                       val=ctrlvalue)
 
-class SVPatch(dict):
+class SVTracks(dict):
 
     def __init__(self, nbeats, item={}):
         dict.__init__(self)

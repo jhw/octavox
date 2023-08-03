@@ -1,4 +1,4 @@
-from octavox.modules.project import SVProject, SVPatch, SVNoteTrig, SVFXTrig
+from octavox.modules.project import SVProject, SVTracks, SVNoteTrig, SVFXTrig
 
 import octavox.modules.sequences.vitling909 as nineohnine
 
@@ -344,7 +344,7 @@ class Patch(dict):
     def render(self,
                nbeats,
                density):
-        trigs=SVPatch(nbeats=nbeats)
+        trigs=SVTracks(nbeats=nbeats)
         for seq in self["sequencers"]:
             if seq["key"] not in self["mutes"]:
                 seq.render(nbeats=nbeats,

@@ -1,6 +1,5 @@
 ### 02-tracks-to-trigs
 
-- rename svpatch as svtracks
 - new svtrigs class which can render tracks
   - infers keys based on class type, module etc
 - replace sample keys with mod names
@@ -111,6 +110,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- rename svpatch as svtracks
 - extend basecli not poolcli (?)
 - vitling patterns
 - reduce config to single sampler
