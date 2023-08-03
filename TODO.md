@@ -5,7 +5,8 @@
 
 - find some bass sounds
 - script to slice bass sounds
-- vitling patterns
+
+- volume/accent variations
 
 ### medium
 
@@ -104,6 +105,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- vitling patterns
 - reduce config to single sampler
 - pitch shifter
 - install pyaudio

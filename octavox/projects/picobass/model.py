@@ -4,6 +4,17 @@ import json, os, random, yaml
 
 Config=yaml.safe_load(open("octavox/projects/picobass/config.yaml").read())
 
+# https://github.com/vitling/acid-banger/blob/main/src/pattern.ts
+
+Arpeggios=[[0, 0, 12, 24, 27],
+           [0, 0, 0, 12, 10, 19, 26, 27],
+           [0, 1, 7, 10, 12, 13],
+           [0],
+           [0, 0, 0, 12],
+           [0, 0, 12, 14, 15, 19],
+           [0, 0, 0, 0, 12, 13, 16, 19, 22, 24, 25],
+           [0, 0, 0, 7, 12, 15, 17, 20, 24]]
+
 def Q(seed):
     q=random.Random()
     q.seed(seed)
