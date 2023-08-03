@@ -10,12 +10,6 @@ from octavox.projects.picobass.model import Patch, Patches, Instruments
 
 import json, os, random, yaml
 
-def flatten(lists):
-    values=[]
-    for l in lists:
-        values+=l
-    return values
-
 class PicobassCli(SVBankCli):
 
     intro="Welcome to Picobass :)"
@@ -71,65 +65,6 @@ class PicobassCli(SVBankCli):
                                   temperature=self.env["temperature"])
             patches.append(patch)
         return patches
-
-    @parse_line(config=[{"name": "i",
-                         "type": "int"}])
-    @render_patches(prefix="mutate")
-    def do_mutate_patch(self, i):
-        root=self.patches[i % len(self.patches)]
-        limits={k: self.env["d%s" % k]
-                for k in "seed|style".split("|")}
-        patches=Patches([root])
-        npatches=self.env["nblocks"]*self.env["blocksize"]
-        for i in range(npatches-1):
-            patch=root.clone().mutate(limits)
-            patches.append(patch)
-        return patches
-
-    @parse_line(config=[{"name": "I",
-                         "type": "array"}])
-    @render_patches(prefix="scatter")
-    def do_scatter_patches(self, I,
-                           patterns=[[0, 0, 0, 0],
-                                     [0, 0, 0, 1],
-                                     [0, 0, 1, 0],
-                                     [0, 1, 0, 2]],
-                           mutes=[[] for i in range(3)]+[[key] for key in Instruments]):
-        roots=[self.patches[i % len(self.patches)]
-               for i in I]
-        patches=Patches()
-        for i in range(self.env["nblocks"]):
-            blockpattern=random.choice(patterns)
-            blockpatches=[random.choice(roots)
-                          for i in range(1+max(blockpattern))]
-            blockmute=random.choice(mutes)            
-            for j in range(self.env["blocksize"]):
-                k=blockpattern[j]
-                patch=blockpatches[k].clone()
-                patch["mutes"]=blockmute
-                patches.append(patch)
-        return patches
-                
-    @parse_line(config=[{"name": "i",
-                         "type": "int"}])
-    def do_show_patch(self, i, instruments=Instruments):
-        patch=self.patches[i % len(self.patches)]
-        rendered=patch.render(nbeats=self.env["nbeats"],
-                              density=self.env["density"])
-        trigs={K:{trig["i"]:trig for trig in V}
-               for K, V in rendered.items()}
-        for i in range(self.env["nbeats"]):
-            row=[i]
-            for key in instruments:
-                if key in trigs:
-                    if i in trigs[key]:
-                        trig=trigs[key][i]
-                        value=str(trig["key"])
-                        row.append("%s:%s" % (key, value))
-                    else:
-                        row.append("...")
-            print ("\t".join([str(cell)
-                              for cell in row]))
 
 def validate_config(config):
     def validate_track_keys(config):

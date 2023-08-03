@@ -1,9 +1,8 @@
 ### next
 
-- remove picobeats refs
-- remove mutate and scatter
-- remove slices
-- remove show patch
+- remove density
+- remove temperature
+- remove slices and patterns
 - remove instruments
 
 - reduce config to single sampler
@@ -112,6 +111,8 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- remove mutate and scatter
+- remove picobeats refs
 - remove fixes
 - remove svdrum
 - convert fixes values to use set()
