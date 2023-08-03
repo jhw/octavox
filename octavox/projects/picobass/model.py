@@ -192,12 +192,8 @@ class Sequencer(dict):
                 samplekey=samples[instkey]
                 trig={"vel": volume,
                       "i": i+offset}
-                if samplekey["bank"]!="svdrum":
-                    trig["mod"]=self.mod
-                    trig["key"]=samplekey
-                else:
-                    trig["mod"]=self.mod.replace("Sampler", "Drum")
-                    trig["id"]=samplekey["id"]
+                trig["mod"]=self.mod
+                trig["key"]=samplekey
                 tracks.setdefault(self["key"], [])
                 tracks[self["key"]].append(trig)
         return wrapped

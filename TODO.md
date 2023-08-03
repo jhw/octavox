@@ -1,7 +1,6 @@
 ### next
 
 - remove fixes
-- remove svdrum
 - remove mutate and scatter
 - remove slices
 - remove show patch
@@ -113,6 +112,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- remove svdrum
 - convert fixes values to use set()
   - check set equality operator
 - avoid sample fix duplication

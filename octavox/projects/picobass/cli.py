@@ -138,7 +138,7 @@ class PicobeatsCli(SVBankCli):
                 if key in trigs:
                     if i in trigs[key]:
                         trig=trigs[key][i]
-                        value=str(trig["key"]) if "key" in trig else "svdrum/%i" % trig["id"]
+                        value=str(trig["key"])
                         row.append("%s:%s" % (key, value))
                     else:
                         row.append("...")
@@ -213,8 +213,6 @@ if __name__=="__main__":
             return yaml.safe_load(open("%s/%s" % (home, filename)).read())
         banks=SVBanks("octavox/banks/pico")
         pools=banks.spawn_pools().cull()
-        pools["svdrum-curated"]=svdrum=SVPool(load_yaml("svdrum.yaml"))
-        svdrum["sn"]=pools["default-curated"]["sn"] # NB
         config=load_yaml("config.yaml")
         validate_config(config)
         PicobeatsCli(outdir="tmp/picobeats",
