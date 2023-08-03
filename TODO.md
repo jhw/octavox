@@ -1,6 +1,5 @@
 ### next
 
-- remove mutes
 - remove patterns
 - remove slices
 - remove instruments
@@ -111,6 +110,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- remove mutes
 - remove temperature
 - remove density
 - remove mutate and scatter

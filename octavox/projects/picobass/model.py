@@ -268,21 +268,17 @@ class Patch(dict):
     @classmethod
     def randomise(self, pool):
         return Patch(sequencers=Sequencers.randomise(pool=pool)
-                     lfos=Lfos.randomise(),
-                     mutes=[])
+                     lfos=Lfos.randomise())
         
     def __init__(self,
                  sequencers,
-                 lfos,
-                 mutes):
+                 lfos):
         dict.__init__(self, {"sequencers": Sequencers(sequencers),
-                             "lfos": Lfos(lfos),
-                             "mutes": []})
+                             "lfos": Lfos(lfos)})
         
     def clone(self):
         return Patch(sequencers=self["sequencers"].clone(),
-                     lfos=self["lfos"].clone(),
-                     mutes=list(self["mutes"]))
+                     lfos=self["lfos"].clone())
 
     def mutate(self, limits):
         for seq in self["sequencers"]:
@@ -298,9 +294,8 @@ class Patch(dict):
                nbeats):
         tracks=SVPatch(nbeats=nbeats)
         for seq in self["sequencers"]:
-            if seq["key"] not in self["mutes"]:
-                seq.render(nbeats=nbeats,
-                           tracks=tracks)
+            seq.render(nbeats=nbeats,
+                       tracks=tracks)
         for lfo in self["lfos"]:
             lfo.render(nbeats=nbeats,
                        tracks=tracks)
