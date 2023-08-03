@@ -1,4 +1,4 @@
-from octavox.modules.project import SVProject, SVPatch
+from octavox.modules.project import SVProject, SVPatch, SVNoteTrig, SVFXTrig
 
 import octavox.modules.sequences.vitling909 as nineohnine
 
@@ -167,7 +167,7 @@ class Sequencer(dict):
                           "slices": self["slices"].clone()})
 
     def render(self,
-               tracks,
+               trigs,
                nbeats,
                density):
         multiplier=int(nbeats/self["pattern"].size)
@@ -178,28 +178,28 @@ class Sequencer(dict):
             fn=getattr(self, slice["style"])
             nsamplebeats=pat["n"]*multiplier
             for i in range(nsamplebeats):
-                fn(q, i, density, tracks, offset, slice["samples"])
+                fn(q, i, density, trigs, offset, slice["samples"])
             offset+=nsamplebeats
 
     def apply(fn):
         def wrapped(self, q, i, d,
-                    tracks,
+                    trigs,
                     offset,
                     samples):
-            v=fn(self, q, i, d, tracks, offset, samples)
+            v=fn(self, q, i, d, trigs, offset, samples)
             if v!=None: # explicit because could return zero
                 instkey, volume = v
                 samplekey=samples[instkey]
-                trig={"vel": volume,
-                      "i": i+offset}
+                trig=SVNoteTrig({"vel": volume,
+                                 "i": i+offset})
                 if samplekey["bank"]!="svdrum":
                     trig["mod"]=self.mod
                     trig["key"]=samplekey
                 else:
                     trig["mod"]=self.mod.replace("Sampler", "Drum")
                     trig["id"]=samplekey["id"]
-                tracks.setdefault(self["key"], [])
-                tracks[self["key"]].append(trig)
+                trigs.setdefault(self["key"], [])
+                trigs[self["key"]].append(trig)
         return wrapped
     
     @apply
@@ -265,21 +265,21 @@ class Lfo(dict):
             seed=int(1e8*random.random())
             self["seed"]=seed
 
-    def render(self, nbeats, tracks):
+    def render(self, nbeats, trigs):
         q=Q(self["seed"])
         for i in range(nbeats):
-            self.sample_hold(q, i, tracks)
+            self.sample_hold(q, i, trigs)
 
     def apply(fn):
-        def wrapped(self, q, i, tracks):
-            v=fn(self, q, i, tracks)
+        def wrapped(self, q, i, trigs):
+            v=fn(self, q, i, trigs)
             if v!=None: # explicit because could return zero
-                trig={"mod": self.mod,
-                      "ctrl": self.ctrl,
-                      "v": v,
-                      "i": i}
-                tracks.setdefault(self["key"], [])
-                tracks[self["key"]].append(trig)
+                trig=SVFXTrig({"mod": self.mod,
+                               "ctrl": self.ctrl,
+                               "v": v,
+                               "i": i})
+                trigs.setdefault(self["key"], [])
+                trigs[self["key"]].append(trig)
         return wrapped
 
     @apply
@@ -343,16 +343,16 @@ class Patch(dict):
     def render(self,
                nbeats,
                density):
-        tracks=SVPatch(nbeats=nbeats)
+        trigs=SVPatch(nbeats=nbeats)
         for seq in self["sequencers"]:
             if seq["key"] not in self["mutes"]:
                 seq.render(nbeats=nbeats,
-                           tracks=tracks,
+                           trigs=trigs,
                            density=density)
         for lfo in self["lfos"]:
             lfo.render(nbeats=nbeats,
-                       tracks=tracks)
-        return tracks
+                       trigs=trigs)
+        return trigs
 
 class Patches(list):
 

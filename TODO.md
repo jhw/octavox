@@ -1,12 +1,12 @@
 ### next
 
-- extend basecli not poolcli (?)
-- refactor samples model
+- pass single pool to cli and check self.banks refs
 
+- refactor samples model
 - find some bass sounds
 - script to slice bass sounds
-
 - volume/accent variations
+- separate READMEs
 
 ### medium
 
@@ -105,6 +105,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- extend basecli not poolcli (?)
 - vitling patterns
 - reduce config to single sampler
 - pitch shifter

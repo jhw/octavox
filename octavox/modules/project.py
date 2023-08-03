@@ -28,13 +28,11 @@ class SVPatch(dict):
 
     @property
     def grid(self):
-        def classfn(v):
-            return SVEffect if "ctrl" in v else SVTrig
-        return [{note["i"]:classfn(note)(note)
+        return [{note["i"]:note
                  for note in track}
                 for key, track in self.items()]
                     
-class SVTrig(dict):
+class SVNoteTrig(dict):
 
     def __init__(self, item):
         dict.__init__(self, item)
@@ -56,7 +54,7 @@ class SVTrig(dict):
                       vel=vel,
                       module=modid)
 
-class SVEffect(dict):
+class SVFXTrig(dict):
     
     def __init__(self, item):
         dict.__init__(self, item)

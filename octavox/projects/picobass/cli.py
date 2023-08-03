@@ -1,24 +1,21 @@
-from octavox.modules.banks import SVSampleKey, SVBanks, SVPool
-
-from octavox.modules.cli import SVBankCli, parse_line
+from octavox.modules.cli import SVBaseCli, parse_line
 
 from octavox.modules.project import Output
 
 from octavox.projects import random_filename
 
-from octavox.projects.picobass.model import Patch, Patches, Instruments
+from octavox.projects.picobass.model import Patch, Patches
 
 import json, os, random, yaml
 
-class PicobassCli(SVBankCli):
+class PicobassCli(SVBaseCli):
 
     intro="Welcome to Picobass :)"
 
     def __init__(self,
-                 instruments=Instruments,
                  *args,
                  **kwargs):
-        SVBankCli.__init__(self, *args, **kwargs)
+        SVBaseCli.__init__(self, *args, **kwargs)
 
     @parse_line(config=[{"name": "frag",
                          "type": "str"}])
@@ -60,7 +57,7 @@ class PicobassCli(SVBankCli):
         patches=Patches()
         npatches=self.env["nblocks"]*self.env["blocksize"]
         for i in range(npatches):
-            patch=Patch.randomise(pool=self.pools[self.poolname])
+            patch=Patch.randomise()
             patches.append(patch)
         return patches
 
@@ -102,14 +99,9 @@ if __name__=="__main__":
     try:
         def load_yaml(filename, home="octavox/projects/picobass"):
             return yaml.safe_load(open("%s/%s" % (home, filename)).read())
-        banks=SVBanks("octavox/banks/pico")
-        pools=banks.spawn_pools().cull()
         config=load_yaml("config.yaml")
         validate_config(config)
         PicobassCli(outdir="tmp/picobass",
-                    poolname="global-curated",
-                    params=Params,
-                    banks=banks,
-                    pools=pools).cmdloop()
+                    params=Params).cmdloop())
     except RuntimeError as error:
         print ("ERROR: %s" % str(error))
