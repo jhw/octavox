@@ -4,7 +4,7 @@ import octavox.modules.sequences.vitling909 as nineohnine
 
 import json, os, random, yaml
 
-Config=yaml.safe_load(open("octavox/projects/picobeats/config.yaml").read())
+Config=yaml.safe_load(open("octavox/projects/picobass/config.yaml").read())
 
 Instruments={"kk": ["kk"],
              "sn": ["sn"],

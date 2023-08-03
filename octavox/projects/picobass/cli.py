@@ -6,7 +6,7 @@ from octavox.modules.project import Output
 
 from octavox.projects import random_filename
 
-from octavox.projects.picobeats.model import Patch, Patches, Instruments
+from octavox.projects.picobass.model import Patch, Patches, Instruments
 
 import json, os, random, yaml
 
@@ -16,9 +16,9 @@ def flatten(lists):
         values+=l
     return values
 
-class PicobeatsCli(SVBankCli):
+class PicobassCli(SVBankCli):
 
-    intro="Welcome to Picobeats :)"
+    intro="Welcome to Picobass :)"
 
     def __init__(self,
                  instruments=Instruments,
@@ -169,16 +169,16 @@ nblocks: 8
 
 if __name__=="__main__":
     try:
-        def load_yaml(filename, home="octavox/projects/picobeats"):
+        def load_yaml(filename, home="octavox/projects/picobass"):
             return yaml.safe_load(open("%s/%s" % (home, filename)).read())
         banks=SVBanks("octavox/banks/pico")
         pools=banks.spawn_pools().cull()
         config=load_yaml("config.yaml")
         validate_config(config)
-        PicobeatsCli(outdir="tmp/picobeats",
-                     poolname="global-curated",
-                     params=Params,
-                     banks=banks,
-                     pools=pools).cmdloop()
+        PicobassCli(outdir="tmp/picobass",
+                    poolname="global-curated",
+                    params=Params,
+                    banks=banks,
+                    pools=pools).cmdloop()
     except RuntimeError as error:
         print ("ERROR: %s" % str(error))

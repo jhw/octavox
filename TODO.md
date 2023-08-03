@@ -1,5 +1,6 @@
 ### next
 
+- remove picobeats refs
 - remove mutate and scatter
 - remove slices
 - remove show patch
