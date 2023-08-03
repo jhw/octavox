@@ -1,4 +1,5 @@
 git+https://github.com//metrasynth/radiant-voices
 numpy # for local wavfile implementations
+pyaudio
 pyyaml
 

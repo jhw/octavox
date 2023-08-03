@@ -1,13 +1,9 @@
 ### next
 
-- remove instruments
+- extend basecli not poolcli (?)
+- refactor samples model
 
-- reduce config to single sampler
-- change sequence to mirror lfo
-- extend basecli not poolcli
-- pitch shifter
 - find some bass sounds
-- install pyaudio
 - script to slice bass sounds
 - vitling patterns
 
@@ -108,6 +104,11 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- reduce config to single sampler
+- pitch shifter
+- install pyaudio
+- remove instruments
+- change sequence to mirror lfo
 - remove slices
 - remove patterns
 - remove mutes

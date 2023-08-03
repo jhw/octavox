@@ -1,19 +1,10 @@
 modules:
-  - name: KickSampler
+  - name: Sampler
     class: octavox.modules.samplers.SVSampler
-    key: kk
-  - name: SnareSampler
-    class: octavox.modules.samplers.SVSampler
-    key: sn    
-  - name: HatSampler
-    class: octavox.modules.samplers.SVSampler
-    key: ht
-  - name: KickDrum
-    class: rv.modules.drumsynth.DrumSynth
-  - name: SnareDrum
-    class: rv.modules.drumsynth.DrumSynth
-  - name: HatDrum
-    class: rv.modules.drumsynth.DrumSynth
+    key: bl
+  - name: Shift
+    class: rv.modules.echo.PitchShifter
+    defaults: {}
   - name: Echo
     class: rv.modules.echo.Echo
     defaults:
@@ -29,17 +20,9 @@ modules:
     defaults:
       wet: 4
 links:
-  - - KickSampler
-    - Echo
-  - - SnareSampler
-    - Echo
-  - - HatSampler
-    - Echo
-  - - KickDrum
-    - Echo
-  - - SnareDrum
-    - Echo
-  - - HatDrum
+  - - Sampler
+    - Shift
+  - - Shift
     - Echo
   - - Echo
     - Distortion
@@ -48,22 +31,8 @@ links:
   - - Reverb
     - Output
 sequencers:
-  kk:
-    mod: KickSampler
-    styles:
-    - fourfloor
-    - electro
-    - triplets
-  sn:
-    mod: SnareSampler
-    styles:
-    - backbeat
-    - skip
-  ht: 
-    mod: HatSampler
-    styles:
-    - offbeats
-    - closed
+  bl: 
+    mod: Sampler
 lfos:
   ec0:
     mod: Echo

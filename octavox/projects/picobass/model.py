@@ -4,33 +4,10 @@ import json, os, random, yaml
 
 Config=yaml.safe_load(open("octavox/projects/picobass/config.yaml").read())
 
-Instruments={"kk": ["kk"],
-             "sn": ["sn"],
-             "ht": ["oh", "ch"]}
-
 def Q(seed):
     q=random.Random()
     q.seed(seed)
     return q
-
-class Samples(dict):
-
-    @classmethod
-    def randomise(self,
-                  i,
-                  key,
-                  pool,
-                  instruments=Instruments):
-        samples={}
-        for k in instruments[key]:
-            samples[k]=random.choice(pool[k])
-        return Samples(samples)
-            
-    def __init__(self, obj):
-        dict.__init__(self, obj)
-
-    def clone(self):
-        return Samples(self)
 
 def init_machine(config):
     def decorator(fn):
@@ -67,6 +44,10 @@ class Sequencer(dict):
             # self.sample_hold(q, i, tracks)
             pass
 
+    """
+    - need to refactor samples model
+    """
+        
     def apply(fn):
         def wrapped(self, q, i, d,
                     tracks,
