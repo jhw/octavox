@@ -12,28 +12,6 @@ https://www.warmplace.ru/soft/sunvox/
 
 https://github.com/metrasynth/radiant-voices
 
-### Octavox::Picobeats
-
-There is currently just a single Octavox project `Picobeats` which takes samples from Erica Synths Pico System II and lays out beat sequences with them 
-
-https://www.ericasynths.lv/shop/eurorack-systems/pico-system-ii/
-
-http://data.ericasynths.lv/picodrum/pack_list.json
-
-Once you have started the CLI there are three main methods -
-
-- `randomise()` -> generate a series of random patches
-
-- `mutate(i)` -> generate a series of mutations from patch `i`
-
-- `chain(i)` -> generate a track chain for patch `i` for export
-
-See `/octavox/projects/picobeats/cli.py` for other methods
-
-I am indebted to `@vitling` for his `Endless Acid Banger` project, from whence I took inspiration for the beat patterns 
-
-https://github.com/vitling/acid-banger
-
 ### Installation
 
 ```
@@ -68,45 +46,4 @@ Requirement already satisfied: logutils in ./env/lib/python3.8/site-packages (fr
 Requirement already satisfied: networkx in ./env/lib/python3.8/site-packages (from radiant-voices==1.0.3->-r requirements.txt (line 1)) (2.6.3)
 Requirement already satisfied: text-unidecode>=1.3 in ./env/lib/python3.8/site-packages (from python-slugify->radiant-voices==1.0.3->-r requirements.txt (line 1)) (1.3)
 ```
-
-### Usage
-
-```
-(env) jhw@Justins-Air octavox % python octavox/projects/picobeats/cli.py 
-Welcome to Octavox Picobeats :)
->>> listpools
-- baseck-free
-- clipping-free
-- complex-waveforms-free
-- default-curated
-- default-free
-- dj-raitis-vinyl-cuts-curated
-- dj-raitis-vinyl-cuts-free
-- global-curated
-- global-free
-- ib-magnetic-saturation-free
-- legowelt-curated
-- legowelt-free
-- nero-bellum-curated
-- nero-bellum-free
-- otto-von-schirach-curated
-- otto-von-schirach-free
-- pitch-black-curated
-- pitch-black-free
-- richard-devine-free
-- syntrx-curated
-- syntrx-free
-
->>> setparam pool base
-poolname=baseck-free
->>> randomise
-2023-07-15-07-45-27-random-happy-anything
->>> mutate 0
-2023-07-15-07-45-43-mutation-practical-access
->>> chain 0
-2023-07-15-07-45-59-chain-specialist-street
->>> 
-```
-
-(now fire up Sunvox and go look in `/tmp/picobeats/sunvox`)
 

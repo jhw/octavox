@@ -1,16 +1,18 @@
 ### 02-tracks-to-trigs
 
-- complete refactoring of show_patch
-- pass bpm from cli
+- pass bpm and volume from cli
+
 - refactor archives and test
-- chord support
 
 ### picobeats
 
 - density to be saved as part of state
-- arrange() action with density lfo
+
+- arrange1() action with density lfo
+- arrange2() actions with user- defined fills
+
 - sample bans
-- separate and updated readmes
+- chord support
 
 ### thoughts
 
@@ -102,6 +104,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- complete refactoring of show_patch
 - sequencer to clone samplekey since updating with mod
   - add note re overwriting of module
 - trig to use key rather than samplekey ref

@@ -2,6 +2,8 @@ from octavox.modules.banks import SVSampleKey, SVBanks, SVPool
 
 from octavox.modules.cli import SVBankCli, parse_line
 
+from octavox.modules.project import SVNoteTrig
+
 from octavox.projects import random_filename, flatten
 
 from octavox.projects.picobeats.model import Patch, Patches
@@ -105,7 +107,10 @@ class PicobeatsCli(SVBankCli):
         for i in range(self.env["nbeats"]):
             for soundkey in trigs:
                 if i in trigs[soundkey]:
-                    print (trigs[soundkey][i])
+                    trig=trigs[soundkey][i]
+                    if isinstance(trig, SVNoteTrig):
+                        if trig.samplekey:
+                            print ("%i\t%s" % (i, trig.samplekey))
 
     @parse_line()
     def do_list_fixes(self):
