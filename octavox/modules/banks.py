@@ -47,6 +47,9 @@ class SVSampleKey(dict):
     def __init__(self, item={}):
         dict.__init__(self, item)
 
+    def clone(self):
+        return SVSampleKey(self)
+        
     def __str__(self):
         return "%s:%s/%s" % (self["mod"],
                              self["bank"],

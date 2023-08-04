@@ -20,8 +20,8 @@ class SVNoteTrig:
         self.i=i
         self.samplekey=samplekey
         self.id=id
-        self.vel=vel
-
+        self.vel=vel        
+        
     @property
     def track_key(self):
         return self.mod
