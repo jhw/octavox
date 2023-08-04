@@ -1,16 +1,19 @@
 ### 02-tracks-to-trigs
 
-- store key as slice level to style can be mutated without passing key
-- remove key from sequencers and lfos
-- change sequencers and lfos to lists
+- store key as sequencer variable
+- test replacing seq["key"] with seq.key
+- see if key can be removed from seq and lfo init variables
+- convert seqs and lfos to lists in config
+- consider it you still need all the config code
+  - seq keys are no longer stored in state variables?
 
-- script to refactor archives
-  - key is now part of slice not seq
 - show_patch is failing
   - remove appending of inst to svdrum
 - check if samplekey mod is somehow being overridden
 - convert dict- based SV classes to real classes
 - pass bpm from cli
+- test loading archives
+  - may need to remove key
 
 ### 01-picobass-master
 
