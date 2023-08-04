@@ -1,6 +1,8 @@
 ### 02-tracks-to-trigs
 
 - trig to use key rather than samplekey ref
+- sequencer to clone samplekey since updating with mod
+  - add note re overwriting of module
 - complete refactoring of show_patch
 - pass bpm from cli
 - refactor archives and test
