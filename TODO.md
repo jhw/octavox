@@ -1,14 +1,12 @@
 ### 02-tracks-to-trigs
 
+- move instruments and config into patterns
 - add back config validation
-- mutes are failing
-- show_patch is failing
-  - remove appending of inst to svdrum
-- consider using data binding classes to replace sequencer/lfo_id
-- check if samplekey mod is somehow being overridden
+- fix mutes
+- fix show_patch
 - pass bpm from cli
-- test loading archives
-  - may need to remove key etc
+- refactor archives and test
+- rename keys/samplelkeys
 
 ### 01-picobass-master
 
