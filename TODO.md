@@ -1,7 +1,5 @@
 ### 02-tracks-to-trigs
 
-- check if both tracks and trigs need nbeats variable
-
 - check if key no longer needs passing to sequencers and lfos
 - check if key can be purged from config
 - check if samplekey mod is somehow being overridden
@@ -117,6 +115,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- check if both tracks and trigs need nbeats variable
 - model to use trigs class not tracks and to append to trigs
 - project to use trigs.tracks
 - new SVTrigs class (list) which can spawn Tracks

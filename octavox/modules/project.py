@@ -101,7 +101,7 @@ class SVOffset:
         self.value+=value
         self.count+=1
 
-class ModGrid(dict):
+class SVModGrid(dict):
 
     @classmethod
     def all(self, sz):
@@ -113,19 +113,19 @@ class ModGrid(dict):
     @classmethod
     def randomise(self, modnames):
         sz=1+int(math.ceil(len(modnames)**0.5)) # NB +1 to ensure decent amount of whitespace in which to move cells around
-        coords=sorted(ModGrid.all(sz),
+        coords=sorted(SVModGrid.all(sz),
                       key=lambda x: random.random())[:len(modnames)]
-        return ModGrid(sz=sz,
-                       item={mod:xy
-                             for mod, xy in zip(modnames, coords)})
+        return SVModGrid(sz=sz,
+                         item={mod:xy
+                               for mod, xy in zip(modnames, coords)})
     
     def __init__(self, sz, item):
         dict.__init__(self, item)
         self.sz=sz
 
     def clone(self):
-        return ModGrid(sz=self.sz,
-                       item={k:v for k, v in self.items()})
+        return SVModGrid(sz=self.sz,
+                         item={k:v for k, v in self.items()})
 
     @property
     def allocated(self):
@@ -135,7 +135,7 @@ class ModGrid(dict):
 
     @property
     def unallocated(self):
-        all, allocated = ModGrid.all(self.sz), self.allocated
+        all, allocated = SVModGrid.all(self.sz), self.allocated
         return [xy for xy in all if xy not in allocated]
 
     def shuffle(self, n):
@@ -188,7 +188,7 @@ class SVProject:
             return (clone, distance)
         modnames=[Output]+[mod["name"]
                            for mod in config["modules"]]
-        grid=ModGrid.randomise(modnames)
+        grid=SVModGrid.randomise(modnames)
         best=grid.rms_distance(config["links"])
         for i in range(n):
             q=int(math.ceil(len(modnames)*(n-i)/n))
