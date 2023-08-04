@@ -1,11 +1,14 @@
 ### 02-tracks-to-trigs
 
-- check if key no longer needs passing to sequencers and lfos
-- check if key can be purged from config
-- check if samplekey mod is somehow being overridden
+- store key as slice level to style can be mutated without passing key
+- remove key from sequencers and lfos
+- change sequencers and lfos to lists
 
+- script to refactor archives
+  - key is now part of slice not seq
 - show_patch is failing
   - remove appending of inst to svdrum
+- check if samplekey mod is somehow being overridden
 - convert dict- based SV classes to real classes
 - pass bpm from cli
 
