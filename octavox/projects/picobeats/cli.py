@@ -2,8 +2,6 @@ from octavox.modules.banks import SVSampleKey, SVBanks, SVPool
 
 from octavox.modules.cli import SVBankCli, parse_line
 
-from octavox.modules.project import Output
-
 from octavox.projects import random_filename
 
 from octavox.projects.picobeats.model import Patch, Patches, Instruments
@@ -171,22 +169,6 @@ class PicobeatsCli(SVBankCli):
     def do_clean_fixes(self, instruments=Instruments):
         self.fixes=Fixes.create()
                 
-def validate_config(config):
-    def validate_module_links(config):
-        modnames=[Output]+[mod["name"] for mod in config["modules"]]
-        for links in config["links"]:
-            for modname in links:
-                if modname not in modnames:
-                    raise RuntimeError("unknown module %s in links" % modname)
-    def validate_module_refs(config):
-        modnames=[mod["name"] for mod in config["modules"]]
-        for attr in ["sequencers", "lfos"]:
-            for item in config[attr].values():
-                if item["mod"] not in modnames:
-                    raise RuntimeError("mod %s not found" % item["mod"])
-    validate_module_links(config)
-    validate_module_refs(config)
-
 Params=yaml.safe_load("""
 temperature: 1.0
 density: 0.75
@@ -205,8 +187,6 @@ if __name__=="__main__":
         pools=banks.spawn_pools().cull()
         pools["svdrum-curated"]=svdrum=SVPool(load_yaml("svdrum.yaml"))
         svdrum["sn"]=pools["default-curated"]["sn"] # NB
-        config=load_yaml("config.yaml")
-        validate_config(config)
         PicobeatsCli(outdir="tmp/picobeats",
                      poolname="global-curated",
                      params=Params,

@@ -45,33 +45,33 @@ links:
   - - Reverb
     - Output
 sequencers:
-  kk:
-    mod: KickSampler
+  - mod: KickSampler
+    key: kk
     styles:
     - fourfloor
     - electro
     - triplets
-  sn:
-    mod: SnareSampler
+  - mod: SnareSampler
+    key: sn
     styles:
     - backbeat
     - skip
-  ht: 
-    mod: HatSampler
+  - mod: HatSampler
+    key: ht
     styles:
     - offbeats
     - closed
 lfos:
-  ec0:
-    mod: Echo
+  - mod: Echo
     ctrl: wet
+    key: ec0
     range: [0, 1]
     increment: 0.25
     step: 4
     live: 0.66666
-  ec1:
-    mod: Echo
+  - mod: Echo
     ctrl: feedback
+    key: ec1
     range: [0, 1]
     increment: 0.25
     step: 4

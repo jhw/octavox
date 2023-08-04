@@ -77,7 +77,8 @@ class Slice(dict):
                   key,
                   pool,
                   fixes,
-                  config=Config["sequencers"]):
+                  config={item["key"]:item
+                          for item in Config["sequencers"]}):
         return Slice(samples=Samples.randomise(i=i,
                                                key=key,
                                                pool=pool,
@@ -144,17 +145,18 @@ class Sequencer(dict):
 
     @classmethod
     def randomise(self,
-                  key,
+                  item,
                   temperature,
                   pool,
                   fixes):
-        return Sequencer({"key": key,
+        return Sequencer({"key": item["key"],
                           "pattern": Pattern.randomise(temperature),
-                          "slices": Slices.randomise(key=key,
+                          "slices": Slices.randomise(key=item["key"],
                                                      pool=pool,
                                                      fixes=fixes)})
 
-    @init_machine(config=Config["sequencers"])
+    @init_machine(config={item["key"]:item
+                          for item in Config["sequencers"]})
     def __init__(self, item):
         dict.__init__(self, {"key": item["key"],
                              "pattern": Pattern(item["pattern"]),
@@ -231,11 +233,11 @@ class Sequencers(list):
                   fixes,
                   temperature,
                   config=Config["sequencers"]):
-        return Sequencers([Sequencer.randomise(key=key,
+        return Sequencers([Sequencer.randomise(item=item,
                                                pool=pool,
                                                fixes=fixes,
                                                temperature=temperature)
-                          for key in config])
+                          for item in config])
 
     def __init__(self, sequencers):
         list.__init__(self, [Sequencer(seq)
@@ -248,11 +250,12 @@ class Sequencers(list):
 class Lfo(dict):
 
     @classmethod
-    def randomise(self, key):
-        return Lfo({"key": key,
+    def randomise(self, item):
+        return Lfo({"key": item["key"],
                     "seed": int(1e8*random.random())})
 
-    @init_machine(config=Config["lfos"])
+    @init_machine(config={item["key"]:item
+                          for item in Config["lfos"]})
     def __init__(self, item):
         dict.__init__(self, item)
         
@@ -294,8 +297,8 @@ class Lfos(list):
 
     @classmethod
     def randomise(self, config=Config["lfos"]):
-        return Lfos([Lfo.randomise(key)
-                     for key in config])
+        return Lfos([Lfo.randomise(item)
+                     for item in config])
 
     def __init__(self, lfos):
         list.__init__(self, [Lfo(lfo)
