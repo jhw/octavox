@@ -18,9 +18,9 @@ class SVNoteTrig(dict):
     def __init__(self, item):
         dict.__init__(self, item)
 
-    """
-    - NB existence of `key` within a trig indicates a Sampler, which requires a call to lookup() in order to return an `id`
-    """
+    @property
+    def track_key(self):
+        return self["mod"]
         
     def render(self,
                modules,
@@ -39,6 +39,11 @@ class SVFXTrig(dict):
     
     def __init__(self, item):
         dict.__init__(self, item)
+
+    @property
+    def track_key(self):
+        return "%s/%s" % (self["mod"],
+                          self["ctrl"])
         
     def render(self,
                modules,
