@@ -1,6 +1,5 @@
 ### 02-tracks-to-trigs
 
-- trig to use key rather than samplekey ref
 - sequencer to clone samplekey since updating with mod
   - add note re overwriting of module
 - complete refactoring of show_patch
@@ -105,6 +104,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- trig to use key rather than samplekey ref
 - refactor samplekey as soundkey unless it is a samplekey class
 - remove mutes
 - move flatten, Q into projects/__init__

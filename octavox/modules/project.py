@@ -15,10 +15,10 @@ BreakSz, Height = 16, 64
 
 class SVNoteTrig:
 
-    def __init__(self, mod, i, key=None, id=None, vel=1):
+    def __init__(self, mod, i, samplekey=None, id=None, vel=1):
         self.mod=mod
         self.i=i
-        self.key=key
+        self.samplekey=samplekey
         self.id=id
         self.vel=vel
 
@@ -31,7 +31,7 @@ class SVNoteTrig:
                controllers,
                volume=128):
         mod=modules[self.mod]
-        trig=1+(mod.lookup(self.key) if self.key else self.id)
+        trig=1+(mod.lookup(self.samplekey) if self.samplekey else self.id)
         modid=1+mod.index # NB 1+
         vel=max(1, int(self.vel*volume))
         return RVNote(note=trig,
@@ -88,8 +88,8 @@ class SVTracks(dict):
     def filter_samplekeys(self, keys):
         for track in self.values():
             for trig in track:
-                if (hasattr(trig, "key") and trig.key):
-                    keys[str(trig.key)]=trig.key
+                if (hasattr(trig, "samplekey") and trig.samplekey):
+                    keys[str(trig.samplekey)]=trig.samplekey
 
     @property
     def grid(self):

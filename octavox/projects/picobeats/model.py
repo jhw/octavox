@@ -189,7 +189,7 @@ class Sequencer(dict):
                                 vel=volume,
                                 i=i+offset)
                 if samplekey["bank"]!="svdrum":
-                    trig.key=samplekey
+                    trig.samplekey=samplekey
                 else:
                     trig.mod=self.mod.replace("Sampler", "Drum")
                     trig.id=samplekey["id"]
