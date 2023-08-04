@@ -1,7 +1,7 @@
 ### 02-tracks-to-trigs
 
-- refactor use of key for sample randomisation
 - add back config validation
+- mutes are failing
 - show_patch is failing
   - remove appending of inst to svdrum
 - consider using data binding classes to replace sequencer/lfo_id
@@ -117,6 +117,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- refactor use of key for sample randomisation
 - see if key can be eliminated from seq/lfo initialisation
 - replace key used by init_machine with id parameter
 - separate usage of key to a) randomise samples and b) lookup seq/lfo config
