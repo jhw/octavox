@@ -1,0 +1,4706 @@
+[
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 64551846,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 51455998,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 45859719,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 63153412,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 42857285,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 95126005,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 14810955,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 19295836,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 41061866,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 81188253
+      },
+      {
+        "key": "ec1",
+        "seed": 9560659
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 36073564,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 60457713,
+            "style": "fourfloor"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 22422337,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 55917218,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 13520096,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 92112204,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 99959323,
+            "style": "closed"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 50637429,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 21091326,
+            "style": "offbeats"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 32637810
+      },
+      {
+        "key": "ec1",
+        "seed": 96128305
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 64958240,
+            "style": "fourfloor"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 64521149,
+            "style": "fourfloor"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 45515644,
+            "style": "fourfloor"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 99210751,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 53984753,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 63186560,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 4093502,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 27282115,
+            "style": "closed"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 95454565,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 85305018
+      },
+      {
+        "key": "ec1",
+        "seed": 69657234
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 42598968,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 94045340,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 62897903,
+            "style": "fourfloor"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 60416785,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 88209623,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 67090103,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 29854777,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 83974873,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 59980533,
+            "style": "offbeats"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 75541250
+      },
+      {
+        "key": "ec1",
+        "seed": 55168857
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 20490267,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 70693351,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 8598073,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 93078133,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 11056792,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 87811751,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 81362501,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 15164462,
+            "style": "closed"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 70435485,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 36317920
+      },
+      {
+        "key": "ec1",
+        "seed": 89629138
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 96197219,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 47882984,
+            "style": "electro"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 5522796,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 16393266,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 3192508,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 52064688,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 15434393,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 57162430,
+            "style": "closed"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 61505970,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 68202486
+      },
+      {
+        "key": "ec1",
+        "seed": 19103829
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 67123831,
+            "style": "fourfloor"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 97721818,
+            "style": "electro"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 99127099,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 54089611,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 84015971,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 62599004,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 76252292,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 60448902,
+            "style": "closed"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 77767877,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 71159812
+      },
+      {
+        "key": "ec1",
+        "seed": 79342796
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 82130368,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 1998873,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 40423324,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 56316773,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 16115454,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 11694624,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 80071242,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 41316971,
+            "style": "closed"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 97655545,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 22819710
+      },
+      {
+        "key": "ec1",
+        "seed": 86981974
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 71415238,
+            "style": "electro"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 26406964,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 66750857,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 19038574,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 99123982,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 84635508,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 33864742,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 26170027,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 55753864,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 64677458
+      },
+      {
+        "key": "ec1",
+        "seed": 73411986
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 8128234,
+            "style": "electro"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 95434158,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 64858743,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 33055930,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 57822439,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 69476701,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 75184610,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 57813545,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 62123137,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 51303928
+      },
+      {
+        "key": "ec1",
+        "seed": 55035642
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 54159410,
+            "style": "electro"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 49301864,
+            "style": "fourfloor"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 59038951,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 59120086,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 29262495,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 31655642,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 33213145,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 17089707,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 20791522,
+            "style": "offbeats"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 26076042
+      },
+      {
+        "key": "ec1",
+        "seed": 17102506
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 92173339,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 77439996,
+            "style": "fourfloor"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 60563491,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 58508718,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 86776638,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 80111688,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 78142467,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 94837879,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 14932584,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 81655467
+      },
+      {
+        "key": "ec1",
+        "seed": 85560405
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 8887736,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 9431398,
+            "style": "fourfloor"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 63233949,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 90140882,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 91726643,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 96056527,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 72120012,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 25240746,
+            "style": "closed"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 38666915,
+            "style": "offbeats"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 31732514
+      },
+      {
+        "key": "ec1",
+        "seed": 41513610
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 63812793,
+            "style": "electro"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 53147572,
+            "style": "fourfloor"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 56428378,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 80030141,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 19061114,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 2649771,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 50419836,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 33309931,
+            "style": "closed"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 2575848,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 85976319
+      },
+      {
+        "key": "ec1",
+        "seed": 82071362
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 47874525,
+            "style": "fourfloor"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 83444962,
+            "style": "fourfloor"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 84582437,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 24047544,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 17184932,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 36174158,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 36174381,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 88542236,
+            "style": "closed"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 26089942,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 89222747
+      },
+      {
+        "key": "ec1",
+        "seed": 54329102
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 20357340,
+            "style": "electro"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 42043657,
+            "style": "fourfloor"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 1427306,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 68798213,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 5342114,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 23415452,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 58465728,
+            "style": "closed"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 21544982,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 19306264,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 20701165
+      },
+      {
+        "key": "ec1",
+        "seed": 90727985
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 74134034,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 46890689,
+            "style": "electro"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 6361327,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 48760983,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 43690097,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 49275575,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 8537900,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 28610672,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 56974899,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 36052733
+      },
+      {
+        "key": "ec1",
+        "seed": 50522029
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 81031108,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 4176857,
+            "style": "electro"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 49958150,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 19573975,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 12779253,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 64730173,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 796827,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 20050863,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 85400472,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 33572082
+      },
+      {
+        "key": "ec1",
+        "seed": 56644081
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 32244539,
+            "style": "electro"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 90625759,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 20255396,
+            "style": "fourfloor"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 2132201,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 8251076,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 7701218,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 56576038,
+            "style": "closed"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 65360255,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 17080677,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 48037992
+      },
+      {
+        "key": "ec1",
+        "seed": 56028115
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 14704297,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 15511805,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 90029233,
+            "style": "fourfloor"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 68786026,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 33743020,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 60288764,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 54504235,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 4060714,
+            "style": "closed"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 70000225,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 3429950
+      },
+      {
+        "key": "ec1",
+        "seed": 8762507
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 38658750,
+            "style": "fourfloor"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 85562898,
+            "style": "electro"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 46789595,
+            "style": "fourfloor"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 29413645,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 14478391,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 7389588,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 41350635,
+            "style": "closed"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 93344303,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 80550844,
+            "style": "offbeats"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 47420759
+      },
+      {
+        "key": "ec1",
+        "seed": 99401814
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 68507921,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 35635413,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 73607531,
+            "style": "fourfloor"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 29409568,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 13187919,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 16515030,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 93257791,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 13545329,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 46034470,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 44846351
+      },
+      {
+        "key": "ec1",
+        "seed": 52436623
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 29870638,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 61069575,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 98810811,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 54077829,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 65912827,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 53891207,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 85559968,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 41911753,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 67880256,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 84994607
+      },
+      {
+        "key": "ec1",
+        "seed": 7073935
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 1481859,
+            "style": "electro"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 70879385,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 60007733,
+            "style": "fourfloor"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 60931946,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 59911648,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 68940093,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 49206563,
+            "style": "closed"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 18057456,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 35753618,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 49788961
+      },
+      {
+        "key": "ec1",
+        "seed": 77118753
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 27856547,
+            "style": "fourfloor"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 2368910,
+            "style": "electro"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 66970653,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 80477378,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 8953421,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 5161491,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 25463449,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 27214380,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 16570961,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 90100957
+      },
+      {
+        "key": "ec1",
+        "seed": 48855795
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 5600316,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 7078375,
+            "style": "electro"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 62554928,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 29952925,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 62966394,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 39050094,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 90914833,
+            "style": "closed"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 8377422,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 4462519,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 57122744
+      },
+      {
+        "key": "ec1",
+        "seed": 35331972
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 6413754,
+            "style": "electro"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 74261948,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 54885400,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 17929923,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 13791740,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 80649057,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 11636772,
+            "style": "closed"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 5567247,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 65977098,
+            "style": "offbeats"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 57378206
+      },
+      {
+        "key": "ec1",
+        "seed": 18223264
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 50982361,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 39068201,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 58021648,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 309619,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 95218381,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 41473986,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 71867273,
+            "style": "closed"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 7635427,
+            "style": "closed"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 62670123,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 12211793
+      },
+      {
+        "key": "ec1",
+        "seed": 50114914
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 79485131,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 92378620,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 10505985,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 88911881,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 19354668,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 58756203,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 81526930,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 25887416,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 55960472,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 57558856
+      },
+      {
+        "key": "ec1",
+        "seed": 58544520
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 45647013,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 97597643,
+            "style": "electro"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 58595726,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 53784884,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 35417273,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 55518878,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 6927374,
+            "style": "closed"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 95014398,
+            "style": "closed"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 48956161,
+            "style": "offbeats"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 28640533
+      },
+      {
+        "key": "ec1",
+        "seed": 55160768
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 2899920,
+            "style": "fourfloor"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 88896323,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 55290516,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 57600788,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 96829579,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 64482124,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 15838057,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 3489191,
+            "style": "closed"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 32391470,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 30990561
+      },
+      {
+        "key": "ec1",
+        "seed": 42759200
+      }
+    ],
+    "mutes": []
+  },
+  {
+    "sequencers": [
+      {
+        "key": "kk",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "legowelt",
+                "file": "55 ERIKABD6.wav"
+              }
+            },
+            "seed": 4129608,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "KickSampler",
+                "bank": "ib-magnetic-saturation",
+                "file": "00 BD.wav"
+              }
+            },
+            "seed": 5897909,
+            "style": "triplets"
+          },
+          {
+            "samples": {
+              "kk": {
+                "mod": "kk",
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            },
+            "seed": 50923763,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "key": "sn",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "59 Zort Sd.wav"
+              }
+            },
+            "seed": 96049943,
+            "style": "skip"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "otto-von-schirach",
+                "file": "45 Static Snare.wav"
+              }
+            },
+            "seed": 8288148,
+            "style": "backbeat"
+          },
+          {
+            "samples": {
+              "sn": {
+                "mod": "SnareSampler",
+                "bank": "legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            },
+            "seed": 47199004,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "key": "ht",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              },
+              "ch": {
+                "mod": "HatSampler",
+                "bank": "complex-waveforms",
+                "file": "57 Perc.wav"
+              }
+            },
+            "seed": 19834980,
+            "style": "offbeats"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "otto-von-schirach",
+                "file": "54 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            },
+            "seed": 69530942,
+            "style": "closed"
+          },
+          {
+            "samples": {
+              "oh": {
+                "mod": "oh",
+                "bank": "baseck",
+                "file": "34 syncussion.wav"
+              },
+              "ch": {
+                "mod": "ch",
+                "bank": "nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav"
+              }
+            },
+            "seed": 36141607,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "key": "ec0",
+        "seed": 96878117
+      },
+      {
+        "key": "ec1",
+        "seed": 93309531
+      }
+    ],
+    "mutes": []
+  }
+]
