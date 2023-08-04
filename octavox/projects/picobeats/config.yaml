@@ -72,14 +72,12 @@ sequencers:
 lfos:
   - mod: Echo
     ctrl: wet
-    key: ec0
     range: [0, 1]
     increment: 0.25
     step: 4
     live: 0.66666
   - mod: Echo
     ctrl: feedback
-    key: ec1
     range: [0, 1]
     increment: 0.25
     step: 4
