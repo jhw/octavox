@@ -1,17 +1,18 @@
 ### 02-tracks-to-trigs
 
+- complete refactoring of show_patch
+- consider if cli needs to import Instruments
+
 - move instruments and config into patterns
 - add back config validation
 - fix mutes
-- fix show_patch
 - pass bpm from cli
 - refactor archives and test
-- rename keys/samplelkeys
+- refactor keys/samplekeys nomenclature
 
 ### 01-picobass-master
 
 - pass single pool to cli and check self.banks refs
-
 - replace blocksize and nblocks with npatches
 - refactor samples model
 - find some bass sounds

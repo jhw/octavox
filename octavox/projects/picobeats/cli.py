@@ -124,24 +124,16 @@ class PicobeatsCli(SVBankCli):
                 
     @parse_line(config=[{"name": "i",
                          "type": "int"}])
-    def do_show_patch(self, i, instruments=Instruments):
+    def do_show_patch(self, i):
         patch=self.patches[i % len(self.patches)]
         rendered=patch.render(nbeats=self.env["nbeats"],
                               density=self.env["density"])
-        trigs={K:{trig["i"]:trig for trig in V}
+        trigs={K:{trig.i:trig for trig in V}
                for K, V in rendered.items()}
         for i in range(self.env["nbeats"]):
-            row=[i]
-            for key in instruments:
-                if key in trigs:
-                    if i in trigs[key]:
-                        trig=trigs[key][i]
-                        cell=str(trig["key"]) if "key" in trig else "%s:svdrum/%i" % (key, trig["id"])
-                        row.append(cell)
-                    else:
-                        row.append("...")
-            print ("\t".join([str(cell)
-                              for cell in row]))
+            for key in trigs:
+                if i in trigs[key]:
+                    print (trigs[key][i])
 
     @parse_line()
     def do_list_fixes(self):
