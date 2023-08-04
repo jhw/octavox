@@ -31,7 +31,6 @@ class PicobeatsCli(SVBankCli):
     intro="Welcome to Picobeats :)"
 
     def __init__(self,
-                 instruments=Instruments,
                  *args,
                  **kwargs):
         SVBankCli.__init__(self, *args, **kwargs)
@@ -158,7 +157,7 @@ class PicobeatsCli(SVBankCli):
         self.fixes.add(key, samplekey)
 
     @parse_line()
-    def do_clean_fixes(self, instruments=Instruments):
+    def do_clean_fixes(self):
         self.fixes=Fixes.create()
                 
 Params=yaml.safe_load("""

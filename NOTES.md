@@ -1,3 +1,12 @@
+### config classes 04/08/23
+
+- main point of doing this would be to add config validation
+- but kind of feels very enterprisey and negates the quick-and-dirty (but organised) ethos
+- also remember that cli operates in a protected try/catch environment
+- and if you were to do this then the class naming would probably have to change all over the place
+- SVClass would have to become PBClass and config classes would then need to be renamed as something else
+- seems a lot of work for relatively little value
+
 ### arrange 30/07/23
 
 - take an array input

@@ -1,14 +1,13 @@
 ### 02-tracks-to-trigs
 
+- rename samplekey, inst as samplegroup
+- initialise cli with config and validate
+- move instruments into config and rename as samplegroups 
 - complete refactoring of show_patch
-- consider if cli needs to import Instruments
-
-- move instruments and config into patterns
-- add back config validation
 - fix mutes
 - pass bpm from cli
 - refactor archives and test
-- refactor keys/samplekeys nomenclature
+- chord support
 
 ### 01-picobass-master
 
@@ -29,6 +28,8 @@
 
 ### thoughts
 
+- config classes?
+  - feels like overkill; see NOTES.md
 - treat svdrum as a sample, so can be fixed?
   - probably too much work
 - unfix_sample?
@@ -115,6 +116,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- consider if cli needs to import Instruments
 - convert dict- based SV classes to real classes
 - refactor use of key for sample randomisation
 - see if key can be eliminated from seq/lfo initialisation
