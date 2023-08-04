@@ -54,18 +54,18 @@ links:
     - Output
 sequencers:
   - mod: KickSampler
-    samplekey: kk
+    soundkey: kk
     styles:
     - fourfloor
     - electro
     - triplets
   - mod: SnareSampler
-    samplekey: sn
+    soundkey: sn
     styles:
     - backbeat
     - skip
   - mod: HatSampler
-    samplekey: ht
+    soundkey: ht
     styles:
     - offbeats
     - closed

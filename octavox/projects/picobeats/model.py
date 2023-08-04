@@ -45,12 +45,12 @@ class Samples(dict):
     @classmethod
     def randomise(self,
                   i,
-                  samplekey,
+                  soundkey,
                   pool,
                   fixes,
                   soundkeys=Config["soundkeys"]):
         samples={}
-        for childkey in soundkeys[samplekey]:
+        for childkey in soundkeys[soundkey]:
             keyfixes=list(fixes[childkey].values())
             values=keyfixes if i==0 and keyfixes!=[] else pool[childkey]
             samples[childkey]=random.choice(values)
@@ -67,17 +67,17 @@ class Slice(dict):
     @classmethod
     def randomise(self,
                   i,
-                  samplekey,
+                  soundkey,
                   pool,
                   fixes,
-                  config={item["samplekey"]:item
+                  config={item["soundkey"]:item
                           for item in Config["sequencers"]}):
         return Slice(samples=Samples.randomise(i=i,
-                                               samplekey=samplekey,
+                                               soundkey=soundkey,
                                                pool=pool,
                                                fixes=fixes),
                      seed=int(1e8*random.random()),
-                     style=random.choice(config[samplekey]["styles"]))
+                     style=random.choice(config[soundkey]["styles"]))
     
     def __init__(self,
                  samples,
@@ -107,12 +107,12 @@ class Slices(list):
 
     @classmethod
     def randomise(self,
-                  samplekey,
+                  soundkey,
                   pool,
                   fixes,
                   n=3):
         return Slices([Slice.randomise(i=i,
-                                       samplekey=samplekey,
+                                       soundkey=soundkey,
                                        pool=pool,
                                        fixes=fixes)
                        for i in range(n)])
@@ -141,7 +141,7 @@ class Sequencer(dict):
                   fixes):
         return Sequencer({"id": sequencer_id(item),
                           "pattern": Pattern.randomise(temperature),
-                          "slices": Slices.randomise(samplekey=item["samplekey"],
+                          "slices": Slices.randomise(soundkey=item["soundkey"],
                                                      pool=pool,
                                                      fixes=fixes)})
 
