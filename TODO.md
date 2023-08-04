@@ -1,12 +1,8 @@
 ### 02-tracks-to-trigs
 
-- stop setting key as seq/lfo state variable
-
-- refactor init_machine lookup of item["key"]
-
-- convert seqs and lfos to lists in config
-- consider it you still need all the config code
-  - seq keys are no longer stored in state variables?
+- separate usage of key to a) randomise samples and b) lookup seq/lfo config
+- replace use of key for b) with mod/seq fields
+- see if key can be eliminated from seq/lfo initialisation
 
 - show_patch is failing
   - remove appending of inst to svdrum
@@ -14,7 +10,7 @@
 - convert dict- based SV classes to real classes
 - pass bpm from cli
 - test loading archives
-  - may need to remove key
+  - may need to remove key etc
 
 ### 01-picobass-master
 
