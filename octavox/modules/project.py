@@ -13,47 +13,53 @@ volume: 256
 
 BreakSz, Height = 16, 64
 
-class SVNoteTrig(dict):
+class SVNoteTrig:
 
-    def __init__(self, item):
-        dict.__init__(self, item)
+    def __init__(self, mod, i, key=None, id=None, vel=1):
+        self.mod=mod
+        self.i=i
+        self.key=key
+        self.id=id
+        self.vel=vel
 
     @property
     def track_key(self):
-        return self["mod"]
+        return self.mod
         
     def render(self,
                modules,
                controllers,
                volume=128):
-        mod=modules[self["mod"]]
-        trig=1+(mod.lookup(self["key"]) if "key" in self else self["id"])
+        mod=modules[self.mod]
+        trig=1+(mod.lookup(self.key) if self.key else self.id)
         modid=1+mod.index # NB 1+
-        notevel=self["vel"] if "vel" in self else 1
-        vel=max(1, int(notevel*volume))
+        vel=max(1, int(self.vel*volume))
         return RVNote(note=trig,
                       vel=vel,
                       module=modid)
 
-class SVFXTrig(dict):
+class SVFXTrig:
     
-    def __init__(self, item):
-        dict.__init__(self, item)
+    def __init__(self, mod, ctrl, value, i):
+        self.mod=mod
+        self.ctrl=ctrl
+        self.value=value
+        self.i=i
 
     @property
     def track_key(self):
-        return "%s/%s" % (self["mod"],
-                          self["ctrl"])
+        return "%s/%s" % (self.mod,
+                          self.ctrl)
         
     def render(self,
                modules,
                controllers,
                ctrlmult=256,
                maxvalue=256*128):
-        mod, controller = modules[self["mod"]], controllers[self["mod"]]
+        mod, controller = modules[self.mod], controllers[self.mod]
         modid=1+mod.index # NB 1+
-        ctrlid=ctrlmult*controller[self["ctrl"]]
-        ctrlvalue=int(self["v"]*maxvalue) # NB **NOT** 1+
+        ctrlid=ctrlmult*controller[self.ctrl]
+        ctrlvalue=int(self.value*maxvalue) # NB **NOT** 1+
         return RVNote(module=modid,
                       ctl=ctrlid,
                       val=ctrlvalue)
@@ -82,12 +88,12 @@ class SVTracks(dict):
     def filter_samplekeys(self, keys):
         for track in self.values():
             for trig in track:
-                if "key" in trig:
-                    keys[str(trig["key"])]=trig["key"]
+                if (hasattr(trig, "key") and trig.key):
+                    keys[str(trig.key)]=trig.key
 
     @property
     def grid(self):
-        return [{note["i"]:note
+        return [{note.i:note
                  for note in track}
                 for key, track in self.items()]
                     

@@ -6,7 +6,6 @@
   - remove appending of inst to svdrum
 - consider using data binding classes to replace sequencer/lfo_id
 - check if samplekey mod is somehow being overridden
-- convert dict- based SV classes to real classes
 - pass bpm from cli
 - test loading archives
   - may need to remove key etc
@@ -117,6 +116,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- convert dict- based SV classes to real classes
 - refactor use of key for sample randomisation
 - see if key can be eliminated from seq/lfo initialisation
 - replace key used by init_machine with id parameter

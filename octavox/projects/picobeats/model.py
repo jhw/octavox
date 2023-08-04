@@ -192,14 +192,14 @@ class Sequencer(dict):
                 instkey, volume = v
                 samplekey=samples[instkey]
                 samplekey["mod"]=self.mod
-                trig=SVNoteTrig({"vel": volume,
-                                 "i": i+offset})
+                trig=SVNoteTrig(mod=self.mod,
+                                vel=volume,
+                                i=i+offset)
                 if samplekey["bank"]!="svdrum":
-                    trig["mod"]=self.mod
-                    trig["key"]=samplekey
+                    trig.key=samplekey
                 else:
-                    trig["mod"]=self.mod.replace("Sampler", "Drum")
-                    trig["id"]=samplekey["id"]
+                    trig.mod=self.mod.replace("Sampler", "Drum")
+                    trig.id=samplekey["id"]
                 trigs.append(trig)
         return wrapped
     
@@ -287,10 +287,10 @@ class Lfo(dict):
         def wrapped(self, q, i, trigs):
             v=fn(self, q, i, trigs)
             if v!=None: # explicit because could return zero
-                trig=SVFXTrig({"mod": self.mod,
-                               "ctrl": self.ctrl,
-                               "v": v,
-                               "i": i})
+                trig=SVFXTrig(mod=self.mod,
+                              ctrl=self.ctrl,
+                              value=v,
+                              i=i)
                 trigs.append(trig)
         return wrapped
 
