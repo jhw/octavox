@@ -1,15 +1,15 @@
 ### 02-tracks-to-trigs
 
-- model to use trigs class not tracks and to append to trigs
-- project to use trigs.tracks
+- check if both tracks and trigs need nbeats variable
 
 - check if key no longer needs passing to sequencers and lfos
 - check if key can be purged from config
 - check if samplekey mod is somehow being overridden
 
+- show_patch is failing
+  - remove appending of inst to svdrum
 - convert dict- based SV classes to real classes
 - pass bpm from cli
-- remove appending of inst to svdrum by show_patch action
 
 ### 01-picobass-master
 
@@ -117,6 +117,8 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- model to use trigs class not tracks and to append to trigs
+- project to use trigs.tracks
 - new SVTrigs class (list) which can spawn Tracks
 - new track_key property for trig classes
   - uses mod and/or mod+ctrl

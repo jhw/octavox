@@ -1,4 +1,4 @@
-from octavox.modules.project import SVProject, SVTracks, SVNoteTrig, SVFXTrig
+from octavox.modules.project import SVProject, SVTrigs, SVNoteTrig, SVFXTrig
 
 import octavox.modules.sequences.vitling909 as nineohnine
 
@@ -199,8 +199,7 @@ class Sequencer(dict):
                 else:
                     trig["mod"]=self.mod.replace("Sampler", "Drum")
                     trig["id"]=samplekey["id"]
-                trigs.setdefault(self["key"], [])
-                trigs[self["key"]].append(trig)
+                trigs.append(trig)
         return wrapped
     
     @apply
@@ -279,8 +278,7 @@ class Lfo(dict):
                                "ctrl": self.ctrl,
                                "v": v,
                                "i": i})
-                trigs.setdefault(self["key"], [])
-                trigs[self["key"]].append(trig)
+                trigs.append(trig)
         return wrapped
 
     @apply
@@ -344,7 +342,7 @@ class Patch(dict):
     def render(self,
                nbeats,
                density):
-        trigs=SVTracks(nbeats=nbeats)
+        trigs=SVTrigs(nbeats=nbeats)
         for seq in self["sequencers"]:
             if seq["key"] not in self["mutes"]:
                 seq.render(nbeats=nbeats,
@@ -353,7 +351,7 @@ class Patch(dict):
         for lfo in self["lfos"]:
             lfo.render(nbeats=nbeats,
                        trigs=trigs)
-        return trigs
+        return trigs.tracks
 
 class Patches(list):
 

@@ -66,7 +66,7 @@ class SVTrigs(list):
 
     @property
     def tracks(self):
-        tracks=SVTracks()
+        tracks=SVTracks(self.nbeats)
         for trig in self:
             key=trig.track_key
             tracks.setdefault(key, [])
