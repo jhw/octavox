@@ -1,19 +1,18 @@
 ### 02-tracks-to-trigs
 
 - refactor samplekey as soundkey unless it is a samplekey class
+- trig to use key rather than samplekey ref
 - complete refactoring of show_patch
-- fix mutes
 - pass bpm from cli
 - refactor archives and test
 - chord support
 
 ### picobeats
 
-- sample bans
-- global mutes
 - density to be saved as part of state
-- arrange() action
-- update README
+- arrange() action with density lfo
+- sample bans
+- separate and updated readmes
 
 ### thoughts
 
@@ -105,6 +104,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- remove mutes
 - move flatten, Q into projects/__init__
 - move instruments into config and rename as samplegroups 
 - refactor key as samplekey in trig class
