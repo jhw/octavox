@@ -1,9 +1,18 @@
 ### 02-tracks-to-trigs
 
-- new svtrigs class which can render tracks
-  - infers keys based on class type, module etc
+- new track_key property for trig classes
+  - uses mod and/or mod+ctrl
+- new SVTrigs class (list) which can spawn Tracks
+- model to use trigs class not tracks and to append to trigs
+- project to use trigs.tracks
+
+- check if key no longer needs passing to sequencers and lfos
+- check if key can be purged from config
+- check if samplekey mod is somehow being overridden
 
 - convert dict- based SV classes to real classes
+- pass bpm from cli
+- remove appending of inst to svdrum by show_patch action
 
 ### 01-picobass-master
 
