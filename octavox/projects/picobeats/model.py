@@ -131,16 +131,6 @@ class Slices(list):
     def clone(self):
         return Slices(self)
 
-def init_machine(config):
-    def decorator(fn):
-        def wrapped(self, item, **kwargs):
-            fn(self, item, **kwargs)
-            params=config[item["key"]]
-            for attr in params:
-                setattr(self, attr, params[attr])
-        return wrapped
-    return decorator
-
 class Sequencer(dict):
 
     @classmethod
@@ -155,13 +145,16 @@ class Sequencer(dict):
                                                      pool=pool,
                                                      fixes=fixes)})
 
-    @init_machine(config={item["key"]:item
-                          for item in Config["sequencers"]})
-    def __init__(self, item):
+    def __init__(self, item,
+                 config={item["key"]:item
+                         for item in Config["sequencers"]}):
         dict.__init__(self, {"key": item["key"],
                              "pattern": Pattern(item["pattern"]),
                              "slices": Slices(item["slices"])})
-                
+        params=config[item["key"]]
+        for attr in params:
+            setattr(self, attr, params[attr])
+                            
     def clone(self):
         return Sequencer({"key": self["key"],
                           "pattern": self["pattern"],
@@ -254,10 +247,13 @@ class Lfo(dict):
         return Lfo({"key": item["key"],
                     "seed": int(1e8*random.random())})
 
-    @init_machine(config={item["key"]:item
-                          for item in Config["lfos"]})
-    def __init__(self, item):
+    def __init__(self, item,
+                 config={item["key"]:item
+                          for item in Config["lfos"]}):
         dict.__init__(self, item)
+        params=config[item["key"]]
+        for attr in params:
+            setattr(self, attr, params[attr])
         
     def clone(self):
         return Lfo(self)

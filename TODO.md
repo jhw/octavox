@@ -1,5 +1,7 @@
 ### 02-tracks-to-trigs
 
+- replace key used by init_machine with id parameter
+
 - separate usage of key to a) randomise samples and b) lookup seq/lfo config
 - replace use of key for b) with mod/seq fields
 - see if key can be eliminated from seq/lfo initialisation
@@ -118,6 +120,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- move init_machine inline
 - replace passing of key to slice for style lookup, with direct passing of styles
 - check if both tracks and trigs need nbeats variable
 - model to use trigs class not tracks and to append to trigs
