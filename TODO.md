@@ -1,13 +1,10 @@
 ### 02-tracks-to-trigs
 
-- replace key used by init_machine with id parameter
-
-- separate usage of key to a) randomise samples and b) lookup seq/lfo config
-- replace use of key for b) with mod/seq fields
-- see if key can be eliminated from seq/lfo initialisation
-
+- refactor use of key for sample randomisation
+- add back config validation
 - show_patch is failing
   - remove appending of inst to svdrum
+- consider using data binding classes to replace sequencer/lfo_id
 - check if samplekey mod is somehow being overridden
 - convert dict- based SV classes to real classes
 - pass bpm from cli
@@ -120,6 +117,9 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- see if key can be eliminated from seq/lfo initialisation
+- replace key used by init_machine with id parameter
+- separate usage of key to a) randomise samples and b) lookup seq/lfo config
 - move init_machine inline
 - replace passing of key to slice for style lookup, with direct passing of styles
 - check if both tracks and trigs need nbeats variable

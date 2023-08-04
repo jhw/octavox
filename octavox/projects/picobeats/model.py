@@ -131,32 +131,39 @@ class Slices(list):
     def clone(self):
         return Slices(self)
 
-class Sequencer(dict):
+"""
+- temporary helper; should be replaced by config.yaml data binding classes
+"""
+    
+def sequencer_id(item):
+    return item["mod"]
 
+class Sequencer(dict):
+    
     @classmethod
     def randomise(self,
                   item,
                   temperature,
                   pool,
                   fixes):
-        return Sequencer({"key": item["key"],
+        return Sequencer({"id": sequencer_id(item),
                           "pattern": Pattern.randomise(temperature),
                           "slices": Slices.randomise(key=item["key"],
                                                      pool=pool,
                                                      fixes=fixes)})
 
     def __init__(self, item,
-                 config={item["key"]:item
+                 config={sequencer_id(item):item
                          for item in Config["sequencers"]}):
-        dict.__init__(self, {"key": item["key"],
+        dict.__init__(self, {"id": item["id"],
                              "pattern": Pattern(item["pattern"]),
                              "slices": Slices(item["slices"])})
-        params=config[item["key"]]
+        params=config[item["id"]]
         for attr in params:
             setattr(self, attr, params[attr])
                             
     def clone(self):
-        return Sequencer({"key": self["key"],
+        return Sequencer({"id": self["id"],
                           "pattern": self["pattern"],
                           "slices": self["slices"].clone()})
 
@@ -219,7 +226,7 @@ class Sequencer(dict):
         return nineohnine.closed(q, i, d, k)
                             
 class Sequencers(list):
-
+    
     @classmethod
     def randomise(self,
                   pool,
@@ -240,18 +247,26 @@ class Sequencers(list):
         return Sequencers([seq.clone()
                            for seq in self])
 
+"""
+- temporary helper; should be replaced by config.yaml data binding classes
+"""
+    
+def lfo_id(item):
+    return "%s/%s" % (item["mod"],
+                      item["ctrl"])
+    
 class Lfo(dict):
-
+    
     @classmethod
     def randomise(self, item):
-        return Lfo({"key": item["key"],
+        return Lfo({"id": lfo_id(item),
                     "seed": int(1e8*random.random())})
 
     def __init__(self, item,
-                 config={item["key"]:item
-                          for item in Config["lfos"]}):
+                 config={lfo_id(item):item
+                         for item in Config["lfos"]}):
         dict.__init__(self, item)
-        params=config[item["key"]]
+        params=config[item["id"]]
         for attr in params:
             setattr(self, attr, params[attr])
         
@@ -342,10 +357,15 @@ class Patch(dict):
                density):
         trigs=SVTrigs(nbeats=nbeats)
         for seq in self["sequencers"]:
+            """
             if seq["key"] not in self["mutes"]:
                 seq.render(nbeats=nbeats,
                            trigs=trigs,
                            density=density)
+            """
+            seq.render(nbeats=nbeats,
+                       trigs=trigs,
+                       density=density)
         for lfo in self["lfos"]:
             lfo.render(nbeats=nbeats,
                        trigs=trigs)
