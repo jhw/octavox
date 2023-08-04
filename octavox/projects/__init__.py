@@ -12,6 +12,16 @@ def random_filename(prefix):
                             random.choice(Adjectives),
                             random.choice(Nouns))
 
+def Q(seed):
+    q=random.Random()
+    q.seed(seed)
+    return q
+
+def flatten(lists):
+    values=[]
+    for l in lists:
+        values+=l
+    return values
 
 if __name__=="__main__":
     pass

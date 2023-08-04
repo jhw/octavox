@@ -2,19 +2,13 @@ from octavox.modules.banks import SVSampleKey, SVBanks, SVPool
 
 from octavox.modules.cli import SVBankCli, parse_line
 
-from octavox.projects import random_filename
+from octavox.projects import random_filename, flatten
 
 from octavox.projects.picobeats.model import Patch, Patches
 
 import json, os, random, yaml
 
 Config=yaml.safe_load(open("octavox/projects/picobeats/config.yaml").read())
-
-def flatten(lists):
-    values=[]
-    for l in lists:
-        values+=l
-    return values
 
 class Fixes(dict):
 

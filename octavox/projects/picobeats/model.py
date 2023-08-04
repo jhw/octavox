@@ -1,5 +1,7 @@
 from octavox.modules.project import SVProject, SVTrigs, SVNoteTrig, SVFXTrig
 
+from octavox.projects import Q
+
 import octavox.modules.sequences.vitling909 as nineohnine
 
 import json, os, random, yaml
@@ -11,11 +13,6 @@ Patterns=["0",
           "3x0|1",
           "0|1|0|1",
           "0|1|0|2"]
-
-def Q(seed):
-    q=random.Random()
-    q.seed(seed)
-    return q
 
 class Pattern(str):
 

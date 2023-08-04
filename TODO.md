@@ -1,6 +1,5 @@
 ### 02-tracks-to-trigs
 
-- move flatten, Q into projects/__init__
 - refactor samplekey as soundkey unless it is a samplekey class
 - complete refactoring of show_patch
 - fix mutes
@@ -106,6 +105,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- move flatten, Q into projects/__init__
 - move instruments into config and rename as samplegroups 
 - refactor key as samplekey in trig class
 - rename samplekey, inst as samplegroup
