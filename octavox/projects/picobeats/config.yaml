@@ -1,3 +1,11 @@
+soundkeys:
+  kk:
+  - kk
+  sn:
+  - sn
+  ht:
+  - oh
+  - ch
 modules:
   - name: KickSampler
     class: octavox.modules.samplers.SVSampler

@@ -4,9 +4,11 @@ from octavox.modules.cli import SVBankCli, parse_line
 
 from octavox.projects import random_filename
 
-from octavox.projects.picobeats.model import Patch, Patches, Instruments
+from octavox.projects.picobeats.model import Patch, Patches
 
 import json, os, random, yaml
+
+Config=yaml.safe_load(open("octavox/projects/picobeats/config.yaml").read())
 
 def flatten(lists):
     values=[]
@@ -17,24 +19,25 @@ def flatten(lists):
 class Fixes(dict):
 
     @classmethod
-    def create(self, instruments=Instruments):
-        return Fixes({key:{} for key in flatten(instruments.values())})
+    def create(self, soundkeys):
+        return Fixes({soundkey:{} for soundkey in flatten(soundkeys.values())})
     
     def __init__(self, item={}):
         dict.__init__(self, item)
 
-    def add(self, key, samplekey):
-        self[key][str(samplekey)]=samplekey
+    def add(self, soundkey, samplekey):
+        self[soundkey][str(samplekey)]=samplekey
 
 class PicobeatsCli(SVBankCli):
 
     intro="Welcome to Picobeats :)"
 
     def __init__(self,
+                 config=Config,
                  *args,
                  **kwargs):
         SVBankCli.__init__(self, *args, **kwargs)
-        self.fixes=Fixes.create()
+        self.fixes=Fixes.create(config["soundkeys"])
 
     @parse_line(config=[{"name": "frag",
                          "type": "str"}])
@@ -97,30 +100,6 @@ class PicobeatsCli(SVBankCli):
             patches.append(patch)
         return patches
 
-    @parse_line(config=[{"name": "I",
-                         "type": "array"}])
-    @render_patches(prefix="scatter")
-    def do_scatter_patches(self, I,
-                           patterns=[[0, 0, 0, 0],
-                                     [0, 0, 0, 1],
-                                     [0, 0, 1, 0],
-                                     [0, 1, 0, 2]],
-                           mutes=[[] for i in range(3)]+[[key] for key in Instruments]):
-        roots=[self.patches[i % len(self.patches)]
-               for i in I]
-        patches=Patches()
-        for i in range(self.env["nblocks"]):
-            blockpattern=random.choice(patterns)
-            blockpatches=[random.choice(roots)
-                          for i in range(1+max(blockpattern))]
-            blockmute=random.choice(mutes)            
-            for j in range(self.env["blocksize"]):
-                k=blockpattern[j]
-                patch=blockpatches[k].clone()
-                patch["mutes"]=blockmute
-                patches.append(patch)
-        return patches
-                
     @parse_line(config=[{"name": "i",
                          "type": "int"}])
     def do_show_patch(self, i):
@@ -130,9 +109,9 @@ class PicobeatsCli(SVBankCli):
         trigs={K:{trig.i:trig for trig in V}
                for K, V in rendered.items()}
         for i in range(self.env["nbeats"]):
-            for key in trigs:
-                if i in trigs[key]:
-                    print (trigs[key][i])
+            for soundkey in trigs:
+                if i in trigs[soundkey]:
+                    print (trigs[soundkey][i])
 
     @parse_line()
     def do_list_fixes(self):
@@ -140,25 +119,25 @@ class PicobeatsCli(SVBankCli):
             for v in V.values():
                 print ("- %s:%s" % (k, v))
 
-    @parse_line(config=[{"name": "key",
+    @parse_line(config=[{"name": "soundkey",
                          "type": "str"},
                         {"name": "bankfrag",
                          "type": "str"},
                         {"name": "wavfrag",
                          "type": "str"}])
-    def do_fix_sample(self, key, bankfrag, wavfrag):
-        if key not in self.fixes:
-            raise RuntimeError("instrument not found")
+    def do_fix_sample(self, soundkey, bankfrag, wavfrag):
+        if soundkey not in self.fixes:
+            raise RuntimeError("soundkey not found")
         bankname=self.banks.lookup(bankfrag)
         bank=self.banks[bankname]
         wavfile=bank.lookup(wavfrag)
         samplekey=SVSampleKey({"bank": bankname,
                                "file": wavfile})
-        self.fixes.add(key, samplekey)
+        self.fixes.add(soundkey, samplekey)
 
     @parse_line()
-    def do_clean_fixes(self):
-        self.fixes=Fixes.create()
+    def do_clean_fixes(self, soundkeys=Config["soundkeys"]):
+        self.fixes=Fixes.create(soundkeys)
                 
 Params=yaml.safe_load("""
 temperature: 1.0

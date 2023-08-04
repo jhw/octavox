@@ -1,26 +1,16 @@
 ### 02-tracks-to-trigs
 
-- rename samplekey, inst as samplegroup
-- initialise cli with config and validate
-- move instruments into config and rename as samplegroups 
+- move flatten, Q into projects/__init__
+- refactor samplekey as soundkey unless it is a samplekey class
 - complete refactoring of show_patch
 - fix mutes
 - pass bpm from cli
 - refactor archives and test
 - chord support
 
-### 01-picobass-master
-
-- pass single pool to cli and check self.banks refs
-- replace blocksize and nblocks with npatches
-- refactor samples model
-- find some bass sounds
-- script to slice bass sounds
-- volume/accent variations
-- separate READMEs
-
 ### picobeats
 
+- sample bans
 - global mutes
 - density to be saved as part of state
 - arrange() action
@@ -116,6 +106,9 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- move instruments into config and rename as samplegroups 
+- refactor key as samplekey in trig class
+- rename samplekey, inst as samplegroup
 - consider if cli needs to import Instruments
 - convert dict- based SV classes to real classes
 - refactor use of key for sample randomisation

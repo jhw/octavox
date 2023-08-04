@@ -6,10 +6,6 @@ import json, os, random, yaml
 
 Config=yaml.safe_load(open("octavox/projects/picobeats/config.yaml").read())
 
-Instruments={"kk": ["kk"],
-             "sn": ["sn"],
-             "ht": ["oh", "ch"]}
-
 Patterns=["0",
           "0|0|1|0",
           "3x0|1",
@@ -55,12 +51,12 @@ class Samples(dict):
                   samplekey,
                   pool,
                   fixes,
-                  instruments=Instruments):
+                  soundkeys=Config["soundkeys"]):
         samples={}
-        for key in instruments[samplekey]:
-            keyfixes=list(fixes[key].values())
-            values=keyfixes if i==0 and keyfixes!=[] else pool[key]
-            samples[key]=random.choice(values)
+        for childkey in soundkeys[samplekey]:
+            keyfixes=list(fixes[childkey].values())
+            values=keyfixes if i==0 and keyfixes!=[] else pool[childkey]
+            samples[childkey]=random.choice(values)
         return Samples(samples)
             
     def __init__(self, obj):
@@ -189,8 +185,8 @@ class Sequencer(dict):
                     samples):
             v=fn(self, q, i, d, trigs, offset, samples)
             if v!=None: # explicit because could return zero
-                instkey, volume = v
-                samplekey=samples[instkey]
+                soundkey, volume = v
+                samplekey=samples[soundkey]
                 samplekey["mod"]=self.mod
                 trig=SVNoteTrig(mod=self.mod,
                                 vel=volume,
