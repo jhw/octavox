@@ -58,6 +58,21 @@ class SVFXTrig(dict):
                       ctl=ctrlid,
                       val=ctrlvalue)
 
+class SVTrigs(list):
+
+    def __init__(self, nbeats, items=[]):
+        list.__init__(self, items)
+        self.nbeats=nbeats
+
+    @property
+    def tracks(self):
+        tracks=SVTracks()
+        for trig in self:
+            key=trig.track_key
+            tracks.setdefault(key, [])
+            tracks[key].append(trig)
+        return tracks
+            
 class SVTracks(dict):
 
     def __init__(self, nbeats, item={}):

@@ -1,6 +1,5 @@
 ### 02-tracks-to-trigs
 
-- new SVTrigs class (list) which can spawn Tracks
 - model to use trigs class not tracks and to append to trigs
 - project to use trigs.tracks
 
@@ -118,6 +117,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- new SVTrigs class (list) which can spawn Tracks
 - new track_key property for trig classes
   - uses mod and/or mod+ctrl
 - remove keys from modules and remove associated validation code
