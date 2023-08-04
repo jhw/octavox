@@ -1,6 +1,9 @@
 ### 02-tracks-to-trigs
 
-- see if key can be removed from seq and lfo init variables
+- stop setting key as seq/lfo state variable
+
+- refactor init_machine lookup of item["key"]
+
 - convert seqs and lfos to lists in config
 - consider it you still need all the config code
   - seq keys are no longer stored in state variables?
