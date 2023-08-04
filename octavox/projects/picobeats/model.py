@@ -104,11 +104,10 @@ class Slice(dict):
             self["seed"]=seed
 
     def randomise_style(self,
-                        key,
-                        limit,
-                        config=Config["sequencers"]):
+                        styles,
+                        limit):
         if random.random() < limit:
-            self["style"]=random.choice(config[key]["styles"])
+            self["style"]=random.choice(styles)
     
 class Slices(list):
 
@@ -332,7 +331,7 @@ class Patch(dict):
     def mutate(self, limits):
         for seq in self["sequencers"]:
             for slice in seq["slices"]:
-                slice.randomise_style(seq["key"],
+                slice.randomise_style(seq.styles,
                                       limits["style"])
                 slice.randomise_seed(limits["seed"])
         for lfo in self["lfos"]:

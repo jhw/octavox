@@ -1,7 +1,5 @@
 ### 02-tracks-to-trigs
 
-- store key as sequencer variable
-- test replacing seq["key"] with seq.key
 - see if key can be removed from seq and lfo init variables
 - convert seqs and lfos to lists in config
 - consider it you still need all the config code
@@ -121,6 +119,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- replace passing of key to slice for style lookup, with direct passing of styles
 - check if both tracks and trigs need nbeats variable
 - model to use trigs class not tracks and to append to trigs
 - project to use trigs.tracks
