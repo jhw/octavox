@@ -130,7 +130,8 @@ class PicobeatsCli(SVBankCli):
         bankname=self.banks.lookup(bankfrag)
         bank=self.banks[bankname]
         wavfile=bank.lookup(wavfrag)
-        samplekey=SVSampleKey({"bank": bankname,
+        samplekey=SVSampleKey({"tags": [tag],
+                               "bank": bankname,
                                "file": wavfile})
         self.fixes.add(tag, samplekey)
 

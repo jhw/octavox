@@ -1,7 +1,5 @@
 ### short [01-refactor-archives]
 
-- *** fix_sample is failing ***
-
 - replace sequencer key with id [mod]
 - samples is now a list with tags field [array values]
 - mutes are no longer part of structure
@@ -10,6 +8,7 @@
 
 ### medium
 
+- refactor fixes to utilise tag structure
 - s3 archive cli capabilities
 - mutate to mutate root at different densities
 - arrange1 and arrange2 [notes]
@@ -105,6 +104,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- fix_sample is failing
 - samples to be saved as list
 - rename soundkeys as tags
 - loading and cloning fails because samplekey isn't converted from dict to SampleKey class on loading project
