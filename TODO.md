@@ -1,10 +1,11 @@
 ### short
 
+- refactor and test archives
+
 ### medium
 
-- mutate to mutate root at different densities
-- refactor archives
 - s3 archive cli capabilities
+- mutate to mutate root at different densities
 - arrange1 and arrange2 [notes]
 - slice cutoff sampler [notes]
 - sample bans
@@ -43,8 +44,6 @@ AttributeError: 'dict' object has no attribute 'short_label'
   - not worth it just to replace short label rendering code in cli show_patch
 - cli replace|ban samples
   - may be over optimised
-- SVSampleKey to include svdrum to avoid cli show_samples hacks?
-  - not sure is worth it
 - initialise lfo with randomised step?
   - not sure it's worth it
 - ability to specify track key when copying?

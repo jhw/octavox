@@ -155,8 +155,6 @@ if __name__=="__main__":
             return yaml.safe_load(open("%s/%s" % (home, filename)).read())
         banks=SVBanks("octavox/banks/pico")
         pools=banks.spawn_pools().cull()
-        pools["svdrum-curated"]=svdrum=SVPool(load_yaml("svdrum.yaml"))
-        svdrum["sn"]=pools["default-curated"]["sn"] # NB
         PicobeatsCli(outdir="tmp/picobeats",
                      poolname="global-curated",
                      params=Params,

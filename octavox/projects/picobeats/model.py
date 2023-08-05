@@ -199,12 +199,8 @@ class Sequencer(dict):
                 samplekey["tags"].append(self.mod)
                 trig=SVNoteTrig(mod=self.mod,
                                 vel=volume,
-                                i=i+offset)
-                if samplekey["bank"]!="svdrum":
-                    trig.samplekey=samplekey
-                else:
-                    trig.mod=self.mod.replace("Sampler", "Drum")
-                    trig.id=samplekey["id"]
+                                i=i+offset,
+                                samplekey=samplekey)
                 trigs.append(trig)
         return wrapped
     
