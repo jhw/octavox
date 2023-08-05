@@ -1,5 +1,7 @@
 from octavox.modules.project import SVProject, SVTrigs, SVNoteTrig, SVFXTrig
 
+from octavox.modules.banks import SVSampleKey
+
 from octavox.projects import Q
 
 import octavox.modules.sequences.vitling909 as nineohnine
@@ -57,7 +59,8 @@ class Samples(dict):
         return Samples(samples)
             
     def __init__(self, obj):
-        dict.__init__(self, obj)
+        dict.__init__(self, {tag:SVSampleKey(samplekey)
+                             for tag, samplekey in obj.items()})
 
     def clone(self):
         return Samples(self)

@@ -1,14 +1,11 @@
 ### short
 
-- loading and cloning fails because samplekey isn't converted from dict to SampleKey class on loading project
-
-- mutate to mutate root at different densities
-
 - convert samplekey to list
-- refactor archives and test
 
 ### medium
 
+- mutate to mutate root at different densities
+- refactor archives
 - s3 archive cli capabilities
 - arrange1 and arrange2 [notes]
 - slice cutoff sampler [notes]
@@ -17,7 +14,6 @@
 
 ### thoughts
 
-- sample bans
 - config classes?
   - feels like overkill; see NOTES.md
 - treat svdrum as a sample, so can be fixed?
@@ -106,6 +102,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- loading and cloning fails because samplekey isn't converted from dict to SampleKey class on loading project
 - add multiple tag support for samplekey
 - mutes 
 - convert samplekey mod to tag
