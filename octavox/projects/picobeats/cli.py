@@ -45,7 +45,7 @@ class PicobeatsCli(SVBankCli):
         elif len(matches)==1:
             filename=matches.pop()
             print ("INFO: %s" % filename)
-            abspath="%s/%s" % (self.outdir+"/json", filename)
+            abspath="%s/json/%s" % (self.outdir, filename)
             patches=json.loads(open(abspath).read())
             self.patches=Patches([Patch(**patch)
                                   for patch in patches])
@@ -70,15 +70,29 @@ class PicobeatsCli(SVBankCli):
             return wrapped
         return decorator
 
+    """
+    - for (json) projects which have been re-instated from archives
+    - possibly archive functions would do the automatically
+    """
+         
     @parse_line()
-    def do_save_project(self):
-         svfilename="%s/sunvox/%s.sunvox" % (self.outdir,
-                                             self.filename)                
-         self.patches.render_sunvox(banks=self.banks,
-                                    nbeats=self.env["nbeats"],
-                                    bpm=self.env["bpm"],
-                                    filename=svfilename)
-    
+    def do_restore_projects(self):
+        stubs=[filename.split(".")[0]
+                 for filename in os.listdir(self.outdir+"/sunvox")]
+        for filename in sorted(os.listdir(self.outdir+"/json")):
+            stub=filename.split(".")[0]
+            if stub not in stubs:
+                print (stub)
+                abspath="%s/json/%s" % (self.outdir, filename)
+                patches=Patches([Patch(**patch)
+                                 for patch in json.loads(open(abspath).read())])
+                svfilename="%s/sunvox/%s.sunvox" % (self.outdir,
+                                                    stub)
+                patches.render_sunvox(banks=self.banks,
+                                      nbeats=self.env["nbeats"],
+                                      bpm=self.env["bpm"],
+                                      filename=svfilename)
+         
     @parse_line()
     @render_patches(prefix="random")
     def do_randomise_patches(self):

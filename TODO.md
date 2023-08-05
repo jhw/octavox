@@ -1,13 +1,22 @@
 ### short [01-refactor-archives]
 
-- samples are badly named (Kick not KK etc)
+- update archive
+- rename picobeats as slicebeats
+- s3 archive cli capabilities
 
 ### medium
 
-- rename picobeats as slicebeats
-- s3 archive cli capabilities
-- mutate to mutate root at different densities
-- arrange1 and arrange2 [notes]
+- replace sequencer_id, lfo_id functions
+
+- multiple mutate functions
+  - existing mutate
+  - mutate densities
+
+- multiple arrange functions
+  - pass series of roots and series of fills which are interspersed
+  - pass a root and a density number which bumped for the fill
+  - mutes?
+
 - slice and cutoff samplers [notes]
 - sample bans
 - chord support
@@ -100,6 +109,8 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- fix bads refs to `%s/%s % (outdir+"/json", etc)`
+- samples are badly named (Kick not KK etc)
 - need a save project action
 - replace sequencer key with id [mod]
 - samples is now a list with tags field [array values]

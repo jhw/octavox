@@ -127,7 +127,7 @@ class SVBaseCli(cmd.Cmd):
     def do_clean_projects(self):
         os.system("rm -rf %s" % self.outdir)
         self.init_subdirs()
-    
+
     def do_exit(self, _):
         return self.do_quit(None)
 

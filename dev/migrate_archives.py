@@ -8,8 +8,11 @@
 
 import json, os
 
-LfoIDs={"ec0": "Echo/wet",
-        "ec1": "Echo/feedback"}
+Ids={"kk": "KickSampler",
+     "sn": "SnareSampler",
+     "ht": "HatSampler",
+     "ec0": "Echo/wet",
+     "ec1": "Echo/feedback"}
 
 if __name__=="__main__":
     for filename in os.listdir("archive/picobeats"):
@@ -19,7 +22,7 @@ if __name__=="__main__":
                 if ("key" in seq and
                     "id" not in seq):
                     tag=seq.pop("key")
-                    seq["id"]="%sSampler" % tag.upper()
+                    seq["id"]=Ids[tag]
                 for slice in seq["slices"]:
                     samplekeys=[]
                     for tag, samplekey in slice["samples"].items():
@@ -30,7 +33,7 @@ if __name__=="__main__":
                 if ("key" in lfo and
                     "id" not in lfo):
                     tag=lfo.pop("key")
-                    lfo["id"]=LfoIDs[tag]
+                    lfo["id"]=Ids[tag]
             patch["density"]=0.75
             patch.pop("mutes")
         with open("tmp/picobeats/%s" % filename, 'w') as f:
