@@ -1,6 +1,9 @@
 ### short
 
-- density stored at patch level 
+- investigate samplekey mod
+  - don't like the way it is double stored at json level
+  - don't like the way sequencer overwrites it
+
 - refactor archives and test
 - arrange1 and arrange2 [notes]
 
@@ -102,6 +105,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- density stored at patch level 
 - volume and BPM variables
 - rename show patch as show samples
 - complete refactoring of show_patch

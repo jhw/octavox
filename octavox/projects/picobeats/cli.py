@@ -65,7 +65,6 @@ class PicobeatsCli(SVBankCli):
                                                     self.filename)                
                 self.patches.render_sunvox(banks=self.banks,
                                            nbeats=self.env["nbeats"],
-                                           density=self.env["density"],
                                            bpm=self.env["bpm"],
                                            filename=svfilename)
             return wrapped
@@ -79,7 +78,8 @@ class PicobeatsCli(SVBankCli):
         for i in range(npatches):
             patch=Patch.randomise(pool=self.pools[self.poolname],
                                   fixes=self.fixes,
-                                  temperature=self.env["temperature"])
+                                  temperature=self.env["temperature"],
+                                  density=self.env["density"])
             patches.append(patch)
         return patches
 
@@ -101,8 +101,7 @@ class PicobeatsCli(SVBankCli):
                          "type": "int"}])
     def do_show_samples(self, i):
         patch=self.patches[i % len(self.patches)]
-        rendered=patch.render(nbeats=self.env["nbeats"],
-                              density=self.env["density"])
+        rendered=patch.render(nbeats=self.env["nbeats"])
         trigs={K:{trig.i:trig for trig in V}
                for K, V in rendered.items()}
         for i in range(self.env["nbeats"]):

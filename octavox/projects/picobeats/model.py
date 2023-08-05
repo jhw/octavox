@@ -315,21 +315,25 @@ class Lfos(list):
 class Patch(dict):
 
     @classmethod
-    def randomise(self, pool, fixes, temperature):
+    def randomise(self, pool, fixes, temperature, density):
         return Patch(sequencers=Sequencers.randomise(pool=pool,
                                                      fixes=fixes,
                                                      temperature=temperature),
-                     lfos=Lfos.randomise())
+                     lfos=Lfos.randomise(),
+                     density=density)
         
     def __init__(self,
                  sequencers,
-                 lfos):
+                 lfos,
+                 density):
         dict.__init__(self, {"sequencers": Sequencers(sequencers),
-                             "lfos": Lfos(lfos)})
+                             "lfos": Lfos(lfos),
+                             "density": density})
         
     def clone(self):
         return Patch(sequencers=self["sequencers"].clone(),
-                     lfos=self["lfos"].clone())
+                     lfos=self["lfos"].clone(),
+                     density=self["density"])
 
     def mutate(self, limits):
         for seq in self["sequencers"]:
@@ -342,13 +346,12 @@ class Patch(dict):
         return self
     
     def render(self,
-               nbeats,
-               density):
+               nbeats):
         trigs=SVTrigs(nbeats=nbeats)
         for seq in self["sequencers"]:
             seq.render(nbeats=nbeats,
                        trigs=trigs,
-                       density=density)
+                       density=self["density"])
         for lfo in self["lfos"]:
             lfo.render(nbeats=nbeats,
                        trigs=trigs)
@@ -368,12 +371,10 @@ class Patches(list):
     def render_sunvox(self,
                       banks,
                       nbeats,
-                      density,
                       bpm,
                       filename,
                       config=Config):
-        project=SVProject().render(patches=[patch.render(nbeats=nbeats,
-                                                         density=density)
+        project=SVProject().render(patches=[patch.render(nbeats=nbeats)
                                             for patch in self],
                                    config=config,
                                    banks=banks,
