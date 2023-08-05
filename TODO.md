@@ -1,14 +1,16 @@
 ### short
 
-- add multiple tag support for samplekey
+- loading and cloning fails because samplekey isn't converted from dict to SampleKey class on loading project
+
 - mutate to mutate root at different densities
+
 - convert samplekey to list
 - refactor archives and test
-- arrange1 and arrange2 [notes]
 
 ### medium
 
 - s3 archive cli capabilities
+- arrange1 and arrange2 [notes]
 - slice cutoff sampler [notes]
 - sample bans
 - chord support
@@ -104,6 +106,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- add multiple tag support for samplekey
 - mutes 
 - convert samplekey mod to tag
 - density stored at patch level 

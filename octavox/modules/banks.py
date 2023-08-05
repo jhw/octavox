@@ -38,20 +38,18 @@ ch:
   - prc
 """)
 
-"""
-- a sample key must include a key showing which sampler it belongs to
-"""
-
 class SVSampleKey(dict):
 
     def __init__(self, item={}):
         dict.__init__(self, item)
 
     def clone(self):
-        return SVSampleKey(self)
+        return SVSampleKey({"tags": list(self["tags"]),
+                            "bank": self["bank"],
+                            "file": self["file"]})
         
     def __str__(self):
-        return "%s:%s/%s" % (self["tag"],
+        return "%s:%s/%s" % (",".join(self["tags"]),
                              self["bank"],
                              self["file"])
 
@@ -151,7 +149,7 @@ class SVBank:
     
     def spawn_free(self, soundkeys):
         wavfiles=self.wavfiles
-        return SVPool({soundkey:[SVSampleKey({"tag": soundkey, 
+        return SVPool({soundkey:[SVSampleKey({"tags": [soundkey],
                                               "bank": self.name,
                                               "file": wavfile})
                              for wavfile in wavfiles]
@@ -166,7 +164,7 @@ class SVBank:
                 pool.setdefault(soundkey, [])
                 for frag in fragments[soundkey]:
                     if re.search(frag, wavfile, re.I):
-                        pool[soundkey].append(SVSampleKey({"tag": soundkey,
+                        pool[soundkey].append(SVSampleKey({"tags": [soundkey],
                                                            "bank": self.name,
                                                            "file": wavfile}))
         return pool
