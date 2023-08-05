@@ -1,21 +1,21 @@
-### 02-tracks-to-trigs
+### short
 
-- pass bpm and volume from cli
-
+- rename show patch as show samples
+- refactored refs to patch if is not a patch class 
+- volume and BPM variables
+- density stored at patch level 
 - refactor archives and test
+- arrange1 and arrange2 [notes]
 
-### picobeats
+### medium
 
-- density to be saved as part of state
-
-- arrange1() action with density lfo
-- arrange2() actions with user- defined fills
-
+- slice cutoff sampler 
 - sample bans
 - chord support
 
 ### thoughts
 
+- sample bans
 - config classes?
   - feels like overkill; see NOTES.md
 - treat svdrum as a sample, so can be fixed?

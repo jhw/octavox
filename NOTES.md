@@ -1,3 +1,20 @@
+### cutoff sampler 05/08/23
+
+- existing sampler is bank sampler
+- but you could have a wav cutoff sampler also
+- takes a bank class, a filename a number of samples
+- used pyaudio to do different cutuffs and insert into diifferent slots
+- all this should be done in memory and without creation of more zipfiles, in memory or not 
+- test script to create a sample project
+- remember that for randomise purposea you want a single sampler
+- so you have to pass a list of root samples and then do a small number of cutoffs for each 
+- should make it much easier to do picobass
+
+### arrange 05/08/23
+
+- arrange1() -> take a list of root and a list of fills, and mix them
+- arrange2() -> take a single root and apply differential densities to fills like aphex twin
+
 ### config classes 04/08/23
 
 - main point of doing this would be to add config validation
