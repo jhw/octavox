@@ -1,9 +1,9 @@
 ### short
 
-- investigate samplekey mod
-  - don't like the way it is double stored at json level
-  - don't like the way sequencer overwrites it
-
+- mutes 
+- convert samplekey mod to tag
+- convert samplekey to list
+- add multiple tag support for samplekey
 - refactor archives and test
 - arrange1 and arrange2 [notes]
 
