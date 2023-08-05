@@ -1,5 +1,7 @@
 ### short [01-refactor-archives]
 
+- *** fix_sample is failing ***
+
 - replace sequencer key with id [mod]
 - samples is now a list with tags field [array values]
 - mutes are no longer part of structure
