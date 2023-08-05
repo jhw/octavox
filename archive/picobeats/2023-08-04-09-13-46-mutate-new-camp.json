@@ -2,4705 +2,5857 @@
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 19069795,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 91927887,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 20748633,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 18683782,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 21921041,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 76766881,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 23628604,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 69889228,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 9744122,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 15494776
+        "seed": 15494776,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 99881882
+        "seed": 99881882,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 71941831,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 33250447,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 29701602,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 38148625,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 95120057,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 35648672,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 49867383,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 25599886,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 71348668,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 37031366
+        "seed": 37031366,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 77027919
+        "seed": 77027919,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 79774843,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 54219689,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 40166497,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 13561764,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 59896991,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 33881806,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 71508000,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 31822802,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 44515650,
             "style": "offbeats"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 76067057
+        "seed": 76067057,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 20810047
+        "seed": 20810047,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 1846863,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 32138901,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 85420611,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 12272035,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 54706182,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 37539319,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 15226828,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 17302848,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 59444319,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 86294632
+        "seed": 86294632,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 5506283
+        "seed": 5506283,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 10907439,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 88613120,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 399072,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 41247960,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 2272029,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 1605487,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 95184479,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 13922808,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 54138198,
             "style": "offbeats"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 39703519
+        "seed": 39703519,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 22666985
+        "seed": 22666985,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 14400828,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 23535539,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 27080116,
             "style": "triplets"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 86605964,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 95996044,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 93717925,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 77004258,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 47583979,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 42353391,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 33600802
+        "seed": 33600802,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 59873643
+        "seed": 59873643,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 82721792,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 61733278,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 79842983,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 16323428,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 43188445,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 72268946,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 56266881,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 98837649,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 10737462,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 70060123
+        "seed": 70060123,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 96279080
+        "seed": 96279080,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 61369476,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 65438387,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 70524692,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 14664328,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 55616430,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 62085144,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 74620906,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 47711672,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 2943851,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 56120773
+        "seed": 56120773,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 37777678
+        "seed": 37777678,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 98314137,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 62729615,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 43924044,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 16946597,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 17236815,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 92086790,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 45763254,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 37762659,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 41976636,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 77803454
+        "seed": 77803454,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 94963778
+        "seed": 94963778,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 35401014,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 93944400,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 75687958,
             "style": "triplets"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 30293431,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 81955629,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 69250781,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 17733515,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 26650297,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 15603269,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 61510146
+        "seed": 61510146,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 36037896
+        "seed": 36037896,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 67373040,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 5493953,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 58256841,
             "style": "electro"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 43239499,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 72161846,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 19572845,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 43484198,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 35016153,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 67398779,
             "style": "offbeats"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 86316345
+        "seed": 86316345,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 15247475
+        "seed": 15247475,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 59405200,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 63089421,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 49666920,
             "style": "electro"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 32789799,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 72449366,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 68404760,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 37784506,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 13432871,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 52687934,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 22773339
+        "seed": 22773339,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 42231020
+        "seed": 42231020,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 81314895,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 45281521,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 22639370,
             "style": "triplets"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 53277275,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 38911367,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 392669,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 91936354,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 57972342,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 67808446,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 87784708
+        "seed": 87784708,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 33863269
+        "seed": 33863269,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 7884002,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 4568140,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 39464893,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 37008206,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 39754301,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 88214569,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 47584081,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 11736612,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 59657357,
             "style": "offbeats"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 21624156
+        "seed": 21624156,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 53286760
+        "seed": 53286760,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 84124112,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 93129360,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 45085657,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 37993624,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 80800244,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 16893777,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 45983230,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 83543214,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 77065531,
             "style": "offbeats"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 36335856
+        "seed": 36335856,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 52395158
+        "seed": 52395158,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 37322139,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 82354502,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 17731640,
             "style": "electro"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 3363267,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 22807960,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 75911373,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 68374222,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 71172563,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 92786412,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 57055108
+        "seed": 57055108,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 88371853
+        "seed": 88371853,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 37420295,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 40496701,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 52988649,
             "style": "triplets"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 44642915,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 17061998,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 16148735,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 4352730,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 26319825,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 61599058,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 78964241
+        "seed": 78964241,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 71827523
+        "seed": 71827523,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 72259075,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 18038318,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 74159080,
             "style": "electro"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 49674980,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 17308744,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 77825128,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 48114315,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 62760608,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 50024229,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 15436916
+        "seed": 15436916,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 16913090
+        "seed": 16913090,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 44107796,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 25099955,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 92189884,
             "style": "triplets"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 82400979,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 83335635,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 14137060,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 83906212,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 62656967,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 6280933,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 41058188
+        "seed": 41058188,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 27528412
+        "seed": 27528412,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 73801311,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 30468370,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 9188221,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 19997606,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 73178890,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 343598,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 89731070,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 76522806,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 57575084,
             "style": "offbeats"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 84071767
+        "seed": 84071767,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 62447707
+        "seed": 62447707,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 46645382,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 22197710,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 4470432,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 47941,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 66210597,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 59736246,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 66429094,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 29766922,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 30785631,
             "style": "offbeats"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 97391526
+        "seed": 97391526,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 69136843
+        "seed": 69136843,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 19234295,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 79904279,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 75426469,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 12727632,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 8898882,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 9199025,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 77358832,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 77129997,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 69404762,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 17390209
+        "seed": 17390209,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 6792040
+        "seed": 6792040,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 3343342,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 85820618,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 49021387,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 80415664,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 3384158,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 50306205,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 46935087,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 28918127,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 97431496,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 403075
+        "seed": 403075,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 51461960
+        "seed": 51461960,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 61562864,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 66547557,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 72474447,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 88014255,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 26471820,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 5392240,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 85524868,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 80854317,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 37048207,
             "style": "offbeats"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 22984032
+        "seed": 22984032,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 52555522
+        "seed": 52555522,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 98710091,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 35577614,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 20922219,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 55679821,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 13825815,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 33010160,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 42547978,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 56274059,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 33806790,
             "style": "offbeats"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 74139121
+        "seed": 74139121,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 21151429
+        "seed": 21151429,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 55386716,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 28751888,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 956969,
             "style": "electro"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 68660906,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 42602732,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 61498418,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 95256355,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 60772953,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 74705442,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 44266052
+        "seed": 44266052,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 44352899
+        "seed": 44352899,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 77327994,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 21216673,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 38467498,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 69141828,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 82354313,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 26687243,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 66425797,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 49124161,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 4578619,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 73090791
+        "seed": 73090791,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 13554005
+        "seed": 13554005,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 86452517,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 71097496,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 49546318,
             "style": "triplets"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 84151756,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 6104488,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 59826918,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 20651927,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 41079501,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 53794592,
             "style": "offbeats"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 2007634
+        "seed": 2007634,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 13173686
+        "seed": 13173686,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 39118801,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 30150829,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 53260840,
             "style": "electro"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 73555374,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 87763927,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 22514722,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 66270001,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 84235416,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 27250088,
             "style": "offbeats"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 191821
+        "seed": 191821,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 20181696
+        "seed": 20181696,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 68038379,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 74958749,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 23389636,
             "style": "electro"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 68156036,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 81053894,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 80345007,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 61576013,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 68869779,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 84596872,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 25820277
+        "seed": 25820277,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 94712334
+        "seed": 94712334,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 27507825,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 24728239,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 85985456,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 47856436,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 58708307,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 80944306,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 59083690,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 58798180,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 43112856,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 32085171
+        "seed": 32085171,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 34799128
+        "seed": 34799128,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "complex-waveforms",
-                "file": "11 Kick.wav"
+                "file": "11 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 29207345,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "clipping",
-                "file": "46 WakeUpBass.wav"
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 46807692,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "pitch-black",
-                "file": "04 doom kick.wav"
+                "file": "04 doom kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 39958320,
             "style": "triplets"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "29 RIM.wav"
+                "file": "29 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 41992709,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "ib-magnetic-saturation",
-                "file": "15 SD.wav"
+                "file": "15 SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 8238280,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "SnareSampler",
                 "bank": "otto-von-schirach",
-                "file": "31 Miami Bass clap.wav"
+                "file": "31 Miami Bass clap.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 52758646,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "otto-von-schirach",
-                "file": "56 SYNCUSSION BASS.wav"
+                "file": "56 SYNCUSSION BASS.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "38 Noise Sub Percussion.wav"
+                "file": "38 Noise Sub Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 93924125,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "nero-bellum",
-                "file": "18 Stacked Noise Snare Percussion.wav"
+                "file": "18 Stacked Noise Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 1531335,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "37 Luger P08 Percussion.wav"
+                "file": "37 Luger P08 Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "ch",
                 "bank": "nero-bellum",
-                "file": "05 Prophet Kick Long Percussion.wav"
+                "file": "05 Prophet Kick Long Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 84435553,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 34810650
+        "seed": 34810650,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 53219590
+        "seed": 53219590,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   }
 ]

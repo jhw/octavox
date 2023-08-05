@@ -1,6 +1,5 @@
 ### short [01-refactor-archives]
 
-- update archive
 - rename picobeats as slicebeats
 - s3 archive cli capabilities
 
@@ -109,6 +108,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- update archive
 - fix bads refs to `%s/%s % (outdir+"/json", etc)`
 - samples are badly named (Kick not KK etc)
 - need a save project action

@@ -6,35 +6,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 94236911,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 12777100,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 48758977,
             "style": "fourfloor"
           }
@@ -45,35 +54,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 24790479,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 62664318,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 50202691,
             "style": "skip"
           }
@@ -84,50 +102,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 50257825,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 11371204,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 19755234,
             "style": "offbeats"
           }
@@ -144,7 +180,7 @@
         "seed": 42817340
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -153,35 +189,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 61244282,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 69149868,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 94991476,
             "style": "fourfloor"
           }
@@ -192,35 +237,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 80868486,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 24737401,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 86573510,
             "style": "skip"
           }
@@ -231,50 +285,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 7936011,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 95256120,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 33270131,
             "style": "offbeats"
           }
@@ -291,7 +363,7 @@
         "seed": 24273520
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -300,35 +372,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 65986179,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 57888122,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 84399255,
             "style": "fourfloor"
           }
@@ -339,35 +420,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 96448740,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 89532423,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 21194281,
             "style": "backbeat"
           }
@@ -378,50 +468,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 39700300,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 75617303,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 66305056,
             "style": "offbeats"
           }
@@ -438,7 +546,7 @@
         "seed": 76690459
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -447,35 +555,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 1298694,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 80690805,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 43266502,
             "style": "fourfloor"
           }
@@ -486,35 +603,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 54965590,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 18058401,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 35627774,
             "style": "skip"
           }
@@ -525,50 +651,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 76893875,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 75800233,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 93816121,
             "style": "offbeats"
           }
@@ -585,7 +729,7 @@
         "seed": 46629191
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -594,35 +738,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 58096412,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 95777451,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 15327588,
             "style": "fourfloor"
           }
@@ -633,35 +786,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 89358598,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 38740727,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 66016266,
             "style": "skip"
           }
@@ -672,50 +834,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 48366518,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 36327497,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 54920258,
             "style": "offbeats"
           }
@@ -732,7 +912,7 @@
         "seed": 90885138
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -741,35 +921,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 36405604,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 91908897,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 89208437,
             "style": "fourfloor"
           }
@@ -780,35 +969,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 26073466,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 86340563,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 35017178,
             "style": "skip"
           }
@@ -819,50 +1017,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 76504147,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 92011199,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 82168507,
             "style": "closed"
           }
@@ -879,7 +1095,7 @@
         "seed": 91130756
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -888,35 +1104,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 71445725,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 48759640,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 61708386,
             "style": "fourfloor"
           }
@@ -927,35 +1152,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 37168283,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 90442886,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 4124886,
             "style": "backbeat"
           }
@@ -966,50 +1200,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 53476116,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 25765430,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 26994053,
             "style": "offbeats"
           }
@@ -1026,7 +1278,7 @@
         "seed": 87188403
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -1035,35 +1287,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 20695055,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 66366165,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 8982961,
             "style": "electro"
           }
@@ -1074,35 +1335,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 33480285,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 19508161,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 87560425,
             "style": "skip"
           }
@@ -1113,50 +1383,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 73823882,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 11191419,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 4081878,
             "style": "closed"
           }
@@ -1173,7 +1461,7 @@
         "seed": 81008636
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -1182,35 +1470,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 86595894,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 6566389,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 34072593,
             "style": "electro"
           }
@@ -1221,35 +1518,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 74900953,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 26294974,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 26377118,
             "style": "skip"
           }
@@ -1260,50 +1566,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 18373205,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 67710403,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 24467909,
             "style": "closed"
           }
@@ -1320,7 +1644,7 @@
         "seed": 8086392
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -1329,35 +1653,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 9728091,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 77806717,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 75808958,
             "style": "fourfloor"
           }
@@ -1368,35 +1701,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 53559712,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 61897530,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 47276868,
             "style": "backbeat"
           }
@@ -1407,50 +1749,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 45117892,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 74306814,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 6331803,
             "style": "closed"
           }
@@ -1467,7 +1827,7 @@
         "seed": 65792042
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -1476,35 +1836,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 73767481,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 65682423,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 10461490,
             "style": "triplets"
           }
@@ -1515,35 +1884,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 58925676,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 60849202,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 83864628,
             "style": "backbeat"
           }
@@ -1554,50 +1932,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 97976088,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 77856718,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 50121430,
             "style": "offbeats"
           }
@@ -1614,7 +2010,7 @@
         "seed": 27253255
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -1623,35 +2019,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 71192212,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 99871077,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 78135924,
             "style": "fourfloor"
           }
@@ -1662,35 +2067,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 26389823,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 37154368,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 83103491,
             "style": "skip"
           }
@@ -1701,50 +2115,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 86168755,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 22008455,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 47984538,
             "style": "offbeats"
           }
@@ -1761,7 +2193,7 @@
         "seed": 42331683
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -1770,35 +2202,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 86761186,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 57443954,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 97554920,
             "style": "fourfloor"
           }
@@ -1809,35 +2250,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 36834164,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 20132619,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 17351161,
             "style": "skip"
           }
@@ -1848,50 +2298,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 5196945,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 37082845,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 13931787,
             "style": "offbeats"
           }
@@ -1908,7 +2376,7 @@
         "seed": 55805064
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -1917,35 +2385,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 61049369,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 5094183,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 45544109,
             "style": "electro"
           }
@@ -1956,35 +2433,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 30316306,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 7151000,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 80997211,
             "style": "skip"
           }
@@ -1995,50 +2481,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 90778358,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 39714968,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 99266561,
             "style": "closed"
           }
@@ -2055,7 +2559,7 @@
         "seed": 56013046
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -2064,35 +2568,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 74330598,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 10709858,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 81916008,
             "style": "triplets"
           }
@@ -2103,35 +2616,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 30122996,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 70663449,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 70944501,
             "style": "backbeat"
           }
@@ -2142,50 +2664,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 74490163,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 8206738,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 21458538,
             "style": "closed"
           }
@@ -2202,7 +2742,7 @@
         "seed": 69746358
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -2211,35 +2751,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 75769024,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 51476955,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 7428902,
             "style": "fourfloor"
           }
@@ -2250,35 +2799,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 92360195,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 65656233,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 7161310,
             "style": "skip"
           }
@@ -2289,50 +2847,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 62513579,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 12645000,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 59401327,
             "style": "closed"
           }
@@ -2349,7 +2925,7 @@
         "seed": 29923480
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -2358,35 +2934,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 23285863,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 48498528,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 27612847,
             "style": "fourfloor"
           }
@@ -2397,35 +2982,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 42154253,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 11463493,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 21055833,
             "style": "skip"
           }
@@ -2436,50 +3030,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 32167464,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 9056650,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 69252381,
             "style": "offbeats"
           }
@@ -2496,7 +3108,7 @@
         "seed": 53083056
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -2505,35 +3117,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 51857768,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 43885134,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 36658531,
             "style": "fourfloor"
           }
@@ -2544,35 +3165,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 75995189,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 9361664,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 18045600,
             "style": "backbeat"
           }
@@ -2583,50 +3213,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 60547332,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 90220203,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 34747517,
             "style": "offbeats"
           }
@@ -2643,7 +3291,7 @@
         "seed": 31175270
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -2652,35 +3300,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 83284159,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 53076245,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 19671866,
             "style": "electro"
           }
@@ -2691,35 +3348,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 64837518,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 54584684,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 71346674,
             "style": "skip"
           }
@@ -2730,50 +3396,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 83442440,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 25879734,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 76400574,
             "style": "offbeats"
           }
@@ -2790,7 +3474,7 @@
         "seed": 16620191
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -2799,35 +3483,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 16321900,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 12749419,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 36923030,
             "style": "fourfloor"
           }
@@ -2838,35 +3531,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 91502195,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 48897648,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 9195052,
             "style": "backbeat"
           }
@@ -2877,50 +3579,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 10223854,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 78329220,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 98156280,
             "style": "offbeats"
           }
@@ -2937,7 +3657,7 @@
         "seed": 68317951
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -2946,35 +3666,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 45913854,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 22572448,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 49174491,
             "style": "fourfloor"
           }
@@ -2985,35 +3714,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 67166143,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 63502286,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 95879831,
             "style": "skip"
           }
@@ -3024,50 +3762,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 27735703,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 37529207,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 35070648,
             "style": "offbeats"
           }
@@ -3084,7 +3840,7 @@
         "seed": 2763732
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -3093,35 +3849,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 61280630,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 36804467,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 65613350,
             "style": "fourfloor"
           }
@@ -3132,35 +3897,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 40053708,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 36861406,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 78317187,
             "style": "backbeat"
           }
@@ -3171,50 +3945,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 45083013,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 31571250,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 64418710,
             "style": "offbeats"
           }
@@ -3231,7 +4023,7 @@
         "seed": 2650368
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -3240,35 +4032,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 91338575,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 52833733,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 48322149,
             "style": "fourfloor"
           }
@@ -3279,35 +4080,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 83585440,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 57227734,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 22614488,
             "style": "backbeat"
           }
@@ -3318,50 +4128,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 28275288,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 2572562,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 88697712,
             "style": "closed"
           }
@@ -3378,7 +4206,7 @@
         "seed": 67957169
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -3387,35 +4215,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 20077235,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 5265758,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 78055913,
             "style": "fourfloor"
           }
@@ -3426,35 +4263,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 54048984,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 85624423,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 35317210,
             "style": "backbeat"
           }
@@ -3465,50 +4311,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 15607827,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 36612921,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 37848496,
             "style": "offbeats"
           }
@@ -3525,7 +4389,7 @@
         "seed": 90954265
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -3534,35 +4398,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 32632835,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 2976798,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 9540082,
             "style": "electro"
           }
@@ -3573,35 +4446,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 49238797,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 27400025,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 96957082,
             "style": "backbeat"
           }
@@ -3612,50 +4494,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 72080244,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 89341925,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 1362089,
             "style": "offbeats"
           }
@@ -3672,7 +4572,7 @@
         "seed": 35172533
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -3681,35 +4581,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 41154887,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 65848702,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 54018922,
             "style": "electro"
           }
@@ -3720,35 +4629,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 26207557,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 33193029,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 80415913,
             "style": "skip"
           }
@@ -3759,50 +4677,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 99932479,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 99211071,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 44204656,
             "style": "offbeats"
           }
@@ -3819,7 +4755,7 @@
         "seed": 86317048
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -3828,35 +4764,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 78476540,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 56035106,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 6513315,
             "style": "triplets"
           }
@@ -3867,35 +4812,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 87908946,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 63688145,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 62702068,
             "style": "skip"
           }
@@ -3906,50 +4860,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 3240765,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 64766118,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 78483855,
             "style": "closed"
           }
@@ -3966,7 +4938,7 @@
         "seed": 38011042
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -3975,35 +4947,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 45001827,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 28136867,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 90080715,
             "style": "fourfloor"
           }
@@ -4014,35 +4995,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 60453081,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 89902152,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 99701876,
             "style": "skip"
           }
@@ -4053,50 +5043,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 28421689,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 31192020,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 80689524,
             "style": "offbeats"
           }
@@ -4113,7 +5121,7 @@
         "seed": 87746803
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -4122,35 +5130,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 43474262,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 29675230,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 93377346,
             "style": "electro"
           }
@@ -4161,35 +5178,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 13871376,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 57851688,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 38137839,
             "style": "backbeat"
           }
@@ -4200,50 +5226,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 46678585,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 56996211,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 76026904,
             "style": "offbeats"
           }
@@ -4260,7 +5304,7 @@
         "seed": 57607246
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -4269,35 +5313,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 53331714,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 24585152,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 80736571,
             "style": "fourfloor"
           }
@@ -4308,35 +5361,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 84229318,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 95879943,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 41828143,
             "style": "backbeat"
           }
@@ -4347,50 +5409,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 77623154,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 48536237,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 31541656,
             "style": "offbeats"
           }
@@ -4407,7 +5487,7 @@
         "seed": 3938980
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -4416,35 +5496,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 67989262,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 98794059,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 30689249,
             "style": "fourfloor"
           }
@@ -4455,35 +5544,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 7085450,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 77820079,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 54078296,
             "style": "skip"
           }
@@ -4494,50 +5592,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 82721179,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 68849875,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 14267615,
             "style": "offbeats"
           }
@@ -4554,7 +5670,7 @@
         "seed": 47843488
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
@@ -4563,35 +5679,44 @@
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "default",
-                "file": "02 BD.wav"
+                "file": "02 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 44288961,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "ib-magnetic-saturation",
-                "file": "07 BD.wav"
+                "file": "07 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 18331897,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "mod": "KickSampler",
                 "bank": "legowelt",
-                "file": "22 ERIKABD3.wav"
+                "file": "22 ERIKABD3.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 89002899,
             "style": "fourfloor"
           }
@@ -4602,35 +5727,44 @@
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "otto-von-schirach",
-                "file": "45 Static Snare.wav"
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 2515406,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "05 ERIKASD2.wav"
+                "file": "05 ERIKASD2.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 73817499,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "mod": "sn",
                 "bank": "legowelt",
-                "file": "26 ERIKAKrimiSynth.wav"
+                "file": "26 ERIKAKrimiSynth.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 47128704,
             "style": "skip"
           }
@@ -4641,50 +5775,68 @@
         "pattern": "0|1|0|2",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "08 Basimilus Sub Drop Percussion.wav"
+                "file": "08 Basimilus Sub Drop Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 65083257,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "oh",
                 "bank": "nero-bellum",
-                "file": "04 Uncle Toms Blackened Kick Percussion.wav"
+                "file": "04 Uncle Toms Blackened Kick Percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "complex-waveforms",
-                "file": "58 Perc.wav"
+                "file": "58 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 98428038,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "mod": "HatSampler",
                 "bank": "legowelt",
-                "file": "62 ERIKABDhat.wav"
+                "file": "62 ERIKABDhat.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "mod": "HatSampler",
                 "bank": "baseck",
-                "file": "38 syncussion.wav"
+                "file": "38 syncussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 88077666,
             "style": "offbeats"
           }
@@ -4701,6 +5853,6 @@
         "seed": 80612612
       }
     ],
-    "mutes": []
+    "density": 0.75
   }
 ]

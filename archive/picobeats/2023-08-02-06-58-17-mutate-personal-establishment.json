@@ -2,4321 +2,5473 @@
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 52041379,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 60578593,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 75252363,
             "style": "triplets"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 86451546,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 86147471,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 19155803,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 40796646,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 66256166,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 7696526,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 19610578
+        "seed": 19610578,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 33222171
+        "seed": 33222171,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 42780458,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 41885960,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 69830938,
             "style": "triplets"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 6822918,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 52741101,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 15680551,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 96958339,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 83033448,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 46702092,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 19887041
+        "seed": 19887041,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 40224815
+        "seed": 40224815,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 69216445,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 51239469,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 70521424,
             "style": "triplets"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 68952676,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 6842329,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 42283814,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 76146045,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 66277670,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 20839652,
             "style": "offbeats"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 92203767
+        "seed": 92203767,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 20574360
+        "seed": 20574360,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 53677314,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 34413434,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 17394242,
             "style": "triplets"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 29711684,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 54993338,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 76347061,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 48098004,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 82695851,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 32939707,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 9902215
+        "seed": 9902215,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 24816515
+        "seed": 24816515,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 45663189,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 95553662,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 63723964,
             "style": "triplets"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 21940902,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 93656963,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 91329290,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 43385825,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 7316566,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 55947113,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 80847372
+        "seed": 80847372,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 93268065
+        "seed": 93268065,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 91011769,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 486974,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 95170922,
             "style": "electro"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 90459890,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 24090225,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 96166825,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 61653340,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 4927302,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 33738569,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 35304192
+        "seed": 35304192,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 38888521
+        "seed": 38888521,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 70468323,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 60257563,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 87959975,
             "style": "triplets"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 53285166,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 1087007,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 89611351,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 52778935,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 52645411,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 22840371,
             "style": "offbeats"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 93347901
+        "seed": 93347901,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 93406744
+        "seed": 93406744,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 1719773,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 62497551,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 8444796,
             "style": "triplets"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 57100398,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 33943288,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 15897313,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 17015507,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 7633108,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 29391704,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 90652025
+        "seed": 90652025,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 91472759
+        "seed": 91472759,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 14597783,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 67577246,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 36067432,
             "style": "electro"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 1326404,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 89144283,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 76782215,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 32526447,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 69767584,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 15765988,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 70981329
+        "seed": 70981329,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 99337247
+        "seed": 99337247,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 66935813,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 39745619,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 99023116,
             "style": "triplets"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 5610035,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 37057688,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 20632143,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 40519847,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 57711872,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 83807172,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 76873376
+        "seed": 76873376,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 63073875
+        "seed": 63073875,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 20125858,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 61952982,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 68902957,
             "style": "electro"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 33413781,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 99360061,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 956109,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 59841878,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 34495387,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 48720091,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 23369633
+        "seed": 23369633,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 51355946
+        "seed": 51355946,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 27394988,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 3491875,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 27882311,
             "style": "electro"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 1762951,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 86479056,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 67005428,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 2161660,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 20374494,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 25275833,
             "style": "offbeats"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 20087135
+        "seed": 20087135,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 68201217
+        "seed": 68201217,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 61108005,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 75081353,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 45552727,
             "style": "triplets"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 87209205,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 49983744,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 64846496,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 21942435,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 12171083,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 87474018,
             "style": "offbeats"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 67333359
+        "seed": 67333359,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 72205998
+        "seed": 72205998,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 69688337,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 60001922,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 32577081,
             "style": "electro"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 93570434,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 99633308,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 72439045,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 82539967,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 93064413,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 8054115,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 52467511
+        "seed": 52467511,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 3092732
+        "seed": 3092732,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 67323708,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 77644325,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 25494477,
             "style": "triplets"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 97599421,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 61196526,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 24369292,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 30147537,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 94706157,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 71476322,
             "style": "offbeats"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 84307311
+        "seed": 84307311,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 3951557
+        "seed": 3951557,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 89410874,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 37702040,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 57424092,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 66733149,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 28609178,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 75175569,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 36064715,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 82341541,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 36402516,
             "style": "offbeats"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 16470026
+        "seed": 16470026,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 35036461
+        "seed": 35036461,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 97572241,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 83428985,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 68691991,
             "style": "triplets"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 34738478,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 80576608,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 77309695,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 4335333,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 12242325,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 41600701,
             "style": "offbeats"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 77123563
+        "seed": 77123563,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 70470779
+        "seed": 70470779,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 81496306,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 81457078,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 67024434,
             "style": "electro"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 3762507,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 63744387,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 28408722,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 36448476,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 21020997,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 93086805,
             "style": "offbeats"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 38256464
+        "seed": 38256464,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 90810846
+        "seed": 90810846,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 58248006,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 73922711,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 82300561,
             "style": "electro"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 48081244,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 60932195,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 7253725,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 14106592,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 46361931,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 5796248,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 79090980
+        "seed": 79090980,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 62030767
+        "seed": 62030767,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 91151325,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 32360914,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 18462607,
             "style": "electro"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 91367839,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 10815802,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 53934997,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 5457246,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 83911779,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 17621946,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 80074308
+        "seed": 80074308,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 83122161
+        "seed": 83122161,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 76017428,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 5891116,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 21342706,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 95078461,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 85790325,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 44499406,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 8766949,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 17840824,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 32531218,
             "style": "offbeats"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 68319089
+        "seed": 68319089,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 25630820
+        "seed": 25630820,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 9710359,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 22601067,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 15933249,
             "style": "triplets"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 88971157,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 1312627,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 2785693,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 41463005,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 28350130,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 69512910,
             "style": "offbeats"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 41987912
+        "seed": 41987912,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 30145763
+        "seed": 30145763,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 27453660,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 25264717,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 46927555,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 84361466,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 37366774,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 74338219,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 503052,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 33301658,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 96700975,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 3065677
+        "seed": 3065677,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 8946937
+        "seed": 8946937,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 29634666,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 78768289,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 49141762,
             "style": "triplets"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 43131,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 41162798,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 9425570,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 2620591,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 77895169,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 58199204,
             "style": "offbeats"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 46290555
+        "seed": 46290555,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 53280732
+        "seed": 53280732,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 47558905,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 41924621,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 50945113,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 97245870,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 71646380,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 37707758,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 80006474,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 46871701,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 84184103,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 88146406
+        "seed": 88146406,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 49148899
+        "seed": 49148899,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 71112798,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 24397108,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 4169198,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 17250734,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 84988886,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 56819970,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 2583448,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 22111887,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 69225758,
             "style": "offbeats"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 77199083
+        "seed": 77199083,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 82693878
+        "seed": 82693878,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 32759317,
             "style": "triplets"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 77448927,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 97628008,
             "style": "triplets"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 38053810,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 95599547,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 85427952,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 97592807,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 48804718,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 21781989,
             "style": "offbeats"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 38344347
+        "seed": 38344347,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 71984864
+        "seed": 71984864,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 553130,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 14231170,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 68697029,
             "style": "electro"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 95652569,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 68779646,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 95255612,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 88023832,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 52853210,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 41964692,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 83378784
+        "seed": 83378784,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 40289570
+        "seed": 40289570,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 49305196,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 68916844,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 44275708,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 83608351,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 35275369,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 11736252,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 39565501,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 23759294,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 33229399,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 39773635
+        "seed": 39773635,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 46983834
+        "seed": 46983834,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 31110116,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 32238108,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 7931891,
             "style": "electro"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 78326676,
             "style": "skip"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 77324989,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 96583475,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 88247476,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 58891150,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 71031884,
             "style": "offbeats"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 76474445
+        "seed": 76474445,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 14974417
+        "seed": 14974417,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 6437462,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 85221091,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 54912437,
             "style": "electro"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 4008138,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 55733569,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 83972692,
             "style": "backbeat"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 69251989,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 93513424,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 62788022,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 21649109
+        "seed": 21649109,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 59757325
+        "seed": 59757325,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   },
   {
     "sequencers": [
       {
-        "key": "kk",
         "pattern": "0|1|0|1",
         "slices": [
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "00 Kick.wav"
+                "file": "00 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 96083783,
             "style": "fourfloor"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "dj-raitis-vinyl-cuts",
-                "file": "03 BD.wav"
+                "file": "03 BD.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 743787,
             "style": "electro"
           },
           {
-            "samples": {
-              "kk": {
+            "samples": [
+              {
                 "bank": "complex-waveforms",
-                "file": "01 Kick.wav"
+                "file": "01 Kick.wav",
+                "tags": [
+                  "kk"
+                ]
               }
-            },
+            ],
             "seed": 12927799,
             "style": "triplets"
           }
-        ]
+        ],
+        "id": "KickSampler"
       },
       {
-        "key": "sn",
         "pattern": "3x0|1",
         "slices": [
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "ib-magnetic-saturation",
-                "file": "30 RIM.wav"
+                "file": "30 RIM.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 1625130,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "nero-bellum",
-                "file": "54 \u00c6thers Tide Bass.wav"
+                "file": "54 \u00c6thers Tide Bass.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 91635836,
             "style": "backbeat"
           },
           {
-            "samples": {
-              "sn": {
+            "samples": [
+              {
                 "bank": "default",
-                "file": "13 IB SD.wav"
+                "file": "13 IB SD.wav",
+                "tags": [
+                  "sn"
+                ]
               }
-            },
+            ],
             "seed": 88899104,
             "style": "skip"
           }
-        ]
+        ],
+        "id": "SnareSampler"
       },
       {
-        "key": "ht",
         "pattern": "0|0|1|0",
         "slices": [
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "50 syncussion.wav"
+                "file": "50 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "35 Defleshing Automata Percussion.wav"
+                "file": "35 Defleshing Automata Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 79317034,
             "style": "offbeats"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "pitch-black",
-                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+                "file": "19 Verbos complex Resonating tom hit percussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "pitch-black",
-                "file": "14 Buchla bongo percussion.wav"
+                "file": "14 Buchla bongo percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 78318893,
             "style": "closed"
           },
           {
-            "samples": {
-              "oh": {
+            "samples": [
+              {
                 "bank": "otto-von-schirach",
-                "file": "54 syncussion.wav"
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
               },
-              "ch": {
+              {
                 "bank": "nero-bellum",
-                "file": "21 Pentode Snare Percussion.wav"
+                "file": "21 Pentode Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
               }
-            },
+            ],
             "seed": 88181664,
             "style": "closed"
           }
-        ]
+        ],
+        "id": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "key": "ec0",
-        "seed": 30597907
+        "seed": 30597907,
+        "id": "Echo/wet"
       },
       {
-        "key": "ec1",
-        "seed": 36851523
+        "seed": 36851523,
+        "id": "Echo/feedback"
       }
     ],
-    "mutes": []
+    "density": 0.75
   }
 ]
