@@ -1,7 +1,5 @@
 ### short
 
-- samples to be saved as list
-
 ### medium
 
 - mutate to mutate root at different densities
@@ -102,6 +100,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- samples to be saved as list
 - rename soundkeys as tags
 - loading and cloning fails because samplekey isn't converted from dict to SampleKey class on loading project
 - add multiple tag support for samplekey

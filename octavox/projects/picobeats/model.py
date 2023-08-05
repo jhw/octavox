@@ -42,7 +42,7 @@ class Pattern(str):
         return sum([item["n"]
                     for item in self.expanded])
 
-class Samples(dict):
+class Samples(list):
 
     @classmethod
     def randomise(self,
@@ -51,19 +51,27 @@ class Samples(dict):
                   pool,
                   fixes,
                   tags=Config["tags"]):
-        samples={}
+        samples=[]
         for childtag in tags[tag]:
             keyfixes=list(fixes[childtag].values())
             values=keyfixes if i==0 and keyfixes!=[] else pool[childtag]
-            samples[childtag]=random.choice(values)
+            samples.append(random.choice(values))
         return Samples(samples)
             
-    def __init__(self, obj):
-        dict.__init__(self, {tag:SVSampleKey(samplekey)
-                             for tag, samplekey in obj.items()})
+    def __init__(self, items=[]):
+        list.__init__(self, [SVSampleKey(item)
+                             for item in items])
 
     def clone(self):
         return Samples(self)
+
+    @property
+    def tagmap(self):
+        samples={}
+        for samplekey in self:
+            for tag in samplekey["tags"]:
+                samples[tag]=samplekey
+        return samples
 
 class Slice(dict):
 
@@ -174,8 +182,9 @@ class Sequencer(dict):
             q=Q(slice["seed"])            
             fn=getattr(self, slice["style"])
             nsamplebeats=pat["n"]*multiplier
+            samples=slice["samples"].tagmap
             for i in range(nsamplebeats):
-                fn(q, i, density, trigs, offset, slice["samples"])
+                fn(q, i, density, trigs, offset, samples)
             offset+=nsamplebeats
 
     def apply(fn):
