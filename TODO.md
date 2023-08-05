@@ -12,7 +12,7 @@
 - s3 archive cli capabilities
 - mutate to mutate root at different densities
 - arrange1 and arrange2 [notes]
-- slice cutoff sampler [notes]
+- slice and cutoff samplers [notes]
 - sample bans
 - chord support
 
