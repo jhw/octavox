@@ -1,9 +1,8 @@
 ### short
 
-- mutes 
-- convert samplekey mod to tag
-- convert samplekey to list
 - add multiple tag support for samplekey
+- mutate to mutate root at different densities
+- convert samplekey to list
 - refactor archives and test
 - arrange1 and arrange2 [notes]
 
@@ -105,6 +104,8 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- mutes 
+- convert samplekey mod to tag
 - density stored at patch level 
 - volume and BPM variables
 - rename show patch as show samples

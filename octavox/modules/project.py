@@ -229,7 +229,7 @@ class SVProject:
             if mod["class"].lower().endswith("sampler"):
                 kwargs={"banks": banks,
                         "samplekeys": [samplekey for samplekey in samplekeys
-                                       if samplekey["mod"]==mod["name"]]}
+                                       if samplekey["tag"]==mod["name"]]}
             mod["instance"]=modclass(**kwargs)
     
     def init_modules(self,

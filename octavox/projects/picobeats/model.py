@@ -184,7 +184,7 @@ class Sequencer(dict):
             if v!=None: # explicit because could return zero
                 soundkey, volume = v
                 samplekey=samples[soundkey].clone() # NB clone as updated in next line
-                samplekey["mod"]=self.mod # NB overwrite initial soundkey values
+                samplekey["tag"]=self.mod # NB overwrite initial soundkey values
                 trig=SVNoteTrig(mod=self.mod,
                                 vel=volume,
                                 i=i+offset)

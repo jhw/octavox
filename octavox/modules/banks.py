@@ -51,7 +51,7 @@ class SVSampleKey(dict):
         return SVSampleKey(self)
         
     def __str__(self):
-        return "%s:%s/%s" % (self["mod"],
+        return "%s:%s/%s" % (self["tag"],
                              self["bank"],
                              self["file"])
 
@@ -151,7 +151,7 @@ class SVBank:
     
     def spawn_free(self, soundkeys):
         wavfiles=self.wavfiles
-        return SVPool({soundkey:[SVSampleKey({"mod": soundkey, 
+        return SVPool({soundkey:[SVSampleKey({"tag": soundkey, 
                                               "bank": self.name,
                                               "file": wavfile})
                              for wavfile in wavfiles]
@@ -166,7 +166,7 @@ class SVBank:
                 pool.setdefault(soundkey, [])
                 for frag in fragments[soundkey]:
                     if re.search(frag, wavfile, re.I):
-                        pool[soundkey].append(SVSampleKey({"mod": soundkey,
+                        pool[soundkey].append(SVSampleKey({"tag": soundkey,
                                                            "bank": self.name,
                                                            "file": wavfile}))
         return pool
