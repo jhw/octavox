@@ -1,10 +1,6 @@
 ### short [01-refactor-archives]
 
-- replace sequencer key with id [mod]
-- samples is now a list with tags field [array values]
-- mutes are no longer part of structure
-- density (0.75) is now contained at the root patch level
-- replace lfo key with id [mod/ctrl]
+- samples are badly named (Kick not KK etc)
 
 ### medium
 
@@ -104,6 +100,12 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- need a save project action
+- replace sequencer key with id [mod]
+- samples is now a list with tags field [array values]
+- mutes are no longer part of structure
+- density (0.75) is now contained at the root patch level
+- replace lfo key with id [mod/ctrl]
 - refactor fixes to utilise tag structure
 - fixes to become a standard dict
 - add lookup method for tag

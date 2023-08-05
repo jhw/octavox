@@ -71,6 +71,15 @@ class PicobeatsCli(SVBankCli):
         return decorator
 
     @parse_line()
+    def do_save_project(self):
+         svfilename="%s/sunvox/%s.sunvox" % (self.outdir,
+                                             self.filename)                
+         self.patches.render_sunvox(banks=self.banks,
+                                    nbeats=self.env["nbeats"],
+                                    bpm=self.env["bpm"],
+                                    filename=svfilename)
+    
+    @parse_line()
     @render_patches(prefix="random")
     def do_randomise_patches(self):
         patches=Patches()
