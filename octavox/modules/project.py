@@ -2,16 +2,9 @@ from rv.api import Project as RVProject
 from rv.pattern import Pattern as RVPattern
 from rv.note import Note as RVNote
 
-import importlib, math, random, yaml
+import importlib, math, random
 
-Output="Output"
-
-Globals=yaml.safe_load("""
-bpm: 120
-volume: 256
-""")
-
-BreakSz, Height = 16, 64
+Output, Volume, Height = "Output", 256, 64
 
 class SVNoteTrig:
 
@@ -78,7 +71,11 @@ class SVTrigs(list):
             tracks.setdefault(key, [])
             tracks[key].append(trig)
         return tracks
-            
+
+"""
+- SVTracks class is locally named a patch, for post- rendering convenience
+"""
+    
 class SVTracks(dict):
 
     def __init__(self, nbeats, item={}):
@@ -319,10 +316,11 @@ class SVProject:
                patches,
                config,
                banks,
-               globalz=Globals):
+               bpm,
+               volume=Volume):
         proj=RVProject()
-        proj.initial_bpm=globalz["bpm"]
-        proj.global_volume=globalz["volume"]
+        proj.initial_bpm=bpm
+        proj.global_volume=volume
         samplekeys=self.filter_samplekeys(patches=patches)
         self.init_modclasses(config=config,
                              samplekeys=samplekeys,

@@ -369,13 +369,15 @@ class Patches(list):
                       banks,
                       nbeats,
                       density,
+                      bpm,
                       filename,
                       config=Config):
         project=SVProject().render(patches=[patch.render(nbeats=nbeats,
                                                          density=density)
                                             for patch in self],
                                    config=config,
-                                   banks=banks)
+                                   banks=banks,
+                                   bpm=bpm)
         with open(filename, 'wb') as f:
             project.write_to(f)
     

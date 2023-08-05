@@ -66,6 +66,7 @@ class PicobeatsCli(SVBankCli):
                 self.patches.render_sunvox(banks=self.banks,
                                            nbeats=self.env["nbeats"],
                                            density=self.env["density"],
+                                           bpm=self.env["bpm"],
                                            filename=svfilename)
             return wrapped
         return decorator
@@ -98,7 +99,7 @@ class PicobeatsCli(SVBankCli):
 
     @parse_line(config=[{"name": "i",
                          "type": "int"}])
-    def do_show_patch(self, i):
+    def do_show_samples(self, i):
         patch=self.patches[i % len(self.patches)]
         rendered=patch.render(nbeats=self.env["nbeats"],
                               density=self.env["density"])
@@ -146,6 +147,7 @@ dstyle: 0.66666
 nbeats: 16
 blocksize: 4
 nblocks: 8
+bpm: 120
 """)
 
 if __name__=="__main__":

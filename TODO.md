@@ -1,15 +1,13 @@
 ### short
 
-- rename show patch as show samples
-- refactored refs to patch if is not a patch class 
-- volume and BPM variables
 - density stored at patch level 
 - refactor archives and test
 - arrange1 and arrange2 [notes]
 
 ### medium
 
-- slice cutoff sampler 
+- s3 archive cli capabilities
+- slice cutoff sampler [notes]
 - sample bans
 - chord support
 
@@ -104,6 +102,8 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- volume and BPM variables
+- rename show patch as show samples
 - complete refactoring of show_patch
 - sequencer to clone samplekey since updating with mod
   - add note re overwriting of module
