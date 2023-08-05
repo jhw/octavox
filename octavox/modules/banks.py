@@ -147,26 +147,26 @@ class SVBank:
         else:
             return matches.pop()
     
-    def spawn_free(self, soundkeys):
+    def spawn_free(self, tags):
         wavfiles=self.wavfiles
-        return SVPool({soundkey:[SVSampleKey({"tags": [soundkey],
-                                              "bank": self.name,
-                                              "file": wavfile})
+        return SVPool({tag:[SVSampleKey({"tags": [tag],
+                                         "bank": self.name,
+                                         "file": wavfile})
                              for wavfile in wavfiles]
-                       for soundkey in soundkeys})
+                       for tag in tags})
 
     def spawn_curated(self,
-                      soundkeys,
+                      tags,
                       fragments=Fragments):
         pool, wavfiles = SVPool(), self.wavfiles
         for wavfile in wavfiles:
-            for soundkey in soundkeys:
-                pool.setdefault(soundkey, [])
-                for frag in fragments[soundkey]:
+            for tag in tags:
+                pool.setdefault(tag, [])
+                for frag in fragments[tag]:
                     if re.search(frag, wavfile, re.I):
-                        pool[soundkey].append(SVSampleKey({"tags": [soundkey],
-                                                           "bank": self.name,
-                                                           "file": wavfile}))
+                        pool[tag].append(SVSampleKey({"tags": [tag],
+                                                      "bank": self.name,
+                                                      "file": wavfile}))
         return pool
                 
 class SVBanks(dict):
@@ -191,13 +191,13 @@ class SVBanks(dict):
         else:
             return matches.pop()
             
-    def spawn_pools(self, soundkeys=Fragments.keys()):
+    def spawn_pools(self, tags=Fragments.keys()):
         pools=SVPools()
         for attr in ["free", "curated"]:
             for bankname, bank in self.items():
                 bankfn=getattr(bank, "spawn_%s" % attr)
                 key="%s-%s" % (bankname, attr)                
-                pools[key]=bankfn(soundkeys)
+                pools[key]=bankfn(tags)
             poolsfn=getattr(pools, "spawn_%s" % attr)
             key="global-%s" % attr
             pools[key]=poolsfn()

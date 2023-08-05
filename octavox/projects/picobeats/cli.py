@@ -15,14 +15,14 @@ Config=yaml.safe_load(open("octavox/projects/picobeats/config.yaml").read())
 class Fixes(dict):
 
     @classmethod
-    def create(self, soundkeys):
-        return Fixes({soundkey:{} for soundkey in flatten(soundkeys.values())})
+    def create(self, tags):
+        return Fixes({tag:{} for tag in flatten(tags.values())})
     
     def __init__(self, item={}):
         dict.__init__(self, item)
 
-    def add(self, soundkey, samplekey):
-        self[soundkey][str(samplekey)]=samplekey
+    def add(self, tag, samplekey):
+        self[tag][str(samplekey)]=samplekey
 
 class PicobeatsCli(SVBankCli):
 
@@ -33,7 +33,7 @@ class PicobeatsCli(SVBankCli):
                  *args,
                  **kwargs):
         SVBankCli.__init__(self, *args, **kwargs)
-        self.fixes=Fixes.create(config["soundkeys"])
+        self.fixes=Fixes.create(config["tags"])
 
     @parse_line(config=[{"name": "frag",
                          "type": "str"}])
@@ -105,9 +105,9 @@ class PicobeatsCli(SVBankCli):
         trigs={K:{trig.i:trig for trig in V}
                for K, V in rendered.items()}
         for i in range(self.env["nbeats"]):
-            for soundkey in trigs:
-                if i in trigs[soundkey]:
-                    trig=trigs[soundkey][i]
+            for tag in trigs:
+                if i in trigs[tag]:
+                    trig=trigs[tag][i]
                     if isinstance(trig, SVNoteTrig):
                         if trig.samplekey:
                             print ("%i\t%s" % (i, trig.samplekey))
@@ -118,25 +118,25 @@ class PicobeatsCli(SVBankCli):
             for v in V.values():
                 print ("- %s:%s" % (k, v))
 
-    @parse_line(config=[{"name": "soundkey",
+    @parse_line(config=[{"name": "tag",
                          "type": "str"},
                         {"name": "bankfrag",
                          "type": "str"},
                         {"name": "wavfrag",
                          "type": "str"}])
-    def do_fix_sample(self, soundkey, bankfrag, wavfrag):
-        if soundkey not in self.fixes:
-            raise RuntimeError("soundkey not found")
+    def do_fix_sample(self, tag, bankfrag, wavfrag):
+        if tag not in self.fixes:
+            raise RuntimeError("tag not found")
         bankname=self.banks.lookup(bankfrag)
         bank=self.banks[bankname]
         wavfile=bank.lookup(wavfrag)
         samplekey=SVSampleKey({"bank": bankname,
                                "file": wavfile})
-        self.fixes.add(soundkey, samplekey)
+        self.fixes.add(tag, samplekey)
 
     @parse_line()
-    def do_clean_fixes(self, soundkeys=Config["soundkeys"]):
-        self.fixes=Fixes.create(soundkeys)
+    def do_clean_fixes(self, tags=Config["tags"]):
+        self.fixes=Fixes.create(tags)
                 
 Params=yaml.safe_load("""
 temperature: 1.0

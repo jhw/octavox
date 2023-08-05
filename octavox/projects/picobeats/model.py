@@ -47,15 +47,15 @@ class Samples(dict):
     @classmethod
     def randomise(self,
                   i,
-                  soundkey,
+                  tag,
                   pool,
                   fixes,
-                  soundkeys=Config["soundkeys"]):
+                  tags=Config["tags"]):
         samples={}
-        for childkey in soundkeys[soundkey]:
-            keyfixes=list(fixes[childkey].values())
-            values=keyfixes if i==0 and keyfixes!=[] else pool[childkey]
-            samples[childkey]=random.choice(values)
+        for childtag in tags[tag]:
+            keyfixes=list(fixes[childtag].values())
+            values=keyfixes if i==0 and keyfixes!=[] else pool[childtag]
+            samples[childtag]=random.choice(values)
         return Samples(samples)
             
     def __init__(self, obj):
@@ -70,17 +70,17 @@ class Slice(dict):
     @classmethod
     def randomise(self,
                   i,
-                  soundkey,
+                  tag,
                   pool,
                   fixes,
-                  config={item["soundkey"]:item
+                  config={item["tag"]:item
                           for item in Config["sequencers"]}):
         return Slice(samples=Samples.randomise(i=i,
-                                               soundkey=soundkey,
+                                               tag=tag,
                                                pool=pool,
                                                fixes=fixes),
                      seed=int(1e8*random.random()),
-                     style=random.choice(config[soundkey]["styles"]))
+                     style=random.choice(config[tag]["styles"]))
     
     def __init__(self,
                  samples,
@@ -110,12 +110,12 @@ class Slices(list):
 
     @classmethod
     def randomise(self,
-                  soundkey,
+                  tag,
                   pool,
                   fixes,
                   n=3):
         return Slices([Slice.randomise(i=i,
-                                       soundkey=soundkey,
+                                       tag=tag,
                                        pool=pool,
                                        fixes=fixes)
                        for i in range(n)])
@@ -144,7 +144,7 @@ class Sequencer(dict):
                   fixes):
         return Sequencer({"id": sequencer_id(item),
                           "pattern": Pattern.randomise(temperature),
-                          "slices": Slices.randomise(soundkey=item["soundkey"],
+                          "slices": Slices.randomise(tag=item["tag"],
                                                      pool=pool,
                                                      fixes=fixes)})
 
@@ -185,8 +185,8 @@ class Sequencer(dict):
                     samples):
             v=fn(self, q, i, d, trigs, offset, samples)
             if v!=None: # explicit because could return zero
-                soundkey, volume = v
-                samplekey=samples[soundkey].clone()
+                tag, volume = v
+                samplekey=samples[tag].clone()
                 samplekey["tags"].append(self.mod)
                 trig=SVNoteTrig(mod=self.mod,
                                 vel=volume,
