@@ -1,6 +1,6 @@
 ### short
 
-- convert samplekey to list
+- samples to be saved as list
 
 ### medium
 
