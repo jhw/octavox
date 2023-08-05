@@ -1,3 +1,11 @@
+### refactor archives 05/08/23
+
+- replace sequencer key with id [mod]
+- samples is now a list with tags field [array values]
+- mutes are no longer part of structure
+- density (0.75) is now contained at the root patch level
+- replace lfo key with id [mod/ctrl]
+
 ### cutoff sampler 05/08/23
 
 - existing sampler is bank sampler

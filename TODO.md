@@ -1,6 +1,10 @@
-### short
+### short [01-refactor-archives]
 
-- refactor and test archives
+- replace sequencer key with id [mod]
+- samples is now a list with tags field [array values]
+- mutes are no longer part of structure
+- density (0.75) is now contained at the root patch level
+- replace lfo key with id [mod/ctrl]
 
 ### medium
 
