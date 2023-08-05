@@ -14,26 +14,26 @@ Config=yaml.safe_load(open("octavox/projects/picobeats/config.yaml").read())
 
 class Fixes(dict):
 
-    @classmethod
-    def create(self, tags):
-        return Fixes({tag:{} for tag in flatten(tags.values())})
-    
     def __init__(self, item={}):
         dict.__init__(self, item)
 
-    def add(self, tag, samplekey):
-        self[tag][str(samplekey)]=samplekey
-
+    def lookup(self, tag):
+        samplekeys=[]
+        for samplekey in self.values():
+            for sktag in samplekey["tags"]:
+                if tag==sktag:
+                    samplekeys.append(samplekey)
+        return samplekeys
+        
 class PicobeatsCli(SVBankCli):
 
     intro="Welcome to Picobeats :)"
 
     def __init__(self,
-                 config=Config,
                  *args,
                  **kwargs):
         SVBankCli.__init__(self, *args, **kwargs)
-        self.fixes=Fixes.create(config["tags"])
+        self.fixes=Fixes()
 
     @parse_line(config=[{"name": "frag",
                          "type": "str"}])
@@ -114,9 +114,8 @@ class PicobeatsCli(SVBankCli):
 
     @parse_line()
     def do_list_fixes(self):
-        for k, V in self.fixes.items():
-            for v in V.values():
-                print ("- %s:%s" % (k, v))
+        for samplekey in self.fixes.values():
+            print ("- %s" % str(samplekey))
 
     @parse_line(config=[{"name": "tag",
                          "type": "str"},
@@ -125,19 +124,17 @@ class PicobeatsCli(SVBankCli):
                         {"name": "wavfrag",
                          "type": "str"}])
     def do_fix_sample(self, tag, bankfrag, wavfrag):
-        if tag not in self.fixes:
-            raise RuntimeError("tag not found")
         bankname=self.banks.lookup(bankfrag)
         bank=self.banks[bankname]
         wavfile=bank.lookup(wavfrag)
         samplekey=SVSampleKey({"tags": [tag],
                                "bank": bankname,
                                "file": wavfile})
-        self.fixes.add(tag, samplekey)
+        self.fixes[str(samplekey)]=samplekey
 
     @parse_line()
-    def do_clean_fixes(self, tags=Config["tags"]):
-        self.fixes=Fixes.create(tags)
+    def do_clean_fixes(self):
+        self.fixes=Fixes()
                 
 Params=yaml.safe_load("""
 temperature: 1.0

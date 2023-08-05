@@ -53,7 +53,7 @@ class Samples(list):
                   tags=Config["tags"]):
         samples=[]
         for childtag in tags[tag]:
-            keyfixes=list(fixes[childtag].values())
+            keyfixes=fixes.lookup(childtag)
             values=keyfixes if i==0 and keyfixes!=[] else pool[childtag]
             samples.append(random.choice(values))
         return Samples(samples)

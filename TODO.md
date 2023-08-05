@@ -1,9 +1,4 @@
-### short [01-refactor-fixes]
-
-- fixes to become a standard dict
-- add lookup method for tag
-
-### [02-refactor-archives]
+### short [01-refactor-archives]
 
 - replace sequencer key with id [mod]
 - samples is now a list with tags field [array values]
@@ -14,7 +9,6 @@
 ### medium
 
 - rename picobeats as slicebeats
-- refactor fixes to utilise tag structure
 - s3 archive cli capabilities
 - mutate to mutate root at different densities
 - arrange1 and arrange2 [notes]
@@ -110,6 +104,9 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- refactor fixes to utilise tag structure
+- fixes to become a standard dict
+- add lookup method for tag
 - fix_sample is failing
 - samples to be saved as list
 - rename soundkeys as tags
