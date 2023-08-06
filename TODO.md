@@ -1,6 +1,5 @@
 ### short
 
-- remove pool validation stuff
 - refactor SVPool as per cli Fixes
 - replace Fixes with SVPool
 - add samples lookup code which uses full pool if no matches are found
@@ -8,6 +7,7 @@
 ### medium
 
 - rename picobeats as slicebeats
+- runtime name reference checking
 - pyaudio sizing/slicing demo
 
 - s3 archive cli capabilities [notes]
@@ -120,6 +120,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- remove pool validation stuff
 - add lookup method to SVPool as per fixes
 - convert samples lookup to act polymorphically wrt to pool and fixes
 - migrations to save to migrations dir

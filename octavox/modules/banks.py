@@ -65,12 +65,6 @@ class SVPool(dict):
         dict.__init__(self, {k:SVSampleKeys(v)
                              for k, v in item.items()})
 
-    def is_valid(self, limit=2):
-        for items in self.values():
-            if len(items) < limit:
-                return False
-        return True
-
     def clone(self):
         return SVPool(self)
 
@@ -107,13 +101,6 @@ class SVPools(dict):
 
     def spawn_curated(self):
         return self.aggregate("curated")
-
-    def cull(self):
-        pools=SVPools()
-        for k, v in self.items():
-            if v.is_valid():
-                pools[k]=v
-        return pools
 
     def lookup(self, abbrev):
         matches=[]
@@ -211,5 +198,5 @@ class SVBanks(dict):
     
 if __name__=="__main__":
     banks=SVBanks("octavox/banks/pico")
-    pools=banks.spawn_pools().cull()
+    pools=banks.spawn_pools()
     print (pools.keys())
