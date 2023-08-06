@@ -1,4 +1,4 @@
-from octavox.modules.banks import SVSampleKey, SVBanks, SVPool
+from octavox.modules.banks import SVSampleKey, SVBanks, SVPools
 
 from octavox.modules.cli import SVBankCli, parse_line
 
@@ -175,7 +175,9 @@ if __name__=="__main__":
         def load_yaml(filename, home="octavox/projects/picobeats"):
             return yaml.safe_load(open("%s/%s" % (home, filename)).read())
         banks=SVBanks("octavox/banks/pico")
-        pools=banks.spawn_pools()
+        pools=SVPools({poolname:pool
+                       for poolname, pool in banks.spawn_pools().items()
+                       if len(pool) > 24})
         PicobeatsCli(projectname="picobeats",
                      poolname="global-curated",
                      params=Params,
