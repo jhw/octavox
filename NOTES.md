@@ -1,3 +1,60 @@
+### PROJECTS [PINNED]
+
+- samplebass 
+  - find some pico bass sounds
+  - possibly normalise pitch
+  - create samples with different cutoffs
+  - vitling303 patterns
+  - random volume and possibly filter variation
+  - echo sample and hold
+  
+- synth bass
+  - analog generator or city-dreams.sunvox
+  - vitling303 patterns
+  - filter cutoff and resonance variation
+  - slide and accent
+  - echo sample and hold
+
+- breakbeats
+  - https://rhythm-lab.com/breakbeats
+  - https://blog.landr.com/drum-breaks/
+  - https://mixdownmag.com.au/features/nick-vulture-dusting-off-lockdown-but-seldom-his-trusty-tasman/
+  
+- euclid demo 
+  - take slicebeats as a base
+  - remove slices probably
+  - replace vitling with euclid/bjorklund
+  - echo sample and hold
+  
+- sample chords / granular
+ - find some pico chord sounds
+ - slice them up and play longer versions
+ - how to apply envelope or lfo like tracker?
+ - volume and panning lfos
+ - echo sample and hold
+  
+- noise hats
+  - aphex twin vordhosbn
+  - open, closed, repeats, reversed
+  - accents
+  - possible filter variation
+  - echo sample and hold
+  
+- synth chords
+  - example/simple/reverb2.sunvox
+  - volume, filter, panning lfos
+  - mechanical-heart.sunvox
+
+- leads
+  - aphex pitch wobble
+  - dual notes
+  - slides and accents
+  - arpeggiator
+  - endless-fantasy-worlds.sunvox
+
+- glitches
+  - city-dreams.sunvox
+
 ### refactor archives 05/08/23
 
 - replace sequencer key with id [mod]
@@ -102,13 +159,5 @@
 - a curated pool only returns stuff mapped to specific groups
 - you might have strict curated and glitch curated as two different curated pools
 - curated mappings need to be stored as yaml files
-
-### projects 02/07/23
-
-- bjorklund beats
-- vitling 303
-- city dreams bass
-- vordhosbn hats
-- chords
 
 

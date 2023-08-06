@@ -2,7 +2,6 @@
 
 - pass explicit modules and links to project
 - rename picobeats as slicebeats
-- separate project name from outside
 - separate layout from project
 - consider if keys need removing from pools
 - aws config
@@ -113,6 +112,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- separate project name from outside
 - consider moving tags out of config
 - update archive
 - fix bads refs to `%s/%s % (outdir+"/json", etc)`

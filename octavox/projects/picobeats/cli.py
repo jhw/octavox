@@ -176,7 +176,7 @@ if __name__=="__main__":
             return yaml.safe_load(open("%s/%s" % (home, filename)).read())
         banks=SVBanks("octavox/banks/pico")
         pools=banks.spawn_pools().cull()
-        PicobeatsCli(outdir="tmp/picobeats",
+        PicobeatsCli(projectname="picobeats",
                      poolname="global-curated",
                      params=Params,
                      banks=banks,

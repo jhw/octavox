@@ -82,11 +82,12 @@ class SVBaseCli(cmd.Cmd):
     prompt=">>> "
 
     def __init__(self,
-                 outdir,
+                 projectname,
                  params,
                  historysize=HistorySize):
-        cmd.Cmd.__init__(self)        
-        self.outdir=outdir
+        cmd.Cmd.__init__(self)
+        self.projectname=projectname
+        self.outdir="tmp/%s" % projectname
         self.init_subdirs()
         self.env=SVEnvironment(params)
         self.project=None
