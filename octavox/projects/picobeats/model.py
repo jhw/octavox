@@ -1,12 +1,12 @@
+from octavox.modules.banks import SVSampleKey
+
 from octavox.modules.project import SVProject, SVTrigs, SVNoteTrig, SVFXTrig
 
-from octavox.modules.banks import SVSampleKey
+import octavox.modules.sequences.vitling909 as nine09
 
 from octavox.projects import Q
 
-import octavox.modules.sequences.vitling909 as nineohnine
-
-import json, os, random, yaml
+import json, random, yaml
 
 Config=yaml.safe_load(open("octavox/projects/picobeats/config.yaml").read())
 
@@ -50,9 +50,11 @@ class Samples(list):
                   tag,
                   pool,
                   fixes,
-                  tags=Config["tags"]):
+                  mapping={"kk": ["kk"],
+                           "sn": ["sn"],
+                           "ht": ["oh", "ch"]}):
         samples=[]
-        for childtag in tags[tag]:
+        for childtag in mapping[tag]:
             keyfixes=fixes.lookup(childtag)
             values=keyfixes if i==0 and keyfixes!=[] else pool[childtag]
             samples.append(random.choice(values))
@@ -66,7 +68,7 @@ class Samples(list):
         return Samples(self)
 
     @property
-    def tagmap(self):
+    def tagged_map(self):
         samples={}
         for samplekey in self:
             for tag in samplekey["tags"]:
@@ -135,10 +137,6 @@ class Slices(list):
     def clone(self):
         return Slices(self)
 
-"""
-- temporary helper; should be replaced by config.yaml data binding classes
-"""
-    
 def sequencer_id(item):
     return item["mod"]
 
@@ -175,14 +173,13 @@ class Sequencer(dict):
                trigs,
                nbeats,
                density):
-        multiplier=int(nbeats/self["pattern"].size)
-        offset=0
+        multiplier, offset = int(nbeats/self["pattern"].size), 0
         for pat in self["pattern"].expanded:
             slice=self["slices"][pat["i"]]
             q=Q(slice["seed"])            
             fn=getattr(self, slice["style"])
             nsamplebeats=pat["n"]*multiplier
-            samples=slice["samples"].tagmap
+            samples=slice["samples"].tagged_map
             for i in range(nsamplebeats):
                 fn(q, i, density, trigs, offset, samples)
             offset+=nsamplebeats
@@ -206,25 +203,25 @@ class Sequencer(dict):
     
     @apply
     def fourfloor(self, q, i, d, *args, k="kk"):
-        return nineohnine.fourfloor(q, i, d, k)
+        return nine09.fourfloor(q, i, d, k)
     @apply
     def electro(self, q, i, d, *args, k="kk"):
-        return nineohnine.electro(q, i, d, k)
+        return nine09.electro(q, i, d, k)
     @apply
     def triplets(self, q, i, d, *args, k="kk"):
-        return nineohnine.triplets(q, i, d, k)
+        return nine09.triplets(q, i, d, k)
     @apply
     def backbeat(self, q, i, d, *args, k="sn"):
-        return nineohnine.backbeat(q, i, d, k)
+        return nine09.backbeat(q, i, d, k)
     @apply
     def skip(self, q, i, d, *args, k="sn"):
-        return nineohnine.skip(q, i, d, k)
+        return nine09.skip(q, i, d, k)
     @apply
     def offbeats(self, q, i, d, *args, k=["oh", "ch"]):
-        return nineohnine.offbeats(q, i, d, k)    
+        return nine09.offbeats(q, i, d, k)    
     @apply
     def closed(self, q, i, d, *args, k="ch"):
-        return nineohnine.closed(q, i, d, k)
+        return nine09.closed(q, i, d, k)
                             
 class Sequencers(list):
     
@@ -248,10 +245,6 @@ class Sequencers(list):
         return Sequencers([seq.clone()
                            for seq in self])
 
-"""
-- temporary helper; should be replaced by config.yaml data binding classes
-"""
-    
 def lfo_id(item):
     return "%s/%s" % (item["mod"],
                       item["ctrl"])

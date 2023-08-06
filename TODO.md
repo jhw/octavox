@@ -1,8 +1,9 @@
 ### short
 
+- pass explicit modules and links to project
 - rename picobeats as slicebeats
 - separate project name from outside
-- consider moving tags out of config
+- separate layout from project
 - consider if keys need removing from pools
 - aws config
 - pyaudio slice demo
@@ -19,6 +20,7 @@
   - pass series of roots and series of fills which are interspersed
   - pass a root and a density number which bumped for the fill
   - mutes
+- dataline/juno and tracker banks
 - slice and cutoff samplers [notes]
 - sample bans
 - chord support
@@ -111,6 +113,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- consider moving tags out of config
 - update archive
 - fix bads refs to `%s/%s % (outdir+"/json", etc)`
 - samples are badly named (Kick not KK etc)
