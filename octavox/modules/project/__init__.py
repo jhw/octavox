@@ -2,17 +2,11 @@ from rv.api import Project as RVProject
 from rv.pattern import Pattern as RVPattern
 from rv.note import Note as RVNote
 
-from octavox.modules.project.modules import SVColor, SVModGrid
+from octavox.modules.project.modules import SVColor, init_layout, Output
 
 import importlib
 
-### START TEMP CODE
-
-import math
-
-### END TEMP CODE
-
-Output, Volume, Height = "Output", 256, 64
+Volume, Height = 256, 64
 
 class SVNoteTrig:
 
@@ -114,29 +108,6 @@ class SVOffset:
         
 class SVProject:
 
-    def init_layout(self,
-                    config,
-                    n=1000,
-                    nclones=5):
-        def shuffle(config, grid, q):
-            clone=grid.clone()
-            clone.shuffle(q)
-            distance=clone.rms_distance(config["links"])
-            return (clone, distance)
-        modnames=[Output]+[mod["name"]
-                           for mod in config["modules"]]
-        grid=SVModGrid.randomise(modnames)
-        best=grid.rms_distance(config["links"])
-        for i in range(n):
-            q=int(math.ceil(len(modnames)*(n-i)/n))
-            clones=sorted([shuffle(config, grid, q)
-                           for i in range(nclones)],
-                          key=lambda x: -x[1])
-            newgrid, newbest = clones[-1]
-            if newbest < best:
-                grid, best = newgrid, newbest
-        return grid
-
     def filter_samplekeys(self,
                           patches):
         samplekeys={}
@@ -170,7 +141,8 @@ class SVProject:
                      proj,
                      config,
                      multipliers={"x": 1, "y": -2}):
-        positions=self.init_layout(config)
+        positions=init_layout(modules=config["modules"],
+                              links=config["links"])
         modules={}
         for i, moditem in enumerate(config["modules"]):
             mod, name = moditem["instance"], moditem["name"]

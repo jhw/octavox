@@ -1,5 +1,7 @@
 import math, random
 
+Output= "Output"
+
 class SVColor(list):
 
     @classmethod
@@ -78,6 +80,29 @@ class SVModGrid(dict):
             total+=distance
         return total
 
+def init_layout(modules,
+                links,
+                n=1000,
+                nclones=5):
+    def shuffle(grid, q):
+        clone=grid.clone()
+        clone.shuffle(q)
+        distance=clone.rms_distance(links)
+        return (clone, distance)
+    modnames=[Output]+[mod["name"]
+                       for mod in modules]
+    grid=SVModGrid.randomise(modnames)
+    best=grid.rms_distance(links)
+    for i in range(n):
+        q=int(math.ceil(len(modnames)*(n-i)/n))
+        clones=sorted([shuffle(grid, q)
+                       for i in range(nclones)],
+                      key=lambda x: -x[1])
+        newgrid, newbest = clones[-1]
+        if newbest < best:
+            grid, best = newgrid, newbest
+    return grid
+    
 if __name__=="__main__":
     pass
     

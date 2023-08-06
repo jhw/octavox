@@ -1,8 +1,6 @@
 ### short
 
-- move module layout initialisation into modules.py
 - pass explicit modules and links to project
-
 - rename picobeats as slicebeats
 - consider if keys need removing from pools
 
@@ -31,6 +29,10 @@
 
 ### thoughts
 
+- pass explicit modules and links args to project?
+  - no because then you have to distinguish between input and outout modules eg with modconfig
+  - its simpler just to have a config variable
+  - but be explicit about what's being passed
 - sample bans?
   - not clear how it would work
 - config classes?
@@ -119,6 +121,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- move module layout initialisation into modules.py
 - move colour stuff into modules.py
 - separate layout from project
 - separate project name from outside
