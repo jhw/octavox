@@ -1,7 +1,5 @@
 ### short
 
-- migrations to save to migrations dir
-
 - SVPool should be a list and have a lookup method like cli Fixes
   - maybe SVPool could be a simple dict like Fixes
   - then you could replace Fixes with an SVPool instance
@@ -122,6 +120,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- migrations to save to migrations dir
 - dedicate migrations class
 - migrate ids to names
 - rename id as name
