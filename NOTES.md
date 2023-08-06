@@ -55,6 +55,10 @@
 - glitches
   - city-dreams.sunvox
 
+### pitch shifting 06/08/23
+
+- http://zulko.github.io/blog/2014/03/29/soundstretching-and-pitch-shifting-in-python/
+
 ### refactor archives 05/08/23
 
 - replace sequencer key with id [mod]

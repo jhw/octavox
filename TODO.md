@@ -1,13 +1,12 @@
 ### short
 
-- pass explicit modules and links to project
+- new inline Sequencer/LfoConfig classes which wrap seq_id, lfo_id methods or properties
+
 - rename picobeats as slicebeats
 - consider if keys need removing from pools
 
-- new inline Sequencer/LfoConfig classes which wrap seq_id, lfo_id methods or properties
-
 - aws config
-- pyaudio slice demo
+- pyaudio sizing/slicing demo
 
 ### medium
 
@@ -121,6 +120,8 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- link re python pitch shifting
+- pass explicit modules and links to project
 - move module layout initialisation into modules.py
 - move colour stuff into modules.py
 - separate layout from project

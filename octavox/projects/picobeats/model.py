@@ -379,7 +379,8 @@ class Patches(list):
                       config=Config):
         project=SVProject().render(patches=[patch.render(nbeats=nbeats)
                                             for patch in self],
-                                   config=config,
+                                   config={"modules": config["modules"],
+                                           "links": config["links"]},
                                    banks=banks,
                                    bpm=bpm)
         with open(filename, 'wb') as f:
