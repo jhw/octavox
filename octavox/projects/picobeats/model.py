@@ -57,8 +57,15 @@ class Samples(list):
         if tag not in mapping:
             raise RuntimeError("tag %s not found in mapping" % tag)
         for childtag in mapping[tag]:
-            keyfixes=fixes.lookup(childtag)
-            values=keyfixes if i==0 and keyfixes!=[] else pool.lookup(childtag)
+            tagfixes=fixes.lookup(childtag)
+            if i==0 and tagfixes!=[]:
+                values=tagfixes
+            else:
+                tagvalues=pool.lookup(childtag)
+                if tagvalues!=[]:
+                    values=tagvalues
+                else:
+                    values=list(pool.values())
             samples.append(random.choice(values))
         return Samples(samples)
             

@@ -1,8 +1,7 @@
 ### short
 
-- refactor SVPool as per cli Fixes
 - replace Fixes with SVPool
-- add samples lookup code which uses full pool if no matches are found
+- cull pools on loading
 
 ### medium
 
@@ -119,6 +118,9 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- add samples lookup code which uses full pool if no matches are found
+- check samples lookup code
+- refactor SVPool as per cli Fixes
 - runtime name reference checking
 - remove pool validation stuff
 - add lookup method to SVPool as per fixes

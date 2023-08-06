@@ -53,36 +53,21 @@ class SVSampleKey(dict):
                              self["bank"],
                              self["file"])
 
-class SVSampleKeys(list):
-
-    def __init__(self, items=[]):
-        list.__init__(self, [SVSampleKey(item)
-                             for item in items])
-    
 class SVPool(dict):
 
     def __init__(self, item={}):
-        dict.__init__(self, {k:SVSampleKeys(v)
-                             for k, v in item.items()})
+        dict.__init__(self, item)        
 
     def clone(self):
         return SVPool(self)
 
     def lookup(self, tag):
-        return self[tag]
-    
-    def add(self, pool):
-        for key in pool:
-            self.setdefault(key, [])
-            for item in pool[key]:
-                if item not in self[key]:
-                    self[key].append(item)
-        return self
-
-    @property
-    def size(self):
-        return sum([len(list(v))
-                    for v in self.values()])
+        samplekeys=[]
+        for samplekey in self.values():
+            for sktag in samplekey["tags"]:
+                if tag==sktag:
+                    samplekeys.append(samplekey)
+        return samplekeys
     
 class SVPools(dict):
 
@@ -93,7 +78,7 @@ class SVPools(dict):
         parent=SVPool()
         for key, pool in self.items():
             if key.endswith(suffix):
-                parent.add(pool)
+                parent.update(pool)
         return parent
 
     def spawn_free(self):
@@ -138,25 +123,27 @@ class SVBank:
             return matches.pop()
     
     def spawn_free(self, tags):
-        wavfiles=self.wavfiles
-        return SVPool({tag:[SVSampleKey({"tags": [tag],
-                                         "bank": self.name,
-                                         "file": wavfile})
-                             for wavfile in wavfiles]
-                       for tag in tags})
-
+        pool, wavfiles = SVPool(), self.wavfiles
+        for wavfile in wavfiles:
+            for tag in tags:
+                samplekey=SVSampleKey({"tags": [tag],
+                                       "bank": self.name,
+                                       "file": wavfile})
+                pool[str(samplekey)]=samplekey
+        return pool
+    
     def spawn_curated(self,
                       tags,
                       fragments=Fragments):
         pool, wavfiles = SVPool(), self.wavfiles
         for wavfile in wavfiles:
             for tag in tags:
-                pool.setdefault(tag, [])
                 for frag in fragments[tag]:
                     if re.search(frag, wavfile, re.I):
-                        pool[tag].append(SVSampleKey({"tags": [tag],
-                                                      "bank": self.name,
-                                                      "file": wavfile}))
+                        samplekey=SVSampleKey({"tags": [tag],
+                                               "bank": self.name,
+                                               "file": wavfile})
+                        pool[str(samplekey)]=samplekey
         return pool
                 
 class SVBanks(dict):
@@ -199,4 +186,5 @@ class SVBanks(dict):
 if __name__=="__main__":
     banks=SVBanks("octavox/banks/pico")
     pools=banks.spawn_pools()
-    print (pools.keys())
+    for k, v in pools.items():
+        print (k, len(v))

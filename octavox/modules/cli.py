@@ -166,8 +166,8 @@ class SVBankCli(SVBaseCli):
         for poolname in sorted(self.pools.keys()):
             prompt=">" if poolname==self.poolname else " "
             print ("%s %s [%i]" % (prompt,
-                                  poolname,
-                                  self.pools[poolname].size))
+                                   poolname,
+                                   len(self.pools[poolname])))
             
     @parse_line(config=[{"name": "poolname",
                          "type": "str"}])
