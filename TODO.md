@@ -1,9 +1,11 @@
 ### short
 
+- add lookup method to SVPool as per fixes
+- convert samples lookup to act polymorphically wrt to pool and fixes
+- remove pool validation stuff
 - refactor SVPool as per cli Fixes
-  - model samples should now lookup in pool rather than index with tag
 - replace Fixes with SVPool
-- consider implementing ban again along same lines
+- add samples lookup code which uses full pool if no matches are found
 
 ### medium
 
@@ -13,8 +15,8 @@
 - s3 archive cli capabilities [notes]
 
 - multiple mutate functions
-  - existing version
   - seeds only
+  - seeds and styles
   - densities
 
 - multiple arrange functions
