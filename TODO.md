@@ -1,5 +1,7 @@
 ### short
 
+- runtime name reference checking
+
 - refactor SVPool as per cli Fixes
 - replace Fixes with SVPool
 - add samples lookup code which uses full pool if no matches are found
@@ -7,7 +9,6 @@
 ### medium
 
 - rename picobeats as slicebeats
-- runtime name reference checking
 - pyaudio sizing/slicing demo
 
 - s3 archive cli capabilities [notes]

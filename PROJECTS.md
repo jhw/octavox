@@ -16,6 +16,15 @@
 - slide and accent
 - echo sample and hold
 
+### nine09
+
+- like pico|slicebeats but with native instruments
+- kicker (and svdrum?)  for bass, noise for hats
+- god knows what you do for snare but maybe resort to samples
+- no slices; vary notes via controllers/parameters
+- maybe vitling + euclid for patterns
+- no separate hat sounds; use lfo to vary length etc
+
 ### breakbeats
 
 - https://rhythm-lab.com/breakbeats
