@@ -126,16 +126,19 @@ class SVProject:
     """
     - creation of sampler kwargs may need to change if you have multiple classes of sampler in the future
     """
-    
+        
     def init_modclasses(self,
                         config,
                         samplekeys,
                         banks):
         def init_class(mod):
-            tokens=mod["class"].split(".")            
-            modpath, classname = ".".join(tokens[:-1]), tokens[-1]
-            module=importlib.import_module(modpath)
-            return getattr(module, classname)
+            try:
+                tokens=mod["class"].split(".")            
+                modpath, classname = ".".join(tokens[:-1]), tokens[-1]
+                module=importlib.import_module(modpath)
+                return getattr(module, classname)
+            except:
+                raise RuntimeError("error importing %s" % mod["class"])
         for mod in config["modules"]:
             modclass=init_class(mod)
             kwargs={}
@@ -143,8 +146,11 @@ class SVProject:
                 kwargs={"banks": banks,
                         "samplekeys": [samplekey for samplekey in samplekeys
                                        if mod["name"] in samplekey["tags"]]}
-            mod["instance"]=modclass(**kwargs)
-    
+            try:
+                mod["instance"]=modclass(**kwargs)
+            except:
+                raise RuntimeError("error instantiating %s with %s" % (mod, kwargs))
+                
     def init_modules(self,
                      proj,
                      config,

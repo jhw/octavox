@@ -1,0 +1,5474 @@
+[
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 91895150,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 14106873,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 68973263,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 52228319,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 82495625,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 15620843,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 33608544,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 84528176,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 99613159,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 39159196
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 46596742
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 65535447,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 77815607,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 92002659,
+            "style": "fourfloor"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 87282883,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 33155541,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 36277983,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 37377579,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 47434388,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 1487672,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 8857760
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 7041114
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 77678475,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 17387699,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 40729853,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 16236355,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 16273970,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 37241487,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 17183724,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 76337381,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 78413921,
+            "style": "offbeats"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 70155780
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 74753898
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 72909024,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 91764899,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 65151169,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 50141596,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 37144517,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 70118309,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 55677576,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 33201483,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 53563117,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 58791512
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 37278544
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 62353840,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 19759997,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 83740938,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 14946064,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 99217255,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 5206572,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 21223826,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 82523531,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 79823433,
+            "style": "offbeats"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 3420517
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 92217053
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 55197318,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 85966622,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 36955503,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 87190400,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 95032342,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 88192695,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 75304109,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 76521475,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 51568691,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 60068766
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 26584560
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 89473858,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 7140960,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 81463497,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 81484539,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 63655429,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 75602463,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 61289176,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 86558524,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 78403745,
+            "style": "offbeats"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 7442931
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 55765748
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 54838275,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 42122521,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 338141,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 98161388,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 7180950,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 92338252,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 7398167,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 57046833,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 57057531,
+            "style": "offbeats"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 48112181
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 11346044
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 33963506,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 3822745,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 22995875,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 27139129,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 46817524,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 5020224,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 54366388,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 65332666,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 34694202,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 96476997
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 91470378
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 71500307,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 42363997,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 81139150,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 44935272,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 87758353,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 70055719,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 71324975,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 23814717,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 84427172,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 9762334
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 3672587
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 20066304,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 40562270,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 8430693,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 75214708,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 90035211,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 79924363,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 16206469,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 51535056,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 53493467,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 6727104
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 83865637
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 89208079,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 83681727,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 73833768,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 49717510,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 91687833,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 14268071,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 71528481,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 12798709,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 68037421,
+            "style": "offbeats"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 90048082
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 67815759
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 61744635,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 68224984,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 22287107,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 30899292,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 93088521,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 73764217,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 8231893,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 69367480,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 57114377,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 323804
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 23948583
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 732657,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 65487145,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 58732415,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 87827204,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 96281924,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 1470612,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 15394339,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 27254398,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 45533724,
+            "style": "offbeats"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 30911063
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 85541865
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 86906312,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 19687387,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 52909429,
+            "style": "fourfloor"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 44691480,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 54097397,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 76823026,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 22278676,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 84151267,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 67534288,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 3038895
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 76779880
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 33323711,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 19592786,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 35937415,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 17759706,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 33547063,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 39488174,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 78227544,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 91671204,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 66743931,
+            "style": "offbeats"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 75871693
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 61326296
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 72854816,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 27751676,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 61613961,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 19642826,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 56752252,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 77434172,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 45619475,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 95968008,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 49259537,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 33477784
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 61148694
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 21768843,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 7851057,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 74033073,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 2151554,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 15724133,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 759126,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 77203273,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 48814753,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 84081272,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 1852468
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 80586744
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 11762879,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 38752501,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 74219027,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 7029687,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 60720131,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 99872775,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 85347724,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 50957121,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 43778802,
+            "style": "offbeats"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 20756489
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 78618187
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 38561314,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 37289063,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 27920518,
+            "style": "fourfloor"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 70209519,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 54358698,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 78943714,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 38227173,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 79778961,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 3458986,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 99110730
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 22279424
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 57078718,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 66836024,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 43785872,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 3702158,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 91080996,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 35434427,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 5126703,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 94751357,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 24653640,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 88373389
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 24494271
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 45436134,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 68786366,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 77826493,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 89703127,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 44444931,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 50592296,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 81571405,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 69370585,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 96446238,
+            "style": "offbeats"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 26538410
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 70345410
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 40529967,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 15216059,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 52760305,
+            "style": "fourfloor"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 15633112,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 28252450,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 80254428,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 22090100,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 8613469,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 59012890,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 21410319
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 1507460
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 17059753,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 57693077,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 16328186,
+            "style": "fourfloor"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 70948021,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 25261219,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 17228521,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 66338596,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 10229524,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 5065302,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 82589401
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 52725677
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 23311746,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 24529908,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 72939544,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 6345937,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 94764625,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 97027859,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 67431877,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 20840489,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 85113264,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 4168475
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 34904359
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 37673421,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 59464160,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 96014309,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 48928847,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 13638630,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 92439214,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 82531987,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 33345115,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 3426496,
+            "style": "offbeats"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 38474133
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 42142246
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 65763936,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 73538125,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 39548395,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 49697082,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 15885782,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 71010077,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 43390973,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 83471980,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 59253183,
+            "style": "offbeats"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 40025819
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 40516754
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 39911086,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 62965169,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 24407293,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 89187543,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 65149052,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 98625594,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 70735325,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 19819036,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 98714612,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 24614040
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 68740876
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 71474254,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 84618273,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 72944688,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 89958601,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 15987621,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 24668738,
+            "style": "backbeat"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 18607811,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 26318413,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 55963965,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 31043034
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 81734364
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 56357134,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 69675447,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 38113725,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 88573814,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 1387404,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 58127181,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 9417706,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 18577506,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 86992548,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 6692420
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 2316621
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 34052598,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 68586254,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 11219770,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 23166623,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 4548671,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 69032309,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 39162655,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 95318044,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 79384497,
+            "style": "closed"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 93867868
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 33187990
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "sequencers": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 44114835,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "ib-magnetic-saturation",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 91953087,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "clipping",
+                "file": "46 WakeUpBass.wav"
+              }
+            ],
+            "seed": 63915288,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "legowelt",
+                "file": "24 ERIKABubblemarimba.wav"
+              }
+            ],
+            "seed": 70100918,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pitch-black",
+                "file": "37 Evil wisphers swell tonal.wav"
+              }
+            ],
+            "seed": 25605575,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              }
+            ],
+            "seed": 82145326,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "nero-bellum",
+                "file": "18 Stacked Noise Snare Percussion.wav"
+              }
+            ],
+            "seed": 40685215,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pitch-black",
+                "file": "17 buchla tamborine percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "49 syncussion.wav"
+              }
+            ],
+            "seed": 30690815,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "nero-bellum",
+                "file": "02 Brute Kick I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "otto-von-schirach",
+                "file": "53 syncussion.wav"
+              }
+            ],
+            "seed": 13524581,
+            "style": "offbeats"
+          }
+        ]
+      }
+    ],
+    "lfos": [
+      {
+        "name": "Echo/wet",
+        "seed": 48938381
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 95959992
+      }
+    ],
+    "density": 0.75
+  }
+]
