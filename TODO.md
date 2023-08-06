@@ -1,5 +1,9 @@
 ### short
 
+- rename id as name
+- dedicate migrations class
+- migrate ids to names
+
 - SVPool should be a list and have a lookup method like cli Fixes
   - maybe SVPool could be a simple dict like Fixes
   - then you could replace Fixes with an SVPool instance

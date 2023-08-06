@@ -145,30 +145,30 @@ class Sequencer(dict):
                   temperature,
                   pool,
                   fixes):
-        return Sequencer({"id": item["id"],
+        return Sequencer({"name": item["name"],
                           "pattern": Pattern.randomise(temperature),
                           "slices": Slices.randomise(tag=item["tag"],
                                                      pool=pool,
                                                      fixes=fixes)})
 
     def __init__(self, item,
-                 config={item["id"]:item
+                 config={item["name"]:item
                          for item in Config["sequencers"]}):
-        dict.__init__(self, {"id": item["id"],
+        dict.__init__(self, {"name": item["name"],
                              "pattern": Pattern(item["pattern"]),
                              "slices": Slices(item["slices"])})
-        params=config[item["id"]]
+        params=config[item["name"]]
         for attr in params:
             setattr(self, attr, params[attr])
                             
     def clone(self):
-        return Sequencer({"id": self["id"],
+        return Sequencer({"name": self["name"],
                           "pattern": self["pattern"],
                           "slices": self["slices"].clone()})
 
     @property
     def mod(self):
-        return self["id"]
+        return self["name"]
     
     def render(self,
                trigs,
@@ -250,14 +250,14 @@ class Lfo(dict):
     
     @classmethod
     def randomise(self, item):
-        return Lfo({"id": item["id"],
+        return Lfo({"name": item["name"],
                     "seed": int(1e8*random.random())})
 
     def __init__(self, item,
-                 config={item["id"]:item
+                 config={item["name"]:item
                          for item in Config["lfos"]}):
         dict.__init__(self, item)
-        params=config[item["id"]]
+        params=config[item["name"]]
         for attr in params:
             setattr(self, attr, params[attr])
 
@@ -266,11 +266,11 @@ class Lfo(dict):
                     
     @property
     def mod(self):
-        return self["id"].split("/")[0]
+        return self["name"].split("/")[0]
 
     @property
     def ctrl(self):
-        return self["id"].split("/")[1]
+        return self["name"].split("/")[1]
             
     def randomise_seed(self, limit):
         if random.random() < limit:
@@ -356,7 +356,7 @@ class Patch(dict):
                mutes=[]):
         trigs=SVTrigs(nbeats=nbeats)
         for seq in self["sequencers"]:
-            if seq["id"] not in mutes:
+            if seq["name"] not in mutes:
                 seq.render(nbeats=nbeats,
                            trigs=trigs,
                            density=self["density"])
