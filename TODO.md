@@ -2,15 +2,18 @@
 
 - new inline Sequencer/LfoConfig classes which wrap seq_id, lfo_id methods or properties
 
+- SVPool should be a list and have a lookup method like cli Fixes
+  - maybe SVPool could be a simple dict like Fixes
+  - then you could replace Fixes with an SVPool instance
+
 - rename picobeats as slicebeats
-- consider if keys need removing from pools
 
 - aws config
 - pyaudio sizing/slicing demo
 
 ### medium
 
-- s3 archive cli capabilities
+- s3 archive cli capabilities [notes]
 
 - multiple mutate functions
   - existing version
