@@ -1,6 +1,5 @@
 ### short
 
-- rename id as name
 - dedicate migrations class
 - migrate ids to names
 
@@ -124,6 +123,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- rename id as name
 - aws config
 - new inline Sequencer/LfoConfig classes which wrap seq_id, lfo_id methods or properties
 - link re python pitch shifting
