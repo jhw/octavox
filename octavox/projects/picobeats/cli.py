@@ -1,4 +1,4 @@
-from octavox.modules.banks import SVSampleKey, SVBanks, SVPools
+from octavox.modules.banks import SVSampleKey, SVBanks, SVPools, SVPool
 
 from octavox.modules.cli import SVBankCli, parse_line
 
@@ -12,19 +12,6 @@ import json, os, random, yaml
 
 Config=yaml.safe_load(open("octavox/projects/picobeats/config.yaml").read())
 
-class Fixes(dict):
-
-    def __init__(self, item={}):
-        dict.__init__(self, item)
-
-    def lookup(self, tag):
-        samplekeys=[]
-        for samplekey in self.values():
-            for sktag in samplekey["tags"]:
-                if tag==sktag:
-                    samplekeys.append(samplekey)
-        return samplekeys
-        
 class PicobeatsCli(SVBankCli):
 
     intro="Welcome to Picobeats :)"
@@ -33,7 +20,7 @@ class PicobeatsCli(SVBankCli):
                  *args,
                  **kwargs):
         SVBankCli.__init__(self, *args, **kwargs)
-        self.fixes=Fixes()
+        self.fixes=SVPool()
 
     @parse_line(config=[{"name": "frag",
                          "type": "str"}])
@@ -157,7 +144,7 @@ class PicobeatsCli(SVBankCli):
 
     @parse_line()
     def do_clean_fixes(self):
-        self.fixes=Fixes()
+        self.fixes=SVPool()
                 
 Params=yaml.safe_load("""
 temperature: 1.0

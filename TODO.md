@@ -1,11 +1,10 @@
 ### short
 
-- replace Fixes with SVPool
-
-### medium
-
+- separate mutate seed, style functions
 - rename picobeats as slicebeats
 - pyaudio sizing/slicing demo
+
+### medium
 
 - s3 archive cli capabilities [notes]
 
@@ -19,18 +18,26 @@
   - pass a root and a density number which bumped for the fill
   - mutes
 
-- dataline/juno and tracker banks
 - cutoff, slice samplers [notes]
 - chord support
 
+### long
+
+- dataline/juno, tracker banks
+
 ### thoughts
 
+- remove dseed, dstyle?
+  - no; given slice model, you don't want to *force* mutation of every slice
+- fix_sample protection against specifying unknown tag?
+  - feels like overkill
 - pass explicit modules and links args to project?
   - no because then you have to distinguish between input and outout modules eg with modconfig
   - its simpler just to have a config variable
   - but be explicit about what's being passed
 - sample bans?
   - not clear how it would work
+  - feels like over- optimisation
 - config classes?
   - feels like overkill; see NOTES.md
 - treat svdrum as a sample, so can be fixed?
@@ -117,6 +124,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- replace Fixes with SVPool
 - cull pools on loading
 - add samples lookup code which uses full pool if no matches are found
 - check samples lookup code
