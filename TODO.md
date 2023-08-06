@@ -1,30 +1,38 @@
 ### short
 
+- move module layout initialisation into modules.py
 - pass explicit modules and links to project
+
 - rename picobeats as slicebeats
 - consider if keys need removing from pools
+
+- new inline Sequencer/LfoConfig classes which wrap seq_id, lfo_id methods or properties
+
 - aws config
 - pyaudio slice demo
 
 ### medium
 
 - s3 archive cli capabilities
-- replace sequencer_id, lfo_id functions
+
 - multiple mutate functions
   - existing version
   - seeds only
   - densities
+
 - multiple arrange functions
   - pass series of roots and series of fills which are interspersed
   - pass a root and a density number which bumped for the fill
   - mutes
+
 - dataline/juno and tracker banks
-- slice and cutoff samplers [notes]
-- sample bans
+- cutoff, slice samplers [notes]
 - chord support
 
 ### thoughts
 
+- sample bans?
+  - not clear how it would work
 - config classes?
   - feels like overkill; see NOTES.md
 - treat svdrum as a sample, so can be fixed?
@@ -111,6 +119,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- move colour stuff into modules.py
 - separate layout from project
 - separate project name from outside
 - consider moving tags out of config

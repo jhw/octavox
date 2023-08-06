@@ -2,13 +2,13 @@ from rv.api import Project as RVProject
 from rv.pattern import Pattern as RVPattern
 from rv.note import Note as RVNote
 
-from octavox.modules.project.modules import SVModGrid
+from octavox.modules.project.modules import SVColor, SVModGrid
 
 import importlib
 
 ### START TEMP CODE
 
-import math, random
+import math
 
 ### END TEMP CODE
 
@@ -111,29 +111,8 @@ class SVOffset:
     def increment(self, value):
         self.value+=value
         self.count+=1
-
+        
 class SVProject:
-
-    def random_color(self, offset):
-        return [int(offset+random.random()*(255-offset))
-                for i in range(3)]
-    
-    def new_color(self,
-                  offset=64,
-                  contrast=128,
-                  n=16):
-        for i in range(n):
-            color=self.random_color(offset)
-            if (max(color)-min(color)) > contrast:
-                return color
-        return [127 for i in range(3)]
-
-    def mutate_color(self,
-                     color,
-                     contrast=32):
-        values=range(-contrast, contrast)
-        return [min(255, max(0, rgb+random.choice(values)))
-                for rgb in  color]
 
     def init_layout(self,
                     config,
@@ -258,7 +237,7 @@ class SVProject:
         offset=SVOffset()
         patterns, color = [], None
         for i, patch in enumerate(patches):
-            color=self.new_color() if 0==i%4 else self.mutate_color(color)
+            color=SVColor.randomise() if 0==i%4 else color.mutate()
             self.init_pattern(patterns=patterns,
                               modules=modules,
                               controllers=controllers,
