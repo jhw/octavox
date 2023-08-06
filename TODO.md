@@ -1,14 +1,14 @@
 ### short
 
-- SVPool should be a list and have a lookup method like cli Fixes
-  - maybe SVPool could be a simple dict like Fixes
-  - then you could replace Fixes with an SVPool instance
-
-- rename picobeats as slicebeats
-
-- pyaudio sizing/slicing demo
+- refactor SVPool as per cli Fixes
+  - model samples should now lookup in pool rather than index with tag
+- replace Fixes with SVPool
+- consider implementing ban again along same lines
 
 ### medium
+
+- rename picobeats as slicebeats
+- pyaudio sizing/slicing demo
 
 - s3 archive cli capabilities [notes]
 
