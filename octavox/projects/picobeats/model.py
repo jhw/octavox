@@ -54,6 +54,8 @@ class Samples(list):
                            "sn": ["sn"],
                            "ht": ["oh", "ch"]}):
         samples=[]
+        if tag not in mapping:
+            raise RuntimeError("tag %s not found in mapping" % tag)
         for childtag in mapping[tag]:
             keyfixes=fixes.lookup(childtag)
             values=keyfixes if i==0 and keyfixes!=[] else pool.lookup(childtag)
