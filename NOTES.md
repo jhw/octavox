@@ -1,11 +1,10 @@
 ### s3 capabilities 06/08/23
 
 - requirements.txt
-- os variables in setenv.sh
-- create bucket on cli start
-- action to put existing filename
-- action to list archives based on prefix
-- action to sync archives based on prefix
+- setenv.sh AWS_CONFIG, PROJECT_NAME etc
+- create bucket on cli initialisation
+- action to put existing filename to bucket
+- action to list/sync bucket based on prefix
 
 ### pitch shifting 06/08/23
 

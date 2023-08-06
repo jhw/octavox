@@ -1,5 +1,7 @@
-git+https://github.com//metrasynth/radiant-voices
-numpy # for local wavfile implementations
+awscli
+boto3
+botocore
+numpy
 pyaudio
 pyyaml
-
+git+https://github.com//metrasynth/radiant-voices

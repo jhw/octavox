@@ -137,9 +137,6 @@ class Slices(list):
     def clone(self):
         return Slices(self)
 
-def sequencer_id(item):
-    return item["mod"]
-
 class Sequencer(dict):
     
     @classmethod
@@ -148,14 +145,14 @@ class Sequencer(dict):
                   temperature,
                   pool,
                   fixes):
-        return Sequencer({"id": sequencer_id(item),
+        return Sequencer({"id": item["id"],
                           "pattern": Pattern.randomise(temperature),
                           "slices": Slices.randomise(tag=item["tag"],
                                                      pool=pool,
                                                      fixes=fixes)})
 
     def __init__(self, item,
-                 config={sequencer_id(item):item
+                 config={item["id"]:item
                          for item in Config["sequencers"]}):
         dict.__init__(self, {"id": item["id"],
                              "pattern": Pattern(item["pattern"]),
@@ -169,6 +166,10 @@ class Sequencer(dict):
                           "pattern": self["pattern"],
                           "slices": self["slices"].clone()})
 
+    @property
+    def mod(self):
+        return self["id"]
+    
     def render(self,
                trigs,
                nbeats,
@@ -245,28 +246,32 @@ class Sequencers(list):
         return Sequencers([seq.clone()
                            for seq in self])
 
-def lfo_id(item):
-    return "%s/%s" % (item["mod"],
-                      item["ctrl"])
-    
 class Lfo(dict):
     
     @classmethod
     def randomise(self, item):
-        return Lfo({"id": lfo_id(item),
+        return Lfo({"id": item["id"],
                     "seed": int(1e8*random.random())})
 
     def __init__(self, item,
-                 config={lfo_id(item):item
+                 config={item["id"]:item
                          for item in Config["lfos"]}):
         dict.__init__(self, item)
         params=config[item["id"]]
         for attr in params:
             setattr(self, attr, params[attr])
-        
+
     def clone(self):
         return Lfo(self)
-        
+                    
+    @property
+    def mod(self):
+        return self["id"].split("/")[0]
+
+    @property
+    def ctrl(self):
+        return self["id"].split("/")[1]
+            
     def randomise_seed(self, limit):
         if random.random() < limit:
             seed=int(1e8*random.random())

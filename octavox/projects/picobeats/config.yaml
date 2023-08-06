@@ -33,31 +33,29 @@ links:
   - - Reverb
     - Output
 sequencers:
-  - mod: KickSampler
+  - id: KickSampler
     tag: kk
     styles:
     - fourfloor
     - electro
     - triplets
-  - mod: SnareSampler
+  - id: SnareSampler
     tag: sn
     styles:
     - backbeat
     - skip
-  - mod: HatSampler
+  - id: HatSampler
     tag: ht
     styles:
     - offbeats
     - closed
 lfos:
-  - mod: Echo
-    ctrl: wet
+  - id: Echo/wet
     range: [0, 1]
     increment: 0.25
     step: 4
     live: 0.66666
-  - mod: Echo
-    ctrl: feedback
+  - id: Echo/feedback
     range: [0, 1]
     increment: 0.25
     step: 4

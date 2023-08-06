@@ -1,14 +1,11 @@
 ### short
 
-- new inline Sequencer/LfoConfig classes which wrap seq_id, lfo_id methods or properties
-
 - SVPool should be a list and have a lookup method like cli Fixes
   - maybe SVPool could be a simple dict like Fixes
   - then you could replace Fixes with an SVPool instance
 
 - rename picobeats as slicebeats
 
-- aws config
 - pyaudio sizing/slicing demo
 
 ### medium
@@ -123,6 +120,8 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- aws config
+- new inline Sequencer/LfoConfig classes which wrap seq_id, lfo_id methods or properties
 - link re python pitch shifting
 - pass explicit modules and links to project
 - move module layout initialisation into modules.py
