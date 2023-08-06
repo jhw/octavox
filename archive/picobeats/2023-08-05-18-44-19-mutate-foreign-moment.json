@@ -2,7 +2,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -44,10 +43,10 @@
             "seed": 48467413,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -89,10 +88,10 @@
             "seed": 55739075,
             "style": "backbeat"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -155,17 +154,18 @@
             "seed": 5686783,
             "style": "offbeats"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 54576410
+        "seed": 54576410,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 29008260
+        "seed": 29008260,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -173,7 +173,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -215,10 +214,10 @@
             "seed": 91142221,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -260,10 +259,10 @@
             "seed": 74157454,
             "style": "skip"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -326,17 +325,18 @@
             "seed": 7518072,
             "style": "offbeats"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 52657811
+        "seed": 52657811,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 49951057
+        "seed": 49951057,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -344,7 +344,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -386,10 +385,10 @@
             "seed": 55528587,
             "style": "triplets"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -431,10 +430,10 @@
             "seed": 79541016,
             "style": "skip"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -497,17 +496,18 @@
             "seed": 93708993,
             "style": "offbeats"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 45770280
+        "seed": 45770280,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 84054179
+        "seed": 84054179,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -515,7 +515,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -557,10 +556,10 @@
             "seed": 6091291,
             "style": "electro"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -602,10 +601,10 @@
             "seed": 43714673,
             "style": "backbeat"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -668,17 +667,18 @@
             "seed": 35293649,
             "style": "closed"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 44926798
+        "seed": 44926798,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 61470448
+        "seed": 61470448,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -686,7 +686,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -728,10 +727,10 @@
             "seed": 78880452,
             "style": "triplets"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -773,10 +772,10 @@
             "seed": 99674334,
             "style": "backbeat"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -839,17 +838,18 @@
             "seed": 16042545,
             "style": "offbeats"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 23472694
+        "seed": 23472694,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 29620607
+        "seed": 29620607,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -857,7 +857,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -899,10 +898,10 @@
             "seed": 52632926,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -944,10 +943,10 @@
             "seed": 76877463,
             "style": "skip"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -1010,17 +1009,18 @@
             "seed": 43820487,
             "style": "offbeats"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 17620305
+        "seed": 17620305,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 33648700
+        "seed": 33648700,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -1028,7 +1028,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -1070,10 +1069,10 @@
             "seed": 28656303,
             "style": "triplets"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -1115,10 +1114,10 @@
             "seed": 19186882,
             "style": "backbeat"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -1181,17 +1180,18 @@
             "seed": 35279797,
             "style": "offbeats"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 5730544
+        "seed": 5730544,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 70438942
+        "seed": 70438942,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -1199,7 +1199,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -1241,10 +1240,10 @@
             "seed": 75479526,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -1286,10 +1285,10 @@
             "seed": 22159601,
             "style": "skip"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -1352,17 +1351,18 @@
             "seed": 42260976,
             "style": "offbeats"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 26933235
+        "seed": 26933235,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 36316400
+        "seed": 36316400,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -1370,7 +1370,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -1412,10 +1411,10 @@
             "seed": 63081558,
             "style": "triplets"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -1457,10 +1456,10 @@
             "seed": 49489614,
             "style": "skip"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -1523,17 +1522,18 @@
             "seed": 64922511,
             "style": "offbeats"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 53517793
+        "seed": 53517793,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 2185054
+        "seed": 2185054,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -1541,7 +1541,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -1583,10 +1582,10 @@
             "seed": 87033053,
             "style": "electro"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -1628,10 +1627,10 @@
             "seed": 87260206,
             "style": "skip"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -1694,17 +1693,18 @@
             "seed": 8702726,
             "style": "closed"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 53819140
+        "seed": 53819140,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 80336638
+        "seed": 80336638,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -1712,7 +1712,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -1754,10 +1753,10 @@
             "seed": 53767183,
             "style": "triplets"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -1799,10 +1798,10 @@
             "seed": 92628735,
             "style": "skip"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -1865,17 +1864,18 @@
             "seed": 19235018,
             "style": "offbeats"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 68343566
+        "seed": 68343566,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 68930938
+        "seed": 68930938,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -1883,7 +1883,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -1925,10 +1924,10 @@
             "seed": 67104384,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -1970,10 +1969,10 @@
             "seed": 14839628,
             "style": "backbeat"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -2036,17 +2035,18 @@
             "seed": 13916962,
             "style": "closed"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 72477574
+        "seed": 72477574,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 22006745
+        "seed": 22006745,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -2054,7 +2054,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -2096,10 +2095,10 @@
             "seed": 87497784,
             "style": "triplets"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -2141,10 +2140,10 @@
             "seed": 99003535,
             "style": "backbeat"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -2207,17 +2206,18 @@
             "seed": 5841143,
             "style": "offbeats"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 64684038
+        "seed": 64684038,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 56545213
+        "seed": 56545213,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -2225,7 +2225,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -2267,10 +2266,10 @@
             "seed": 82552789,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -2312,10 +2311,10 @@
             "seed": 21715914,
             "style": "backbeat"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -2378,17 +2377,18 @@
             "seed": 25589774,
             "style": "closed"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 56200484
+        "seed": 56200484,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 17564834
+        "seed": 17564834,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -2396,7 +2396,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -2438,10 +2437,10 @@
             "seed": 52706002,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -2483,10 +2482,10 @@
             "seed": 39214118,
             "style": "backbeat"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -2549,17 +2548,18 @@
             "seed": 29461538,
             "style": "offbeats"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 40528468
+        "seed": 40528468,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 86158716
+        "seed": 86158716,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -2567,7 +2567,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -2609,10 +2608,10 @@
             "seed": 51327816,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -2654,10 +2653,10 @@
             "seed": 28644226,
             "style": "skip"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -2720,17 +2719,18 @@
             "seed": 67885034,
             "style": "offbeats"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 90464530
+        "seed": 90464530,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 27790837
+        "seed": 27790837,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -2738,7 +2738,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -2780,10 +2779,10 @@
             "seed": 48029457,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -2825,10 +2824,10 @@
             "seed": 61807266,
             "style": "backbeat"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -2891,17 +2890,18 @@
             "seed": 72674995,
             "style": "offbeats"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 81849155
+        "seed": 81849155,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 52070978
+        "seed": 52070978,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -2909,7 +2909,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -2951,10 +2950,10 @@
             "seed": 65047215,
             "style": "electro"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -2996,10 +2995,10 @@
             "seed": 11090739,
             "style": "skip"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -3062,17 +3061,18 @@
             "seed": 69569125,
             "style": "offbeats"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 3478379
+        "seed": 3478379,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 28875694
+        "seed": 28875694,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -3080,7 +3080,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -3122,10 +3121,10 @@
             "seed": 35866518,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -3167,10 +3166,10 @@
             "seed": 67924264,
             "style": "backbeat"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -3233,17 +3232,18 @@
             "seed": 90837727,
             "style": "offbeats"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 13927884
+        "seed": 13927884,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 32283378
+        "seed": 32283378,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -3251,7 +3251,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -3293,10 +3292,10 @@
             "seed": 8243671,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -3338,10 +3337,10 @@
             "seed": 87779052,
             "style": "backbeat"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -3404,17 +3403,18 @@
             "seed": 66596774,
             "style": "offbeats"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 97214203
+        "seed": 97214203,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 30643943
+        "seed": 30643943,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -3422,7 +3422,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -3464,10 +3463,10 @@
             "seed": 7643561,
             "style": "electro"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -3509,10 +3508,10 @@
             "seed": 80804267,
             "style": "skip"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -3575,17 +3574,18 @@
             "seed": 3426188,
             "style": "offbeats"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 91007885
+        "seed": 91007885,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 72885773
+        "seed": 72885773,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -3593,7 +3593,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -3635,10 +3634,10 @@
             "seed": 41145150,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -3680,10 +3679,10 @@
             "seed": 39365327,
             "style": "backbeat"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -3746,17 +3745,18 @@
             "seed": 99963017,
             "style": "offbeats"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 44075008
+        "seed": 44075008,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 2303010
+        "seed": 2303010,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -3764,7 +3764,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -3806,10 +3805,10 @@
             "seed": 79879483,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -3851,10 +3850,10 @@
             "seed": 62796326,
             "style": "backbeat"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -3917,17 +3916,18 @@
             "seed": 28033513,
             "style": "offbeats"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 87554527
+        "seed": 87554527,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 51143107
+        "seed": 51143107,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -3935,7 +3935,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -3977,10 +3976,10 @@
             "seed": 19545074,
             "style": "triplets"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -4022,10 +4021,10 @@
             "seed": 9486560,
             "style": "backbeat"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -4088,17 +4087,18 @@
             "seed": 93445645,
             "style": "offbeats"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 57595717
+        "seed": 57595717,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 60843387
+        "seed": 60843387,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -4106,7 +4106,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -4148,10 +4147,10 @@
             "seed": 4383268,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -4193,10 +4192,10 @@
             "seed": 4985135,
             "style": "backbeat"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -4259,17 +4258,18 @@
             "seed": 79214660,
             "style": "offbeats"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 85893671
+        "seed": 85893671,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 38739360
+        "seed": 38739360,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -4277,7 +4277,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -4319,10 +4318,10 @@
             "seed": 60856851,
             "style": "electro"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -4364,10 +4363,10 @@
             "seed": 11695264,
             "style": "backbeat"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -4430,17 +4429,18 @@
             "seed": 901667,
             "style": "offbeats"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 23445948
+        "seed": 23445948,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 53839713
+        "seed": 53839713,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -4448,7 +4448,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -4490,10 +4489,10 @@
             "seed": 29154281,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -4535,10 +4534,10 @@
             "seed": 86538617,
             "style": "skip"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -4601,17 +4600,18 @@
             "seed": 37796380,
             "style": "closed"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 57519027
+        "seed": 57519027,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 20236323
+        "seed": 20236323,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -4619,7 +4619,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -4661,10 +4660,10 @@
             "seed": 49475052,
             "style": "triplets"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -4706,10 +4705,10 @@
             "seed": 25709114,
             "style": "backbeat"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -4772,17 +4771,18 @@
             "seed": 80943429,
             "style": "offbeats"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 35666627
+        "seed": 35666627,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 21529201
+        "seed": 21529201,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -4790,7 +4790,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -4832,10 +4831,10 @@
             "seed": 58202832,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -4877,10 +4876,10 @@
             "seed": 99386172,
             "style": "skip"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -4943,17 +4942,18 @@
             "seed": 47604170,
             "style": "offbeats"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 36213193
+        "seed": 36213193,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 81959492
+        "seed": 81959492,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -4961,7 +4961,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -5003,10 +5002,10 @@
             "seed": 86699375,
             "style": "electro"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -5048,10 +5047,10 @@
             "seed": 60685972,
             "style": "skip"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -5114,17 +5113,18 @@
             "seed": 8865440,
             "style": "closed"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 70740307
+        "seed": 70740307,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 31271377
+        "seed": 31271377,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -5132,7 +5132,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -5174,10 +5173,10 @@
             "seed": 37740417,
             "style": "triplets"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -5219,10 +5218,10 @@
             "seed": 54116950,
             "style": "skip"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -5285,17 +5284,18 @@
             "seed": 84684220,
             "style": "offbeats"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 43811578
+        "seed": 43811578,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 98944004
+        "seed": 98944004,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -5303,7 +5303,6 @@
   {
     "sequencers": [
       {
-        "id": "KickSampler",
         "pattern": "0",
         "slices": [
           {
@@ -5345,10 +5344,10 @@
             "seed": 24902459,
             "style": "fourfloor"
           }
-        ]
+        ],
+        "name": "KickSampler"
       },
       {
-        "id": "SnareSampler",
         "pattern": "0|1|0|2",
         "slices": [
           {
@@ -5390,10 +5389,10 @@
             "seed": 32947531,
             "style": "backbeat"
           }
-        ]
+        ],
+        "name": "SnareSampler"
       },
       {
-        "id": "HatSampler",
         "pattern": "0|0|1|0",
         "slices": [
           {
@@ -5456,17 +5455,18 @@
             "seed": 20309415,
             "style": "offbeats"
           }
-        ]
+        ],
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
-        "id": "Echo/wet",
-        "seed": 28121264
+        "seed": 28121264,
+        "name": "Echo/wet"
       },
       {
-        "id": "Echo/feedback",
-        "seed": 53629252
+        "seed": 53629252,
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75

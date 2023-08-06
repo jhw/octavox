@@ -47,7 +47,7 @@
             "style": "fourfloor"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -95,7 +95,7 @@
             "style": "skip"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -167,17 +167,17 @@
             "style": "closed"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 15494776,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 99881882,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -230,7 +230,7 @@
             "style": "fourfloor"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -278,7 +278,7 @@
             "style": "skip"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -350,17 +350,17 @@
             "style": "closed"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 37031366,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 77027919,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -413,7 +413,7 @@
             "style": "fourfloor"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -461,7 +461,7 @@
             "style": "backbeat"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -533,17 +533,17 @@
             "style": "offbeats"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 76067057,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 20810047,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -596,7 +596,7 @@
             "style": "fourfloor"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -644,7 +644,7 @@
             "style": "skip"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -716,17 +716,17 @@
             "style": "closed"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 86294632,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 5506283,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -779,7 +779,7 @@
             "style": "fourfloor"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -827,7 +827,7 @@
             "style": "backbeat"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -899,17 +899,17 @@
             "style": "offbeats"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 39703519,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 22666985,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -962,7 +962,7 @@
             "style": "triplets"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -1010,7 +1010,7 @@
             "style": "skip"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -1082,17 +1082,17 @@
             "style": "closed"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 33600802,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 59873643,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -1145,7 +1145,7 @@
             "style": "fourfloor"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -1193,7 +1193,7 @@
             "style": "skip"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -1265,17 +1265,17 @@
             "style": "closed"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 70060123,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 96279080,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -1328,7 +1328,7 @@
             "style": "fourfloor"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -1376,7 +1376,7 @@
             "style": "backbeat"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -1448,17 +1448,17 @@
             "style": "closed"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 56120773,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 37777678,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -1511,7 +1511,7 @@
             "style": "fourfloor"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -1559,7 +1559,7 @@
             "style": "skip"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -1631,17 +1631,17 @@
             "style": "closed"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 77803454,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 94963778,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -1694,7 +1694,7 @@
             "style": "triplets"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -1742,7 +1742,7 @@
             "style": "skip"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -1814,17 +1814,17 @@
             "style": "closed"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 61510146,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 36037896,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -1877,7 +1877,7 @@
             "style": "electro"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -1925,7 +1925,7 @@
             "style": "skip"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -1997,17 +1997,17 @@
             "style": "offbeats"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 86316345,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 15247475,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -2060,7 +2060,7 @@
             "style": "electro"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -2108,7 +2108,7 @@
             "style": "skip"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -2180,17 +2180,17 @@
             "style": "closed"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 22773339,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 42231020,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -2243,7 +2243,7 @@
             "style": "triplets"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -2291,7 +2291,7 @@
             "style": "skip"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -2363,17 +2363,17 @@
             "style": "closed"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 87784708,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 33863269,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -2426,7 +2426,7 @@
             "style": "fourfloor"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -2474,7 +2474,7 @@
             "style": "skip"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -2546,17 +2546,17 @@
             "style": "offbeats"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 21624156,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 53286760,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -2609,7 +2609,7 @@
             "style": "fourfloor"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -2657,7 +2657,7 @@
             "style": "skip"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -2729,17 +2729,17 @@
             "style": "offbeats"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 36335856,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 52395158,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -2792,7 +2792,7 @@
             "style": "electro"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -2840,7 +2840,7 @@
             "style": "skip"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -2912,17 +2912,17 @@
             "style": "closed"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 57055108,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 88371853,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -2975,7 +2975,7 @@
             "style": "triplets"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -3023,7 +3023,7 @@
             "style": "skip"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -3095,17 +3095,17 @@
             "style": "closed"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 78964241,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 71827523,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -3158,7 +3158,7 @@
             "style": "electro"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -3206,7 +3206,7 @@
             "style": "skip"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -3278,17 +3278,17 @@
             "style": "closed"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 15436916,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 16913090,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -3341,7 +3341,7 @@
             "style": "triplets"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -3389,7 +3389,7 @@
             "style": "backbeat"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -3461,17 +3461,17 @@
             "style": "closed"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 41058188,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 27528412,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -3524,7 +3524,7 @@
             "style": "fourfloor"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -3572,7 +3572,7 @@
             "style": "backbeat"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -3644,17 +3644,17 @@
             "style": "offbeats"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 84071767,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 62447707,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -3707,7 +3707,7 @@
             "style": "fourfloor"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -3755,7 +3755,7 @@
             "style": "skip"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -3827,17 +3827,17 @@
             "style": "offbeats"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 97391526,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 69136843,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -3890,7 +3890,7 @@
             "style": "fourfloor"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -3938,7 +3938,7 @@
             "style": "backbeat"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -4010,17 +4010,17 @@
             "style": "closed"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 17390209,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 6792040,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -4073,7 +4073,7 @@
             "style": "fourfloor"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -4121,7 +4121,7 @@
             "style": "backbeat"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -4193,17 +4193,17 @@
             "style": "closed"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 403075,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 51461960,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -4256,7 +4256,7 @@
             "style": "fourfloor"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -4304,7 +4304,7 @@
             "style": "skip"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -4376,17 +4376,17 @@
             "style": "offbeats"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 22984032,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 52555522,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -4439,7 +4439,7 @@
             "style": "fourfloor"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -4487,7 +4487,7 @@
             "style": "backbeat"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -4559,17 +4559,17 @@
             "style": "offbeats"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 74139121,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 21151429,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -4622,7 +4622,7 @@
             "style": "electro"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -4670,7 +4670,7 @@
             "style": "skip"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -4742,17 +4742,17 @@
             "style": "closed"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 44266052,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 44352899,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -4805,7 +4805,7 @@
             "style": "fourfloor"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -4853,7 +4853,7 @@
             "style": "skip"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -4925,17 +4925,17 @@
             "style": "closed"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 73090791,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 13554005,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -4988,7 +4988,7 @@
             "style": "triplets"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -5036,7 +5036,7 @@
             "style": "skip"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -5108,17 +5108,17 @@
             "style": "offbeats"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 2007634,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 13173686,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -5171,7 +5171,7 @@
             "style": "electro"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -5219,7 +5219,7 @@
             "style": "skip"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -5291,17 +5291,17 @@
             "style": "offbeats"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 191821,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 20181696,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -5354,7 +5354,7 @@
             "style": "electro"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -5402,7 +5402,7 @@
             "style": "skip"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -5474,17 +5474,17 @@
             "style": "closed"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 25820277,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 94712334,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -5537,7 +5537,7 @@
             "style": "fourfloor"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -5585,7 +5585,7 @@
             "style": "skip"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -5657,17 +5657,17 @@
             "style": "closed"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 32085171,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 34799128,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
@@ -5720,7 +5720,7 @@
             "style": "triplets"
           }
         ],
-        "id": "KickSampler"
+        "name": "KickSampler"
       },
       {
         "pattern": "0|0|1|0",
@@ -5768,7 +5768,7 @@
             "style": "backbeat"
           }
         ],
-        "id": "SnareSampler"
+        "name": "SnareSampler"
       },
       {
         "pattern": "0",
@@ -5840,17 +5840,17 @@
             "style": "closed"
           }
         ],
-        "id": "HatSampler"
+        "name": "HatSampler"
       }
     ],
     "lfos": [
       {
         "seed": 34810650,
-        "id": "Echo/wet"
+        "name": "Echo/wet"
       },
       {
         "seed": 53219590,
-        "id": "Echo/feedback"
+        "name": "Echo/feedback"
       }
     ],
     "density": 0.75
