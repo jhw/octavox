@@ -16,6 +16,13 @@
 - slide and accent
 - echo sample and hold
 
+### samplepad
+
+- some of these pad sounds are nice when they get accidentally inserted into the kk/sn/ht channels and have lfos applied to them
+- what happens if you channel that thought, maybe slice and randomise, maybe shift pitch?
+- what if you put a volume thing after echo and apply a stutter?
+- what if you add a compressor and a bassline?
+
 ### nine09
 
 - like pico|slicebeats but with native instruments
