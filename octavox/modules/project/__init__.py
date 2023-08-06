@@ -25,6 +25,8 @@ class SVNoteTrig:
                modules,
                controllers,
                volume=128):
+        if self.mod not in modules:
+            raise RuntimeError("mod %s not found" % self.mod)
         mod=modules[self.mod]
         trig=1+(mod.lookup(self.samplekey) if self.samplekey else self.id)
         modid=1+mod.index # NB 1+
@@ -51,8 +53,14 @@ class SVFXTrig:
                controllers,
                ctrlmult=256,
                maxvalue=256*128):
+        if (self.mod not in modules or
+            self.mod not in controllers):
+            raise RuntimeError("mod %s not found" % self.mod)
         mod, controller = modules[self.mod], controllers[self.mod]
         modid=1+mod.index # NB 1+
+        if self.ctrl not in controller:
+            raise RuntimeError("ctrl %s not found in mod %s" % (self.ctrl,
+                                                                self.mod))
         ctrlid=ctrlmult*controller[self.ctrl]
         ctrlvalue=int(self.value*maxvalue) # NB **NOT** 1+
         return RVNote(module=modid,

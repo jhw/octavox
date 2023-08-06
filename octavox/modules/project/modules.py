@@ -74,9 +74,12 @@ class SVModGrid(dict):
     def rms_distance(self, links):
         total=0
         for link in links:
-            a, b = [self[modname]
-                    for modname in link]
-            distance=((a[0]-b[0])**2+(a[1]-b[1])**2)**0.5
+            xy=[]
+            for modname in link:
+                if modname not in self:
+                    raise RuntimeError("mod %s not found" % modname)
+                xy.append(self[modname])
+            distance=((xy[0][0]-xy[1][0])**2+(xy[0][1]-xy[1][1])**2)**0.5
             total+=distance
         return total
 
