@@ -1,7 +1,5 @@
 ### short
 
-- add lookup method to SVPool as per fixes
-- convert samples lookup to act polymorphically wrt to pool and fixes
 - remove pool validation stuff
 - refactor SVPool as per cli Fixes
 - replace Fixes with SVPool
@@ -122,6 +120,8 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- add lookup method to SVPool as per fixes
+- convert samples lookup to act polymorphically wrt to pool and fixes
 - migrations to save to migrations dir
 - dedicate migrations class
 - migrate ids to names

@@ -73,6 +73,9 @@ class SVPool(dict):
 
     def clone(self):
         return SVPool(self)
+
+    def lookup(self, tag):
+        return self[tag]
     
     def add(self, pool):
         for key in pool:

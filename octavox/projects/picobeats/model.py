@@ -56,7 +56,7 @@ class Samples(list):
         samples=[]
         for childtag in mapping[tag]:
             keyfixes=fixes.lookup(childtag)
-            values=keyfixes if i==0 and keyfixes!=[] else pool[childtag]
+            values=keyfixes if i==0 and keyfixes!=[] else pool.lookup(childtag)
             samples.append(random.choice(values))
         return Samples(samples)
             
