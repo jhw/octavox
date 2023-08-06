@@ -1,21 +1,24 @@
-### short [01-refactor-archives]
+### short
 
 - rename picobeats as slicebeats
-- s3 archive cli capabilities
+- separate project name from outside
+- consider moving tags out of config
+- consider if keys need removing from pools
+- aws config
+- pyaudio slice demo
 
 ### medium
 
+- s3 archive cli capabilities
 - replace sequencer_id, lfo_id functions
-
 - multiple mutate functions
-  - existing mutate
-  - mutate densities
-
+  - existing version
+  - seeds only
+  - densities
 - multiple arrange functions
   - pass series of roots and series of fills which are interspersed
   - pass a root and a density number which bumped for the fill
-  - mutes?
-
+  - mutes
 - slice and cutoff samplers [notes]
 - sample bans
 - chord support
