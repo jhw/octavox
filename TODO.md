@@ -1,19 +1,14 @@
-### short [pyaudio]
+### short [pydub]
 
-- pydub
-  - https://stackoverflow.com/questions/44424874/read-from-bytes-not-filename-to-convert-audio
+- rename sampler as BankSampler and move into banks
 
-- dump wavfile
-- get length of wavfile
-- slice wavfile
-- dump slices to zip
+- create sampler with slices, bypassing zipfile
 
 ### medium
 
 - s3 archive cli capabilities [notes]
 
-- separate mutate seed, style functions
-- multiple mutate functions
+- multiple mutate functions  
   - seeds only
   - seeds and styles
   - densities
@@ -23,7 +18,6 @@
   - pass a root and a density number which bumped for the fill
   - mutes
 
-- cutoff, slice samplers [notes]
 - chord support
 
 ### long
@@ -129,6 +123,9 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- pydub
+  - https://stackoverflow.com/questions/44424874/read-from-bytes-not-filename-to-convert-audio
+- dump wavfile
 - rename picobeats as slicebeats
 - replace Fixes with SVPool
 - cull pools on loading

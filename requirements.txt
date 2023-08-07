@@ -2,7 +2,6 @@ awscli
 boto3
 botocore
 numpy
-pyaudio
+pydub
 pyyaml
 git+https://github.com//metrasynth/radiant-voices
-wave
