@@ -1,9 +1,5 @@
 from octavox.modules import is_abbrev
 
-from octavox.modules.sampler import SVBaseSampler
-
-from rv.note import NOTE as RVNOTE
-
 import os, re, yaml, zipfile
 
 Fragments=yaml.safe_load("""
@@ -153,27 +149,6 @@ class SVBank:
                         pool[str(samplekey)]=samplekey
         return pool
 
-class SVBankSampler(SVBaseSampler):
-
-    def __init__(self, samplekeys, banks, maxslots=120, *args, **kwargs):
-        SVBaseSampler.__init__(self, *args, **kwargs)
-        if len(samplekeys) > maxslots:
-            raise RuntimeError("SVBankSampler max slots exceeded")
-        self.samplekeys=samplekeys
-        self.samplestrings=[str(samplekey)
-                            for samplekey in samplekeys]
-        notes=list(RVNOTE)
-        root=notes.index(RVNOTE.C5)
-        for i, samplekey in enumerate(self.samplekeys):
-            self.note_samples[notes[i]]=i
-            src=banks.get_wavfile(samplekey)
-            self.load(src, i)
-            sample=self.samples[i]
-            sample.relative_note+=(root-i)
-
-    def lookup(self, samplekey):
-        return self.samplestrings.index(str(samplekey))
-    
 class SVBanks(dict):
 
     def __init__(self, root):

@@ -1,7 +1,6 @@
 ### short
 
 - new optional samplekey params field which renders as JSON dict in str
-- move banks into directory and have separate sampler module
 - investigate how existing sampler copies data to slot (lookup?)
 - pydub demo to export to in- memory binary data
 - pydub slice and cutoff support at sampler level
@@ -22,6 +21,12 @@
 
 - move banks to s3
 - chord support
+
+### pydub
+
+- get/change pitch
+- timestretching
+- detecting crossover points
 
 ### long
 
@@ -126,6 +131,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- move banks into directory and have separate sampler module
 - make samplekey tags optional
 - tags to be rendered as list at end of str(samplekey)
 - ensure tags are sorted in str() for consistency

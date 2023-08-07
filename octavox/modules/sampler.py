@@ -1,5 +1,7 @@
 from rv.modules.sampler import Sampler as RVSampler
 
+from rv.note import NOTE as RVNOTE
+
 # from scipy.io import wavfile
 from octavox.modules.utils import wavfile
 
@@ -40,7 +42,28 @@ class SVBaseSampler(RVSampler):
             setattr(sample, key, value)
         self.samples[slot] = sample
         return sample
-                
+
+class SVSampler(SVBaseSampler):
+
+    def __init__(self, samplekeys, banks, maxslots=120, *args, **kwargs):
+        SVBaseSampler.__init__(self, *args, **kwargs)
+        if len(samplekeys) > maxslots:
+            raise RuntimeError("SVBankSampler max slots exceeded")
+        self.samplekeys=samplekeys
+        self.samplestrings=[str(samplekey)
+                            for samplekey in samplekeys]
+        notes=list(RVNOTE)
+        root=notes.index(RVNOTE.C5)
+        for i, samplekey in enumerate(self.samplekeys):
+            self.note_samples[notes[i]]=i
+            src=banks.get_wavfile(samplekey)
+            self.load(src, i)
+            sample=self.samples[i]
+            sample.relative_note+=(root-i)
+
+    def lookup(self, samplekey):
+        return self.samplestrings.index(str(samplekey))
+        
 if __name__=="__main__":
     pass
             
