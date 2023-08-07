@@ -1,7 +1,9 @@
 ### short
 
-- pydub slice and cutoff support at sampler level
-- 
+- pass pool around rather than list of samplekeys
+- complete slice and cutoff code at sampler level
+- test script to test slice and cutoff samplers
+
 ### medium
 
 - s3 archive cli capabilities [notes]

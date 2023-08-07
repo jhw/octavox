@@ -66,7 +66,11 @@ class SVSampler(SVBaseSampler):
                     segments[segkey]=AudioSegment.from_file(src)                
                 segment=segments[segkey]
                 buf=io.BytesIO()
-                segment.export(buf, format="wav")            
+                """
+                - include slice/cutoff info here ie segment[j:k]
+                """
+                ext=samplekey["filename"].split(".")[-1]
+                segment.export(buf, format=ext)            
                 self.load(buf, i)
             else:
                 self.load(src, i)
