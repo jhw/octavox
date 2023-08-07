@@ -153,7 +153,7 @@ class SVProject:
     def init_modules(self,
                      proj,
                      config,
-                     multipliers={"x": 1, "y": -2}):
+                     multipliers={"x": 1, "y": -1}):
         positions=init_layout(modules=config["modules"],
                               links=config["links"])
         modules={}

@@ -53,9 +53,12 @@ class SVSampleKey(dict):
                             "file": self["file"]})
         
     def __str__(self):
-        return "%s:%s/%s" % (",".join(self["tags"]),
-                             self["bank"],
-                             self["file"])
+        tokens=[]
+        tokens.append("%s/%s" % (self["bank"],
+                                 self["file"]))
+        if self["tags"]!=[]:
+            tokens.append("[%s]" % ", ".join(sorted(self["tags"])))
+        return " ".join(tokens)
 
 class SVPool(dict):
 

@@ -1,8 +1,5 @@
 ### short
 
-- make samplekey tags optional
-- tags to be rendered as list at end of str(samplekey)
-- ensure tags are sorted in str() for consistency
 - new optional samplekey params field which renders as JSON dict in str
 - move banks into directory and have separate sampler module
 - investigate how existing sampler copies data to slot (lookup?)
@@ -129,6 +126,9 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- make samplekey tags optional
+- tags to be rendered as list at end of str(samplekey)
+- ensure tags are sorted in str() for consistency
 - remove comment about polymorphic samplers
 - consider raising RuntimeError if no samplekeys with mod tag found
 - CREDITS.md, INSPIRATION.md
