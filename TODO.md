@@ -1,6 +1,5 @@
 ### short
 
-- pydub demo to export to in- memory binary data
 - pydub slice and cutoff support at sampler level
 - 
 ### medium
@@ -129,6 +128,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- pydub demo to export to in- memory binary data
 - new optional samplekey params field which renders as JSON dict in str
 - investigate how existing sampler copies data to slot (lookup?)
 - move banks into directory and have separate sampler module
