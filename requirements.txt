@@ -5,3 +5,4 @@ numpy
 pyaudio
 pyyaml
 git+https://github.com//metrasynth/radiant-voices
+wave
