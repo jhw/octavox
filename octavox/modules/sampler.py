@@ -7,7 +7,7 @@ import warnings
 
 warnings.simplefilter("ignore", wavfile.WavFileWarning)
 
-class BaseSampler(RVSampler):
+class SVBaseSampler(RVSampler):
 
     def __init__(self, *args, **kwargs):
         RVSampler.__init__(self, *args, **kwargs)

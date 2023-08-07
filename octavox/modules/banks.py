@@ -1,6 +1,6 @@
 from octavox.modules import is_abbrev
 
-from octavox.modules.samplers import BaseSampler
+from octavox.modules.sampler import SVBaseSampler
 
 from rv.note import NOTE as RVNOTE
 
@@ -150,10 +150,10 @@ class SVBank:
                         pool[str(samplekey)]=samplekey
         return pool
 
-class SVBankSampler(BaseSampler):
+class SVBankSampler(SVBaseSampler):
 
     def __init__(self, samplekeys, banks, maxslots=120, *args, **kwargs):
-        BaseSampler.__init__(self, *args, **kwargs)
+        SVBaseSampler.__init__(self, *args, **kwargs)
         if len(samplekeys) > maxslots:
             raise RuntimeError("SVBankSampler max slots exceeded")
         self.samplekeys=samplekeys

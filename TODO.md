@@ -1,8 +1,6 @@
-### short [pydub]
+### short
 
-- rename sampler as BankSampler and move into banks
-
-- create sampler with slices, bypassing zipfile
+- cutoff, slice samplers (with demos)
 
 ### medium
 
@@ -123,6 +121,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- rename sampler as BankSampler and move into banks
 - pydub
   - https://stackoverflow.com/questions/44424874/read-from-bytes-not-filename-to-convert-audio
 - dump wavfile
