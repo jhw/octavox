@@ -1,6 +1,12 @@
-### short
+### short [pyaudio]
 
-- pyaudio sizing/slicing demo
+- pydub
+  - https://stackoverflow.com/questions/44424874/read-from-bytes-not-filename-to-convert-audio
+
+- dump wavfile
+- get length of wavfile
+- slice wavfile
+- dump slices to zip
 
 ### medium
 
