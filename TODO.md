@@ -1,9 +1,5 @@
 ### short
 
-- CREDITS.md, INSPIRATION.md
-
-- remove comment about polymorphic samplers
-- consider raising RuntimeError if no samplekeys with mod tag found
 - make samplekey tags optional
 - tags to be rendered as list at end of str(samplekey)
 - ensure tags are sorted in str() for consistency
@@ -133,6 +129,9 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- remove comment about polymorphic samplers
+- consider raising RuntimeError if no samplekeys with mod tag found
+- CREDITS.md, INSPIRATION.md
 - rename sampler as BankSampler and move into banks
 - pydub
   - https://stackoverflow.com/questions/44424874/read-from-bytes-not-filename-to-convert-audio

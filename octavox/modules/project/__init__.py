@@ -123,10 +123,6 @@ class SVProject:
             patch.filter_samplekeys(samplekeys)
         return list(samplekeys.values())
 
-    """
-    - creation of sampler kwargs may need to change if you have multiple classes of sampler in the future
-    """
-        
     def init_modclasses(self,
                         config,
                         samplekeys,
@@ -143,9 +139,12 @@ class SVProject:
             modclass=init_class(mod)
             kwargs={}
             if mod["class"].lower().endswith("sampler"):
+                selectedkeys=[samplekey for samplekey in samplekeys
+                              if mod["name"] in samplekey["tags"]]
+                if selectedkeys==[]:
+                    raise RuntimeError("no samplekeys found for %s" % mod["name"])
                 kwargs={"banks": banks,
-                        "samplekeys": [samplekey for samplekey in samplekeys
-                                       if mod["name"] in samplekey["tags"]]}
+                        "samplekeys": selectedkeys}
             try:
                 mod["instance"]=modclass(**kwargs)
             except:
