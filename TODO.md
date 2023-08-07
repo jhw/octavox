@@ -1,13 +1,12 @@
 ### short
 
-- separate mutate seed, style functions
-- rename picobeats as slicebeats
 - pyaudio sizing/slicing demo
 
 ### medium
 
 - s3 archive cli capabilities [notes]
 
+- separate mutate seed, style functions
 - multiple mutate functions
   - seeds only
   - seeds and styles
@@ -124,6 +123,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- rename picobeats as slicebeats
 - replace Fixes with SVPool
 - cull pools on loading
 - add samples lookup code which uses full pool if no matches are found

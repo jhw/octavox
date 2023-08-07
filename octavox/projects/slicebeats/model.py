@@ -8,7 +8,7 @@ from octavox.projects import Q
 
 import json, random, yaml
 
-Config=yaml.safe_load(open("octavox/projects/picobeats/config.yaml").read())
+Config=yaml.safe_load(open("octavox/projects/slicebeats/config.yaml").read())
 
 Patterns=["0",
           "0|0|1|0",

@@ -6,15 +6,15 @@ from octavox.modules.project import SVNoteTrig
 
 from octavox.projects import random_filename, flatten
 
-from octavox.projects.picobeats.model import Patch, Patches
+from octavox.projects.slicebeats.model import Patch, Patches
 
 import json, os, random, yaml
 
-Config=yaml.safe_load(open("octavox/projects/picobeats/config.yaml").read())
+Config=yaml.safe_load(open("octavox/projects/slicebeats/config.yaml").read())
 
-class PicobeatsCli(SVBankCli):
+class SlicebeatsCli(SVBankCli):
 
-    intro="Welcome to Picobeats :)"
+    intro="Welcome to Slicebeats :)"
 
     def __init__(self,
                  *args,
@@ -159,13 +159,13 @@ bpm: 120
 
 if __name__=="__main__":
     try:
-        def load_yaml(filename, home="octavox/projects/picobeats"):
+        def load_yaml(filename, home="octavox/projects/slicebeats"):
             return yaml.safe_load(open("%s/%s" % (home, filename)).read())
         banks=SVBanks("octavox/banks/pico")
         pools=SVPools({poolname:pool
                        for poolname, pool in banks.spawn_pools().items()
                        if len(pool) > 24})
-        PicobeatsCli(projectname="picobeats",
+        SlicebeatsCli(projectname="slicebeats",
                      poolname="global-curated",
                      params=Params,
                      banks=banks,

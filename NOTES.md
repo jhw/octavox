@@ -55,7 +55,7 @@
 - override mutes
 - no mutations!
 
-### picobeats api 26/07/23
+### slicebeats api 26/07/23
 
 - randomise patches
 - mutate patch
@@ -79,7 +79,7 @@
 - each sampler only has a limited set of slots
 - so it's important to render only those which will be used
 
-- the pattern/slice structure used by the picobeats model ensures there is some redundancy here
+- the pattern/slice structure used by the slicebeats model ensures there is some redundancy here
 - ie samples may be defined but not used, because a slice may not be part of a pattern
 - randomising slices this gives some scope for introducing new samples
 
@@ -98,7 +98,7 @@
 ### samples structure 08/07/23
 
 - SVBanks is a dict of bank keyword keys and zipfile values
-- feels like entire SVBanks class should be part of picobeats
+- feels like entire SVBanks class should be part of slicebeats
 - random_key property needs to be removed and become part of pool
 - get_wavfile is passed a key of "#{bank}:#{id}" form
 - second half of this will need to change as going to use real names rather than ids
@@ -107,7 +107,7 @@
 - which sampler then passes to wavfile.read
 
 - using real wavfiles rather than ids simplifies things because you no longer need to look anything up
-- together with removal of random_id, means this class could be much smaller and removed to picobeats module
+- together with removal of random_id, means this class could be much smaller and removed to slicebeats module
 
 - you probably have a pool interface and multiple sub classes
 - a (single) bank pool probably just returns anything from the bank, althought maybe it's worth curating

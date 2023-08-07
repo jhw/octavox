@@ -1,6 +1,6 @@
-### Octavox::Picobeats
+### Octavox::Slicebeats
 
-There is currently just a single Octavox project `Picobeats` which takes samples from Erica Synths Pico System II and lays out beat sequences with them 
+There is currently just a single Octavox project `Slicebeats` which takes samples from Erica Synths Pico System II and lays out beat sequences with them 
 
 https://www.ericasynths.lv/shop/eurorack-systems/pico-system-ii/
 
@@ -14,7 +14,7 @@ Once you have started the CLI there are three main methods -
 
 - `chain(i)` -> generate a track chain for patch `i` for export
 
-See `/octavox/projects/picobeats/cli.py` for other methods
+See `/octavox/projects/slicebeats/cli.py` for other methods
 
 I am indebted to `@vitling` for his `Endless Acid Banger` project, from whence I took inspiration for the beat patterns 
 
@@ -23,8 +23,8 @@ https://github.com/vitling/acid-banger
 ### Usage
 
 ```
-(env) jhw@Justins-Air octavox % python octavox/projects/picobeats/cli.py 
-Welcome to Picobeats :)
+(env) jhw@Justins-Air octavox % python octavox/projects/slicebeats/cli.py 
+Welcome to Slicebeats :)
 >>> list_pools
   baseck-free
   clipping-free
@@ -55,5 +55,5 @@ INFO: 2023-07-15-07-45-43-mutation-practical-access
 >>> 
 ```
 
-(now fire up Sunvox and go look in `/tmp/picobeats/sunvox`)
+(now fire up Sunvox and go look in `/tmp/slicebeats/sunvox`)
 
