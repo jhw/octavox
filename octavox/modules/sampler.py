@@ -69,7 +69,7 @@ class SVSampler(SVBaseSampler):
                 """
                 - include slice/cutoff info here ie segment[j:k]
                 """
-                ext=samplekey["filename"].split(".")[-1]
+                ext=samplekey["file"].split(".")[-1]
                 segment.export(buf, format=ext)            
                 self.load(buf, i)
             else:
