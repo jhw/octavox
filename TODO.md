@@ -1,7 +1,5 @@
 ### short
 
-- new optional samplekey params field which renders as JSON dict in str
-- investigate how existing sampler copies data to slot (lookup?)
 - pydub demo to export to in- memory binary data
 - pydub slice and cutoff support at sampler level
 - 
@@ -131,6 +129,8 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- new optional samplekey params field which renders as JSON dict in str
+- investigate how existing sampler copies data to slot (lookup?)
 - move banks into directory and have separate sampler module
 - make samplekey tags optional
 - tags to be rendered as list at end of str(samplekey)

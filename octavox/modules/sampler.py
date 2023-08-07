@@ -56,8 +56,11 @@ class SVSampler(SVBaseSampler):
         root=notes.index(RVNOTE.C5)
         for i, samplekey in enumerate(self.samplekeys):
             self.note_samples[notes[i]]=i
-            src=banks.get_wavfile(samplekey)
-            self.load(src, i)
+            audio=banks.get_wavfile(samplekey)
+            """
+            - at this point you may want to modify audio for slice information, depending on what's happening with samplekey
+            """
+            self.load(audio, i)
             sample=self.samples[i]
             sample.relative_note+=(root-i)
 

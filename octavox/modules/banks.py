@@ -1,6 +1,6 @@
 from octavox.modules import is_abbrev
 
-import os, re, yaml, zipfile
+import json, os, re, yaml, zipfile
 
 Fragments=yaml.safe_load("""
 kk:
@@ -52,7 +52,11 @@ class SVSampleKey(dict):
         tokens=[]
         tokens.append("%s/%s" % (self["bank"],
                                  self["file"]))
-        if self["tags"]!=[]:
+        if ("sliceinfo" in self and
+            self["sliceinfo"]!={}):
+            tokens.append(json.dumps(self["sliceinfo"]))
+        if ("tags" in self and 
+            self["tags"]!=[]):
             tokens.append("[%s]" % ", ".join(sorted(self["tags"])))
         return " ".join(tokens)
 
