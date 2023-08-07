@@ -1,19 +1,32 @@
 ### Sunvox by @nightradio
 
+For the core synth
+
 - https://www.warmplace.ru/soft/sunvox/
 
 ### Radiant Voices by @gldnspd
+
+For the API
 
 - https://github.com/metrasynth/radiant-voices
 
 ### Endless Acid Banger by @vitling
 
-- https://www.vitling.xyz/toys/acid-banger/
-- https://github.com/vitling/acid-banger
+For the patterns
+
 - https://github.com/vitling/acid-banger/blob/main/src/pattern.ts
+- https://www.vitling.xyz/toys/acid-banger/
+
+### pydub by @jiaaro
+
+For the sample processing
+
+https://github.com/jiaaro/pydub
 
 ### Erica Synths Pico
 
+For the samples 
+
+- http://data.ericasynths.lv/picodrum/pack_list.json
 - https://www.ericasynths.lv/shop/eurorack-systems/pico-system-ii/
-- http://data.ericasynths.lv/picodrum/"
 
