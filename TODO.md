@@ -1,7 +1,18 @@
 ### short
 
-- cutoff, slice samplers (with demos)
+- CREDITS.md, INSPIRATION.md
 
+- remove comment about polymorphic samplers
+- consider raising RuntimeError if no samplekeys with mod tag found
+- make samplekey tags optional
+- tags to be rendered as list at end of str(samplekey)
+- ensure tags are sorted in str() for consistency
+- new optional samplekey params field which renders as JSON dict in str
+- move banks into directory and have separate sampler module
+- investigate how existing sampler copies data to slot (lookup?)
+- pydub demo to export to in- memory binary data
+- pydub slice and cutoff support at sampler level
+- 
 ### medium
 
 - s3 archive cli capabilities [notes]
@@ -16,6 +27,7 @@
   - pass a root and a density number which bumped for the fill
   - mutes
 
+- move banks to s3
 - chord support
 
 ### long
