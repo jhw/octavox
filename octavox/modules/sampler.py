@@ -2,10 +2,12 @@ from rv.modules.sampler import Sampler as RVSampler
 
 from rv.note import NOTE as RVNOTE
 
+from pydub import AudioSegment
+
 # from scipy.io import wavfile
 from octavox.modules.utils import wavfile
 
-import warnings
+import io, warnings
 
 warnings.simplefilter("ignore", wavfile.WavFileWarning)
 
@@ -54,13 +56,20 @@ class SVSampler(SVBaseSampler):
                             for samplekey in samplekeys]
         notes=list(RVNOTE)
         root=notes.index(RVNOTE.C5)
+        segments={}
         for i, samplekey in enumerate(self.samplekeys):
             self.note_samples[notes[i]]=i
-            audio=banks.get_wavfile(samplekey)
-            """
-            - at this point you may want to modify audio for slice information, depending on what's happening with samplekey
-            """
-            self.load(audio, i)
+            src=banks.get_wavfile(samplekey)
+            if "sliceinfo" in samplekey:
+                segkey=str(samplekey)
+                if segkey not in segments:
+                    segments[segkey]=AudioSegment.from_file(src)                
+                segment=segments[segkey]
+                buf=io.BytesIO()
+                segment.export(buf, format="wav")            
+                self.load(buf, i)
+            else:
+                self.load(src, i)
             sample=self.samples[i]
             sample.relative_note+=(root-i)
 

@@ -145,10 +145,7 @@ class SVProject:
                     raise RuntimeError("no samplekeys found for %s" % mod["name"])
                 kwargs={"banks": banks,
                         "samplekeys": selectedkeys}
-            try:
-                mod["instance"]=modclass(**kwargs)
-            except:
-                raise RuntimeError("error instantiating %s with %s" % (mod, kwargs))
+            mod["instance"]=modclass(**kwargs)
                 
     def init_modules(self,
                      proj,
