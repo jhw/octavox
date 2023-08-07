@@ -1,10 +1,10 @@
 modules:
   - name: KickSampler
-    class: octavox.modules.samplers.SVSampler
+    class: octavox.modules.banks.SVBankSampler
   - name: SnareSampler
-    class: octavox.modules.samplers.SVSampler
+    class: octavox.modules.banks.SVBankSampler
   - name: HatSampler
-    class: octavox.modules.samplers.SVSampler
+    class: octavox.modules.banks.SVBankSampler
   - name: Echo
     class: rv.modules.echo.Echo
     defaults:
