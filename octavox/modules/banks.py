@@ -47,7 +47,7 @@ class SVSampleKey(dict):
         return SVSampleKey({"tags": list(self["tags"]),
                             "bank": self["bank"],
                             "file": self["file"]})
-        
+    
     def __str__(self):
         tokens=[]
         tokens.append("%s/%s" % (self["bank"],
@@ -68,6 +68,9 @@ class SVPool(dict):
     def clone(self):
         return SVPool(self)
 
+    def add(self, samplekey):
+        self[str(samplekey)]=samplekey
+    
     def lookup(self, tag):
         samplekeys=[]
         for samplekey in self.values():
@@ -136,7 +139,7 @@ class SVBank:
                 samplekey=SVSampleKey({"tags": [tag],
                                        "bank": self.name,
                                        "file": wavfile})
-                pool[str(samplekey)]=samplekey
+                pool.add(samplekey)
         return pool
     
     def spawn_curated(self,
@@ -150,7 +153,7 @@ class SVBank:
                         samplekey=SVSampleKey({"tags": [tag],
                                                "bank": self.name,
                                                "file": wavfile})
-                        pool[str(samplekey)]=samplekey
+                        pool.add(samplekey)
         return pool
 
 class SVBanks(dict):

@@ -128,7 +128,7 @@ class SlicebeatsCli(SVBankCli):
     @parse_line()
     def do_list_fixes(self):
         for samplekey in self.fixes.values():
-            print ("- %s" % str(samplekey))
+            print ("- %s" % samplekey)
 
     @parse_line(config=[{"name": "tag",
                          "type": "str"},
@@ -143,7 +143,7 @@ class SlicebeatsCli(SVBankCli):
         samplekey=SVSampleKey({"tags": [tag],
                                "bank": bankname,
                                "file": wavfile})
-        self.fixes[str(samplekey)]=samplekey
+        self.fixes.add(samplekey)
 
     @parse_line()
     def do_clean_fixes(self):
