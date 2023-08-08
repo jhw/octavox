@@ -2,11 +2,12 @@
 
 - convert samplekey to real class with empty params, tags by default
 - pass pool to sampler
+- convert samples to pool
 - test project for cutoff, slice implementations
 
 ### medium
 
-- action to fix track
+- action to fix a track
 - check delay scales as bpm changes
 - s3 archive cli capabilities
 - random granular samples
