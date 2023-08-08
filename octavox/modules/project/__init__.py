@@ -141,9 +141,7 @@ class SVProject:
             modclass=init_class(mod)
             kwargs={}
             if mod["class"].lower().endswith("sampler"):
-                filtered={samplekey.full_key:samplekey
-                          for samplekey in pool.values()
-                          if mod["name"] in samplekey["tags"]}
+                filtered=pool.filter(mod["name"])
                 if filtered=={}:
                     raise RuntimeError("%s sample pool is empty" % mod["name"])
                 kwargs={"banks": banks,

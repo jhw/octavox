@@ -1,8 +1,7 @@
 ### short
 
-- creation of filtered should use pool.lookup
-
 - convert samplekey to real class with empty params, tags by default
+
 - convert model samples class to pool
 
 ### medium
@@ -125,6 +124,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- creation of filtered should use pool.lookup
 - refactor samplekeys nomeclature as samples or pool
 - pool.lookup() should return another pool
   - model Samples code will need changing
