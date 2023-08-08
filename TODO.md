@@ -1,8 +1,7 @@
 ### short
 
-- use explicit properties rather than calls to str(samplekey)
-
-- pass pool around rather than list of samplekeys
+- replace calss to str(samplekey) with samplekey.segment|slice_key
+- pass pool to sampler
 - test project for cutoff, slice implementations
 
 ### medium

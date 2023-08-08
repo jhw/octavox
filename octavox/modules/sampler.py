@@ -74,22 +74,26 @@ class SVSampler(SVBaseSampler):
             return fn(self, samplekey, src)
         return wrapped
 
+    def slice_range(self, samplekey, segment):
+        if "params" in samplekey:
+            params=samplekey["params"]
+            i, n = (max(1, params["i"]),
+                    params["n"])
+            if params["action"]=="cutoff":
+                return (0, int(len(segment)*i/n))
+            elif params["action"]=="slice":
+                return (int(len(segment)*(i-1)/n),
+                        int(len(segment)*i/n))
+            else:
+                raise RuntimeError("action %s not found" % params["action"])
+        else:
+            return (0, len(segment))
+    
     @init_segment
     def slice_sample(self, samplekey, src):
         segment=self.segments[samplekey.segment_key]
+        start, end = self.slice_range(samplekey, segment)
         buf=io.BytesIO()
-        if "params" in samplekey:
-            params=samplekey["params"]
-            i, n = params["i"], params["n"]
-            if params["action"]=="cutoff":
-                start, end = 0, int(len(segment)*i/n)
-            elif params["action"]=="slice":
-                start, end = (int(len(segment)*(i-1)/n),
-                              int(len(segment)*i/n))
-            else:
-                raise RuntimeError("action %s not recognised" % params["action"])
-        else:
-            start, end = 0, len(segment)
         segment[start:end].export(buf, format=samplekey.ext)
         return buf
                     
