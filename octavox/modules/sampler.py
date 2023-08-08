@@ -60,8 +60,8 @@ class SVSampler(SVBaseSampler):
         for i, samplekey in enumerate(self.samplekeys):
             self.note_samples[notes[i]]=i
             src=banks.get_wavfile(samplekey)
-            buf=self.slice_sample(samplekey, src)
-            # buf=self.slice_sample(samplekey, src) if "params" in samplekey else src
+            # buf=self.slice_sample(samplekey, src)
+            buf=self.slice_sample(samplekey, src) if "params" in samplekey else src
             self.load_sample(buf, i)
             sample=self.samples[i]
             sample.relative_note+=(root-i)

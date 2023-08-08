@@ -121,7 +121,7 @@ class SVProject:
         samplekeys={}
         for patch in patches:
             patch.filter_samplekeys(samplekeys)
-        return list(samplekeys.values())
+        return samplekeys
 
     def init_modclasses(self,
                         config,
@@ -139,7 +139,7 @@ class SVProject:
             modclass=init_class(mod)
             kwargs={}
             if mod["class"].lower().endswith("sampler"):
-                selectedkeys=[samplekey for samplekey in samplekeys
+                selectedkeys=[samplekey for samplekey in samplekeys.values()
                               if mod["name"] in samplekey["tags"]]
                 if selectedkeys==[]:
                     raise RuntimeError("no samplekeys found for %s" % mod["name"])
