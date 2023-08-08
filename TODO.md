@@ -1,7 +1,6 @@
 ### short
 
 - pass pool around rather than list of samplekeys
-- rename sliceparams as simply params
 - cutoff, slice implementations
 - test project for cutoff, slice implementations
 
@@ -124,6 +123,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- rename sliceparams as simply params
 - pool add() method to avoid doing `pool[str(samplekey)]=samplekey`
 - move mutation code into cli
 - pydub demo to export to in- memory binary data

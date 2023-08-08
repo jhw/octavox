@@ -60,7 +60,7 @@ class SVSampler(SVBaseSampler):
         for i, samplekey in enumerate(self.samplekeys):
             self.note_samples[notes[i]]=i
             src=banks.get_wavfile(samplekey)
-            if "sliceinfo" in samplekey:
+            if "params" in samplekey:
                 segkey=str(samplekey)
                 if segkey not in segments:
                     segments[segkey]=AudioSegment.from_file(src)                

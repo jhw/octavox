@@ -52,9 +52,9 @@ class SVSampleKey(dict):
         tokens=[]
         tokens.append("%s/%s" % (self["bank"],
                                  self["file"]))
-        if ("sliceinfo" in self and
-            self["sliceinfo"]!={}):
-            tokens.append(json.dumps(self["sliceinfo"]))
+        if ("params" in self and
+            self["params"]!={}):
+            tokens.append(json.dumps(self["params"]))
         if ("tags" in self and 
             self["tags"]!=[]):
             tokens.append("[%s]" % ", ".join(sorted(self["tags"])))
