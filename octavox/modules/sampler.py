@@ -54,23 +54,29 @@ class SVSampler(SVBaseSampler):
         self.samplekeys=samplekeys
         self.samplestrings=[samplekey.slice_key
                             for samplekey in samplekeys]
+        self.segments={}
         notes=list(RVNOTE)
         root=notes.index(RVNOTE.C5)
-        segments={}
         for i, samplekey in enumerate(self.samplekeys):
             self.note_samples[notes[i]]=i
             src=banks.get_wavfile(samplekey)
-            buf=self.slice_sample(samplekey, src, segments)
-            # buf=self.slice_sample(samplekey, src, segments) if "params" in samplekey else src
+            buf=self.slice_sample(samplekey, src)
+            # buf=self.slice_sample(samplekey, src) if "params" in samplekey else src
             self.load_sample(buf, i)
             sample=self.samples[i]
             sample.relative_note+=(root-i)
 
-    def slice_sample(self, samplekey, src, segments):
-        segkey=str(samplekey)
-        if segkey not in segments:
-            segments[samplekey.segment_key]=AudioSegment.from_file(src)
-        segment=segments[samplekey.segment_key]
+    def init_segment(fn):
+        def wrapped(self, samplekey, src):
+            segkey=samplekey.segment_key
+            if segkey not in self.segments:
+                self.segments[segkey]=AudioSegment.from_file(src)
+            return fn(self, samplekey, src)
+        return wrapped
+
+    @init_segment
+    def slice_sample(self, samplekey, src):
+        segment=self.segments[samplekey.segment_key]
         buf=io.BytesIO()
         segment[:].export(buf, format=samplekey.ext)
         return buf

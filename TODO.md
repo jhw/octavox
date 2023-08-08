@@ -1,6 +1,5 @@
 ### short
 
-- move segment handling into decorator
 - start, end parameters
 - cutoff, slice implementations
 
@@ -128,6 +127,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- move segment handling into decorator
 - new sample_key, segment_key fields for samplekey
 - use segment key in sampler
 - refactor sampler pydub code
