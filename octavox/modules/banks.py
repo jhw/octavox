@@ -90,11 +90,11 @@ class SVPool(OrderedDict):
         self[samplekey.full_key]=samplekey
     
     def lookup(self, tag):
-        samplekeys=[]
+        samplekeys=SVPool()
         for samplekey in self.values():
             for sktag in samplekey["tags"]:
                 if tag==sktag:
-                    samplekeys.append(samplekey)
+                    samplekeys.add(samplekey)
         return samplekeys
     
 class SVPools(dict):

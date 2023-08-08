@@ -1,8 +1,5 @@
 ### short
 
-- pool.lookup() should return another pool
-  - model Samples code will need changing
-
 - refactor samplekeys nomeclature as samples or pool
 - convert object passed to sampler to SVPool
 
@@ -129,6 +126,8 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- pool.lookup() should return another pool
+  - model Samples code will need changing
 - pass pool to sampler
 - samplekey base_key and full_key properties
 - eliminate calls to str(samplekey)
