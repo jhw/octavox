@@ -47,15 +47,15 @@ class SVBaseSampler(RVSampler):
 
 class SVSampler(SVBaseSampler):
 
-    def __init__(self, samplekeys, banks, maxslots=120, *args, **kwargs):
+    def __init__(self, banks, pool, maxslots=120, *args, **kwargs):
         SVBaseSampler.__init__(self, *args, **kwargs)
-        if len(samplekeys) > maxslots:
+        if len(pool) > maxslots:
             raise RuntimeError("SVBankSampler max slots exceeded")
-        self.samplekeys=samplekeys
+        self.pool=pool
         self.segments={}
         notes=list(RVNOTE)
         root=notes.index(RVNOTE.C5)
-        for i, samplekey in enumerate(self.samplekeys.values()):
+        for i, samplekey in enumerate(self.pool.values()):
             self.note_samples[notes[i]]=i
             src=banks.get_wavfile(samplekey)
             # buf=self.slice_sample(samplekey, src)
@@ -95,7 +95,7 @@ class SVSampler(SVBaseSampler):
         return buf
                     
     def lookup(self, samplekey):
-        return list(self.samplekeys.keys()).index(samplekey.full_key)
+        return list(self.pool.keys()).index(samplekey.full_key)
         
 if __name__=="__main__":
     pass

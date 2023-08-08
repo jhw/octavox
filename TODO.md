@@ -2,7 +2,6 @@
 
 - refactor samplekeys nomeclature as samples or pool
 - convert object passed to sampler to SVPool
-
 - convert samplekey to real class with empty params, tags by default
 - convert samples to pool
 - test project for cutoff, slice implementations

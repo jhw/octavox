@@ -90,12 +90,12 @@ class SVPool(OrderedDict):
         self[samplekey.full_key]=samplekey
     
     def filter(self, tag):
-        samplekeys=SVPool()
+        pool=SVPool()
         for samplekey in self.values():
             for sktag in samplekey["tags"]:
                 if tag==sktag:
-                    samplekeys.add(samplekey)
-        return samplekeys
+                    pool.add(samplekey)
+        return pool
     
 class SVPools(dict):
 

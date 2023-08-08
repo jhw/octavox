@@ -141,13 +141,13 @@ class SVProject:
             modclass=init_class(mod)
             kwargs={}
             if mod["class"].lower().endswith("sampler"):
-                selectedkeys={samplekey.full_key:samplekey
-                              for samplekey in samplekeys.values()
-                              if mod["name"] in samplekey["tags"]}
-                if selectedkeys=={}:
+                selected={samplekey.full_key:samplekey
+                          for samplekey in samplekeys.values()
+                          if mod["name"] in samplekey["tags"]}
+                if selected=={}:
                     raise RuntimeError("no samplekeys found for %s" % mod["name"])
                 kwargs={"banks": banks,
-                        "samplekeys": selectedkeys}
+                        "pool": selected}
             mod["instance"]=modclass(**kwargs)
                 
     def init_modules(self,
