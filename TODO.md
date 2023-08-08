@@ -4,6 +4,8 @@
 - start, end parameters
 - cutoff, slice implementations
 
+- use explicit properties rather than calls to str(samplekey)
+
 - pass pool around rather than list of samplekeys
 - test project for cutoff, slice implementations
 
@@ -126,6 +128,8 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- new sample_key, segment_key fields for samplekey
+- use segment key in sampler
 - refactor sampler pydub code
 - rename sliceparams as simply params
 - pool add() method to avoid doing `pool[str(samplekey)]=samplekey`

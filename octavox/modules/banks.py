@@ -51,8 +51,16 @@ class SVSampleKey(dict):
     @property
     def ext(self):
         return self["file"].split(".")[-1]
-    
-    def __str__(self):
+
+    @property
+    def segment_key(self):
+        tokens=[]
+        tokens.append("%s/%s" % (self["bank"],
+                                 self["file"]))
+        return " ".join(tokens)
+            
+    @property
+    def slice_key(self):
         tokens=[]
         tokens.append("%s/%s" % (self["bank"],
                                  self["file"]))
@@ -63,6 +71,9 @@ class SVSampleKey(dict):
             self["tags"]!=[]):
             tokens.append("[%s]" % ", ".join(sorted(self["tags"])))
         return " ".join(tokens)
+    
+    def __str__(self):
+        return self.slice_key
 
 class SVPool(dict):
 
