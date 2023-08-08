@@ -94,7 +94,7 @@ class SVTracks(dict):
         dict.__init__(self)
         self.nbeats=nbeats
 
-    def filter_samplekeys(self, keys):
+    def filter_pool(self, keys):
         for track in self.values():
             for trig in track:
                 if (hasattr(trig, "samplekey") and trig.samplekey):
@@ -118,16 +118,16 @@ class SVOffset:
         
 class SVProject:
 
-    def filter_samplekeys(self,
+    def filter_pool(self,
                           patches):
-        samplekeys=SVPool()
+        pool=SVPool()
         for patch in patches:
-            patch.filter_samplekeys(samplekeys)
-        return samplekeys
+            patch.filter_pool(pool)
+        return pool
 
     def init_modclasses(self,
                         config,
-                        samplekeys,
+                        pool,
                         banks):
         def init_class(mod):
             try:
@@ -141,13 +141,13 @@ class SVProject:
             modclass=init_class(mod)
             kwargs={}
             if mod["class"].lower().endswith("sampler"):
-                selected={samplekey.full_key:samplekey
-                          for samplekey in samplekeys.values()
+                filtered={samplekey.full_key:samplekey
+                          for samplekey in pool.values()
                           if mod["name"] in samplekey["tags"]}
-                if selected=={}:
-                    raise RuntimeError("no samplekeys found for %s" % mod["name"])
+                if filtered=={}:
+                    raise RuntimeError("%s sample pool is empty" % mod["name"])
                 kwargs={"banks": banks,
-                        "pool": selected}
+                        "pool": filtered}
             mod["instance"]=modclass(**kwargs)
                 
     def init_modules(self,
@@ -243,9 +243,9 @@ class SVProject:
         proj=RVProject()
         proj.initial_bpm=bpm
         proj.global_volume=volume
-        samplekeys=self.filter_samplekeys(patches=patches)
+        pool=self.filter_pool(patches=patches)
         self.init_modclasses(config=config,
-                             samplekeys=samplekeys,
+                             pool=pool,
                              banks=banks)
         modules=self.init_modules(proj=proj,
                                   config=config)

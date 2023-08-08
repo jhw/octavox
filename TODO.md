@@ -1,13 +1,13 @@
 ### short
 
-- refactor samplekeys nomeclature as samples or pool
-- convert object passed to sampler to SVPool
+- creation of filtered should use pool.lookup
+
 - convert samplekey to real class with empty params, tags by default
-- convert samples to pool
-- test project for cutoff, slice implementations
+- convert model samples class to pool
 
 ### medium
 
+- test project for cutoff, slice implementations
 - action to fix a track
 - check delay scales as bpm changes
 - s3 archive cli capabilities
@@ -125,6 +125,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- refactor samplekeys nomeclature as samples or pool
 - pool.lookup() should return another pool
   - model Samples code will need changing
 - pass pool to sampler
