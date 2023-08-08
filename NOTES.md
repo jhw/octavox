@@ -1,3 +1,12 @@
+### mutate and arrange 08/08/23
+
+- mutate seeds only
+- mutate seeds and styles
+- try mutating densities only
+- pass arrangement expression
+- pass lists of roots and fills
+- try mutes as overlay in separate action
+
 ### s3 capabilities 06/08/23
 
 - requirements.txt

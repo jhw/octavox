@@ -17,16 +17,16 @@ For the patterns
 - https://github.com/vitling/acid-banger/blob/main/src/pattern.ts
 - https://www.vitling.xyz/toys/acid-banger/
 
-### pydub by @jiaaro
-
-For the sample processing
-
-https://github.com/jiaaro/pydub
-
-### Erica Synths Pico
+### Pico by @ericasynths
 
 For the samples 
 
 - http://data.ericasynths.lv/picodrum/pack_list.json
 - https://www.ericasynths.lv/shop/eurorack-systems/pico-system-ii/
+
+### pydub by @jiaaro
+
+For the sample munging
+
+https://github.com/jiaaro/pydub
 

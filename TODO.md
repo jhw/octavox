@@ -1,25 +1,18 @@
 ### short
 
+- move mutation code into cli
 - pass pool around rather than list of samplekeys
-- complete slice and cutoff code at sampler level
-- test script to test slice and cutoff samplers
+- pool add() method to avoid doing `pool[str(samplekey)]=samplekey`
 
 ### medium
 
+- check delay scales as bpm changes
+- slice and cutoff implementations
 - s3 archive cli capabilities [notes]
-
-- multiple mutate functions  
-  - seeds only
-  - seeds and styles
-  - densities
-
-- multiple arrange functions
-  - pass series of roots and series of fills which are interspersed
-  - pass a root and a density number which bumped for the fill
-  - mutes
-
+- random granular samples
+- mutate and arrange
 - move banks to s3
-- chord support
+- chords
 
 ### pydub
 
