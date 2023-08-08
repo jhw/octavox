@@ -60,8 +60,8 @@ class SVSampler(SVBaseSampler):
         for i, samplekey in enumerate(self.samplekeys):
             self.note_samples[notes[i]]=i
             src=banks.get_wavfile(samplekey)
-            buf=self.slice_sample(samplekey, src)
-            # buf=self.slice_sample(samplekey, src) if "params" in samplekey else src
+            # buf=self.slice_sample(samplekey, src)
+            buf=self.slice_sample(samplekey, src) if "params" in samplekey else src
             self.load_sample(buf, i)
             sample=self.samples[i]
             sample.relative_note+=(root-i)
@@ -78,7 +78,19 @@ class SVSampler(SVBaseSampler):
     def slice_sample(self, samplekey, src):
         segment=self.segments[samplekey.segment_key]
         buf=io.BytesIO()
-        segment[:].export(buf, format=samplekey.ext)
+        if "params" in samplekey:
+            params=samplekey["params"]
+            i, n = params["i"], params["n"]
+            if params["action"]=="cutoff":
+                start, end = 0, int(len(segment)*i/n)
+            elif params["action"]=="slice":
+                start, end = (int(len(segment)*(i-1)/n),
+                              int(len(segment)*i/n))
+            else:
+                raise RuntimeError("action %s not recognised" % params["action"])
+        else:
+            start, end = 0, len(segment)
+        segment[start:end].export(buf, format=samplekey.ext)
         return buf
                     
     def lookup(self, samplekey):

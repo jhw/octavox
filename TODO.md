@@ -1,8 +1,5 @@
 ### short
 
-- start, end parameters
-- cutoff, slice implementations
-
 - use explicit properties rather than calls to str(samplekey)
 
 - pass pool around rather than list of samplekeys
@@ -127,6 +124,8 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- start, end parameters
+- cutoff, slice implementations
 - move segment handling into decorator
 - new sample_key, segment_key fields for samplekey
 - use segment key in sampler
