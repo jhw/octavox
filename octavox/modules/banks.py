@@ -89,7 +89,7 @@ class SVPool(OrderedDict):
     def add(self, samplekey):
         self[samplekey.full_key]=samplekey
     
-    def lookup(self, tag):
+    def filter(self, tag):
         samplekeys=SVPool()
         for samplekey in self.values():
             for sktag in samplekey["tags"]:
