@@ -98,12 +98,15 @@ class SlicebeatsCli(SVBankCli):
     @render_patches(prefix="mutate")
     def do_mutate_patch(self, i):
         root=self.patches[i % len(self.patches)]
-        limits={k: self.env["d%s" % k]
-                for k in "seed|style".split("|")}
         patches=Patches([root])
         npatches=self.env["nblocks"]*self.env["blocksize"]
         for i in range(npatches-1):
-            patch=root.clone().mutate(limits)
+            patch=root.clone()
+            for seq in patch["sequencers"]:
+                for slice in seq["slices"]:
+                    slice.randomise_seed(self.env["dseed"])
+            for lfo in patch["lfos"]:
+                lfo.randomise_seed(self.env["dseed"])
             patches.append(patch)
         return patches
 

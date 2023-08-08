@@ -1,14 +1,15 @@
 ### short
 
-- move mutation code into cli
 - pass pool around rather than list of samplekeys
 - pool add() method to avoid doing `pool[str(samplekey)]=samplekey`
+- rename sliceparams as simply params
+- slice and cutoff implementations
 
 ### medium
 
+- action to fix track
 - check delay scales as bpm changes
-- slice and cutoff implementations
-- s3 archive cli capabilities [notes]
+- s3 archive cli capabilities
 - random granular samples
 - mutate and arrange
 - move banks to s3
@@ -123,6 +124,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- move mutation code into cli
 - pydub demo to export to in- memory binary data
 - new optional samplekey params field which renders as JSON dict in str
 - investigate how existing sampler copies data to slot (lookup?)

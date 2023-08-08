@@ -119,12 +119,6 @@ class Slice(dict):
             seed=int(1e8*random.random())
             self["seed"]=seed
 
-    def randomise_style(self,
-                        styles,
-                        limit):
-        if random.random() < limit:
-            self["style"]=random.choice(styles)
-    
 class Slices(list):
 
     @classmethod
@@ -349,16 +343,6 @@ class Patch(dict):
         return Patch(sequencers=self["sequencers"].clone(),
                      lfos=self["lfos"].clone(),
                      density=self["density"])
-
-    def mutate(self, limits):
-        for seq in self["sequencers"]:
-            for slice in seq["slices"]:
-                slice.randomise_style(seq.styles,
-                                      limits["style"])
-                slice.randomise_seed(limits["seed"])
-        for lfo in self["lfos"]:
-            lfo.randomise_seed(limits["seed"])
-        return self
     
     def render(self,
                nbeats,
