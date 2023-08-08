@@ -1,7 +1,11 @@
 ### short
 
-- replace calss to str(samplekey) with samplekey.segment|slice_key
+- don't think samplekey is handling empty params correctly
+- replace class to str(samplekey) with samplekey.segment|slice_key
+- remove str(samplekey)
+
 - pass pool to sampler
+
 - test project for cutoff, slice implementations
 
 ### medium

@@ -44,9 +44,9 @@ class SVSampleKey(dict):
         dict.__init__(self, item)
 
     def clone(self):
-        return SVSampleKey({"tags": list(self["tags"]),
-                            "bank": self["bank"],
-                            "file": self["file"]})
+        return SVSampleKey({"bank": self["bank"],
+                            "file": self["file"],
+                            "tags": list(self["tags"])})
 
     @property
     def ext(self):
