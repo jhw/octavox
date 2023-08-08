@@ -2,6 +2,8 @@ from rv.api import Project as RVProject
 from rv.pattern import Pattern as RVPattern
 from rv.note import Note as RVNote
 
+from octavox.modules.banks import SVPool
+
 from octavox.modules.project.modules import SVColor, init_layout, Output
 
 import importlib
@@ -96,7 +98,7 @@ class SVTracks(dict):
         for track in self.values():
             for trig in track:
                 if (hasattr(trig, "samplekey") and trig.samplekey):
-                    keys[str(trig.samplekey)]=trig.samplekey
+                    keys.add(trig.samplekey)
 
     @property
     def grid(self):
@@ -118,7 +120,7 @@ class SVProject:
 
     def filter_samplekeys(self,
                           patches):
-        samplekeys={}
+        samplekeys=SVPool()
         for patch in patches:
             patch.filter_samplekeys(samplekeys)
         return samplekeys
