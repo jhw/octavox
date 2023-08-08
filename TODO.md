@@ -1,7 +1,9 @@
 ### short
 
+- refactor samplekeys nomeclature as samples or pool
+- convert object passed to sampler to SVPool
+
 - convert samplekey to real class with empty params, tags by default
-- pass pool to sampler
 - convert samples to pool
 - test project for cutoff, slice implementations
 
@@ -124,6 +126,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- pass pool to sampler
 - samplekey base_key and full_key properties
 - eliminate calls to str(samplekey)
 - change cutoff, slice to index from 0 and remove protection

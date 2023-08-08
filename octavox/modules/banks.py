@@ -1,5 +1,7 @@
 from octavox.modules import is_abbrev
 
+from collections import OrderedDict
+
 import json, os, re, yaml, zipfile
 
 Fragments=yaml.safe_load("""
@@ -71,11 +73,15 @@ class SVSampleKey(dict):
             self["tags"]!=[]):
             tokens.append("[%s]" % ", ".join(sorted(self["tags"])))
         return " ".join(tokens)
+
+"""
+- important that SVPool is an OrderedDict so that when Sampler looks up index of a key in the samples, it returns a consistent position
+"""
     
-class SVPool(dict):
+class SVPool(OrderedDict):
 
     def __init__(self, item={}):
-        dict.__init__(self, item)        
+        OrderedDict.__init__(self, item)        
 
     def clone(self):
         return SVPool(self)
