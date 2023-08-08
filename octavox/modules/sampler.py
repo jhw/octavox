@@ -52,7 +52,7 @@ class SVSampler(SVBaseSampler):
         if len(samplekeys) > maxslots:
             raise RuntimeError("SVBankSampler max slots exceeded")
         self.samplekeys=samplekeys
-        self.samplestrings=[samplekey.slice_key
+        self.samplestrings=[samplekey.full_key
                             for samplekey in samplekeys]
         self.segments={}
         notes=list(RVNOTE)
@@ -60,15 +60,15 @@ class SVSampler(SVBaseSampler):
         for i, samplekey in enumerate(self.samplekeys):
             self.note_samples[notes[i]]=i
             src=banks.get_wavfile(samplekey)
-            # buf=self.slice_sample(samplekey, src)
-            buf=self.slice_sample(samplekey, src) if "params" in samplekey else src
+            buf=self.slice_sample(samplekey, src)
+            # buf=self.slice_sample(samplekey, src) if "params" in samplekey else src
             self.load_sample(buf, i)
             sample=self.samples[i]
             sample.relative_note+=(root-i)
 
     def init_segment(fn):
         def wrapped(self, samplekey, src):
-            segkey=samplekey.segment_key
+            segkey=samplekey.base_key
             if segkey not in self.segments:
                 self.segments[segkey]=AudioSegment.from_file(src)
             return fn(self, samplekey, src)
@@ -77,13 +77,12 @@ class SVSampler(SVBaseSampler):
     def slice_range(self, samplekey, segment):
         if "params" in samplekey:
             params=samplekey["params"]
-            i, n = (max(1, params["i"]),
-                    params["n"])
+            i, n = params["i"], params["n"]
             if params["action"]=="cutoff":
-                return (0, int(len(segment)*i/n))
+                return (0, int(len(segment)*(i+1)/n))
             elif params["action"]=="slice":
-                return (int(len(segment)*(i-1)/n),
-                        int(len(segment)*i/n))
+                return (int(len(segment)*i/n),
+                        int(len(segment)*(i+1)/n))
             else:
                 raise RuntimeError("action %s not found" % params["action"])
         else:
@@ -91,14 +90,14 @@ class SVSampler(SVBaseSampler):
     
     @init_segment
     def slice_sample(self, samplekey, src):
-        segment=self.segments[samplekey.segment_key]
+        segment=self.segments[samplekey.base_key]
         start, end = self.slice_range(samplekey, segment)
         buf=io.BytesIO()
         segment[start:end].export(buf, format=samplekey.ext)
         return buf
                     
     def lookup(self, samplekey):
-        return self.samplestrings.index(str(samplekey))
+        return self.samplestrings.index(samplekey.full_key)
         
 if __name__=="__main__":
     pass

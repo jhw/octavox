@@ -1,8 +1,5 @@
 ### short
 
-- samplekey base_key and full_key properties
-- eliminate calls to str(samplekey)
-- change cutoff, slice to index from 0 and remove protection
 - convert samplekey to real class with empty params, tags by default
 - pass pool to sampler
 - test project for cutoff, slice implementations
@@ -126,6 +123,9 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- samplekey base_key and full_key properties
+- eliminate calls to str(samplekey)
+- change cutoff, slice to index from 0 and remove protection
 - start, end parameters
 - cutoff, slice implementations
 - move segment handling into decorator

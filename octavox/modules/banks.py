@@ -53,14 +53,14 @@ class SVSampleKey(dict):
         return self["file"].split(".")[-1]
 
     @property
-    def segment_key(self):
+    def base_key(self):
         tokens=[]
         tokens.append("%s/%s" % (self["bank"],
                                  self["file"]))
         return " ".join(tokens)
             
     @property
-    def slice_key(self):
+    def full_key(self):
         tokens=[]
         tokens.append("%s/%s" % (self["bank"],
                                  self["file"]))
@@ -72,9 +72,6 @@ class SVSampleKey(dict):
             tokens.append("[%s]" % ", ".join(sorted(self["tags"])))
         return " ".join(tokens)
     
-    def __str__(self):
-        return self.slice_key
-
 class SVPool(dict):
 
     def __init__(self, item={}):
@@ -84,7 +81,7 @@ class SVPool(dict):
         return SVPool(self)
 
     def add(self, samplekey):
-        self[str(samplekey)]=samplekey
+        self[samplekey.full_key]=samplekey
     
     def lookup(self, tag):
         samplekeys=[]
