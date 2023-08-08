@@ -20,7 +20,7 @@ class SVBaseSampler(RVSampler):
     - https://github.com/metrasynth/gallery/blob/master/wicked.mmckpy#L497-L526
     """
         
-    def load(self, src, slot, **kwargs):
+    def load_sample(self, src, slot, **kwargs):
         sample = self.Sample()
         freq, snd = wavfile.read(src)
         if snd.dtype.name == 'int16':
@@ -60,23 +60,21 @@ class SVSampler(SVBaseSampler):
         for i, samplekey in enumerate(self.samplekeys):
             self.note_samples[notes[i]]=i
             src=banks.get_wavfile(samplekey)
-            if "params" in samplekey:
-                segkey=str(samplekey)
-                if segkey not in segments:
-                    segments[segkey]=AudioSegment.from_file(src)                
-                segment=segments[segkey]
-                buf=io.BytesIO()
-                """
-                - include slice/cutoff info here ie segment[j:k]
-                """
-                ext=samplekey["file"].split(".")[-1]
-                segment.export(buf, format=ext)            
-                self.load(buf, i)
-            else:
-                self.load(src, i)
+            # buf=self.slice_sample(samplekey, src, segments)
+            buf=self.slice_sample(samplekey, src, segments) if "params" in samplekey else src
+            self.load_sample(buf, i)
             sample=self.samples[i]
             sample.relative_note+=(root-i)
 
+    def slice_sample(self, samplekey, src, segments):
+        segkey=str(samplekey)
+        if segkey not in segments:
+            segments[segkey]=AudioSegment.from_file(src)                
+        segment=segments[segkey]
+        buf=io.BytesIO()
+        segment[:].export(buf, format=samplekey.ext)
+        return buf
+                    
     def lookup(self, samplekey):
         return self.samplestrings.index(str(samplekey))
         

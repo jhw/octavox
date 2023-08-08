@@ -1,7 +1,10 @@
 ### short
 
-- pass pool around rather than list of samplekeys
+- move segment handling into decorator
+- start, end parameters
 - cutoff, slice implementations
+
+- pass pool around rather than list of samplekeys
 - test project for cutoff, slice implementations
 
 ### medium
@@ -123,6 +126,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- refactor sampler pydub code
 - rename sliceparams as simply params
 - pool add() method to avoid doing `pool[str(samplekey)]=samplekey`
 - move mutation code into cli

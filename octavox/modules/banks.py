@@ -47,6 +47,10 @@ class SVSampleKey(dict):
         return SVSampleKey({"tags": list(self["tags"]),
                             "bank": self["bank"],
                             "file": self["file"]})
+
+    @property
+    def ext(self):
+        return self["file"].split(".")[-1]
     
     def __str__(self):
         tokens=[]
