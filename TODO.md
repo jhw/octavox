@@ -1,11 +1,10 @@
 ### short
 
-- don't think samplekey is handling empty params correctly
-- replace class to str(samplekey) with samplekey.segment|slice_key
-- remove str(samplekey)
-
+- samplekey base_key and full_key properties
+- eliminate calls to str(samplekey)
+- change cutoff, slice to index from 0 and remove protection
+- convert samplekey to real class with empty params, tags by default
 - pass pool to sampler
-
 - test project for cutoff, slice implementations
 
 ### medium
