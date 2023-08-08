@@ -1,5 +1,8 @@
 ### short
 
+- pool.lookup() should return another pool
+  - model Samples code will need changing
+
 - refactor samplekeys nomeclature as samples or pool
 - convert object passed to sampler to SVPool
 
