@@ -1,7 +1,6 @@
 ### short
 
 - test cutoff with samplebass demo
-
 - test slice with granular demo
 
 ### medium

@@ -148,8 +148,6 @@ class SVProject:
             kwargs={}
             if mod["class"].lower().endswith("sampler"):
                 filtered=pool.filter(mod["name"])
-                if filtered=={}:
-                    raise RuntimeError("%s sample pool is empty" % mod["name"])
                 kwargs={"banks": banks,
                         "pool": filtered}
             mod["instance"]=modclass(**kwargs)
