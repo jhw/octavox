@@ -1,12 +1,11 @@
 ### short
 
-- update credits
-- refactor scripts/dump_pico_projects.py
+- test project for cutoff, slice implementations
+
+- bank level bans
 
 ### medium
 
-- bank level bans
-- test project for cutoff, slice implementations
 - action to fix a track
 - check delay scales as bpm changes
 - s3 archive cli capabilities
@@ -128,6 +127,8 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- update credits
+- refactor scripts/dump_pico_projects.py
 - remove flatten
 - fix show_samples
 - notes on why samples can't be a pool
