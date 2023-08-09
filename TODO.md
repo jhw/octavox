@@ -1,7 +1,8 @@
 ### short
 
-- test cutoff with samplebass demo
-- test slice with granular demo
+- json serialisation error on adding params to samplebass
+
+- pydub granular slice demo
 
 ### medium
 
@@ -9,7 +10,6 @@
 - action to fix a track
 - check delay scales as bpm changes
 - s3 archive cli capabilities
-- granular test, capabilities and demos
 - mutate and arrange actions
 - move banks to s3
 - chord support
@@ -128,6 +128,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- test cutoff with samplebass demo
 - creation of SVNoteTrig to automatically insert mod into samplekey tags
 - move octavox/scripts into new scripts, demos directories
 - update credits
