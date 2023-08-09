@@ -17,8 +17,8 @@ links:
     - Output
 """)
 
-SrcDir, DestDir = ("tmp/banks/pico/zipped",
-                   "tmp/banks/pico/sunvox")
+SrcDir, DestDir = ("octavox/banks/pico",
+                   "tmp/banks/pico")
 
 BPM=120
 
@@ -31,8 +31,7 @@ def dump_project(bankname, bank, banks,
     trigs=SVTrigs(nbeats=nbeats)
     for i, wavfile in enumerate(wavfiles):
         samplekey=SVSampleKey({"bank": bankname,
-                               "file": wavfile,
-                               "tags": ["Sampler"]})
+                               "file": wavfile})
         trig=SVNoteTrig(mod="Sampler",
                         samplekey=samplekey,
                         i=i)

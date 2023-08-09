@@ -10,11 +10,17 @@ import importlib
 
 Volume, Height = 256, 64
 
+"""
+- mod is automatically added to samplekey tags so that samples can be properly allocated to samplers at project rendering time
+"""
+
 class SVNoteTrig:
 
     def __init__(self, mod, i, samplekey=None, id=None, vel=1):
         self.mod=mod
         self.i=i
+        if samplekey:
+            samplekey.add_tag(mod) # NB
         self.samplekey=samplekey
         self.id=id
         self.vel=vel        

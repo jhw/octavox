@@ -59,6 +59,12 @@ class SVSampleKey(dict):
             kwargs["tags"]=list(self["tags"])
         return SVSampleKey(kwargs)
 
+    def add_tag(self, tag):
+        if "tags" not in self:
+            self["tags"]=[]
+        if tag not in self["tags"]:
+            self["tags"].append(tag)
+    
     @property
     def ext(self):
         return self["file"].split(".")[-1]

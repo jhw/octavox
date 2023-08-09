@@ -200,7 +200,6 @@ class Sequencer(dict):
             if v!=None: # explicit because could return zero
                 tag, volume = v
                 samplekey=samples[tag].clone()
-                samplekey["tags"].append(self.mod) # NB for Sampler aggregation
                 trig=SVNoteTrig(mod=self.mod,
                                 vel=volume,
                                 i=i+offset,

@@ -1,8 +1,8 @@
 ### short
 
-- creation of SVNoteTrig to automatically insert mod into samplekey tags
+- test cutoff with samplebass demo
 
-- test projects for cutoff, slice implementations
+- test slice with granular demo
 
 ### medium
 
@@ -129,6 +129,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- creation of SVNoteTrig to automatically insert mod into samplekey tags
 - move octavox/scripts into new scripts, demos directories
 - update credits
 - refactor scripts/dump_pico_projects.py
