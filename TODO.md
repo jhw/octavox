@@ -1,11 +1,12 @@
-### short
+### short [samplebass]
 
-- json serialisation error on adding params to samplebass
-
-- pydub granular slice demo
+- pass base sample from command line
+- power function to bias short samples
+- filter s&h
 
 ### medium
 
+- pydub granular slice demo
 - bank level bans
 - action to fix a track
 - check delay scales as bpm changes
@@ -128,6 +129,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- json serialisation error on adding params to samplebass
 - test cutoff with samplebass demo
 - creation of SVNoteTrig to automatically insert mod into samplekey tags
 - move octavox/scripts into new scripts, demos directories
