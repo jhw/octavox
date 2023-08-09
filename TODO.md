@@ -1,11 +1,12 @@
 ### short
 
+- notes on why samples can't be a pool
 - convert samplekey to real class with empty params, tags by default
-
-- convert model samples class to pool
+- refactor scripts/dump_pico_projects.py
 
 ### medium
 
+- bank level bans
 - test project for cutoff, slice implementations
 - action to fix a track
 - check delay scales as bpm changes
@@ -124,6 +125,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- add pool values property
 - creation of filtered should use pool.lookup
 - refactor samplekeys nomeclature as samples or pool
 - pool.lookup() should return another pool

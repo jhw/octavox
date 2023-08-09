@@ -96,6 +96,10 @@ class SVPool(OrderedDict):
                 if tag==sktag:
                     pool.add(samplekey)
         return pool
+
+    @property
+    def samplekeys(self):
+        return list(self.values())
     
 class SVPools(dict):
 
