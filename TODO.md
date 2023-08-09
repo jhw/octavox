@@ -1,6 +1,5 @@
 ### short
 
-- notes on why samples can't be a pool
 - convert samplekey to real class with empty params, tags by default
 - refactor scripts/dump_pico_projects.py
 
@@ -28,6 +27,8 @@
 
 ### thoughts
 
+- should pool.add check for same sample with different tags only?
+  - not sure
 - remove dseed, dstyle?
   - no; given slice model, you don't want to *force* mutation of every slice
 - fix_sample protection against specifying unknown tag?
@@ -125,6 +126,8 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- fix show_samples
+- notes on why samples can't be a pool
 - add pool values property
 - creation of filtered should use pool.lookup
 - refactor samplekeys nomeclature as samples or pool

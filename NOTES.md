@@ -1,3 +1,7 @@
+### banned 09/08/23
+
+- nero-bellum/59 Nightmare in Monochrome Candy.wav
+
 ### mutate and arrange 08/08/23
 
 - mutate seeds only

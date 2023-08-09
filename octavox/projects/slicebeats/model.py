@@ -42,6 +42,11 @@ class Pattern(str):
         return sum([item["n"]
                     for item in self.expanded])
 
+"""
+- tempting to thing that Samples could be an instance of SVPool
+- but key differences are that it needs serialising to/from JSON and has its own core logic in the form of randomise() and tagged_map()
+"""
+    
 class Samples(list):
 
     @classmethod
@@ -63,7 +68,8 @@ class Samples(list):
             else:
                 filtered=pool.filter(childtag).samplekeys
                 values=filtered if filtered!=[] else pool.samplekeys
-            samples.append(random.choice(values))
+            sample=random.choice(values)
+            samples.append(sample)
         return Samples(samples)
             
     def __init__(self, items=[]):
@@ -194,7 +200,7 @@ class Sequencer(dict):
             if v!=None: # explicit because could return zero
                 tag, volume = v
                 samplekey=samples[tag].clone()
-                samplekey["tags"].append(self.mod)
+                samplekey["tags"].append(self.mod) # NB for Sampler aggregation
                 trig=SVNoteTrig(mod=self.mod,
                                 vel=volume,
                                 i=i+offset,
@@ -298,8 +304,8 @@ class Lfo(dict):
         if 0 == i % self.step:
             if q.random() < self.live:
                 floor, ceil = self.range
-                v0=floor+(ceil-floor)*q.random()
-                return self.increment*int(0.5+v0/self.increment)
+                v=floor+(ceil-floor)*q.random()
+                return self.increment*int(0.5+v/self.increment)
             else:
                 return 0.0
                 
