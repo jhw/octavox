@@ -1,7 +1,7 @@
 ### short
 
 - optimistic sampler looks to avoid having to specify in demos
-- samplekey classmethod to create from string
+
 - test projects for cutoff, slice implementations
 
 ### medium
@@ -10,7 +10,7 @@
 - action to fix a track
 - check delay scales as bpm changes
 - s3 archive cli capabilities
-- random granular samples
+- granular test, capabilities and demos
 - mutate and arrange actions
 - move banks to s3
 - chord support
@@ -20,6 +20,7 @@
 - get/change pitch
 - timestretching
 - detecting crossover points
+- envelopes and fading
 
 ### long
 
