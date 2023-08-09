@@ -1,11 +1,13 @@
 ### short
 
-- test project for cutoff, slice implementations
-
-- bank level bans
+- move octavox/scripts into new scripts, demos directories
+- optimistic sampler looks to avoid having to specify in demos
+- samplekey classmethod to create from string
+- test projects for cutoff, slice implementations
 
 ### medium
 
+- bank level bans
 - action to fix a track
 - check delay scales as bpm changes
 - s3 archive cli capabilities
