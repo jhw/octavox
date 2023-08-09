@@ -1,6 +1,6 @@
 ### short
 
-- optimistic sampler looks to avoid having to specify in demos
+- creation of SVNoteTrig to automatically insert mod into samplekey tags
 
 - test projects for cutoff, slice implementations
 
