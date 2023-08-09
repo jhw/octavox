@@ -1,3 +1,7 @@
+"""
+- fetch Pico sample packs from S3 bucket, parse and save to zipped files
+"""
+
 import json, os, re, urllib.request, zipfile
 
 PicoDrum="http://data.ericasynths.lv/picodrum/"

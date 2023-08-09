@@ -1,3 +1,7 @@
+"""
+- dump each Pico bank to a separate sunvox file so you can hear all the sounds
+"""
+
 from octavox.modules.banks import SVBanks, SVSampleKey
 
 from octavox.modules.project import SVTrigs, SVNoteTrig, SVTrigs, SVProject

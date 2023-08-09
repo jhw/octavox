@@ -1,6 +1,5 @@
 ### short
 
-- move octavox/scripts into new scripts, demos directories
 - optimistic sampler looks to avoid having to specify in demos
 - samplekey classmethod to create from string
 - test projects for cutoff, slice implementations
@@ -129,6 +128,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- move octavox/scripts into new scripts, demos directories
 - update credits
 - refactor scripts/dump_pico_projects.py
 - remove flatten
