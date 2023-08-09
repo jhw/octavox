@@ -2,6 +2,7 @@
 
 - pass base sample from command line
 - power function to bias short samples
+- pydub fading to avoid clipping [baseck 37 syncussion]
 - filter s&h
 
 ### medium
