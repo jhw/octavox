@@ -40,6 +40,11 @@ ch:
   - prc
 """)
 
+"""
+- SVSampleKey must be dict as typically needs to be rendered to JSON as part of custom project Samples class
+- SVSampleKey is lenient with respect to passing of `params` and `tags` args; note that key functions check for their existence and non- emptiness
+"""
+
 class SVSampleKey(dict):
 
     def __init__(self, item={}):

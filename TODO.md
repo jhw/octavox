@@ -1,6 +1,6 @@
 ### short
 
-- convert samplekey to real class with empty params, tags by default
+- update credits
 - refactor scripts/dump_pico_projects.py
 
 ### medium
@@ -27,6 +27,8 @@
 
 ### thoughts
 
+- convert samplekey to real class with empty params, tags by default
+  - no because needs to be rendered to JSON as part of Samples class
 - should pool.add check for same sample with different tags only?
   - not sure
 - remove dseed, dstyle?
@@ -126,6 +128,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- remove flatten
 - fix show_samples
 - notes on why samples can't be a pool
 - add pool values property

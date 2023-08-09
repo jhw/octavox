@@ -4,7 +4,7 @@ from octavox.modules.cli import SVBankCli, parse_line
 
 from octavox.modules.project import SVNoteTrig
 
-from octavox.projects import random_filename, flatten
+from octavox.projects import random_filename
 
 from octavox.projects.slicebeats.model import Patch, Patches
 
