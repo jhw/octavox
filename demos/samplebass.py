@@ -48,14 +48,14 @@ def generate(banks,
              bankname,
              filename,
              destfilename,
-             limit,
+             density,
              config=Config,
              nslices=4,
              nbeats=32,
              bpm=120):
     trigs=SVTrigs(nbeats=nbeats)
     for i in range(nbeats):
-        if random.random() < limit:
+        if random.random() < density:
             params={"action": "cutoff",
                     "n": nslices,
                     "i": random.choice(range(nslices))}
@@ -83,10 +83,10 @@ if __name__=="__main__":
     try:
         import sys
         if len(sys.argv) < 4:
-            raise RuntimeError("please enter bankname, filename, limit")
-        _bankname, _filename, limit = sys.argv[1:4]
-        if not re.search("^\\d+(\\.\\d+)$", limit):
-            raise RuntimeError("limit is invalid")
+            raise RuntimeError("please enter bankname, filename, density")
+        _bankname, _filename, density = sys.argv[1:4]
+        if not re.search("^\\d+(\\.\\d+)$", density):
+            raise RuntimeError("density is invalid")
         banks=SVBanks("octavox/banks/pico")
         bankname=banks.lookup(_bankname)
         bank=banks[bankname]
@@ -94,14 +94,14 @@ if __name__=="__main__":
         print ("%s/%s" % (bankname, filename))
         destfilename="tmp/samplebass/%s-%s.sunvox" % (bankname,
                                                       filename.replace(" ", "-"))
-        limit=float(limit)
-        if limit > 1 or limit < 0:
-            raise RuntimeError("limit is invalid")
+        density=float(density)
+        if density > 1 or density < 0:
+            raise RuntimeError("density is invalid")
         if not os.path.exists("tmp/samplebass"):
             os.makedirs("tmp/samplebass")
         generate(banks=banks,
                  bankname=bankname,
-                 limit=limit,
+                 density=density,
                  filename=filename,
                  destfilename=destfilename)
     except RuntimeError as error:

@@ -2,7 +2,6 @@
 
 - remove fx value scaling at SVFXTrig level
   - add multipier as slicebeats LFO config variable
-- rename limit as density
 - add timestamp as output prefix
 - refactor filter cutoff scaling to use absolute values
 - set filter type in filter config
@@ -146,6 +145,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- rename limit as density
 - random filter levels
 - use lookups when loading sa,ples
 - pass base sample from command line
