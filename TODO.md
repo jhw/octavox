@@ -1,11 +1,19 @@
 ### short [samplebass]
 
-- pass base sample from command line
-- power function to bias short samples
-- pydub fading to avoid clipping [baseck 37 syncussion]
-- filter s&h
+- use lookups when loading sa,ples
+- random filter levels
+- specify filter ranges from command line
+- heartbeat
+
+### demos
+
+- concatenating granular samples
+- fadeout
+- noise hats
 
 ### medium
+
+- check what happens if link module unknown
 
 - pydub granular slice demo
 - bank level bans
@@ -18,10 +26,12 @@
 
 ### pydub
 
+- granular examples
+- fading out to avoid clipping
+
 - get/change pitch
 - timestretching
 - detecting crossover points
-- envelopes and fading
 
 ### long
 
@@ -130,6 +140,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- pass base sample from command line
 - json serialisation error on adding params to samplebass
 - test cutoff with samplebass demo
 - creation of SVNoteTrig to automatically insert mod into samplekey tags

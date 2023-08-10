@@ -1,12 +1,12 @@
 """
-- dump each Pico bank to a separate sunvox file so you can hear all the sounds
+- dump each Pico bank as an individual sunvox project
 """
 
 from octavox.modules.banks import SVBanks, SVSampleKey
 
 from octavox.modules.project import SVTrigs, SVNoteTrig, SVTrigs, SVProject
 
-import yaml
+import os, yaml
 
 Config=yaml.safe_load("""
 modules:
@@ -17,41 +17,39 @@ links:
     - Output
 """)
 
-SrcDir, DestDir = ("octavox/banks/pico",
-                   "tmp/banks/pico")
-
-BPM=120
-
-def dump_project(bankname, bank, banks,
-                 dirname=DestDir,
-                 config=Config,
-                 bpm=BPM):
+def generate(bankname,
+             bank,
+             banks,
+             destfilename,
+             config=Config,
+             bpm=120):
     wavfiles=bank.wavfiles
     nbeats=len(wavfiles)
     trigs=SVTrigs(nbeats=nbeats)
     for i, wavfile in enumerate(wavfiles):
         samplekey=SVSampleKey({"bank": bankname,
                                "file": wavfile})
-        trig=SVNoteTrig(mod="Sampler",
+        note=SVNoteTrig(mod="Sampler",
                         samplekey=samplekey,
                         i=i)
-        trigs.append(trig)
+        trigs.append(note)
     project=SVProject().render(patches=[trigs.tracks],
                                config={"modules": config["modules"],
                                        "links": config["links"]},
                                banks=banks,
                                bpm=bpm)
-    projfile="%s/%s.sunvox" % (dirname, bankname)
-    with open(projfile, 'wb') as f:
+    with open(destfilename, 'wb') as f:
         project.write_to(f)
 
 if __name__=="__main__":
-    import os
-    for path in [DestDir]:
-        if not os.path.exists(path):
-            os.makedirs(path)            
-    banks=SVBanks(SrcDir)
+    banks=SVBanks("octavox/banks/pico")
+    if not os.path.exists("tmp/banks/pico"):
+        os.makedirs("tmp/banks/pico")
     for bankname, bank in banks.items():
         print (bankname)
-        dump_project(bankname, bank, banks)
+        destfilename="tmp/banks/pico/%s.sunvox" % bankname
+        generate(bankname=bankname,
+                 bank=bank,
+                 banks=banks,
+                 destfilename=destfilename)
 
