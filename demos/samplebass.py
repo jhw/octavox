@@ -4,7 +4,7 @@
 
 from octavox.modules.banks import SVBanks, SVSampleKey
 
-from octavox.modules.project import SVTrigs, SVNoteTrig, SVProject
+from octavox.modules.project import SVTrigs, SVNoteTrig, SVFXTrig, SVProject
 
 import os, random, re, yaml
 
@@ -15,8 +15,7 @@ modules:
   - name: Filter
     class: rv.modules.filter.Filter
     defaults:
-      freq: 1500
-      resonance: 1000
+      resonance: 1250
   - name: Echo
     class: rv.modules.echo.Echo
     defaults:
@@ -68,7 +67,11 @@ def generate(banks,
                             samplekey=samplekey,
                             vel=vel,
                             i=i)
-            trigs.append(note)
+            freq=SVFXTrig(mod="Filter",
+                          ctrl="freq",
+                          value=0.25*random.random(),
+                          i=i)
+            trigs+=[note, freq]
     project=SVProject().render(patches=[trigs.tracks],
                                config=config,
                                banks=banks,

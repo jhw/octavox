@@ -1,20 +1,30 @@
 ### short [samplebass]
 
-- random filter levels
-- specify filter ranges from command line
+- remove fx value scaling at SVFXTrig level
+  - add multipier as slicebeats LFO config variable
+- rename limit as density
+- add timestamp as output prefix
+- refactor filter cutoff scaling to use absolute values
+- set filter type in filter config
+- parameterise filter scaling with cli args
+- test filter after echo
+- test varifying filter cutoff on a constant basis
+- test varying resonance
+- exponential cutoff level factor
 - heartbeat
 
 ### demos
 
-- concatenating granular samples
-- fadeout
+- pydub granular samples
+  - chord slice concatenation
+  
+- pydub adeout
 - noise hats
 
 ### medium
 
 - check what happens if link module unknown
 
-- pydub granular slice demo
 - bank level bans
 - action to fix a track
 - check delay scales as bpm changes
@@ -24,9 +34,6 @@
 - chord support
 
 ### pydub
-
-- granular examples
-- fading out to avoid clipping
 
 - get/change pitch
 - timestretching
@@ -139,6 +146,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- random filter levels
 - use lookups when loading sa,ples
 - pass base sample from command line
 - json serialisation error on adding params to samplebass
