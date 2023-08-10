@@ -70,10 +70,9 @@ class SVFXTrig:
             raise RuntimeError("ctrl %s not found in mod %s" % (self.ctrl,
                                                                 self.mod))
         ctrlid=ctrlmult*controller[self.ctrl]
-        ctrlvalue=int(self.value*maxvalue) # NB **NOT** 1+
         return RVNote(module=modid,
                       ctl=ctrlid,
-                      val=ctrlvalue)
+                      val=self.value)
 
 class SVTrigs(list):
 

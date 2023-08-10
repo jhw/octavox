@@ -75,7 +75,7 @@ def generate(banks,
                             i=i)
             freq=SVFXTrig(mod="Filter",
                           ctrl="freq",
-                          value=0.25*q.random(),
+                          value=int(2500*q.random()),
                           i=i)
             trigs+=[note, freq]
     project=SVProject().render(patches=[trigs.tracks],

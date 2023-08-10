@@ -293,7 +293,7 @@ class Lfo(dict):
             if v!=None: # explicit because could return zero
                 trig=SVFXTrig(mod=self.mod,
                               ctrl=self.ctrl,
-                              value=v,
+                              value=v*self.multiplier,
                               i=i)
                 trigs.append(trig)
         return wrapped
