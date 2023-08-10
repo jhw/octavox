@@ -1,6 +1,5 @@
 ### short [samplebass]
 
-- use lookups when loading sa,ples
 - random filter levels
 - specify filter ranges from command line
 - heartbeat
@@ -140,6 +139,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- use lookups when loading sa,ples
 - pass base sample from command line
 - json serialisation error on adding params to samplebass
 - test cutoff with samplebass demo

@@ -81,15 +81,19 @@ if __name__=="__main__":
         import sys
         if len(sys.argv) < 4:
             raise RuntimeError("please enter bankname, filename, limit")
-        bankname, filename, limit = sys.argv[1:4]
+        _bankname, _filename, limit = sys.argv[1:4]
         if not re.search("^\\d+(\\.\\d+)$", limit):
             raise RuntimeError("limit is invalid")
+        banks=SVBanks("octavox/banks/pico")
+        bankname=banks.lookup(_bankname)
+        bank=banks[bankname]
+        filename=bank.lookup(_filename)
+        print ("%s/%s" % (bankname, filename))
+        destfilename="tmp/samplebass/%s-%s.sunvox" % (bankname,
+                                                      filename.replace(" ", "-"))
         limit=float(limit)
         if limit > 1 or limit < 0:
             raise RuntimeError("limit is invalid")
-        banks=SVBanks("octavox/banks/pico")
-        destfilename="tmp/samplebass/%s-%s.sunvox" % (bankname,
-                                                      filename.replace(" ", "-"))
         if not os.path.exists("tmp/samplebass"):
             os.makedirs("tmp/samplebass")
         generate(banks=banks,
