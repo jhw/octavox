@@ -1,8 +1,7 @@
 ### short [samplebass]
 
-- parameterise filter scaling with cli args
+- resonance parameter
 - test varifying filter cutoff on a constant basis
-- test varying resonance
 - exponential cutoff level factor
 - heartbeat
 
@@ -139,6 +138,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- parameterise filter scaling with cli args
 - set filter type in filter config
 - refactor filter cutoff scaling to use absolute values
 - remove fx value scaling at SVFXTrig level

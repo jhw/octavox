@@ -19,6 +19,7 @@ modules:
   - name: Filter
     class: rv.modules.filter.Filter
     defaults:
+      freq: 0
       resonance: 1250
       type: 0 # LP
   - name: Echo
@@ -55,7 +56,9 @@ def generate(banks,
              destfilename,
              seed,
              density,
-             config=Config,
+             freqmax,
+             modules=Config["modules"],
+             links=Config["links"],
              nslices=4,
              nbeats=32,
              bpm=120):
@@ -76,11 +79,12 @@ def generate(banks,
                             i=i)
             freq=SVFXTrig(mod="Filter",
                           ctrl="freq",
-                          value=int(2500*q.random()),
+                          value=int(freqmax*q.random()),
                           i=i)
             trigs+=[note, freq]
     project=SVProject().render(patches=[trigs.tracks],
-                               config=config,
+                               config={"modules": modules,
+                                       "links": links},
                                banks=banks,
                                bpm=bpm)
     with open(destfilename, 'wb') as f:
@@ -89,9 +93,9 @@ def generate(banks,
 if __name__=="__main__":
     try:
         import sys
-        if len(sys.argv) < 5:
-            raise RuntimeError("please enter bankname, filename, seed, density")
-        _bankname, _filename, seed, density = sys.argv[1:5]
+        if len(sys.argv) < 6:
+            raise RuntimeError("please enter bankname, filename, seed, density, freqmax")
+        _bankname, _filename, seed, density, freqmax = sys.argv[1:6]
         if not re.search("^\\d+", seed):
             raise RuntimeError("seed is invalid")
         seed=int(seed)
@@ -100,6 +104,9 @@ if __name__=="__main__":
         density=float(density)
         if density > 1 or density < 0:
             raise RuntimeError("density is invalid")
+        if not re.search("^\\d+$", freqmax):
+            raise RuntimeError("freqmax is invalid")
+        freqmax=int(freqmax)
         banks=SVBanks("octavox/banks/pico")
         bankname=banks.lookup(_bankname)
         bank=banks[bankname]
@@ -115,6 +122,7 @@ if __name__=="__main__":
                  bankname=bankname,
                  seed=seed, 
                  density=density,
+                 freqmax=freqmax,
                  filename=filename,
                  destfilename=destfilename)
     except RuntimeError as error:
