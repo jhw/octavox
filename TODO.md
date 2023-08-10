@@ -1,11 +1,11 @@
 ### short [samplebass]
 
+- pass seed
 - remove fx value scaling at SVFXTrig level
   - add multipier as slicebeats LFO config variable
 - refactor filter cutoff scaling to use absolute values
 - set filter type in filter config
 - parameterise filter scaling with cli args
-- test filter after echo
 - test varifying filter cutoff on a constant basis
 - test varying resonance
 - exponential cutoff level factor
