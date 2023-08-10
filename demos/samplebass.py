@@ -6,6 +6,8 @@ from octavox.modules.banks import SVBanks, SVSampleKey
 
 from octavox.modules.project import SVTrigs, SVNoteTrig, SVFXTrig, SVProject
 
+from datetime import datetime
+
 import os, random, re, yaml
 
 Config=yaml.safe_load("""
@@ -92,13 +94,15 @@ if __name__=="__main__":
         bank=banks[bankname]
         filename=bank.lookup(_filename)
         print ("%s/%s" % (bankname, filename))
-        destfilename="tmp/samplebass/%s-%s.sunvox" % (bankname,
-                                                      filename.replace(" ", "-"))
         density=float(density)
         if density > 1 or density < 0:
             raise RuntimeError("density is invalid")
         if not os.path.exists("tmp/samplebass"):
             os.makedirs("tmp/samplebass")
+        timestamp=datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
+        destfilename="tmp/samplebass/%s-%s-%s.sunvox" % (timestamp,
+                                                         bankname,
+                                                         filename.replace(" ", "-"))
         generate(banks=banks,
                  bankname=bankname,
                  density=density,
