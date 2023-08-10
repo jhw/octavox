@@ -1,6 +1,5 @@
 ### short [samplebass]
 
-- pass seed
 - remove fx value scaling at SVFXTrig level
   - add multipier as slicebeats LFO config variable
 - refactor filter cutoff scaling to use absolute values
@@ -144,6 +143,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- pass seed
 - add timestamp as output prefix
 - rename limit as density
 - random filter levels

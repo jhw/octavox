@@ -6,6 +6,8 @@ from octavox.modules.banks import SVBanks, SVSampleKey
 
 from octavox.modules.project import SVTrigs, SVNoteTrig, SVFXTrig, SVProject
 
+from octavox.projects import Q
+
 from datetime import datetime
 
 import os, random, re, yaml
@@ -50,28 +52,30 @@ def generate(banks,
              bankname,
              filename,
              destfilename,
+             seed,
              density,
              config=Config,
              nslices=4,
              nbeats=32,
              bpm=120):
+    q=Q(seed)
     trigs=SVTrigs(nbeats=nbeats)
     for i in range(nbeats):
-        if random.random() < density:
+        if q.random() < density:
             params={"action": "cutoff",
                     "n": nslices,
-                    "i": random.choice(range(nslices))}
+                    "i": q.choice(range(nslices))}
             samplekey=SVSampleKey({"bank": bankname,
                                    "file": filename,
                                    "params": params})
-            vel=0.5+random.random()*0.5
+            vel=0.5+q.random()*0.5
             note=SVNoteTrig(mod="BassSampler",
                             samplekey=samplekey,
                             vel=vel,
                             i=i)
             freq=SVFXTrig(mod="Filter",
                           ctrl="freq",
-                          value=0.25*random.random(),
+                          value=0.25*q.random(),
                           i=i)
             trigs+=[note, freq]
     project=SVProject().render(patches=[trigs.tracks],
@@ -84,19 +88,22 @@ def generate(banks,
 if __name__=="__main__":
     try:
         import sys
-        if len(sys.argv) < 4:
-            raise RuntimeError("please enter bankname, filename, density")
-        _bankname, _filename, density = sys.argv[1:4]
+        if len(sys.argv) < 5:
+            raise RuntimeError("please enter bankname, filename, seed, density")
+        _bankname, _filename, seed, density = sys.argv[1:5]
+        if not re.search("^\\d+", seed):
+            raise RuntimeError("seed is invalid")
+        seed=int(seed)
         if not re.search("^\\d+(\\.\\d+)$", density):
+            raise RuntimeError("density is invalid")
+        density=float(density)
+        if density > 1 or density < 0:
             raise RuntimeError("density is invalid")
         banks=SVBanks("octavox/banks/pico")
         bankname=banks.lookup(_bankname)
         bank=banks[bankname]
         filename=bank.lookup(_filename)
-        print ("%s/%s" % (bankname, filename))
-        density=float(density)
-        if density > 1 or density < 0:
-            raise RuntimeError("density is invalid")
+        print ("%s/%s" % (bankname, filename))       
         if not os.path.exists("tmp/samplebass"):
             os.makedirs("tmp/samplebass")
         timestamp=datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
@@ -105,6 +112,7 @@ if __name__=="__main__":
                                                          filename.replace(" ", "-"))
         generate(banks=banks,
                  bankname=bankname,
+                 seed=seed, 
                  density=density,
                  filename=filename,
                  destfilename=destfilename)
