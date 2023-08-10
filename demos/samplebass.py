@@ -20,6 +20,7 @@ modules:
     class: rv.modules.filter.Filter
     defaults:
       resonance: 1250
+      type: 0 # LP
   - name: Echo
     class: rv.modules.echo.Echo
     defaults:

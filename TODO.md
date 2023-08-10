@@ -1,6 +1,5 @@
 ### short [samplebass]
 
-- set filter type in filter config
 - parameterise filter scaling with cli args
 - test varifying filter cutoff on a constant basis
 - test varying resonance
@@ -140,6 +139,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- set filter type in filter config
 - refactor filter cutoff scaling to use absolute values
 - remove fx value scaling at SVFXTrig level
   - add multipier as slicebeats LFO config variable
