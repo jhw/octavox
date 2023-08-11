@@ -10,7 +10,43 @@ from octavox.projects.slicebeats.model import Patch
 
 import json, os, random, yaml
 
-Config=yaml.safe_load(open("octavox/projects/slicebeats/config.yaml").read())
+Modules=yaml.safe_load("""
+- name: KickSampler
+  class: octavox.modules.sampler.SVSampler
+- name: SnareSampler
+  class: octavox.modules.sampler.SVSampler
+- name: HatSampler
+  class: octavox.modules.sampler.SVSampler
+- name: Echo
+  class: rv.modules.echo.Echo
+  defaults:
+    dry: 256
+    wet: 256
+    delay: 192
+- name: Distortion
+  class: rv.modules.distortion.Distortion
+  defaults:
+    power: 64
+- name: Reverb
+  class: rv.modules.reverb.Reverb
+  defaults:
+    wet: 4
+""")
+
+Links=yaml.safe_load("""
+- - KickSampler
+  - Echo
+- - SnareSampler
+  - Echo
+- - HatSampler
+  - Echo
+- - Echo
+  - Distortion
+- - Distortion
+  - Reverb
+- - Reverb
+  - Output
+""")
 
 class SlicebeatsCli(SVBankCli):
 
@@ -47,11 +83,13 @@ class SlicebeatsCli(SVBankCli):
                 with open(filename, 'w') as f:
                     f.write(json.dumps(self.patches,
                                        indent=2))
-            def dump_sunvox(self, config=Config):
+            def dump_sunvox(self,
+                            modules=Modules,
+                            links=Links):
                 project=SVProject().render(patches=[patch.render(nbeats=self.env["nbeats"])
                                                     for patch in self.patches],
-                                           config={"modules": config["modules"],
-                                                   "links": config["links"]},
+                                           config={"modules": modules,
+                                                   "links": links},
                                            banks=self.banks,
                                            bpm=self.env["bpm"])
                 filename="%s/sunvox/%s.sunvox" % (self.outdir,

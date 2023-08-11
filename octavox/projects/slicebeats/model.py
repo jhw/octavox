@@ -8,13 +8,47 @@ from octavox.projects import Q
 
 import json, random, yaml
 
-Config=yaml.safe_load(open("octavox/projects/slicebeats/config.yaml").read())
+SeqConfig=yaml.safe_load("""
+- name: KickSampler
+  tag: kk
+  styles:
+  - fourfloor
+  - electro
+  - triplets
+- name: SnareSampler
+  tag: sn
+  styles:
+  - backbeat
+  - skip
+- name: HatSampler
+  tag: ht
+  styles:
+  - offbeats
+  - closed
+""")
+
+LfoConfig=yaml.safe_load("""
+- name: Echo/wet
+  range: [0, 1]
+  increment: 0.25
+  step: 4
+  live: 0.66666
+  multiplier: 32768
+- name: Echo/feedback
+  range: [0, 1]
+  increment: 0.25
+  step: 4
+  live: 1.0
+  multiplier: 32768
+""")
 
 Patterns=["0",
           "0|0|1|0",
           "3x0|1",
           "0|1|0|1",
           "0|1|0|2"]
+
+
 
 class Pattern(str):
 
@@ -96,7 +130,7 @@ class Slice(dict):
                   pool,
                   fixes,
                   config={item["tag"]:item
-                          for item in Config["sequencers"]}):
+                          for item in SeqConfig}):
         return Slice(samples=Samples.randomise(i=i,
                                                tag=tag,
                                                pool=pool,
@@ -159,7 +193,7 @@ class Sequencer(dict):
 
     def __init__(self, item,
                  config={item["name"]:item
-                         for item in Config["sequencers"]}):
+                         for item in SeqConfig}):
         dict.__init__(self, {"name": item["name"],
                              "pattern": Pattern(item["pattern"]),
                              "slices": Slices(item["slices"])})
@@ -236,7 +270,7 @@ class Sequencers(list):
                   pool,
                   fixes,
                   temperature,
-                  config=Config["sequencers"]):
+                  config=SeqConfig):
         return Sequencers([Sequencer.randomise(item=item,
                                                pool=pool,
                                                fixes=fixes,
@@ -260,7 +294,7 @@ class Lfo(dict):
 
     def __init__(self, item,
                  config={item["name"]:item
-                         for item in Config["lfos"]}):
+                         for item in LfoConfig}):
         dict.__init__(self, item)
         params=config[item["name"]]
         for attr in params:
@@ -311,7 +345,7 @@ class Lfo(dict):
 class Lfos(list):
 
     @classmethod
-    def randomise(self, config=Config["lfos"]):
+    def randomise(self, config=LfoConfig):
         return Lfos([Lfo.randomise(item)
                      for item in config])
 

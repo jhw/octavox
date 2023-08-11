@@ -1,5 +1,7 @@
 ### short
 
+- moved render_patches into root cli
+
 - s3 archives
 - s3 banks
 
@@ -134,6 +136,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- split config and move inline under separate variables
 - check what happens if link module unknown
 - resonance parameter
 - parameterise filter scaling with cli args
