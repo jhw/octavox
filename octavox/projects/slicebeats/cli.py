@@ -1,14 +1,12 @@
 from octavox.modules.banks import SVSampleKey, SVBanks, SVPools, SVPool
 
-from octavox.modules.cli import SVBankCli, parse_line
+from octavox.modules.cli import SVBankCli, parse_line, render_patches
 
-from octavox.modules.project import SVNoteTrig, SVProject
-
-from octavox.projects import random_filename
+from octavox.modules.project import SVNoteTrig
 
 from octavox.projects.slicebeats.model import Patch
 
-import json, os, random, yaml
+import json, os, yaml
 
 class SlicebeatsCli(SVBankCli):
 
@@ -20,11 +18,11 @@ class SlicebeatsCli(SVBankCli):
         SVBankCli.__init__(self, *args, **kwargs)
         self.fixes=SVPool()
 
-    @parse_line(config=[{"name": "frag",
+    @parse_line(config=[{"name": "stub",
                          "type": "str"}])
-    def do_load_project(self, frag):
+    def do_load_project(self, stub):
         matches=[filename for filename in os.listdir(self.outdir+"/json")
-                 if frag in filename]
+                 if stub in filename]
         if matches==[]:
             print ("WARNING: no matches")
         elif len(matches)==1:
@@ -37,34 +35,6 @@ class SlicebeatsCli(SVBankCli):
         else:
             print ("WARNING: multiple matches")
         
-    def render_patches(prefix):
-        def decorator(fn):
-            def dump_json(self):
-                filename="%s/json/%s.json" % (self.outdir,
-                                              self.filename)
-                with open(filename, 'w') as f:
-                    f.write(json.dumps(self.patches,
-                                       indent=2))
-            def dump_sunvox(self):
-                project=SVProject().render(patches=[patch.render(nbeats=self.env["nbeats"])
-                                                    for patch in self.patches],
-                                           config={"modules": self.modules,
-                                                   "links": self.links},
-                                           banks=self.banks,
-                                           bpm=self.env["bpm"])
-                filename="%s/sunvox/%s.sunvox" % (self.outdir,
-                                                    self.filename)
-                with open(filename, 'wb') as f:
-                    project.write_to(f)
-            def wrapped(self, *args, **kwargs):
-                self.filename=random_filename(prefix)
-                print ("INFO: %s" % self.filename)
-                self.patches=fn(self, *args, **kwargs)
-                dump_json(self)
-                dump_sunvox(self)
-            return wrapped
-        return decorator
-
     @parse_line()
     @render_patches(prefix="random")
     def do_randomise_patches(self):
@@ -117,14 +87,14 @@ class SlicebeatsCli(SVBankCli):
 
     @parse_line(config=[{"name": "tag",
                          "type": "str"},
-                        {"name": "bankfrag",
+                        {"name": "bankstub",
                          "type": "str"},
-                        {"name": "wavfrag",
+                        {"name": "wavstub",
                          "type": "str"}])
-    def do_fix_sample(self, tag, bankfrag, wavfrag):
-        bankname=self.banks.lookup(bankfrag)
+    def do_fix_sample(self, tag, bankstub, wavstub):
+        bankname=self.banks.lookup(bankstub)
         bank=self.banks[bankname]
-        wavfile=bank.lookup(wavfrag)
+        wavfile=bank.lookup(wavstub)
         samplekey=SVSampleKey({"tags": [tag],
                                "bank": bankname,
                                "file": wavfile})

@@ -6,7 +6,7 @@ import octavox.modules.sequences.vitling909 as nine09
 
 from octavox.projects import Q
 
-import json, random, yaml
+import random, yaml
 
 SeqConfig=yaml.safe_load("""
 - name: KickSampler
@@ -47,8 +47,6 @@ Patterns=["0",
           "3x0|1",
           "0|1|0|1",
           "0|1|0|2"]
-
-
 
 class Pattern(str):
 

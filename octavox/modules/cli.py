@@ -2,7 +2,11 @@ from octavox.modules import is_abbrev
 
 from octavox.modules.banks import SVPool
 
-import cmd, os, re, readline, traceback
+from octavox.modules.project import SVProject
+
+from octavox.projects import random_filename
+
+import cmd, json, os, re, readline, traceback
 
 HistorySize=100
 
@@ -58,6 +62,34 @@ def parse_line(config=[]):
                 print ("ERROR: %s" % str(error))
             except Exception as error:
                 print ("EXCEPTION: %s" % ''.join(traceback.TracebackException.from_exception(error).format()))
+        return wrapped
+    return decorator
+
+def render_patches(prefix):
+    def decorator(fn):
+        def dump_json(self):
+            filename="%s/json/%s.json" % (self.outdir,
+                                          self.filename)
+            with open(filename, 'w') as f:
+                f.write(json.dumps(self.patches,
+                                   indent=2))
+        def dump_sunvox(self):
+            project=SVProject().render(patches=[patch.render(nbeats=self.env["nbeats"])
+                                                for patch in self.patches],
+                                       config={"modules": self.modules,
+                                               "links": self.links},
+                                       banks=self.banks,
+                                       bpm=self.env["bpm"])
+            filename="%s/sunvox/%s.sunvox" % (self.outdir,
+                                              self.filename)
+            with open(filename, 'wb') as f:
+                project.write_to(f)
+        def wrapped(self, *args, **kwargs):
+            self.filename=random_filename(prefix)
+            print ("INFO: %s" % self.filename)
+            self.patches=fn(self, *args, **kwargs)
+            dump_json(self)
+            dump_sunvox(self)
         return wrapped
     return decorator
 
@@ -132,7 +164,7 @@ class SVBaseCli(cmd.Cmd):
     def do_clean_projects(self):
         os.system("rm -rf %s" % self.outdir)
         self.init_subdirs()
-
+        
     def do_exit(self, _):
         return self.do_quit(None)
 

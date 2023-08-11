@@ -1,7 +1,5 @@
 ### short
 
-- moved render_patches into root cli
-
 - s3 archives
 - s3 banks
 
@@ -15,6 +13,7 @@
 
 ### demos
 
+- replace oh/ch with filter lfo
 - noise hats -> increased bpm -> clustering -> t69 collapse
 - city dreams bass + vitling 303
 - breakbreaks
@@ -25,9 +24,11 @@
 - pydub timestretching
 - pybub detecting crossover points
 
-### long
+### banks
 
-- dataline/juno, tracker banks
+- dataline juno
+- polyend tracker
+- perkons
 
 ### thoughts
 
@@ -136,6 +137,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- moved render_patches into root cli
 - add cli variables for modules, links
 - split config and move inline under separate variables
 - check what happens if link module unknown
