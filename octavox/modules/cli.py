@@ -84,11 +84,15 @@ class SVBaseCli(cmd.Cmd):
     def __init__(self,
                  projectname,
                  params,
+                 modules,
+                 links,
                  historysize=HistorySize):
         cmd.Cmd.__init__(self)
         self.projectname=projectname
         self.outdir="tmp/%s" % projectname
         self.init_subdirs()
+        self.modules=modules
+        self.links=links
         self.env=SVEnvironment(params)
         self.project=None
         self.filename=None

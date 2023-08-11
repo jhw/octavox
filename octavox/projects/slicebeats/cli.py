@@ -10,44 +10,6 @@ from octavox.projects.slicebeats.model import Patch
 
 import json, os, random, yaml
 
-Modules=yaml.safe_load("""
-- name: KickSampler
-  class: octavox.modules.sampler.SVSampler
-- name: SnareSampler
-  class: octavox.modules.sampler.SVSampler
-- name: HatSampler
-  class: octavox.modules.sampler.SVSampler
-- name: Echo
-  class: rv.modules.echo.Echo
-  defaults:
-    dry: 256
-    wet: 256
-    delay: 192
-- name: Distortion
-  class: rv.modules.distortion.Distortion
-  defaults:
-    power: 64
-- name: Reverb
-  class: rv.modules.reverb.Reverb
-  defaults:
-    wet: 4
-""")
-
-Links=yaml.safe_load("""
-- - KickSampler
-  - Echo
-- - SnareSampler
-  - Echo
-- - HatSampler
-  - Echo
-- - Echo
-  - Distortion
-- - Distortion
-  - Reverb
-- - Reverb
-  - Output
-""")
-
 class SlicebeatsCli(SVBankCli):
 
     intro="Welcome to Slicebeats :)"
@@ -83,13 +45,11 @@ class SlicebeatsCli(SVBankCli):
                 with open(filename, 'w') as f:
                     f.write(json.dumps(self.patches,
                                        indent=2))
-            def dump_sunvox(self,
-                            modules=Modules,
-                            links=Links):
+            def dump_sunvox(self):
                 project=SVProject().render(patches=[patch.render(nbeats=self.env["nbeats"])
                                                     for patch in self.patches],
-                                           config={"modules": modules,
-                                                   "links": links},
+                                           config={"modules": self.modules,
+                                                   "links": self.links},
                                            banks=self.banks,
                                            bpm=self.env["bpm"])
                 filename="%s/sunvox/%s.sunvox" % (self.outdir,
@@ -185,6 +145,44 @@ nblocks: 8
 bpm: 120
 """)
 
+Modules=yaml.safe_load("""
+- name: KickSampler
+  class: octavox.modules.sampler.SVSampler
+- name: SnareSampler
+  class: octavox.modules.sampler.SVSampler
+- name: HatSampler
+  class: octavox.modules.sampler.SVSampler
+- name: Echo
+  class: rv.modules.echo.Echo
+  defaults:
+    dry: 256
+    wet: 256
+    delay: 192
+- name: Distortion
+  class: rv.modules.distortion.Distortion
+  defaults:
+    power: 64
+- name: Reverb
+  class: rv.modules.reverb.Reverb
+  defaults:
+    wet: 4
+""")
+
+Links=yaml.safe_load("""
+- - KickSampler
+  - Echo
+- - SnareSampler
+  - Echo
+- - HatSampler
+  - Echo
+- - Echo
+  - Distortion
+- - Distortion
+  - Reverb
+- - Reverb
+  - Output
+""")
+
 if __name__=="__main__":
     try:
         def load_yaml(filename, home="octavox/projects/slicebeats"):
@@ -194,9 +192,11 @@ if __name__=="__main__":
                        for poolname, pool in banks.spawn_pools().items()
                        if len(pool) > 24})
         SlicebeatsCli(projectname="slicebeats",
-                     poolname="global-curated",
-                     params=Params,
-                     banks=banks,
-                     pools=pools).cmdloop()
+                      poolname="global-curated",
+                      params=Params,
+                      modules=Modules,
+                      links=Links,
+                      banks=banks,
+                      pools=pools).cmdloop()
     except RuntimeError as error:
         print ("ERROR: %s" % str(error))

@@ -136,6 +136,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- add cli variables for modules, links
 - split config and move inline under separate variables
 - check what happens if link module unknown
 - resonance parameter
