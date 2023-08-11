@@ -2,11 +2,11 @@ from octavox.modules.banks import SVSampleKey, SVBanks, SVPools, SVPool
 
 from octavox.modules.cli import SVBankCli, parse_line
 
-from octavox.modules.project import SVNoteTrig
+from octavox.modules.project import SVNoteTrig, SVProject
 
 from octavox.projects import random_filename
 
-from octavox.projects.slicebeats.model import Patch, Patches
+from octavox.projects.slicebeats.model import Patch
 
 import json, os, random, yaml
 
@@ -34,56 +34,43 @@ class SlicebeatsCli(SVBankCli):
             print ("INFO: %s" % filename)
             abspath="%s/json/%s" % (self.outdir, filename)
             patches=json.loads(open(abspath).read())
-            self.patches=Patches([Patch(**patch)
-                                  for patch in patches])
+            self.patches=[Patch(**patch)
+                          for patch in patches]
         else:
             print ("WARNING: multiple matches")
         
     def render_patches(prefix):
         def decorator(fn):
+            def dump_json(self):
+                filename="%s/json/%s.json" % (self.outdir,
+                                              self.filename)
+                with open(filename, 'w') as f:
+                    f.write(json.dumps(self.patches,
+                                       indent=2))
+            def dump_sunvox(self, config=Config):
+                project=SVProject().render(patches=[patch.render(nbeats=self.env["nbeats"])
+                                                    for patch in self.patches],
+                                           config={"modules": config["modules"],
+                                                   "links": config["links"]},
+                                           banks=self.banks,
+                                           bpm=self.env["bpm"])
+                filename="%s/sunvox/%s.sunvox" % (self.outdir,
+                                                    self.filename)
+                with open(filename, 'wb') as f:
+                    project.write_to(f)
             def wrapped(self, *args, **kwargs):
                 self.filename=random_filename(prefix)
                 print ("INFO: %s" % self.filename)
                 self.patches=fn(self, *args, **kwargs)
-                jsonfilename="%s/json/%s.json" % (self.outdir,
-                                                  self.filename)
-                self.patches.render_json(filename=jsonfilename)
-                svfilename="%s/sunvox/%s.sunvox" % (self.outdir,
-                                                    self.filename)                
-                self.patches.render_sunvox(banks=self.banks,
-                                           nbeats=self.env["nbeats"],
-                                           bpm=self.env["bpm"],
-                                           filename=svfilename)
+                dump_json(self)
+                dump_sunvox(self)
             return wrapped
         return decorator
 
-    """
-    - for (json) projects which have been re-instated from archives
-    - possibly archive functions would do the automatically
-    """
-         
-    @parse_line()
-    def do_restore_projects(self):
-        stubs=[filename.split(".")[0]
-                 for filename in os.listdir(self.outdir+"/sunvox")]
-        for filename in sorted(os.listdir(self.outdir+"/json")):
-            stub=filename.split(".")[0]
-            if stub not in stubs:
-                print (stub)
-                abspath="%s/json/%s" % (self.outdir, filename)
-                patches=Patches([Patch(**patch)
-                                 for patch in json.loads(open(abspath).read())])
-                svfilename="%s/sunvox/%s.sunvox" % (self.outdir,
-                                                    stub)
-                patches.render_sunvox(banks=self.banks,
-                                      nbeats=self.env["nbeats"],
-                                      bpm=self.env["bpm"],
-                                      filename=svfilename)
-         
     @parse_line()
     @render_patches(prefix="random")
     def do_randomise_patches(self):
-        patches=Patches()
+        patches=[]
         npatches=self.env["nblocks"]*self.env["blocksize"]
         for i in range(npatches):
             patch=Patch.randomise(pool=self.pools[self.poolname],
@@ -98,7 +85,7 @@ class SlicebeatsCli(SVBankCli):
     @render_patches(prefix="mutate")
     def do_mutate_patch(self, i):
         root=self.patches[i % len(self.patches)]
-        patches=Patches([root])
+        patches=[root]
         npatches=self.env["nblocks"]*self.env["blocksize"]
         for i in range(npatches-1):
             patch=root.clone()

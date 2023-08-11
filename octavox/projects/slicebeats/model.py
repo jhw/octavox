@@ -360,31 +360,5 @@ class Patch(dict):
                        trigs=trigs)
         return trigs.tracks
 
-class Patches(list):
-
-    def __init__(self, patches=[]):
-        list.__init__(self, [Patch(**patch)
-                             for patch in patches])
-
-    def render_json(self, filename):
-        with open(filename, 'w') as f:
-            f.write(json.dumps(self,
-                               indent=2))
-
-    def render_sunvox(self,
-                      banks,
-                      nbeats,
-                      bpm,
-                      filename,
-                      config=Config):
-        project=SVProject().render(patches=[patch.render(nbeats=nbeats)
-                                            for patch in self],
-                                   config={"modules": config["modules"],
-                                           "links": config["links"]},
-                                   banks=banks,
-                                   bpm=bpm)
-        with open(filename, 'wb') as f:
-            project.write_to(f)
-    
 if __name__=="__main__":
     pass
