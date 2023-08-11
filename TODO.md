@@ -1,21 +1,14 @@
-### short [samplebass]
+### short
 
-- resonance parameter
-- test varifying filter cutoff on a constant basis
-- exponential cutoff level factor
-- heartbeat
+- check what happens if link module unknown
 
 ### demos
 
-- pydub granular samples
-  - chord slice concatenation
-  
-- pydub adeout
-- noise hats
+- pydub granular sample -> chord slice concatenation
+- pydub fadeout
+- noise hats -> increased bpm -> clustering -> t69 collapse
 
 ### medium
-
-- check what happens if link module unknown
 
 - bank level bans
 - action to fix a track
@@ -37,6 +30,10 @@
 
 ### thoughts
 
+- samplebass heartbeat?
+  - probably not worth it
+- exponential cutoff level factor?
+  - probably not worth it
 - convert samplekey to real class with empty params, tags by default
   - no because needs to be rendered to JSON as part of Samples class
 - should pool.add check for same sample with different tags only?
@@ -138,6 +135,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- resonance parameter
 - parameterise filter scaling with cli args
 - set filter type in filter config
 - refactor filter cutoff scaling to use absolute values

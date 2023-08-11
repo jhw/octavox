@@ -21,8 +21,6 @@ modules:
   - name: Filter
     class: rv.modules.filter.Filter
     defaults:
-      freq: 0
-      resonance: 1250
       type: 0 # LP
   - name: Echo
     class: rv.modules.echo.Echo
@@ -48,7 +46,7 @@ links:
     - Output
 """)
 
-Patterns=[0, 0, 0, -2]
+Patterns=[[0, 0, 0, -2]]
 
 def generate(banks,
              bankname,
@@ -58,6 +56,8 @@ def generate(banks,
              density,
              freqmin,
              freqmax,
+             resmin,
+             resmax,
              modules=Config["modules"],
              links=Config["links"],
              patterns=Patterns,
@@ -80,13 +80,25 @@ def generate(banks,
                                 samplekey=samplekey,
                                 vel=vel,
                                 i=i)
+            shift=int(256*128/2)+272*random.choice(pattern)
+            shifttrig=SVFXTrig(mod="PitchShifter",
+                               ctrl="pitch",
+                               value=shift,
+                               i=i)
             freq=freqmin+int((freqmax-freqmin)*q.random())
             freqtrig=SVFXTrig(mod="Filter",
                               ctrl="freq",
                               value=freq,
                               i=i)
+            res=resmin+int((resmax-resmin)*q.random())
+            restrig=SVFXTrig(mod="Filter",
+                             ctrl="resonance",
+                             value=res,
+                             i=i)
             trigs+=[notetrig,
-                    freqtrig]
+                    shifttrig,
+                    freqtrig,
+                    restrig]
     project=SVProject().render(patches=[trigs.tracks],
                                config={"modules": modules,
                                        "links": links},
@@ -94,13 +106,17 @@ def generate(banks,
                                bpm=bpm)
     with open(destfilename, 'wb') as f:
         project.write_to(f)
-    
+
+"""
+- python demos/samplebass.py base 03 6 0.33333 1500 2500 20000 30000
+"""
+        
 if __name__=="__main__":
     try:
         import sys
-        if len(sys.argv) < 7:
-            raise RuntimeError("please enter bankname, filename, seed, density, freqmin, freqmax")
-        _bankname, _filename, seed, density, freqmin, freqmax = sys.argv[1:7]
+        if len(sys.argv) < 9:
+            raise RuntimeError("please enter bankname, filename, seed, density, freqmin, freqmax, resmin, resmax")
+        _bankname, _filename, seed, density, freqmin, freqmax, resmin, resmax = sys.argv[1:9]
         if not re.search("^\\d+", seed):
             raise RuntimeError("seed is invalid")
         seed=int(seed)
@@ -115,6 +131,16 @@ if __name__=="__main__":
         if not re.search("^\\d+$", freqmax):
             raise RuntimeError("freqmax is invalid")
         freqmax=int(freqmax)
+        if freqmax < freqmin:
+            raise RuntimeError("freqmax must be > freqmin")
+        if not re.search("^\\d+$", resmin):
+            raise RuntimeError("resmax is invalid")
+        resmin=int(resmin)
+        if not re.search("^\\d+$", resmax):
+            raise RuntimeError("resmax is invalid")
+        resmax=int(resmax)
+        if resmax < resmin:
+            raise RuntimeError("resmax must be > resmin")
         banks=SVBanks("octavox/banks/pico")
         bankname=banks.lookup(_bankname)
         bank=banks[bankname]
@@ -132,6 +158,8 @@ if __name__=="__main__":
                  density=density,
                  freqmin=freqmin,
                  freqmax=freqmax,
+                 resmin=resmin,
+                 resmax=resmax,
                  filename=filename,
                  destfilename=destfilename)
     except RuntimeError as error:
