@@ -1,28 +1,27 @@
 ### short
 
-- check what happens if link module unknown
-
-### demos
-
-- pydub granular sample -> chord slice concatenation
-- pydub fadeout
-- noise hats -> increased bpm -> clustering -> t69 collapse
+- s3 archives
+- s3 banks
 
 ### medium
 
 - bank level bans
 - action to fix a track
 - check delay scales as bpm changes
-- s3 archive cli capabilities
 - mutate and arrange actions
-- move banks to s3
 - chord support
 
-### pydub
+### demos
 
-- get/change pitch
-- timestretching
-- detecting crossover points
+- noise hats -> increased bpm -> clustering -> t69 collapse
+- city dreams bass + vitling 303
+- breakbreaks
+
+- pydub granular samples -> chord slice concatenation
+- pydub fadeouts
+- pydub get/change pitch
+- pydub timestretching
+- pybub detecting crossover points
 
 ### long
 
@@ -135,6 +134,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- check what happens if link module unknown
 - resonance parameter
 - parameterise filter scaling with cli args
 - set filter type in filter config
