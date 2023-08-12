@@ -1,6 +1,5 @@
 ### short [01-s3-banks]
 
-- scripts to create/list/empty/delete assets bucket
 - add protection to empty bucket action
 - dump_pico_banks.py to push to s3 bucket
   - with pico prefix
@@ -147,6 +146,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- scripts to create/list/empty/delete assets bucket
 - environment variables
 - moved render_patches into root cli
 - add cli variables for modules, links
