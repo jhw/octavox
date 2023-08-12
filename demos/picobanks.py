@@ -8,20 +8,22 @@ from octavox.modules.project import SVTrigs, SVNoteTrig, SVTrigs, SVProject
 
 import os, yaml
 
-Config=yaml.safe_load("""
-modules:
-  - name: Sampler
-    class: octavox.modules.sampler.SVSampler
-links:
-  - - Sampler
-    - Output
+Modules=yaml.safe_load("""
+- name: Sampler
+  class: octavox.modules.sampler.SVSampler
+""")
+
+Links=yaml.safe_load("""
+- - Sampler
+  - Output
 """)
 
 def generate(bankname,
              bank,
              banks,
              destfilename,
-             config=Config,
+             modules=Modules,
+             links=Links,
              bpm=120):
     wavfiles=bank.wavfiles
     nbeats=len(wavfiles)
@@ -34,8 +36,8 @@ def generate(bankname,
                         i=i)
         trigs.append(note)
     project=SVProject().render(patches=[trigs.tracks],
-                               config={"modules": config["modules"],
-                                       "links": config["links"]},
+                               config={"modules": modules,
+                                       "links": links},
                                banks=banks,
                                bpm=bpm)
     with open(destfilename, 'wb') as f:
@@ -43,11 +45,11 @@ def generate(bankname,
 
 if __name__=="__main__":
     banks=SVBanks("octavox/banks/pico")
-    if not os.path.exists("tmp/banks/pico"):
-        os.makedirs("tmp/banks/pico")
+    if not os.path.exists("tmp/picobanks"):
+        os.makedirs("tmp/picobanks")
     for bankname, bank in banks.items():
         print (bankname)
-        destfilename="tmp/banks/pico/%s.sunvox" % bankname
+        destfilename="tmp/picobanks/%s.sunvox" % bankname
         generate(bankname=bankname,
                  bank=bank,
                  banks=banks,

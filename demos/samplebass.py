@@ -12,38 +12,39 @@ from datetime import datetime
 
 import os, random, re, yaml
 
-Config=yaml.safe_load("""
-modules:
-  - name: BassSampler
-    class: octavox.modules.sampler.SVSampler
-  - name: PitchShifter
-    class: rv.modules.pitchshifter.PitchShifter
-  - name: Filter
-    class: rv.modules.filter.Filter
-    defaults:
-      type: 0 # LP
-  - name: Echo
-    class: rv.modules.echo.Echo
-    defaults:
-      dry: 256
-      wet: 64
-      feedback: 128
-      delay: 192
-  - name: Reverb
-    class: rv.modules.reverb.Reverb
-    defaults:
-      wet: 4
-links:
-  - - BassSampler
-    - PitchShifter
-  - - PitchShifter
-    - Filter
-  - - Filter
-    - Echo
-  - - Echo
-    - Reverb
-  - - Reverb
-    - Output
+Modules=yaml.safe_load("""
+- name: BassSampler
+  class: octavox.modules.sampler.SVSampler
+- name: PitchShifter
+  class: rv.modules.pitchshifter.PitchShifter
+- name: Filter
+  class: rv.modules.filter.Filter
+  defaults:
+    type: 0 # LP
+- name: Echo
+  class: rv.modules.echo.Echo
+  defaults:
+    dry: 256
+    wet: 64
+    feedback: 128
+    delay: 192
+- name: Reverb
+  class: rv.modules.reverb.Reverb
+  defaults:
+    wet: 4
+""")
+
+Links=yaml.safe_load("""
+- - BassSampler
+  - PitchShifter
+- - PitchShifter
+  - Filter
+- - Filter
+  - Echo
+- - Echo
+  - Reverb
+- - Reverb
+  - Output
 """)
 
 Patterns=[[0, 0, 0, -2]]
@@ -58,8 +59,8 @@ def generate(banks,
              freqmax,
              resmin,
              resmax,
-             modules=Config["modules"],
-             links=Config["links"],
+             modules=Modules,
+             links=Links,
              patterns=Patterns,
              nslices=4,
              nbeats=32,
