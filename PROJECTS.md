@@ -1,12 +1,3 @@
-### samplebass 
-
-- find some pico bass sounds
-- possibly normalise pitch
-- create samples with different cutoffs
-- vitling303 patterns
-- random volume and possibly filter variation
-- echo sample and hold
-  
 ### synth bass
 
 - analog generator 
@@ -38,27 +29,12 @@
 - https://blog.landr.com/drum-breaks/
 - https://mixdownmag.com.au/features/nick-vulture-dusting-off-lockdown-but-seldom-his-trusty-tasman/
   
-### euclid demo 
-
-- take slicebeats as a base
-- remove slice model probably
-- replace vitling909 with euclid/bjorklund
-- echo sample and hold
-
 ### sample chords / granular
 
 - find some pico chord sounds
 - slice them up and play longer versions
 - how to apply envelope or lfo like tracker?
 - volume and panning lfos
-- echo sample and hold
-  
-### noise hats
-  
-- aphex twin vordhosbn
-- open, closed, repeats, reversed
-- accents
-- possible filter variation
 - echo sample and hold
   
 ### synth chords

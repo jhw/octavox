@@ -1,22 +1,33 @@
-### short
+### short [01-s3-banks]
 
-- s3 archives
-- s3 banks
-
+- environment variables
+- scripts to create/list/empty/delete assets bucket
+- add protection to empty bucket action
+- dump_pico_banks.py to push to s3 bucket
+  - with pico prefix
+- bank loading to load from s3
+  - flat structure, ignore pico prefix
+- local tmp bank cache
+  - save to tmp if stuff doesn't exist
+  - load from tmp if it does exist
+  
 ### medium
 
+- s3 archives
 - bank level bans
 - action to fix a track
-- check delay scales as bpm changes
 - mutate and arrange actions
 - chord support
 
 ### demos
 
-- replace oh/ch with filter lfo
-- noise hats -> increased bpm -> clustering -> t69 collapse
+- check delay scales as bpm changes
+- replace oh/ch with filter movement
+- euclid beats
+- vorhosbn noise hats
+- t60 collapse clustering
 - city dreams bass + vitling 303
-- breakbreaks
+- breakbreaks bank
 
 - pydub granular samples -> chord slice concatenation
 - pydub fadeouts
