@@ -106,7 +106,32 @@ class SlicebeatsCli(SVBankCli):
     @parse_line()
     def do_clean_fixes(self):
         self.fixes=SVPool()
-                
+
+    @parse_line()
+    def do_reanimate_archives_temp(self):
+        from octavox.modules.project import SVProject
+        archivepath="archive/%s" % self.projectname
+        for _filename in os.listdir(archivepath):
+            stem=_filename.split(".")[0]
+            print (stem)
+            struct=json.loads(open("%s/%s.json" % (archivepath, stem)).read())
+            patches=[Patch(**patch)
+                     for patch in struct]
+            filename="%s/json/%s.json" % (self.outdir, stem)
+            with open(filename, 'w') as f:
+                f.write(json.dumps(patches,
+                                   indent=2))
+            filename="%s/sunvox/%s.sunvox" % (self.outdir, stem)
+            rendered=[patch.render(nbeats=self.env["nbeats"])
+                      for patch in patches]
+            project=SVProject().render(patches=rendered,
+                                       modconfig=self.modules,
+                                       links=self.links,
+                                       banks=self.banks,
+                                       bpm=self.env["bpm"])
+            with open(filename, 'wb') as f:
+                project.write_to(f)
+        
 Params=yaml.safe_load("""
 temperature: 1.0
 density: 0.75

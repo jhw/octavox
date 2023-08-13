@@ -1,6 +1,6 @@
 ### short
 
-- archive reanimation script
+- refactor reanimation to use render_patches decorator
 
 ### medium
 
@@ -145,6 +145,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- archive reanimation script
 - migrate archives 
 - pass machine around rather than tag ans styles
 - move tags into params
