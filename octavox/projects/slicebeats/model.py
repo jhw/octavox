@@ -188,7 +188,7 @@ class Sequencer(dict):
                   fixes,
                   styles={_machine["tag"]:_machine["params"]["styles"]
                           for _machine in Machines
-                          if _machine["type"]=="sequencer"}):
+                          if "tag" in _machine}):
         return Sequencer({"name": machine["name"],
                           "type": machine["type"],
                           "pattern": Pattern.randomise(temperature),
@@ -199,8 +199,7 @@ class Sequencer(dict):
 
     def __init__(self, machine,
                  params={_machine["name"]:_machine["params"]
-                        for _machine in Machines
-                         if _machine["type"]=="sequencer"}):
+                         for _machine in Machines}):
         dict.__init__(self, {"name": machine["name"],
                              "type": machine["type"],
                              "pattern": Pattern(machine["pattern"]),
@@ -314,8 +313,7 @@ class Lfo(dict):
 
     def __init__(self, machine,
                  params={_machine["name"]:_machine["params"]
-                         for _machine in Machines
-                         if _machine["type"]=="lfo"}):
+                         for _machine in Machines}):
         dict.__init__(self, machine)
         for k, v in params[machine["name"]].items():
             setattr(self, k, v)
