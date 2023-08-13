@@ -237,6 +237,10 @@ class Sequencer(dict):
                 trigs.append(trig)
         return wrapped
 
+    """
+    - https://github.com/vitling/acid-banger/blob/main/src/pattern.ts
+    """
+    
     @apply
     def fourfloor(self, q, i, d, *args, k="kk"):
         if i % 4 == 0 and q.random() < d:
