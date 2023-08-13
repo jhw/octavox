@@ -26,7 +26,9 @@ if __name__=="__main__":
         if bucketname in ["", None]:
             raise RuntimeError("OCTAVOX_ASSETS_BUCKET does not exist")
         s3=boto3.client("s3")
-        delete_bucket(s3, bucketname)
+        resp=input("ARE YOU SURE YOU WANT TO EMPTY %s? " % bucketname)
+        if resp in "yY":            
+            delete_bucket(s3, bucketname)
     except RuntimeError as error:
         print ("Error: %s" % (str(error)))
     except ClientError as error:
