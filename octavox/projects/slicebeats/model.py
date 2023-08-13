@@ -9,23 +9,23 @@ import importlib, random, yaml
 Machines=yaml.safe_load("""
 - name: KickSampler
   class: octavox.projects.slicebeats.model.Sequencer
-  tag: kk
   params:
+    tag: kk
     styles:
     - fourfloor
     - electro
     - triplets
 - name: SnareSampler
   class: octavox.projects.slicebeats.model.Sequencer
-  tag: sn
   params:
+    tag: sn
     styles:
     - backbeat
     - skip
 - name: HatSampler
   class: octavox.projects.slicebeats.model.Sequencer
-  tag: ht
   params:
+    tag: ht
     styles:
     - offbeats
     - closed
@@ -186,7 +186,7 @@ class Sequencer(dict):
                   temperature,
                   pool,
                   fixes):
-        slices=Slices.randomise(tag=machine["tag"],
+        slices=Slices.randomise(tag=machine["params"]["tag"],
                                 pool=pool,
                                 fixes=fixes,
                                 styles=machine["params"]["styles"])

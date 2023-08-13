@@ -1,9 +1,9 @@
 ### short
 
-- move tags into params
+- pass machine around rather than tag ans styles
+- runtime checks if name or class misspecified at machine level
 - move common parts into modules/model 
 
-- base class for sequencer and lfo
 - migrate archives 
 - archive reanimation script
 
@@ -38,7 +38,8 @@
 
 ### thoughts
 
-
+- base class for sequencer and lfo?
+  - don't think it's required or useful
 - bank level bans? 
   - think is over optimisation given randomisation
   - also how would it work with s3?
@@ -147,6 +148,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- move tags into params
 - replace eval type upper with class references and proper instantiation
 - rename lfo as modulator
 - refactor model params and styles munging
