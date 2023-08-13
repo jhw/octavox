@@ -27,12 +27,14 @@ SeqConfig=yaml.safe_load("""
 
 LfoConfig=yaml.safe_load("""
 - name: Echo/wet
+  style: sample_hold
   range: [0, 1]
   increment: 0.25
   step: 4
   live: 0.66666
   multiplier: 32768
 - name: Echo/feedback
+  style: sample_hold
   range: [0, 1]
   increment: 0.25
   step: 4
@@ -346,7 +348,8 @@ class Lfo(dict):
     def render(self, nbeats, density, trigs):
         q=Q(self["seed"])
         for i in range(nbeats):
-            self.sample_hold(q, i, density, trigs)
+            fn=getattr(self, self.style)
+            fn(q, i, density, trigs)
 
     def apply(fn):
         def wrapped(self, q, i, d, trigs):

@@ -1,10 +1,7 @@
 ### short
 
 - rename config as modconfig and links
-- remove modules/patterns and move vitling stuff inline
-- ensure sequencer has equivalent pattern to sample_and_hold
 - include class in sequencer/lfo config and instantiate dynamically
-- include method in sequencer/lfo config and call dynamically
 - collapse sequencer/lfo distinction in favour of machines
 - move generic slicebeats/model code into modules/model
 
@@ -145,6 +142,9 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- include method in sequencer/lfo config and call dynamically
+- remove modules/patterns and move vitling stuff inline
+- ensure sequencer has equivalent pattern to sample_and_hold
 - add protection to empty bucket action
 - scripts to create/list/empty/delete assets bucket
 - environment variables
