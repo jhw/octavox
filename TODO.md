@@ -1,6 +1,5 @@
 ### short
 
-- remove mutes again
 - replace hardcoded class refs with eval type capitalized 
 - single machines class and refactor patch methods 
 - check json serialisation is working
@@ -149,6 +148,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- remove mutes again
 - check random filenam
 - refactor lfos randomisation and initialisation to look the same as sequencers
 - use *args, **kwargs in lfo randomisation for redundant parameters
