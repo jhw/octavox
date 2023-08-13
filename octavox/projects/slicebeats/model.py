@@ -140,7 +140,7 @@ class Slice(dict):
                                                pool=pool,
                                                fixes=fixes),
                      seed=int(1e8*random.random()),
-                     style=random.choice(styles[tag]))
+                     style=random.choice(styles))
     
     def __init__(self,
                  samples,
@@ -185,17 +185,15 @@ class Sequencer(dict):
                   machine,
                   temperature,
                   pool,
-                  fixes,
-                  styles={_machine["tag"]:_machine["params"]["styles"]
-                          for _machine in Machines
-                          if "tag" in _machine}):
-        return Sequencer({"name": machine["name"],
+                  fixes):
+        slices=Slices.randomise(tag=machine["tag"],
+                                pool=pool,
+                                fixes=fixes,
+                                styles=machine["params"]["styles"])
+        return Sequencer({"name": machine["name"],                          
                           "type": machine["type"],
                           "pattern": Pattern.randomise(temperature),
-                          "slices": Slices.randomise(tag=machine["tag"],
-                                                     pool=pool,
-                                                     fixes=fixes,
-                                                     styles=styles)})
+                          "slices": slices})
 
     def __init__(self, machine,
                  params={_machine["name"]:_machine["params"]

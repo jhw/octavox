@@ -1,7 +1,5 @@
 ### short
 
-- refactor model params and styles munging
-
 - rename lfo as modulator
 - replace eval type upper with class references and proper instantiation
 
@@ -151,6 +149,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- refactor model params and styles munging
 - single machines class and refactor patch methods 
 - check json serialisation is working
 - replace hardcoded class refs with eval type capitalized 
