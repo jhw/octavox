@@ -426,14 +426,12 @@ class Patch(dict):
                      density=self["density"])
     
     def render(self,
-               nbeats,
-               mutes=[]):
+               nbeats):
         trigs=SVTrigs(nbeats=nbeats)
         for seq in self["sequencers"]:
-            if seq["name"] not in mutes:
-                seq.render(nbeats=nbeats,
-                           trigs=trigs,
-                           density=self["density"])
+            seq.render(nbeats=nbeats,
+                       trigs=trigs,
+                       density=self["density"])
         for lfo in self["lfos"]:
             lfo.render(nbeats=nbeats,
                        trigs=trigs,
