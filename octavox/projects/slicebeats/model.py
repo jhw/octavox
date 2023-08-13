@@ -343,14 +343,14 @@ class Lfo(dict):
             seed=int(1e8*random.random())
             self["seed"]=seed
 
-    def render(self, nbeats, trigs):
+    def render(self, nbeats, density, trigs):
         q=Q(self["seed"])
         for i in range(nbeats):
-            self.sample_hold(q, i, trigs)
+            self.sample_hold(q, i, density, trigs)
 
     def apply(fn):
-        def wrapped(self, q, i, trigs):
-            v=fn(self, q, i, trigs)
+        def wrapped(self, q, i, d, trigs):
+            v=fn(self, q, i, d, trigs)
             if v!=None: # explicit because could return zero
                 trig=SVFXTrig(mod=self.mod,
                               ctrl=self.ctrl,
@@ -360,7 +360,7 @@ class Lfo(dict):
         return wrapped
 
     @apply
-    def sample_hold(self, q, i, *args):
+    def sample_hold(self, q, i, d, *args):
         if 0 == i % self.step:
             if q.random() < self.live:
                 floor, ceil = self.range
@@ -418,7 +418,8 @@ class Patch(dict):
                            density=self["density"])
         for lfo in self["lfos"]:
             lfo.render(nbeats=nbeats,
-                       trigs=trigs)
+                       trigs=trigs,
+                       density=self["density"])
         return trigs.tracks
 
 if __name__=="__main__":
