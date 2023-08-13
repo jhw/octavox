@@ -1,6 +1,5 @@
 ### short
 
-- migrate archives 
 - archive reanimation script
 
 ### medium
@@ -146,6 +145,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- migrate archives 
 - pass machine around rather than tag ans styles
 - move tags into params
 - replace eval type upper with class references and proper instantiation

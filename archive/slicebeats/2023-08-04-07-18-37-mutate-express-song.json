@@ -1,6 +1,7 @@
 [
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -47,7 +48,8 @@
             "style": "electro"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -95,7 +97,8 @@
             "style": "backbeat"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -167,23 +170,24 @@
             "style": "closed"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 81188253,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 9560659,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -230,7 +234,8 @@
             "style": "triplets"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -278,7 +283,8 @@
             "style": "skip"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -350,23 +356,24 @@
             "style": "offbeats"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 32637810,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 96128305,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -413,7 +420,8 @@
             "style": "fourfloor"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -461,7 +469,8 @@
             "style": "skip"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -533,23 +542,24 @@
             "style": "closed"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 85305018,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 69657234,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -596,7 +606,8 @@
             "style": "fourfloor"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -644,7 +655,8 @@
             "style": "backbeat"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -716,23 +728,24 @@
             "style": "offbeats"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 75541250,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 55168857,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -779,7 +792,8 @@
             "style": "electro"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -827,7 +841,8 @@
             "style": "backbeat"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -899,23 +914,24 @@
             "style": "closed"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 36317920,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 89629138,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -962,7 +978,8 @@
             "style": "electro"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -1010,7 +1027,8 @@
             "style": "backbeat"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -1082,23 +1100,24 @@
             "style": "closed"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 68202486,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 19103829,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -1145,7 +1164,8 @@
             "style": "triplets"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -1193,7 +1213,8 @@
             "style": "backbeat"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -1265,23 +1286,24 @@
             "style": "closed"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 71159812,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 79342796,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -1328,7 +1350,8 @@
             "style": "electro"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -1376,7 +1399,8 @@
             "style": "backbeat"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -1448,23 +1472,24 @@
             "style": "closed"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 22819710,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 86981974,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -1511,7 +1536,8 @@
             "style": "triplets"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -1559,7 +1585,8 @@
             "style": "skip"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -1631,23 +1658,24 @@
             "style": "closed"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 64677458,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 73411986,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -1694,7 +1722,8 @@
             "style": "electro"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -1742,7 +1771,8 @@
             "style": "backbeat"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -1814,23 +1844,24 @@
             "style": "closed"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 51303928,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 55035642,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -1877,7 +1908,8 @@
             "style": "electro"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -1925,7 +1957,8 @@
             "style": "skip"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -1997,23 +2030,24 @@
             "style": "offbeats"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 26076042,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 17102506,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -2060,7 +2094,8 @@
             "style": "electro"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -2108,7 +2143,8 @@
             "style": "skip"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -2180,23 +2216,24 @@
             "style": "closed"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 81655467,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 85560405,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -2243,7 +2280,8 @@
             "style": "electro"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -2291,7 +2329,8 @@
             "style": "skip"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -2363,23 +2402,24 @@
             "style": "offbeats"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 31732514,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 41513610,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -2426,7 +2466,8 @@
             "style": "electro"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -2474,7 +2515,8 @@
             "style": "backbeat"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -2546,23 +2588,24 @@
             "style": "closed"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 85976319,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 82071362,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -2609,7 +2652,8 @@
             "style": "electro"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -2657,7 +2701,8 @@
             "style": "backbeat"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -2729,23 +2774,24 @@
             "style": "closed"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 89222747,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 54329102,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -2792,7 +2838,8 @@
             "style": "triplets"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -2840,7 +2887,8 @@
             "style": "backbeat"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -2912,23 +2960,24 @@
             "style": "closed"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 20701165,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 90727985,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -2975,7 +3024,8 @@
             "style": "triplets"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -3023,7 +3073,8 @@
             "style": "skip"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -3095,23 +3146,24 @@
             "style": "closed"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 36052733,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 50522029,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -3158,7 +3210,8 @@
             "style": "triplets"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -3206,7 +3259,8 @@
             "style": "backbeat"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -3278,23 +3332,24 @@
             "style": "closed"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 33572082,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 56644081,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -3341,7 +3396,8 @@
             "style": "fourfloor"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -3389,7 +3445,8 @@
             "style": "backbeat"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -3461,23 +3518,24 @@
             "style": "closed"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 48037992,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 56028115,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -3524,7 +3582,8 @@
             "style": "fourfloor"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -3572,7 +3631,8 @@
             "style": "backbeat"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -3644,23 +3704,24 @@
             "style": "closed"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 3429950,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 8762507,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -3707,7 +3768,8 @@
             "style": "fourfloor"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -3755,7 +3817,8 @@
             "style": "backbeat"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -3827,23 +3890,24 @@
             "style": "offbeats"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 47420759,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 99401814,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -3890,7 +3954,8 @@
             "style": "fourfloor"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -3938,7 +4003,8 @@
             "style": "skip"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -4010,23 +4076,24 @@
             "style": "closed"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 44846351,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 52436623,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -4073,7 +4140,8 @@
             "style": "electro"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -4121,7 +4189,8 @@
             "style": "backbeat"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -4193,23 +4262,24 @@
             "style": "closed"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 84994607,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 7073935,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -4256,7 +4326,8 @@
             "style": "fourfloor"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -4304,7 +4375,8 @@
             "style": "backbeat"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -4376,23 +4448,24 @@
             "style": "closed"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 49788961,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 77118753,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -4439,7 +4512,8 @@
             "style": "electro"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -4487,7 +4561,8 @@
             "style": "skip"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -4559,23 +4634,24 @@
             "style": "closed"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 90100957,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 48855795,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -4622,7 +4698,8 @@
             "style": "triplets"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -4670,7 +4747,8 @@
             "style": "backbeat"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -4742,23 +4820,24 @@
             "style": "closed"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 57122744,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 35331972,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -4805,7 +4884,8 @@
             "style": "electro"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -4853,7 +4933,8 @@
             "style": "backbeat"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -4925,23 +5006,24 @@
             "style": "offbeats"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 57378206,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 18223264,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -4988,7 +5070,8 @@
             "style": "triplets"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -5036,7 +5119,8 @@
             "style": "backbeat"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -5108,23 +5192,24 @@
             "style": "closed"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 12211793,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 50114914,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -5171,7 +5256,8 @@
             "style": "electro"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -5219,7 +5305,8 @@
             "style": "backbeat"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -5291,23 +5378,24 @@
             "style": "closed"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 57558856,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 58544520,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -5354,7 +5442,8 @@
             "style": "triplets"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -5402,7 +5491,8 @@
             "style": "backbeat"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -5474,23 +5564,24 @@
             "style": "offbeats"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 28640533,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 55160768,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -5537,7 +5628,8 @@
             "style": "electro"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -5585,7 +5677,8 @@
             "style": "backbeat"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -5657,23 +5750,24 @@
             "style": "closed"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 30990561,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 42759200,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   },
   {
-    "sequencers": [
+    "density": 0.75,
+    "machines": [
       {
         "pattern": "0|1|0|2",
         "slices": [
@@ -5720,7 +5814,8 @@
             "style": "electro"
           }
         ],
-        "name": "KickSampler"
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|1|0|1",
@@ -5768,7 +5863,8 @@
             "style": "backbeat"
           }
         ],
-        "name": "SnareSampler"
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
       },
       {
         "pattern": "0|0|1|0",
@@ -5840,19 +5936,19 @@
             "style": "closed"
           }
         ],
-        "name": "HatSampler"
-      }
-    ],
-    "lfos": [
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.model.Sequencer"
+      },
       {
         "seed": 96878117,
-        "name": "Echo/wet"
+        "name": "Echo/wet",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       },
       {
         "seed": 93309531,
-        "name": "Echo/feedback"
+        "name": "Echo/feedback",
+        "class": "octavox.projects.slicebeats.model.Modulator"
       }
-    ],
-    "density": 0.75
+    ]
   }
 ]
