@@ -190,6 +190,7 @@ class Sequencer(dict):
                           for _machine in Machines
                           if _machine["type"]=="sequencer"}):
         return Sequencer({"name": machine["name"],
+                          "type": machine["type"],
                           "pattern": Pattern.randomise(temperature),
                           "slices": Slices.randomise(tag=machine["tag"],
                                                      pool=pool,
@@ -201,6 +202,7 @@ class Sequencer(dict):
                         for _machine in Machines
                          if _machine["type"]=="sequencer"}):
         dict.__init__(self, {"name": machine["name"],
+                             "type": machine["type"],
                              "pattern": Pattern(machine["pattern"]),
                              "slices": Slices(machine["slices"])})
         for k, v in params[machine["name"]].items():
@@ -208,6 +210,7 @@ class Sequencer(dict):
                             
     def clone(self):
         return Sequencer({"name": self["name"],
+                          "type": self["type"],
                           "pattern": self["pattern"],
                           "slices": self["slices"].clone()})
 
@@ -306,6 +309,7 @@ class Lfo(dict):
                   machine,
                   **kwargs):
         return Lfo({"name": machine["name"],
+                    "type": machine["type"],
                     "seed": int(1e8*random.random())})
 
     def __init__(self, machine,
@@ -370,7 +374,7 @@ class Sequencers(list):
                           for machine in machines])
 
     def __init__(self, machines):
-        list.__init__(self, [Sequencer(machine)
+        list.__init__(self, [eval(machine["type"].capitalize())(machine)
                              for machine in machines])
 
     def clone(self):
@@ -393,7 +397,7 @@ class Lfos(list):
                      for machine in machines])
 
     def __init__(self, machines):
-        list.__init__(self, [Lfo(machine)
+        list.__init__(self, [eval(machine["type"].capitalize())(machine)
                              for machine in machines])
 
     def clone(self):
