@@ -1,8 +1,13 @@
 ### short
 
-- include class in sequencer/lfo config and instantiate dynamically
-- collapse sequencer/lfo distinction in favour of machines
-- move generic slicebeats/model code into modules/model
+- pass Seq|LfoConfig from a single place and rename as machines
+- nest machine args under params
+- make calls to initialise Sequencer|Lfo polymorphic (*args, **kwargs)
+- abstract class loading code in project into utils
+- split class loading/instantiating utils code
+- collapse sequencers and lfos into single machines class
+- instantiate machines dynamically based on class names in config
+- migrate archives to use machines
 
 ### medium
 
