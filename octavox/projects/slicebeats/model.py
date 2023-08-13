@@ -6,27 +6,28 @@ from octavox.projects import Q
 
 import random, yaml
 
-SeqConfig=yaml.safe_load("""
+Machines=yaml.safe_load("""
 - name: KickSampler
+  type: sequencer
   tag: kk
   styles:
   - fourfloor
   - electro
   - triplets
 - name: SnareSampler
+  type: sequencer
   tag: sn
   styles:
   - backbeat
   - skip
 - name: HatSampler
+  type: sequencer
   tag: ht
   styles:
   - offbeats
   - closed
-""")
-
-LfoConfig=yaml.safe_load("""
 - name: Echo/wet
+  type: lfo
   style: sample_hold
   range: [0, 1]
   increment: 0.25
@@ -34,6 +35,7 @@ LfoConfig=yaml.safe_load("""
   live: 0.66666
   multiplier: 32768
 - name: Echo/feedback
+  type: lfo
   style: sample_hold
   range: [0, 1]
   increment: 0.25
@@ -127,14 +129,15 @@ class Slice(dict):
                   tag,
                   pool,
                   fixes,
-                  config={item["tag"]:item
-                          for item in SeqConfig}):
+                  machines={machine["tag"]:machine
+                            for machine in Machines
+                            if machine["type"]=="sequencer"}):
         return Slice(samples=Samples.randomise(i=i,
                                                tag=tag,
                                                pool=pool,
                                                fixes=fixes),
                      seed=int(1e8*random.random()),
-                     style=random.choice(config[tag]["styles"]))
+                     style=random.choice(machines[tag]["styles"]))
     
     def __init__(self,
                  samples,
@@ -174,23 +177,24 @@ class Sequencer(dict):
     
     @classmethod
     def randomise(self,
-                  item,
+                  machine,
                   temperature,
                   pool,
                   fixes):
-        return Sequencer({"name": item["name"],
+        return Sequencer({"name": machine["name"],
                           "pattern": Pattern.randomise(temperature),
-                          "slices": Slices.randomise(tag=item["tag"],
+                          "slices": Slices.randomise(tag=machine["tag"],
                                                      pool=pool,
                                                      fixes=fixes)})
 
-    def __init__(self, item,
-                 config={item["name"]:item
-                         for item in SeqConfig}):
-        dict.__init__(self, {"name": item["name"],
-                             "pattern": Pattern(item["pattern"]),
-                             "slices": Slices(item["slices"])})
-        params=config[item["name"]]
+    def __init__(self, machine,
+                 machines={machine["name"]:machine
+                           for machine in Machines
+                           if machine["type"]=="sequencer"}):
+        dict.__init__(self, {"name": machine["name"],
+                             "pattern": Pattern(machine["pattern"]),
+                             "slices": Slices(machine["slices"])})
+        params=machines[machine["name"]]
         for attr in params:
             setattr(self, attr, params[attr])
                             
@@ -294,12 +298,13 @@ class Sequencers(list):
                   pool,
                   fixes,
                   temperature,
-                  config=SeqConfig):
-        return Sequencers([Sequencer.randomise(item=item,
+                  machines=[machine for machine in Machines
+                            if machine["type"]=="sequencer"]):
+        return Sequencers([Sequencer.randomise(machine=machine,
                                                pool=pool,
                                                fixes=fixes,
                                                temperature=temperature)
-                          for item in config])
+                          for machine in machines])
 
     def __init__(self, sequencers):
         list.__init__(self, [Sequencer(seq)
@@ -312,15 +317,16 @@ class Sequencers(list):
 class Lfo(dict):
     
     @classmethod
-    def randomise(self, item):
-        return Lfo({"name": item["name"],
+    def randomise(self, machine):
+        return Lfo({"name": machine["name"],
                     "seed": int(1e8*random.random())})
 
-    def __init__(self, item,
-                 config={item["name"]:item
-                         for item in LfoConfig}):
-        dict.__init__(self, item)
-        params=config[item["name"]]
+    def __init__(self, machine,
+                 machines={machine["name"]:machine
+                           for machine in Machines
+                           if machine["type"]=="lfo"}):
+        dict.__init__(self, machine)
+        params=machines[machine["name"]]
         for attr in params:
             setattr(self, attr, params[attr])
 
@@ -365,9 +371,10 @@ class Lfo(dict):
 class Lfos(list):
 
     @classmethod
-    def randomise(self, config=LfoConfig):
-        return Lfos([Lfo.randomise(item)
-                     for item in config])
+    def randomise(self, machines=Machines):
+        return Lfos([Lfo.randomise(machine)
+                     for machine in machines
+                     if machine["type"]=="lfo"])
 
     def __init__(self, lfos):
         list.__init__(self, [Lfo(lfo)
