@@ -1,21 +1,17 @@
 ### short
 
-- pass pool, fixes etc to lfo randomisation
-- refactor lfo initialisation so looks the same as sequencers
+- init_class function to initialise sequencer/lfo based on type
+- convert sequencers/lfos into single machines class
+  - convert patch to load machines
+  - check mutes handling
+- convert machines types to machine classes
 
-- collapse sequencers and lfos into single machines class
-
-- make calls to initialise Sequencer|Lfo polymorphic (*args, **kwargs)
 - abstract class loading code in project into utils
-- split class loading/instantiating utils code
-- instantiate machines dynamically based on class names in config
 - migrate archives to use machines
 
 ### medium
 
 - s3 archives
-- bank level bans
-- action to fix a track
 - mutate and arrange actions
 - chord support
 
@@ -26,7 +22,7 @@
 - euclid beats
 - vorhosbn noise hats
 - t60 collapse clustering
-- city dreams bass + vitling 303
+- city dreams bass + acid banger 303
 - breakbreaks bank
 
 - pydub granular samples -> chord slice concatenation
@@ -43,6 +39,10 @@
 
 ### thoughts
 
+
+- bank level bans? 
+  - think is over optimisation given randomisation
+  - also how would it work with s3?
 - samplebass heartbeat?
   - probably not worth it
 - exponential cutoff level factor?
@@ -148,6 +148,8 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- refactor lfos randomisation and initialisation to look the same as sequencers
+- use *args, **kwargs in lfo randomisation for redundant parameters
 - nest machine args under params
 - pass Seq|LfoConfig from a single place and rename as machines
 - rename config as modconfig and links

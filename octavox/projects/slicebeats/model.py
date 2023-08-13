@@ -299,11 +299,12 @@ class Sequencer(dict):
         elif q.random() < 0.5*d:
             return (k, 0.3*q.random())
                             
-
 class Lfo(dict):
     
     @classmethod
-    def randomise(self, machine):
+    def randomise(self,
+                  machine,
+                  **kwargs):
         return Lfo({"name": machine["name"],
                     "seed": int(1e8*random.random())})
 
@@ -368,29 +369,36 @@ class Sequencers(list):
                                                temperature=temperature)
                           for machine in machines])
 
-    def __init__(self, sequencers):
-        list.__init__(self, [Sequencer(seq)
-                             for seq in sequencers])
+    def __init__(self, machines):
+        list.__init__(self, [Sequencer(machine)
+                             for machine in machines])
 
     def clone(self):
-        return Sequencers([seq.clone()
-                           for seq in self])
+        return Sequencers([machine.clone()
+                           for machine in self])
             
 class Lfos(list):
 
     @classmethod
-    def randomise(self, machines=Machines):
-        return Lfos([Lfo.randomise(machine)
-                     for machine in machines
-                     if machine["type"]=="lfo"])
+    def randomise(self,
+                  pool,
+                  temperature,
+                  fixes,
+                  machines=[machine for machine in Machines
+                            if machine["type"]=="lfo"]):
+        return Lfos([Lfo.randomise(machine=machine,
+                                   pool=pool,
+                                   fixes=fixes,
+                                   temperature=temperature)
+                     for machine in machines])
 
-    def __init__(self, lfos):
-        list.__init__(self, [Lfo(lfo)
-                             for lfo in lfos])
+    def __init__(self, machines):
+        list.__init__(self, [Lfo(machine)
+                             for machine in machines])
 
     def clone(self):
-        return Lfos([lfo.clone()
-                     for lfo in self])
+        return Lfos([machine.clone()
+                     for machine in self])
 
 class Patch(dict):
 
@@ -399,7 +407,9 @@ class Patch(dict):
         return Patch(sequencers=Sequencers.randomise(pool=pool,
                                                      fixes=fixes,
                                                      temperature=temperature),
-                     lfos=Lfos.randomise(),
+                     lfos=Lfos.randomise(pool=pool,
+                                         fixes=fixes,
+                                         temperature=temperature),
                      density=density)
         
     def __init__(self,
