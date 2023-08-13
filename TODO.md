@@ -1,6 +1,5 @@
 ### short
 
-- runtime checks if name or class misspecified at machine level
 - move common parts into modules/model 
 
 - migrate archives 
