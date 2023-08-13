@@ -1,11 +1,13 @@
 ### short
 
-- pass Seq|LfoConfig from a single place and rename as machines
-- nest machine args under params
+- pass pool, fixes etc to lfo randomisation
+- refactor lfo initialisation so looks the same as sequencers
+
+- collapse sequencers and lfos into single machines class
+
 - make calls to initialise Sequencer|Lfo polymorphic (*args, **kwargs)
 - abstract class loading code in project into utils
 - split class loading/instantiating utils code
-- collapse sequencers and lfos into single machines class
 - instantiate machines dynamically based on class names in config
 - migrate archives to use machines
 
@@ -146,6 +148,8 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- nest machine args under params
+- pass Seq|LfoConfig from a single place and rename as machines
 - rename config as modconfig and links
 - move randomise_seed code into cli
 - include method in sequencer/lfo config and call dynamically

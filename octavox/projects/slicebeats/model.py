@@ -10,38 +10,43 @@ Machines=yaml.safe_load("""
 - name: KickSampler
   type: sequencer
   tag: kk
-  styles:
-  - fourfloor
-  - electro
-  - triplets
+  params:
+    styles:
+    - fourfloor
+    - electro
+    - triplets
 - name: SnareSampler
   type: sequencer
   tag: sn
-  styles:
-  - backbeat
-  - skip
+  params:
+    styles:
+    - backbeat
+    - skip
 - name: HatSampler
   type: sequencer
   tag: ht
-  styles:
-  - offbeats
-  - closed
+  params:
+    styles:
+    - offbeats
+    - closed
 - name: Echo/wet
   type: lfo
-  style: sample_hold
-  range: [0, 1]
-  increment: 0.25
-  step: 4
-  live: 0.66666
-  multiplier: 32768
+  params:
+    style: sample_hold
+    range: [0, 1]
+    increment: 0.25
+    step: 4
+    live: 0.66666
+    multiplier: 32768
 - name: Echo/feedback
   type: lfo
-  style: sample_hold
-  range: [0, 1]
-  increment: 0.25
-  step: 4
-  live: 1.0
-  multiplier: 32768
+  params:
+    style: sample_hold
+    range: [0, 1]
+    increment: 0.25
+    step: 4
+    live: 1.0
+    multiplier: 32768
 """)
 
 Patterns=["0",
@@ -181,7 +186,7 @@ class Sequencer(dict):
                   temperature,
                   pool,
                   fixes,
-                  styles={_machine["tag"]:_machine["styles"]
+                  styles={_machine["tag"]:_machine["params"]["styles"]
                           for _machine in Machines
                           if _machine["type"]=="sequencer"}):
         return Sequencer({"name": machine["name"],
@@ -192,15 +197,14 @@ class Sequencer(dict):
                                                      styles=styles)})
 
     def __init__(self, machine,
-                 machineconf={_machine["name"]:_machine
-                              for _machine in Machines
-                              if _machine["type"]=="sequencer"}):
+                 params={_machine["name"]:_machine["params"]
+                        for _machine in Machines
+                         if _machine["type"]=="sequencer"}):
         dict.__init__(self, {"name": machine["name"],
                              "pattern": Pattern(machine["pattern"]),
                              "slices": Slices(machine["slices"])})
-        params=machineconf[machine["name"]]
-        for attr in params:
-            setattr(self, attr, params[attr])
+        for k, v in params[machine["name"]].items():
+            setattr(self, k, v)
                             
     def clone(self):
         return Sequencer({"name": self["name"],
@@ -295,28 +299,6 @@ class Sequencer(dict):
         elif q.random() < 0.5*d:
             return (k, 0.3*q.random())
                             
-class Sequencers(list):
-    
-    @classmethod
-    def randomise(self,
-                  pool,
-                  fixes,
-                  temperature,
-                  machines=[machine for machine in Machines
-                            if machine["type"]=="sequencer"]):
-        return Sequencers([Sequencer.randomise(machine=machine,
-                                               pool=pool,
-                                               fixes=fixes,
-                                               temperature=temperature)
-                          for machine in machines])
-
-    def __init__(self, sequencers):
-        list.__init__(self, [Sequencer(seq)
-                             for seq in sequencers])
-
-    def clone(self):
-        return Sequencers([seq.clone()
-                           for seq in self])
 
 class Lfo(dict):
     
@@ -326,13 +308,12 @@ class Lfo(dict):
                     "seed": int(1e8*random.random())})
 
     def __init__(self, machine,
-                 machineconf={_machine["name"]:_machine
-                              for _machine in Machines
-                              if _machine["type"]=="lfo"}):
+                 params={_machine["name"]:_machine["params"]
+                         for _machine in Machines
+                         if _machine["type"]=="lfo"}):
         dict.__init__(self, machine)
-        params=machineconf[machine["name"]]
-        for attr in params:
-            setattr(self, attr, params[attr])
+        for k, v in params[machine["name"]].items():
+            setattr(self, k, v)
 
     def clone(self):
         return Lfo(self)
@@ -371,7 +352,30 @@ class Lfo(dict):
                 return self.increment*int(0.5+v/self.increment)
             else:
                 return 0.0
-                
+
+class Sequencers(list):
+    
+    @classmethod
+    def randomise(self,
+                  pool,
+                  fixes,
+                  temperature,
+                  machines=[machine for machine in Machines
+                            if machine["type"]=="sequencer"]):
+        return Sequencers([Sequencer.randomise(machine=machine,
+                                               pool=pool,
+                                               fixes=fixes,
+                                               temperature=temperature)
+                          for machine in machines])
+
+    def __init__(self, sequencers):
+        list.__init__(self, [Sequencer(seq)
+                             for seq in sequencers])
+
+    def clone(self):
+        return Sequencers([seq.clone()
+                           for seq in self])
+            
 class Lfos(list):
 
     @classmethod
