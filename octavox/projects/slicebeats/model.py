@@ -30,7 +30,7 @@ Machines=yaml.safe_load("""
     - offbeats
     - closed
 - name: Echo/wet
-  type: lfo
+  type: modulator
   params:
     style: sample_hold
     range: [0, 1]
@@ -39,7 +39,7 @@ Machines=yaml.safe_load("""
     live: 0.66666
     multiplier: 32768
 - name: Echo/feedback
-  type: lfo
+  type: modulator
   params:
     style: sample_hold
     range: [0, 1]
@@ -299,15 +299,15 @@ class Sequencer(dict):
         elif q.random() < 0.5*d:
             return (k, 0.3*q.random())
                             
-class Lfo(dict):
+class Modulator(dict):
     
     @classmethod
     def randomise(self,
                   machine,
                   **kwargs):
-        return Lfo({"name": machine["name"],
-                    "type": machine["type"],
-                    "seed": int(1e8*random.random())})
+        return Modulator({"name": machine["name"],
+                          "type": machine["type"],
+                          "seed": int(1e8*random.random())})
 
     def __init__(self, machine,
                  params={_machine["name"]:_machine["params"]
@@ -317,7 +317,7 @@ class Lfo(dict):
             setattr(self, k, v)
 
     def clone(self):
-        return Lfo(self)
+        return Modulator(self)
                     
     @property
     def mod(self):

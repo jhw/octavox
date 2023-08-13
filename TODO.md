@@ -1,10 +1,8 @@
 ### short
 
-- rename lfo as modulator
 - replace eval type upper with class references and proper instantiation
 
 - base class for sequencer and lfo
-- rename lfo as modulator 
 - move common parts into modules/model 
 - migrate archives 
 - archive reanimation script
@@ -149,6 +147,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- rename lfo as modulator
 - refactor model params and styles munging
 - single machines class and refactor patch methods 
 - check json serialisation is working
