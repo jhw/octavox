@@ -8,9 +8,11 @@
 - rename lfo as modulator 
 - move common parts into modules/model 
 - migrate archives 
+- archive reanimation script
 
 ### medium
 
+- s3 banks
 - s3 archives
 - mutate and arrange actions
 - chord support
