@@ -4,11 +4,11 @@ from octavox.modules.project import SVProject, SVTrigs, SVNoteTrig, SVFXTrig
 
 from octavox.projects import Q
 
-import random, yaml
+import importlib, random, yaml
 
 Machines=yaml.safe_load("""
 - name: KickSampler
-  type: sequencer
+  class: octavox.projects.slicebeats.model.Sequencer
   tag: kk
   params:
     styles:
@@ -16,21 +16,21 @@ Machines=yaml.safe_load("""
     - electro
     - triplets
 - name: SnareSampler
-  type: sequencer
+  class: octavox.projects.slicebeats.model.Sequencer
   tag: sn
   params:
     styles:
     - backbeat
     - skip
 - name: HatSampler
-  type: sequencer
+  class: octavox.projects.slicebeats.model.Sequencer
   tag: ht
   params:
     styles:
     - offbeats
     - closed
 - name: Echo/wet
-  type: modulator
+  class: octavox.projects.slicebeats.model.Modulator
   params:
     style: sample_hold
     range: [0, 1]
@@ -39,7 +39,7 @@ Machines=yaml.safe_load("""
     live: 0.66666
     multiplier: 32768
 - name: Echo/feedback
-  type: modulator
+  class: octavox.projects.slicebeats.model.Modulator
   params:
     style: sample_hold
     range: [0, 1]
@@ -191,7 +191,7 @@ class Sequencer(dict):
                                 fixes=fixes,
                                 styles=machine["params"]["styles"])
         return Sequencer({"name": machine["name"],                          
-                          "type": machine["type"],
+                          "class": machine["class"],
                           "pattern": Pattern.randomise(temperature),
                           "slices": slices})
 
@@ -199,7 +199,7 @@ class Sequencer(dict):
                  params={_machine["name"]:_machine["params"]
                          for _machine in Machines}):
         dict.__init__(self, {"name": machine["name"],
-                             "type": machine["type"],
+                             "class": machine["class"],
                              "pattern": Pattern(machine["pattern"]),
                              "slices": Slices(machine["slices"])})
         for k, v in params[machine["name"]].items():
@@ -207,7 +207,7 @@ class Sequencer(dict):
                             
     def clone(self):
         return Sequencer({"name": self["name"],
-                          "type": self["type"],
+                          "class": self["class"],
                           "pattern": self["pattern"],
                           "slices": self["slices"].clone()})
 
@@ -306,7 +306,7 @@ class Modulator(dict):
                   machine,
                   **kwargs):
         return Modulator({"name": machine["name"],
-                          "type": machine["type"],
+                          "class": machine["class"],
                           "seed": int(1e8*random.random())})
 
     def __init__(self, machine,
@@ -354,6 +354,12 @@ class Modulator(dict):
             else:
                 return 0.0
 
+def load_class(path):    
+    tokens=path.split(".")            
+    modpath, classname = ".".join(tokens[:-1]), tokens[-1]
+    module=importlib.import_module(modpath)
+    return getattr(module, classname)
+            
 class Machines(list):
     
     @classmethod
@@ -362,14 +368,14 @@ class Machines(list):
                   fixes,
                   temperature,
                   machines=Machines):
-        return Machines([eval(machine["type"].capitalize()).randomise(machine=machine,
-                                                                      pool=pool,
-                                                                      fixes=fixes,
-                                                                      temperature=temperature)
+        return Machines([load_class(machine["class"]).randomise(machine=machine,
+                                                                pool=pool,
+                                                                fixes=fixes,
+                                                                temperature=temperature)
                           for machine in machines])
 
     def __init__(self, machines):
-        list.__init__(self, [eval(machine["type"].capitalize())(machine)
+        list.__init__(self, [load_class(machine["class"])(machine)
                              for machine in machines])
 
     def clone(self):
