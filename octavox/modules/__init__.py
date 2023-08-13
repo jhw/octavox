@@ -1,3 +1,17 @@
+import yaml, random
+
+from datetime import datetime
+
+Nouns, Adjectives = (yaml.safe_load(open("octavox/config/nouns.yaml").read()),                     
+                     yaml.safe_load(open("octavox/config/adjectives.yaml").read()))
+
+def random_filename(prefix):
+    ts=datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
+    return "%s-%s-%s-%s" % (ts,
+                            prefix,
+                            random.choice(Adjectives),
+                            random.choice(Nouns))
+
 """
 - https://stackoverflow.com/questions/7331462/check-if-a-string-is-a-possible-abbrevation-for-a-name
 """

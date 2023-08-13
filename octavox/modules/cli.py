@@ -1,10 +1,8 @@
-from octavox.modules import is_abbrev
+from octavox.modules import is_abbrev, random_filename
 
 from octavox.modules.banks import SVPool
 
 from octavox.modules.project import SVProject
-
-from octavox.projects import random_filename
 
 import cmd, json, os, re, readline, traceback
 

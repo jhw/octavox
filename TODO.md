@@ -1,13 +1,14 @@
 ### short
 
-- init_class function to initialise sequencer/lfo based on type
-- convert sequencers/lfos into single machines class
-  - convert patch to load machines
-  - check mutes handling
-- convert machines types to machine classes
-
-- abstract class loading code in project into utils
-- migrate archives to use machines
+- remove mutes again
+- replace hardcoded class refs with eval type capitalized 
+- single machines class and refactor patch methods 
+- check json serialisation is working
+- replace eval type upper with class references and proper instantiation
+- base class for sequencer and lfo
+- rename lfo as modulator 
+- move common parts into modules/model 
+- migrate archives 
 
 ### medium
 
@@ -148,6 +149,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- check random filenam
 - refactor lfos randomisation and initialisation to look the same as sequencers
 - use *args, **kwargs in lfo randomisation for redundant parameters
 - nest machine args under params
