@@ -2,8 +2,6 @@ from octavox.modules.banks import SVSampleKey
 
 from octavox.modules.project import SVProject, SVTrigs, SVNoteTrig, SVFXTrig
 
-import octavox.modules.sequences.vitling909 as nine09
-
 from octavox.projects import Q
 
 import random, yaml
@@ -238,28 +236,55 @@ class Sequencer(dict):
                                 samplekey=samplekey)
                 trigs.append(trig)
         return wrapped
-    
+
     @apply
     def fourfloor(self, q, i, d, *args, k="kk"):
-        return nine09.fourfloor(q, i, d, k)
+        if i % 4 == 0 and q.random() < d:
+            return (k, 0.9)
+        elif i % 2 == 0 and q.random() < 0.1*d:
+            return (k, 0.6)
+
     @apply
     def electro(self, q, i, d, *args, k="kk"):
-        return nine09.electro(q, i, d, k)
+        if i == 0 and q.random() < d:
+            return (k, 1)
+        elif ((i % 2 == 0 and i % 8 != 4 and q.random() < 0.5*d) or
+              q.random() < 0.05*d):
+            return (k, 0.9*q.random())
+
     @apply
     def triplets(self, q, i, d, *args, k="kk"):
-        return nine09.triplets(q, i, d, k)
+        if i % 16  in [0, 3, 6, 9, 14] and q.random() < d:
+            return (k, 1)
+
     @apply
     def backbeat(self, q, i, d, *args, k="sn"):
-        return nine09.backbeat(q, i, d, k)
+        if i % 8 == 4 and q.random() < d:
+            return (k, 1)
+
     @apply
     def skip(self, q, i, d, *args, k="sn"):
-        return nine09.skip(q, i, d, k)
+        if i % 8 in [3, 6] and q.random() < d:
+            return (k, 0.6+0.4*q.random())
+        elif i % 2 == 0 and q.random() < 0.2*d:
+            return (k, 0.4+0.2*q.random())
+        elif q.random() < 0.1*d:
+            return (k, 0.2+0.2*q.random())
+
     @apply
     def offbeats(self, q, i, d, *args, k=["oh", "ch"]):
-        return nine09.offbeats(q, i, d, k)    
+        if i % 4 == 2 and q.random() < d:
+            return (k[0], 0.4)
+        elif q.random() < 0.3*d:
+            k = k[0] if q.random() < 0.5 else k[1]
+            return (k, 0.2*q.random())
+    
     @apply
     def closed(self, q, i, d, *args, k="ch"):
-        return nine09.closed(q, i, d, k)
+        if i % 2 == 0 and q.random() < d:
+            return (k, 0.4)
+        elif q.random() < 0.5*d:
+            return (k, 0.3*q.random())
                             
 class Sequencers(list):
     
