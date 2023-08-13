@@ -101,8 +101,8 @@ def generate(banks,
                     freqtrig,
                     restrig]
     project=SVProject().render(patches=[trigs.tracks],
-                               config={"modules": modules,
-                                       "links": links},
+                               modconfig=modules,
+                               links=links,
                                banks=banks,
                                bpm=bpm)
     with open(destfilename, 'wb') as f:

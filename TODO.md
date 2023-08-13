@@ -1,7 +1,5 @@
 ### short
 
-- rename config as modconfig and links
-
 - include class in sequencer/lfo config and instantiate dynamically
 - collapse sequencer/lfo distinction in favour of machines
 - move generic slicebeats/model code into modules/model
@@ -143,6 +141,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- rename config as modconfig and links
 - move randomise_seed code into cli
 - include method in sequencer/lfo config and call dynamically
 - remove modules/patterns and move vitling stuff inline

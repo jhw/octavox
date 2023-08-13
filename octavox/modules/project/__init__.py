@@ -131,7 +131,7 @@ class SVProject:
         return pool
 
     def init_modclasses(self,
-                        config,
+                        modconfig,
                         pool,
                         banks):
         def init_class(mod):
@@ -142,7 +142,7 @@ class SVProject:
                 return getattr(module, classname)
             except:
                 raise RuntimeError("error importing %s" % mod["class"])
-        for mod in config["modules"]:
+        for mod in modconfig:
             modclass=init_class(mod)
             kwargs={}
             if mod["class"].lower().endswith("sampler"):
@@ -153,12 +153,13 @@ class SVProject:
                 
     def init_modules(self,
                      proj,
-                     config,
+                     modconfig,
+                     links,
                      multipliers={"x": 1, "y": -1}):
-        positions=init_layout(modules=config["modules"],
-                              links=config["links"])
+        positions=init_layout(modules=modconfig,
+                              links=links)
         modules={}
-        for i, moditem in enumerate(config["modules"]):
+        for i, moditem in enumerate(modconfig):
             mod, name = moditem["instance"], moditem["name"]
             setattr(mod, "name", name)
             for i, attr in enumerate(["x", "y"]):            
@@ -177,10 +178,10 @@ class SVProject:
     
     def link_modules(self,
                      proj,
-                     config,
+                     links,
                      modules):
         output=sorted(proj.modules, key=lambda x: -x.index).pop()
-        for src, dest in config["links"]:
+        for src, dest in links:
             proj.connect(modules[src],
                          output if dest==Output else modules[dest])
 
@@ -237,7 +238,8 @@ class SVProject:
 
     def render(self,
                patches,
-               config,
+               modconfig,
+               links,
                banks,
                bpm,
                volume=Volume):
@@ -245,13 +247,14 @@ class SVProject:
         proj.initial_bpm=bpm
         proj.global_volume=volume
         pool=self.filter_pool(patches=patches)
-        self.init_modclasses(config=config,
+        self.init_modclasses(modconfig=modconfig,
                              pool=pool,
                              banks=banks)
         modules=self.init_modules(proj=proj,
-                                  config=config)
+                                  modconfig=modconfig,
+                                  links=links)
         self.link_modules(proj=proj,
-                          config=config,
+                          links=links,
                           modules=modules)
         proj.patterns=self.init_patterns(modules=modules,
                                          patches=patches)

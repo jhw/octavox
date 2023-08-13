@@ -76,8 +76,8 @@ def render_patches(prefix):
         def dump_sunvox(self):
             project=SVProject().render(patches=[patch.render(nbeats=self.env["nbeats"])
                                                 for patch in self.patches],
-                                       config={"modules": self.modules,
-                                               "links": self.links},
+                                       modconfig=self.modules,
+                                       links=self.links,
                                        banks=self.banks,
                                        bpm=self.env["bpm"])
             filename="%s/sunvox/%s.sunvox" % (self.outdir,
