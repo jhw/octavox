@@ -1,7 +1,5 @@
 ### short
 
-- move common parts into modules/model 
-
 - migrate archives 
 - archive reanimation script
 
@@ -36,6 +34,8 @@
 
 ### thoughts
 
+- move common parts into modules/model 
+ - can't really do it because of pool and fixes args
 - base class for sequencer and lfo?
   - don't think it's required or useful
 - bank level bans? 

@@ -2,9 +2,11 @@ from octavox.modules.banks import SVSampleKey
 
 from octavox.modules.project import SVProject, SVTrigs, SVNoteTrig, SVFXTrig
 
+from octavox.modules import load_class
+
 from octavox.projects import Q
 
-import importlib, random, yaml
+import random, yaml
 
 Machines=yaml.safe_load("""
 - name: KickSampler
@@ -350,15 +352,6 @@ class Modulator(dict):
             else:
                 return 0.0
 
-def load_class(path):
-    try:
-        tokens=path.split(".")            
-        modpath, classname = ".".join(tokens[:-1]), tokens[-1]
-        module=importlib.import_module(modpath)
-        return getattr(module, classname)
-    except Exception as error:
-        raise RuntimeError(str(error))
-            
 class Machines(list):
     
     @classmethod

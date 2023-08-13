@@ -2,11 +2,11 @@ from rv.api import Project as RVProject
 from rv.pattern import Pattern as RVPattern
 from rv.note import Note as RVNote
 
+from octavox.modules import load_class
+
 from octavox.modules.banks import SVPool
 
 from octavox.modules.project.modules import SVColor, init_layout, Output
-
-import importlib
 
 Volume, Height = 256, 64
 
@@ -134,16 +134,8 @@ class SVProject:
                         modconfig,
                         pool,
                         banks):
-        def init_class(mod):
-            try:
-                tokens=mod["class"].split(".")            
-                modpath, classname = ".".join(tokens[:-1]), tokens[-1]
-                module=importlib.import_module(modpath)
-                return getattr(module, classname)
-            except:
-                raise RuntimeError("error importing %s" % mod["class"])
         for mod in modconfig:
-            modclass=init_class(mod)
+            modclass=load_class(mod["class"])
             kwargs={}
             if mod["class"].lower().endswith("sampler"):
                 filtered=pool.filter(mod["name"])

@@ -1,4 +1,4 @@
-import yaml, random
+import importlib, random, yaml
 
 from datetime import datetime
 
@@ -11,6 +11,15 @@ def random_filename(prefix):
                             prefix,
                             random.choice(Adjectives),
                             random.choice(Nouns))
+
+def load_class(path):
+    try:
+        tokens=path.split(".")            
+        modpath, classname = ".".join(tokens[:-1]), tokens[-1]
+        module=importlib.import_module(modpath)
+        return getattr(module, classname)
+    except:
+        raise RuntimeError("error importing %s" % path)
 
 """
 - https://stackoverflow.com/questions/7331462/check-if-a-string-is-a-possible-abbrevation-for-a-name
