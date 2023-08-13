@@ -57,13 +57,14 @@ class SlicebeatsCli(SVBankCli):
         npatches=self.env["nblocks"]*self.env["blocksize"]
         for i in range(npatches-1):
             patch=root.clone()
-            for seq in patch["sequencers"]:
-                for slice in seq["slices"]:
+            for machine in patch["machines"]:
+                if machine["type"]=="sequencer":
+                    for slice in machine["slices"]:
+                        if random.random() < self.env["dseed"]:
+                            slice["seed"]=int(1e8*random.random())
+                else:
                     if random.random() < self.env["dseed"]:
-                        slice["seed"]=int(1e8*random.random())
-            for lfo in patch["lfos"]:
-                if random.random() < self.env["dseed"]:
-                    lfo["seed"]=int(1e8*random.random())
+                        machine["seed"]=int(1e8*random.random())
             patches.append(patch)
         return patches
 

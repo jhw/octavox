@@ -1,7 +1,8 @@
 ### short
 
-- single machines class and refactor patch methods 
-- check json serialisation is working
+- refactor model params and styles munging
+
+- rename lfo as modulator
 - replace eval type upper with class references and proper instantiation
 
 - base class for sequencer and lfo
@@ -150,6 +151,8 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- single machines class and refactor patch methods 
+- check json serialisation is working
 - replace hardcoded class refs with eval type capitalized 
 - remove mutes again
 - check random filenam

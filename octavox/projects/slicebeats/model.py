@@ -358,19 +358,18 @@ class Lfo(dict):
             else:
                 return 0.0
 
-class Sequencers(list):
+class Machines(list):
     
     @classmethod
     def randomise(self,
                   pool,
                   fixes,
                   temperature,
-                  machines=[machine for machine in Machines
-                            if machine["type"]=="sequencer"]):
-        return Sequencers([eval(machine["type"].capitalize()).randomise(machine=machine,
-                                                                        pool=pool,
-                                                                        fixes=fixes,
-                                                                        temperature=temperature)
+                  machines=Machines):
+        return Machines([eval(machine["type"].capitalize()).randomise(machine=machine,
+                                                                      pool=pool,
+                                                                      fixes=fixes,
+                                                                      temperature=temperature)
                           for machine in machines])
 
     def __init__(self, machines):
@@ -378,68 +377,36 @@ class Sequencers(list):
                              for machine in machines])
 
     def clone(self):
-        return Sequencers([machine.clone()
+        return Machines([machine.clone()
                            for machine in self])
-            
-class Lfos(list):
 
-    @classmethod
-    def randomise(self,
-                  pool,
-                  temperature,
-                  fixes,
-                  machines=[machine for machine in Machines
-                            if machine["type"]=="lfo"]):
-        return Lfos([eval(machine["type"].capitalize()).randomise(machine=machine,
-                                                                  pool=pool,
-                                                                  fixes=fixes,
-                                                                  temperature=temperature)
-                     for machine in machines])
-
-    def __init__(self, machines):
-        list.__init__(self, [eval(machine["type"].capitalize())(machine)
-                             for machine in machines])
-
-    def clone(self):
-        return Lfos([machine.clone()
-                     for machine in self])
-
+    
 class Patch(dict):
 
     @classmethod
     def randomise(self, pool, fixes, temperature, density):
-        return Patch(sequencers=Sequencers.randomise(pool=pool,
-                                                     fixes=fixes,
-                                                     temperature=temperature),
-                     lfos=Lfos.randomise(pool=pool,
-                                         fixes=fixes,
-                                         temperature=temperature),
+        return Patch(machines=Machines.randomise(pool=pool,
+                                                 fixes=fixes,
+                                                 temperature=temperature),
                      density=density)
         
     def __init__(self,
-                 sequencers,
-                 lfos,
+                 machines,
                  density):
-        dict.__init__(self, {"sequencers": Sequencers(sequencers),
-                             "lfos": Lfos(lfos),
+        dict.__init__(self, {"machines": Machines(machines),
                              "density": density})
         
     def clone(self):
-        return Patch(sequencers=self["sequencers"].clone(),
-                     lfos=self["lfos"].clone(),
+        return Patch(machines=self["machines"].clone(),
                      density=self["density"])
     
     def render(self,
                nbeats):
         trigs=SVTrigs(nbeats=nbeats)
-        for seq in self["sequencers"]:
-            seq.render(nbeats=nbeats,
-                       trigs=trigs,
-                       density=self["density"])
-        for lfo in self["lfos"]:
-            lfo.render(nbeats=nbeats,
-                       trigs=trigs,
-                       density=self["density"])
+        for machine in self["machines"]:
+            machine.render(nbeats=nbeats,
+                           trigs=trigs,
+                           density=self["density"])
         return trigs.tracks
 
 if __name__=="__main__":
