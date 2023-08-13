@@ -129,15 +129,13 @@ class Slice(dict):
                   tag,
                   pool,
                   fixes,
-                  machines={machine["tag"]:machine
-                            for machine in Machines
-                            if machine["type"]=="sequencer"}):
+                  styles):
         return Slice(samples=Samples.randomise(i=i,
                                                tag=tag,
                                                pool=pool,
                                                fixes=fixes),
                      seed=int(1e8*random.random()),
-                     style=random.choice(machines[tag]["styles"]))
+                     style=random.choice(styles[tag]))
     
     def __init__(self,
                  samples,
@@ -159,11 +157,13 @@ class Slices(list):
                   tag,
                   pool,
                   fixes,
+                  styles,
                   n=3):
         return Slices([Slice.randomise(i=i,
                                        tag=tag,
                                        pool=pool,
-                                       fixes=fixes)
+                                       fixes=fixes,
+                                       styles=styles)
                        for i in range(n)])
     
     def __init__(self, slices):
@@ -180,21 +180,25 @@ class Sequencer(dict):
                   machine,
                   temperature,
                   pool,
-                  fixes):
+                  fixes,
+                  styles={_machine["tag"]:_machine["styles"]
+                          for _machine in Machines
+                          if _machine["type"]=="sequencer"}):
         return Sequencer({"name": machine["name"],
                           "pattern": Pattern.randomise(temperature),
                           "slices": Slices.randomise(tag=machine["tag"],
                                                      pool=pool,
-                                                     fixes=fixes)})
+                                                     fixes=fixes,
+                                                     styles=styles)})
 
     def __init__(self, machine,
-                 machines={machine["name"]:machine
-                           for machine in Machines
-                           if machine["type"]=="sequencer"}):
+                 machineconf={_machine["name"]:_machine
+                              for _machine in Machines
+                              if _machine["type"]=="sequencer"}):
         dict.__init__(self, {"name": machine["name"],
                              "pattern": Pattern(machine["pattern"]),
                              "slices": Slices(machine["slices"])})
-        params=machines[machine["name"]]
+        params=machineconf[machine["name"]]
         for attr in params:
             setattr(self, attr, params[attr])
                             
@@ -322,11 +326,11 @@ class Lfo(dict):
                     "seed": int(1e8*random.random())})
 
     def __init__(self, machine,
-                 machines={machine["name"]:machine
-                           for machine in Machines
-                           if machine["type"]=="lfo"}):
+                 machineconf={_machine["name"]:_machine
+                              for _machine in Machines
+                              if _machine["type"]=="lfo"}):
         dict.__init__(self, machine)
-        params=machines[machine["name"]]
+        params=machineconf[machine["name"]]
         for attr in params:
             setattr(self, attr, params[attr])
 
