@@ -1,3 +1,14 @@
+### 01-s3-banks 13/08/23
+
+- dump_pico_banks.py to push to s3 bucket
+  - with pico prefix
+  - https://stackoverflow.com/a/44946732/124179
+- bank loading to load from s3
+  - flat structure, ignore pico prefix
+- local tmp bank cache
+  - save to tmp if stuff doesn't exist
+  - load from tmp if it does exist
+
 ### banned 09/08/23
 
 - nero-bellum/59 Nightmare in Monochrome Candy.wav
