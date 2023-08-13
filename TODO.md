@@ -1,9 +1,9 @@
 ### short
 
-- replace hardcoded class refs with eval type capitalized 
 - single machines class and refactor patch methods 
 - check json serialisation is working
 - replace eval type upper with class references and proper instantiation
+
 - base class for sequencer and lfo
 - rename lfo as modulator 
 - move common parts into modules/model 
@@ -150,6 +150,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- replace hardcoded class refs with eval type capitalized 
 - remove mutes again
 - check random filenam
 - refactor lfos randomisation and initialisation to look the same as sequencers

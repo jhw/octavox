@@ -367,10 +367,10 @@ class Sequencers(list):
                   temperature,
                   machines=[machine for machine in Machines
                             if machine["type"]=="sequencer"]):
-        return Sequencers([Sequencer.randomise(machine=machine,
-                                               pool=pool,
-                                               fixes=fixes,
-                                               temperature=temperature)
+        return Sequencers([eval(machine["type"].capitalize()).randomise(machine=machine,
+                                                                        pool=pool,
+                                                                        fixes=fixes,
+                                                                        temperature=temperature)
                           for machine in machines])
 
     def __init__(self, machines):
@@ -390,10 +390,10 @@ class Lfos(list):
                   fixes,
                   machines=[machine for machine in Machines
                             if machine["type"]=="lfo"]):
-        return Lfos([Lfo.randomise(machine=machine,
-                                   pool=pool,
-                                   fixes=fixes,
-                                   temperature=temperature)
+        return Lfos([eval(machine["type"].capitalize()).randomise(machine=machine,
+                                                                  pool=pool,
+                                                                  fixes=fixes,
+                                                                  temperature=temperature)
                      for machine in machines])
 
     def __init__(self, machines):
