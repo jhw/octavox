@@ -131,16 +131,15 @@ class Slice(dict):
     @classmethod
     def randomise(self,
                   i,
-                  tag,
+                  params,
                   pool,
-                  fixes,
-                  styles):
+                  fixes):
         return Slice(samples=Samples.randomise(i=i,
-                                               tag=tag,
+                                               tag=params["tag"],
                                                pool=pool,
                                                fixes=fixes),
                      seed=int(1e8*random.random()),
-                     style=random.choice(styles))
+                     style=random.choice(params["styles"]))
     
     def __init__(self,
                  samples,
@@ -159,16 +158,14 @@ class Slices(list):
 
     @classmethod
     def randomise(self,
-                  tag,
+                  params,
                   pool,
                   fixes,
-                  styles,
                   n=3):
         return Slices([Slice.randomise(i=i,
-                                       tag=tag,
+                                       params=params,
                                        pool=pool,
-                                       fixes=fixes,
-                                       styles=styles)
+                                       fixes=fixes)
                        for i in range(n)])
     
     def __init__(self, slices):
@@ -186,10 +183,9 @@ class Sequencer(dict):
                   temperature,
                   pool,
                   fixes):
-        slices=Slices.randomise(tag=machine["params"]["tag"],
+        slices=Slices.randomise(params=machine["params"],
                                 pool=pool,
-                                fixes=fixes,
-                                styles=machine["params"]["styles"])
+                                fixes=fixes)
         return Sequencer({"name": machine["name"],                          
                           "class": machine["class"],
                           "pattern": Pattern.randomise(temperature),

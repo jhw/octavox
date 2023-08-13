@@ -1,6 +1,5 @@
 ### short
 
-- pass machine around rather than tag ans styles
 - runtime checks if name or class misspecified at machine level
 - move common parts into modules/model 
 
@@ -148,6 +147,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- pass machine around rather than tag ans styles
 - move tags into params
 - replace eval type upper with class references and proper instantiation
 - rename lfo as modulator
