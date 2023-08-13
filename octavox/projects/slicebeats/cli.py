@@ -6,7 +6,7 @@ from octavox.modules.project import SVNoteTrig
 
 from octavox.projects.slicebeats.model import Patch
 
-import json, os, yaml
+import json, os, random, yaml
 
 class SlicebeatsCli(SVBankCli):
 
@@ -59,9 +59,11 @@ class SlicebeatsCli(SVBankCli):
             patch=root.clone()
             for seq in patch["sequencers"]:
                 for slice in seq["slices"]:
-                    slice.randomise_seed(self.env["dseed"])
+                    if random.random() < self.env["dseed"]:
+                        slice["seed"]=int(1e8*random.random())
             for lfo in patch["lfos"]:
-                lfo.randomise_seed(self.env["dseed"])
+                if random.random() < self.env["dseed"]:
+                    lfo["seed"]=int(1e8*random.random())
             patches.append(patch)
         return patches
 

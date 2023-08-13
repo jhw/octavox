@@ -149,11 +149,6 @@ class Slice(dict):
                      seed=self["seed"],
                      style=self["style"])
 
-    def randomise_seed(self, limit):
-        if random.random() < limit:
-            seed=int(1e8*random.random())
-            self["seed"]=seed
-
 class Slices(list):
 
     @classmethod
@@ -340,11 +335,6 @@ class Lfo(dict):
     def ctrl(self):
         return self["name"].split("/")[1]
             
-    def randomise_seed(self, limit):
-        if random.random() < limit:
-            seed=int(1e8*random.random())
-            self["seed"]=seed
-
     def render(self, nbeats, density, trigs):
         q=Q(self["seed"])
         for i in range(nbeats):
