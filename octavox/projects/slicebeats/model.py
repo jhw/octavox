@@ -8,7 +8,7 @@ from octavox.projects import Q
 
 import random, yaml
 
-Machines=yaml.safe_load("""
+MachineConf=yaml.safe_load("""
 - name: KickSampler
   class: octavox.projects.slicebeats.model.Sequencer
   params:
@@ -195,7 +195,7 @@ class Sequencer(dict):
 
     def __init__(self, machine,
                  params={_machine["name"]:_machine["params"]
-                         for _machine in Machines}):
+                         for _machine in MachineConf}):
         dict.__init__(self, {"name": machine["name"],
                              "class": machine["class"],
                              "pattern": Pattern(machine["pattern"]),
@@ -309,7 +309,7 @@ class Modulator(dict):
 
     def __init__(self, machine,
                  params={_machine["name"]:_machine["params"]
-                         for _machine in Machines}):
+                         for _machine in MachineConf}):
         dict.__init__(self, machine)
         for k, v in params[machine["name"]].items():
             setattr(self, k, v)
@@ -356,7 +356,7 @@ class Machines(list):
     
     @classmethod
     def randomise(self,
-                  machines=Machines,
+                  machines,
                   **kwargs):
         return Machines([load_class(machine["class"]).randomise(machine=machine,
                                                                 **kwargs)
@@ -369,13 +369,13 @@ class Machines(list):
     def clone(self):
         return Machines([machine.clone()
                            for machine in self])
-
     
 class Patch(dict):
 
     @classmethod
-    def randomise(self, density, **kwargs):
-        return Patch(machines=Machines.randomise(**kwargs),
+    def randomise(self, density, machines, **kwargs):
+        return Patch(machines=Machines.randomise(machines=machines,
+                                                 **kwargs),
                      density=density)
         
     def __init__(self,

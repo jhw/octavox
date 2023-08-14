@@ -4,7 +4,7 @@ from octavox.modules.cli import SVBankCli, parse_line, render_patches
 
 from octavox.modules.project import SVNoteTrig
 
-from octavox.projects.slicebeats.model import Patch
+from octavox.projects.slicebeats.model import Patch, MachineConf
 
 import json, os, random, yaml
 
@@ -37,11 +37,12 @@ class SlicebeatsCli(SVBankCli):
         
     @parse_line()
     @render_patches(prefix="random")
-    def do_randomise_patches(self):
+    def do_randomise_patches(self, machines=MachineConf):
         patches=[]
         npatches=self.env["nblocks"]*self.env["blocksize"]
         for i in range(npatches):
-            patch=Patch.randomise(pool=self.pools[self.poolname],
+            patch=Patch.randomise(machines=machines,
+                                  pool=self.pools[self.poolname],
                                   fixes=self.fixes,
                                   temperature=self.env["temperature"],
                                   density=self.env["density"])
