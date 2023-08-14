@@ -150,7 +150,7 @@ class SVBanks(dict):
 
     def __init__(self, root):
         dict.__init__(self)        
-        for bankfile in os.listdir(root):
+        for bankfile in sorted(os.listdir(root)):
             name=bankfile.split(".")[0]
             path="%s/%s" % (root, bankfile)
             bank=SVBank(name, zipfile.ZipFile(path))

@@ -1,8 +1,7 @@
 ### short
 
 - sort list projects
-- machine.randomise to initialise object with params
-- save params as part of json state and check serialisation
+- rename modules as layout
 - remove unpacking of params
 - migrate archives
 
@@ -147,6 +146,8 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- machine.randomise to initialise object with params
+- save params as part of json state and check serialisation
 - move reanimate archives to base class
 - demos are broken
 - circular error if you move SVSampleKey into model

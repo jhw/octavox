@@ -120,13 +120,14 @@ class SVBaseCli(cmd.Cmd):
 
     @parse_line()
     def do_list_projects(self):
-        for filename in os.listdir(self.outdir+"/json"):
+        for filename in sorted(os.listdir(self.outdir+"/json")):
             print (filename.split(".")[0])
 
     @parse_line(config=[{"name": "stem",
                          "type": "str"}])
     def do_load_project(self, stem):
-        matches=[filename for filename in os.listdir(self.outdir+"/json")
+        matches=[filename
+                 for filename in sorted(os.listdir(self.outdir+"/json"))
                  if stem in filename]
         if matches==[]:
             print ("WARNING: no matches")
