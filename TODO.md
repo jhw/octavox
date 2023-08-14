@@ -5,7 +5,11 @@
 - random filename to take optional arg for name
 - refactor reanimate_archives to use @render_patches 
 
+
 ### medium
+
+- not sure I like how MachineConfig is defined in machines contructors but also passed to patch
+  - pass as params?
 
 - s3 banks
 - s3 archives
