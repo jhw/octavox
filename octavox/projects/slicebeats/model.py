@@ -357,10 +357,8 @@ class Machines(list):
     @classmethod
     def randomise(self,
                   machines=Machines,
-                  *args,
                   **kwargs):
         return Machines([load_class(machine["class"]).randomise(machine=machine,
-                                                                *args,
                                                                 **kwargs)
                           for machine in machines])
 
@@ -376,10 +374,8 @@ class Machines(list):
 class Patch(dict):
 
     @classmethod
-    def randomise(self, pool, fixes, temperature, density):
-        return Patch(machines=Machines.randomise(pool=pool,
-                                                 fixes=fixes,
-                                                 temperature=temperature),
+    def randomise(self, density, **kwargs):
+        return Patch(machines=Machines.randomise(**kwargs),
                      density=density)
         
     def __init__(self,
