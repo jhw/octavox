@@ -1,7 +1,7 @@
 ### short
 
-- random filename to take optional arg for name
 - circular error if you move SVSampleKey into model
+- random filename to take optional arg for name
 - refactor reanimate_archives to use @render_patches 
 
 ### medium
