@@ -1,6 +1,7 @@
 ### short
 
 - add modulator params to archives
+- randomise pool action
 
 ### medium
 
@@ -143,6 +144,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- randomise pool on cli start
 - move MachineConfig to cli and rename as machines
 - remove unpacking of params
 - sort list projects
