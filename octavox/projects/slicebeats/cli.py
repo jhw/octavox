@@ -1,6 +1,8 @@
 from octavox.modules.banks import SVSampleKey, SVBanks, SVPools, SVPool
 
-from octavox.modules.cli import SVBankCli, parse_line, render_patches
+from octavox.modules.cli import SVBankCli, render_patches
+
+from octavox.modules.cli.parse import parse_line
 
 from octavox.modules.model import SVNoteTrig, SVPatch
 
