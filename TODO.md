@@ -1,6 +1,6 @@
 ### short
 
-- refactor params lookup at custom machine level
+- params to be bundled with randomised machine and passed through serialisation mechanism, removing need to lookup at instantiation/randomisation level
 
 ### medium
 
