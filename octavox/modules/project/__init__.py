@@ -73,43 +73,6 @@ class SVFXTrig:
         return RVNote(module=modid,
                       ctl=ctrlid,
                       val=self.value)
-
-class SVTrigs(list):
-
-    def __init__(self, nbeats, items=[]):
-        list.__init__(self, items)
-        self.nbeats=nbeats
-
-    @property
-    def tracks(self):
-        tracks=SVTracks(self.nbeats)
-        for trig in self:
-            key=trig.track_key
-            tracks.setdefault(key, [])
-            tracks[key].append(trig)
-        return tracks
-
-"""
-- SVTracks class is locally named a patch, for post- rendering convenience
-"""
-    
-class SVTracks(dict):
-
-    def __init__(self, nbeats, item={}):
-        dict.__init__(self)
-        self.nbeats=nbeats
-
-    def filter_pool(self, keys):
-        for track in self.values():
-            for trig in track:
-                if (hasattr(trig, "samplekey") and trig.samplekey):
-                    keys.add(trig.samplekey)
-
-    @property
-    def grid(self):
-        return [{note.i:note
-                 for note in track}
-                for key, track in self.items()]
                     
 class SVOffset:
 

@@ -1,6 +1,7 @@
 ### short
 
-- refactor reanimation to use render_patches decorator
+- add sv prefix to model classes
+- move project stuff into model (tracks, trigs)
 
 ### medium
 
