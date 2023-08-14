@@ -1,10 +1,10 @@
 ### short
 
-### medium
-
 - refactor params lookup at custom machine level
 
 - new yield layer to abstract away note/fx trig definition at custom machine level
+
+### medium
 
 - s3 banks
 - s3 archives
