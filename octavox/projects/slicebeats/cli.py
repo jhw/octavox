@@ -6,9 +6,51 @@ from octavox.modules.cli.parse import parse_line
 
 from octavox.modules.model import SVSampleKey, SVNoteTrig, SVPatch
 
-from octavox.projects.slicebeats.model import MachineConf
-
 import json, os, random, yaml
+
+Machines=yaml.safe_load("""
+- name: KickSampler
+  class: octavox.projects.slicebeats.model.Sequencer
+  params:
+    tag: kk
+    styles:
+    - fourfloor
+    - electro
+    - triplets
+- name: SnareSampler
+  class: octavox.projects.slicebeats.model.Sequencer
+  params:
+    tag: sn
+    styles:
+    - backbeat
+    - skip
+- name: HatSampler
+  class: octavox.projects.slicebeats.model.Sequencer
+  params:
+    tag: ht
+    styles:
+    - offbeats
+    - closed
+- name: Echo/wet
+  class: octavox.projects.slicebeats.model.Modulator
+  params:
+    style: sample_hold
+    range: [0, 1]
+    increment: 0.25
+    step: 4
+    live: 0.66666
+    multiplier: 32768
+- name: Echo/feedback
+  class: octavox.projects.slicebeats.model.Modulator
+  params:
+    style: sample_hold
+    range: [0, 1]
+    increment: 0.25
+    step: 4
+    live: 1.0
+    multiplier: 32768
+""")
+
 
 class SlicebeatsCli(SVBankCli):
 
@@ -22,7 +64,7 @@ class SlicebeatsCli(SVBankCli):
         
     @parse_line()
     @render_patches(prefix="random")
-    def do_randomise_patches(self, machines=MachineConf):
+    def do_randomise_patches(self, machines=Machines):
         patches=[]
         npatches=self.env["nblocks"]*self.env["blocksize"]
         for i in range(npatches):

@@ -2,50 +2,7 @@ from octavox.modules.model import SVSampleKey, SVNoteTrig, SVFXTrig
 
 from octavox.projects import Q
 
-import random, yaml
-
-MachineConf=yaml.safe_load("""
-- name: KickSampler
-  class: octavox.projects.slicebeats.model.Sequencer
-  params:
-    tag: kk
-    styles:
-    - fourfloor
-    - electro
-    - triplets
-- name: SnareSampler
-  class: octavox.projects.slicebeats.model.Sequencer
-  params:
-    tag: sn
-    styles:
-    - backbeat
-    - skip
-- name: HatSampler
-  class: octavox.projects.slicebeats.model.Sequencer
-  params:
-    tag: ht
-    styles:
-    - offbeats
-    - closed
-- name: Echo/wet
-  class: octavox.projects.slicebeats.model.Modulator
-  params:
-    style: sample_hold
-    range: [0, 1]
-    increment: 0.25
-    step: 4
-    live: 0.66666
-    multiplier: 32768
-- name: Echo/feedback
-  class: octavox.projects.slicebeats.model.Modulator
-  params:
-    style: sample_hold
-    range: [0, 1]
-    increment: 0.25
-    step: 4
-    live: 1.0
-    multiplier: 32768
-""")
+import random
 
 Patterns=["0",
           "0|0|1|0",
@@ -173,6 +130,10 @@ class Slices(list):
     def clone(self):
         return Slices(self)
 
+"""
+- a Sequencer only uses params at initialisation time (randomise), hence they don't need to be saved in state
+"""
+    
 class Sequencer(dict):
     
     @classmethod
@@ -186,23 +147,18 @@ class Sequencer(dict):
                                 fixes=fixes)
         return Sequencer({"name": machine["name"],                          
                           "class": machine["class"],
-                          "params": machine["params"],
                           "pattern": Pattern.randomise(temperature),
                           "slices": slices})
 
     def __init__(self, machine):
         dict.__init__(self, {"name": machine["name"],
                              "class": machine["class"],
-                             "params": machine["params"],
                              "pattern": Pattern(machine["pattern"]),
                              "slices": Slices(machine["slices"])})
-        for k, v in machine["params"].items():
-            setattr(self, k, v)
                             
     def clone(self):
         return Sequencer({"name": self["name"],
                           "class": self["class"],
-                          "params": self["params"],
                           "pattern": self["pattern"],
                           "slices": self["slices"].clone()})
 
@@ -276,7 +232,12 @@ class Sequencer(dict):
             return (k, 0.4)
         elif q.random() < 0.5*d:
             return (k, 0.3*q.random())
-                            
+
+"""
+- but a Modulator uses params at runtime, hence they need to be part of state
+- and it's useful to unpack them at the constructor level
+"""
+        
 class Modulator(dict):
     
     @classmethod

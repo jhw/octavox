@@ -1,7 +1,6 @@
 ### short
 
-- remove unpacking of params
-- migrate archives
+- add modulator params to archives
 
 ### medium
 
@@ -144,6 +143,8 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- move MachineConfig to cli and rename as machines
+- remove unpacking of params
 - sort list projects
 - rename modules as layout
 - machine.randomise to initialise object with params
