@@ -4,6 +4,7 @@
 - machine.randomise to initialise object with params
 - save params as part of json state and check serialisation
 - remove unpacking of params
+- migrate archives
 
 ### medium
 
@@ -20,7 +21,7 @@
 - vorhosbn noise hats
 - t60 collapse clustering
 - city dreams bass + acid banger 303
-- breakbreaks bank
+- breakbreaks
 
 - pydub granular samples -> chord slice concatenation
 - pydub fadeouts
