@@ -210,7 +210,6 @@ class Sequencer(dict):
         return self["name"]
     
     def render(self,
-               trigs,
                nbeats,
                density):
         multiplier, offset = int(nbeats/self["pattern"].size), 0
@@ -225,11 +224,10 @@ class Sequencer(dict):
                 if v!=None: # explicit because could return zero
                     tag, volume = v
                     samplekey=samples[tag].clone()
-                    trig=SVNoteTrig(mod=self.mod,
-                                    vel=volume,
-                                    i=i+offset,
-                                    samplekey=samplekey)
-                    trigs.append(trig)
+                    yield SVNoteTrig(mod=self.mod,
+                                     vel=volume,
+                                     i=i+offset,
+                                     samplekey=samplekey)
             offset+=nsamplebeats
 
     """
@@ -306,17 +304,16 @@ class Modulator(dict):
     def ctrl(self):
         return self["name"].split("/")[1]
             
-    def render(self, nbeats, density, trigs):
+    def render(self, nbeats, density):
         q=Q(self["seed"])
         for i in range(nbeats):
             fn=getattr(self, self.style)
             v=fn(q, i, density)
             if v!=None: # explicit because could return zero
-                trig=SVFXTrig(mod=self.mod,
-                              ctrl=self.ctrl,
-                              value=v*self.multiplier,
-                              i=i)
-                trigs.append(trig)
+                yield SVFXTrig(mod=self.mod,
+                               ctrl=self.ctrl,
+                               value=v*self.multiplier,
+                               i=i)
 
     def sample_hold(self, q, i, d):
         if 0 == i % self.step:

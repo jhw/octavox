@@ -194,9 +194,9 @@ class SVPatch(dict):
                nbeats):
         trigs=SVTrigs(nbeats=nbeats)
         for machine in self["machines"]:
-            machine.render(nbeats=nbeats,
-                           trigs=trigs,
-                           density=self["density"])
+            for trig in machine.render(nbeats=nbeats,
+                                       density=self["density"]):
+                trigs.append(trig)
         return trigs.tracks
 
 if __name__=="__main__":
