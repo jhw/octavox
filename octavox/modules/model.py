@@ -1,4 +1,70 @@
+from rv.note import Note as RVNote
+
 from octavox.modules import load_class
+
+"""
+- mod is automatically added to samplekey tags so that samples can be properly allocated to samplers at project rendering time
+"""
+
+class SVNoteTrig:
+
+    def __init__(self, mod, i, samplekey=None, id=None, vel=1):
+        self.mod=mod
+        self.i=i
+        if samplekey:
+            samplekey.add_tag(mod) # NB
+        self.samplekey=samplekey
+        self.id=id
+        self.vel=vel        
+        
+    @property
+    def track_key(self):
+        return self.mod
+        
+    def render(self,
+               modules,
+               controllers,
+               volume=128):
+        if self.mod not in modules:
+            raise RuntimeError("mod %s not found" % self.mod)
+        mod=modules[self.mod]
+        trig=1+(mod.lookup(self.samplekey) if self.samplekey else self.id)
+        modid=1+mod.index # NB 1+
+        vel=max(1, int(self.vel*volume))
+        return RVNote(note=trig,
+                      vel=vel,
+                      module=modid)
+
+class SVFXTrig:
+    
+    def __init__(self, mod, ctrl, value, i):
+        self.mod=mod
+        self.ctrl=ctrl
+        self.value=value
+        self.i=i
+
+    @property
+    def track_key(self):
+        return "%s/%s" % (self.mod,
+                          self.ctrl)
+        
+    def render(self,
+               modules,
+               controllers,
+               ctrlmult=256,
+               maxvalue=256*128):
+        if (self.mod not in modules or
+            self.mod not in controllers):
+            raise RuntimeError("mod %s not found" % self.mod)
+        mod, controller = modules[self.mod], controllers[self.mod]
+        modid=1+mod.index # NB 1+
+        if self.ctrl not in controller:
+            raise RuntimeError("ctrl %s not found in mod %s" % (self.ctrl,
+                                                                self.mod))
+        ctrlid=ctrlmult*controller[self.ctrl]
+        return RVNote(module=modid,
+                      ctl=ctrlid,
+                      val=self.value)
 
 class SVTrigs(list):
 

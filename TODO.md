@@ -1,7 +1,7 @@
 ### short
 
+- add sv sample key to model
 - add sv prefix to model classes
-- move project stuff into model (tracks, trigs)
 
 ### medium
 
@@ -146,6 +146,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- move project stuff into model (tracks, trigs)
 - archive reanimation script
 - migrate archives 
 - pass machine around rather than tag ans styles
