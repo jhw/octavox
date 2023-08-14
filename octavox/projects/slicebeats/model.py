@@ -356,18 +356,16 @@ class Machines(list):
     
     @classmethod
     def randomise(self,
-                  pool,
-                  fixes,
-                  temperature,
-                  machines=Machines):
+                  machines=Machines,
+                  *args,
+                  **kwargs):
         return Machines([load_class(machine["class"]).randomise(machine=machine,
-                                                                pool=pool,
-                                                                fixes=fixes,
-                                                                temperature=temperature)
+                                                                *args,
+                                                                **kwargs)
                           for machine in machines])
 
     def __init__(self, machines):
-        list.__init__(self, [load_class(machine["class"])(machine)
+        list.__init__(self, [load_class(machine["class"])(machine=machine)
                              for machine in machines])
 
     def clone(self):
