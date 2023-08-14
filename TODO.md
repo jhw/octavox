@@ -1,7 +1,5 @@
 ### short
 
-- move reanimate archives to base class
-
 ### medium
 
 - refactor params lookup at custom machine level
@@ -145,6 +143,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- move reanimate archives to base class
 - demos are broken
 - circular error if you move SVSampleKey into model
 - move nouns and adjectives into cli

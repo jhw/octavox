@@ -139,6 +139,29 @@ class SVBaseCli(cmd.Cmd):
                           for patch in patches]
         else:
             print ("WARNING: multiple matches")
+
+    @parse_line()
+    def do_reanimate_archives(self):
+        from octavox.modules.project import SVProject
+        archivepath="archive/%s" % self.projectname
+        for _filename in sorted(os.listdir(archivepath)):
+            stem=_filename.split(".")[0]
+            print (stem)
+            struct=json.loads(open("%s/%s.json" % (archivepath, stem)).read())
+            filename="%s/json/%s.json" % (self.outdir, stem)
+            with open(filename, 'w') as f:
+                f.write(json.dumps(struct,
+                                   indent=2))
+            patches=[SVPatch(**patch).render(nbeats=self.env["nbeats"])
+                     for patch in struct]
+            project=SVProject().render(patches=patches,
+                                       modconfig=self.modules,
+                                       links=self.links,
+                                       banks=self.banks,
+                                       bpm=self.env["bpm"])
+            filename="%s/sunvox/%s.sunvox" % (self.outdir, stem)
+            with open(filename, 'wb') as f:
+                project.write_to(f)
             
     @parse_line()
     def do_clean_projects(self):
