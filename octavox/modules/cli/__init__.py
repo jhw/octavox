@@ -1,4 +1,4 @@
-from octavox.modules import is_abbrev, random_filename
+from octavox.modules import is_abbrev
 
 from octavox.modules.banks import SVPool
 
@@ -6,9 +6,22 @@ from octavox.modules.cli.parse import parse_line
 
 from octavox.modules.project import SVProject
 
-import cmd, json, os, readline, traceback
+from datetime import datetime
+
+import cmd, json, os, random, readline, yaml
+
+Nouns, Adjectives = (yaml.safe_load(open("octavox/config/nouns.yaml").read()),                     
+                     yaml.safe_load(open("octavox/config/adjectives.yaml").read()))
 
 HistorySize=100
+
+def random_filename(prefix):
+    ts=datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
+    return "%s-%s-%s-%s" % (ts,
+                            prefix,
+                            random.choice(Adjectives),
+                            random.choice(Nouns))
+
 
 def render_patches(prefix):
     def decorator(fn):

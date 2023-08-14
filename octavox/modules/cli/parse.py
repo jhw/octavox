@@ -1,4 +1,4 @@
-import re
+import re, traceback
 
 def matches_number(value):
     return re.search("^\\-?\\d+(\\.\\d+)?$", value)!=None
