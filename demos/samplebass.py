@@ -2,9 +2,11 @@
 - single note bass sample, varying sample cutoff
 """
 
-from octavox.modules.banks import SVBanks, SVSampleKey
+from octavox.modules.banks import SVBanks
 
-from octavox.modules.project import SVTrigs, SVNoteTrig, SVFXTrig, SVProject
+from octavox.modules.model import SVTrigs, SVSampleKey, SVNoteTrig, SVFXTrig
+
+from octavox.modules.project import SVProject
 
 from octavox.projects import Q
 

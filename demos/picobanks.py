@@ -2,9 +2,11 @@
 - dump each Pico bank as an individual sunvox project
 """
 
-from octavox.modules.banks import SVBanks, SVSampleKey
+from octavox.modules.banks import SVBanks
 
-from octavox.modules.project import SVTrigs, SVNoteTrig, SVTrigs, SVProject
+from octavox.modules.model import SVTrigs, SVSampleKey, SVNoteTrig
+
+from octavox.modules.project import SVProject
 
 import os, yaml
 

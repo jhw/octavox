@@ -1,6 +1,5 @@
 ### short
 
-- demos are broken
 - move reanimate archives to base class
 
 ### medium
@@ -146,6 +145,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- demos are broken
 - circular error if you move SVSampleKey into model
 - move nouns and adjectives into cli
 - move random filename stuff and nouns and adjectives into cli
