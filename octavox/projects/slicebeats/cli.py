@@ -18,11 +18,11 @@ class SlicebeatsCli(SVBankCli):
         SVBankCli.__init__(self, *args, **kwargs)
         self.fixes=SVPool()
 
-    @parse_line(config=[{"name": "stub",
+    @parse_line(config=[{"name": "stem",
                          "type": "str"}])
-    def do_load_project(self, stub):
+    def do_load_project(self, stem):
         matches=[filename for filename in os.listdir(self.outdir+"/json")
-                 if stub in filename]
+                 if stem in filename]
         if matches==[]:
             print ("WARNING: no matches")
         elif len(matches)==1:
@@ -91,14 +91,14 @@ class SlicebeatsCli(SVBankCli):
 
     @parse_line(config=[{"name": "tag",
                          "type": "str"},
-                        {"name": "bankstub",
+                        {"name": "bankstem",
                          "type": "str"},
-                        {"name": "wavstub",
+                        {"name": "wavstem",
                          "type": "str"}])
-    def do_fix_sample(self, tag, bankstub, wavstub):
-        bankname=self.banks.lookup(bankstub)
+    def do_fix_sample(self, tag, bankstem, wavstem):
+        bankname=self.banks.lookup(bankstem)
         bank=self.banks[bankname]
-        wavfile=bank.lookup(wavstub)
+        wavfile=bank.lookup(wavstem)
         samplekey=SVSampleKey({"tags": [tag],
                                "bank": bankname,
                                "file": wavfile})
