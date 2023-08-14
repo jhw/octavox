@@ -1,7 +1,11 @@
 ### short
 
-- add sv sample key to model
+- circular error if you move SVSampleKey into model
 - add sv prefix to model classes
+- rename cli stub as stem
+- move random filename stuff and nouns and adjectives into cli
+- random filename to take optional arg for name
+- refactor reanimate_archives to use @render_patches 
 
 ### medium
 
