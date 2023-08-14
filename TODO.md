@@ -1,7 +1,6 @@
 ### short
 
 - circular error if you move SVSampleKey into model
-- add sv prefix to model classes
 - rename cli stub as stem
 - move random filename stuff and nouns and adjectives into cli
 - random filename to take optional arg for name
@@ -150,6 +149,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- add sv prefix to model classes
 - move project stuff into model (tracks, trigs)
 - archive reanimation script
 - migrate archives 

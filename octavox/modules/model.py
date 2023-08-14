@@ -103,41 +103,41 @@ class SVTracks(dict):
                  for note in track}
                 for key, track in self.items()]
 
-class Machines(list):
+class SVMachines(list):
     
     @classmethod
     def randomise(self,
                   machines,
                   **kwargs):
-        return Machines([load_class(machine["class"]).randomise(machine=machine,
+        return SVMachines([load_class(machine["class"]).randomise(machine=machine,
                                                                 **kwargs)
-                          for machine in machines])
-
+                           for machine in machines])
+    
     def __init__(self, machines):
         list.__init__(self, [load_class(machine["class"])(machine=machine)
                              for machine in machines])
-
+        
     def clone(self):
-        return Machines([machine.clone()
+        return SVMachines([machine.clone()
                            for machine in self])
     
-class Patch(dict):
-
+class SVPatch(dict):
+    
     @classmethod
     def randomise(self, density, machines, **kwargs):
-        return Patch(machines=Machines.randomise(machines=machines,
-                                                 **kwargs),
-                     density=density)
+        return SVPatch(machines=SVMachines.randomise(machines=machines,
+                                                     **kwargs),
+                       density=density)
         
     def __init__(self,
                  machines,
                  density):
-        dict.__init__(self, {"machines": Machines(machines),
+        dict.__init__(self, {"machines": SVMachines(machines),
                              "density": density})
         
     def clone(self):
-        return Patch(machines=self["machines"].clone(),
-                     density=self["density"])
+        return SVPatch(machines=self["machines"].clone(),
+                       density=self["density"])
     
     def render(self,
                nbeats):

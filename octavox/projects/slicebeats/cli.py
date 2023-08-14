@@ -2,7 +2,7 @@ from octavox.modules.banks import SVSampleKey, SVBanks, SVPools, SVPool
 
 from octavox.modules.cli import SVBankCli, parse_line, render_patches
 
-from octavox.modules.model import SVNoteTrig, Patch
+from octavox.modules.model import SVNoteTrig, SVPatch
 
 from octavox.projects.slicebeats.model import MachineConf
 
@@ -30,7 +30,7 @@ class SlicebeatsCli(SVBankCli):
             print ("INFO: %s" % filename)
             abspath="%s/json/%s" % (self.outdir, filename)
             patches=json.loads(open(abspath).read())
-            self.patches=[Patch(**patch)
+            self.patches=[SVPatch(**patch)
                           for patch in patches]
         else:
             print ("WARNING: multiple matches")
@@ -41,11 +41,11 @@ class SlicebeatsCli(SVBankCli):
         patches=[]
         npatches=self.env["nblocks"]*self.env["blocksize"]
         for i in range(npatches):
-            patch=Patch.randomise(machines=machines,
-                                  pool=self.pools[self.poolname],
-                                  fixes=self.fixes,
-                                  temperature=self.env["temperature"],
-                                  density=self.env["density"])
+            patch=SVPatch.randomise(machines=machines,
+                                    pool=self.pools[self.poolname],
+                                    fixes=self.fixes,
+                                    temperature=self.env["temperature"],
+                                    density=self.env["density"])
             patches.append(patch)
         return patches
 
@@ -116,7 +116,7 @@ class SlicebeatsCli(SVBankCli):
             stem=_filename.split(".")[0]
             print (stem)
             struct=json.loads(open("%s/%s.json" % (archivepath, stem)).read())
-            patches=[Patch(**patch)
+            patches=[SVPatch(**patch)
                      for patch in struct]
             filename="%s/json/%s.json" % (self.outdir, stem)
             with open(filename, 'w') as f:
