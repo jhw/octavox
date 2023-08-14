@@ -186,22 +186,23 @@ class Sequencer(dict):
                                 fixes=fixes)
         return Sequencer({"name": machine["name"],                          
                           "class": machine["class"],
+                          "params": machine["params"],
                           "pattern": Pattern.randomise(temperature),
                           "slices": slices})
 
-    def __init__(self, machine,
-                 params={_machine["name"]:_machine["params"]
-                         for _machine in MachineConf}):
+    def __init__(self, machine):
         dict.__init__(self, {"name": machine["name"],
                              "class": machine["class"],
+                             "params": machine["params"],
                              "pattern": Pattern(machine["pattern"]),
                              "slices": Slices(machine["slices"])})
-        for k, v in params[machine["name"]].items():
+        for k, v in machine["params"].items():
             setattr(self, k, v)
                             
     def clone(self):
         return Sequencer({"name": self["name"],
                           "class": self["class"],
+                          "params": self["params"],
                           "pattern": self["pattern"],
                           "slices": self["slices"].clone()})
 
@@ -284,13 +285,12 @@ class Modulator(dict):
                   **kwargs):
         return Modulator({"name": machine["name"],
                           "class": machine["class"],
+                          "params": machine["params"],
                           "seed": int(1e8*random.random())})
 
-    def __init__(self, machine,
-                 params={_machine["name"]:_machine["params"]
-                         for _machine in MachineConf}):
+    def __init__(self, machine):
         dict.__init__(self, machine)
-        for k, v in params[machine["name"]].items():
+        for k, v in machine["params"].items():
             setattr(self, k, v)
 
     def clone(self):

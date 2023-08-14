@@ -1,6 +1,9 @@
 ### short
 
-- params to be bundled with randomised machine and passed through serialisation mechanism, removing need to lookup at instantiation/randomisation level
+- sort list projects
+- machine.randomise to initialise object with params
+- save params as part of json state and check serialisation
+- remove unpacking of params
 
 ### medium
 
