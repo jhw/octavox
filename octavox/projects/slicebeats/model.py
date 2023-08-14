@@ -221,37 +221,27 @@ class Sequencer(dict):
             nsamplebeats=pat["n"]*multiplier
             samples=slice["samples"].tagged_map
             for i in range(nsamplebeats):
-                fn(q, i, density, trigs, offset, samples)
+                v=fn(q, i, density, trigs, offset, samples)
+                if v!=None: # explicit because could return zero
+                    tag, volume = v
+                    samplekey=samples[tag].clone()
+                    trig=SVNoteTrig(mod=self.mod,
+                                    vel=volume,
+                                    i=i+offset,
+                                    samplekey=samplekey)
+                    trigs.append(trig)
             offset+=nsamplebeats
-
-    def apply(fn):
-        def wrapped(self, q, i, d,
-                    trigs,
-                    offset,
-                    samples):
-            v=fn(self, q, i, d, trigs, offset, samples)
-            if v!=None: # explicit because could return zero
-                tag, volume = v
-                samplekey=samples[tag].clone()
-                trig=SVNoteTrig(mod=self.mod,
-                                vel=volume,
-                                i=i+offset,
-                                samplekey=samplekey)
-                trigs.append(trig)
-        return wrapped
 
     """
     - https://github.com/vitling/acid-banger/blob/main/src/pattern.ts
     """
     
-    @apply
     def fourfloor(self, q, i, d, *args, k="kk"):
         if i % 4 == 0 and q.random() < d:
             return (k, 0.9)
         elif i % 2 == 0 and q.random() < 0.1*d:
             return (k, 0.6)
 
-    @apply
     def electro(self, q, i, d, *args, k="kk"):
         if i == 0 and q.random() < d:
             return (k, 1)
@@ -259,17 +249,14 @@ class Sequencer(dict):
               q.random() < 0.05*d):
             return (k, 0.9*q.random())
 
-    @apply
     def triplets(self, q, i, d, *args, k="kk"):
         if i % 16  in [0, 3, 6, 9, 14] and q.random() < d:
             return (k, 1)
 
-    @apply
     def backbeat(self, q, i, d, *args, k="sn"):
         if i % 8 == 4 and q.random() < d:
             return (k, 1)
 
-    @apply
     def skip(self, q, i, d, *args, k="sn"):
         if i % 8 in [3, 6] and q.random() < d:
             return (k, 0.6+0.4*q.random())
@@ -278,7 +265,6 @@ class Sequencer(dict):
         elif q.random() < 0.1*d:
             return (k, 0.2+0.2*q.random())
 
-    @apply
     def offbeats(self, q, i, d, *args, k=["oh", "ch"]):
         if i % 4 == 2 and q.random() < d:
             return (k[0], 0.4)
@@ -286,7 +272,6 @@ class Sequencer(dict):
             k = k[0] if q.random() < 0.5 else k[1]
             return (k, 0.2*q.random())
     
-    @apply
     def closed(self, q, i, d, *args, k="ch"):
         if i % 2 == 0 and q.random() < d:
             return (k, 0.4)
@@ -325,20 +310,14 @@ class Modulator(dict):
         q=Q(self["seed"])
         for i in range(nbeats):
             fn=getattr(self, self.style)
-            fn(q, i, density, trigs)
-
-    def apply(fn):
-        def wrapped(self, q, i, d, trigs):
-            v=fn(self, q, i, d, trigs)
+            v=fn(q, i, density, trigs)
             if v!=None: # explicit because could return zero
                 trig=SVFXTrig(mod=self.mod,
                               ctrl=self.ctrl,
                               value=v*self.multiplier,
                               i=i)
                 trigs.append(trig)
-        return wrapped
 
-    @apply
     def sample_hold(self, q, i, d, *args):
         if 0 == i % self.step:
             if q.random() < self.live:
