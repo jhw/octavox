@@ -10,8 +10,11 @@ from datetime import datetime
 
 import cmd, json, os, random, readline, yaml
 
-Nouns, Adjectives = (yaml.safe_load(open("octavox/config/nouns.yaml").read()),                     
-                     yaml.safe_load(open("octavox/config/adjectives.yaml").read()))
+def load_yaml(filename):
+    return yaml.safe_load(open("octavox/modules/cli/%s" % filename).read())
+
+Nouns, Adjectives = (load_yaml("nouns.yaml"),
+                     load_yaml("adjectives.yaml"))
 
 HistorySize=100
 

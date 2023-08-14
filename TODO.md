@@ -1,6 +1,5 @@
 ### short
 
-- move nouns and adjectives into cli
 - random filename to take optional arg for name
 - circular error if you move SVSampleKey into model
 - refactor reanimate_archives to use @render_patches 
@@ -152,6 +151,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- move nouns and adjectives into cli
 - move random filename stuff and nouns and adjectives into cli
 - rename cli stub as stem
 - add sv prefix to model classes
