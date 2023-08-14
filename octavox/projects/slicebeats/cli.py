@@ -19,23 +19,6 @@ class SlicebeatsCli(SVBankCli):
                  **kwargs):
         SVBankCli.__init__(self, *args, **kwargs)
         self.fixes=SVPool()
-
-    @parse_line(config=[{"name": "stem",
-                         "type": "str"}])
-    def do_load_project(self, stem):
-        matches=[filename for filename in os.listdir(self.outdir+"/json")
-                 if stem in filename]
-        if matches==[]:
-            print ("WARNING: no matches")
-        elif len(matches)==1:
-            filename=matches.pop()
-            print ("INFO: %s" % filename)
-            abspath="%s/json/%s" % (self.outdir, filename)
-            patches=json.loads(open(abspath).read())
-            self.patches=[SVPatch(**patch)
-                          for patch in patches]
-        else:
-            print ("WARNING: multiple matches")
         
     @parse_line()
     @render_patches(prefix="random")

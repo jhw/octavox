@@ -1,12 +1,12 @@
 ### short
 
-- random filename to take optional arg for name
-- refactor reanimate_archives to use @render_patches 
+- demos are broken
+- move reanimate archives to base class
 
 ### medium
 
-- investigate why Note (RVNote) seems to need a local import
 - refactor params lookup at custom machine level
+
 - new yield layer to abstract away note/fx trig definition at custom machine level
 
 - s3 banks
@@ -38,8 +38,13 @@
 
 ### thoughts
 
-- move common parts into modules/model 
- - can't really do it because of pool and fixes args
+- investigate why Note (RVNote) seems to need a local import?
+  - not a problem that requires solving
+- render_patches to take optional filename?
+  - problem is it's not that useful
+  - would only be useful for reanimate_archives
+  - but then you have a lot of files to reanimate, not just a single on
+  - ie can't use decorator
 - base class for sequencer and lfo?
   - don't think it's required or useful
 - bank level bans? 
@@ -57,21 +62,12 @@
   - no; given slice model, you don't want to *force* mutation of every slice
 - fix_sample protection against specifying unknown tag?
   - feels like overkill
-- pass explicit modules and links args to project?
-  - no because then you have to distinguish between input and outout modules eg with modconfig
-  - its simpler just to have a config variable
-  - but be explicit about what's being passed
-- sample bans?
-  - not clear how it would work
-  - feels like over- optimisation
 - config classes?
   - feels like overkill; see NOTES.md
 - treat svdrum as a sample, so can be fixed?
   - probably too much work
 - unfix_sample?
   - not sure it is required
-- cli mute/ban samples?
-  - hard to see this has much value if there is a lot of randomisation avaiable
 - params types?
   - not clear it is worth it
 

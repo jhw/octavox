@@ -4,6 +4,8 @@ from octavox.modules.banks import SVPool
 
 from octavox.modules.cli.parse import parse_line
 
+from octavox.modules.model import SVPatch
+
 from octavox.modules.project import SVProject
 
 from datetime import datetime
@@ -121,6 +123,23 @@ class SVBaseCli(cmd.Cmd):
         for filename in os.listdir(self.outdir+"/json"):
             print (filename.split(".")[0])
 
+    @parse_line(config=[{"name": "stem",
+                         "type": "str"}])
+    def do_load_project(self, stem):
+        matches=[filename for filename in os.listdir(self.outdir+"/json")
+                 if stem in filename]
+        if matches==[]:
+            print ("WARNING: no matches")
+        elif len(matches)==1:
+            filename=matches.pop()
+            print ("INFO: %s" % filename)
+            abspath="%s/json/%s" % (self.outdir, filename)
+            patches=json.loads(open(abspath).read())
+            self.patches=[SVPatch(**patch)
+                          for patch in patches]
+        else:
+            print ("WARNING: multiple matches")
+            
     @parse_line()
     def do_clean_projects(self):
         os.system("rm -rf %s" % self.outdir)
