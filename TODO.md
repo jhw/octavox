@@ -1,7 +1,5 @@
 ### short
 
-- sort list projects
-- rename modules as layout
 - remove unpacking of params
 - migrate archives
 
@@ -146,6 +144,8 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- sort list projects
+- rename modules as layout
 - machine.randomise to initialise object with params
 - save params as part of json state and check serialisation
 - move reanimate archives to base class

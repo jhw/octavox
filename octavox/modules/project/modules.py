@@ -83,10 +83,10 @@ class SVModGrid(dict):
             total+=distance
         return total
 
-def init_layout(modules,
-                links,
-                n=1000,
-                nclones=5):
+def init_mod_layout(modules,
+                    links,
+                    n=1000,
+                    nclones=5):
     def shuffle(grid, q):
         clone=grid.clone()
         clone.shuffle(q)
