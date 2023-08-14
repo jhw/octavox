@@ -1,6 +1,4 @@
-from octavox.modules.banks import SVSampleKey
-
-from octavox.modules.model import SVNoteTrig, SVFXTrig
+from octavox.modules.model import SVSampleKey, SVNoteTrig, SVFXTrig
 
 from octavox.projects import Q
 

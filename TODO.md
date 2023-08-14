@@ -1,13 +1,12 @@
 ### short
 
-- circular error if you move SVSampleKey into model
 - random filename to take optional arg for name
 - refactor reanimate_archives to use @render_patches 
 
 ### medium
 
+- investigate why Note (RVNote) seems to need a local import
 - refactor params lookup at custom machine level
-
 - new yield layer to abstract away note/fx trig definition at custom machine level
 
 - s3 banks
@@ -151,6 +150,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- circular error if you move SVSampleKey into model
 - move nouns and adjectives into cli
 - move random filename stuff and nouns and adjectives into cli
 - rename cli stub as stem

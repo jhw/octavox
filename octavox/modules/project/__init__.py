@@ -1,6 +1,5 @@
 from rv.api import Project as RVProject
 from rv.pattern import Pattern as RVPattern
-from rv.note import Note as RVNote
 
 from octavox.modules import load_class
 
@@ -93,9 +92,10 @@ class SVProject:
                      color,
                      height=Height):
         grid=patch.grid
+        from rv.note import Note
         def notefn(self, j, i):
             return grid[i][j].render(modules,
-                                     controllers) if j in grid[i] else RVNote()
+                                     controllers) if j in grid[i] else Note()
         return RVPattern(lines=patch.nbeats,
                          tracks=len(patch),
                          x=offset.value,
