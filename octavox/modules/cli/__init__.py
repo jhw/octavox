@@ -11,7 +11,7 @@ from datetime import datetime
 import cmd, json, os, random, readline, yaml
 
 def load_yaml(filename):
-    return yaml.safe_load(open("octavox/modules/cli/%s" % filename).read())
+    return yaml.safe_load(open(os.path.join(os.path.dirname(__file__), filename)).read())
 
 Nouns, Adjectives = (load_yaml("nouns.yaml"),
                      load_yaml("adjectives.yaml"))
