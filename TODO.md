@@ -1,15 +1,15 @@
 ### short
 
-- circular error if you move SVSampleKey into model
 - move random filename stuff and nouns and adjectives into cli
+- circular error if you move SVSampleKey into model
 - random filename to take optional arg for name
 - refactor reanimate_archives to use @render_patches 
 
-
 ### medium
 
-- not sure I like how MachineConfig is defined in machines contructors but also passed to patch
-  - pass as params?
+- refactor params lookup at custom machine level
+
+- new yield layer to abstract away note/fx trig definition at custom machine level
 
 - s3 banks
 - s3 archives
