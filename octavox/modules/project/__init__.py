@@ -58,10 +58,7 @@ class SVProject:
                 setattr(mod, attr, int(512+128*mult*value))
             if "defaults" in moditem:
                 for k, v in moditem["defaults"].items():
-                    try:
-                        mod.set_raw(k, v)
-                    except:
-                        raise RuntimeError("error setting ctrl %s in %s" % (k, moditem["name"]))
+                    mod.set_raw(k, v)
             proj.attach_module(mod)
             modules[name]=mod
         return modules
