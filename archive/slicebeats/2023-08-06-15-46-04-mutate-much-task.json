@@ -164,12 +164,34 @@
       {
         "name": "Echo/wet",
         "seed": 39159196,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 46596742,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -338,12 +360,34 @@
       {
         "name": "Echo/wet",
         "seed": 8857760,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 7041114,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -512,12 +556,34 @@
       {
         "name": "Echo/wet",
         "seed": 70155780,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 74753898,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -686,12 +752,34 @@
       {
         "name": "Echo/wet",
         "seed": 58791512,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 37278544,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -860,12 +948,34 @@
       {
         "name": "Echo/wet",
         "seed": 3420517,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 92217053,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -1034,12 +1144,34 @@
       {
         "name": "Echo/wet",
         "seed": 60068766,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 26584560,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -1208,12 +1340,34 @@
       {
         "name": "Echo/wet",
         "seed": 7442931,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 55765748,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -1382,12 +1536,34 @@
       {
         "name": "Echo/wet",
         "seed": 48112181,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 11346044,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -1556,12 +1732,34 @@
       {
         "name": "Echo/wet",
         "seed": 96476997,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 91470378,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -1730,12 +1928,34 @@
       {
         "name": "Echo/wet",
         "seed": 9762334,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 3672587,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -1904,12 +2124,34 @@
       {
         "name": "Echo/wet",
         "seed": 6727104,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 83865637,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -2078,12 +2320,34 @@
       {
         "name": "Echo/wet",
         "seed": 90048082,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 67815759,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -2252,12 +2516,34 @@
       {
         "name": "Echo/wet",
         "seed": 323804,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 23948583,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -2426,12 +2712,34 @@
       {
         "name": "Echo/wet",
         "seed": 30911063,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 85541865,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -2600,12 +2908,34 @@
       {
         "name": "Echo/wet",
         "seed": 3038895,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 76779880,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -2774,12 +3104,34 @@
       {
         "name": "Echo/wet",
         "seed": 75871693,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 61326296,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -2948,12 +3300,34 @@
       {
         "name": "Echo/wet",
         "seed": 33477784,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 61148694,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -3122,12 +3496,34 @@
       {
         "name": "Echo/wet",
         "seed": 1852468,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 80586744,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -3296,12 +3692,34 @@
       {
         "name": "Echo/wet",
         "seed": 20756489,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 78618187,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -3470,12 +3888,34 @@
       {
         "name": "Echo/wet",
         "seed": 99110730,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 22279424,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -3644,12 +4084,34 @@
       {
         "name": "Echo/wet",
         "seed": 88373389,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 24494271,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -3818,12 +4280,34 @@
       {
         "name": "Echo/wet",
         "seed": 26538410,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 70345410,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -3992,12 +4476,34 @@
       {
         "name": "Echo/wet",
         "seed": 21410319,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 1507460,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -4166,12 +4672,34 @@
       {
         "name": "Echo/wet",
         "seed": 82589401,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 52725677,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -4340,12 +4868,34 @@
       {
         "name": "Echo/wet",
         "seed": 4168475,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 34904359,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -4514,12 +5064,34 @@
       {
         "name": "Echo/wet",
         "seed": 38474133,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 42142246,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -4688,12 +5260,34 @@
       {
         "name": "Echo/wet",
         "seed": 40025819,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 40516754,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -4862,12 +5456,34 @@
       {
         "name": "Echo/wet",
         "seed": 24614040,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 68740876,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -5036,12 +5652,34 @@
       {
         "name": "Echo/wet",
         "seed": 31043034,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 81734364,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -5210,12 +5848,34 @@
       {
         "name": "Echo/wet",
         "seed": 6692420,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 2316621,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -5384,12 +6044,34 @@
       {
         "name": "Echo/wet",
         "seed": 93867868,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 33187990,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   },
@@ -5558,12 +6240,34 @@
       {
         "name": "Echo/wet",
         "seed": 48938381,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       },
       {
         "name": "Echo/feedback",
         "seed": 95959992,
-        "class": "octavox.projects.slicebeats.model.Modulator"
+        "class": "octavox.projects.slicebeats.model.Modulator",
+        "params": {
+          "style": "sample_hold",
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "multiplier": 32768
+        }
       }
     ]
   }

@@ -1,9 +1,11 @@
 ### short
 
-- add modulator params to archives
 - randomise pool action
 
 ### medium
+
+- print poolname on cli start?
+  - why did it cause exception?
 
 - s3 banks
 - s3 archives
@@ -144,6 +146,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- add modulator params to archives
 - randomise pool on cli start
 - move MachineConfig to cli and rename as machines
 - remove unpacking of params
