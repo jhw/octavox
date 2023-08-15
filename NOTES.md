@@ -1,3 +1,9 @@
+### s3 banks 15/08/23
+
+- dump_pico_banks to push to s3
+- banks initialisation to load from s3
+- local banks cache 
+
 ### 01-s3-banks 13/08/23
 
 - dump_pico_banks.py to push to s3 bucket

@@ -1,11 +1,13 @@
-### short [s3-banks]
+### short
 
-- dump_pico_banks to push to s3
-- banks initialisation to load from s3
-- local banks cache for speed
+- revert default pool to default-curate
+
+- oh/ch error when randomising with small pool
+  - lenient hats? combined hats?
 
 ### medium
 
+- s3 banks
 - s3 archives
 - chord support
 - mutate and arrange actions
