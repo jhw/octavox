@@ -236,6 +236,11 @@ class SVBankCli(SVBaseCli):
         self.pools[dest].add(self.pools[src])
         self.poolname=dest
         print ("INFO: pool=%s" % dest)
-                           
+
+    @parse_line()
+    def do_randomise_pool(self):
+        self.poolname=random.choice(list(self.pools.keys()))
+        print ("INFO: pool=%s" % self.poolname)
+        
 if __name__=="__main__":
     pass

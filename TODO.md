@@ -1,16 +1,14 @@
-### short
+### short [s3-banks]
 
-- randomise pool action
+- dump_pico_banks to push to s3
+- banks initialisation to load from s3
+- local banks cache for speed
 
 ### medium
 
-- print poolname on cli start?
-  - why did it cause exception?
-
-- s3 banks
 - s3 archives
-- mutate and arrange actions
 - chord support
+- mutate and arrange actions
 
 ### demos
 
@@ -36,6 +34,8 @@
 
 ### thoughts
 
+- print poolname on cli start?
+  - why did it cause exception?
 - new yield layer? 
   - not clear how it would work
 - investigate why Note (RVNote) seems to need a local import?
@@ -146,6 +146,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- randomise pool action
 - add modulator params to archives
 - randomise pool on cli start
 - move MachineConfig to cli and rename as machines

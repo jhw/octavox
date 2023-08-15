@@ -131,7 +131,7 @@ class Slices(list):
         return Slices(self)
 
 """
-- a Sequencer only uses params at initialisation time (randomise), hence they don't need to be saved in state
+- a Sequencer (currently) only uses params at patch initialisation time (randomise), hence they don't need to be saved in state
 """
     
 class Sequencer(dict):
@@ -234,8 +234,8 @@ class Sequencer(dict):
             return (k, 0.3*q.random())
 
 """
-- but a Modulator uses params at runtime, hence they need to be part of state
-- and it's useful to unpack them at the constructor level
+- a Modulator uses params at runtime, hence they need to be part of state
+- it's useful to unpack them at initialisation time
 """
         
 class Modulator(dict):
