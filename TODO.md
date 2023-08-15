@@ -1,8 +1,5 @@
 ### short
 
-- oh/ch error when randomising with small pool
-  - lenient hats? combined hats?
-
 ### medium
 
 - s3 banks
@@ -146,6 +143,8 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- add back some kind of pool culling
+- oh/ch error when randomising with small pool
 - revert default pool to default-curate
 - randomise pool action
 - add modulator params to archives

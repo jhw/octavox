@@ -191,9 +191,11 @@ if __name__=="__main__":
         banks=SVBanks("octavox/banks/pico")
         pools=SVPools({poolname:pool
                        for poolname, pool in banks.spawn_pools().items()
-                       if len(pool) > 24})
+                       if len(pool.tags)==4}) # NB
+        poolname=random.choice(list(pools.keys()))
+        print ("INFO: pool=%s" % poolname)
         SlicebeatsCli(projectname="slicebeats",
-                      poolname="default-curated",
+                      poolname=poolname,
                       params=Params,
                       modules=Modules,
                       links=Links,

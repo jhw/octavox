@@ -68,6 +68,14 @@ class SVPool(OrderedDict):
     @property
     def samplekeys(self):
         return list(self.values())
+
+    @property
+    def tags(self):
+        tags=set()
+        for samplekey in self.values():
+            for tag in samplekey["tags"]:
+                tags.add(tag)
+        return sorted(list(tags))
     
 class SVPools(dict):
 
