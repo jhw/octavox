@@ -1,7 +1,5 @@
 ### short
 
-- revert default pool to default-curate
-
 - oh/ch error when randomising with small pool
   - lenient hats? combined hats?
 
@@ -148,6 +146,7 @@ AttributeError: 'dict' object has no attribute 'short_label'
 
 ### done
 
+- revert default pool to default-curate
 - randomise pool action
 - add modulator params to archives
 - randomise pool on cli start

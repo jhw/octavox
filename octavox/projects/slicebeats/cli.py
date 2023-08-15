@@ -193,7 +193,7 @@ if __name__=="__main__":
                        for poolname, pool in banks.spawn_pools().items()
                        if len(pool) > 24})
         SlicebeatsCli(projectname="slicebeats",
-                      poolname=random.choice(list(pools.keys())),
+                      poolname="default-curated",
                       params=Params,
                       modules=Modules,
                       links=Links,
