@@ -1,6 +1,5 @@
 ### short [01-s3-banks]
 
-- remove octavox/banks
 - local banks cache 
 
 ### medium
@@ -116,6 +115,7 @@
 
 ### done
 
+- remove octavox/banks
 - banks initialisation to load from s3
 - dump_pico_banks to push to s3
 - add back some kind of pool culling
