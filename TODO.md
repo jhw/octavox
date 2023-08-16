@@ -1,8 +1,12 @@
-### short
+### short [01-s3-banks]
+
+- dump_pico_banks to push to s3
+- banks initialisation to load from s3
+- local banks cache 
+- remove octavox/banks
 
 ### medium
 
-- s3 banks
 - s3 archives
 - chord support
 - mutate and arrange actions
