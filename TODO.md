@@ -2,15 +2,17 @@
 
 - local banks cache 
 
+- rename tmp/picobanks as tmp/banks/pico
+
 ### medium
 
 - s3 archives
-- chord support
 - mutate and arrange actions
-
-### demos
-
+- chord support
 - check delay scales as bpm changes
+
+### octavox demos
+
 - replace oh/ch with filter movement
 - euclid beats
 - vorhosbn noise hats
@@ -18,11 +20,13 @@
 - city dreams bass + acid banger 303
 - breakbreaks
 
-- pydub granular samples -> chord slice concatenation
-- pydub fadeouts
-- pydub get/change pitch
-- pydub timestretching
-- pybub detecting crossover points
+### pydub demos
+
+- granular samples -> chord slice concatenation
+- fadeouts
+- get/change pitch
+- timestretching
+- detecting crossover points
 
 ### banks
 
