@@ -1,12 +1,6 @@
-"""
-- fetch Pico sample packs from S3 bucket, parse and save to zipped files
-"""
-
-import json, os, re, urllib.request, zipfile
+import boto3, io, json, os, re, urllib.request, zipfile
 
 PicoDrum="http://data.ericasynths.lv/picodrum/"
-
-DirName="tmp/banks/pico/zipped"
 
 def fetch_json(path):
     return json.loads(urllib.request.urlopen(PicoDrum+path).read())
@@ -38,24 +32,29 @@ def clean_filename(filename, i):
                                    if tok!=''])
     return "%s.%s" % (cleanhandle, fileext)
 
-def generate(packname, packfile, dirname=DirName):
-    zfname="%s/%s.zip" % (dirname,
-                          packname.replace(" ", "-").lower())
-    zf=zipfile.ZipFile(zfname, 'w')
-    buf=fetch_bin(packfile)
-    blocks=filter_blocks(buf)
-    for i, blockname, block in blocks:
-        filename=clean_filename(blockname.decode("utf-8"), i)
-        zf.writestr(filename, block)        
+def upload(s3, bucketname, packname, packfile):
+    s3key="banks/pico/%s.zip" % packname.replace(" ", "-").lower()
+    blocks=filter_blocks(fetch_bin(packfile))
+    buf=io.BytesIO()
+    with zipfile.ZipFile(buf, "a", zipfile.ZIP_DEFLATED, False) as zf:
+        for i, blockname, block in blocks:
+            filename=clean_filename(blockname.decode("utf-8"), i)
+            zf.writestr(filename, block)
+    body=buf.getvalue()
+    print ("%s [%i]" % (s3key, len(body)))
+    s3.put_object(Bucket=bucketname,
+                  Key=s3key,
+                  Body=body,
+                  ContentType="application/zip")
 
 if __name__=="__main__":
     try:
-        for path in [DirName]:
-            if not os.path.exists(path):
-                os.makedirs(path)            
+        bucketname=os.environ["OCTAVOX_ASSETS_BUCKET"]
+        if bucketname in ["", None]:
+            raise RuntimeError("OCTAVOX_ASSETS_BUCKET does not exist")
+        s3=boto3.client("s3")
         for packname, packfile in pack_list().items():
-            print (packname)
-            generate(packname, packfile)
+            upload(s3, bucketname, packname, packfile)
             # break # TEMP
     except RuntimeError as error:
         print ("Error: %s" % str(error))
