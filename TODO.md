@@ -31,10 +31,8 @@
 
 ### thoughts
 
-- print poolname on cli start?
-  - why did it cause exception?
-- new yield layer? 
-  - not clear how it would work
+- auto- populate incomplete curated pools?
+  - how long is a piece of string?
 - investigate why Note (RVNote) seems to need a local import?
   - not a problem that requires solving
 - render_patches to take optional filename?
@@ -61,37 +59,10 @@
   - feels like overkill
 - config classes?
   - feels like overkill; see NOTES.md
-- treat svdrum as a sample, so can be fixed?
-  - probably too much work
 - unfix_sample?
   - not sure it is required
 - params types?
   - not clear it is worth it
-
-```
->>> show_patch 0
-EXCEPTION: Traceback (most recent call last):
-  File "/Users/jhw/work/octavox/octavox/modules/cli.py", line 56, in wrapped
-    return fn(self, **kwargs)
-  File "/Users/jhw/work/octavox/octavox/projects/picobeats/cli.py", line 97, in do_show_patch
-    value=trig["key"].short_label if "key" in trig else "sv/%i" % trig["id"]
-AttributeError: 'dict' object has no attribute 'short_label'
-```
-
-- ^^^ where did this come from?
-
-- dedicated blocks model?
-  - no; think it makes more sense to render at the patches level but then have cli work in blocks
-- show_patch to iterate over all track keys and check if is a sample?
-  - probably not worth it
-- SVTrg class
-  - not worth it just to replace short label rendering code in cli show_patch
-- cli replace|ban samples
-  - may be over optimised
-- initialise lfo with randomised step?
-  - not sure it's worth it
-- ability to specify track key when copying?
-  - not clear that this is useful if fix() functionality is implemented
 - cli blend() action?
   - hard to know how it should be implemented or if it would be useful
 - validation to check custom sampler classes exist?
