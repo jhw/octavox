@@ -1,8 +1,7 @@
 ### short [01-s3-banks]
 
-- banks initialisation to load from s3
-- local banks cache 
 - remove octavox/banks
+- local banks cache 
 
 ### medium
 
@@ -117,6 +116,7 @@
 
 ### done
 
+- banks initialisation to load from s3
 - dump_pico_banks to push to s3
 - add back some kind of pool culling
 - oh/ch error when randomising with small pool

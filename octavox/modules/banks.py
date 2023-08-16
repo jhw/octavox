@@ -4,7 +4,7 @@ from octavox.modules import is_abbrev
 
 from collections import OrderedDict
 
-import json, os, re, yaml, zipfile
+import io, json, os, re, yaml, zipfile
 
 Fragments=yaml.safe_load("""
 kk:
@@ -156,14 +156,21 @@ class SVBank:
 
 class SVBanks(dict):
 
-    def __init__(self, root):
-        dict.__init__(self)        
-        for bankfile in sorted(os.listdir(root)):
-            name=bankfile.split(".")[0]
-            path="%s/%s" % (root, bankfile)
-            bank=SVBank(name, zipfile.ZipFile(path))
-            self[name]=bank
-
+    def __init__(self, s3, bucketname, prefix="banks"):
+        dict.__init__(self)
+        paginator=s3.get_paginator("list_objects_v2")
+        pages=paginator.paginate(Bucket=bucketname,
+                                 Prefix=prefix)
+        for page in pages:
+            if "Contents" in page:
+                for obj in page["Contents"]:
+                    print ("INFO: fetching %s" % obj["Key"])
+                    name=obj["Key"].split("/")[-1].split(".")[0]
+                    zf=zipfile.ZipFile(io.BytesIO(s3.get_object(Bucket=bucketname,
+                                                                Key=obj["Key"])["Body"].read()), "r")
+                    bank=SVBank(name, zf)
+                    self[name]=bank
+        
     def lookup(self, abbrev):
         matches=[]
         for key in self:

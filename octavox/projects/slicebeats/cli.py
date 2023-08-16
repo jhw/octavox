@@ -6,7 +6,7 @@ from octavox.modules.cli.parse import parse_line
 
 from octavox.modules.model import SVSampleKey, SVNoteTrig, SVPatch
 
-import json, os, random, yaml
+import boto3, json, os, random, yaml
 
 Machines=yaml.safe_load("""
 - name: KickSampler
@@ -186,9 +186,11 @@ Links=yaml.safe_load("""
 
 if __name__=="__main__":
     try:
-        def load_yaml(filename, home="octavox/projects/slicebeats"):
-            return yaml.safe_load(open("%s/%s" % (home, filename)).read())
-        banks=SVBanks("octavox/banks/pico")
+        bucketname=os.environ["OCTAVOX_ASSETS_BUCKET"]
+        if bucketname in ["", None]:
+            raise RuntimeError("OCTAVOX_ASSETS_BUCKET does not exist")
+        s3=boto3.client("s3")
+        banks=SVBanks(s3, bucketname)
         pools=SVPools({poolname:pool
                        for poolname, pool in banks.spawn_pools().items()
                        if len(pool.tags)==4}) # NB
