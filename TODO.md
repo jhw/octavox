@@ -1,18 +1,14 @@
 ### short [01-s3-banks]
 
-- pass cachedir to bank creation
-- makedirs cachedir
-- list cached banks
-- iterate through S3 banks
-- if bankname not in cache, load from S3 and save to cache
 - else load from cache
+
 - archive project to put to s3
 - reanimate projects to list and load from S3
+
 - add some kind of string matching to reanimate archives 
 
 ### medium
 
-- s3 archives
 - mutate and arrange actions
 - chord support
 - check delay scales as bpm changes
@@ -125,6 +121,11 @@
 
 ### done
 
+- pass cachedir to bank creation
+- makedirs cachedir
+- list cached banks
+- iterate through S3 banks
+- if bankname not in cache, load from S3 and save to cache
 - convert bank creation to classmethod 
 - rename tmp/picobanks as tmp/banks/pico
 - remove octavox/banks
