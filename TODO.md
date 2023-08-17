@@ -1,13 +1,13 @@
 ### short [01-s3-banks]
 
-- else load from cache
-
-- archive project to put to s3
+- archive project to put to json struct to s3
 - reanimate projects to list and load from S3
-
-- add some kind of string matching to reanimate archives 
+- script to put existing archives to s3
+- delete local archives
 
 ### medium
+
+- add prefix/string matching to reanimate archives
 
 - mutate and arrange actions
 - chord support
@@ -121,6 +121,7 @@
 
 ### done
 
+- else load from cache
 - pass cachedir to bank creation
 - makedirs cachedir
 - list cached banks

@@ -186,17 +186,17 @@ class SVBanks(dict):
         banks={}
         for s3key in s3keys:
             bankname=s3key.split("/")[-1].split(".")[0]
+            cachefilename="%s/%s.zip" % (cachedir, bankname)
             if bankname not in existing:
                 print ("INFO: fetching %s" % s3key)
                 buf=io.BytesIO(s3.get_object(Bucket=bucketname,
                                              Key=s3key)["Body"].read())
-                zf=zipfile.ZipFile(buf, "r")
-                bank=SVBank(bankname, zf)
-                with open("%s/%s.zip" % (cachedir, bankname), 'wb') as f:
+                with open(cachefilename, 'wb') as f:
                     f.write(buf.getvalue())
+                zf=zipfile.ZipFile(buf, "r")
             else:
-                # load zipfile from cache
-                pass
+                zf=zipfile.ZipFile(cachefilename)
+            bank=SVBank(bankname, zf)
             banks[bankname]=bank
         return SVBanks(banks)
 
