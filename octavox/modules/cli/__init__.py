@@ -78,12 +78,14 @@ class SVBaseCli(cmd.Cmd):
 
     def __init__(self,
                  projectname,
+                 bucketname,
                  params,
                  modules,
                  links,
                  historysize=HistorySize):
         cmd.Cmd.__init__(self)
         self.projectname=projectname
+        self.bucketname=bucketname
         self.outdir="tmp/%s" % projectname
         self.init_subdirs()
         self.modules=modules

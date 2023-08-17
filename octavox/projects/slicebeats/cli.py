@@ -199,6 +199,7 @@ if __name__=="__main__":
         poolname=random.choice(list(pools.keys()))
         print ("INFO: pool=%s" % poolname)
         SlicebeatsCli(projectname="slicebeats",
+                      bucketname=bucketname,
                       poolname=poolname,
                       params=Params,
                       modules=Modules,
