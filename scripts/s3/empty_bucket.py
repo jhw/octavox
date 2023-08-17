@@ -1,34 +1,28 @@
 from botocore.exceptions import ClientError
 
-import boto3, os
+import boto3, os, sys
 
-def empty_bucket(fn):
-    def wrapped(s3, bucketname):
-        paginator=s3.get_paginator("list_objects_v2")
-        pages=paginator.paginate(Bucket=bucketname)
-        for struct in pages:
-            if "Contents" in struct:
-                for obj in struct["Contents"]:
-                    print (obj["Key"])
-                    s3.delete_object(Bucket=bucketname,
-                                     Key=obj["Key"])
-        fn(s3, bucketname)
-    return wrapped
+def empty_bucket(s3, bucketname, prefix):
+    paginator=s3.get_paginator("list_objects_v2")
+    pages=paginator.paginate(Bucket=bucketname,
+                             Prefix=prefix)
+    for struct in pages:
+        if "Contents" in struct:
+            for obj in struct["Contents"]:
+                print (obj["Key"])
+                s3.delete_object(Bucket=bucketname,
+                                 Key=obj["Key"])
 
-@empty_bucket
-def delete_bucket(s3, bucketname):
-    # print (s3.delete_bucket(Bucket=bucketname))
-    pass
-    
 if __name__=="__main__":
-    try:
+    try:        
         bucketname=os.environ["OCTAVOX_ASSETS_BUCKET"]
         if bucketname in ["", None]:
             raise RuntimeError("OCTAVOX_ASSETS_BUCKET does not exist")
+        if len(sys.argv) < 2:
+            raise RuntimeError("please enter prefix")
+        prefix=sys.argv[1]
         s3=boto3.client("s3")
-        resp=input("ARE YOU SURE YOU WANT TO EMPTY %s? " % bucketname)
-        if resp in "yY":            
-            delete_bucket(s3, bucketname)
+        empty_bucket(s3, bucketname, prefix)
     except RuntimeError as error:
         print ("Error: %s" % (str(error)))
     except ClientError as error:
