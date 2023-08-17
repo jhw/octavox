@@ -143,7 +143,6 @@ class SVBaseCli(cmd.Cmd):
 
     @parse_line()
     def do_reanimate_archives(self):
-        from octavox.modules.project import SVProject
         archivepath="archive/%s" % self.projectname
         for _filename in sorted(os.listdir(archivepath)):
             stem=_filename.split(".")[0]
