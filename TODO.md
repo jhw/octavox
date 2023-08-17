@@ -1,11 +1,7 @@
-### short [01-s3-banks]
+### short
 
-- pass prefix to s3 empty script
-- script to push archives to s3
-
-- archive project to put to json struct to s3
 - reanimate projects to list and load from S3
-- script to put existing archives to s3
+- archive project to put to json struct to s3
 - delete local archives
 
 ### medium
@@ -124,6 +120,9 @@
 
 ### done
 
+- pass prefix to s3 empty script
+- script to push archives to s3
+- script to put existing archives to s3
 - split banks and pools
 - else load from cache
 - pass cachedir to bank creation
