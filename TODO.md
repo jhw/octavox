@@ -1,20 +1,16 @@
 ### short
 
-- reanimate projects to list and load from S3
 - archive project to put to json struct to s3
-- delete local archives
 
 ### medium
 
-- add prefix/string matching to reanimate archives
-
 - mutate and arrange actions
 - chord support
-- check delay scales as bpm changes
 
 ### octavox demos
 
-- replace oh/ch with filter movement
+- check delay scales as bpm changes
+- replace oh/ch with some kind of movement
 - euclid beats
 - vorhosbn noise hats
 - t60 collapse clustering
@@ -37,6 +33,8 @@
 
 ### thoughts
 
+- add prefix/string matching to reanimate archives?
+  - not sure is required
 - auto- populate incomplete curated pools?
   - how long is a piece of string?
 - investigate why Note (RVNote) seems to need a local import?
@@ -120,6 +118,8 @@
 
 ### done
 
+- delete local archives
+- reanimate projects to list and load from S3
 - pass prefix to s3 empty script
 - script to push archives to s3
 - script to put existing archives to s3

@@ -1,4 +1,4 @@
-from octavox.modules import is_abbrev
+from octavox.modules import is_abbrev, list_s3_keys
 
 from octavox.modules.banks import SVPool
 
@@ -10,7 +10,7 @@ from octavox.modules.project import SVProject
 
 from datetime import datetime
 
-import cmd, json, os, random, readline, yaml
+import boto3, cmd, json, os, random, readline, yaml
 
 def load_yaml(filename):
     return yaml.safe_load(open(os.path.join(os.path.dirname(__file__), filename)).read())
@@ -145,11 +145,15 @@ class SVBaseCli(cmd.Cmd):
 
     @parse_line()
     def do_reanimate_archives(self):
-        archivepath="archive/%s" % self.projectname
-        for _filename in sorted(os.listdir(archivepath)):
-            stem=_filename.split(".")[0]
+        s3=boto3.client("s3")
+        prefix="archive/%s" % self.projectname
+        for s3key in list_s3_keys(s3=s3,
+                                  bucketname=self.bucketname,
+                                  prefix=prefix):
+            stem=s3key.split("/")[-1]
             print (stem)
-            struct=json.loads(open("%s/%s.json" % (archivepath, stem)).read())
+            struct=json.loads(s3.get_object(Bucket=self.bucketname,
+                                            Key=s3key)["Body"].read())
             filename="%s/json/%s.json" % (self.outdir, stem)
             with open(filename, 'w') as f:
                 f.write(json.dumps(struct,
