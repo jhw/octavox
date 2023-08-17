@@ -28,5 +28,16 @@ def is_abbrev(abbrev, text):
                 any(is_abbrev(abbrev[1:],text[i+1:])
                     for i in range(len(words[0]))))
 
+def list_s3_keys(s3, bucketname, prefix):
+    paginator=s3.get_paginator("list_objects_v2")
+    pages=paginator.paginate(Bucket=bucketname,
+                             Prefix=prefix)
+    keys=[]
+    for page in pages:
+        if "Contents" in page:
+            for obj in page["Contents"]:
+                keys.append(obj["Key"])
+    return keys
+   
 if __name__=="__main__":
     pass

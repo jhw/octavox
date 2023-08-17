@@ -1,4 +1,4 @@
-from octavox.modules import is_abbrev
+from octavox.modules import is_abbrev, list_s3_keys
 
 from octavox.modules.banks.pools import SVPool, SVPools
 
@@ -104,19 +104,9 @@ class SVBanks(dict):
                     bankname=item.split(".")[0]
                     existing.append(bankname)
             return sorted(existing)
-        def list_s3keys(s3, bucketname, prefix):
-            paginator=s3.get_paginator("list_objects_v2")
-            pages=paginator.paginate(Bucket=bucketname,
-                                     Prefix=prefix)
-            keys=[]
-            for page in pages:
-                if "Contents" in page:
-                    for obj in page["Contents"]:
-                        keys.append(obj["Key"])
-            return keys
         if not os.path.exists(cachedir):
             os.makedirs(cachedir)
-        s3keys, existing = (list_s3keys(s3, bucketname, prefix),
+        s3keys, existing = (list_s3_keys(s3, bucketname, prefix),
                             list_existing(cachedir))
         banks={}
         for s3key in s3keys:
