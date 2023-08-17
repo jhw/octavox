@@ -157,20 +157,47 @@ class SVBank:
 class SVBanks(dict):
 
     @classmethod
-    def initialise(self, s3, bucketname, prefix="banks"):
-        paginator=s3.get_paginator("list_objects_v2")
-        pages=paginator.paginate(Bucket=bucketname,
-                                 Prefix=prefix)
+    def initialise(self,
+                   s3,
+                   bucketname,
+                   prefix="banks",
+                   cachedir="tmp/banks"):
+        def list_existing(cachedir):
+            existing=[]
+            for item in os.listdir(cachedir):
+                if item.endswith(".zip"):
+                    bankname=item.split(".")[0]
+                    existing.append(bankname)
+            return sorted(existing)
+        def list_s3keys(s3, bucketname, prefix):
+            paginator=s3.get_paginator("list_objects_v2")
+            pages=paginator.paginate(Bucket=bucketname,
+                                     Prefix=prefix)
+            keys=[]
+            for page in pages:
+                if "Contents" in page:
+                    for obj in page["Contents"]:
+                        keys.append(obj["Key"])
+            return keys
+        def read_s3zip(s3key):
+            return zipfile.ZipFile(io.BytesIO(s3.get_object(Bucket=bucketname,
+                                                            Key=s3key)["Body"].read()), "r")
+        if not os.path.exists(cachedir):
+            os.makedirs(cachedir)
+        s3keys, existing = (list_s3keys(s3, bucketname, prefix),
+                            list_existing(cachedir))
         banks={}
-        for page in pages:
-            if "Contents" in page:
-                for obj in page["Contents"]:
-                    print ("INFO: fetching %s" % obj["Key"])
-                    name=obj["Key"].split("/")[-1].split(".")[0]
-                    zf=zipfile.ZipFile(io.BytesIO(s3.get_object(Bucket=bucketname,
-                                                                Key=obj["Key"])["Body"].read()), "r")
-                    bank=SVBank(name, zf)
-                    banks[name]=bank
+        for s3key in s3keys:
+            bankname=s3key.split("/")[-1].split(".")[0]
+            if bankname not in existing:
+                print ("INFO: fetching %s" % s3key)
+                zf=read_s3zip(s3key)
+                bank=SVBank(bankname, zf)
+                # save zipfile to cache
+            else:
+                # load zipfile from cache
+                pass
+            banks[bankname]=bank
         return SVBanks(banks)
 
     def __init__(self, item={}):
