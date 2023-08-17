@@ -1,4 +1,6 @@
-from octavox.modules.banks import SVBanks, SVPools, SVPool
+from octavox.modules.banks import SVBanks
+
+from octavox.modules.banks.pools import SVPools, SVPool
 
 from octavox.modules.cli import SVBankCli, render_patches
 

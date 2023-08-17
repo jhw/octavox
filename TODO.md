@@ -1,6 +1,7 @@
 ### short [01-s3-banks]
 
-- split banks and pools
+- pass prefix to s3 empty script
+- script to push archives to s3
 
 - archive project to put to json struct to s3
 - reanimate projects to list and load from S3
@@ -123,6 +124,7 @@
 
 ### done
 
+- split banks and pools
 - else load from cache
 - pass cachedir to bank creation
 - makedirs cachedir
