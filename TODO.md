@@ -1,7 +1,5 @@
 ### short
 
-- archive project to put to json struct to s3
-
 ### medium
 
 - mutate and arrange actions
@@ -118,6 +116,7 @@
 
 ### done
 
+- archive project to put to json struct to s3
 - delete local archives
 - reanimate projects to list and load from S3
 - pass prefix to s3 empty script

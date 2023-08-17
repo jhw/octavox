@@ -91,7 +91,7 @@ class SVBaseCli(cmd.Cmd):
         self.modules=modules
         self.links=links
         self.env=SVEnvironment(params)
-        self.project=None
+        self.patches=None
         self.filename=None
         self.historyfile=os.path.expanduser("%s/.clihistory" % self.outdir)
         self.historysize=historysize
@@ -144,13 +144,31 @@ class SVBaseCli(cmd.Cmd):
             print ("WARNING: multiple matches")
 
     @parse_line()
+    def do_archive_project(self):
+        if not self.patches:
+            print ("ERROR: no patches found")
+        else:
+            s3=boto3.client("s3")
+            s3key="archive/%s/%s.json" % (self.projectname,
+                                          self.filename)
+            s3.put_object(Bucket=self.bucketname,
+                          Key=s3key,
+                          Body=json.dumps(self.patches),
+                          ContentType="application/json")
+            
+    @parse_line()
+    def do_clean_projects(self):
+        os.system("rm -rf %s" % self.outdir)
+        self.init_subdirs()
+            
+    @parse_line()
     def do_reanimate_archives(self):
         s3=boto3.client("s3")
         prefix="archive/%s" % self.projectname
         for s3key in list_s3_keys(s3=s3,
                                   bucketname=self.bucketname,
                                   prefix=prefix):
-            stem=s3key.split("/")[-1]
+            stem=s3key.split("/")[-1].split(".")[0]
             print (stem)
             struct=json.loads(s3.get_object(Bucket=self.bucketname,
                                             Key=s3key)["Body"].read())
@@ -168,12 +186,7 @@ class SVBaseCli(cmd.Cmd):
             filename="%s/sunvox/%s.sunvox" % (self.outdir, stem)
             with open(filename, 'wb') as f:
                 project.write_to(f)
-            
-    @parse_line()
-    def do_clean_projects(self):
-        os.system("rm -rf %s" % self.outdir)
-        self.init_subdirs()
-        
+                    
     def do_exit(self, _):
         return self.do_quit(None)
 
