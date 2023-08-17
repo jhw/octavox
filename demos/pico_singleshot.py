@@ -1,7 +1,3 @@
-"""
-- dump each Pico bank as an individual sunvox project
-"""
-
 from octavox.modules.banks import SVBanks
 
 from octavox.modules.model import SVTrigs, SVSampleKey, SVNoteTrig
@@ -56,7 +52,7 @@ if __name__=="__main__":
             os.makedirs("tmp/pico-singleshot")
         for bankname, bank in banks.items():
             print ("INFO: generating %s" % bankname)
-            destfilename="tmp/pico-singleshot//%s.sunvox" % bankname
+            destfilename="tmp/pico-singleshot/%s.sunvox" % bankname
             generate(bankname=bankname,
                      bank=bank,
                      banks=banks,
