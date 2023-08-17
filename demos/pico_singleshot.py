@@ -8,7 +8,7 @@ from octavox.modules.model import SVTrigs, SVSampleKey, SVNoteTrig
 
 from octavox.modules.project import SVProject
 
-import os, yaml
+import boto3, os, yaml
 
 Modules=yaml.safe_load("""
 - name: Sampler
@@ -46,14 +46,20 @@ def generate(bankname,
         project.write_to(f)
 
 if __name__=="__main__":
-    banks=SVBanks("octavox/banks/pico")
-    if not os.path.exists("tmp/picobanks"):
-        os.makedirs("tmp/picobanks")
-    for bankname, bank in banks.items():
-        print (bankname)
-        destfilename="tmp/picobanks/%s.sunvox" % bankname
-        generate(bankname=bankname,
-                 bank=bank,
-                 banks=banks,
-                 destfilename=destfilename)
-
+    try:
+        bucketname=os.environ["OCTAVOX_ASSETS_BUCKET"]
+        if bucketname in ["", None]:
+            raise RuntimeError("OCTAVOX_ASSETS_BUCKET does not exist")
+        s3=boto3.client("s3")
+        banks=SVBanks.initialise(s3, bucketname)        
+        if not os.path.exists("tmp/pico-singleshot"):
+            os.makedirs("tmp/pico-singleshot")
+        for bankname, bank in banks.items():
+            print ("INFO: generating %s" % bankname)
+            destfilename="tmp/pico-singleshot//%s.sunvox" % bankname
+            generate(bankname=bankname,
+                     bank=bank,
+                     banks=banks,
+                     destfilename=destfilename)
+    except RuntimeError as error:
+        print ("Error: %s" % str(error))

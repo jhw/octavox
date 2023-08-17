@@ -190,7 +190,7 @@ if __name__=="__main__":
         if bucketname in ["", None]:
             raise RuntimeError("OCTAVOX_ASSETS_BUCKET does not exist")
         s3=boto3.client("s3")
-        banks=SVBanks(s3, bucketname)
+        banks=SVBanks.initialise(s3, bucketname)
         pools=SVPools({poolname:pool
                        for poolname, pool in banks.spawn_pools().items()
                        if len(pool.tags)==4}) # NB

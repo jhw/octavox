@@ -156,11 +156,12 @@ class SVBank:
 
 class SVBanks(dict):
 
-    def __init__(self, s3, bucketname, prefix="banks"):
-        dict.__init__(self)
+    @classmethod
+    def initialise(self, s3, bucketname, prefix="banks"):
         paginator=s3.get_paginator("list_objects_v2")
         pages=paginator.paginate(Bucket=bucketname,
                                  Prefix=prefix)
+        banks={}
         for page in pages:
             if "Contents" in page:
                 for obj in page["Contents"]:
@@ -169,8 +170,12 @@ class SVBanks(dict):
                     zf=zipfile.ZipFile(io.BytesIO(s3.get_object(Bucket=bucketname,
                                                                 Key=obj["Key"])["Body"].read()), "r")
                     bank=SVBank(name, zf)
-                    self[name]=bank
-        
+                    banks[name]=bank
+        return SVBanks(banks)
+
+    def __init__(self, item={}):
+        dict.__init__(self, item)
+                    
     def lookup(self, abbrev):
         matches=[]
         for key in self:

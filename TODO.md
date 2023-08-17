@@ -1,8 +1,14 @@
 ### short [01-s3-banks]
 
-- local banks cache 
-
-- rename tmp/picobanks as tmp/banks/pico
+- pass cachedir to bank creation
+- makedirs cachedir
+- list cached banks
+- iterate through S3 banks
+- if bankname not in cache, load from S3 and save to cache
+- else load from cache
+- archive project to put to s3
+- reanimate projects to list and load from S3
+- add some kind of string matching to reanimate archives 
 
 ### medium
 
@@ -119,6 +125,8 @@
 
 ### done
 
+- convert bank creation to classmethod 
+- rename tmp/picobanks as tmp/banks/pico
 - remove octavox/banks
 - banks initialisation to load from s3
 - dump_pico_banks to push to s3
