@@ -2,25 +2,6 @@
 
 ### medium
 
-- mutate and arrange actions
-
-### octavox demos
-
-- replace oh/ch with some kind of movement
-- euclid beats
-- vorhosbn noise hats
-- t60 collapse clustering
-- city dreams bass + acid banger 303
-- breakbreaks
-
-### pydub demos
-
-- granular samples -> chord slice concatenation
-- fadeouts
-- get/change pitch
-- timestretching
-- detecting crossover points
-
 ### banks
 
 - dataline juno
@@ -114,6 +95,8 @@
 
 ### done
 
+- move fetch_pico into scripts/banks
+- refactor id as note
 - refactor delay unit so scales with bpm
 - chord support
 - archive project to put to json struct to s3

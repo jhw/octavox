@@ -64,7 +64,7 @@ class SVNoteTrig:
     def __init__(self, mod, i,
                  chord=None,
                  samplekey=None,
-                 id=None,
+                 note=None,
                  vel=1):
         self.mod=mod
         self.i=i
@@ -72,7 +72,7 @@ class SVNoteTrig:
         if samplekey:
             samplekey.add_tag(mod) # NB
         self.samplekey=samplekey
-        self.id=id
+        self.note=note
         self.vel=vel        
         
     @property
@@ -81,8 +81,8 @@ class SVNoteTrig:
             return [("%s/%i" % (self,mod, i),
                      SVNoteTrig(mod=self.mod,
                                 i=self.i,
-                                id=id))
-                    for i, id in enumerate(self.chord)]
+                                note=note))
+                    for i, note in enumerate(self.chord)]
         else:
             return [(self.mod, self)]
         
@@ -93,7 +93,7 @@ class SVNoteTrig:
             raise RuntimeError("mod %s not found" % self.mod)
         mod=modules[self.mod]
         modid=1+mod.index # NB 1+
-        note=1+(mod.lookup(self.samplekey) if self.samplekey else self.id)
+        note=1+(mod.lookup(self.samplekey) if self.samplekey else self.note)
         vel=max(1, int(self.vel*self.Volume))
         from rv.note import Note
         return Note(module=modid,
