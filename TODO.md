@@ -1,5 +1,13 @@
 ### short
 
+- add search_replace utils
+- rename samplekey instances as sample
+- rename mutate_seed as mutate_patch
+- add cli enum support
+- add lo/mid/hi options to mutate_patch
+- custom pool class which can cross- lookup oh/ch
+  - remove pool.tags and slicebeats/cli.py check
+
 ### medium
 
 ### banks
