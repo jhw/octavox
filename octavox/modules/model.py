@@ -57,6 +57,8 @@ class SVSampleKey(dict):
 
 class SVNoteTrig:
 
+    Volume=128
+    
     def __init__(self, mod, i, samplekey=None, id=None, vel=1):
         self.mod=mod
         self.i=i
@@ -67,42 +69,42 @@ class SVNoteTrig:
         self.vel=vel        
         
     @property
-    def track_key(self):
-        return self.mod
+    def expanded(self):
+        return [(self.mod, self)]
         
     def render(self,
                modules,
-               controllers,
-               volume=128):
+               *args):
         if self.mod not in modules:
             raise RuntimeError("mod %s not found" % self.mod)
         mod=modules[self.mod]
-        trig=1+(mod.lookup(self.samplekey) if self.samplekey else self.id)
         modid=1+mod.index # NB 1+
-        vel=max(1, int(self.vel*volume))
+        note=1+(mod.lookup(self.samplekey) if self.samplekey else self.id)
+        vel=max(1, int(self.vel*self.Volume))
         from rv.note import Note
-        return Note(note=trig,
-                    vel=vel,
-                    module=modid)
+        return Note(module=modid,
+                    note=note,
+                    vel=vel)
 
 class SVFXTrig:
-    
+
+    CtrlMult=256
+
     def __init__(self, mod, ctrl, value, i):
         self.mod=mod
         self.ctrl=ctrl
         self.value=value
         self.i=i
-
+        
     @property
-    def track_key(self):
-        return "%s/%s" % (self.mod,
-                          self.ctrl)
+    def expanded(self):
+        return [("%s/%s" % (self.mod,
+                            self.ctrl),
+                 self)]
         
     def render(self,
                modules,
-               controllers,
-               ctrlmult=256,
-               maxvalue=256*128):
+               controllers):
         if (self.mod not in modules or
             self.mod not in controllers):
             raise RuntimeError("mod %s not found" % self.mod)
@@ -111,7 +113,7 @@ class SVFXTrig:
         if self.ctrl not in controller:
             raise RuntimeError("ctrl %s not found in mod %s" % (self.ctrl,
                                                                 self.mod))
-        ctrlid=ctrlmult*controller[self.ctrl]
+        ctrlid=self.CtrlMult*controller[self.ctrl]
         from rv.note import Note
         return Note(module=modid,
                     ctl=ctrlid,
@@ -126,10 +128,10 @@ class SVTrigs(list):
     @property
     def tracks(self):
         tracks=SVTracks(self.nbeats)
-        for trig in self:
-            key=trig.track_key
-            tracks.setdefault(key, [])
-            tracks[key].append(trig)
+        for _trig in self:
+            for key, trig in _trig.expanded:
+                tracks.setdefault(key, [])
+                tracks[key].append(trig)
         return tracks
 
 """
