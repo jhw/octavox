@@ -53,15 +53,22 @@ class SVSampleKey(dict):
 
 """
 - mod is automatically added to samplekey tags so that samples can be properly allocated to samplers at project rendering time
+- chord is expanded into a series of note trigs with different track keys
+- chords do not support samplekey
 """
 
 class SVNoteTrig:
 
     Volume=128
     
-    def __init__(self, mod, i, samplekey=None, id=None, vel=1):
+    def __init__(self, mod, i,
+                 chord=None,
+                 samplekey=None,
+                 id=None,
+                 vel=1):
         self.mod=mod
         self.i=i
+        self.chord=chord
         if samplekey:
             samplekey.add_tag(mod) # NB
         self.samplekey=samplekey
@@ -70,7 +77,14 @@ class SVNoteTrig:
         
     @property
     def expanded(self):
-        return [(self.mod, self)]
+        if self.chord:
+            return [("%s/%i" % (self,mod, i),
+                     SVNoteTrig(mod=self.mod,
+                                i=self.i,
+                                id=id))
+                    for i, id in enumerate(self.chord)]
+        else:
+            return [(self.mod, self)]
         
     def render(self,
                modules,

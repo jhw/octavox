@@ -1,13 +1,13 @@
 ### short
 
+- refactor delay unit so scales with bpm
+
 ### medium
 
 - mutate and arrange actions
-- chord support
 
 ### octavox demos
 
-- check delay scales as bpm changes
 - replace oh/ch with some kind of movement
 - euclid beats
 - vorhosbn noise hats
@@ -116,6 +116,7 @@
 
 ### done
 
+- chord support
 - archive project to put to json struct to s3
 - delete local archives
 - reanimate projects to list and load from S3
