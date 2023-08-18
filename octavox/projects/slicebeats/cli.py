@@ -160,7 +160,8 @@ Modules=yaml.safe_load("""
   defaults:
     dry: 256
     wet: 256
-    delay: 192
+    delay: 36
+    delay_unit: 3 # tick
 - name: Distortion
   class: rv.modules.distortion.Distortion
   defaults:

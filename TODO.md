@@ -1,7 +1,5 @@
 ### short
 
-- refactor delay unit so scales with bpm
-
 ### medium
 
 - mutate and arrange actions
@@ -116,6 +114,7 @@
 
 ### done
 
+- refactor delay unit so scales with bpm
 - chord support
 - archive project to put to json struct to s3
 - delete local archives

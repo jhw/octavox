@@ -125,6 +125,40 @@ class SVBanks(dict):
             banks[bankname]=bank
         return SVBanks(banks)
 
+    """
+    - START TEMP CODE
+    - because Gadlys wifi terrible
+    """
+    
+    @classmethod
+    def initialise(self,
+                   s3,
+                   bucketname,
+                   prefix="banks",
+                   cachedir="tmp/banks"):
+        def list_existing(cachedir):
+            existing=[]
+            for item in os.listdir(cachedir):
+                if item.endswith(".zip"):
+                    bankname=item.split(".")[0]
+                    existing.append(bankname)
+            return sorted(existing)
+        if not os.path.exists(cachedir):
+            os.makedirs(cachedir)
+        existing=list_existing(cachedir)
+        banks={}
+        for bankname in existing:
+            cachefilename="%s/%s.zip" % (cachedir, bankname)
+            zf=zipfile.ZipFile(cachefilename)
+            bank=SVBank(bankname, zf)
+            banks[bankname]=bank
+        return SVBanks(banks)
+
+    """
+    - END TEMP CODE
+    - because Gadlys wifi terrible
+    """
+
     def __init__(self, item={}):
         dict.__init__(self, item)
                     
