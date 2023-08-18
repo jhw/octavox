@@ -1,3 +1,18 @@
+### demos 18/08/23
+
+- euclid beats
+- analog generator 303 bass
+- city dreams bass
+- sample bass
+- slide bass
+- FM bass
+- kicker bass
+- vorshosbn hats
+- synth chords
+- granular sample chords
+- backbeat samples
+- compressor 
+
 ### s3 banks 15/08/23
 
 - dump_pico_banks to push to s3

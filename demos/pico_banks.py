@@ -48,11 +48,11 @@ if __name__=="__main__":
             raise RuntimeError("OCTAVOX_ASSETS_BUCKET does not exist")
         s3=boto3.client("s3")
         banks=SVBanks.initialise(s3, bucketname)        
-        if not os.path.exists("tmp/pico-singleshot"):
-            os.makedirs("tmp/pico-singleshot")
+        if not os.path.exists("tmp/demos/pico"):
+            os.makedirs("tmp/demos/pico")
         for bankname, bank in banks.items():
             print ("INFO: generating %s" % bankname)
-            destfilename="tmp/pico-singleshot/%s.sunvox" % bankname
+            destfilename="tmp/demos/pico/%s.sunvox" % bankname
             generate(bankname=bankname,
                      bank=bank,
                      banks=banks,
