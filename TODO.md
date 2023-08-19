@@ -1,9 +1,10 @@
 ### short [01-analog-303]
 
-- freq/release scaling (16^4?)
-- distortion/echo/reverb
-- volume 
-- vitling notes
+- note
+- volume
+- filter attack
+- osc2, duty cycle
+- heartbeat
 
 ### medium
 
@@ -104,6 +105,8 @@
 
 ### done
 
+- distortion/echo/reverb
+- freq/release scaling (16^4?)
 - project checking decorator
 - test pattern mutation [hi]
 - cli decorator to protect functions which use s3
