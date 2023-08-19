@@ -87,7 +87,7 @@ class SlicebeatsCli(SVBankCli):
                          "type": "int"},
                         {"name": "level",
                          "type": "enum",
-                         "options": "lo|mid|hi".split("|")}])
+                         "options": "lo|hi".split("|")}])
     @render_patches(prefix="mutate")
     def do_mutate_patch(self, i, level, machines=Machines):
         def init_styles(machines):
@@ -107,7 +107,7 @@ class SlicebeatsCli(SVBankCli):
                     for slice in machine["slices"]:
                         if random.random() < self.env["dseed"]:
                             slice["seed"]=int(1e8*random.random())
-                        if level in "mid|hi".split("|"):
+                        if level=="hi":
                             slice["style"]=random.choice(styles[machine["name"]])
                 else:
                     if random.random() < self.env["dseed"]:

@@ -1,9 +1,6 @@
 ### short
 
-- revert mutate to lo/hi
 - replace style mutation with pattern mutation
-
-- add search_replace utils
 
 - function to check if online
 - cli main to check if online
@@ -106,6 +103,8 @@
 
 ### done
 
+- add search_replace utils
+- revert mutate to lo/hi
 - add cli enum support
 - add lo/mid/hi options to mutate_patch
 - add lo/mid/hi options to mutate_patch
