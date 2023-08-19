@@ -89,6 +89,16 @@ class SVBank:
                         pool.add(samplekey)
         return pool
 
+def list_cached(cachedir):
+    if not os.path.exists(cachedir):
+            os.makedirs(cachedir)
+    cached=[]
+    for item in os.listdir(cachedir):
+        if item.endswith(".zip"):
+            bankname=item.split(".")[0]
+            cached.append(bankname)
+    return sorted(cached)
+
 class SVBanks(dict):
 
     @classmethod
@@ -97,22 +107,13 @@ class SVBanks(dict):
                    bucketname,
                    prefix="banks",
                    cachedir="tmp/banks"):
-        def list_existing(cachedir):
-            existing=[]
-            for item in os.listdir(cachedir):
-                if item.endswith(".zip"):
-                    bankname=item.split(".")[0]
-                    existing.append(bankname)
-            return sorted(existing)
-        if not os.path.exists(cachedir):
-            os.makedirs(cachedir)
-        s3keys, existing = (list_s3_keys(s3, bucketname, prefix),
-                            list_existing(cachedir))
+        s3keys, cached = (list_s3_keys(s3, bucketname, prefix),
+                          list_cached(cachedir))
         banks={}
         for s3key in s3keys:
             bankname=s3key.split("/")[-1].split(".")[0]
             cachefilename="%s/%s.zip" % (cachedir, bankname)
-            if bankname not in existing:
+            if bankname not in cached:
                 print ("INFO: fetching %s" % s3key)
                 buf=io.BytesIO(s3.get_object(Bucket=bucketname,
                                              Key=s3key)["Body"].read())
@@ -125,39 +126,20 @@ class SVBanks(dict):
             banks[bankname]=bank
         return SVBanks(banks)
 
-    """
-    - START TEMP CODE
-    - because Gadlys wifi terrible
-    """
-    
     @classmethod
-    def initialise(self,
-                   s3,
-                   bucketname,
-                   prefix="banks",
-                   cachedir="tmp/banks"):
-        def list_existing(cachedir):
-            existing=[]
-            for item in os.listdir(cachedir):
-                if item.endswith(".zip"):
-                    bankname=item.split(".")[0]
-                    existing.append(bankname)
-            return sorted(existing)
-        if not os.path.exists(cachedir):
-            os.makedirs(cachedir)
-        existing=list_existing(cachedir)
+    def initialise_offline(self,
+                           s3,
+                           bucketname,
+                           prefix="banks",
+                           cachedir="tmp/banks"):
+        cached=list_cached(cachedir)
         banks={}
-        for bankname in existing:
+        for bankname in cached:
             cachefilename="%s/%s.zip" % (cachedir, bankname)
             zf=zipfile.ZipFile(cachefilename)
             bank=SVBank(bankname, zf)
             banks[bankname]=bank
         return SVBanks(banks)
-
-    """
-    - END TEMP CODE
-    - because Gadlys wifi terrible
-    """
 
     def __init__(self, item={}):
         dict.__init__(self, item)

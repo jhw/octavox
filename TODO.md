@@ -1,5 +1,7 @@
 ### short
 
+- s3 state variable
+
 - add search_replace utils
 - rename samplekey instances as sample
 - rename mutate_seed as mutate_patch
@@ -103,6 +105,7 @@
 
 ### done
 
+- add banks online/offline
 - move fetch_pico into scripts/banks
 - refactor id as note
 - refactor delay unit so scales with bpm
