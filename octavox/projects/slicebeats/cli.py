@@ -79,6 +79,11 @@ class SlicebeatsCli(SVBankCli):
             patches.append(patch)
         return patches
 
+
+    """
+    - could add style or density mutation
+    """
+    
     @parse_line(config=[{"name": "i",
                          "type": "int"},
                         {"name": "level",
