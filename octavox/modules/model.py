@@ -52,9 +52,9 @@ class SVSampleKey(dict):
         return " ".join(tokens)
 
 """
-- mod is automatically added to samplekey tags so that samples can be properly allocated to samplers at project rendering time
+- mod is automatically added to sample tags so that samples can be properly allocated to samplers at project rendering time
 - chord is expanded into a series of note trigs with different track keys
-- chords do not support samplekey
+- chords do not support sample
 """
 
 class SVNoteTrig:
@@ -63,15 +63,15 @@ class SVNoteTrig:
     
     def __init__(self, mod, i,
                  chord=None,
-                 samplekey=None,
+                 sample=None,
                  note=None,
                  vel=1):
         self.mod=mod
         self.i=i
         self.chord=chord
-        if samplekey:
-            samplekey.add_tag(mod) # NB
-        self.samplekey=samplekey
+        if sample:
+            sample.add_tag(mod) # NB
+        self.sample=sample
         self.note=note
         self.vel=vel        
         
@@ -93,7 +93,7 @@ class SVNoteTrig:
             raise RuntimeError("mod %s not found" % self.mod)
         mod=modules[self.mod]
         modid=1+mod.index # NB 1+
-        note=1+(mod.lookup(self.samplekey) if self.samplekey else self.note)
+        note=1+(mod.lookup(self.sample) if self.sample else self.note)
         vel=max(1, int(self.vel*self.Volume))
         from rv.note import Note
         return Note(module=modid,
@@ -161,8 +161,8 @@ class SVTracks(dict):
     def filter_pool(self, keys):
         for track in self.values():
             for trig in track:
-                if (hasattr(trig, "samplekey") and trig.samplekey):
-                    keys.add(trig.samplekey)
+                if (hasattr(trig, "sample") and trig.sample):
+                    keys.add(trig.sample)
 
     @property
     def grid(self):

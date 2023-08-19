@@ -127,13 +127,13 @@ class SlicebeatsCli(SVBankCli):
                 if i in trigs[tag]:
                     trig=trigs[tag][i]
                     if isinstance(trig, SVNoteTrig):
-                        if trig.samplekey:
-                            print ("%i\t%s" % (i, trig.samplekey.full_key))
+                        if trig.sample:
+                            print ("%i\t%s" % (i, trig.sample.full_key))
 
     @parse_line()
     def do_list_fixes(self):
-        for samplekey in self.fixes.values():
-            print ("- %s" % samplekey)
+        for sample in self.fixes.values():
+            print ("- %s" % sample)
 
     @parse_line(config=[{"name": "tag",
                          "type": "str"},
@@ -145,10 +145,10 @@ class SlicebeatsCli(SVBankCli):
         bankname=self.banks.lookup(bankstem)
         bank=self.banks[bankname]
         wavfile=bank.lookup(wavstem)
-        samplekey=SVSampleKey({"tags": [tag],
+        sample=SVSampleKey({"tags": [tag],
                                "bank": bankname,
                                "file": wavfile})
-        self.fixes.add(samplekey)
+        self.fixes.add(sample)
 
     @parse_line()
     def do_clean_fixes(self):

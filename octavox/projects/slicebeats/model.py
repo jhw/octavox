@@ -56,14 +56,14 @@ class Samples(list):
         if tag not in mapping:
             raise RuntimeError("tag %s not found in mapping" % tag)
         for childtag in mapping[tag]:
-            filtered=fixes.filter(childtag).samplekeys
+            filtered=fixes.filter(childtag).samples
             if i==0 and filtered!=[]:
                 values=filtered
             else:
-                filtered=pool.filter(childtag).samplekeys
-                values=filtered if filtered!=[] else pool.samplekeys
+                filtered=pool.filter(childtag).samples
+                values=filtered if filtered!=[] else pool.samples
             sample=random.choice(values).clone()
-            sample["tags"]=[childtag] # NB override tags as may come from pool.samplekeys
+            sample["tags"]=[childtag] # NB override tags as may come from pool.samples
             samples.append(sample)
         return Samples(samples)
             
@@ -77,9 +77,9 @@ class Samples(list):
     @property
     def tagged_map(self):
         samples={}
-        for samplekey in self:
-            for tag in samplekey["tags"]:
-                samples[tag]=samplekey
+        for sample in self:
+            for tag in sample["tags"]:
+                samples[tag]=sample
         return samples
 
 class Slice(dict):
@@ -182,11 +182,11 @@ class Sequencer(dict):
                 v=fn(q, i, density)
                 if v!=None: # explicit because could return zero
                     tag, volume = v
-                    samplekey=samples[tag].clone()
+                    sample=samples[tag].clone()
                     yield SVNoteTrig(mod=self.mod,
                                      vel=volume,
                                      i=i+offset,
-                                     samplekey=samplekey)
+                                     sample=sample)
             offset+=nsamplebeats
 
     """

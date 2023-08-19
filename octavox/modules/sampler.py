@@ -55,26 +55,26 @@ class SVSampler(SVBaseSampler):
         self.segments={}
         notes=list(RVNOTE)
         root=notes.index(RVNOTE.C5)
-        for i, samplekey in enumerate(self.pool.values()):
+        for i, sample in enumerate(self.pool.values()):
             self.note_samples[notes[i]]=i
-            src=banks.get_wavfile(samplekey)
-            # buf=self.slice_sample(samplekey, src)
-            buf=self.slice_sample(samplekey, src) if "params" in samplekey else src
+            src=banks.get_wavfile(sample)
+            # buf=self.slice_sample(sample, src)
+            buf=self.slice_sample(sample, src) if "params" in sample else src
             self.load_sample(buf, i)
             sample=self.samples[i]
             sample.relative_note+=(root-i)
 
     def init_segment(fn):
-        def wrapped(self, samplekey, src):
-            segkey=samplekey.base_key
+        def wrapped(self, sample, src):
+            segkey=sample.base_key
             if segkey not in self.segments:
                 self.segments[segkey]=AudioSegment.from_file(src)
-            return fn(self, samplekey, src)
+            return fn(self, sample, src)
         return wrapped
 
-    def slice_range(self, samplekey, segment):
-        if "params" in samplekey:
-            params=samplekey["params"]
+    def slice_range(self, sample, segment):
+        if "params" in sample:
+            params=sample["params"]
             i, n = params["i"], params["n"]
             if params["action"]=="cutoff":
                 return (0, int(len(segment)*(i+1)/n))
@@ -87,15 +87,15 @@ class SVSampler(SVBaseSampler):
             return (0, len(segment))
     
     @init_segment
-    def slice_sample(self, samplekey, src):
-        segment=self.segments[samplekey.base_key]
-        start, end = self.slice_range(samplekey, segment)
+    def slice_sample(self, sample, src):
+        segment=self.segments[sample.base_key]
+        start, end = self.slice_range(sample, segment)
         buf=io.BytesIO()
-        segment[start:end].export(buf, format=samplekey.ext)
+        segment[start:end].export(buf, format=sample.ext)
         return buf
                     
-    def lookup(self, samplekey):
-        return list(self.pool.keys()).index(samplekey.full_key)
+    def lookup(self, sample):
+        return list(self.pool.keys()).index(sample.full_key)
         
 if __name__=="__main__":
     pass

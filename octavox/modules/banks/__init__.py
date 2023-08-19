@@ -69,10 +69,10 @@ class SVBank:
         pool, wavfiles = SVPool(), self.wavfiles
         for wavfile in wavfiles:
             for tag in tags:
-                samplekey=SVSampleKey({"tags": [tag],
+                sample=SVSampleKey({"tags": [tag],
                                        "bank": self.name,
                                        "file": wavfile})
-                pool.add(samplekey)
+                pool.add(sample)
         return pool
     
     def spawn_curated(self,
@@ -83,10 +83,10 @@ class SVBank:
             for tag in tags:
                 for frag in fragments[tag]:
                     if re.search(frag, wavfile, re.I):
-                        samplekey=SVSampleKey({"tags": [tag],
+                        sample=SVSampleKey({"tags": [tag],
                                                "bank": self.name,
                                                "file": wavfile})
-                        pool.add(samplekey)
+                        pool.add(sample)
         return pool
 
 def list_cached(cachedir):
@@ -174,8 +174,8 @@ class SVBanks(dict):
             pools[key]=poolsfn()
         return pools
 
-    def get_wavfile(self, samplekey):
-        return self[samplekey["bank"]].zipfile.open(samplekey["file"], 'r')
+    def get_wavfile(self, sample):
+        return self[sample["bank"]].zipfile.open(sample["file"], 'r')
     
 if __name__=="__main__":
     banks=SVBanks("octavox/banks/pico")

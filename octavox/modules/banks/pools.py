@@ -10,19 +10,19 @@ class SVPool(OrderedDict):
     def clone(self):
         return SVPool(self)
 
-    def add(self, samplekey):
-        self[samplekey.full_key]=samplekey
+    def add(self, sample):
+        self[sample.full_key]=sample
     
     def filter(self, tag):
         pool=SVPool()
-        for samplekey in self.values():
-            for sktag in samplekey["tags"]:
+        for sample in self.values():
+            for sktag in sample["tags"]:
                 if tag==sktag:
-                    pool.add(samplekey)
+                    pool.add(sample)
         return pool
 
     @property
-    def samplekeys(self):
+    def samples(self):
         return list(self.values())
 
 class SVPools(dict):
