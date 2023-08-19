@@ -7,7 +7,7 @@
 - slide bass
 - FM bass
 - kicker bass
-- vorshosbn hats
+- vordshosbn hats
 - synth chords
 - granular sample chords
 - backbeat samples
