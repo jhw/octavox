@@ -1,9 +1,15 @@
 ### short
 
+- mutate_patch hi pattern refactoring option
+- density mutation
+
+- function to check if online
+- cli main to check if online
+- cli decorator to protect functions which use s3
+
 - add search_replace utils
+
 - rename samplekey instances as sample
-- add cli enum support
-- add lo/mid/hi options to mutate_patch
 
 ### medium
 
@@ -100,6 +106,9 @@
 
 ### done
 
+- add cli enum support
+- add lo/mid/hi options to mutate_patch
+- add lo/mid/hi options to mutate_patch
 - rename mutate_seed as mutate_patch
 - custom pool class which can cross- lookup oh/ch
   - remove pool.tags and slicebeats/cli.py check

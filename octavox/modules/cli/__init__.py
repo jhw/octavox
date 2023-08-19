@@ -27,7 +27,6 @@ def random_filename(prefix):
                             random.choice(Adjectives),
                             random.choice(Nouns))
 
-
 def render_patches(prefix):
     def decorator(fn):
         def dump_json(self):

@@ -9,6 +9,9 @@ def matches_int(value):
 def matches_array(value):
     return re.search("^(\\d+(x\\d+)?\\|)*\\d+(x\\d+)?$", value)!=None
 
+def matches_enum(value, options):
+    return value in options
+
 def matches_str(value):
     return True
 
@@ -28,6 +31,9 @@ def parse_array(line):
             values.append(int(chunk))
     return values
 
+def parse_enum(value):
+    return value
+
 def parse_str(value):
     return value
 
@@ -42,9 +48,11 @@ def parse_line(config=[]):
                 kwargs={}
                 for item, argval in zip(config, args[:len(config)]):
                     matcherfn=eval("matches_%s" % item["type"])
-                    if not matcherfn(argval):
-                        raise RuntimeError("%s must be a(n) %s" % (item["name"],
-                                                                   item["type"]))
+                    matcherargs=[argval]
+                    if item["type"]=="enum":
+                        matcherargs.append(item["options"])
+                    if not matcherfn(*matcherargs):
+                        raise RuntimeError("%s value is invalid" % item["name"])
                     parserfn=eval("parse_%s" % item["type"])
                     kwargs[item["name"]]=parserfn(argval)
                 return fn(self, **kwargs)

@@ -53,7 +53,6 @@ Machines=yaml.safe_load("""
     multiplier: 32768
 """)
 
-
 class SlicebeatsCli(SVBankCli):
 
     intro="Welcome to Slicebeats :)"
@@ -78,10 +77,26 @@ class SlicebeatsCli(SVBankCli):
             patches.append(patch)
         return patches
 
+    """
+    - Sequencer params aren't stored in state as they are used at initialisation time not runtime (unlike Modulator)
+    - hence have to be looked up here
+    - but this could be replaced with a simple local Machines class
+    """
+    
     @parse_line(config=[{"name": "i",
-                         "type": "int"}])
+                         "type": "int"},
+                        {"name": "level",
+                         "type": "enum",
+                         "options": "lo|mid|hi".split("|")}])
     @render_patches(prefix="mutate")
-    def do_mutate_patch(self, i):
+    def do_mutate_patch(self, i, level, machines=Machines):
+        def init_styles(machines):
+            styles={}
+            for machine in machines:
+                if "styles" in machine["params"]:
+                    styles[machine["name"]]=machine["params"]["styles"]
+            return styles
+        styles=init_styles(machines)
         root=self.patches[i % len(self.patches)]
         patches=[root]
         npatches=self.env["nblocks"]*self.env["blocksize"]
@@ -92,6 +107,8 @@ class SlicebeatsCli(SVBankCli):
                     for slice in machine["slices"]:
                         if random.random() < self.env["dseed"]:
                             slice["seed"]=int(1e8*random.random())
+                        if level in "mid|hi".split("|"):
+                            slice["style"]=random.choice(styles[machine["name"]])
                 else:
                     if random.random() < self.env["dseed"]:
                         machine["seed"]=int(1e8*random.random())
