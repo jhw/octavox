@@ -1,7 +1,5 @@
 ### short
 
-- rename samplekey instances as sample
-
 - replace style mutation with pattern mutation
 
 ### medium
@@ -101,6 +99,7 @@
 
 ### done
 
+- rename samplekey instances as sample
 - function to check if online
 - cli main to check if online
 - add search_replace utils

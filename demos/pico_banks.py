@@ -1,6 +1,6 @@
 from octavox.modules.banks import SVBanks
 
-from octavox.modules.model import SVTrigs, SVSampleKey, SVNoteTrig
+from octavox.modules.model import SVTrigs, SVSample, SVNoteTrig
 
 from octavox.modules.project import SVProject
 
@@ -27,10 +27,10 @@ def generate(bankname,
     nbeats=len(wavfiles)
     trigs=SVTrigs(nbeats=nbeats)
     for i, wavfile in enumerate(wavfiles):
-        samplekey=SVSampleKey({"bank": bankname,
+        sample=SVSample({"bank": bankname,
                                "file": wavfile})
         note=SVNoteTrig(mod="Sampler",
-                        samplekey=samplekey,
+                        sample=sample,
                         i=i)
         trigs.append(note)
     project=SVProject().render(patches=[trigs.tracks],

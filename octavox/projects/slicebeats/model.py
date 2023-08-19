@@ -1,4 +1,4 @@
-from octavox.modules.model import SVSampleKey, SVNoteTrig, SVFXTrig
+from octavox.modules.model import SVSample, SVNoteTrig, SVFXTrig
 
 from octavox.projects import Q
 
@@ -68,7 +68,7 @@ class Samples(list):
         return Samples(samples)
             
     def __init__(self, items=[]):
-        list.__init__(self, [SVSampleKey(item)
+        list.__init__(self, [SVSample(item)
                              for item in items])
 
     def clone(self):

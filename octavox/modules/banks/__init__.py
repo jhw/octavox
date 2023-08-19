@@ -2,7 +2,7 @@ from octavox.modules import is_abbrev, list_s3_keys, has_internet
 
 from octavox.modules.banks.pools import SVPool, SVPools
 
-from octavox.modules.model import SVSampleKey
+from octavox.modules.model import SVSample
 
 import io, os, re, yaml, zipfile
 
@@ -69,7 +69,7 @@ class SVBank:
         pool, wavfiles = SVPool(), self.wavfiles
         for wavfile in wavfiles:
             for tag in tags:
-                sample=SVSampleKey({"tags": [tag],
+                sample=SVSample({"tags": [tag],
                                        "bank": self.name,
                                        "file": wavfile})
                 pool.add(sample)
@@ -83,7 +83,7 @@ class SVBank:
             for tag in tags:
                 for frag in fragments[tag]:
                     if re.search(frag, wavfile, re.I):
-                        sample=SVSampleKey({"tags": [tag],
+                        sample=SVSample({"tags": [tag],
                                                "bank": self.name,
                                                "file": wavfile})
                         pool.add(sample)

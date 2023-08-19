@@ -6,7 +6,7 @@ from octavox.modules.cli import SVBankCli, render_patches
 
 from octavox.modules.cli.parse import parse_line
 
-from octavox.modules.model import SVSampleKey, SVNoteTrig, SVPatch
+from octavox.modules.model import SVSample, SVNoteTrig, SVPatch
 
 import boto3, json, os, random, yaml
 
@@ -145,7 +145,7 @@ class SlicebeatsCli(SVBankCli):
         bankname=self.banks.lookup(bankstem)
         bank=self.banks[bankname]
         wavfile=bank.lookup(wavstem)
-        sample=SVSampleKey({"tags": [tag],
+        sample=SVSample({"tags": [tag],
                                "bank": bankname,
                                "file": wavfile})
         self.fixes.add(sample)

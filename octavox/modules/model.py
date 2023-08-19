@@ -3,11 +3,11 @@ from octavox.modules import load_class
 import json
 
 """
-- SVSampleKey must be dict as typically needs to be rendered to JSON as part of custom project Samples class
-- SVSampleKey is lenient with respect to passing of `params` and `tags` args; note that key functions check for their existence and non- emptiness
+- SVSample must be dict as typically needs to be rendered to JSON as part of custom project Samples class
+- SVSample is lenient with respect to passing of `params` and `tags` args; note that key functions check for their existence and non- emptiness
 """
 
-class SVSampleKey(dict):
+class SVSample(dict):
 
     def __init__(self, item={}):
         dict.__init__(self, item)
@@ -19,7 +19,7 @@ class SVSampleKey(dict):
             kwargs["params"]=dict(self["params"])
         if "tags" in self:
             kwargs["tags"]=list(self["tags"])
-        return SVSampleKey(kwargs)
+        return SVSample(kwargs)
 
     def add_tag(self, tag):
         if "tags" not in self:
