@@ -128,8 +128,8 @@ class SVProject:
                patches,
                modconfig,
                links,
-               banks,
                bpm,
+               banks=None,
                volume=Volume):
         proj=RVProject()
         proj.initial_bpm=bpm

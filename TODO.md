@@ -1,10 +1,13 @@
-### short
+### short [01-analog-303]
 
-- project checking decorator
-
-- arrange method
+- freq/release scaling (16^4?)
+- distortion/echo/reverb
+- volume 
+- vitling notes
 
 ### medium
+
+- arrange method
 
 - mutes as fixes
 
@@ -101,6 +104,7 @@
 
 ### done
 
+- project checking decorator
 - test pattern mutation [hi]
 - cli decorator to protect functions which use s3
 - replace style mutation with pattern mutation
