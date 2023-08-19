@@ -1,4 +1,4 @@
-from octavox.modules import is_abbrev, list_s3_keys
+from octavox.modules import is_abbrev, list_s3_keys, has_internet
 
 from octavox.modules.banks import SVPool
 
@@ -26,6 +26,13 @@ def random_filename(prefix):
                             prefix,
                             random.choice(Adjectives),
                             random.choice(Nouns))
+
+def assert_internet(fn):
+    def wrapped(self, *args, **kwargs):
+        if not has_internet():
+            raise RuntimeError("not connected")
+        return fn(self, *args, **kwargs)
+    return wrapped
 
 def render_patches(prefix):
     def decorator(fn):
@@ -145,6 +152,7 @@ class SVBaseCli(cmd.Cmd):
             print ("WARNING: multiple matches")
 
     @parse_line()
+    @assert_internet
     def do_archive_project(self):
         if not self.patches:
             print ("ERROR: no patches found")
@@ -160,8 +168,9 @@ class SVBaseCli(cmd.Cmd):
     def do_clean_projects(self):
         os.system("rm -rf %s" % self.outdir)
         self.init_subdirs()
-            
+
     @parse_line()
+    @assert_internet
     def do_reanimate_archives(self):
         prefix="archive/%s" % self.projectname
         for s3key in list_s3_keys(s3=self.s3,

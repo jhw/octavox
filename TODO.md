@@ -1,12 +1,9 @@
 ### short
 
-- test pattern mutation [hi]
-
-- cli decorator to protect functions which use s3
+- arrange method
 
 ### medium
 
-- arrange method
 - mutes as fixes
 
 ### banks
@@ -102,6 +99,8 @@
 
 ### done
 
+- test pattern mutation [hi]
+- cli decorator to protect functions which use s3
 - replace style mutation with pattern mutation
 - rename samplekey instances as sample
 - function to check if online
