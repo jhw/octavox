@@ -26,14 +26,7 @@ def random_filename(prefix):
                             prefix,
                             random.choice(Adjectives),
                             random.choice(Nouns))
-
-def assert_internet(fn):
-    def wrapped(self, *args, **kwargs):
-        if not has_internet():
-            raise RuntimeError("not connected")
-        return fn(self, *args, **kwargs)
-    return wrapped
-
+    
 def render_patches(prefix):
     def decorator(fn):
         def dump_json(self):
@@ -61,6 +54,20 @@ def render_patches(prefix):
             dump_sunvox(self)
         return wrapped
     return decorator
+
+def assert_internet(fn):
+    def wrapped(self, *args, **kwargs):
+        if not has_internet():
+            raise RuntimeError("not connected")
+        return fn(self, *args, **kwargs)
+    return wrapped
+
+def assert_project(fn):
+    def wrapped(self, *args, **kwargs):
+        if not self.patches:
+            raise RuntimeError("no patches found")
+        return fn(self, *args, **kwargs)
+    return wrapped
 
 class SVEnvironment(dict):
 
@@ -153,16 +160,14 @@ class SVBaseCli(cmd.Cmd):
 
     @parse_line()
     @assert_internet
+    @assert_project
     def do_archive_project(self):
-        if not self.patches:
-            print ("ERROR: no patches found")
-        else:
-            s3key="archive/%s/%s.json" % (self.projectname,
-                                          self.filename)
-            self.s3.put_object(Bucket=self.bucketname,
-                               Key=s3key,
-                               Body=json.dumps(self.patches),
-                               ContentType="application/json")
+        s3key="archive/%s/%s.json" % (self.projectname,
+                                      self.filename)
+        self.s3.put_object(Bucket=self.bucketname,
+                           Key=s3key,
+                           Body=json.dumps(self.patches),
+                           ContentType="application/json")
             
     @parse_line()
     def do_clean_projects(self):

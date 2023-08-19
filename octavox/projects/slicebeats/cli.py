@@ -2,7 +2,7 @@ from octavox.modules.banks import SVBanks
 
 from octavox.modules.banks.pools import SVPools, SVPool
 
-from octavox.modules.cli import SVBankCli, render_patches
+from octavox.modules.cli import SVBankCli, render_patches, assert_project
 
 from octavox.modules.cli.parse import parse_line
 
@@ -89,6 +89,7 @@ class SlicebeatsCli(SVBankCli):
                         {"name": "level",
                          "type": "enum",
                          "options": "lo|hi".split("|")}])
+    @assert_project
     @render_patches(prefix="mutate")
     def do_mutate_patch(self, i, level, machines=Machines):
         root=self.patches[i % len(self.patches)]
