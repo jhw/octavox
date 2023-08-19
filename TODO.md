@@ -1,13 +1,13 @@
 ### short
 
-- mutate_patch hi pattern refactoring option
-- density mutation
+- revert mutate to lo/hi
+- replace style mutation with pattern mutation
+
+- add search_replace utils
 
 - function to check if online
 - cli main to check if online
 - cli decorator to protect functions which use s3
-
-- add search_replace utils
 
 - rename samplekey instances as sample
 
