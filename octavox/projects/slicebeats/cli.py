@@ -8,6 +8,8 @@ from octavox.modules.cli.parse import parse_line
 
 from octavox.modules.model import SVSample, SVNoteTrig, SVPatch
 
+from octavox.projects.slicebeats.model import Pattern
+
 import boto3, json, os, random, yaml
 
 Machines=yaml.safe_load("""
@@ -77,12 +79,6 @@ class SlicebeatsCli(SVBankCli):
             patches.append(patch)
         return patches
 
-    """
-    - Sequencer params aren't stored in state as they are used at initialisation time not runtime (unlike Modulator)
-    - hence have to be looked up here
-    - but this could be replaced with a simple local Machines class
-    """
-    
     @parse_line(config=[{"name": "i",
                          "type": "int"},
                         {"name": "level",
@@ -90,13 +86,6 @@ class SlicebeatsCli(SVBankCli):
                          "options": "lo|hi".split("|")}])
     @render_patches(prefix="mutate")
     def do_mutate_patch(self, i, level, machines=Machines):
-        def init_styles(machines):
-            styles={}
-            for machine in machines:
-                if "styles" in machine["params"]:
-                    styles[machine["name"]]=machine["params"]["styles"]
-            return styles
-        styles=init_styles(machines)
         root=self.patches[i % len(self.patches)]
         patches=[root]
         npatches=self.env["nblocks"]*self.env["blocksize"]
@@ -104,11 +93,11 @@ class SlicebeatsCli(SVBankCli):
             patch=root.clone()
             for machine in patch["machines"]:
                 if "slices" in machine:
+                    if level=="hi":
+                        machine["pattern"]=Pattern.randomise(self.env["temperature"])
                     for slice in machine["slices"]:
                         if random.random() < self.env["dseed"]:
                             slice["seed"]=int(1e8*random.random())
-                        if level=="hi":
-                            slice["style"]=random.choice(styles[machine["name"]])
                 else:
                     if random.random() < self.env["dseed"]:
                         machine["seed"]=int(1e8*random.random())
