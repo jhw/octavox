@@ -81,7 +81,7 @@ class SlicebeatsCli(SVBankCli):
     @parse_line(config=[{"name": "i",
                          "type": "int"}])
     @render_patches(prefix="mutate")
-    def do_mutate_seeds(self, i):
+    def do_mutate_patch(self, i):
         root=self.patches[i % len(self.patches)]
         patches=[root]
         npatches=self.env["nblocks"]*self.env["blocksize"]
