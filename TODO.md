@@ -1,14 +1,12 @@
 ### short
 
-- replace style mutation with pattern mutation
-
-- function to check if online
-- cli main to check if online
-- cli decorator to protect functions which use s3
-
 - rename samplekey instances as sample
 
+- replace style mutation with pattern mutation
+
 ### medium
+
+- cli decorator to protect functions which use s3
 
 ### banks
 
@@ -103,6 +101,8 @@
 
 ### done
 
+- function to check if online
+- cli main to check if online
 - add search_replace utils
 - revert mutate to lo/hi
 - add cli enum support

@@ -1,4 +1,4 @@
-from octavox.modules import is_abbrev, list_s3_keys
+from octavox.modules import is_abbrev, list_s3_keys, has_internet
 
 from octavox.modules.banks.pools import SVPool, SVPools
 
@@ -102,11 +102,11 @@ def list_cached(cachedir):
 class SVBanks(dict):
 
     @classmethod
-    def initialise(self,
-                   s3,
+    def initialise_online(self,
+                          s3,
                    bucketname,
-                   prefix="banks",
-                   cachedir="tmp/banks"):
+                          prefix="banks",
+                          cachedir="tmp/banks"):
         s3keys, cached = (list_s3_keys(s3, bucketname, prefix),
                           list_cached(cachedir))
         banks={}
@@ -141,6 +141,12 @@ class SVBanks(dict):
             banks[bankname]=bank
         return SVBanks(banks)
 
+    @classmethod
+    def initialise(self, s3, bucketname):
+        suffix="online" if has_internet() else "offline"
+        banksfn=getattr(SVBanks, "initialise_%s" % suffix)
+        return banksfn(s3, bucketname)
+        
     def __init__(self, item={}):
         dict.__init__(self, item)
                     
