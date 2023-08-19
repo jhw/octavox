@@ -77,6 +77,7 @@ class SVBaseCli(cmd.Cmd):
     prompt=">>> "
 
     def __init__(self,
+                 s3,
                  projectname,
                  bucketname,
                  params,
@@ -84,6 +85,7 @@ class SVBaseCli(cmd.Cmd):
                  links,
                  historysize=HistorySize):
         cmd.Cmd.__init__(self)
+        self.s3=s3
         self.projectname=projectname
         self.bucketname=bucketname
         self.outdir="tmp/%s" % projectname
@@ -148,13 +150,12 @@ class SVBaseCli(cmd.Cmd):
         if not self.patches:
             print ("ERROR: no patches found")
         else:
-            s3=boto3.client("s3")
             s3key="archive/%s/%s.json" % (self.projectname,
                                           self.filename)
-            s3.put_object(Bucket=self.bucketname,
-                          Key=s3key,
-                          Body=json.dumps(self.patches),
-                          ContentType="application/json")
+            self.s3.put_object(Bucket=self.bucketname,
+                               Key=s3key,
+                               Body=json.dumps(self.patches),
+                               ContentType="application/json")
             
     @parse_line()
     def do_clean_projects(self):
@@ -163,15 +164,14 @@ class SVBaseCli(cmd.Cmd):
             
     @parse_line()
     def do_reanimate_archives(self):
-        s3=boto3.client("s3")
         prefix="archive/%s" % self.projectname
-        for s3key in list_s3_keys(s3=s3,
+        for s3key in list_s3_keys(s3=self.s3,
                                   bucketname=self.bucketname,
                                   prefix=prefix):
             stem=s3key.split("/")[-1].split(".")[0]
             print (stem)
-            struct=json.loads(s3.get_object(Bucket=self.bucketname,
-                                            Key=s3key)["Body"].read())
+            struct=json.loads(self.s3.get_object(Bucket=self.bucketname,
+                                                 Key=s3key)["Body"].read())
             filename="%s/json/%s.json" % (self.outdir, stem)
             with open(filename, 'w') as f:
                 f.write(json.dumps(struct,

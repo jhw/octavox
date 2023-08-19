@@ -194,12 +194,11 @@ if __name__=="__main__":
             raise RuntimeError("OCTAVOX_ASSETS_BUCKET does not exist")
         s3=boto3.client("s3")
         banks=SVBanks.initialise_offline(s3, bucketname)
-        pools=SVPools({poolname:pool
-                       for poolname, pool in banks.spawn_pools().items()
-                       if len(pool.tags)==4}) # NB
+        pools=banks.spawn_pools()
         poolname=random.choice(list(pools.keys()))
         print ("INFO: pool=%s" % poolname)
-        SlicebeatsCli(projectname="slicebeats",
+        SlicebeatsCli(s3=s3,
+                      projectname="slicebeats",
                       bucketname=bucketname,
                       poolname=poolname,
                       params=Params,

@@ -1,7 +1,5 @@
 ### short
 
-- s3 state variable
-
 - add search_replace utils
 - rename samplekey instances as sample
 - rename mutate_seed as mutate_patch
@@ -105,6 +103,9 @@
 
 ### done
 
+- custom pool class which can cross- lookup oh/ch
+  - remove pool.tags and slicebeats/cli.py check
+- s3 state variable
 - add banks online/offline
 - move fetch_pico into scripts/banks
 - refactor id as note

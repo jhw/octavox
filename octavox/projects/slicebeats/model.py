@@ -39,6 +39,7 @@ class Pattern(str):
 """
 - tempting to thing that Samples could be an instance of SVPool
 - but key differences are that it needs serialising to/from JSON and has its own core logic in the form of randomise() and tagged_map()
+- NB sample needs cloning and sample tag replacing because may have come from a different tag group
 """
     
 class Samples(list):
@@ -62,7 +63,8 @@ class Samples(list):
             else:
                 filtered=pool.filter(childtag).samplekeys
                 values=filtered if filtered!=[] else pool.samplekeys
-            sample=random.choice(values)
+            sample=random.choice(values).clone()
+            sample["tags"]=[childtag]
             samples.append(sample)
         return Samples(samples)
             
@@ -89,10 +91,11 @@ class Slice(dict):
                   params,
                   pool,
                   fixes):
-        return Slice(samples=Samples.randomise(i=i,
-                                               tag=params["tag"],
-                                               pool=pool,
-                                               fixes=fixes),
+        samples=Samples.randomise(i=i,
+                                  tag=params["tag"],
+                                  pool=pool,
+                                  fixes=fixes)
+        return Slice(samples=samples,
                      seed=int(1e8*random.random()),
                      style=random.choice(params["styles"]))
     
