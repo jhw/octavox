@@ -79,11 +79,10 @@ def acid_bass(wavefn,
             fx_trig(trigs, "Generator/f_resonance", resonance, i)
     return trigs.tracks
 
-def spawn_patches(destfilename,
-                  modules=Modules,
-                  links=Links,
-                  npatches=32,
-                  bpm=120):
+def spawn_patches(npatches=32):
+    """
+    - not much fun working in the 2**x space but this seems to be how the analog generator controllers work; they are not lobear
+    """    
     def rand_range(params, limit=2**16):
         floor, ceil = 2**params["floor"], 2**(params["floor"]+params["range"])
         return min(limit, floor+int(random.random()*(ceil-floor)))
@@ -133,26 +132,27 @@ def spawn_patches(destfilename,
         return wrapped
     def resfn():
         return rand_choice([14.4, 14.6, 14.8, 14.8])
-    patches=[acid_bass(wavefn=wavefn,
-                       trigfn=trigfn,
-                       notefn=notefn,
-                       atkfn=atkfn,
-                       relfn=spawn_relfn(),
-                       freqfn=spawn_freqfn(),
-                       resfn=resfn)
-             for i in range(npatches)]
-    project=SVProject().render(patches=patches,
-                               modconfig=modules,
-                               links=links,
-                               bpm=bpm)
-    with open(destfilename, 'wb') as f:
-        project.write_to(f)
+    return [acid_bass(wavefn=wavefn,
+                      trigfn=trigfn,
+                      notefn=notefn,
+                      atkfn=atkfn,
+                      relfn=spawn_relfn(),
+                      freqfn=spawn_freqfn(),
+                      resfn=resfn)
+            for i in range(npatches)]
 
 if __name__=="__main__":
     try:
         if not os.path.exists("tmp/demos"):
             os.makedirs("tmp/demos")
-        destfilename="tmp/demos/%s.sunvox" % random_filename("acidbass")
-        spawn_patches(destfilename=destfilename)
+        patches=spawn_patches()
+        project=SVProject().render(patches=patches,
+                                   modconfig=Modules,
+                                   links=Links,
+                                   bpm=120)
+        destfilename="tmp/demos/%s.sunvox" % random_filename("acidbass")        
+        with open(destfilename, 'wb') as f:
+            project.write_to(f)
+
     except RuntimeError as error:
         print ("Error: %s" % str(error))
