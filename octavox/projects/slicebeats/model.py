@@ -236,16 +236,16 @@ class Sequencer(dict):
 - it's useful to unpack them at initialisation time
 """
         
-class Modulator(dict):
+class SampleHoldModulator(dict):
     
     @classmethod
     def randomise(self,
                   machine,
                   **kwargs):
-        return Modulator({"name": machine["name"],
-                          "class": machine["class"],
-                          "params": machine["params"],
-                          "seed": int(1e8*random.random())})
+        return SampleHoldModulator({"name": machine["name"],
+                                    "class": machine["class"],
+                                    "params": machine["params"],
+                                    "seed": int(1e8*random.random())})
 
     def __init__(self, machine):
         dict.__init__(self, machine)
@@ -253,13 +253,12 @@ class Modulator(dict):
             setattr(self, k, v)
 
     def clone(self):
-        return Modulator(self)
+        return SampleHoldModulator(self)
                     
     def render(self, nbeats, density):
         q=Q(self["seed"])
         for i in range(nbeats):
-            fn=getattr(self, self.style)
-            v=fn(q, i, density)
+            v=self.sample_hold(q, i, density)
             if v!=None: # explicit because could return zero
                 yield SVFXTrig(target=self["name"],
                                value=v*self.multiplier,

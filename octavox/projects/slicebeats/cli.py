@@ -36,18 +36,16 @@ Machines=yaml.safe_load("""
     - offbeats
     - closed
 - name: Echo/wet
-  class: octavox.projects.slicebeats.model.Modulator
+  class: octavox.projects.slicebeats.model.SampleHoldModulator
   params:
-    style: sample_hold
     range: [0, 1]
     increment: 0.25
     step: 4
     live: 0.66666
     multiplier: 32768
 - name: Echo/feedback
-  class: octavox.projects.slicebeats.model.Modulator
+  class: octavox.projects.slicebeats.model.SampleHoldModulator
   params:
-    style: sample_hold
     range: [0, 1]
     increment: 0.25
     step: 4
