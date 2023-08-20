@@ -153,6 +153,5 @@ if __name__=="__main__":
         destfilename="tmp/demos/%s.sunvox" % random_filename("acidbass")        
         with open(destfilename, 'wb') as f:
             project.write_to(f)
-
     except RuntimeError as error:
         print ("Error: %s" % str(error))
