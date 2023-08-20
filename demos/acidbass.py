@@ -50,12 +50,12 @@ Links=yaml.safe_load("""
 """)
 
 def acid_bass(wavefn,
+              trigfn,
               notefn,
               atkfn,
               relfn,
               freqfn,
               resfn,
-              density=0.5,
               nbeats=16):
     def note_trig(trigs, target, note, i):
         trigs.append(SVNoteTrig(mod=target,
@@ -70,7 +70,7 @@ def acid_bass(wavefn,
     wave, attack, resonance = wavefn(), atkfn(), resfn()
     trigs=SVTrigs(nbeats=nbeats)
     for i in range(nbeats):
-        if random.random() < density:
+        if trigfn(i):
             note_trig(trigs, "Generator", notefn(), i)
             fx_trig(trigs, "Generator/waveform", wave, i)
             fx_trig(trigs, "Generator/f_attack", attack, i)
@@ -84,19 +84,23 @@ def spawn_patches(destfilename,
                   links=Links,
                   npatches=32,
                   bpm=120):
-    def rand_range(params):
+    def rand_range(params, limit=2**16):
         floor, ceil = 2**params["floor"], 2**(params["floor"]+params["range"])
-        return floor+int(random.random()*(ceil-floor))
-    def rand_choice(values):
-        return 2**random.choice(values)
+        return min(limit, floor+int(random.random()*(ceil-floor)))
+    def rand_choice(values, limit=2**16):
+        return min(limit, 2**random.choice(values))
     def wavefn():
-        return random.choice([1, 2])
+        return random.choice([1, 2]) # saw, square
+    def trigfn(i):
+        return random.random() < 0.5
     def notefn(basenote=12):
         q=random.random()
-        if q < 0.75:
+        if q < 0.7:
             return basenote
-        elif q < 0.9:
+        elif q < 0.8:
             return basenote-2
+        elif q < 0.9:
+            return basenote+7
         else:
             return basenote+12
     def atkfn():
@@ -116,6 +120,7 @@ def spawn_patches(destfilename,
     def resfn():
         return rand_choice([14.4, 14.6, 14.8, 14.8])
     patches=[acid_bass(wavefn=wavefn,
+                       trigfn=trigfn,
                        notefn=notefn,
                        atkfn=atkfn,
                        relfn=spawn_relfn(),
