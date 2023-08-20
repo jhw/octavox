@@ -1,13 +1,16 @@
-### short [01-analog-303]
+### short [01-acidbass]
 
-- volume
-- resonance
-- filter attack
-- osc2, duty cycle
+- vitling volume
+- vitling notes
+- equalizer
 
 ### medium
 
-- arrange method
+- osc2, duty cycle
+
+- rename modulator as SampleAndHoldModulator and remove sample_and_hold field
+
+- `arrange` method
 
 - mutes as fixes
 
@@ -104,6 +107,8 @@
 
 ### done
 
+- filter attack
+- resonance
 - distortion/echo/reverb
 - freq/release scaling (16^4?)
 - project checking decorator

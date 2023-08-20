@@ -25,7 +25,7 @@ Modules=yaml.safe_load("""
   class: rv.modules.echo.Echo
   defaults:
     dry: 256
-    wet: 16
+    wet: 32
     delay: 36
     delay_unit: 3 # tick
 - name: Distortion
@@ -49,12 +49,14 @@ Links=yaml.safe_load("""
   - Output
 """)
 
-def init_patch(wave,
-               notefn,
-               freqfn,
-               relfn,
-               density=0.5,
-               nbeats=16):
+def acid_bass(wavefn,
+              notefn,
+              atkfn,
+              relfn,
+              freqfn,
+              resfn,
+              density=0.5,
+              nbeats=16):
     def note_trig(trigs, target, note, i):
         trigs.append(SVNoteTrig(mod=target,
                                 note=note,
@@ -65,20 +67,28 @@ def init_patch(wave,
                               ctrl=ctrl,
                               value=value,
                               i=i))
-    trigs=SVTrigs(nbeats=nbeats)       
+    wave, attack, resonance = wavefn(), atkfn(), resfn()
+    trigs=SVTrigs(nbeats=nbeats)
     for i in range(nbeats):
         if random.random() < density:
             note_trig(trigs, "Generator", notefn(), i)
             fx_trig(trigs, "Generator/waveform", wave, i)
-            fx_trig(trigs, "Generator/f_freq_hz", freqfn(), i)
+            fx_trig(trigs, "Generator/f_attack", attack, i)
             fx_trig(trigs, "Generator/f_release", relfn(), i)
+            fx_trig(trigs, "Generator/f_freq_hz", freqfn(), i)
+            fx_trig(trigs, "Generator/f_resonance", resonance, i)
     return trigs.tracks
 
-def init_patches(destfilename,
-                 modules=Modules,
-                 links=Links,
-                 npatches=32,
-                 bpm=120):
+def spawn_patches(destfilename,
+                  modules=Modules,
+                  links=Links,
+                  npatches=32,
+                  bpm=120):
+    def rand_range(params):
+        floor, ceil = 2**params["floor"], 2**(params["floor"]+params["range"])
+        return floor+int(random.random()*(ceil-floor))
+    def wavefn():
+        return random.choice([1, 2])
     def notefn(basenote=12):
         q=random.random()
         if q < 0.75:
@@ -87,25 +97,28 @@ def init_patches(destfilename,
             return basenote-2
         else:
             return basenote+12
-    def rand_minmax(floor, range):
-        min, max = 2**floor, 2**(floor+range)
-        return min+int(random.random()*(max-min))
-    def init_freqfn():
-        floor=random.choice([7, 8, 9])
-        range=random.choice([5, 6, 7])
+    def atkfn():
+        return 2**random.choice([0, 0, 0, 11, 12, 13])
+    def spawn_relfn():
+        params={"floor": random.choice([13.75, 14, 14.25]),
+                "range": random.choice([0.25, 0.5, 0.75])}
         def wrapped():
-            return min(-1+2**15, rand_minmax(floor, range))
+            return rand_range(params)
         return wrapped
-    def init_relfn():
-        floor=random.choice([14, 14.25, 14.5])
-        range=random.choice([0.25, 0.5, 0.75])                          
+    def spawn_freqfn():
+        params={"floor": random.choice([6, 7, 8]),
+                "range": random.choice([4, 5, 6])}
         def wrapped():
-            return min(-1+2**16, rand_minmax(floor, range))
+            return rand_range(params)
         return wrapped
-    patches=[init_patch(wave=random.choice([1, 2]),
-                        notefn=notefn,
-                        freqfn=init_freqfn(),
-                        relfn=init_relfn())
+    def resfn():
+        return 2**random.choice([14.4, 14.6, 14.8, 14.8])
+    patches=[acid_bass(wavefn=wavefn,
+                       notefn=notefn,
+                       atkfn=atkfn,
+                       relfn=spawn_relfn(),
+                       freqfn=spawn_freqfn(),
+                       resfn=resfn)
              for i in range(npatches)]
     project=SVProject().render(patches=patches,
                                modconfig=modules,
@@ -119,6 +132,6 @@ if __name__=="__main__":
         if not os.path.exists("tmp/demos"):
             os.makedirs("tmp/demos")
         destfilename="tmp/demos/%s.sunvox" % random_filename("acidbass")
-        init_patches(destfilename=destfilename)
+        spawn_patches(destfilename=destfilename)
     except RuntimeError as error:
         print ("Error: %s" % str(error))
