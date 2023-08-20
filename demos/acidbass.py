@@ -87,6 +87,8 @@ def spawn_patches(destfilename,
     def rand_range(params):
         floor, ceil = 2**params["floor"], 2**(params["floor"]+params["range"])
         return floor+int(random.random()*(ceil-floor))
+    def rand_choice(values):
+        return 2**random.choice(values)
     def wavefn():
         return random.choice([1, 2])
     def notefn(basenote=12):
@@ -98,7 +100,7 @@ def spawn_patches(destfilename,
         else:
             return basenote+12
     def atkfn():
-        return 2**random.choice([0, 0, 0, 11, 12, 13])
+        return rand_choice([0, 0, 0, 11, 12, 13])
     def spawn_relfn():
         params={"floor": random.choice([13.75, 14, 14.25]),
                 "range": random.choice([0.25, 0.5, 0.75])}
@@ -112,7 +114,7 @@ def spawn_patches(destfilename,
             return rand_range(params)
         return wrapped
     def resfn():
-        return 2**random.choice([14.4, 14.6, 14.8, 14.8])
+        return rand_choice([14.4, 14.6, 14.8, 14.8])
     patches=[acid_bass(wavefn=wavefn,
                        notefn=notefn,
                        atkfn=atkfn,
