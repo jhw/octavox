@@ -1,8 +1,5 @@
 ### short
 
-- script to re- push archives
-- re- check archive reanimation
-
 ### medium
 
 - acidbass vel function
@@ -94,6 +91,8 @@
 
 ### done
 
+- script to re- push archives
+- re- check archive reanimation
 - refactor archives and save to tmp
 - rename Modulator as SampleHoldModulator and remove style
 - move SampleHoldModulator into modules/modulator
