@@ -4,12 +4,7 @@
 
 - rename modulator as SampleAndHoldModulator and remove sample_and_hold field
 
-
 ### medium
-
-- `arrange` method
-
-- mutes as fixes
 
 ### banks
 
