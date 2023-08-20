@@ -1,14 +1,11 @@
 ### short [01-acidbass]
 
 - vitling volume
-- vitling notes
-- equalizer
-
-### medium
-
-- osc2, duty cycle
 
 - rename modulator as SampleAndHoldModulator and remove sample_and_hold field
+
+
+### medium
 
 - `arrange` method
 

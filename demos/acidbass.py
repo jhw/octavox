@@ -91,8 +91,22 @@ def spawn_patches(destfilename,
         return min(limit, 2**random.choice(values))
     def wavefn():
         return random.choice([1, 2]) # saw, square
+    """
+    - https://github.com/vitling/acid-banger/blob/main/src/pattern.ts
+    """
     def trigfn(i):
-        return random.random() < 0.5
+        if 0==i%4:
+            limit=0.6
+        elif 0==i%3:
+            limit=0.5
+        elif 0==i%2:
+            limit=0.3
+        else:
+            limit=0.1
+        return random.random() < limit
+    """
+    - https://github.com/vitling/acid-banger/blob/main/src/pattern.ts
+    """
     def notefn(basenote=12):
         q=random.random()
         if q < 0.7:
