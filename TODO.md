@@ -1,6 +1,5 @@
 ### short
 
-- replace trig mod/ctrl with target
 - rename Modulator as SampleHoldModulator and remove style
 - refactor archives for new SampleHoldModulator
 - script to re- push archives
@@ -97,6 +96,7 @@
 
 ### done
 
+- replace trig mod/ctrl with target
 - filter attack
 - resonance
 - distortion/echo/reverb

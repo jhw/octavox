@@ -164,10 +164,6 @@ class Sequencer(dict):
                           "pattern": self["pattern"],
                           "slices": self["slices"].clone()})
 
-    @property
-    def mod(self):
-        return self["name"]
-    
     def render(self,
                nbeats,
                density):
@@ -183,7 +179,7 @@ class Sequencer(dict):
                 if v!=None: # explicit because could return zero
                     tag, volume = v
                     sample=samples[tag].clone()
-                    yield SVNoteTrig(mod=self.mod,
+                    yield SVNoteTrig(mod=self["name"],
                                      vel=volume,
                                      i=i+offset,
                                      sample=sample)
@@ -259,22 +255,13 @@ class Modulator(dict):
     def clone(self):
         return Modulator(self)
                     
-    @property
-    def mod(self):
-        return self["name"].split("/")[0]
-
-    @property
-    def ctrl(self):
-        return self["name"].split("/")[1]
-            
     def render(self, nbeats, density):
         q=Q(self["seed"])
         for i in range(nbeats):
             fn=getattr(self, self.style)
             v=fn(q, i, density)
             if v!=None: # explicit because could return zero
-                yield SVFXTrig(mod=self.mod,
-                               ctrl=self.ctrl,
+                yield SVFXTrig(target=self["name"],
                                value=v*self.multiplier,
                                i=i)
 

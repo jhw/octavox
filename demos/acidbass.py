@@ -62,9 +62,7 @@ def acid_bass(wavefn,
                                 note=note,
                                 i=i))
     def fx_trig(trigs, target, value, i):
-        mod, ctrl = target.split("/")
-        trigs.append(SVFXTrig(mod=mod,
-                              ctrl=ctrl,
+        trigs.append(SVFXTrig(target=target,
                               value=value,
                               i=i))
     wave, attack, resonance = wavefn(), atkfn(), resfn()

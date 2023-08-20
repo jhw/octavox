@@ -78,7 +78,7 @@ class SVNoteTrig:
     @property
     def expanded(self):
         if self.chord:
-            return [("%s/%i" % (self,mod, i),
+            return [("%s/%i" % (self.mod, i),
                      SVNoteTrig(mod=self.mod,
                                 i=self.i,
                                 note=note))
@@ -104,17 +104,22 @@ class SVFXTrig:
 
     CtrlMult=256
 
-    def __init__(self, mod, ctrl, value, i):
-        self.mod=mod
-        self.ctrl=ctrl
+    def __init__(self, target, value, i):
+        self.target=target
         self.value=value
         self.i=i
+
+    @property
+    def mod(self):
+        return self.target.split("/")[0]
+
+    @property
+    def ctrl(self):
+        return self.target.split("/")[1]
         
     @property
     def expanded(self):
-        return [("%s/%s" % (self.mod,
-                            self.ctrl),
-                 self)]
+        return [(self.target, self)]
         
     def render(self,
                modules,
