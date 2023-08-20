@@ -2,8 +2,6 @@
 
 ### medium
 
-- acidbass vel function
-
 ### thoughts
 
 - add prefix/string matching to reanimate archives?
@@ -91,6 +89,7 @@
 
 ### done
 
+- acidbass vel function
 - script to re- push archives
 - re- check archive reanimation
 - refactor archives and save to tmp

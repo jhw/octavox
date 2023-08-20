@@ -52,14 +52,16 @@ Links=yaml.safe_load("""
 def acid_bass(wavefn,
               trigfn,
               notefn,
+              velfn,
               atkfn,
               relfn,
               freqfn,
               resfn,
               nbeats=16):
-    def note_trig(trigs, target, note, i):
+    def note_trig(trigs, target, note, vel, i):
         trigs.append(SVNoteTrig(mod=target,
                                 note=note,
+                                vel=vel,
                                 i=i))
     def fx_trig(trigs, target, value, i):
         trigs.append(SVFXTrig(target=target,
@@ -69,7 +71,7 @@ def acid_bass(wavefn,
     trigs=SVTrigs(nbeats=nbeats)
     for i in range(nbeats):
         if trigfn(i):
-            note_trig(trigs, "Generator", notefn(), i)
+            note_trig(trigs, "Generator", notefn(), velfn(), i)
             fx_trig(trigs, "Generator/waveform", wave, i)
             fx_trig(trigs, "Generator/f_attack", attack, i)
             fx_trig(trigs, "Generator/f_release", relfn(), i)
@@ -101,9 +103,6 @@ def spawn_patches(npatches=32):
         else:
             limit=0.1
         return random.random() < limit
-    """
-    - https://github.com/vitling/acid-banger/blob/main/src/pattern.ts
-    """
     def notefn(basenote=12):
         q=random.random()
         if q < 0.7:
@@ -114,6 +113,8 @@ def spawn_patches(npatches=32):
             return basenote+7
         else:
             return basenote+12
+    def velfn():
+        return 1 if random.random() < 0.3 else 0.8
     def atkfn():
         return rand_choice([0, 0, 0, 11, 12, 13])
     def spawn_relfn():
@@ -133,6 +134,7 @@ def spawn_patches(npatches=32):
     return [acid_bass(wavefn=wavefn,
                       trigfn=trigfn,
                       notefn=notefn,
+                      velfn=velfn,
                       atkfn=atkfn,
                       relfn=spawn_relfn(),
                       freqfn=spawn_freqfn(),
