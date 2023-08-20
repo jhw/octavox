@@ -1,3 +1,9 @@
+### banks 20/08/23
+
+- dataline juno
+- polyend tracker
+- perkons
+
 ### demos 18/08/23
 
 - euclid beats

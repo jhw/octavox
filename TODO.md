@@ -1,16 +1,14 @@
-### short [01-acidbass]
+### short
 
-- vitling volume
-
-- rename modulator as SampleAndHoldModulator and remove sample_and_hold field
+- replace trig mod/ctrl with target
+- rename Modulator as SampleHoldModulator and remove style
+- refactor archives for new SampleHoldModulator
+- script to re- push archives
+- move SampleHoldModulator into modules/modulators
 
 ### medium
 
-### banks
-
-- dataline juno
-- polyend tracker
-- perkons
+- acidbass vel function
 
 ### thoughts
 
