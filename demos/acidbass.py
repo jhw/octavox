@@ -35,7 +35,7 @@ Modules=yaml.safe_load("""
 - name: Reverb
   class: rv.modules.reverb.Reverb
   defaults:
-    wet: 8
+    wet: 4
 """)
 
 Links=yaml.safe_load("""
