@@ -1,9 +1,8 @@
 ### short
 
-- rename Modulator as SampleHoldModulator and remove style
-- refactor archives for new SampleHoldModulator
+- refactor archives and save to tmp
 - script to re- push archives
-- move SampleHoldModulator into modules/modulators
+- re- check archive reanimation
 
 ### medium
 
@@ -96,6 +95,8 @@
 
 ### done
 
+- rename Modulator as SampleHoldModulator and remove style
+- move SampleHoldModulator into modules/modulator
 - replace trig mod/ctrl with target
 - filter attack
 - resonance
