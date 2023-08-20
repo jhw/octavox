@@ -1,6 +1,5 @@
 ### short
 
-- refactor archives and save to tmp
 - script to re- push archives
 - re- check archive reanimation
 
@@ -95,6 +94,7 @@
 
 ### done
 
+- refactor archives and save to tmp
 - rename Modulator as SampleHoldModulator and remove style
 - move SampleHoldModulator into modules/modulator
 - replace trig mod/ctrl with target
