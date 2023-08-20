@@ -54,7 +54,7 @@ def init_patch(wave,
                freqfn,
                relfn,
                density=0.5,
-               nbeats=32):
+               nbeats=16):
     def note_trig(trigs, target, note, i):
         trigs.append(SVNoteTrig(mod=target,
                                 note=note,
@@ -118,7 +118,7 @@ if __name__=="__main__":
     try:
         if not os.path.exists("tmp/demos"):
             os.makedirs("tmp/demos")
-        destfilename="tmp/demos/%s.sunvox" % random_filename("analog303")
+        destfilename="tmp/demos/%s.sunvox" % random_filename("acidbass")
         init_patches(destfilename=destfilename)
     except RuntimeError as error:
         print ("Error: %s" % str(error))
