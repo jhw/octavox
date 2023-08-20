@@ -1,8 +1,8 @@
+from octavox.modules.cli import random_filename
+
 from octavox.modules.model import SVTrigs, SVNoteTrig, SVFXTrig
 
 from octavox.modules.project import SVProject
-
-from datetime import datetime
 
 import os, random, yaml
 
@@ -25,7 +25,7 @@ Modules=yaml.safe_load("""
   class: rv.modules.echo.Echo
   defaults:
     dry: 256
-    wet: 32
+    wet: 16
     delay: 36
     delay_unit: 3 # tick
 - name: Distortion
@@ -35,7 +35,7 @@ Modules=yaml.safe_load("""
 - name: Reverb
   class: rv.modules.reverb.Reverb
   defaults:
-    wet: 4
+    wet: 8
 """)
 
 Links=yaml.safe_load("""
@@ -47,30 +47,67 @@ Links=yaml.safe_load("""
   - Reverb
 - - Reverb
   - Output
-
 """)
 
-def generate(destfilename,
-             modules=Modules,
-             links=Links,
-             nbeats=32,
-             bpm=120):
-    trigs=SVTrigs(nbeats=nbeats)
+def init_patch(wave,
+               notefn,
+               freqfn,
+               relfn,
+               density=0.5,
+               nbeats=32):
+    def note_trig(trigs, target, note, i):
+        trigs.append(SVNoteTrig(mod=target,
+                                note=note,
+                                i=i))
+    def fx_trig(trigs, target, value, i):
+        mod, ctrl = target.split("/")
+        trigs.append(SVFXTrig(mod=mod,
+                              ctrl=ctrl,
+                              value=value,
+                              i=i))
+    trigs=SVTrigs(nbeats=nbeats)       
     for i in range(nbeats):
-        if random.random() < 0.5:
-            note=SVNoteTrig(mod="Generator",
-                            note=16,
-                            i=i)
-            ffreq=SVFXTrig(mod="Generator",
-                           ctrl="f_freq_hz",
-                           value=int((2**13)*(0.1+0.5*random.random())),
-                           i=i)
-            frelease=SVFXTrig(mod="Generator",
-                              ctrl="f_release",
-                              value=int((2**15)*(0.5+0.3*random.random())),
-                              i=i)
-            trigs+=[note, ffreq, frelease]
-    project=SVProject().render(patches=[trigs.tracks],
+        if random.random() < density:
+            note_trig(trigs, "Generator", notefn(), i)
+            fx_trig(trigs, "Generator/waveform", wave, i)
+            fx_trig(trigs, "Generator/f_freq_hz", freqfn(), i)
+            fx_trig(trigs, "Generator/f_release", relfn(), i)
+    return trigs.tracks
+
+def init_patches(destfilename,
+                 modules=Modules,
+                 links=Links,
+                 npatches=32,
+                 bpm=120):
+    def notefn(basenote=12):
+        q=random.random()
+        if q < 0.75:
+            return basenote
+        elif q < 0.9:
+            return basenote-2
+        else:
+            return basenote+12
+    def rand_minmax(floor, range):
+        min, max = 2**floor, 2**(floor+range)
+        return min+int(random.random()*(max-min))
+    def init_freqfn():
+        floor=random.choice([7, 8, 9])
+        range=random.choice([5, 6, 7])
+        def wrapped():
+            return min(-1+2**15, rand_minmax(floor, range))
+        return wrapped
+    def init_relfn():
+        floor=random.choice([14, 14.25, 14.5])
+        range=random.choice([0.25, 0.5, 0.75])                          
+        def wrapped():
+            return min(-1+2**16, rand_minmax(floor, range))
+        return wrapped
+    patches=[init_patch(wave=random.choice([1, 2]),
+                        notefn=notefn,
+                        freqfn=init_freqfn(),
+                        relfn=init_relfn())
+             for i in range(npatches)]
+    project=SVProject().render(patches=patches,
                                modconfig=modules,
                                links=links,
                                bpm=bpm)
@@ -79,10 +116,9 @@ def generate(destfilename,
 
 if __name__=="__main__":
     try:
-        if not os.path.exists("tmp/demos/analog303"):
-            os.makedirs("tmp/demos/analog303")
-        ts=datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
-        destfilename="tmp/demos/analog303/%s.sunvox" % ts
-        generate(destfilename=destfilename)
+        if not os.path.exists("tmp/demos"):
+            os.makedirs("tmp/demos")
+        destfilename="tmp/demos/%s.sunvox" % random_filename("analog303")
+        init_patches(destfilename=destfilename)
     except RuntimeError as error:
         print ("Error: %s" % str(error))

@@ -1,10 +1,9 @@
 ### short [01-analog-303]
 
-- note
 - volume
+- resonance
 - filter attack
 - osc2, duty cycle
-- heartbeat
 
 ### medium
 
