@@ -53,7 +53,6 @@ def acid_bass(wavefn,
               trigfn,
               notefn,
               velfn,
-              atkfn,
               relfn,
               freqfn,
               resfn,
@@ -67,13 +66,12 @@ def acid_bass(wavefn,
         trigs.append(SVFXTrig(target=target,
                               value=value,
                               i=i))
-    wave, attack, resonance = wavefn(), atkfn(), resfn()
+    wave, resonance = wavefn(), resfn()
     trigs=SVTrigs(nbeats=nbeats)
     for i in range(nbeats):
         if trigfn(i):
             note_trig(trigs, "Generator", notefn(), velfn(), i)
             fx_trig(trigs, "Generator/waveform", wave, i)
-            fx_trig(trigs, "Generator/f_attack", attack, i)
             fx_trig(trigs, "Generator/f_release", relfn(), i)
             fx_trig(trigs, "Generator/f_freq_hz", freqfn(), i)
             fx_trig(trigs, "Generator/f_resonance", resonance, i)
@@ -115,8 +113,6 @@ def spawn_patches(npatches=32):
             return basenote+12
     def velfn():
         return 1 if random.random() < 0.3 else 0.8
-    def atkfn():
-        return rand_choice([0, 0, 0, 11, 12, 13])
     def spawn_relfn():
         params={"floor": random.choice([13.75, 14, 14.25]),
                 "range": random.choice([0.25, 0.5, 0.75])}
@@ -135,7 +131,6 @@ def spawn_patches(npatches=32):
                       trigfn=trigfn,
                       notefn=notefn,
                       velfn=velfn,
-                      atkfn=atkfn,
                       relfn=spawn_relfn(),
                       freqfn=spawn_freqfn(),
                       resfn=resfn)

@@ -1,5 +1,7 @@
 ### short
 
+- allow pool to be created without name
+
 - convert acidbass to work in hex space
   - use random.choice not random.random
   - add notes on bias 
@@ -7,10 +9,6 @@
 	- resonance hi
 	- release mid
 	
-- allow pool to be created without name
-	
-- remove acidbass attack
-
 - samplebass slice bank
 
 ### medium
@@ -106,6 +104,7 @@
 
 ### done
 
+- remove acidbass attack
 - allow pool.spawn_free to work without tag
 - simplify number of times samplebass ref is used in samplebass main block
 - add pico- prefix to banks
