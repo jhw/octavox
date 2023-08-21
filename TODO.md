@@ -1,7 +1,5 @@
 ### short
 
-- convert SVBanks to be list
-
 - convert acidbass to work in hex space
   - use random.choice not random.random
   - add notes on bias 
@@ -14,7 +12,6 @@
 ### medium
 
 - bass scales
-
 - pydub granular pads demo
 
 ### thoughts
@@ -104,6 +101,7 @@
 
 ### done
 
+- convert SVBanks to be list
 - remove acidbass attack
 - allow pool.spawn_free to work without tag
 - simplify number of times samplebass ref is used in samplebass main block

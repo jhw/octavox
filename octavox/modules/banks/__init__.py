@@ -101,6 +101,11 @@ def list_cached(cachedir):
 class SVBanks(dict):
 
     @classmethod
+    def from_list(self, banks):
+        return SVBanks({bank.name: bank
+                        for bank in banks})
+    
+    @classmethod
     def initialise_online(self,
                           s3,
                           bucketname,
