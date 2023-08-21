@@ -120,17 +120,18 @@ if __name__=="__main__":
         if bucketname in ["", None]:
             raise RuntimeError("OCTAVOX_ASSETS_BUCKET does not exist")
         s3=boto3.client("s3")
-        banks=SVBanks.initialise(s3, bucketname)
-        bank=banks.filter(name="samplebass",
-                          terms=SampleTerms)
-        pool=bank.spawn_free(tags=["samplebass"])
+        rawbanks=SVBanks.initialise(s3, bucketname)
+        bank=rawbanks.filter(name="samplebass",
+                             terms=SampleTerms)        
+        pool=bank.spawn_free(tags=[bank.name])
+        banks=SVBanks({bank.name: bank})
         if not os.path.exists("tmp/demos"):
             os.makedirs("tmp/demos")
         patches=spawn_patches(pool)
         project=SVProject().render(patches=patches,
                                    modconfig=Modules,
                                    links=Links,
-                                   banks=SVBanks({"samplebass": bank}),
+                                   banks=banks,
                                    bpm=120)
         destfilename="tmp/demos/%s.sunvox" % random_filename("samplebass")
         with open(destfilename, 'wb') as f:

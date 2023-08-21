@@ -1,12 +1,10 @@
 ### short
 
-- simplify number of times samplebass ref is used in samplebass main block
-
 - second samplebass bank with sliced samples
 
-### medium
-
 - pydub granular pads demo
+
+### medium
 
 ### thoughts
 
@@ -95,6 +93,7 @@
 
 ### done
 
+- simplify number of times samplebass ref is used in samplebass main block
 - add pico- prefix to banks
 - failed archive process
   - cp achive/slicebeats/* tmp/slicebeats/json
