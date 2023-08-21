@@ -121,7 +121,7 @@ class SlicebeatsCli(SVBankCli):
                     trig=trigs[tag][i]
                     if isinstance(trig, SVNoteTrig):
                         if trig.sample:
-                            print ("%i\t%s" % (i, trig.sample.full_key))
+                            print ("%i\t%s" % (i, trig.sample))
 
     @parse_line()
     def do_list_fixes(self):

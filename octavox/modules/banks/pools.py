@@ -11,7 +11,7 @@ class SVPool(OrderedDict):
         return SVPool(self)
 
     def add(self, sample):
-        self[sample.full_key]=sample
+        self[str(sample)]=sample
     
     def filter(self, tag):
         pool=SVPool()

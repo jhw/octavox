@@ -2,8 +2,6 @@ from rv.modules.sampler import Sampler as RVSampler
 
 from rv.note import NOTE as RVNOTE
 
-from pydub import AudioSegment
-
 # from scipy.io import wavfile
 from octavox.modules.utils import wavfile
 
@@ -52,50 +50,17 @@ class SVSampler(SVBaseSampler):
         if len(pool) > maxslots:
             raise RuntimeError("SVBankSampler max slots exceeded")
         self.pool=pool
-        self.segments={}
         notes=list(RVNOTE)
         root=notes.index(RVNOTE.C5)
         for i, sample in enumerate(self.pool.values()):
             self.note_samples[notes[i]]=i
             src=banks.get_wavfile(sample)
-            # buf=self.slice_sample(sample, src)
-            buf=self.slice_sample(sample, src) if "params" in sample else src
-            self.load_sample(buf, i)
+            self.load_sample(src, i)
             sample=self.samples[i]
             sample.relative_note+=(root-i)
 
-    def init_segment(fn):
-        def wrapped(self, sample, src):
-            segkey=sample.base_key
-            if segkey not in self.segments:
-                self.segments[segkey]=AudioSegment.from_file(src)
-            return fn(self, sample, src)
-        return wrapped
-
-    def slice_range(self, sample, segment):
-        if "params" in sample:
-            params=sample["params"]
-            i, n = params["i"], params["n"]
-            if params["action"]=="cutoff":
-                return (0, int(len(segment)*(i+1)/n))
-            elif params["action"]=="slice":
-                return (int(len(segment)*i/n),
-                        int(len(segment)*(i+1)/n))
-            else:
-                raise RuntimeError("action %s not found" % params["action"])
-        else:
-            return (0, len(segment))
-    
-    @init_segment
-    def slice_sample(self, sample, src):
-        segment=self.segments[sample.base_key]
-        start, end = self.slice_range(sample, segment)
-        buf=io.BytesIO()
-        segment[start:end].export(buf, format=sample.ext)
-        return buf
-                    
     def lookup(self, sample):
-        return list(self.pool.keys()).index(sample.full_key)
+        return list(self.pool.keys()).index(str(sample))
         
 if __name__=="__main__":
     pass

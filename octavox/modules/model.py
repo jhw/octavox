@@ -31,21 +31,10 @@ class SVSample(dict):
     def ext(self):
         return self["file"].split(".")[-1]
 
-    @property
-    def base_key(self):
+    def __str__(self):
         tokens=[]
         tokens.append("%s/%s" % (self["bank"],
                                  self["file"]))
-        return " ".join(tokens)
-            
-    @property
-    def full_key(self):
-        tokens=[]
-        tokens.append("%s/%s" % (self["bank"],
-                                 self["file"]))
-        if ("params" in self and
-            self["params"]!={}):
-            tokens.append(json.dumps(self["params"]))
         if ("tags" in self and 
             self["tags"]!=[]):
             tokens.append("[%s]" % ", ".join(sorted(self["tags"])))
