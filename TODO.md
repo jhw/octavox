@@ -1,11 +1,12 @@
 ### short
 
-- samplebass custom bank 
-  - half|full length for each sample
-
-- pydub granular pads demo
+- add pico- prefix to banks
+- simplify number of times samplebass ref is used in samplebass main block
+- second samplebass bank with sliced samples
 
 ### medium
+
+- pydub granular pads demo
 
 ### thoughts
 

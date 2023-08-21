@@ -94,17 +94,7 @@ def spawn_patches(pool, npatches=32):
                         pitchfn=pitchfn)
             for i in range(npatches)]
 
-def init_pool(banks, keys):
-    pool=SVPool()
-    for key in keys:
-        bankname, stem = key.split("/")
-        wavfile=banks[bankname].lookup(stem)
-        sample=SVSample({"bank": bankname,
-                         "file": wavfile})
-        pool.add(sample)
-    return pool
-
-SampleKeys=yaml.safe_load("""
+SampleTerms=yaml.safe_load("""
 - baseck/03
 - baseck/34
 - baseck/37
@@ -131,14 +121,16 @@ if __name__=="__main__":
             raise RuntimeError("OCTAVOX_ASSETS_BUCKET does not exist")
         s3=boto3.client("s3")
         banks=SVBanks.initialise(s3, bucketname)
-        pool=init_pool(banks, SampleKeys)
+        bank=banks.filter(name="samplebass",
+                          terms=SampleTerms)
+        pool=bank.spawn_free(tags=["samplebass"])
         if not os.path.exists("tmp/demos"):
             os.makedirs("tmp/demos")
         patches=spawn_patches(pool)
         project=SVProject().render(patches=patches,
                                    modconfig=Modules,
                                    links=Links,
-                                   banks=banks,
+                                   banks=SVBanks({"samplebass": bank}),
                                    bpm=120)
         destfilename="tmp/demos/%s.sunvox" % random_filename("samplebass")
         with open(destfilename, 'wb') as f:

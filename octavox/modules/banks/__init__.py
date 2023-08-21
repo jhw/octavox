@@ -70,8 +70,8 @@ class SVBank:
         for wavfile in wavfiles:
             for tag in tags:
                 sample=SVSample({"tags": [tag],
-                                       "bank": self.name,
-                                       "file": wavfile})
+                                 "bank": self.name,
+                                 "file": wavfile})
                 pool.add(sample)
         return pool
     
@@ -84,8 +84,8 @@ class SVBank:
                 for frag in fragments[tag]:
                     if re.search(frag, wavfile, re.I):
                         sample=SVSample({"tags": [tag],
-                                               "bank": self.name,
-                                               "file": wavfile})
+                                         "bank": self.name,
+                                         "file": wavfile})
                         pool.add(sample)
         return pool
 
@@ -149,7 +149,27 @@ class SVBanks(dict):
         
     def __init__(self, item={}):
         dict.__init__(self, item)
-                    
+
+    """
+    - don't use zf.close() or with() as these fill close zipfile, meaning you can't read from it later 
+    """
+        
+    def filter(self, name, terms):
+        buf=io.BytesIO()
+        zf=zipfile.ZipFile(buf, "a", zipfile.ZIP_DEFLATED, False)
+        for i, term in enumerate(terms):
+            bankname, stem = term.split("/")
+            try:
+                wavfilename=self[bankname].lookup(stem)
+            except RuntimeError as error:
+                continue
+            wavfile=self[bankname].zipfile.open(wavfilename)
+            formatstr="0%i.wav" if i < 10 else "%i.wav"
+            filename=formatstr % i
+            zf.writestr(filename, wavfile.read())
+        return SVBank(name=name,
+                      zipfile=zf)
+        
     def lookup(self, abbrev):
         matches=[]
         for key in self:
