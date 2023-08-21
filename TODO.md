@@ -1,10 +1,23 @@
 ### short
 
-- second samplebass bank with sliced samples
+- convert acidbass to work in hex space
+  - use random.choice not random.random
+  - add notes on bias 
+    - freq low
+	- resonance hi
+	- release mid
+	
+- allow pool to be created without name
+	
+- remove acidbass attack
 
-- pydub granular pads demo
+- samplebass slice bank
 
 ### medium
+
+- bass scales
+
+- pydub granular pads demo
 
 ### thoughts
 
@@ -93,6 +106,7 @@
 
 ### done
 
+- allow pool.spawn_free to work without tag
 - simplify number of times samplebass ref is used in samplebass main block
 - add pico- prefix to banks
 - failed archive process

@@ -65,14 +65,13 @@ class SVBank:
         else:
             return matches.pop()
     
-    def spawn_free(self, tags):
+    def spawn_free(self, *args):
         pool, wavfiles = SVPool(), self.wavfiles
         for wavfile in wavfiles:
-            for tag in tags:
-                sample=SVSample({"tags": [tag],
-                                 "bank": self.name,
-                                 "file": wavfile})
-                pool.add(sample)
+            sample=SVSample({"bank": self.name,
+                             "file": wavfile,
+                             "tags": []})
+            pool.add(sample)
         return pool
     
     def spawn_curated(self,
@@ -104,7 +103,7 @@ class SVBanks(dict):
     @classmethod
     def initialise_online(self,
                           s3,
-                   bucketname,
+                          bucketname,
                           prefix="banks",
                           cachedir="tmp/banks"):
         s3keys, cached = (list_s3_keys(s3, bucketname, prefix),
@@ -155,12 +154,15 @@ class SVBanks(dict):
     """
         
     def filter(self, name, terms):
-        buf=io.BytesIO()
-        zf=zipfile.ZipFile(buf, "a", zipfile.ZIP_DEFLATED, False)
+        zf=zipfile.ZipFile(io.BytesIO(), "a", zipfile.ZIP_DEFLATED, False)
         for i, term in enumerate(terms):
-            bankname, stem = term.split("/")
+            bankstem, wavstem = term.split("/")
             try:
-                wavfilename=self[bankname].lookup(stem)
+                bankname=self.lookup(bankstem)
+            except RuntimeError as error:
+                continue
+            try:
+                wavfilename=self[bankname].lookup(wavstem)
             except RuntimeError as error:
                 continue
             wavfile=self[bankname].zipfile.open(wavfilename)

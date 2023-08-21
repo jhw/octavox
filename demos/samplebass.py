@@ -123,7 +123,7 @@ if __name__=="__main__":
         rawbanks=SVBanks.initialise(s3, bucketname)
         bank=rawbanks.filter(name="samplebass",
                              terms=SampleTerms)        
-        pool=bank.spawn_free(tags=[bank.name])
+        pool=bank.spawn_free()
         banks=SVBanks({bank.name: bank})
         if not os.path.exists("tmp/demos"):
             os.makedirs("tmp/demos")
