@@ -1,6 +1,15 @@
 ### short
 
-- pydub bass slicing demo
+- failed archive process
+  - cp achive/slicebeats/* tmp/slicebeats/json
+  - load_project visible
+  - archive_project
+  - aws s3 ls --bucket octavox-assets
+  - (None.json)
+
+- samplebass custom bank 
+  - half|full length for each sample
+
 - pydub granular pads demo
 
 ### medium
