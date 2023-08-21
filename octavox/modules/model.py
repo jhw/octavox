@@ -15,8 +15,6 @@ class SVSample(dict):
     def clone(self):
         kwargs={"bank": self["bank"],
                 "file": self["file"]}
-        if "params" in self:
-            kwargs["params"]=dict(self["params"])
         if "tags" in self:
             kwargs["tags"]=list(self["tags"])
         return SVSample(kwargs)
@@ -43,7 +41,7 @@ class SVSample(dict):
 """
 - mod is automatically added to sample tags so that samples can be properly allocated to samplers at project rendering time
 - chord is expanded into a series of note trigs with different track keys
-- chords do not support sample
+- chords do not currently support samples
 """
 
 class SVNoteTrig:
