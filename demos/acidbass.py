@@ -78,29 +78,10 @@ def acid_bass(wavefn,
     return trigs.tracks
 
 def spawn_patches(npatches=32):
-    """
-    - not much fun working in the 2**x space but this seems to be how the analog generator controllers work; they are not lobear
-    """    
-    def rand_range(params, limit=2**16):
-        floor, ceil = 2**params["floor"], 2**(params["floor"]+params["range"])
-        return min(limit, floor+int(random.random()*(ceil-floor)))
-    def rand_choice(values, limit=2**16):
-        return min(limit, 2**random.choice(values))
     def wavefn():
         return random.choice([1, 2]) # saw, square
-    """
-    - https://github.com/vitling/acid-banger/blob/main/src/pattern.ts
-    """
     def trigfn(i):
-        if 0==i%4:
-            limit=0.6
-        elif 0==i%3:
-            limit=0.5
-        elif 0==i%2:
-            limit=0.3
-        else:
-            limit=0.1
-        return random.random() < limit
+        return random.random() < 0.5
     def notefn(basenote=12):
         q=random.random()
         if q < 0.7:
@@ -114,19 +95,22 @@ def spawn_patches(npatches=32):
     def velfn():
         return 1 if random.random() < 0.3 else 0.8
     def spawn_relfn():
-        params={"floor": random.choice([13.75, 14, 14.25]),
-                "range": random.choice([0.25, 0.5, 0.75])}
+        values=random.choice([[int("%s000" % h, 16)/2
+                               for h in H]
+                              for H in "89ab|abcd|8ace|47ad".split("|")])
         def wrapped():
-            return rand_range(params)
+            return random.choice(values)
         return wrapped
     def spawn_freqfn():
-        params={"floor": random.choice([6, 7, 8]),
-                "range": random.choice([4, 5, 6])}
+        values=random.choice([[int("%s000" % h, 16)/2
+                               for h in H]
+                              for H in "123|123|1234|1234|3456|1357".split("|")])
         def wrapped():
-            return rand_range(params)
+            return random.choice(values)
         return wrapped
     def resfn():
-        return rand_choice([14.4, 14.6, 14.8, 14.8])
+        return random.choice([int("%s000" % h, 16)/2
+                              for h in "bcdeee"])
     return [acid_bass(wavefn=wavefn,
                       trigfn=trigfn,
                       notefn=notefn,

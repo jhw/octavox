@@ -1,12 +1,8 @@
 ### short
 
-- convert acidbass to work in hex space
-  - use random.choice not random.random
-  - add notes on bias 
-    - freq low
-	- resonance hi
-	- release mid
-	
+- abstract hex support
+- better support for low frequency ranges
+
 - samplebass slice bank
 
 ### medium
@@ -101,6 +97,12 @@
 
 ### done
 
+- convert acidbass to work in hex space
+  - use random.choice not random.random
+  - add notes on bias 
+    - freq low
+	- resonance hi
+	- release mid   
 - convert SVBanks to be list
 - remove acidbass attack
 - allow pool.spawn_free to work without tag
