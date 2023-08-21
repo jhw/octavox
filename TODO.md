@@ -1,12 +1,5 @@
 ### short
 
-- failed archive process
-  - cp achive/slicebeats/* tmp/slicebeats/json
-  - load_project visible
-  - archive_project
-  - aws s3 ls --bucket octavox-assets
-  - (None.json)
-
 - samplebass custom bank 
   - half|full length for each sample
 
@@ -101,6 +94,12 @@
 
 ### done
 
+- failed archive process
+  - cp achive/slicebeats/* tmp/slicebeats/json
+  - load_project visible
+  - archive_project
+  - aws s3 ls --bucket octavox-assets
+  - (None.json)
 - acidbass vel function
 - script to re- push archives
 - re- check archive reanimation
