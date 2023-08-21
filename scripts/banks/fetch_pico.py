@@ -33,7 +33,7 @@ def clean_filename(filename, i):
     return "%s.%s" % (cleanhandle, fileext)
 
 def upload(s3, bucketname, packname, packfile):
-    s3key="banks/pico/%s.zip" % packname.replace(" ", "-").lower()
+    s3key="banks/pico-%s.zip" % packname.replace(" ", "-").lower()
     blocks=filter_blocks(fetch_bin(packfile))
     buf=io.BytesIO()
     with zipfile.ZipFile(buf, "a", zipfile.ZIP_DEFLATED, False) as zf:

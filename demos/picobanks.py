@@ -52,7 +52,7 @@ if __name__=="__main__":
             os.makedirs("tmp/demos")
         for bankname, bank in banks.items():
             print ("INFO: generating %s" % bankname)
-            destfilename="tmp/demos/pico-%s.sunvox" % bankname
+            destfilename="tmp/demos/%s.sunvox" % bankname
             generate(bankname=bankname,
                      bank=bank,
                      banks=banks,

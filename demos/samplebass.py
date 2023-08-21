@@ -95,23 +95,23 @@ def spawn_patches(pool, npatches=32):
             for i in range(npatches)]
 
 SampleTerms=yaml.safe_load("""
-- baseck/03
-- baseck/34
-- baseck/37
-- clipping/32
-- dj-raitis-vinyl-cuts/47
-- ib-magnetic-saturation/51
-- legowelt/29
-- nero-bellum/62
-- pitch-black/27
-- pitch-black/30
-- pitch-black/32
-- syntrx/09
-- syntrx/19
-- syntrx/24
-- syntrx/26
-- syntrx/53
-- syntrx/60
+- pico-baseck/03
+- pico-baseck/34
+- pico-baseck/37
+- pico-clipping/32
+- pico-dj-raitis-vinyl-cuts/47
+- pico-ib-magnetic-saturation/51
+- pico-legowelt/29
+- pico-nero-bellum/62
+- pico-pitch-black/27
+- pico-pitch-black/30
+- pico-pitch-black/32
+- pico-syntrx/09
+- pico-syntrx/19
+- pico-syntrx/24
+- pico-syntrx/26
+- pico-syntrx/53
+- pico-syntrx/60
 """)
 
 if __name__=="__main__":

@@ -1,7 +1,7 @@
 ### short
 
-- add pico- prefix to banks
 - simplify number of times samplebass ref is used in samplebass main block
+
 - second samplebass bank with sliced samples
 
 ### medium
@@ -95,6 +95,7 @@
 
 ### done
 
+- add pico- prefix to banks
 - failed archive process
   - cp achive/slicebeats/* tmp/slicebeats/json
   - load_project visible
