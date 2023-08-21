@@ -121,7 +121,8 @@ class SVBanks(dict):
                 zf=zipfile.ZipFile(buf, "r")
             else:
                 zf=zipfile.ZipFile(cachefilename)
-            bank=SVBank(bankname, zf)
+            bank=SVBank(name=bankname,
+                        zipfile=zf)
             banks[bankname]=bank
         return SVBanks(banks)
 
@@ -136,7 +137,8 @@ class SVBanks(dict):
         for bankname in cached:
             cachefilename="%s/%s.zip" % (cachedir, bankname)
             zf=zipfile.ZipFile(cachefilename)
-            bank=SVBank(bankname, zf)
+            bank=SVBank(name=bankname,
+                        zipfile=zf)
             banks[bankname]=bank
         return SVBanks(banks)
 
@@ -153,7 +155,7 @@ class SVBanks(dict):
     - don't use zf.close() or with() as these fill close zipfile, meaning you can't read from it later 
     """
         
-    def filter(self, name, terms):
+    def search(self, name, terms):
         zf=zipfile.ZipFile(io.BytesIO(), "a", zipfile.ZIP_DEFLATED, False)
         for i, term in enumerate(terms):
             bankstem, wavstem = term.split("/")

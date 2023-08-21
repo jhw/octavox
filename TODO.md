@@ -1,6 +1,6 @@
 ### short
 
-- allow pool to be created without name
+- convert SVBanks to be list
 
 - convert acidbass to work in hex space
   - use random.choice not random.random
