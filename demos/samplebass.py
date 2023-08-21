@@ -43,8 +43,10 @@ Links=yaml.safe_load("""
 
 def sample_bass(trigfn,
                 samplefn,
+                pitchfn,
                 nbeats=16):
-    def note_trig(trigs, target, sample, i):
+    def note_trig(trigs, target, sample, pitch, i):
+        sample["pitch"]=pitch
         trigs.append(SVNoteTrig(mod=target,
                                 sample=sample,
                                 i=i))
@@ -52,7 +54,7 @@ def sample_bass(trigfn,
     sample=samplefn()
     for i in range(nbeats):
         if trigfn(i):
-            note_trig(trigs, "Sampler", sample, i)
+            note_trig(trigs, "Sampler", sample.clone(), pitchfn(), i)
     return trigs.tracks
 
 def spawn_patches(pool, npatches=32):
@@ -60,23 +62,26 @@ def spawn_patches(pool, npatches=32):
     - https://github.com/vitling/acid-banger/blob/main/src/pattern.ts
     """
     def trigfn(i):
-        if 0==i%4:
-            limit=0.6
-        elif 0==i%3:
-            limit=0.5
-        elif 0==i%2:
-            limit=0.3
-        else:
-            limit=0.1
-        return random.random() < limit
+        return random.random() < 0.5
     def spawn_samplefn(pool):
         def wrapped():
             key=random.choice(list(pool.keys()))
             return pool[key]
         return wrapped
+    def pitchfn():
+        q=random.random()
+        if q < 0.7:
+            return 0
+        elif q < 0.8:
+            return -2
+        elif q < 0.9:
+            return 7
+        else:
+            return 12
     samplefn=spawn_samplefn(pool)
     return [sample_bass(trigfn=trigfn,
-                        samplefn=samplefn)
+                        samplefn=samplefn,
+                        pitchfn=pitchfn)
             for i in range(npatches)]
 
 def init_pool(banks, keys):
