@@ -1,5 +1,8 @@
 ### short
 
+- pydub bass slicing demo
+- pydub granular pads demo
+
 ### medium
 
 ### thoughts

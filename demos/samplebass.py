@@ -10,9 +10,17 @@ from octavox.modules.project import SVProject
 
 import boto3, os, random, yaml
 
+"""
+- Filter included for manual manipulation
+"""
+
 Modules=yaml.safe_load("""
 - name: Sampler
   class: octavox.modules.sampler.SVSampler
+- name: Filter
+  class: rv.modules.filter.Filter
+  defaults:
+    type: 0
 - name: Echo
   class: rv.modules.echo.Echo
   defaults:
@@ -32,6 +40,8 @@ Modules=yaml.safe_load("""
 
 Links=yaml.safe_load("""
 - - Sampler
+  - Filter
+- - Filter
   - Echo
 - - Echo
   - Distortion
