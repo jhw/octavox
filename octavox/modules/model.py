@@ -15,6 +15,8 @@ class SVSample(dict):
     def clone(self):
         kwargs={"bank": self["bank"],
                 "file": self["file"]}
+        if "pitch" in self:
+            kwargs["pitch"]=self["pitch"]
         if "tags" in self:
             kwargs["tags"]=list(self["tags"])
         return SVSample(kwargs)
@@ -33,6 +35,9 @@ class SVSample(dict):
         tokens=[]
         tokens.append("%s/%s" % (self["bank"],
                                  self["file"]))
+        if "pitch" in self:
+            formatstr="(+%i)" if self["pitch"] > 0 else "(%i)"
+            tokens.append(formatstr % self["pitch"])
         if ("tags" in self and 
             self["tags"]!=[]):
             tokens.append("[%s]" % ", ".join(sorted(self["tags"])))

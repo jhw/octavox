@@ -56,8 +56,10 @@ class SVSampler(SVBaseSampler):
             self.note_samples[notes[i]]=i
             src=banks.get_wavfile(sample)
             self.load_sample(src, i)
-            sample=self.samples[i]
-            sample.relative_note+=(root-i)
+            svsample=self.samples[i]
+            svsample.relative_note+=(root-i)
+            if "pitch" in sample:
+                svsample.relative_note+=sample["pitch"]
 
     def lookup(self, sample):
         return list(self.pool.keys()).index(str(sample))
