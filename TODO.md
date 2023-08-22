@@ -1,8 +1,13 @@
 ### short
 
+- consider SVSlicePool structure
+  - class for key munging?
+
 ### medium
 
 - pydub granular pads demo
+- vordhosbn hats demo
+
 
 ### thoughts
 

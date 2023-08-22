@@ -1,5 +1,7 @@
 from octavox.modules import is_abbrev
 
+import random
+
 class SVPool(list):
 
     def __init__(self, items=[]):
@@ -23,6 +25,39 @@ class SVPool(list):
                     pool.add(sample)
         return pool
 
+"""
+- any kind of sample manipulation (cutoff, slice) can only be stored as a separate item within a bank's zipfile; ie it's a very flat structure
+- convention for a slice filename is to take the root stem followed by one or more tags, which start with a hash; eg #cutoff-500, #slice-1-8
+- can split on these filename structures to cluster sliced versions under stems
+"""
+    
+class SVSamplePool(SVPool):
+
+    def __init__(self, *args, **kwargs):
+        SVPool.__init__(self, *args, **kwargs)
+        self.init_groups()
+
+    def init_groups(self):
+        groups={}
+        for sample in self:
+            stem, ext = sample["file"].split(".")
+            tokens=[tok for tok in stem.split(" ")
+                    if tok!=[]]
+            key=" ".join([tok for tok in tokens
+                          if not tok.startswith("#")])            
+            tags=[tok for tok in tokens
+                  if tok.startswith("#")]
+            groups.setdefault(key, {})
+            for tag in tags:
+                groups[key][tag]=sample
+        self.groups=groups
+
+    def random_stem(self):
+        return random.choice(list(self.groups.keys()))
+
+    def random_slice(self, stem):
+        return random.choice(list(self.groups[stem].values()))
+    
 class SVPools(dict):
 
     def __init__(self, item={}):

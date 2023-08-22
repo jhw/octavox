@@ -1,6 +1,6 @@
 from octavox.modules.banks import SVBanks
 
-from octavox.modules.banks.pools import SVPool
+from octavox.modules.banks.pools import SVPool, SVSamplePool
 
 from octavox.modules.cli import random_filename
 
@@ -51,40 +51,6 @@ Links=yaml.safe_load("""
   - Output
 """)
 
-"""
-- should this be abstracted into framework; and if so, how?
-"""
-
-class SVSamplePool(SVPool):
-
-    def __init__(self, *args, **kwargs):
-        SVPool.__init__(self, *args, **kwargs)
-        self.init_groups()
-
-    def init_groups(self):
-        groups={}
-        for sample in self:
-            stem, ext = sample["file"].split(".")
-            tokens=[tok for tok in stem.split(" ")
-                    if tok!=[]]
-            key=" ".join([tok for tok in tokens
-                          if not tok.startswith("#")])            
-            tags=[tok for tok in tokens
-                  if tok.startswith("#")]
-            groups.setdefault(key, {})
-            for tag in tags:
-                groups[key][tag]=sample
-        self.groups=groups
-
-    def random_choice(self):
-        return random.choice(self)
-
-    def random_parent(self):
-        return random.choice(list(self.groups.keys()))
-
-    def random_child(self, parent):
-        return random.choice(list(self.groups[parent].values()))
-
 def sample_bass(trigfn,
                 samplefn,
                 pitchfn,
@@ -106,16 +72,10 @@ def spawn_patches(pool, npatches=32):
     """
     def trigfn(i):
         return random.random() < 0.5
-    """
     def spawn_samplefn(pool):
+        stem=pool.random_stem()
         def wrapped():
-            return pool.random_choice()
-        return wrapped
-    """
-    def spawn_samplefn(pool):
-        parent=pool.random_parent()
-        def wrapped():
-            return pool.random_child(parent)
+            return pool.random_slice(stem)
         return wrapped            
     def pitchfn():
         q=random.random()
