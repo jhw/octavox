@@ -1,12 +1,15 @@
 ### short
 
-- convert samplebass to pass through pydub
-- add slices to samplebass
+- check sample hold lfo scale handling
+- replace octavox/banks/pico refs
+- move fragments from banks to project
+- bank clone
+- add banks with different cutoffs to samplebass
 
 ### medium
 
-- bass scales
 - pydub granular pads demo
+- bass scales
 
 ### thoughts
 

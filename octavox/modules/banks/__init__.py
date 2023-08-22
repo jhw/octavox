@@ -4,6 +4,8 @@ from octavox.modules.banks.pools import SVPool, SVPools
 
 from octavox.modules.model import SVSample
 
+from pydub import AudioSegment
+
 import io, os, re, yaml, zipfile
 
 Fragments=yaml.safe_load("""
@@ -53,6 +55,17 @@ class SVBank:
         return [item.filename
                 for item in self.zipfile.infolist()]
 
+    def cutoff(self, sz, fadeout=20):
+        zf=zipfile.ZipFile(io.BytesIO(), "a", zipfile.ZIP_DEFLATED, False)
+        for wavfilename in self.wavfiles:
+            wavfile=self.zipfile.open(wavfilename)
+            audio=AudioSegment.from_file(io.BytesIO(wavfile.read()))
+            buf=io.BytesIO()
+            audio[:sz].fade_out(fadeout).export(buf, format="wav")
+            zf.writestr(wavfilename, buf.getvalue())
+        return SVBank(name=self.name,
+                      zipfile=zf)
+    
     def lookup(self, abbrev):
         matches=[]
         for wavfile in self.wavfiles:
