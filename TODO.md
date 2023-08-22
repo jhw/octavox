@@ -1,13 +1,15 @@
 ### short
 
-- consider SVSlicePool structure
-  - class for key munging?
+- add _pool suffix to spawn_free|curated
+- rename banks.search as banks.filter_bank
+- rename bank.cutoff as slice_cutoffs
+- check using curated pool to filter for bass terms
+- apply curated pool filter to samplebass
 
 ### medium
 
 - pydub granular pads demo
 - vordhosbn hats demo
-
 
 ### thoughts
 
