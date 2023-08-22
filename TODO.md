@@ -1,10 +1,6 @@
 ### short
 
-- convert pools to list
-- convert banks to list
-
 - new pool class to handle slices
-- convery samplebass to use slices for each track
 
 ### medium
 
@@ -14,9 +10,11 @@
 
 ### thoughts
 
+- convert pools, banks to lists? 
+  - seems to be more trouble that it is really worth
+  - because then pool has to store name which makes cloning harder  
 - move lfo multiplier (ffff) from config into module?
   - no is fine where it is
-  
 - bank clone?
   - search clones bank
 - add prefix/string matching to reanimate archives?
