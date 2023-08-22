@@ -51,10 +51,17 @@ Links=yaml.safe_load("""
   - Output
 """)
 
+"""
+- should this be abstracted into framework; and if so, how?
+"""
+
 class SVSamplePool(SVPool):
 
     def __init__(self, *args, **kwargs):
         SVPool.__init__(self, *args, **kwargs)
+        self.init_groups()
+
+    def init_groups(self):
         groups={}
         for sample in self:
             stem, ext = sample["file"].split(".")

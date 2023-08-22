@@ -1,8 +1,10 @@
 ### short
 
-### medium
-
 - module layout as an option
+
+- better abstraction for SVSlicePool?
+
+### medium
 
 - pydub granular pads demo
 
