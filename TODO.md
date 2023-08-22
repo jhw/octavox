@@ -1,7 +1,5 @@
 ### short
 
-- add load_yaml utility referencing file
-- move slicebeats modules, machines, links into yaml files
 - move fragments into slicebeats and rename as poolterms
 - refactor cutoff suffix as a tag (#cutoff-500)
 - add tag groups method to bank
@@ -102,6 +100,8 @@
 
 ### done
 
+- add load_yaml utility referencing file
+- move slicebeats modules, machines, links into yaml files
 - samplebass to request multiple sizes
 - cutoff to accept multiple sizes
 - cutoff to add suffix to filename

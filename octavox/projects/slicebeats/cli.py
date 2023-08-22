@@ -1,3 +1,5 @@
+from octavox import load_yaml
+
 from octavox.modules.banks import SVBanks
 
 from octavox.modules.banks.pools import SVPools, SVPool
@@ -10,48 +12,9 @@ from octavox.modules.model import SVSample, SVNoteTrig, SVPatch
 
 from octavox.projects.slicebeats.model import Pattern
 
-import boto3, json, os, random, yaml
+import boto3, json, os, random
 
-Machines=yaml.safe_load("""
-- name: KickSampler
-  class: octavox.projects.slicebeats.model.Sequencer
-  params:
-    tag: kk
-    styles:
-    - fourfloor
-    - electro
-    - triplets
-- name: SnareSampler
-  class: octavox.projects.slicebeats.model.Sequencer
-  params:
-    tag: sn
-    styles:
-    - backbeat
-    - skip
-- name: HatSampler
-  class: octavox.projects.slicebeats.model.Sequencer
-  params:
-    tag: ht
-    styles:
-    - offbeats
-    - closed
-- name: Echo/wet
-  class: octavox.modules.lfos.sample_hold.SampleHoldModulator
-  params:
-    range: [0, 1]
-    increment: 0.25
-    step: 4
-    live: 0.66666
-    multiplier: 32768
-- name: Echo/feedback
-  class: octavox.modules.lfos.sample_hold.SampleHoldModulator
-  params:
-    range: [0, 1]
-    increment: 0.25
-    step: 4
-    live: 1.0
-    multiplier: 32768
-""")
+Machines, Modules, Links, Params = [load_yaml("projects/slicebeats/%s.yaml" % key) for key in "machines|modules|links|params".split("|")]
 
 class SlicebeatsCli(SVBankCli):
 
@@ -147,56 +110,6 @@ class SlicebeatsCli(SVBankCli):
     def do_clean_fixes(self):
         self.fixes=SVPool()
         
-Params=yaml.safe_load("""
-temperature: 1.0
-density: 0.75
-dseed: 1.0
-dstyle: 0.66666
-nbeats: 16
-blocksize: 4
-nblocks: 8
-bpm: 120
-""")
-
-Modules=yaml.safe_load("""
-- name: KickSampler
-  class: octavox.modules.sampler.SVSampler
-- name: SnareSampler
-  class: octavox.modules.sampler.SVSampler
-- name: HatSampler
-  class: octavox.modules.sampler.SVSampler
-- name: Echo
-  class: rv.modules.echo.Echo
-  defaults:
-    dry: 256
-    wet: 256
-    delay: 36
-    delay_unit: 3 # tick
-- name: Distortion
-  class: rv.modules.distortion.Distortion
-  defaults:
-    power: 64
-- name: Reverb
-  class: rv.modules.reverb.Reverb
-  defaults:
-    wet: 4
-""")
-
-Links=yaml.safe_load("""
-- - KickSampler
-  - Echo
-- - SnareSampler
-  - Echo
-- - HatSampler
-  - Echo
-- - Echo
-  - Distortion
-- - Distortion
-  - Reverb
-- - Reverb
-  - Output
-""")
-
 if __name__=="__main__":
     try:
         bucketname=os.environ["OCTAVOX_ASSETS_BUCKET"]
