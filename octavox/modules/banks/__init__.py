@@ -30,7 +30,8 @@ class SVBank:
                 buf=io.BytesIO()
                 audio[:sz].fade_out(fadeout).export(buf, format="wav")
                 tokens=wavfilename.split(".")
-                slicename="%s [%i].%s" % (tokens[0], sz, tokens[1])
+                slicename="%s #cutoff-%i.%s" % (tokens[0], sz, tokens[1])
+                print (slicename)
                 zf.writestr(slicename, buf.getvalue())
         return SVBank(name=self.name,
                       zipfile=zf)

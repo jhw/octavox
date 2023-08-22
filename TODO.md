@@ -1,6 +1,5 @@
 ### short
 
-- refactor cutoff suffix as a tag (#cutoff-500)
 - add tag groups method to bank
 - slicebeats demo to switch cutoff tags within patch
 
@@ -99,6 +98,7 @@
 
 ### done
 
+- refactor cutoff suffix as a tag (#cutoff-500)
 - move fragments into slicebeats and rename as poolterms
 - add load_yaml utility referencing file
 - move slicebeats modules, machines, links into yaml files
