@@ -1,8 +1,5 @@
 ### short
 
-- add _pool suffix to spawn_free|curated
-- rename banks.search as banks.filter_bank
-- rename bank.cutoff as slice_cutoffs
 - check using curated pool to filter for bass terms
 - apply curated pool filter to samplebass
 
@@ -106,6 +103,9 @@
 
 ### done
 
+- rename bank.cutoff as slice_cutoffs
+- rename banks.search as banks.filter_bank
+- add _pool suffix to spawn_free|curated
 - module layout as an option
 - new pool class to handle slices
 - convert pool to list

@@ -70,10 +70,10 @@ class SVPools(dict):
                 parent+=pool
         return parent
 
-    def spawn_free(self):
+    def spawn_free_pool(self):
         return self.aggregate("free")
 
-    def spawn_curated(self):
+    def spawn_curated_pool(self):
         return self.aggregate("curated")
 
     def lookup(self, abbrev):

@@ -21,7 +21,7 @@ class SVBank:
         return [item.filename
                 for item in self.zipfile.infolist()]
 
-    def cutoff(self, sizes, fadeout=20):
+    def apply_cutoffs(self, sizes, fadeout=20):
         zf=zipfile.ZipFile(io.BytesIO(), "a", zipfile.ZIP_DEFLATED, False)
         for wavfilename in self.wavfiles:
             wavfile=self.zipfile.open(wavfilename)
@@ -47,7 +47,7 @@ class SVBank:
         else:
             return matches.pop()
     
-    def spawn_free(self, *args):
+    def spawn_free_pool(self, *args):
         pool, wavfiles = SVPool(), self.wavfiles
         for wavfile in wavfiles:
             sample=SVSample({"bank": self.name,
@@ -56,8 +56,8 @@ class SVBank:
             pool.add(sample)
         return pool
     
-    def spawn_curated(self,
-                      terms):
+    def spawn_curated_pool(self,
+                           terms):
         pool, wavfiles = SVPool(), self.wavfiles
         for wavfile in wavfiles:
             for tag, _terms in terms.items():
@@ -141,7 +141,7 @@ class SVBanks(dict):
     - don't use zf.close() or with() as these fill close zipfile, meaning you can't read from it later 
     """
         
-    def search(self, name, terms):
+    def filter(self, name, terms):
         zf=zipfile.ZipFile(io.BytesIO(), "a", zipfile.ZIP_DEFLATED, False)
         for i, term in enumerate(terms):
             bankstem, wavstem = term.split("/")
@@ -175,10 +175,10 @@ class SVBanks(dict):
         pools=SVPools()
         for attr in ["free", "curated"]:
             for bankname, bank in self.items():
-                bankfn=getattr(bank, "spawn_%s" % attr)
+                bankfn=getattr(bank, "spawn_%s_pool" % attr)
                 key="%s-%s" % (bankname, attr)                
                 pools[key]=bankfn(terms)
-            poolsfn=getattr(pools, "spawn_%s" % attr)
+            poolsfn=getattr(pools, "spawn_%s_pool" % attr)
             key="global-%s" % attr
             pools[key]=poolsfn()
         return pools
@@ -187,7 +187,4 @@ class SVBanks(dict):
         return self[sample["bank"]].zipfile.open(sample["file"], 'r')
     
 if __name__=="__main__":
-    banks=SVBanks("tmp/banks")
-    pools=banks.spawn_pools()
-    for k, v in pools.items():
-        print (k, len(v))
+    pass
