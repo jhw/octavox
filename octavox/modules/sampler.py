@@ -52,7 +52,7 @@ class SVSampler(SVBaseSampler):
         self.pool=pool
         notes=list(RVNOTE)
         root=notes.index(RVNOTE.C5)
-        for i, sample in enumerate(self.pool.values()):
+        for i, sample in enumerate(self.pool):
             self.note_samples[notes[i]]=i
             src=banks.get_wavfile(sample)
             self.load_sample(src, i)
@@ -62,7 +62,7 @@ class SVSampler(SVBaseSampler):
                 svsample.relative_note+=sample["pitch"]
 
     def lookup(self, sample):
-        return list(self.pool.keys()).index(str(sample))
+        return self.pool.keys.index(str(sample))
         
 if __name__=="__main__":
     pass

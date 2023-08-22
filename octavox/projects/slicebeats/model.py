@@ -56,14 +56,14 @@ class Samples(list):
         if tag not in mapping:
             raise RuntimeError("tag %s not found in mapping" % tag)
         for childtag in mapping[tag]:
-            filtered=fixes.filter(childtag).samples
+            filtered=fixes.filter(childtag)
             if i==0 and filtered!=[]:
                 values=filtered
             else:
-                filtered=pool.filter(childtag).samples
-                values=filtered if filtered!=[] else pool.samples
+                filtered=pool.filter(childtag)
+                values=filtered if filtered!=[] else pool
             sample=random.choice(values).clone()
-            sample["tags"]=[childtag] # NB override tags as may come from pool.samples
+            sample["tags"]=[childtag] # NB override tags as may come from pool
             samples.append(sample)
         return Samples(samples)
             

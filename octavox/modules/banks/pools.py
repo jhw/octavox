@@ -1,29 +1,27 @@
 from octavox.modules import is_abbrev
 
-from collections import OrderedDict
+class SVPool(list):
 
-class SVPool(OrderedDict):
-
-    def __init__(self, item={}):
-        OrderedDict.__init__(self, item)        
+    def __init__(self, items=[]):
+        list.__init__(self, items)
+        self.keys=[]
 
     def clone(self):
         return SVPool(self)
 
     def add(self, sample):
-        self[str(sample)]=sample
+        key=str(sample)
+        if key not in self.keys:
+            self.append(sample)
+            self.keys.append(key)
     
     def filter(self, tag):
         pool=SVPool()
-        for sample in self.values():
+        for sample in self:
             for sktag in sample["tags"]:
                 if tag==sktag:
                     pool.add(sample)
         return pool
-
-    @property
-    def samples(self):
-        return list(self.values())
 
 class SVPools(dict):
 
@@ -34,7 +32,7 @@ class SVPools(dict):
         parent=SVPool()
         for key, pool in self.items():
             if key.endswith(suffix):
-                parent.update(pool)
+                parent+=pool
         return parent
 
     def spawn_free(self):

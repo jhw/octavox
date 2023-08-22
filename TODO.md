@@ -1,6 +1,5 @@
 ### short
 
-- convert pool to list
 - convert pools to list
 - convert banks to list
 
@@ -8,6 +7,8 @@
 - convery samplebass to use slices for each track
 
 ### medium
+
+- module layout as an option
 
 - pydub granular pads demo
 
@@ -103,6 +104,7 @@
 
 ### done
 
+- convert pool to list
 - remove banks.slicedxxxx
 - migrate archives to include pico- bank prefix
 - check archive reanimation
