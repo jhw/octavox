@@ -1,6 +1,5 @@
 ### short
 
-- banks.search shouldn't override wavfilename
 - check sample hold lfo scale handling
 - move fragments from banks to project
 - bank clone
@@ -98,6 +97,7 @@
 
 ### done
 
+- banks.search shouldn't override wavfilename
 - replace octavox/banks/pico refs
 - abstract hex support
 - better support for low frequency ranges

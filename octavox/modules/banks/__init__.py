@@ -186,9 +186,7 @@ class SVBanks(dict):
             except RuntimeError as error:
                 continue
             wavfile=self[bankname].zipfile.open(wavfilename)
-            formatstr="0%i.wav" if i < 10 else "%i.wav"
-            filename=formatstr % i
-            zf.writestr(filename, wavfile.read())
+            zf.writestr(wavfilename, wavfile.read())
         return SVBank(name=name,
                       zipfile=zf)
         
