@@ -1,9 +1,7 @@
 ### short
 
-- abstract hex support
-- better support for low frequency ranges
-
-- samplebass slice bank
+- convert samplebass to pass through pydub
+- add slices to samplebass
 
 ### medium
 
@@ -97,6 +95,8 @@
 
 ### done
 
+- abstract hex support
+- better support for low frequency ranges
 - convert acidbass to work in hex space
   - use random.choice not random.random
   - add notes on bias 

@@ -25,7 +25,7 @@ Modules=yaml.safe_load("""
   class: rv.modules.echo.Echo
   defaults:
     dry: 256
-    wet: 32
+    wet: 16
     delay: 36
     delay_unit: 3 # tick
 - name: Distortion
@@ -78,6 +78,10 @@ def acid_bass(wavefn,
     return trigs.tracks
 
 def spawn_patches(npatches=32):
+    def hexval(h, n=4):
+        return int(h+"".join(["0" for i in range(n-len(h))]), 16)
+    def hexvalues(H, mult=0.5):
+        return [mult*hexval(h) for h in H]
     def wavefn():
         return random.choice([1, 2]) # saw, square
     def trigfn(i):
@@ -94,23 +98,28 @@ def spawn_patches(npatches=32):
             return basenote+12
     def velfn():
         return 1 if random.random() < 0.3 else 0.8
-    def spawn_relfn():
-        values=random.choice([[int("%s000" % h, 16)/2
-                               for h in H]
-                              for H in "89ab|abcd|8ace|47ad".split("|")])
+    def spawn_relfn(H=["89ab",
+                       "abcd",
+                       "8ace",
+                       "47ad"]):
+        values=random.choice([hexvalues(h) for h in H])
         def wrapped():
             return random.choice(values)
         return wrapped
-    def spawn_freqfn():
-        values=random.choice([[int("%s000" % h, 16)/2
-                               for h in H]
-                              for H in "123|123|1234|1234|3456|1357".split("|")])
+    def spawn_freqfn(H=["04|08|0c|10".split("|"),
+                        "04|08|0c|10".split("|"),
+                        "08|10|18|20".split("|"),
+                        "08|10|18|20".split("|"),
+                        "1234",
+                        "1234",
+                        "2345",
+                        "1357"]):
+        values=random.choice([hexvalues(h) for h in H])
         def wrapped():
             return random.choice(values)
         return wrapped
-    def resfn():
-        return random.choice([int("%s000" % h, 16)/2
-                              for h in "bcdeee"])
+    def resfn(h="bcdeefff"):
+        return random.choice(hexvalues(h))
     return [acid_bass(wavefn=wavefn,
                       trigfn=trigfn,
                       notefn=notefn,
