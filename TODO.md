@@ -1,17 +1,19 @@
 ### short
 
-- check sample hold lfo scale handling
+- samplebass to switch cutoffs within a patch
+
 - move fragments from banks to project
-- bank clone
-- add banks with different cutoffs to samplebass
 
 ### medium
 
 - pydub granular pads demo
+
 - bass scales
 
 ### thoughts
 
+- bank clone?
+  - search clones bank
 - add prefix/string matching to reanimate archives?
   - not sure is required
 - auto- populate incomplete curated pools?
@@ -97,6 +99,9 @@
 
 ### done
 
+- samplebass to request multiple sizes
+- cutoff to accept multiple sizes
+- cutoff to add suffix to filename
 - banks.search shouldn't override wavfilename
 - replace octavox/banks/pico refs
 - abstract hex support

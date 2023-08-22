@@ -55,14 +55,18 @@ class SVBank:
         return [item.filename
                 for item in self.zipfile.infolist()]
 
-    def cutoff(self, sz, fadeout=20):
+    def cutoff(self, sizes, fadeout=20):
         zf=zipfile.ZipFile(io.BytesIO(), "a", zipfile.ZIP_DEFLATED, False)
         for wavfilename in self.wavfiles:
             wavfile=self.zipfile.open(wavfilename)
             audio=AudioSegment.from_file(io.BytesIO(wavfile.read()))
-            buf=io.BytesIO()
-            audio[:sz].fade_out(fadeout).export(buf, format="wav")
-            zf.writestr(wavfilename, buf.getvalue())
+            for sz in sizes:
+                buf=io.BytesIO()
+                audio[:sz].fade_out(fadeout).export(buf, format="wav")
+                tokens=wavfilename.split(".")
+                slicename="%s [%i].%s" % (tokens[0], sz, tokens[1])
+                print (slicename)
+                zf.writestr(slicename, buf.getvalue())
         return SVBank(name=self.name,
                       zipfile=zf)
     
@@ -186,7 +190,8 @@ class SVBanks(dict):
             except RuntimeError as error:
                 continue
             wavfile=self[bankname].zipfile.open(wavfilename)
-            zf.writestr(wavfilename, wavfile.read())
+            modwavfilename="%s %s" % (bankname, wavfilename)
+            zf.writestr(modwavfilename, wavfile.read())
         return SVBank(name=name,
                       zipfile=zf)
         
