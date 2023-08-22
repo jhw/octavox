@@ -5,7 +5,7 @@ from octavox.modules import load_class
 
 from octavox.modules.banks import SVPool
 
-from octavox.modules.project.modules import SVColor, init_mod_layout, Output
+from octavox.modules.project.modules import SVColor, Output
 
 Volume, Height = 256, 64
                     
@@ -43,26 +43,18 @@ class SVProject:
                 
     def init_modules(self,
                      proj,
-                     modconfig,
-                     links,
-                     multipliers={"x": 1, "y": -1}):
-        positions=init_mod_layout(modules=modconfig,
-                                  links=links)
+                     modconfig):
         modules={}
         for i, moditem in enumerate(modconfig):
             mod, name = moditem["instance"], moditem["name"]
             setattr(mod, "name", name)
-            for i, attr in enumerate(["x", "y"]):            
-                value=positions[name][i]
-                mult=multipliers[attr]
-                setattr(mod, attr, int(512+128*mult*value))
             if "defaults" in moditem:
                 for k, v in moditem["defaults"].items():
                     mod.set_raw(k, v)
             proj.attach_module(mod)
             modules[name]=mod
         return modules
-    
+
     def link_modules(self,
                      proj,
                      links,
@@ -139,8 +131,7 @@ class SVProject:
                              pool=pool,
                              banks=banks)
         modules=self.init_modules(proj=proj,
-                                  modconfig=modconfig,
-                                  links=links)
+                                  modconfig=modconfig)
         self.link_modules(proj=proj,
                           links=links,
                           modules=modules)
