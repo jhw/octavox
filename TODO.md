@@ -1,7 +1,5 @@
 ### short
 
-- new pool class to handle slices
-
 ### medium
 
 - module layout as an option
@@ -102,6 +100,7 @@
 
 ### done
 
+- new pool class to handle slices
 - convert pool to list
 - remove banks.slicedxxxx
 - migrate archives to include pico- bank prefix

@@ -54,10 +54,29 @@ Links=yaml.safe_load("""
 class SVSamplePool(SVPool):
 
     def __init__(self, *args, **kwargs):
-        SVPool.__init__(self, *args, **kwargs)        
+        SVPool.__init__(self, *args, **kwargs)
+        groups={}
+        for sample in self:
+            stem, ext = sample["file"].split(".")
+            tokens=[tok for tok in stem.split(" ")
+                    if tok!=[]]
+            key=" ".join([tok for tok in tokens
+                          if not tok.startswith("#")])            
+            tags=[tok for tok in tokens
+                  if tok.startswith("#")]
+            groups.setdefault(key, {})
+            for tag in tags:
+                groups[key][tag]=sample
+        self.groups=groups
 
     def random_choice(self):
         return random.choice(self)
+
+    def random_parent(self):
+        return random.choice(list(self.groups.keys()))
+
+    def random_child(self, parent):
+        return random.choice(list(self.groups[parent].values()))
 
 def sample_bass(trigfn,
                 samplefn,
@@ -69,10 +88,9 @@ def sample_bass(trigfn,
                                 sample=sample,
                                 i=i))
     trigs=SVTrigs(nbeats=nbeats)
-    sample=samplefn()
     for i in range(nbeats):
         if trigfn(i):
-            note_trig(trigs, "Sampler", sample.clone(), pitchfn(), i)
+            note_trig(trigs, "Sampler", samplefn(), pitchfn(), i)
     return trigs.tracks
 
 def spawn_patches(pool, npatches=32):
@@ -81,10 +99,17 @@ def spawn_patches(pool, npatches=32):
     """
     def trigfn(i):
         return random.random() < 0.5
+    """
     def spawn_samplefn(pool):
         def wrapped():
             return pool.random_choice()
         return wrapped
+    """
+    def spawn_samplefn(pool):
+        parent=pool.random_parent()
+        def wrapped():
+            return pool.random_child(parent)
+        return wrapped            
     def pitchfn():
         q=random.random()
         if q < 0.7:
@@ -95,9 +120,8 @@ def spawn_patches(pool, npatches=32):
             return 7
         else:
             return 12
-    samplefn=spawn_samplefn(pool)
     return [sample_bass(trigfn=trigfn,
-                        samplefn=samplefn,
+                        samplefn=spawn_samplefn(pool),
                         pitchfn=pitchfn)
             for i in range(npatches)]
 
@@ -128,7 +152,7 @@ if __name__=="__main__":
             raise RuntimeError("OCTAVOX_ASSETS_BUCKET does not exist")
         s3=boto3.client("s3")
         bank=SVBanks.initialise(s3, bucketname).search(name="samplebass",
-                                                       terms=SampleTerms).cutoff(sizes=[200, 1000])
+                                                       terms=SampleTerms).cutoff(sizes=[200, 500, 1000])
         banks=SVBanks.from_list([bank])
         pool=SVSamplePool(bank.spawn_free())
         patches=spawn_patches(pool)
