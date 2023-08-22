@@ -1,15 +1,12 @@
 ### short
 
-- module layout as an option
-
-- better abstraction for SVSlicePool?
-
 ### medium
 
 - pydub granular pads demo
 
 ### thoughts
 
+- better abstraction for SVSlicePool?
 - convert pools, banks to lists? 
   - seems to be more trouble that it is really worth
   - because then pool has to store name which makes cloning harder  
@@ -102,6 +99,7 @@
 
 ### done
 
+- module layout as an option
 - new pool class to handle slices
 - convert pool to list
 - remove banks.slicedxxxx

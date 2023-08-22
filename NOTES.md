@@ -1,10 +1,24 @@
+### python demos 22/08/23
+
+- pitch shifting
+  -  http://zulko.github.io/blog/2014/03/29/soundstretching-and-pitch-shifting-in-python/
+  
+- timestretching
+  -  http://zulko.github.io/blog/2014/03/29/soundstretching-and-pitch-shifting-in-python/
+
+- split on silence
+  - https://stackoverflow.com/questions/45526996/split-audio-files-using-silence-detection
+
+- pitch detection
+- autotune
+
 ### banks 20/08/23
 
 - dataline juno
 - polyend tracker
 - perkons
 
-### demos 18/08/23
+### octavox demos 18/08/23
 
 - acid bass 2
   - sustain / note off
@@ -17,7 +31,7 @@
 - kicker bass
 - vordshosbn hats
 - synth chords
-- backbeat samples
+- backbeats
 - compressor 
 
 - acid bass
