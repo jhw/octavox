@@ -93,13 +93,12 @@ class SVBank:
         return pool
     
     def spawn_curated(self,
-                      tags,
-                      fragments=Fragments):
+                      terms):
         pool, wavfiles = SVPool(), self.wavfiles
         for wavfile in wavfiles:
-            for tag in tags:
-                for frag in fragments[tag]:
-                    if re.search(frag, wavfile, re.I):
+            for tag, _terms in terms.items():
+                for term in _terms:
+                    if re.search(term, wavfile, re.I):
                         sample=SVSample({"tags": [tag],
                                          "bank": self.name,
                                          "file": wavfile})
@@ -208,13 +207,13 @@ class SVBanks(dict):
         else:
             return matches.pop()
             
-    def spawn_pools(self, tags=Fragments.keys()):
+    def spawn_pools(self, terms=Fragments):
         pools=SVPools()
         for attr in ["free", "curated"]:
             for bankname, bank in self.items():
                 bankfn=getattr(bank, "spawn_%s" % attr)
                 key="%s-%s" % (bankname, attr)                
-                pools[key]=bankfn(tags)
+                pools[key]=bankfn(terms)
             poolsfn=getattr(pools, "spawn_%s" % attr)
             key="global-%s" % attr
             pools[key]=poolsfn()
