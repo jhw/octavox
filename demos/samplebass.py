@@ -122,6 +122,7 @@ if __name__=="__main__":
         s3=boto3.client("s3")
         bank=SVBanks.initialise(s3, bucketname).search(name="samplebass",
                                                        terms=SampleTerms).cutoff(sizes=[200, 1000])
+        print (bank.slicegroups)
         banks=SVBanks.from_list([bank])
         pool=bank.spawn_free()
         patches=spawn_patches(pool)

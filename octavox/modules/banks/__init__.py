@@ -21,6 +21,22 @@ class SVBank:
         return [item.filename
                 for item in self.zipfile.infolist()]
 
+    @property
+    def slicegroups(self):
+        groups={}
+        for item in self.zipfile.infolist():
+            absfilename, ext = item.filename.split(".")
+            tokens=[tok for tok in absfilename.split(" ")
+                    if tok!='']
+            tags=[tok for tok in tokens
+                  if tok.startswith("#")]
+            key=" ".join([tok for tok in tokens
+                          if not tok.startswith("#")])
+            groups.setdefault(key, {})
+            for tag in tags:
+                groups[key][tag]=item.filename
+        return groups
+    
     def cutoff(self, sizes, fadeout=20):
         zf=zipfile.ZipFile(io.BytesIO(), "a", zipfile.ZIP_DEFLATED, False)
         for wavfilename in self.wavfiles:
@@ -31,7 +47,6 @@ class SVBank:
                 audio[:sz].fade_out(fadeout).export(buf, format="wav")
                 tokens=wavfilename.split(".")
                 slicename="%s #cutoff-%i.%s" % (tokens[0], sz, tokens[1])
-                print (slicename)
                 zf.writestr(slicename, buf.getvalue())
         return SVBank(name=self.name,
                       zipfile=zf)

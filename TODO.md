@@ -1,6 +1,5 @@
 ### short
 
-- add tag groups method to bank
 - slicebeats demo to switch cutoff tags within patch
 
 ### medium
@@ -98,6 +97,7 @@
 
 ### done
 
+- add tag groups method to bank
 - refactor cutoff suffix as a tag (#cutoff-500)
 - move fragments into slicebeats and rename as poolterms
 - add load_yaml utility referencing file
