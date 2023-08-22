@@ -51,6 +51,14 @@ Links=yaml.safe_load("""
   - Output
 """)
 
+class SVSamplePool(SVPool):
+
+    def __init__(self, *args, **kwargs):
+        SVPool.__init__(self, *args, **kwargs)        
+
+    def random_choice(self):
+        return random.choice(self)
+
 def sample_bass(trigfn,
                 samplefn,
                 pitchfn,
@@ -75,8 +83,7 @@ def spawn_patches(pool, npatches=32):
         return random.random() < 0.5
     def spawn_samplefn(pool):
         def wrapped():
-            key=random.choice(list(pool.keys()))
-            return pool[key]
+            return pool.random_choice()
         return wrapped
     def pitchfn():
         q=random.random()
@@ -123,7 +130,7 @@ if __name__=="__main__":
         bank=SVBanks.initialise(s3, bucketname).search(name="samplebass",
                                                        terms=SampleTerms).cutoff(sizes=[200, 1000])
         banks=SVBanks.from_list([bank])
-        pool=bank.spawn_free()
+        pool=SVSamplePool(bank.spawn_free())
         patches=spawn_patches(pool)
         project=SVProject().render(patches=patches,
                                    modconfig=Modules,
