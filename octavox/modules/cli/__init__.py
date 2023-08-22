@@ -1,4 +1,6 @@
-from octavox.modules import is_abbrev, list_s3_keys, has_internet
+from octavox import load_yaml, has_internet
+
+from octavox.modules import is_abbrev, list_s3_keys
 
 from octavox.modules.banks import SVPool
 
@@ -10,13 +12,10 @@ from octavox.modules.project import SVProject
 
 from datetime import datetime
 
-import boto3, cmd, json, os, random, readline, yaml
+import boto3, cmd, json, os, random, readline
 
-def load_yaml(filename):
-    return yaml.safe_load(open(os.path.join(os.path.dirname(__file__), filename)).read())
-
-Nouns, Adjectives = (load_yaml("nouns.yaml"),
-                     load_yaml("adjectives.yaml"))
+Nouns, Adjectives = (load_yaml("modules/cli/nouns.yaml"),
+                     load_yaml("modules/cli/adjectives.yaml"))
 
 HistorySize=100
 

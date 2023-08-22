@@ -1,4 +1,6 @@
-from octavox.modules import is_abbrev, list_s3_keys, has_internet
+from octavox import has_internet
+
+from octavox.modules import is_abbrev, list_s3_keys
 
 from octavox.modules.banks.pools import SVPool, SVPools
 
