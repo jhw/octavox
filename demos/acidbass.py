@@ -28,10 +28,6 @@ Modules=yaml.safe_load("""
     wet: 16
     delay: 36
     delay_unit: 3 # tick
-- name: Distortion
-  class: rv.modules.distortion.Distortion
-  defaults:
-    power: 64
 - name: Reverb
   class: rv.modules.reverb.Reverb
   defaults:
@@ -42,8 +38,6 @@ Links=yaml.safe_load("""
 - - Generator
   - Echo
 - - Echo
-  - Distortion
-- - Distortion
   - Reverb
 - - Reverb
   - Output

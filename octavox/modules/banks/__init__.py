@@ -171,9 +171,9 @@ class SVBanks(dict):
         else:
             return matches.pop()
             
-    def spawn_pools(self, terms):
+    def spawn_pools(self, terms, attrs=["free", "curated"]):
         pools=SVPools()
-        for attr in ["free", "curated"]:
+        for attr in attrs:
             for bankname, bank in self.items():
                 bankfn=getattr(bank, "spawn_%s_pool" % attr)
                 key="%s-%s" % (bankname, attr)                

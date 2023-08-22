@@ -1,11 +1,9 @@
 ### short
 
-- check using curated pool to filter for bass terms
-- apply curated pool filter to samplebass
+- pydub granular pads demo
 
 ### medium
 
-- pydub granular pads demo
 - vordhosbn hats demo
 
 ### thoughts
@@ -103,6 +101,7 @@
 
 ### done
 
+- search banks
 - rename bank.cutoff as slice_cutoffs
 - rename banks.search as banks.filter_bank
 - add _pool suffix to spawn_free|curated
