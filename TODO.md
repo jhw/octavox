@@ -1,6 +1,5 @@
 ### short
 
-- move fragments into slicebeats and rename as poolterms
 - refactor cutoff suffix as a tag (#cutoff-500)
 - add tag groups method to bank
 - slicebeats demo to switch cutoff tags within patch
@@ -100,6 +99,7 @@
 
 ### done
 
+- move fragments into slicebeats and rename as poolterms
 - add load_yaml utility referencing file
 - move slicebeats modules, machines, links into yaml files
 - samplebass to request multiple sizes

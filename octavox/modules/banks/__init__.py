@@ -8,43 +8,7 @@ from octavox.modules.model import SVSample
 
 from pydub import AudioSegment
 
-import io, os, re, yaml, zipfile
-
-Fragments=yaml.safe_load("""
-kk:
-  - kick
-  - kik
-  - kk
-  - bd
-  - bass
-sn:
-  - snare
-  - sn
-  - sd
-  - clap
-  - clp
-  - cp
-  - hc
-  - rim
-  - plip
-  - rs
-oh:
-  - open
-  - hat
-  - ht 
-  - oh
-  - perc
-  - ussion
-  - prc
-ch:
-  - closed
-  - hat
-  - ht 
-  - " ch" # else will match glitch; but still matches chord unfortunately
-  - perc
-  - ussion
-  - prc
-""")
+import io, os, re, zipfile
 
 class SVBank:
 
@@ -207,7 +171,7 @@ class SVBanks(dict):
         else:
             return matches.pop()
             
-    def spawn_pools(self, terms=Fragments):
+    def spawn_pools(self, terms):
         pools=SVPools()
         for attr in ["free", "curated"]:
             for bankname, bank in self.items():

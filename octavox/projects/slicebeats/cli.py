@@ -14,7 +14,7 @@ from octavox.projects.slicebeats.model import Pattern
 
 import boto3, json, os, random
 
-Machines, Modules, Links, Params = [load_yaml("projects/slicebeats/%s.yaml" % key) for key in "machines|modules|links|params".split("|")]
+Machines=load_yaml("projects/slicebeats/machines.yaml")
 
 class SlicebeatsCli(SVBankCli):
 
@@ -115,18 +115,19 @@ if __name__=="__main__":
         bucketname=os.environ["OCTAVOX_ASSETS_BUCKET"]
         if bucketname in ["", None]:
             raise RuntimeError("OCTAVOX_ASSETS_BUCKET does not exist")
+        modules, links, params, poolterms = [load_yaml("projects/slicebeats/%s.yaml" % key) for key in "modules|links|params|poolterms".split("|")]
         s3=boto3.client("s3")
         banks=SVBanks.initialise(s3, bucketname)
-        pools=banks.spawn_pools()
+        pools=banks.spawn_pools(terms=poolterms)
         poolname=random.choice(list(pools.keys()))
         print ("INFO: pool=%s" % poolname)
         SlicebeatsCli(s3=s3,
                       projectname="slicebeats",
                       bucketname=bucketname,
                       poolname=poolname,
-                      params=Params,
-                      modules=Modules,
-                      links=Links,
+                      params=params,
+                      modules=modules,
+                      links=links,
                       banks=banks,
                       pools=pools).cmdloop()
     except RuntimeError as error:
