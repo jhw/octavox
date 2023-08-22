@@ -27,7 +27,7 @@
     increment: 0.25
     step: 4
     live: 0.66666
-    multiplier: 32768
+    multiplier: 32768 # int("ffff", 16)/2
 - name: Echo/feedback
   class: octavox.modules.lfos.sample_hold.SampleHoldModulator
   params:
@@ -35,4 +35,4 @@
     increment: 0.25
     step: 4
     live: 1.0
-    multiplier: 32768
+    multiplier: 32768 # int("ffff", 16)/2

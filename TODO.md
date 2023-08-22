@@ -1,12 +1,14 @@
 ### short
 
-- slicebeats demo to switch cutoff tags within patch
+- migrate archives to include pico- bank prefix
 
-### medium
+- move lfo multiplier (ffff) from config into module
+
+- how should banks.slicegroups relate to a pool?
 
 - pydub granular pads demo
 
-- bass scales
+### medium
 
 ### thoughts
 

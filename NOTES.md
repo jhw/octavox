@@ -11,12 +11,12 @@
   - city dreams bass
   - slice
 
+- granular samples
 - euclid beats
 - FM bass
 - kicker bass
 - vordshosbn hats
 - synth chords
-- granular sample chords
 - backbeat samples
 - compressor 
 
