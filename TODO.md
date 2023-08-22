@@ -1,8 +1,5 @@
 ### short
 
-- migrate archives to include pico- bank prefix
-- check archive reanimation
-
 - remove banks.slicedxxxx
 
 - convert pool to list
@@ -108,6 +105,8 @@
 
 ### done
 
+- migrate archives to include pico- bank prefix
+- check archive reanimation
 - add tag groups method to bank
 - refactor cutoff suffix as a tag (#cutoff-500)
 - move fragments into slicebeats and rename as poolterms
