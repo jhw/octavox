@@ -1,7 +1,5 @@
 ### short
 
-- remove banks.slicedxxxx
-
 - convert pool to list
 - convert pools to list
 - convert banks to list
@@ -105,6 +103,7 @@
 
 ### done
 
+- remove banks.slicedxxxx
 - migrate archives to include pico- bank prefix
 - check archive reanimation
 - add tag groups method to bank

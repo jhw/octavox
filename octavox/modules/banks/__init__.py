@@ -21,22 +21,6 @@ class SVBank:
         return [item.filename
                 for item in self.zipfile.infolist()]
 
-    @property
-    def slicegroups(self):
-        groups={}
-        for item in self.zipfile.infolist():
-            absfilename, ext = item.filename.split(".")
-            tokens=[tok for tok in absfilename.split(" ")
-                    if tok!='']
-            tags=[tok for tok in tokens
-                  if tok.startswith("#")]
-            key=" ".join([tok for tok in tokens
-                          if not tok.startswith("#")])
-            groups.setdefault(key, {})
-            for tag in tags:
-                groups[key][tag]=item.filename
-        return groups
-    
     def cutoff(self, sizes, fadeout=20):
         zf=zipfile.ZipFile(io.BytesIO(), "a", zipfile.ZIP_DEFLATED, False)
         for wavfilename in self.wavfiles:
