@@ -6,11 +6,12 @@
 
 ### demos 18/08/23
 
+- acid bass 2
+  - sustain / note off
+  - city dreams bass
+  - slice
+
 - euclid beats
-- analog generator 303 bass
-- city dreams bass
-- sample bass
-- slide bass
 - FM bass
 - kicker bass
 - vordshosbn hats
@@ -18,6 +19,9 @@
 - granular sample chords
 - backbeat samples
 - compressor 
+
+- acid bass
+- sample bass
 
 ### s3 banks 15/08/23
 

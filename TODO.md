@@ -1,8 +1,11 @@
 ### short
 
-- samplebass to switch cutoffs within a patch
-
-- move fragments from banks to project
+- add load_yaml utility referencing file
+- move slicebeats modules, machines, links into yaml files
+- move fragments into slicebeats and rename as poolterms
+- refactor cutoff suffix as a tag (#cutoff-500)
+- add tag groups method to bank
+- slicebeats demo to switch cutoff tags within patch
 
 ### medium
 
