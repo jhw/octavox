@@ -220,7 +220,7 @@ class SVBanks(dict):
         return self[sample["bank"]].zipfile.open(sample["file"], 'r')
     
 if __name__=="__main__":
-    banks=SVBanks("octavox/banks/pico")
+    banks=SVBanks("tmp/banks")
     pools=banks.spawn_pools()
     for k, v in pools.items():
         print (k, len(v))

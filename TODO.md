@@ -1,7 +1,7 @@
 ### short
 
+- banks.search shouldn't override wavfilename
 - check sample hold lfo scale handling
-- replace octavox/banks/pico refs
 - move fragments from banks to project
 - bank clone
 - add banks with different cutoffs to samplebass
@@ -98,6 +98,7 @@
 
 ### done
 
+- replace octavox/banks/pico refs
 - abstract hex support
 - better support for low frequency ranges
 - convert acidbass to work in hex space
