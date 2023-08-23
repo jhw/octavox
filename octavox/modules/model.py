@@ -37,8 +37,8 @@ class SVSample(dict):
 
     @property
     def pitchstr(self):
-        pitchformatstr="(+%i)" if self["pitch"] > 0 else "(%i)"
-        return pitchformatstr % self["pitch"]
+        fmtstr="(+%i)" if self["pitch"] > 0 else "(%i)"
+        return fmtstr % self["pitch"]
 
     @property
     def modstr(self):
@@ -49,19 +49,8 @@ class SVSample(dict):
     @property
     def tagstr(self):
         return "[%s]" % ", ".join(sorted(self["tags"]))
-    
-    @property
-    def base_key(self):
-        tokens=[]
-        tokens.append("%s/%s" % (self["bank"],
-                                 self.filename)),
-        tokens.append(self.pitchstr)
-        if self["tags"]!=[]:
-            tokens.append(self.tagstr)
-        return " ".join(tokens)
 
-    @property
-    def mod_key(self):
+    def __str__(self):
         tokens=[]
         tokens.append("%s/%s" % (self["bank"],
                                  self.filename)),
@@ -72,9 +61,6 @@ class SVSample(dict):
             tokens.append(self.tagstr)
         return " ".join(tokens)
 
-    def __str__(self):
-        return self.mod_key
-    
 """
 - mod is automatically added to sample tags so that samples can be properly allocated to samplers at project rendering time
 - chord is expanded into a series of note trigs with different track keys

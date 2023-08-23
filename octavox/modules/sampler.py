@@ -60,13 +60,13 @@ class SVSampler(SVBaseSampler):
             self.note_samples[notes[i]]=i
             src=banks.get_wavfile(sample)
             buf=self.slice_sample(sample, src) if sample["mod"] else src
-            self.load_sample(src, i)
+            self.load_sample(buf, i)
             svsample=self.samples[i]
             svsample.relative_note+=(root-i)+sample["pitch"]
 
     def init_segment(fn):
         def wrapped(self, sample, src):
-            segkey=sample.base_key
+            segkey=sample.filename
             if segkey not in self.segments:
                 self.segments[segkey]=AudioSegment.from_file(src)
             return fn(self, sample, src)
@@ -74,7 +74,7 @@ class SVSampler(SVBaseSampler):
 
     @init_segment
     def slice_sample(self, sample, src):
-        seg0=self.segments[sample.base_key]
+        seg0=self.segments[sample.filename]
         if sample["mod"]=="cutoff":
             seg1=self.apply_cutoff(seg0, sample["ctrl"])
         else:
@@ -84,7 +84,7 @@ class SVSampler(SVBaseSampler):
         return buf
 
     def apply_cutoff(self, seg, ctrl):
-        return seg[:ctrl["cutoff"]]                
+        return seg[:ctrl["cutoff"]].fade_out(ctrl["fadeout"])                
     
     def lookup(self, sample):
         return self.pool.keys.index(str(sample))

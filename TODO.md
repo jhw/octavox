@@ -1,13 +1,12 @@
 ### short [01-pydub-inline]
 
-- test samplebass
-
+- should be allowed to pass filename to sample
+- why do we keep exceeding maximum number of samples?
+- consider moving pool back into bank
+- convert sample tags to set
 - migrate archive samples
 
 ### medium
-
-- should be allowed to pass filename to sample
-- convert sample tags to set
 
 ### thoughts
 
@@ -103,6 +102,10 @@
 
 ### done
 
+- consider if you need to use sample.base_key when creating segments
+  - you shouldn't need to include pitch
+  - but if you use sample.filename it creates an error
+- test samplebass
 - initialise samplebass pool
 - samplebass to add random cutoffs to cloned samples
 - get copy of old pydub enhanced sampler
