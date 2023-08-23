@@ -72,6 +72,9 @@ class SVSample(dict):
             tokens.append(self.tagstr)
         return " ".join(tokens)
 
+    def __str__(self):
+        return self.mod_key
+    
 """
 - mod is automatically added to sample tags so that samples can be properly allocated to samplers at project rendering time
 - chord is expanded into a series of note trigs with different track keys
