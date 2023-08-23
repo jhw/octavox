@@ -127,10 +127,10 @@ if __name__=="__main__":
         bucketname=os.environ["OCTAVOX_ASSETS_BUCKET"]
         if bucketname in ["", None]:
             raise RuntimeError("OCTAVOX_ASSETS_BUCKET does not exist")
-        modules, links, params, poolterms = [load_yaml("projects/slicebeats/%s.yaml" % key) for key in "modules|links|params|poolterms".split("|")]
+        modules, links, params, curated = [load_yaml("projects/slicebeats/%s.yaml" % key) for key in "modules|links|params|curated".split("|")]
         s3=boto3.client("s3")
         banks=SVBanks.initialise(s3, bucketname)
-        pools=init_pools(banks, poolterms)
+        pools=init_pools(banks, terms=curated)
         poolname=random.choice(list(pools.keys()))
         print ("INFO: pool=%s" % poolname)
         SlicebeatsCli(s3=s3,

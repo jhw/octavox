@@ -1,7 +1,5 @@
 ### short
 
-- rename poolterms as curated
-
 - add subdirs to demos and use date outputs only for acidbass|slicebass
 
 - consider how SVSlicePool could be simplified
@@ -108,6 +106,7 @@
 
 ### done
 
+- rename poolterms as curated
 - simplify samplebass by calling bank.default_pool
 - simplily dev/search_pools by calling bank.default_pool
 - replace spawn_free/curated with default_pool property and curate_pool method
