@@ -114,7 +114,7 @@ if __name__=="__main__":
         s3=boto3.client("s3")
         bank=SVBanks.initialise(s3, bucketname).filter(name="samplebass",
                                                        terms=SampleTerms).apply_cutoffs(sizes=[200, 500, 1000])
-        pool=SVSamplePool(bank.spawn_free_pool())
+        pool=SVSamplePool(bank.default_pool)
         patches=spawn_patches(pool)
         project=SVProject().render(patches=patches,
                                    modconfig=Modules,
