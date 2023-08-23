@@ -1,7 +1,5 @@
 from octavox.modules.banks import SVBanks
 
-from octavox.modules.banks.pools import SVPool
-
 from octavox.modules.model import SVSample, SVNoteTrig, SVFXTrig, SVTrigs
 
 from octavox.modules.project import SVProject
