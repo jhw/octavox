@@ -1,6 +1,6 @@
 from octavox.modules import is_abbrev
 
-import random
+import random, re
 
 class SVPool(list):
 
@@ -63,19 +63,13 @@ class SVPools(dict):
     def __init__(self, item={}):
         dict.__init__(self, item)
 
-    def aggregate(self, suffix):
-        parent=SVPool()
+    def flatten(self, term):
+        flattened=SVPool()
         for key, pool in self.items():
-            if key.endswith(suffix):
-                parent+=pool
-        return parent
-
-    def spawn_free_pool(self):
-        return self.aggregate("free")
-
-    def spawn_curated_pool(self):
-        return self.aggregate("curated")
-
+            if re.search(term, key):
+                flattened+=pool
+        return flattened
+        
     def lookup(self, abbrev):
         matches=[]
         for key in self:

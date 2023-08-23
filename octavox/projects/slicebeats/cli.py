@@ -12,7 +12,7 @@ from octavox.modules.model import SVSample, SVNoteTrig, SVPatch
 
 from octavox.projects.slicebeats.model import Pattern
 
-import boto3, json, os, random
+import boto3, json, os, random, re
 
 Machines=load_yaml("projects/slicebeats/machines.yaml")
 
@@ -109,7 +109,15 @@ class SlicebeatsCli(SVBankCli):
     @parse_line()
     def do_clean_fixes(self):
         self.fixes=SVPool()
-        
+
+def init_pools(banks, poolterms):
+    pools=banks.spawn_pools(terms=poolterms)
+    gfree=pools.flatten("\\-free$")
+    gcurated=pools.flatten("\\-curated$")
+    pools["global-free"]=gfree
+    pools["global-curated"]=gcurated
+    return pools
+    
 if __name__=="__main__":
     try:
         bucketname=os.environ["OCTAVOX_ASSETS_BUCKET"]
@@ -118,7 +126,7 @@ if __name__=="__main__":
         modules, links, params, poolterms = [load_yaml("projects/slicebeats/%s.yaml" % key) for key in "modules|links|params|poolterms".split("|")]
         s3=boto3.client("s3")
         banks=SVBanks.initialise(s3, bucketname)
-        pools=banks.spawn_pools(terms=poolterms)
+        pools=init_pools(banks, poolterms)
         poolname=random.choice(list(pools.keys()))
         print ("INFO: pool=%s" % poolname)
         SlicebeatsCli(s3=s3,

@@ -1,5 +1,6 @@
 ### short
 
+- add pools.flatten method
 - move globals pool creation to cli
 - remove joint spawn_pools property and move pool spawning to cli
 - replace spawn_free/curated with default_pool property and curate_pool method

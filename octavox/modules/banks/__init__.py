@@ -178,9 +178,6 @@ class SVBanks(dict):
                 bankfn=getattr(bank, "spawn_%s_pool" % attr)
                 key="%s-%s" % (bankname, attr)                
                 pools[key]=bankfn(terms)
-            poolsfn=getattr(pools, "spawn_%s_pool" % attr)
-            key="global-%s" % attr
-            pools[key]=poolsfn()
         return pools
 
     def get_wavfile(self, sample):
