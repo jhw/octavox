@@ -1,8 +1,8 @@
-from octavox.modules.cli import random_filename
-
 from octavox.modules.model import SVTrigs, SVNoteTrig, SVFXTrig
 
 from octavox.modules.project import SVProject
+
+from datetime import datetime
 
 import os, random, yaml
 
@@ -125,14 +125,15 @@ def spawn_patches(npatches=32):
 
 if __name__=="__main__":
     try:
-        if not os.path.exists("tmp/demos"):
-            os.makedirs("tmp/demos")
+        if not os.path.exists("tmp/acidbass"):
+            os.makedirs("tmp/acidbass")
         patches=spawn_patches()
         project=SVProject().render(patches=patches,
                                    modconfig=Modules,
                                    links=Links,
                                    bpm=120)
-        destfilename="tmp/demos/%s.sunvox" % random_filename("acidbass")        
+        ts=datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
+        destfilename="tmp/acidbass/%s.sunvox" % ts
         with open(destfilename, 'wb') as f:
             project.write_to(f)
     except RuntimeError as error:

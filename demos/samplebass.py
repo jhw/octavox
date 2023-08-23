@@ -2,11 +2,11 @@ from octavox.modules.banks import SVBanks
 
 from octavox.modules.banks.pools import SVPool, SVSamplePool
 
-from octavox.modules.cli import random_filename
-
 from octavox.modules.model import SVSample, SVNoteTrig, SVFXTrig, SVTrigs
 
 from octavox.modules.project import SVProject
+
+from datetime import datetime
 
 import boto3, os, random, yaml
 
@@ -121,9 +121,10 @@ if __name__=="__main__":
                                    links=Links,
                                    banks=SVBanks.from_list([bank]),
                                    bpm=120)
-        if not os.path.exists("tmp/demos"):
-            os.makedirs("tmp/demos")
-        destfilename="tmp/demos/%s.sunvox" % random_filename("samplebass")
+        if not os.path.exists("tmp/samplebass"):
+            os.makedirs("tmp/samplebass")
+        ts=datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
+        destfilename="tmp/samplebass/%s.sunvox" % ts
         with open(destfilename, 'wb') as f:
             project.write_to(f)
     except RuntimeError as error:

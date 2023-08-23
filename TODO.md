@@ -1,7 +1,5 @@
 ### short
 
-- add subdirs to demos and use date outputs only for acidbass|slicebass
-
 - consider how SVSlicePool could be simplified
   - class for bank wavfile?
 
@@ -106,6 +104,7 @@
 
 ### done
 
+- add subdirs to demos and use date outputs only for acidbass|slicebass
 - rename poolterms as curated
 - simplify samplebass by calling bank.default_pool
 - simplily dev/search_pools by calling bank.default_pool
