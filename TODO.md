@@ -1,6 +1,5 @@
 ### short [01-pydub-inline]
 
-- check for refs to sample["filename"]
 - check for refs to sample.ext
 
 - search for and replace refs to str(sample)
@@ -114,6 +113,7 @@
 
 ### done
 
+- check for refs to sample["filename"]
 - check for refs to sample["filename"]
 - add sample properties for base and mod filenames
 - remove sample conditional property checking
