@@ -1,5 +1,7 @@
 ### short
 
+- rename poolterms as curated
+
 - add subdirs to demos and use date outputs only for acidbass|slicebass
 
 - consider how SVSlicePool could be simplified
