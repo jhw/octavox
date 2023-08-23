@@ -31,31 +31,45 @@ class SVSample(dict):
             self["tags"].append(tag)
 
     @property
+    def filename(self):
+        return "%s.%s" % (self["stem"],
+                          self["ext"])
+
+    @property
+    def pitchstr(self):
+        pitchformatstr="(+%i)" if self["pitch"] > 0 else "(%i)"
+        return pitchformatstr % self["pitch"]
+
+    @property
+    def modstr(self):
+        qs="&".join({"%s=%s" % (k, self["ctrl"][k])
+                     for k in sorted(self["ctrl"].keys())})
+        return "#%s?%s" % (self["mod"], qs)
+    
+    @property
+    def tagstr(self):
+        return "[%s]" % ", ".join(sorted(self["tags"]))
+    
+    @property
     def base_key(self):
         tokens=[]
-        tokens.append("%s/%s.%s" % (self["bank"],
-                                    self["stem"],
-                                    self["env"]))
-        pitchformatstr="(+%i)" if self["pitch"] > 0 else "(%i)"
-        tokens.append(pitchformatstr % self["pitch"])
-        if self["tags"]!=[]:
-            tokens.append("[%s]" % ", ".join(sorted(self["tags"])))
+        tokens.append("%s/%s" % (self["bank"],
+                                 self.filename)),
+        tokens.append(self.pitchstr)
+        if self["tokens"]!=[]:
+            tokens.append(self.tagstr)
         return " ".join(tokens)
 
     @property
     def mod_key(self):
         tokens=[]
-        tokens.append("%s/%s.%s" % (self["bank"],
-                                    self["stem"],
-                                    self["env"]))
-        pitchformatstr="(+%i)" if self["pitch"] > 0 else "(%i)"
-        tokens.append(pitchformatstr % self["pitch"])
+        tokens.append("%s/%s" % (self["bank"],
+                                 self.filename)),
+        tokens.append(self.pitchstr)
         if self["mod"]:
-            qs="&".join({"%s=%s" % (k, self["ctrl"][k])
-                         for k in sorted(self["ctrl"])})
-            tokens.append("#%s?%s" % (self["mod"], qs)
-        if self["tags"]!=[]:
-            tokens.append("[%s]" % ", ".join(sorted(self["tags"])))
+            tokens.append(self.modstr)
+        if self["tokens"]!=[]:
+            tokens.append(self.tagstr)
         return " ".join(tokens)
 
 """

@@ -1,8 +1,9 @@
 ### short [01-pydub-inline]
 
-- search for and replace refs to str(sample)
 - check for refs to sample["filename"]
 - check for refs to sample.ext
+
+- search for and replace refs to str(sample)
 
 - get copy of old pydub enhanced sampler
 - sampler to maintain map of segments where slicing required
