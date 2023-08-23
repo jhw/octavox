@@ -46,8 +46,9 @@ class SVBank:
             raise RuntimeError("multiple wavfiles found")
         else:
             return matches.pop()
-    
-    def spawn_free(self, *args):
+
+    @property
+    def default_pool(self):
         pool, wavfiles = SVPool(), self.wavfiles
         for wavfile in wavfiles:
             sample=SVSample({"bank": self.name,
@@ -55,9 +56,8 @@ class SVBank:
                              "tags": []})
             pool.add(sample)
         return pool
-    
-    def spawn_curated(self,
-                      terms):
+
+    def curate_pool(self, terms):
         pool, wavfiles = SVPool(), self.wavfiles
         for wavfile in wavfiles:
             for tag, _terms in terms.items():

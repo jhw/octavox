@@ -110,15 +110,16 @@ class SlicebeatsCli(SVBankCli):
     def do_clean_fixes(self):
         self.fixes=SVPool()
 
-def init_pools(banks, poolterms):
-    pools=SVPools()
+def init_pools(banks, terms, limit=12):
+    pools, globalz = SVPools(), SVPools()
     for bankname, bank in banks.items():
-        pools["%s-free" % bankname]=bank.spawn_free()
-        pools["%s-curated" % bankname]=bank.spawn_curated(poolterms)
-    gfree=pools.flatten("\\-free$")
-    gcurated=pools.flatten("\\-curated$")
-    pools["global-free"]=gfree
-    pools["global-curated"]=gcurated
+        for attr, pool in [("default", bank.default_pool),
+                           ("curated", bank.curate_pool(terms))]:
+            if len(pool) > limit:
+                pools["%s-%s" % (bankname, attr)]=pool
+    for attr in "default|curated".split("|"):        
+        globalz["global-%s" % attr]=pools.flatten("\\-%s$" % attr)
+    pools.update(globalz)
     return pools
     
 if __name__=="__main__":
