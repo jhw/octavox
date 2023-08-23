@@ -1,19 +1,12 @@
 ### short [01-pydub-inline]
 
-- get copy of old pydub enhanced sampler
-- sampler to maintain map of segments where slicing required
-- sampler cutoff logic
-
-- convert sample tags to set
-
 - samplebass to add random cutoffs to cloned samples
-
+- test
 - migrate archive samples
 
 ### medium
 
-- pydub granular pads demo
-- vordhosbn hats demo
+- convert sample tags to set
 
 ### thoughts
 
@@ -109,6 +102,9 @@
 
 ### done
 
+- get copy of old pydub enhanced sampler
+- sampler to maintain map of segments where slicing required
+- sampler cutoff logic
 - search for and replace refs to str(sample)
 - check for refs to sample.ext
 - check for refs to sample["filename"]
