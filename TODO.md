@@ -4,6 +4,7 @@
 - remove sample file refs
 - remove sample ext refs
 - add sample properties for base and mod filenames
+- search for and replace refs to str(sample)
 
 - sampler to maintain map of segments where slicing required
 - sampler cutoff logic
@@ -19,7 +20,6 @@
 
 ### thoughts
 
-- better abstraction for SVSlicePool?
 - convert pools, banks to lists? 
   - seems to be more trouble that it is really worth
   - because then pool has to store name which makes cloning harder  
