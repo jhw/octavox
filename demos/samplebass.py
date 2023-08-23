@@ -72,9 +72,12 @@ def spawn_patches(pool, npatches=32):
     def trigfn(i):
         return random.random() < 0.5
     def spawn_samplefn(pool):
-        stem=random.choice(list(pool.groups.keys()))
+        base=random.choice(pool)
         def wrapped():
-            return random.choice(list(pool.groups[stem].values()))
+            sample=base.clone()
+            sample["mod"]="cutoff"
+            sample["ctrl"]={"cutoff": random.choice([125, 250, 500, 1000])}
+            return sample
         return wrapped            
     def pitchfn():
         q=random.random()
@@ -115,6 +118,27 @@ SampleTerms=yaml.safe_load("""
 - pico-syntrx/60
 """)
 
+def init_pool(terms=SampleTerms):
+    pool=SVPool()
+    for term in terms:
+        bankstem, filestem = term.split("/")
+        try:
+            bankname=banks.lookup(bankstem)
+        except RuntimeError:
+            print ("WARNING: couldn't find bank %s" % bankstem)
+            pass
+        try:
+            filename=bank.lookup(filestem)
+        except RuntimeError:
+            print ("WARNING: couldn't find file %s in %s" % (filestem,
+                                                             bankname))
+        stem, ext = filename.split(".")
+        sample=SVSample({"bank": bankname,
+                         "stem": stem,
+                         "ext": ext})
+        pool.append(sample)
+    return pool
+
 if __name__=="__main__":
     try:
         bucketname=os.environ["OCTAVOX_ASSETS_BUCKET"]
@@ -124,15 +148,13 @@ if __name__=="__main__":
         """
         - this expression below will no ponger work as bank.spawn_cutoffs() and banls.filter() have been removed
         """
-        """
-        bank=SVBanks.initialise(s3, bucketname).filter(name="samplebass",
-                                                       terms=SampleTerms).spawn_cutoffs(sizes=[200, 500, 1000])
-        """
-        patches=spawn_patches(bank.default_pool)
+        banks=SVBanks.initialise(s3, bucketname)
+        pool=init_pool()
+        patches=spawn_patches(pool)
         project=SVProject().render(patches=patches,
                                    modconfig=Modules,
                                    links=Links,
-                                   banks=SVBanks.from_list([bank]),
+                                   banks=banks,
                                    bpm=120)
         if not os.path.exists("tmp/samplebass"):
             os.makedirs("tmp/samplebass")

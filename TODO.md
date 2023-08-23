@@ -1,11 +1,12 @@
 ### short [01-pydub-inline]
 
-- samplebass to add random cutoffs to cloned samples
-- test
+- test samplebass
+
 - migrate archive samples
 
 ### medium
 
+- should be allowed to pass filename to sample
 - convert sample tags to set
 
 ### thoughts
@@ -102,6 +103,8 @@
 
 ### done
 
+- initialise samplebass pool
+- samplebass to add random cutoffs to cloned samples
 - get copy of old pydub enhanced sampler
 - sampler to maintain map of segments where slicing required
 - sampler cutoff logic
