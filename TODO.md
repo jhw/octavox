@@ -1,10 +1,16 @@
 ### short [01-pydub-inline]
 
-- sample property for filename [stem+ext]
-- sample property for key [stem+ext+modifier+tags]
-- change samplebass to insert cutoff modifier into sample
-- sampler to maintain dict of segments for filenames where modifiers exist
-- sampler to implement cutoff logic
+- remove sample conditional property checking
+- remove sample file refs
+- remove sample ext refs
+- add sample properties for base and mod filenames
+
+- sampler to maintain map of segments where slicing required
+- sampler cutoff logic
+
+- samplebass to add random cutoffs to cloned samples
+
+- migrate archive samples
 
 ### medium
 
