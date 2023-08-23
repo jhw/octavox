@@ -27,11 +27,12 @@ class SVBank:
             wavfile=self.zipfile.open(wavfilename)
             audio=AudioSegment.from_file(io.BytesIO(wavfile.read()))
             for sz in sizes:
-                buf=io.BytesIO()
-                audio[:sz].fade_out(fadeout).export(buf, format="wav")
-                tokens=wavfilename.split(".")
-                slicename="%s #cutoff-%i.%s" % (tokens[0], sz, tokens[1])
-                zf.writestr(slicename, buf.getvalue())
+                if sz < len(audio):
+                    buf=io.BytesIO()
+                    audio[:sz].fade_out(fadeout).export(buf, format="wav")
+                    tokens=wavfilename.split(".")
+                    slicename="%s #cutoff-%i.%s" % (tokens[0], sz, tokens[1])
+                    zf.writestr(slicename, buf.getvalue())
         return SVBank(name=self.name,
                       zipfile=zf)
     
