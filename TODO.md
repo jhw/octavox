@@ -1,8 +1,14 @@
 ### short
 
-- pydub granular pads demo
+- move globals pool creation to cli
+- remove joint spawn_pools property and move pool spawning to cli
+- replace spawn_free/curated with default_pool property and curate_pool method
+- simplify samplebass by calling bank.default_pool
+- simplily dev/search_pools by calling bank.default_pool
 
 ### medium
+
+- pydub granular pads demo
 
 - vordhosbn hats demo
 
