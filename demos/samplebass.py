@@ -1,6 +1,6 @@
 from octavox.modules.banks import SVBanks
 
-from octavox.modules.banks.pools import SVPool, SVSamplePool
+from octavox.modules.banks.pools import SVPool
 
 from octavox.modules.model import SVSample, SVNoteTrig, SVFXTrig, SVTrigs
 
@@ -67,9 +67,9 @@ def spawn_patches(pool, npatches=32):
     def trigfn(i):
         return random.random() < 0.5
     def spawn_samplefn(pool):
-        stem=pool.random_stem()
+        stem=random.choice(list(pool.groups.keys()))
         def wrapped():
-            return pool.random_slice(stem)
+            return random.choice(list(pool.groups[stem].values()))
         return wrapped            
     def pitchfn():
         q=random.random()
@@ -114,8 +114,7 @@ if __name__=="__main__":
         s3=boto3.client("s3")
         bank=SVBanks.initialise(s3, bucketname).filter(name="samplebass",
                                                        terms=SampleTerms).spawn_cutoffs(sizes=[200, 500, 1000])
-        pool=SVSamplePool(bank.default_pool)
-        patches=spawn_patches(pool)
+        patches=spawn_patches(bank.default_pool)
         project=SVProject().render(patches=patches,
                                    modconfig=Modules,
                                    links=Links,

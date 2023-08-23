@@ -1,12 +1,10 @@
 ### short
 
-- rename apply_ as spawn_
-- add groups code into pool.add 
-- see if SVSlicePool can be removed [samplebass]
+- move banks.py and pools.py into modules root
 - move the core of search_banks.py script into bank
 - consider similarities between bank search and pool curation
-- move banks.py and pools.py into modules root
 - add notes to acidbass, samplebass showing how thet could be extended
+- only apply cutoff if is less than sample length
 
 ### medium
 
@@ -108,6 +106,9 @@
 
 ### done
 
+- rename apply_ as spawn_
+- add groups code into pool.add 
+- see if SVSlicePool can be removed [samplebass]
 - add subdirs to demos and use date outputs only for acidbass|slicebass
 - rename poolterms as curated
 - simplify samplebass by calling bank.default_pool
