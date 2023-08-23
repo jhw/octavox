@@ -23,22 +23,38 @@ class SVSample(dict):
                          "ext": self["ext"],
                          "pitch": self["pitch"],
                          "mod": self["mod"],
-                         "modkwargs": dict(self["modkwargs"]),
+                         "ctrl": dict(self["ctrl"]),
                          "tags": list(self["tags"])})
 
     def add_tag(self, tag):
         if tag not in self["tags"]:
             self["tags"].append(tag)
-    
-    def __str__(self):
+
+    @property
+    def base_key(self):
         tokens=[]
-        tokens.append("%s/%s" % (self["bank"],
-                                 self["file"]))
-        if "pitch" in self:
-            formatstr="(+%i)" if self["pitch"] > 0 else "(%i)"
-            tokens.append(formatstr % self["pitch"])
-        if ("tags" in self and 
-            self["tags"]!=[]):
+        tokens.append("%s/%s.%s" % (self["bank"],
+                                    self["stem"],
+                                    self["env"]))
+        pitchformatstr="(+%i)" if self["pitch"] > 0 else "(%i)"
+        tokens.append(pitchformatstr % self["pitch"])
+        if self["tags"]!=[]:
+            tokens.append("[%s]" % ", ".join(sorted(self["tags"])))
+        return " ".join(tokens)
+
+    @property
+    def mod_key(self):
+        tokens=[]
+        tokens.append("%s/%s.%s" % (self["bank"],
+                                    self["stem"],
+                                    self["env"]))
+        pitchformatstr="(+%i)" if self["pitch"] > 0 else "(%i)"
+        tokens.append(pitchformatstr % self["pitch"])
+        if self["mod"]:
+            qs="&".join({"%s=%s" % (k, self["ctrl"][k])
+                         for k in sorted(self["ctrl"])})
+            tokens.append("#%s?%s" % (self["mod"], qs)
+        if self["tags"]!=[]:
             tokens.append("[%s]" % ", ".join(sorted(self["tags"])))
         return " ".join(tokens)
 

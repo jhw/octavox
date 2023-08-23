@@ -1,12 +1,14 @@
 ### short [01-pydub-inline]
 
-- add sample properties for base and mod filenames
 - search for and replace refs to str(sample)
 - check for refs to sample["filename"]
 - check for refs to sample.ext
 
+- get copy of old pydub enhanced sampler
 - sampler to maintain map of segments where slicing required
 - sampler cutoff logic
+
+- convert sample tags to set
 
 - samplebass to add random cutoffs to cloned samples
 
@@ -111,6 +113,7 @@
 
 ### done
 
+- add sample properties for base and mod filenames
 - remove sample conditional property checking
 - remove sample file refs
 - remove sample ext refs
