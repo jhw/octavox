@@ -1,6 +1,5 @@
 ### short [01-pydub-inline]
 
-- sample decorator to populate sample with blank modifier and tags
 - sample property for filename [stem+ext]
 - sample property for key [stem+ext+modifier+tags]
 - change samplebass to insert cutoff modifier into sample
@@ -107,6 +106,7 @@
 
 ### done
 
+- sample decorator to populate sample with blank modifier and tags
 - banks to initialise sample with stem and ext
 - comment out samplebass bank/pool initialisation stuff
 - remove bank spawn stuff

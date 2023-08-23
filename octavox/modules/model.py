@@ -1,14 +1,19 @@
 from octavox.modules import load_class
 
-import json
-
-"""
-- SVSample must be dict as typically needs to be rendered to JSON as part of custom project Samples class
-- SVSample is lenient with respect to passing of `params` and `tags` args; note that key functions check for their existence and non- emptiness
-"""
+def sample_default_kwargs(fn):
+    def wrapped(self, item):
+        for attr, defaultval in [("modifier", None),
+                                 ("modkwargs", {}),
+                                 ("pitch", 0),
+                                 ("tags", [])]:
+            if attr not in item:
+                item[attr]=defaultval
+        return fn(self, item)
+    return wrapped
 
 class SVSample(dict):
 
+    @sample_default_kwargs
     def __init__(self, item={}):
         dict.__init__(self, item)
 
