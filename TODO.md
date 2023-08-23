@@ -1,10 +1,9 @@
 ### short [01-pydub-inline]
 
-- remove sample conditional property checking
-- remove sample file refs
-- remove sample ext refs
 - add sample properties for base and mod filenames
 - search for and replace refs to str(sample)
+- check for refs to sample["filename"]
+- check for refs to sample.ext
 
 - sampler to maintain map of segments where slicing required
 - sampler cutoff logic
@@ -112,6 +111,9 @@
 
 ### done
 
+- remove sample conditional property checking
+- remove sample file refs
+- remove sample ext refs
 - sample decorator to populate sample with blank modifier and tags
 - banks to initialise sample with stem and ext
 - comment out samplebass bank/pool initialisation stuff

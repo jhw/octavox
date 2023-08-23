@@ -14,28 +14,22 @@ def sample_default_kwargs(fn):
 class SVSample(dict):
 
     @sample_default_kwargs
-    def __init__(self, item={}):
+    def __init__(self, item):
         dict.__init__(self, item)
 
     def clone(self):
-        kwargs={"bank": self["bank"],
-                "file": self["file"]}
-        if "pitch" in self:
-            kwargs["pitch"]=self["pitch"]
-        if "tags" in self:
-            kwargs["tags"]=list(self["tags"])
-        return SVSample(kwargs)
+        return SVSample({"bank": self["bank"],
+                         "stem": self["stem"],
+                         "ext": self["ext"],
+                         "pitch": self["pitch"],
+                         "mod": self["mod"],
+                         "modkwargs": dict(self["modkwargs"]),
+                         "tags": list(self["tags"])})
 
     def add_tag(self, tag):
-        if "tags" not in self:
-            self["tags"]=[]
         if tag not in self["tags"]:
             self["tags"].append(tag)
     
-    @property
-    def ext(self):
-        return self["file"].split(".")[-1]
-
     def __str__(self):
         tokens=[]
         tokens.append("%s/%s" % (self["bank"],
