@@ -1,4 +1,16 @@
-### short
+### short [01-pydub-inline]
+
+- remove pool groups stuff
+- remove bank spawn stuff
+- remove banks search stuff
+- comment out samplebass bank/pool initialisation stuff
+- banks to initialise sample with stem and ext
+- sample decorator to populate sample with blank modifier and tags
+- sample property for filename [stem+ext]
+- sample property for key [stem+ext+modifier+tags]
+- change samplebass to insert cutoff modifier into sample
+- sampler to maintain dict of segments for filenames where modifiers exist
+- sampler to implement cutoff logic
 
 ### medium
 
