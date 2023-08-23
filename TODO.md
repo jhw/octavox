@@ -6,6 +6,7 @@
 - move the core of search_banks.py script into bank
 - consider similarities between bank search and pool curation
 - move banks.py and pools.py into modules root
+- add notes to acidbass, samplebass showing how thet could be extended
 
 ### medium
 

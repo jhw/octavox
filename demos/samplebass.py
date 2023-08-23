@@ -113,7 +113,7 @@ if __name__=="__main__":
             raise RuntimeError("OCTAVOX_ASSETS_BUCKET does not exist")
         s3=boto3.client("s3")
         bank=SVBanks.initialise(s3, bucketname).filter(name="samplebass",
-                                                       terms=SampleTerms).apply_cutoffs(sizes=[200, 500, 1000])
+                                                       terms=SampleTerms).spawn_cutoffs(sizes=[200, 500, 1000])
         pool=SVSamplePool(bank.default_pool)
         patches=spawn_patches(pool)
         project=SVProject().render(patches=patches,

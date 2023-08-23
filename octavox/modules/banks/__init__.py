@@ -21,7 +21,7 @@ class SVBank:
         return [item.filename
                 for item in self.zipfile.infolist()]
 
-    def apply_cutoffs(self, sizes, fadeout=20):
+    def spawn_cutoffs(self, sizes, fadeout=20):
         zf=zipfile.ZipFile(io.BytesIO(), "a", zipfile.ZIP_DEFLATED, False)
         for wavfilename in self.wavfiles:
             wavfile=self.zipfile.open(wavfilename)
