@@ -1,6 +1,5 @@
 ### short [01-pydub-inline]
 
-- remove pool groups stuff
 - remove bank spawn stuff
 - remove banks search stuff
 - comment out samplebass bank/pool initialisation stuff
@@ -112,6 +111,7 @@
 
 ### done
 
+- remove pool groups stuff
 - add notes to acidbass, samplebass showing how thet could be extended
 - move banks.py and pools.py into modules root
 - only apply cutoff if is less than sample length

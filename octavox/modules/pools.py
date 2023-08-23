@@ -2,23 +2,11 @@ from octavox.modules import is_abbrev
 
 import random, re
 
-def parse_filename(sample):
-    stem, ext = sample["file"].split(".")
-    tokens=[tok for tok in stem.split(" ")
-            if tok!=[]]
-    root=" ".join([tok for tok in tokens
-                  if not tok.startswith("#")])            
-    tags=[tok for tok in tokens
-          if tok.startswith("#")]
-    return {"root": root,
-            "tags": tags}
-
 class SVPool(list):
 
     def __init__(self, items=[]):
         list.__init__(self, items)
         self.keys=[]
-        self.groups={}
 
     def clone(self):
         return SVPool(self)
@@ -28,16 +16,12 @@ class SVPool(list):
         if key not in self.keys:
             self.append(sample)
             self.keys.append(key)
-            params=parse_filename(sample)
-            self.groups.setdefault(params["root"], {})
-            for tag in params["tags"]:
-                self.groups[params["root"]][tag]=sample
             
     def filter(self, tag):
         pool=SVPool()
         for sample in self:
-            for sktag in sample["tags"]:
-                if tag==sktag:
+            for stag in sample["tags"]:
+                if tag==stag:
                     pool.add(sample)
         return pool
 
