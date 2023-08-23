@@ -9,6 +9,8 @@ from octavox.modules.banks import SVBanks
 
 from octavox.modules.model import SVSample, SVNoteTrig, SVFXTrig, SVTrigs
 
+from octavox.modules.pools import SVPool
+
 from octavox.modules.project import SVProject
 
 from datetime import datetime
@@ -127,6 +129,7 @@ def init_pool(terms=SampleTerms):
         except RuntimeError:
             print ("WARNING: couldn't find bank %s" % bankstem)
             pass
+        bank=banks[bankname]
         try:
             filename=bank.lookup(filestem)
         except RuntimeError:
