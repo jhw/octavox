@@ -1,12 +1,14 @@
 ### short
 
-- consider how SVSlicePool could be simplified
-  - class for bank wavfile?
-
-- pydub granular pads demo
+- rename apply_ as spawn_
+- add groups code into pool.add 
+- see if SVSlicePool can be removed [samplebass]
+- move the core of search_banks.py script into bank
+- consider similarities between bank search and pool curation
 
 ### medium
 
+- pydub granular pads demo
 - vordhosbn hats demo
 
 ### thoughts
