@@ -12,10 +12,9 @@ if __name__=="__main__":
         term=sys.argv[1]
         s3=boto3.client("s3")
         banks=SVBanks.initialise(s3, bucketname)
-        poolterms={term: [term]}
-        pools=banks.spawn_pools(terms=poolterms)
-        for sample in pools["global-curated"]:
-            print ("- %s/%s" % (sample["bank"],
-                                sample["file"].split(".")[0]))
+        for bankname, bank in banks.items():
+            for sample in bank.curate_pool({term: [term]}):
+                print ("- %s/%s" % (sample["bank"],
+                                    sample["file"].split(".")[0]))
     except RuntimeError as error:
         print ("Error: %s" % str(error))

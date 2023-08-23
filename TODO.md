@@ -1,7 +1,6 @@
 ### short
 
 - simplify samplebass by calling bank.default_pool
-- simplily dev/search_pools by calling bank.default_pool
 
 ### medium
 
@@ -104,6 +103,7 @@
 
 ### done
 
+- simplily dev/search_pools by calling bank.default_pool
 - replace spawn_free/curated with default_pool property and curate_pool method
 - add pools.flatten method
 - move globals pool creation to cli
