@@ -5,6 +5,7 @@
 - see if SVSlicePool can be removed [samplebass]
 - move the core of search_banks.py script into bank
 - consider similarities between bank search and pool curation
+- move banks.py and pools.py into modules root
 
 ### medium
 
