@@ -47,7 +47,7 @@ class SVBank:
         else:
             return matches.pop()
     
-    def spawn_free_pool(self, *args):
+    def spawn_free(self, *args):
         pool, wavfiles = SVPool(), self.wavfiles
         for wavfile in wavfiles:
             sample=SVSample({"bank": self.name,
@@ -56,8 +56,8 @@ class SVBank:
             pool.add(sample)
         return pool
     
-    def spawn_curated_pool(self,
-                           terms):
+    def spawn_curated(self,
+                      terms):
         pool, wavfiles = SVPool(), self.wavfiles
         for wavfile in wavfiles:
             for tag, _terms in terms.items():
@@ -171,15 +171,6 @@ class SVBanks(dict):
         else:
             return matches.pop()
             
-    def spawn_pools(self, terms, attrs=["free", "curated"]):
-        pools=SVPools()
-        for attr in attrs:
-            for bankname, bank in self.items():
-                bankfn=getattr(bank, "spawn_%s_pool" % attr)
-                key="%s-%s" % (bankname, attr)                
-                pools[key]=bankfn(terms)
-        return pools
-
     def get_wavfile(self, sample):
         return self[sample["bank"]].zipfile.open(sample["file"], 'r')
     

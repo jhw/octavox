@@ -111,7 +111,10 @@ class SlicebeatsCli(SVBankCli):
         self.fixes=SVPool()
 
 def init_pools(banks, poolterms):
-    pools=banks.spawn_pools(terms=poolterms)
+    pools=SVPools()
+    for bankname, bank in banks.items():
+        pools["%s-free" % bankname]=bank.spawn_free()
+        pools["%s-curated" % bankname]=bank.spawn_curated(poolterms)
     gfree=pools.flatten("\\-free$")
     gcurated=pools.flatten("\\-curated$")
     pools["global-free"]=gfree

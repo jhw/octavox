@@ -1,8 +1,5 @@
 ### short
 
-- add pools.flatten method
-- move globals pool creation to cli
-- remove joint spawn_pools property and move pool spawning to cli
 - replace spawn_free/curated with default_pool property and curate_pool method
 - simplify samplebass by calling bank.default_pool
 - simplily dev/search_pools by calling bank.default_pool
@@ -108,6 +105,9 @@
 
 ### done
 
+- add pools.flatten method
+- move globals pool creation to cli
+- remove joint spawn_pools property and move pool spawning to cli
 - search banks
 - rename bank.cutoff as slice_cutoffs
 - rename banks.search as banks.filter_bank
