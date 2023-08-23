@@ -1,7 +1,5 @@
 ### short [01-pydub-inline]
 
-- remove bank spawn stuff
-- remove banks search stuff
 - comment out samplebass bank/pool initialisation stuff
 - banks to initialise sample with stem and ext
 - sample decorator to populate sample with blank modifier and tags
@@ -111,6 +109,8 @@
 
 ### done
 
+- remove bank spawn stuff
+- remove banks search stuff
 - remove pool groups stuff
 - add notes to acidbass, samplebass showing how thet could be extended
 - move banks.py and pools.py into modules root

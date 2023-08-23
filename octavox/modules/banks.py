@@ -21,21 +21,6 @@ class SVBank:
         return [item.filename
                 for item in self.zipfile.infolist()]
 
-    def spawn_cutoffs(self, sizes, fadeout=20):
-        zf=zipfile.ZipFile(io.BytesIO(), "a", zipfile.ZIP_DEFLATED, False)
-        for wavfilename in self.wavfiles:
-            wavfile=self.zipfile.open(wavfilename)
-            audio=AudioSegment.from_file(io.BytesIO(wavfile.read()))
-            for sz in sizes:
-                if sz < len(audio):
-                    buf=io.BytesIO()
-                    audio[:sz].fade_out(fadeout).export(buf, format="wav")
-                    tokens=wavfilename.split(".")
-                    slicename="%s #cutoff-%i.%s" % (tokens[0], sz, tokens[1])
-                    zf.writestr(slicename, buf.getvalue())
-        return SVBank(name=self.name,
-                      zipfile=zf)
-    
     def lookup(self, abbrev):
         matches=[]
         for wavfile in self.wavfiles:
@@ -138,28 +123,6 @@ class SVBanks(dict):
     def __init__(self, item={}):
         dict.__init__(self, item)
 
-    """
-    - don't use zf.close() or with() as these fill close zipfile, meaning you can't read from it later 
-    """
-        
-    def filter(self, name, terms):
-        zf=zipfile.ZipFile(io.BytesIO(), "a", zipfile.ZIP_DEFLATED, False)
-        for i, term in enumerate(terms):
-            bankstem, wavstem = term.split("/")
-            try:
-                bankname=self.lookup(bankstem)
-            except RuntimeError as error:
-                continue
-            try:
-                wavfilename=self[bankname].lookup(wavstem)
-            except RuntimeError as error:
-                continue
-            wavfile=self[bankname].zipfile.open(wavfilename)
-            modwavfilename="%s %s" % (bankname, wavfilename)
-            zf.writestr(modwavfilename, wavfile.read())
-        return SVBank(name=name,
-                      zipfile=zf)
-        
     def lookup(self, abbrev):
         matches=[]
         for key in self:
