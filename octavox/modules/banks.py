@@ -139,7 +139,7 @@ class SVBanks(dict):
             return matches.pop()
             
     def get_wavfile(self, sample):
-        return self[sample["bank"]].zipfile.open(sample["file"], 'r')
+        return self[sample["bank"]].zipfile.open(sample.filename, 'r')
     
 if __name__=="__main__":
     pass

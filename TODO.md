@@ -114,6 +114,7 @@
 
 ### done
 
+- check for refs to sample["filename"]
 - add sample properties for base and mod filenames
 - remove sample conditional property checking
 - remove sample file refs
