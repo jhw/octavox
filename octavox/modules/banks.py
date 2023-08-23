@@ -1,6 +1,6 @@
 from octavox import has_internet
 
-from octavox.modules import is_abbrev, list_s3_keys
+from octavox.modules import is_abbreSSv, list_s3_keys
 
 from octavox.modules.pools import SVPool, SVPools
 
@@ -37,21 +37,24 @@ class SVBank:
     def default_pool(self):
         pool, wavfiles = SVPool(), self.wavfiles
         for wavfile in wavfiles:
+            stem, ext = wavfile.split(".")
             sample=SVSample({"bank": self.name,
-                             "file": wavfile,
-                             "tags": []})
+                             "stem": stem,
+                             "ext": ext})
             pool.add(sample)
         return pool
 
     def curate_pool(self, terms):
         pool, wavfiles = SVPool(), self.wavfiles
         for wavfile in wavfiles:
+            stem, ext = wavfile.split(".")
             for tag, _terms in terms.items():
                 for term in _terms:
                     if re.search(term, wavfile, re.I):
-                        sample=SVSample({"tags": [tag],
-                                         "bank": self.name,
-                                         "file": wavfile})
+                        sample=SVSample({"bank": self.name,
+                                         "stem": stem,
+                                         "ext": ext,
+                                         "tags": [tag]})
                         pool.add(sample)
         return pool
 
