@@ -1,3 +1,10 @@
+"""
+### TODO
+
+- favourite basslines
+- trills
+"""
+
 from octavox.modules.banks import SVBanks
 
 from octavox.modules.model import SVSample, SVNoteTrig, SVFXTrig, SVTrigs
@@ -83,6 +90,10 @@ def spawn_patches(pool, npatches=32):
                         samplefn=spawn_samplefn(pool),
                         pitchfn=pitchfn)
             for i in range(npatches)]
+
+"""
+- could use `dev/curate_pool.py` bass here but some bass sounds don't have `bass` in the description
+"""
 
 SampleTerms=yaml.safe_load("""
 - pico-baseck/03

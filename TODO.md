@@ -1,9 +1,5 @@
 ### short
 
-- add notes to acidbass, samplebass showing how thet could be extended
-- move the core of search_banks.py script into bank
-- consider similarities between bank search and pool curation
-
 ### medium
 
 - pydub granular pads demo
@@ -104,6 +100,7 @@
 
 ### done
 
+- add notes to acidbass, samplebass showing how thet could be extended
 - move banks.py and pools.py into modules root
 - only apply cutoff if is less than sample length
 - rename apply_ as spawn_

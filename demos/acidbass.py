@@ -1,3 +1,11 @@
+"""
+### TODO
+
+- better (== more granular) low end filter options
+- favourite basslines
+- trills
+"""
+
 from octavox.modules.model import SVTrigs, SVNoteTrig, SVFXTrig
 
 from octavox.modules.project import SVProject
