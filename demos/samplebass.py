@@ -109,7 +109,7 @@ def spawn_patches(pool, npatches=16):
             for i in range(npatches)]
 
 """
-- could use `dev/curate_pool.py` bass here but some bass sounds don't have `bass` in the description
+- could use `dev/search_pool.py bass` here but loads of false negatives (some bass sounds don't have bass in description) and loads of false positives (a lot of bass sounds are `bass drum`)
 """
 
 SampleTerms=yaml.safe_load("""
