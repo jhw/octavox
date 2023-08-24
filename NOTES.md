@@ -25,17 +25,17 @@
   - city dreams bass
   - slice
 
-- granular samples
+- vordshosbn hats
 - euclid beats
 - FM bass
 - kicker bass
-- vordshosbn hats
 - synth chords
 - backbeats
 - compressor 
 
 - acid bass
 - sample bass
+- granular samples
 
 ### s3 banks 15/08/23
 

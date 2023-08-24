@@ -1,5 +1,13 @@
 ### short [01-granularpads]
 
+- second version taking array of grains
+- investigate additional pydub functionality that could be used for smoothing
+- see if slicebeats cli main could use banks.curate_pool
+
+### medium
+
+### thoughts
+
 ```
 Traceback (most recent call last):
   File "/Users/jhw/work/octavox/demos/grainpad.py", line 91, in <module>
@@ -17,11 +25,6 @@ Traceback (most recent call last):
     raise ValueError("Value is not in range {}-{}".format(start, end))
 ValueError: Value is not in range 1-32
 ```
-### medium
-
-- see if slicebeats cli main could benefit from banks.curate_pool
-
-### thoughts
 
 - consider converting sample tags to set?
   - not worth it as list is easier to serialise to/from json

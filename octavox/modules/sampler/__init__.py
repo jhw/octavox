@@ -85,9 +85,10 @@ class SVSampler(SVBaseSampler):
         return seg[:cutoff].fade_out(fadeout)
 
     def apply_granular(self, seg, offset, sz, n, fadeout, padding):
-        buf=seg[offset:offset+sz].fade_in(padding).fade_out(padding)
+        grain=seg[offset:offset+sz].fade_in(padding).fade_out(padding)
+        buf=grain
         for i in range(n-1):
-            buf+=seg[offset:offset+sz].fade_in(padding).fade_out(padding)
+            buf+=grain
         return buf.fade_out(fadeout)
 
     def lookup(self, sample):
