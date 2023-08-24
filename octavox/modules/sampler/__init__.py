@@ -75,10 +75,8 @@ class SVSampler(SVBaseSampler):
     @init_segment
     def slice_sample(self, sample, src):
         seg0=self.segments[sample["file"]]
-        if sample["mod"]=="cutoff":
-            seg1=self.apply_cutoff(seg0, sample["ctrl"])
-        else:
-            raise RuntimeError("sample mod %s not recognised" % sample["mod"])
+        modfn=getattr(self, "apply_%s" % sample["mod"])
+        seg1=modfn(seg0, sample["ctrl"])
         buf=io.BytesIO()
         seg1.export(buf, format=sample["file"].split(".")[-1])
         return buf
