@@ -67,7 +67,18 @@ def sample_bass(trigfn,
             note_trig(trigs, "Sampler", samplefn(), pitchfn(), i)
     return trigs.tracks
 
-def spawn_patches(pool, npatches=32):
+"""
+- only using 16 patches as samplebass can rack up a lot of different samples
+- 3 notes x 4 lengths = 12 possible options
+- 16 steps and 50% density means 8 notes avg could all be different samples
+- 32 patches x 8 samples = 256 slots
+- (not quite that bad as some patches will share samples)
+- but you can see where the problem comes from 
+- because sampler treats each pitch and each length as a separate sample
+- does sunvox really have no sample cutoff parameter?
+"""
+
+def spawn_patches(pool, npatches=16):
     """
     - https://github.com/vitling/acid-banger/blob/main/src/pattern.ts
     """
@@ -136,10 +147,8 @@ def init_pool(terms=SampleTerms):
         except RuntimeError:
             print ("WARNING: couldn't find file %s in %s" % (filestem,
                                                              bankname))
-        stem, ext = filename.split(".")
         sample=SVSample({"bank": bankname,
-                         "stem": stem,
-                         "ext": ext})
+                         "file": filename})
         pool.append(sample)
     return pool
 

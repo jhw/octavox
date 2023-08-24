@@ -1,7 +1,5 @@
 ### short [01-pydub-inline]
 
-- reduce samplebass n to 16 and add notes
-
 - move sample into pool
 
 - test loading and mutating an archived file
@@ -106,6 +104,7 @@
 
 ### done
 
+- reduce samplebass n to 16 and add notes
 - make mod and ctrl params option
 - check consistency with existing files
 - remove sample.ext
