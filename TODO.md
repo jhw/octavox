@@ -1,6 +1,5 @@
 ### short
 
-- convery graular to use AudioSegment.empty()
 - convert s&h lfo to use hex space
 - add min value to s&h lfo
 - see if slicebeats cli main could use banks.curate_pool
@@ -127,6 +126,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- convery graular to use AudioSegment.empty()
 - refactor random grains implementation for new kwargs
 - define random grains
 - lookup pad and chord terms

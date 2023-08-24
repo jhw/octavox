@@ -76,7 +76,7 @@ def spawn_patches(pool, npatches=16):
 def init_pool(banks, terms):
     pool=SVPool()
     for bankname, bank in banks.items():
-        pool+=bank.curate_pool(terms)
+        pool+=bank.filter_pool(terms)
     return pool
                 
 if __name__=="__main__":
@@ -86,7 +86,7 @@ if __name__=="__main__":
             raise RuntimeError("OCTAVOX_ASSETS_BUCKET does not exist")
         s3=boto3.client("s3")
         banks=SVBanks.initialise(s3, bucketname)
-        pool=banks.curate_pool({"pads": "(pad)|(chord)|(drone)"})
+        pool=banks.filter_pool({"pads": "(pad)|(chord)|(drone)"})
         patches=spawn_patches(pool)
         project=SVProject().render(patches=patches,
                                    modconfig=Modules,

@@ -114,7 +114,7 @@ def init_pools(banks, terms, limit=12):
     pools, globalz = SVPools(), SVPools()
     for bankname, bank in banks.items():
         for attr, pool in [("default", bank.default_pool),
-                           ("curated", bank.curate_pool(terms))]:
+                           ("curated", bank.filter_pool(terms))]:
             if len(pool) > limit:
                 pools["%s-%s" % (bankname, attr)]=pool
     for attr in "default|curated".split("|"):        

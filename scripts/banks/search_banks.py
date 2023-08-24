@@ -13,7 +13,7 @@ if __name__=="__main__":
         s3=boto3.client("s3")
         banks=SVBanks.initialise(s3, bucketname)
         for bankname, bank in banks.items():
-            for sample in bank.curate_pool({tag: term}):
+            for sample in bank.filter_pool({tag: term}):
                 print ("- %s/%s" % (sample["bank"],
                                     sample["file"].split(".")[0]))
     except RuntimeError as error:

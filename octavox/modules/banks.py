@@ -40,7 +40,7 @@ class SVBank:
             pool.add(sample)
         return pool
 
-    def curate_pool(self, terms):
+    def filter_pool(self, terms):
         pool, wavfiles = SVPool(), self.wavfiles
         for wavfile in wavfiles:
             for tag, term in terms.items():
@@ -114,10 +114,10 @@ class SVBanks(dict):
     def __init__(self, item={}):
         dict.__init__(self, item)
 
-    def curate_pool(self, terms):
+    def filter_pool(self, terms):
         pool=SVPool()
         for bank in self.values():
-            pool+=bank.curate_pool(terms)
+            pool+=bank.filter_pool(terms)
         return pool
         
     def lookup(self, abbrev):
