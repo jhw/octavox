@@ -82,7 +82,13 @@ class SVSampler(SVBaseSampler):
         return buf
 
     def apply_cutoff(self, seg, cutoff, fadeout):
-        return seg[:cutoff].fade_out(fadeout)                
+        return seg[:cutoff].fade_out(fadeout)
+
+    def apply_granular(self, seg, start, end, n, fadeout):
+        buf=seg[start:end]
+        for i in range(n-1):
+            buf+=seg[start:end]
+        return buf.fade_out(fadeout)
 
     def lookup(self, sample):
         return self.pool.keys.index(str(sample))

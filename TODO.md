@@ -1,6 +1,5 @@
 ### short [01-granularpads]
 
-- implement granular algo
 - copy slicebeats demo
 - auto lookup pads and chords
 
@@ -102,6 +101,7 @@
 
 ### done
 
+- implement granular algo
 - change search bank dev script curation term 
 - check notes re samplebass search terms
 - move cli params inline
