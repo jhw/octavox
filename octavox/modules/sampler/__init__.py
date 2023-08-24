@@ -76,14 +76,14 @@ class SVSampler(SVBaseSampler):
     def slice_sample(self, sample, src):
         seg0=self.segments[sample["file"]]
         modfn=getattr(self, "apply_%s" % sample["mod"])
-        seg1=modfn(seg0, sample["ctrl"])
+        seg1=modfn(seg0, **sample["ctrl"])
         buf=io.BytesIO()
         seg1.export(buf, format=sample["file"].split(".")[-1])
         return buf
 
-    def apply_cutoff(self, seg, ctrl):
-        return seg[:ctrl["cutoff"]].fade_out(ctrl["fadeout"])                
-    
+    def apply_cutoff(self, seg, cutoff, fadeout):
+        return seg[:cutoff].fade_out(fadeout)                
+
     def lookup(self, sample):
         return self.pool.keys.index(str(sample))
         
