@@ -85,26 +85,12 @@ def spawn_patches(pool, npatches=16):
                       pitchfn=pitchfn)
             for i in range(npatches)]
 
-def init_pool(terms):
+def init_pool(banks, terms):
     pool=SVPool()
-    for term in terms:
-        bankstem, filestem = term.split("/")
-        try:
-            bankname=banks.lookup(bankstem)
-        except RuntimeError:
-            print ("WARNING: couldn't find bank %s" % bankstem)
-            pass
-        bank=banks[bankname]
-        try:
-            filename=bank.lookup(filestem)
-        except RuntimeError:
-            print ("WARNING: couldn't find file %s in %s" % (filestem,
-                                                             bankname))
-        sample=SVSample({"bank": bankname,
-                         "file": filename})
-        pool.append(sample)
+    for bankname, bank in banks.items():
+        pool+=bank.curate_pool(terms)
     return pool
-
+                
 if __name__=="__main__":
     try:
         bucketname=os.environ["OCTAVOX_ASSETS_BUCKET"]
@@ -112,8 +98,10 @@ if __name__=="__main__":
             raise RuntimeError("OCTAVOX_ASSETS_BUCKET does not exist")
         s3=boto3.client("s3")
         banks=SVBanks.initialise(s3, bucketname)
-        terms=None # change
-        pool=init_pool(terms)
+        pool=banks.curate_pool({"pads": "(pad)|(chord)|(drone)"})
+        for sample in pool:
+            print (sample)
+        """
         patches=spawn_patches(pool)
         project=SVProject().render(patches=patches,
                                    modconfig=Modules,
@@ -126,5 +114,6 @@ if __name__=="__main__":
         destfilename="tmp/grainpad/%s.sunvox" % ts
         with open(destfilename, 'wb') as f:
             project.write_to(f)
+        """
     except RuntimeError as error:
         print ("ERROR: %s" % str(error))

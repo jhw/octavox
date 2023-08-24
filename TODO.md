@@ -1,7 +1,8 @@
 ### short [01-granularpads]
 
-- lookup pad and chord terms
 - define random grains
+
+- see if slicebeats cli main could benefit from banks.curate_pool
 
 ### medium
 
@@ -101,6 +102,7 @@
 
 ### done
 
+- lookup pad and chord terms
 - copy slicebeats demo
 - implement granular algo
 - change search bank dev script curation term 

@@ -114,6 +114,12 @@ class SVBanks(dict):
     def __init__(self, item={}):
         dict.__init__(self, item)
 
+    def curate_pool(self, terms):
+        pool=SVPool()
+        for bankname, bank in self.items():
+            pool+=bank.curate_pool(terms)
+        return pool
+        
     def lookup(self, abbrev):
         matches=[]
         for key in self:
