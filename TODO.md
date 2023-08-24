@@ -1,7 +1,5 @@
 ### short
 
-- convert s&h lfo to use hex space
-- add min value to s&h lfo
 - pydub script to detect whitespace at start of reversed samples
 
 ### medium
@@ -125,6 +123,8 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- convert s&h lfo to use hex space
+- add min value to s&h lfo
 - check use of pool.filter, pools.flatten
 - don't render pitch if value is zero
 - rename curate_pool as filter_pool

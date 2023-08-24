@@ -29,12 +29,15 @@ class SampleHoldModulator(dict):
         return SampleHoldModulator(self)
                     
     def render(self, nbeats, density):
+        minval, maxval = (int(self.minvalue, 16),
+                          int(self.maxvalue, 16))
         q=Q(self["seed"])
         for i in range(nbeats):
             v=self.sample_hold(q, i, density)
             if v!=None: # explicit because could return zero
+                value=(v*maxval-minval)+minval
                 yield SVFXTrig(target=self["name"],
-                               value=v*self.multiplier,
+                               value=value,
                                i=i)
 
     def sample_hold(self, q, i, d):
