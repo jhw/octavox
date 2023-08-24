@@ -2,7 +2,6 @@
 
 - convert s&h lfo to use hex space
 - add min value to s&h lfo
-- see if slicebeats cli main could use banks.curate_pool
 - don't render pitch if value is zero
 - rename curate_pool as filter_pool
 - abstract samplebass init_pool into framework
@@ -126,6 +125,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- see if slicebeats cli main could use banks.curate_pool
 - convery graular to use AudioSegment.empty()
 - refactor random grains implementation for new kwargs
 - define random grains

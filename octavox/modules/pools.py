@@ -29,6 +29,10 @@ class SVSample(dict):
         return SVSample(kwargs)
 
     @property
+    def has_pitch(self):
+        return self["pitch"]!=0
+    
+    @property
     def has_mod(self):
         return "mod" in self and "ctrl" in self
             
@@ -58,7 +62,8 @@ class SVSample(dict):
         tokens=[]
         tokens.append("%s/%s" % (self["bank"],
                                  self["file"])),
-        tokens.append(self.pitchstr)
+        if self.has_pitch:
+            tokens.append(self.pitchstr)
         if self.has_mod: 
             tokens.append(self.modstr)
         if self.has_tags:

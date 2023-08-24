@@ -19,18 +19,6 @@ class SVBank:
         return [item.filename
                 for item in self.zipfile.infolist()]
 
-    def lookup(self, abbrev):
-        matches=[]
-        for wavfile in self.wavfiles:
-            if is_abbrev(abbrev, wavfile):
-                matches.append(wavfile)
-        if matches==[]:
-            raise RuntimeError("wavfile not found")
-        elif len(matches) > 1:
-            raise RuntimeError("multiple wavfiles found")
-        else:
-            return matches.pop()
-
     @property
     def default_pool(self):
         pool, wavfiles = SVPool(), self.wavfiles
@@ -51,6 +39,18 @@ class SVBank:
                     pool.add(sample)
         return pool
 
+    def lookup(self, abbrev):
+        matches=[]
+        for wavfile in self.wavfiles:
+            if is_abbrev(abbrev, wavfile):
+                matches.append(wavfile)
+        if matches==[]:
+            raise RuntimeError("wavfile not found")
+        elif len(matches) > 1:
+            raise RuntimeError("multiple wavfiles found")
+        else:
+            return matches.pop()
+    
 def list_cached(cachedir):
     if not os.path.exists(cachedir):
             os.makedirs(cachedir)
@@ -114,6 +114,9 @@ class SVBanks(dict):
     def __init__(self, item={}):
         dict.__init__(self, item)
 
+    def get_wavfile(self, sample):
+        return self[sample["bank"]].zipfile.open(sample["file"], 'r')
+        
     def filter_pool(self, terms):
         pool=SVPool()
         for bank in self.values():
@@ -132,8 +135,6 @@ class SVBanks(dict):
         else:
             return matches.pop()
             
-    def get_wavfile(self, sample):
-        return self[sample["bank"]].zipfile.open(sample["file"], 'r')
     
 if __name__=="__main__":
     pass
