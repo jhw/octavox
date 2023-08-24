@@ -1,6 +1,6 @@
 from octavox.modules.model import SVNoteTrig, SVFXTrig
 
-from octavox.modules.samples import SVSample
+from octavox.modules.pools import SVSample
 
 from octavox.projects import Q
 

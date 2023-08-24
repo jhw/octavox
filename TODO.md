@@ -107,6 +107,7 @@
 
 ### done
 
+- revert samples as pools
 - move sampler into directory and nest utils/wavfile
 - test show samples
 - test fixes
