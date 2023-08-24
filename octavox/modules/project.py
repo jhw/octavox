@@ -63,7 +63,7 @@ class SVProject:
             modclass=load_class(mod["class"])
             kwargs={}
             if mod["class"].lower().endswith("sampler"):
-                filtered=pool.filter(mod["name"])
+                filtered=pool.filter_tag(mod["name"])
                 kwargs={"banks": banks,
                         "pool": filtered}
             mod["instance"]=modclass(**kwargs)

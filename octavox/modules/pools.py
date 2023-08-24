@@ -85,7 +85,7 @@ class SVPool(list):
             self.append(sample)
             self.keys.append(key)
             
-    def filter(self, tag):
+    def filter_tag(self, tag):
         pool=SVPool()
         for sample in self:
             for stag in sample["tags"]:
