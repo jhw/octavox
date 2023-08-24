@@ -1,5 +1,7 @@
 ### short [02-revert-sample-file]
 
+- move sampler into directory and nest utils/wavfile
+- call apply_cutoff dynamically
 - revert samples as pools
 - curation to use single regex string rather than list of string fragments
 - move slicebeats curation terms inline
