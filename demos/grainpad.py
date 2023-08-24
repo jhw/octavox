@@ -63,11 +63,11 @@ def spawn_patches(pool, npatches=16):
         base=random.choice(pool)
         def wrapped():
             sample=base.clone()
-            """
-            - add random granular code
-            """
             sample["mod"]="granular"
-            sample["ctrl"]={"fadeout": 50}
+            sample["ctrl"]={"offset": random.random([50, 100, 200, 400]),
+                            "sz": random.choice([25, 50, 100, 200]),
+                            "n": random.choice([5, 10, 20]),
+                            "fadeout": 50}
             return sample
         return wrapped            
     def pitchfn():

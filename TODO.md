@@ -1,6 +1,8 @@
 ### short [01-granularpads]
 
-- define random grains
+- refactor random grains implementation for new kwargs
+
+- test
 
 - see if slicebeats cli main could benefit from banks.curate_pool
 
@@ -102,6 +104,7 @@
 
 ### done
 
+- define random grains
 - lookup pad and chord terms
 - copy slicebeats demo
 - implement granular algo
