@@ -1,6 +1,5 @@
 ### short [01-pydub-inline]
 
-- make mod and ctrl params option
 - reduce samplebass n to 16 and add notes
 - test fixes
 
@@ -103,6 +102,7 @@
 
 ### done
 
+- make mod and ctrl params option
 - check consistency with existing files
 - remove sample.ext
 - should be allowed to pass filename to sample

@@ -2,9 +2,7 @@ from octavox.modules import load_class
 
 def sample_default_kwargs(fn):
     def wrapped(self, item):
-        for attr, defaultval in [("mod", None),
-                                 ("ctrl", {}),
-                                 ("pitch", 0),
+        for attr, defaultval in [("pitch", 0),
                                  ("tags", [])]:
             if attr not in item:
                 item[attr]=defaultval
@@ -18,12 +16,15 @@ class SVSample(dict):
         dict.__init__(self, item)
 
     def clone(self):
-        return SVSample({"bank": self["bank"],
-                         "file": self["file"],
-                         "pitch": self["pitch"],
-                         "mod": self["mod"],
-                         "ctrl": dict(self["ctrl"]),
-                         "tags": list(self["tags"])})
+        kwargs={"bank": self["bank"],
+                "file": self["file"],
+                "pitch": self["pitch"],
+                "tags": list(self["tags"])}
+        if ("mod" in self and
+            "ctrl" in self):
+            kwargs["mod"]=self["mod"]
+            kwargs["ctrl"]=dict(kwargs["ctrl"])
+        return SVSample(kwargs)
 
     def add_tag(self, tag):
         if tag not in self["tags"]:
@@ -49,7 +50,8 @@ class SVSample(dict):
         tokens.append("%s/%s" % (self["bank"],
                                  self["file"])),
         tokens.append(self.pitchstr)
-        if self["mod"]:
+        if ("mod" in self and
+            "ctrl" in self):
             tokens.append(self.modstr)
         if self["tags"]!=[]:
             tokens.append(self.tagstr)
