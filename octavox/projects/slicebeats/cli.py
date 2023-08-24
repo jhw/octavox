@@ -88,7 +88,7 @@ class SlicebeatsCli(SVBankCli):
 
     @parse_line()
     def do_list_fixes(self):
-        for sample in self.fixes.values():
+        for sample in self.fixes:
             print ("- %s" % sample)
 
     @parse_line(config=[{"name": "tag",

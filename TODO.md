@@ -1,9 +1,5 @@
 ### short [02-revert-sample-file]
 
-- test loading and mutating an archived file
-- test show samples
-- test fixes
-
 ### medium
 
 ### thoughts
@@ -102,6 +98,8 @@
 
 ### done
 
+- test show samples
+- test fixes
 - rename pools as samples
 - move sample into pool
 - reduce samplebass n to 16 and add notes
