@@ -5,7 +5,7 @@ from rv.note import NOTE as RVNOTE
 from pydub import AudioSegment
 
 # from scipy.io import wavfile
-from octavox.modules.utils import wavfile
+from octavox.modules.sampler import wavfile
 
 import io, warnings
 
