@@ -1,9 +1,7 @@
 ### short
 
-- check use of pool.filter, pools.flatten
 - convert s&h lfo to use hex space
 - add min value to s&h lfo
-- abstract samplebass init_pool into framework
 - pydub script to detect whitespace at start of reversed samples
 
 ### medium
@@ -11,6 +9,9 @@
 - granular overlapping audio segments
 
 ### thoughts
+
+- abstract samplebass init_pool into framework?
+  - not worth it
 
 ```
 Traceback (most recent call last):
@@ -124,6 +125,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- check use of pool.filter, pools.flatten
 - don't render pitch if value is zero
 - rename curate_pool as filter_pool
 - see if slicebeats cli main could use banks.curate_pool

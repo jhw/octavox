@@ -100,8 +100,8 @@ class SVPools(dict):
 
     def flatten(self, term):
         flattened=SVPool()
-        for key, pool in self.items():
-            if re.search(term, key):
+        for poolname, pool in self.items():
+            if re.search(term, poolname):
                 flattened+=pool
         return flattened
         

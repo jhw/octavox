@@ -73,12 +73,6 @@ def spawn_patches(pool, npatches=16):
                       samplefn=spawn_samplefn(pool))
             for i in range(npatches)]
 
-def init_pool(banks, terms):
-    pool=SVPool()
-    for bankname, bank in banks.items():
-        pool+=bank.filter_pool(terms)
-    return pool
-                
 if __name__=="__main__":
     try:
         bucketname=os.environ["OCTAVOX_ASSETS_BUCKET"]

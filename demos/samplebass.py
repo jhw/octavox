@@ -106,7 +106,9 @@ def spawn_patches(pool, npatches=16):
             for i in range(npatches)]
 
 """
-- could use `dev/search_pool.py bass` here but loads of false negatives (some bass sounds don't have bass in description) and loads of false positives (a lot of bass sounds are `bass drum`)
+- could use dev/search_pool.py here (see grainpad.py) but 
+  - loads of false negatives (some bass sounds don't have bass in description)
+  - loads of false positives (a lot of bass sounds are kick drum sounds)
 """
 
 SampleTerms=yaml.safe_load("""
@@ -128,6 +130,12 @@ SampleTerms=yaml.safe_load("""
 - pico-syntrx/53
 - pico-syntrx/60
 """)
+
+"""
+- a bit of a hack but hey
+- I don't think it's worth abstracting this function into the framework as there are going to be few production cases where you specify a list of stems
+- (with the cli it's always one at a time)
+"""
 
 def init_pool(terms=SampleTerms):
     pool=SVPool()
