@@ -27,7 +27,6 @@
   - filter changes intra- note
   - slide
 
-- samplehats
 - noisehats
 - euclidbeats
 - FMbass
@@ -41,9 +40,12 @@
 - bass trills
 - bass jumps
 
-- acid bass
-- sample bass
+- samplehats
 - granular samples
+- sample bass
+- acid bass
+
+
 
 ### s3 banks 15/08/23
 

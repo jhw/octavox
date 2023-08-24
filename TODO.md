@@ -1,12 +1,21 @@
 ### short
 
-- granular overlay
-  - https://github.com/jiaaro/pydub/blob/master/API.markdown#audiosegmentoverlay
+- undo repeats
+- add sub ticks
+  - increase bpm x4
+  - increase number of ticks x4
+  - only render beat every 4 ticks
+- add back repeats
+
+- add filter level s&h
 
 ### medium
 
 ### thoughts
 
+- granular overlay?
+  - https://github.com/jiaaro/pydub/blob/master/API.markdown#audiosegmentoverlay
+  - doesn't seem to work :(
 - abstract samplebass init_pool into framework?
   - not worth it
 
