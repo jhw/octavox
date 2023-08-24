@@ -1,5 +1,13 @@
 ### short [02-revert-sample-file]
 
+- revert samples as pools
+- curation to use single regex string rather than list of string fragments
+- move slicebeats curation terms inline
+- change search bank Dev script curation term 
+- consider how array of sampler ctrl parameters would be rendered; serialise as json and then urlencode
+- basic granular facilities - start, end, n, fadeout
+- granular demo which searches for chords and pads 
+
 ### medium
 
 ### thoughts
