@@ -43,46 +43,34 @@ Links=yaml.safe_load("""
 
 def grain_pad(trigfn,
                 samplefn,
-                pitchfn,
                 nbeats=16):
-    def note_trig(trigs, target, sample, pitch, i):
-        sample["pitch"]=pitch
+    def note_trig(trigs, target, sample, i):
         trigs.append(SVNoteTrig(mod=target,
                                 sample=sample,
                                 i=i))
     trigs=SVTrigs(nbeats=nbeats)
     for i in range(nbeats):
         if trigfn(i):
-            note_trig(trigs, "Sampler", samplefn(), pitchfn(), i)
+            note_trig(trigs, "Sampler", samplefn(), i)
     return trigs.tracks
 
 def spawn_patches(pool, npatches=16):
     def trigfn(i):
-        return random.random() < 0.5
+        return random.random() < 0.25
     def spawn_samplefn(pool):
         base=random.choice(pool)
         def wrapped():
             sample=base.clone()
             sample["mod"]="granular"
-            sample["ctrl"]={"offset": random.random([50, 100, 200, 400]),
-                            "sz": random.choice([25, 50, 100, 200]),
-                            "n": random.choice([5, 10, 20]),
-                            "fadeout": 50}
+            sample["ctrl"]={"offset": random.choice([50, 100, 200]),
+                            "sz": random.choice([50, 100]),
+                            "n": random.choice([5, 10]),
+                            "padding": 25,
+                            "fadeout": 100}
             return sample
         return wrapped            
-    def pitchfn():
-        q=random.random()
-        if q < 0.7:
-            return 0
-        elif q < 0.8:
-            return -2
-        elif q < 0.9:
-            return 7
-        else:
-            return 12
     return [grain_pad(trigfn=trigfn,
-                      samplefn=spawn_samplefn(pool),
-                      pitchfn=pitchfn)
+                      samplefn=spawn_samplefn(pool))
             for i in range(npatches)]
 
 def init_pool(banks, terms):
@@ -99,9 +87,6 @@ if __name__=="__main__":
         s3=boto3.client("s3")
         banks=SVBanks.initialise(s3, bucketname)
         pool=banks.curate_pool({"pads": "(pad)|(chord)|(drone)"})
-        for sample in pool:
-            print (sample)
-        """
         patches=spawn_patches(pool)
         project=SVProject().render(patches=patches,
                                    modconfig=Modules,
@@ -114,6 +99,5 @@ if __name__=="__main__":
         destfilename="tmp/grainpad/%s.sunvox" % ts
         with open(destfilename, 'wb') as f:
             project.write_to(f)
-        """
     except RuntimeError as error:
         print ("ERROR: %s" % str(error))

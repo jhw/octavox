@@ -1,7 +1,22 @@
 ### short [01-granularpads]
 
-- test
-
+```
+Traceback (most recent call last):
+  File "/Users/jhw/work/octavox/demos/grainpad.py", line 91, in <module>
+    project=SVProject().render(patches=patches,
+  File "/Users/jhw/work/octavox/octavox/modules/project.py", line 165, in render
+    proj.patterns=self.init_patterns(modules=modules,
+  File "/Users/jhw/work/octavox/octavox/modules/project.py", line 138, in init_patterns
+    self.init_pattern(patterns=patterns,
+  File "/Users/jhw/work/octavox/octavox/modules/project.py", line 96, in wrapped
+    rvpat=fn(*args, **kwargs)
+  File "/Users/jhw/work/octavox/octavox/modules/project.py", line 115, in init_pattern
+    return RVPattern(lines=patch.nbeats,
+  File "<attrs generated init rv.pattern.Pattern>", line 15, in __init__
+  File "/Users/jhw/work/octavox/env/lib/python3.10/site-packages/rv/lib/validators.py", line 12, in validate
+    raise ValueError("Value is not in range {}-{}".format(start, end))
+ValueError: Value is not in range 1-32
+```
 ### medium
 
 - see if slicebeats cli main could benefit from banks.curate_pool
