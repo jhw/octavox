@@ -1,10 +1,8 @@
 ### short
 
-- pydub script to detect whitespace at start of reversed samples
+- granular overlapping audio segments
 
 ### medium
-
-- granular overlapping audio segments
 
 ### thoughts
 
@@ -123,6 +121,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- pydub script to detect whitespace at start of reversed samples
 - convert s&h lfo to use hex space
 - add min value to s&h lfo
 - check use of pool.filter, pools.flatten
