@@ -1,6 +1,4 @@
-### short [01-pydub-inline]
-
-- rename pools as samples
+### short [02-revert-sample-file]
 
 - test loading and mutating an archived file
 - test show samples
