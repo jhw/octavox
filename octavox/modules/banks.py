@@ -116,7 +116,7 @@ class SVBanks(dict):
 
     def curate_pool(self, terms):
         pool=SVPool()
-        for bankname, bank in self.items():
+        for bank in self.values():
             pool+=bank.curate_pool(terms)
         return pool
         
