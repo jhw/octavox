@@ -1,8 +1,5 @@
 ### short
 
-- test formatting array parameters
-- update formatting of mod ctrl
-
 - curation to use single regex string rather than list of string fragments
 - move slicebeats curation terms inline
 - change search bank Dev script curation term 
@@ -108,6 +105,8 @@
 
 ### done
 
+- test formatting array parameters
+- update formatting of mod ctrl
 - call apply_cutoff dynamically
 - revert samples as pools
 - move sampler into directory and nest utils/wavfile

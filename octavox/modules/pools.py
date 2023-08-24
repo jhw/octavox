@@ -1,6 +1,6 @@
 from octavox.modules import is_abbrev
 
-import random, re
+import random, re, urllib.parse
 
 def sample_default_kwargs(fn):
     def wrapped(self, item):
@@ -47,9 +47,8 @@ class SVSample(dict):
 
     @property
     def modstr(self):
-        qs="&".join({"%s=%s" % (k, self["ctrl"][k])
-                     for k in sorted(self["ctrl"].keys())})
-        return "#%s?%s" % (self["mod"], qs)
+        return "#%s?%s" % (self["mod"],
+                           urllib.parse.urlencode(self["ctrl"]))
     
     @property
     def tagstr(self):
