@@ -1,8 +1,13 @@
-### short [01-granularpads]
+### short
 
-- second version taking array of grains
-- investigate additional pydub functionality that could be used for smoothing
+- convery graular to use AudioSegment.empty()
+- convert s&h lfo to use hex space
+- add min value to s&h lfo
 - see if slicebeats cli main could use banks.curate_pool
+- don't render pitch if value is zero
+- rename curate_pool as filter_pool
+- abstract samplebass init_pool into framework
+- pydub script to detect whitespace at start of reversed samples
 
 ### medium
 

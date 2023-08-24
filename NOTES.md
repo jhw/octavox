@@ -20,18 +20,25 @@
 
 ### octavox demos 18/08/23
 
-- acid bass 2
-  - sustain / note off
+- slidebass -> 
+  - sustain+note off
   - city dreams bass
-  - slice
+  - filter changes intra- note
+  - slide
 
-- vordshosbn hats
-- euclid beats
-- FM bass
-- kicker bass
+- samplehats
+- noisehats
+- euclidbeats
+- FMbass
+- kickerbass
 - synth chords
 - backbeats
 - compressor 
+
+- arp
+- relative notes
+- bass trills
+- bass jumps
 
 - acid bass
 - sample bass
