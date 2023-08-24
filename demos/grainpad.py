@@ -65,7 +65,7 @@ def spawn_patches(pool, npatches=16):
             sample["ctrl"]={"offset": random.choice([50, 100, 200]),
                             "sz": random.choice([50, 100]),
                             "n": random.choice([5, 10]),
-                            "padding": 10,
+                            "padding": 20,
                             "fadeout": 100}
             return sample
         return wrapped            

@@ -11,6 +11,8 @@
 
 ### medium
 
+- granular overlapping audio segments
+
 ### thoughts
 
 ```

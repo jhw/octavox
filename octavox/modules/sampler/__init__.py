@@ -85,9 +85,9 @@ class SVSampler(SVBaseSampler):
         return seg[:cutoff].fade_out(fadeout)
 
     def apply_granular(self, seg, offset, sz, n, fadeout, padding):
+        buf=AudioSegment.empty()
         grain=seg[offset:offset+sz].fade_in(padding).fade_out(padding)
-        buf=grain
-        for i in range(n-1):
+        for i in range(n):
             buf+=grain
         return buf.fade_out(fadeout)
 
