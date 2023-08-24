@@ -129,12 +129,23 @@ oh: (open)|(hat)|(ht)|(oh)|(perc)|(ussion)|(prc)
 sn: (snare)|(sn)|(sd)|(clap)|(clp)|(cp)|(hc)|(rim)|(plip)|(rs)
 """)
 
+Params=yaml.safe_load("""
+temperature: 1.0
+density: 0.75
+dseed: 1.0
+dstyle: 0.66666
+nbeats: 16
+blocksize: 4
+nblocks: 8
+bpm: 120
+""")
+
 if __name__=="__main__":
     try:
         bucketname=os.environ["OCTAVOX_ASSETS_BUCKET"]
         if bucketname in ["", None]:
             raise RuntimeError("OCTAVOX_ASSETS_BUCKET does not exist")
-        modules, links, params = [load_yaml("projects/slicebeats/%s.yaml" % key) for key in "modules|links|params".split("|")]
+        modules, links = [load_yaml("projects/slicebeats/%s.yaml" % key) for key in "modules|links".split("|")]
         s3=boto3.client("s3")
         banks=SVBanks.initialise(s3, bucketname)
         pools=init_pools(banks, terms=Curated)
@@ -144,7 +155,7 @@ if __name__=="__main__":
                       projectname="slicebeats",
                       bucketname=bucketname,
                       poolname=poolname,
-                      params=params,
+                      params=Params,
                       modules=modules,
                       links=links,
                       banks=banks,

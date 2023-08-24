@@ -1,6 +1,5 @@
 ### short
 
-- move cli params inline
 - change search bank dev script curation term 
 - check notes re samplebass search terms
 
@@ -105,6 +104,7 @@
 
 ### done
 
+- move cli params inline
 - curation to use single regex string rather than list of string fragments
 - move slicebeats curation terms inline
 - test formatting array parameters
