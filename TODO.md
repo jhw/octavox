@@ -104,6 +104,7 @@
 
 ### done
 
+- rename pools as samples
 - move sample into pool
 - reduce samplebass n to 16 and add notes
 - make mod and ctrl params option
