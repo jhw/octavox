@@ -1,8 +1,8 @@
 ### short
 
-- curation to use single regex string rather than list of string fragments
-- move slicebeats curation terms inline
-- change search bank Dev script curation term 
+- move cli params inline
+- change search bank dev script curation term 
+- check notes re samplebass search terms
 
 - basic granular facilities - start, end, n, fadeout
 - granular demo which searches for chords and pads 
@@ -105,6 +105,8 @@
 
 ### done
 
+- curation to use single regex string rather than list of string fragments
+- move slicebeats curation terms inline
 - test formatting array parameters
 - update formatting of mod ctrl
 - call apply_cutoff dynamically

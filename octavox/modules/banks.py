@@ -43,13 +43,12 @@ class SVBank:
     def curate_pool(self, terms):
         pool, wavfiles = SVPool(), self.wavfiles
         for wavfile in wavfiles:
-            for tag, _terms in terms.items():
-                for term in _terms:
-                    if re.search(term, wavfile, re.I):
-                        sample=SVSample({"bank": self.name,
-                                         "file": wavfile,
-                                         "tags": [tag]})
-                        pool.add(sample)
+            for tag, term in terms.items():
+                if re.search(term, wavfile, re.I):
+                    sample=SVSample({"bank": self.name,
+                                     "file": wavfile,
+                                     "tags": [tag]})
+                    pool.add(sample)
         return pool
 
 def list_cached(cachedir):

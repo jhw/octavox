@@ -12,7 +12,7 @@ from octavox.modules.pools import SVSample, SVPools, SVPool
 
 from octavox.projects.slicebeats.model import Pattern
 
-import boto3, json, os, random, re
+import boto3, json, os, random, re, yaml
 
 Machines=load_yaml("projects/slicebeats/machines.yaml")
 
@@ -121,16 +121,23 @@ def init_pools(banks, terms, limit=12):
         globalz["global-%s" % attr]=pools.flatten("\\-%s$" % attr)
     pools.update(globalz)
     return pools
-    
+
+Curated=yaml.safe_load("""
+ch: (closed)|(hat)|(ht)|( ch)|(perc)|(ussion)|(prc)
+kk: (kick)|(kik)|(kk)|(bd)|(bass)
+oh: (open)|(hat)|(ht)|(oh)|(perc)|(ussion)|(prc)
+sn: (snare)|(sn)|(sd)|(clap)|(clp)|(cp)|(hc)|(rim)|(plip)|(rs)
+""")
+
 if __name__=="__main__":
     try:
         bucketname=os.environ["OCTAVOX_ASSETS_BUCKET"]
         if bucketname in ["", None]:
             raise RuntimeError("OCTAVOX_ASSETS_BUCKET does not exist")
-        modules, links, params, curated = [load_yaml("projects/slicebeats/%s.yaml" % key) for key in "modules|links|params|curated".split("|")]
+        modules, links, params = [load_yaml("projects/slicebeats/%s.yaml" % key) for key in "modules|links|params".split("|")]
         s3=boto3.client("s3")
         banks=SVBanks.initialise(s3, bucketname)
-        pools=init_pools(banks, terms=curated)
+        pools=init_pools(banks, terms=Curated)
         poolname=random.choice(list(pools.keys()))
         print ("INFO: pool=%s" % poolname)
         SlicebeatsCli(s3=s3,
