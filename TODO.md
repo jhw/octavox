@@ -1,5 +1,9 @@
 ### short [01-granularpads]
 
+- implement granular algo
+- copy slicebeats demo
+- auto lookup pads and chords
+
 ### medium
 
 ### thoughts
