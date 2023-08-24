@@ -2,6 +2,70 @@ from octavox.modules import is_abbrev
 
 import random, re
 
+def sample_default_kwargs(fn):
+    def wrapped(self, item):
+        for attr, defaultval in [("pitch", 0),
+                                 ("tags", [])]:
+            if attr not in item:
+                item[attr]=defaultval
+        return fn(self, item)
+    return wrapped
+
+class SVSample(dict):
+
+    @sample_default_kwargs
+    def __init__(self, item):
+        dict.__init__(self, item)
+
+    def clone(self):
+        kwargs={"bank": self["bank"],
+                "file": self["file"],
+                "pitch": self["pitch"],
+                "tags": list(self["tags"])}
+        if ("mod" in self and
+            "ctrl" in self):
+            kwargs["mod"]=self["mod"]
+            kwargs["ctrl"]=dict(kwargs["ctrl"])
+        return SVSample(kwargs)
+
+    @property
+    def has_mod(self):
+        return "mod" in self and "ctrl" in self
+            
+    @property
+    def has_tags(self):
+        return self["tags"]!=[]
+    
+    def add_tag(self, tag):
+        if tag not in self["tags"]:
+            self["tags"].append(tag)
+
+    @property
+    def pitchstr(self):
+        fmtstr="(+%i)" if self["pitch"] > 0 else "(%i)"
+        return fmtstr % self["pitch"]
+
+    @property
+    def modstr(self):
+        qs="&".join({"%s=%s" % (k, self["ctrl"][k])
+                     for k in sorted(self["ctrl"].keys())})
+        return "#%s?%s" % (self["mod"], qs)
+    
+    @property
+    def tagstr(self):
+        return "[%s]" % ", ".join(sorted(self["tags"]))
+
+    def __str__(self):
+        tokens=[]
+        tokens.append("%s/%s" % (self["bank"],
+                                 self["file"])),
+        tokens.append(self.pitchstr)
+        if self.has_mod: 
+            tokens.append(self.modstr)
+        if self.has_tags:
+            tokens.append(self.tagstr)
+        return " ".join(tokens)
+
 class SVPool(list):
 
     def __init__(self, items=[]):

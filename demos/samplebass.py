@@ -7,9 +7,9 @@
 
 from octavox.modules.banks import SVBanks
 
-from octavox.modules.model import SVSample, SVNoteTrig, SVFXTrig, SVTrigs
+from octavox.modules.model import SVNoteTrig, SVFXTrig, SVTrigs
 
-from octavox.modules.pools import SVPool
+from octavox.modules.pools import SVSample, SVPool
 
 from octavox.modules.project import SVProject
 

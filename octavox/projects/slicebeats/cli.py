@@ -2,13 +2,13 @@ from octavox import load_yaml
 
 from octavox.modules.banks import SVBanks
 
-from octavox.modules.pools import SVPools, SVPool
-
 from octavox.modules.cli import SVBankCli, render_patches, assert_project
 
 from octavox.modules.cli.parse import parse_line
 
-from octavox.modules.model import SVSample, SVNoteTrig, SVPatch
+from octavox.modules.model import SVNoteTrig, SVPatch
+
+from octavox.modules.pools import SVSample, SVPools, SVPool
 
 from octavox.projects.slicebeats.model import Pattern
 

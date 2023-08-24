@@ -59,7 +59,7 @@ class SVSampler(SVBaseSampler):
         for i, sample in enumerate(self.pool):
             self.note_samples[notes[i]]=i
             src=banks.get_wavfile(sample)
-            buf=self.slice_sample(sample, src) if sample["mod"] else src
+            buf=self.slice_sample(sample, src) if sample.has_mod else src
             self.load_sample(buf, i)
             svsample=self.samples[i]
             svsample.relative_note+=(root-i)+sample["pitch"]
