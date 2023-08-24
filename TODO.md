@@ -1,7 +1,7 @@
 ### short [01-granularpads]
 
-- copy slicebeats demo
-- auto lookup pads and chords
+- lookup pad and chord terms
+- define random grains
 
 ### medium
 
@@ -101,6 +101,7 @@
 
 ### done
 
+- copy slicebeats demo
 - implement granular algo
 - change search bank dev script curation term 
 - check notes re samplebass search terms
