@@ -11,6 +11,7 @@
 
 - pitch detection
 - autotune
+- vocoder
 
 ### banks 20/08/23
 

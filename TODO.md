@@ -1,6 +1,7 @@
 ### short
 
-- granular overlapping audio segments
+- granular overlay
+  - https://github.com/jiaaro/pydub/blob/master/API.markdown#audiosegmentoverlay
 
 ### medium
 
