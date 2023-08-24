@@ -1,15 +1,19 @@
 ### short [01-pydub-inline]
 
 - reduce samplebass n to 16 and add notes
-- test fixes
 
-- consider moving pool back into bank
-- consider converting sample tags to set
+- move sample into pool
+
+- test loading and mutating an archived file
+- test show samples
+- test fixes
 
 ### medium
 
 ### thoughts
 
+- consider converting sample tags to set?
+  - not worth it as list is easier to serialise to/from json
 - convert pools, banks to lists? 
   - seems to be more trouble that it is really worth
   - because then pool has to store name which makes cloning harder  
