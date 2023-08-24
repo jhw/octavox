@@ -7,13 +7,13 @@ if __name__=="__main__":
         bucketname=os.environ["OCTAVOX_ASSETS_BUCKET"]
         if bucketname in ["", None]:
             raise RuntimeError("OCTAVOX_ASSETS_BUCKET does not exist")
-        if len(sys.argv) < 2:
-            raise RuntimeError("please enter term")
-        term=sys.argv[1]
+        if len(sys.argv) < 3:
+            raise RuntimeError("please enter tag, term")
+        tag, term =sys.argv[1:3]
         s3=boto3.client("s3")
         banks=SVBanks.initialise(s3, bucketname)
         for bankname, bank in banks.items():
-            for sample in bank.curate_pool({term: [term]}):
+            for sample in bank.curate_pool({tag: term}):
                 print ("- %s/%s" % (sample["bank"],
                                     sample["file"].split(".")[0]))
     except RuntimeError as error:

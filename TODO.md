@@ -1,9 +1,4 @@
-### short
-
-- change search bank dev script curation term 
-
-- basic granular facilities - start, end, n, fadeout
-- granular demo which searches for chords and pads 
+### short [01-granularpads]
 
 ### medium
 
@@ -103,6 +98,7 @@
 
 ### done
 
+- change search bank dev script curation term 
 - check notes re samplebass search terms
 - move cli params inline
 - curation to use single regex string rather than list of string fragments
