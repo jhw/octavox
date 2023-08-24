@@ -1,10 +1,11 @@
 ### short [01-pydub-inline]
 
-- should be allowed to pass filename to sample
-- why do we keep exceeding maximum number of samples?
+- make mod and ctrl params option
+- reduce samplebass n to 16 and add notes
+- test fixes
+
 - consider moving pool back into bank
-- convert sample tags to set
-- migrate archive samples
+- consider converting sample tags to set
 
 ### medium
 
@@ -102,6 +103,11 @@
 
 ### done
 
+- check consistency with existing files
+- remove sample.ext
+- should be allowed to pass filename to sample
+- replace sample.filename with sample["file"]
+- replace sample.ext in sampler
 - consider if you need to use sample.base_key when creating segments
   - you shouldn't need to include pitch
   - but if you use sample.filename it creates an error

@@ -66,7 +66,7 @@ class SVSampler(SVBaseSampler):
 
     def init_segment(fn):
         def wrapped(self, sample, src):
-            segkey=sample.filename
+            segkey=sample["file"]
             if segkey not in self.segments:
                 self.segments[segkey]=AudioSegment.from_file(src)
             return fn(self, sample, src)
@@ -74,13 +74,13 @@ class SVSampler(SVBaseSampler):
 
     @init_segment
     def slice_sample(self, sample, src):
-        seg0=self.segments[sample.filename]
+        seg0=self.segments[sample["file"]]
         if sample["mod"]=="cutoff":
             seg1=self.apply_cutoff(seg0, sample["ctrl"])
         else:
             raise RuntimeError("sample mod %s not recognised" % sample["mod"])
         buf=io.BytesIO()
-        seg1.export(buf, format=sample["ext"])
+        seg1.export(buf, format=sample["file"].split(".")[-1])
         return buf
 
     def apply_cutoff(self, seg, ctrl):

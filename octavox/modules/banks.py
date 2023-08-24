@@ -37,23 +37,19 @@ class SVBank:
     def default_pool(self):
         pool, wavfiles = SVPool(), self.wavfiles
         for wavfile in wavfiles:
-            stem, ext = wavfile.split(".")
             sample=SVSample({"bank": self.name,
-                             "stem": stem,
-                             "ext": ext})
+                             "file": wavfile})
             pool.add(sample)
         return pool
 
     def curate_pool(self, terms):
         pool, wavfiles = SVPool(), self.wavfiles
         for wavfile in wavfiles:
-            stem, ext = wavfile.split(".")
             for tag, _terms in terms.items():
                 for term in _terms:
                     if re.search(term, wavfile, re.I):
                         sample=SVSample({"bank": self.name,
-                                         "stem": stem,
-                                         "ext": ext,
+                                         "file": wavfile,
                                          "tags": [tag]})
                         pool.add(sample)
         return pool
@@ -134,7 +130,7 @@ class SVBanks(dict):
             return matches.pop()
             
     def get_wavfile(self, sample):
-        return self[sample["bank"]].zipfile.open(sample.filename, 'r')
+        return self[sample["bank"]].zipfile.open(sample["file"], 'r')
     
 if __name__=="__main__":
     pass

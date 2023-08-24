@@ -19,8 +19,7 @@ class SVSample(dict):
 
     def clone(self):
         return SVSample({"bank": self["bank"],
-                         "stem": self["stem"],
-                         "ext": self["ext"],
+                         "file": self["file"],
                          "pitch": self["pitch"],
                          "mod": self["mod"],
                          "ctrl": dict(self["ctrl"]),
@@ -29,11 +28,6 @@ class SVSample(dict):
     def add_tag(self, tag):
         if tag not in self["tags"]:
             self["tags"].append(tag)
-
-    @property
-    def filename(self):
-        return "%s.%s" % (self["stem"],
-                          self["ext"])
 
     @property
     def pitchstr(self):
@@ -53,7 +47,7 @@ class SVSample(dict):
     def __str__(self):
         tokens=[]
         tokens.append("%s/%s" % (self["bank"],
-                                 self.filename)),
+                                 self["file"])),
         tokens.append(self.pitchstr)
         if self["mod"]:
             tokens.append(self.modstr)
