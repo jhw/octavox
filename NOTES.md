@@ -33,12 +33,15 @@
 - kickerbass
 - synth chords
 - backbeats
-- compressor 
 
 - arp
+- compressor 
 - relative notes
 - bass trills
 - bass jumps
+- deep/dubhouse
+
+---
 
 - samplehats
 - granular samples

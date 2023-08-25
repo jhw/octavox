@@ -41,9 +41,9 @@ Links=yaml.safe_load("""
   - Output
 """)
 
-def grain_pad(trigfn,
-                samplefn,
-                nbeats=16):
+def grain_pads(trigfn,
+               samplefn,
+               nbeats=16):
     def note_trig(trigs, target, sample, i):
         trigs.append(SVNoteTrig(mod=target,
                                 sample=sample,
@@ -69,8 +69,8 @@ def spawn_patches(pool, npatches=16):
                             "fadeout": 100}
             return sample
         return wrapped            
-    return [grain_pad(trigfn=trigfn,
-                      samplefn=spawn_samplefn(pool))
+    return [grain_pads(trigfn=trigfn,
+                       samplefn=spawn_samplefn(pool))
             for i in range(npatches)]
 
 if __name__=="__main__":
@@ -87,10 +87,10 @@ if __name__=="__main__":
                                    links=Links,
                                    banks=banks,
                                    bpm=120)
-        if not os.path.exists("tmp/grainpad"):
-            os.makedirs("tmp/grainpad")
+        if not os.path.exists("tmp/grainpads"):
+            os.makedirs("tmp/grainpads")
         ts=datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
-        destfilename="tmp/grainpad/%s.sunvox" % ts
+        destfilename="tmp/grainpads/%s.sunvox" % ts
         with open(destfilename, 'wb') as f:
             project.write_to(f)
     except RuntimeError as error:
