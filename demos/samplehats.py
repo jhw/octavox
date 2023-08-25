@@ -67,8 +67,7 @@ def spawn_patches(pool,
                 [i],
                 [i, i+nticks/2],
                 [i, i+nticks/2],
-                [i+k for k in range(nticks)]]
-    
+                [i+k for k in range(nticks)]]    
     def notefn(sample, i):
         vel=random.random()*0.5+0.5
         return [SVNoteTrig(mod="Sampler",

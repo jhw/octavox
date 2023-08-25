@@ -1,9 +1,5 @@
 ### short [01-noisehats]
 
-- replace AG filter with dedicated HP filter
-- repeats 
-
-
 ### medium
 
 ### thoughts
@@ -118,6 +114,8 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- replace AG filter with dedicated HP filter
+- repeats 
 - samplehats to implement "proper" repeats
   - repeated note should be the same
 - script to initialise samplebass samples

@@ -27,7 +27,6 @@
   - filter changes intra- note
   - slide
 
-- noisehats
 - euclidbeats
 - FMbass
 - kickerbass
@@ -43,6 +42,7 @@
 
 ---
 
+- noisehats
 - samplehats
 - granular samples
 - sample bass

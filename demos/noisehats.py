@@ -10,17 +10,16 @@ Modules=yaml.safe_load("""
 - name: Generator
   class: rv.modules.analoggenerator.AnalogGenerator
   defaults:
-    volume: 256
     waveform: 3 # noise
     attack: 0
     sustain: 0
     release: 0
-    f_envelope: 0
-    filter: 2 # HP
 - name: Filter
   class: rv.modules.filter.Filter
   defaults:
-    type: 0
+    type: 1 # HP
+    freq: 9000
+    resonance: 1350
 - name: Echo
   class: rv.modules.echo.Echo
   defaults:
@@ -61,21 +60,35 @@ def spawn_patches(nticks,
     def trigfn(i):
         return (0 == i % nticks and
                 random.random() < 0.75)
+    def repeats(i, nticks):
+        return [[i],
+                [i],
+                [i],
+                [i],
+                [i, i+nticks/2],
+                [i, i+nticks/2],
+                [i+k for k in range(nticks)]]    
+    def flatten(lists):
+        flattened=[]
+        for l in lists:
+            flattened+=l
+        return flattened    
     def notefn(i, note=96):
         fxvalues=["0000", random.choice(["3000", "3000", "3000", "6000"])]
         if random.random() < 0.5:
             fxvalues=list(reversed(fxvalues))
-        notes=[SVNoteTrig(mod="Generator",
-                          note=note,
-                          vel=random.random()*0.5+0.5,
-                          i=i),
-               SVFXTrig(target="Generator/attack",
-                        value=int(fxvalues[0], 16),
-                        i=i),
-               SVFXTrig(target="Generator/release",
-                        value=int(fxvalues[1], 16),
-                        i=i)]
-        return notes
+        notes=[[SVNoteTrig(mod="Generator",
+                           note=note,
+                           vel=random.random()*0.3+0.7,
+                           i=j),
+                SVFXTrig(target="Generator/attack",
+                         value=int(fxvalues[0], 16),
+                         i=j),
+                SVFXTrig(target="Generator/release",
+                         value=int(fxvalues[1], 16),
+                         i=j)]
+               for j in random.choice(repeats(i, nticks))]
+        return flatten(notes)
     return [noise_hats(trigfn=trigfn,
                        notefn=notefn,
                        nticks=nbeats*nticks)
