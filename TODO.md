@@ -10,8 +10,6 @@
 - granular overlay?
   - https://github.com/jiaaro/pydub/blob/master/API.markdown#audiosegmentoverlay
   - doesn't seem to work :(
-- abstract samplebass init_pool into framework?
-  - not worth it
 
 ```
 Traceback (most recent call last):
@@ -36,14 +34,8 @@ ValueError: Value is not in range 1-32
 - convert pools, banks to lists? 
   - seems to be more trouble that it is really worth
   - because then pool has to store name which makes cloning harder  
-- move lfo multiplier (ffff) from config into module?
-  - no is fine where it is
-- bank clone?
-  - search clones bank
 - add prefix/string matching to reanimate archives?
   - not sure is required
-- auto- populate incomplete curated pools?
-  - how long is a piece of string?
 - investigate why Note (RVNote) seems to need a local import?
   - not a problem that requires solving
 - render_patches to take optional filename?
