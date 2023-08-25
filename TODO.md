@@ -1,7 +1,6 @@
 ### short
 
-- samplehats to implement "proper" repeats
-  - repeated note should be the same
+- noisehats
 
 ### medium
 
@@ -117,6 +116,8 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- samplehats to implement "proper" repeats
+  - repeated note should be the same
 - script to initialise samplebass samples
 - pluralise demos
 - pydub script to detect whitespace at start of reversed samples

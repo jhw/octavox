@@ -42,18 +42,15 @@ Links=yaml.safe_load("""
 """)
 
 def sample_hats(trigfn,
+                notefn,
                 samplefn,
-                velfn,
                 nticks):
-    def note_trig(trigs, target, sample, vel, i):
-        trigs.append(SVNoteTrig(mod=target,
-                                sample=sample,
-                                vel=vel,
-                                i=i))
     trigs=SVTrigs(nbeats=nticks)
     for i in range(nticks):
         if trigfn(i):
-            note_trig(trigs, "Sampler", samplefn(), velfn(), i)
+            sample=samplefn()
+            notes=notefn(sample, i)
+            trigs+=notes
     return trigs.tracks
 
 def spawn_patches(pool,
@@ -61,14 +58,24 @@ def spawn_patches(pool,
                   nbeats,
                   npatches):
     def trigfn(i):
-        if 0 == i % nticks:
-            return random.random() < 0.75
-        elif nticks/2 == i % nticks:
-            return random.random() < 0.2
-        else:
-            return random.random() < 0.05            
-    def velfn():
-        return random.random()*0.5+0.5
+        return (0 == i % nticks and
+                random.random() < 0.75)
+    def repeats(i, nticks):
+        return [[i],
+                [i],
+                [i],
+                [i],
+                [i, i+nticks/2],
+                [i, i+nticks/2],
+                [i+k for k in range(nticks)]]
+    
+    def notefn(sample, i):
+        vel=random.random()*0.5+0.5
+        return [SVNoteTrig(mod="Sampler",
+                           sample=sample,
+                           vel=vel,
+                           i=j)
+                for j in random.choice(repeats(i, nticks))]
     def reverse(sample):
         rev=sample.clone()
         rev["mod"]="reverse"
@@ -84,7 +91,7 @@ def spawn_patches(pool,
             return random.choice(samples)
         return wrapped            
     return [sample_hats(trigfn=trigfn,
-                        velfn=velfn,
+                        notefn=notefn,
                         samplefn=spawn_samplefn(pool),
                         nticks=nbeats*nticks)
             for i in range(npatches)]
