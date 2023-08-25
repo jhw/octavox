@@ -1,15 +1,12 @@
 ### short
 
-- undo repeats
-- add sub ticks
-  - increase bpm x4
-  - increase number of ticks x4
-  - only render beat every 4 ticks
-- add back repeats
-
-- add filter level s&h
+- pluralise demos
+- script to initialise samplebass samples
 
 ### medium
+
+- samplehats to implement "proper" repeats
+  - repeated note should be the same
 
 ### thoughts
 

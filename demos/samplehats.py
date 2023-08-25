@@ -44,37 +44,49 @@ Links=yaml.safe_load("""
 def sample_hats(trigfn,
                 samplefn,
                 velfn,
-                nbeats=16):
+                nticks):
     def note_trig(trigs, target, sample, vel, i):
         trigs.append(SVNoteTrig(mod=target,
                                 sample=sample,
                                 vel=vel,
                                 i=i))
-    trigs=SVTrigs(nbeats=nbeats)
-    for i in range(nbeats):
+    trigs=SVTrigs(nbeats=nticks)
+    for i in range(nticks):
         if trigfn(i):
             note_trig(trigs, "Sampler", samplefn(), velfn(), i)
     return trigs.tracks
 
-def spawn_patches(pool, npatches=16):
+def spawn_patches(pool,
+                  nticks,
+                  nbeats,
+                  npatches):
     def trigfn(i):
-        return random.random() < 0.75
+        if 0 == i % nticks:
+            return random.random() < 0.75
+        elif nticks/2 == i % nticks:
+            return random.random() < 0.2
+        else:
+            return random.random() < 0.05            
     def velfn():
         return random.random()*0.5+0.5
-    def spawn_samplefn(pool):
+    def reverse(sample):
+        rev=sample.clone()
+        rev["mod"]="reverse"
+        rev["ctrl"]={}
+        return rev
+    def spawn_samplefn(pool):            
         samples=[]
-        for i in range(2):
-            base=random.choice(pool)
-            rev=base.clone()
-            rev["mod"]="reverse"
-            rev["ctrl"]={}
-            samples+=[base, base, rev]
+        for tag in "oh|ch".split("|"):
+            sample=random.choice(pool)
+            rev=reverse(sample)
+            samples+=[sample, sample, rev]
         def wrapped():
             return random.choice(samples)
         return wrapped            
     return [sample_hats(trigfn=trigfn,
                         velfn=velfn,
-                        samplefn=spawn_samplefn(pool))
+                        samplefn=spawn_samplefn(pool),
+                        nticks=nbeats*nticks)
             for i in range(npatches)]
 
 if __name__=="__main__":
@@ -86,12 +98,16 @@ if __name__=="__main__":
         banks=SVBanks.initialise(s3, bucketname)
         # pool=banks.filter_pool({"ht": "(open)|(closed)|(hat)|(ht)|(oh)|( ch)|(perc)|(ussion)|(prc)"})
         pool=banks["pico-richard-devine"].default_pool
-        patches=spawn_patches(pool)
+        npatches, nbeats, nticks, bpm = 16, 16, 4, 120
+        patches=spawn_patches(pool,
+                              npatches=npatches,
+                              nbeats=nbeats,
+                              nticks=nticks)
         project=SVProject().render(patches=patches,
                                    modconfig=Modules,
                                    links=Links,
                                    banks=banks,
-                                   bpm=120)
+                                   bpm=bpm*nticks)
         if not os.path.exists("tmp/samplehats"):
             os.makedirs("tmp/samplehats")
         ts=datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S")
