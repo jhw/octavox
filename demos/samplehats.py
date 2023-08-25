@@ -68,11 +68,7 @@ def spawn_patches(pool, npatches=16):
             rev=base.clone()
             rev["mod"]="reverse"
             rev["ctrl"]={}
-            rep=base.clone()
-            rep["mod"]="repeat"
-            rep["ctrl"]={"n": 2,
-                         "sz": 62.5}
-            samples+=[base, base, base, rev, rep]
+            samples+=[base, base, rev]
         def wrapped():
             return random.choice(samples)
         return wrapped            

@@ -81,19 +81,12 @@ class SVSampler(SVBaseSampler):
         seg1.export(buf, format=sample["file"].split(".")[-1])
         return buf
 
+    def apply_reverse(self, seg):
+        return seg.reverse()
+    
     def apply_cutoff(self, seg, cutoff, fadeout):
         return seg[:cutoff].fade_out(fadeout)
 
-    def apply_reverse(self, seg):
-        return seg.reverse()
-
-    def apply_repeat(self, seg, sz, n):
-        buf=AudioSegment.empty()
-        grain=seg[:sz]
-        for i in range(n):
-            buf+=grain
-        return buf
-    
     def apply_granular(self, seg, offset, sz, n, fadeout, padding):
         buf=AudioSegment.empty()
         grain=seg[offset:offset+sz].fade_in(padding).fade_out(padding)
