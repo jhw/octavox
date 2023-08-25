@@ -1,4 +1,6 @@
-### short [01-noisehats]
+### short
+
+- specify initial controller values in hex space
 
 ### medium
 
