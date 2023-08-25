@@ -1,12 +1,8 @@
 ### short [01-noisehats]
 
-- take samplehats as a base
-- replace sampler with analog generator
-- configure analog generator with noise
-- test with fixed release variable
-- oscillate between attack and release
-- add second longer variable
-- add repeats
+- replace AG filter with dedicated HP filter
+- repeats 
+
 
 ### medium
 
