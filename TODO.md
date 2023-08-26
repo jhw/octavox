@@ -1,9 +1,5 @@
 ### short
 
-- README.md
-- bjorklund
-- common rhythms
-
 ### medium
 
 - setting tick- based delay in sample/noisehats
@@ -123,6 +119,9 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- README.md
+- bjorklund
+- common rhythms
 - replace AG filter with dedicated HP filter
 - repeats 
 - samplehats to implement "proper" repeats
