@@ -6,6 +6,8 @@
 
 ### medium
 
+- setting tick- based delay in sample/noisehats
+
 ### thoughts
 
 - specify initial controller values in hex space?
