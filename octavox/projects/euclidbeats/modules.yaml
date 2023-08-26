@@ -1,0 +1,17 @@
+- name: KickSampler
+  class: octavox.modules.sampler.SVSampler
+- name: SnareSampler
+  class: octavox.modules.sampler.SVSampler
+- name: HatSampler
+  class: octavox.modules.sampler.SVSampler
+- name: Echo
+  class: rv.modules.echo.Echo
+  defaults:
+    dry: 256
+    wet: 256
+    delay: 36
+    delay_unit: 3 # tick
+- name: Reverb
+  class: rv.modules.reverb.Reverb
+  defaults:
+    wet: 4

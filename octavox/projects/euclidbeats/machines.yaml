@@ -1,0 +1,27 @@
+- name: KickSampler
+  class: octavox.projects.euclidbeats.model.Sequencer
+  params: {}
+- name: SnareSampler
+  class: octavox.projects.euclidbeats.model.Sequencer
+  params: {}
+- name: HatSampler
+  class: octavox.projects.euclidbeats.model.Sequencer
+  params: {}
+- name: Echo/wet
+  class: octavox.modules.lfos.sample_hold.SampleHoldModulator
+  params:
+    range: [0, 1]
+    increment: 0.25
+    step: 4
+    live: 0.66666
+    maxvalue: "8000"
+    minvalue: "0000"
+- name: Echo/feedback
+  class: octavox.modules.lfos.sample_hold.SampleHoldModulator
+  params:
+    range: [0, 1]
+    increment: 0.25
+    step: 4
+    live: 1.0
+    maxvalue: "8000"
+    minvalue: "0000"

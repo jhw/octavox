@@ -1,5 +1,9 @@
 ### short
 
+- README.md
+- bjorklund
+- common rhythms
+
 ### medium
 
 ### thoughts

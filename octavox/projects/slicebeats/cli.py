@@ -12,11 +12,13 @@ from octavox.modules.pools import SVSample, SVPools, SVPool
 
 from octavox.projects.slicebeats.model import Pattern
 
-import boto3, json, os, random, re, yaml
+import boto3, os, random, yaml
 
 Machines=load_yaml("projects/slicebeats/machines.yaml")
 
-class SlicebeatsCli(SVBankCli):
+MinPoolSize=12
+
+class SVCli(SVBankCli):
 
     intro="Welcome to Slicebeats :)"
 
@@ -110,7 +112,7 @@ class SlicebeatsCli(SVBankCli):
     def do_clean_fixes(self):
         self.fixes=SVPool()
 
-def init_pools(banks, terms, limit=12):
+def init_pools(banks, terms, limit=MinPoolSize):
     pools, globalz = SVPools(), SVPools()
     for bankname, bank in banks.items():
         for attr, pool in [("default", bank.default_pool),
@@ -151,14 +153,14 @@ if __name__=="__main__":
         pools=init_pools(banks, terms=Curated)
         poolname=random.choice(list(pools.keys()))
         print ("INFO: pool=%s" % poolname)
-        SlicebeatsCli(s3=s3,
-                      projectname="slicebeats",
-                      bucketname=bucketname,
-                      poolname=poolname,
-                      params=Params,
-                      modules=modules,
-                      links=links,
-                      banks=banks,
-                      pools=pools).cmdloop()
+        SVCli(s3=s3,
+              projectname="slicebeats",
+              bucketname=bucketname,
+              poolname=poolname,
+              params=Params,
+              modules=modules,
+              links=links,
+              banks=banks,
+              pools=pools).cmdloop()
     except RuntimeError as error:
         print ("ERROR: %s" % str(error))
