@@ -2,8 +2,6 @@
 - https://raw.githubusercontent.com/brianhouse/bjorklund/master/__init__.py
 """
 
-#!/usr/bin/env python3
-
 def bjorklund(steps, pulses):
     steps = int(steps)
     pulses = int(pulses)
@@ -22,8 +20,7 @@ def bjorklund(steps, pulses):
         level = level + 1
         if remainders[level] <= 1:
             break
-    counts.append(divisor)
-    
+    counts.append(divisor)    
     def build(level):
         if level == -1:
             pattern.append(0)
@@ -33,9 +30,11 @@ def bjorklund(steps, pulses):
             for i in range(0, counts[level]):
                 build(level - 1)
             if remainders[level] != 0:
-                build(level - 2)
-    
+                build(level - 2)    
     build(level)
     i = pattern.index(1)
     pattern = pattern[i:] + pattern[0:i]
     return pattern
+
+if __name__=="__main__":
+    pass
