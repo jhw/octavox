@@ -1,10 +1,11 @@
 ### short
 
-- specify initial controller values in hex space
-
 ### medium
 
 ### thoughts
+
+- specify initial controller values in hex space?
+  - no because initial values seem to work in uniform space
 
 - granular overlay?
   - https://github.com/jiaaro/pydub/blob/master/API.markdown#audiosegmentoverlay
