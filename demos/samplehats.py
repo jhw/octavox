@@ -22,7 +22,8 @@ Modules=yaml.safe_load("""
   defaults:
     dry: 256
     wet: 64
-    delay: 192
+    delay: 144
+    delay_unit: 3 # tick
 - name: Reverb
   class: rv.modules.reverb.Reverb
   defaults:

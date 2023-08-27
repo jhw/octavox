@@ -25,7 +25,8 @@ Modules=yaml.safe_load("""
   defaults:
     dry: 256
     wet: 64 # NB
-    delay: 192
+    delay: 144
+    delay_unit: 3 # tick
 - name: Reverb
   class: rv.modules.reverb.Reverb
   defaults:
@@ -58,7 +59,7 @@ def spawn_patches(nticks,
                   npatches):
     def trigfn(i):
         return (0 == i % nticks and
-                random.random() < 0.33333)
+                random.random() < 0.5)
     def repeats(i, nticks):
         return [[i],
                 [i],
