@@ -1,7 +1,5 @@
 ### short
 
-- volume random element
-
 - feels like default pools are being created without tags
   - and that slicebeats sample randomisation is hiding this
   
@@ -135,6 +133,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- volume random element
 - euclidbeats volume importance sampling
 - euclidbeats render euclid notes
 - euclidbeats randomise method to randomise a sample
