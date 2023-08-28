@@ -1,20 +1,22 @@
-### short
+### short [euclidbeats]
 
-- refactor archives
+- [slicebeats] refactor archives
   - replace lfos refs with modulators 
   - replace model refs with machines
 
-- ht curation is not working
-- undo pico-default-curated pool fixing
+- [euclidbeats] ht curation is not working
+
+- [euclidbeats] undo pico-default-curated pool fixing
+
 ### medium
 
-- narrow down acidbass parameter space via manual tests
-  - vca sustain on and release off
-  - resonance as high as you dare
-  - filter release in a very particular space
-  - filter freq can actually be in quite a wide ratio
-  - probably want to play with exp freq cutoff also
-  - and can you get the same effects with the separate filter? 
+- [euclidbeats] sample variation
+- [euclidbeats] trig variation
+- [euclidbeats] kk, sn vitling patterns
+- [euclidbeats] dedicated ht model
+- [euclidbeats] ht filter variation
+
+- acidbass [notes]
   
 ### thoughts
 

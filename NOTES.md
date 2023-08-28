@@ -1,3 +1,13 @@
+### acidbass 28/08/23
+
+- narrow down acidbass parameter space via manual tests
+- vca sustain on and release off
+- resonance as high as you dare
+- filter release in a very particular space
+- filter freq can actually be in quite a wide ratio
+- probably want to play with exp freq cutoff also
+- and can you get the same effects with the separate filter? 
+
 ### python demos 22/08/23
 
 - pitch shifting
