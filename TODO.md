@@ -1,10 +1,11 @@
 ### short
 
-- feels like default pools are being created without tags
-  - and that slicebeats sample randomisation is hiding this
-  
-- refactor archives to replace lfos with modulators and model with machines
+- refactor archives
+  - replace lfos refs with modulators 
+  - replace model refs with machines
 
+- ht curation is not working
+- undo pico-default-curated pool fixing
 ### medium
 
 - narrow down acidbass parameter space via manual tests
@@ -130,6 +131,8 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- feels like default pools are being created without tags
+  - and that slicebeats sample randomisation is hiding thisg
 - don't like the way framework model has to be passed density
   - if it has to be passed, should be a default value of 1
 - volume random element

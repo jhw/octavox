@@ -9,7 +9,7 @@
 - name: HatSampler
   class: octavox.projects.euclidbeats.machines.Sequencer
   params:
-    tag: ht
+    tag: kk # ht
 - name: Echo/wet
   class: octavox.modules.modulators.sample_hold.SampleHoldModulator
   params:

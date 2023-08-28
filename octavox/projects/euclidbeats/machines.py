@@ -19,8 +19,7 @@ class Sequencer(dict):
                   machine,
                   pool,
                   patterns=Patterns):
-        # samples=pool.filter_tag(machine["params"]["tag"])
-        samples=pool
+        samples=pool.filter_tag(machine["params"]["tag"])
         sample=random.choice(samples)
         # pattern=random.choice(patterns)
         pattern=[random.choice(range(1, 8)),
