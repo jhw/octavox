@@ -1,9 +1,5 @@
 ### short [euclidbeats]
 
-- [slicebeats] refactor archives
-  - replace lfos refs with modulators 
-  - replace model refs with machines
-
 - [euclidbeats] ht curation is not working
 
 - [euclidbeats] undo pico-default-curated pool fixing
@@ -133,6 +129,9 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- [slicebeats] refactor archives
+  - replace lfos refs with modulators 
+  - replace model refs with machines
 - feels like default pools are being created without tags
   - and that slicebeats sample randomisation is hiding thisg
 - don't like the way framework model has to be passed density
