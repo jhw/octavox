@@ -38,7 +38,7 @@ class Sequencer(dict):
     def clone(self):
         return Sequencer(self)
 
-    def render(self, nbeats, density):
+    def render(self, nbeats, **kwargs):
         notes=bjorklund(steps=self["pattern"][1],
                         pulses=self["pattern"][0])
         q=Q(self["seed"])

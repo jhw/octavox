@@ -3,9 +3,6 @@
 - feels like default pools are being created without tags
   - and that slicebeats sample randomisation is hiding this
   
-- don't like the way framework model has to be passed density
-  - if it has to be passed, should be a default value of 1
-
 - refactor archives to replace lfos with modulators and model with machines
 
 ### medium
@@ -133,6 +130,8 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- don't like the way framework model has to be passed density
+  - if it has to be passed, should be a default value of 1
 - volume random element
 - euclidbeats volume importance sampling
 - euclidbeats render euclid notes

@@ -145,7 +145,7 @@ class SVMachines(list):
 class SVPatch(dict):
     
     @classmethod
-    def randomise(self, density, machines, **kwargs):
+    def randomise(self, machines, density=1, **kwargs):
         return SVPatch(machines=SVMachines.randomise(machines=machines,
                                                      **kwargs),
                        density=density)
