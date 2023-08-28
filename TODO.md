@@ -1,12 +1,25 @@
 ### short
 
-- euclidbeats render euclid notes
-- euclidbeats volume importance sampling
+- volume random element
+
+- feels like default pools are being created without tags
+  - and that slicebeats sample randomisation is hiding this
+  
+- don't like the way framework model has to be passed density
+  - if it has to be passed, should be a default value of 1
 
 - refactor archives to replace lfos with modulators and model with machines
 
 ### medium
 
+- narrow down acidbass parameter space via manual tests
+  - vca sustain on and release off
+  - resonance as high as you dare
+  - filter release in a very particular space
+  - filter freq can actually be in quite a wide ratio
+  - probably want to play with exp freq cutoff also
+  - and can you get the same effects with the separate filter? 
+  
 ### thoughts
 
 - specify initial controller values in hex space?
@@ -122,6 +135,8 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- euclidbeats volume importance sampling
+- euclidbeats render euclid notes
 - euclidbeats randomise method to randomise a sample
 - euclidbeats random euclid pattern
 - rename slicebeats model.py as machines.py

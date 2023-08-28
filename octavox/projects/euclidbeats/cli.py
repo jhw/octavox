@@ -32,7 +32,8 @@ class SVCli(SVBankCli):
         npatches=self.env["nblocks"]*self.env["blocksize"]
         for i in range(npatches):
             patch=SVPatch.randomise(machines=machines,
-                                    pool=self.pools[self.poolname])
+                                    pool=self.pools[self.poolname],
+                                    density=1)
             patches.append(patch)
         return patches
 
@@ -49,7 +50,7 @@ def init_pools(banks, terms, limit=MinPoolSize):
     return pools
 
 Curated=yaml.safe_load("""
-hh: (hat)|(ht)|perc)|(ussion)|(prc)|(glitch)
+ht: (hat)|(ht)|(perc)|(ussion)|(prc)|(glitch)
 kk: (kick)|(kik)|(kk)|(bd)|(bass)
 sn: (snare)|(sn)|(sd)|(clap)|(clp)|(cp)|(hc)|(rim)|(plip)|(rs)
 """)
@@ -70,7 +71,8 @@ if __name__=="__main__":
         s3=boto3.client("s3")
         banks=SVBanks.initialise(s3, bucketname)
         pools=init_pools(banks, terms=Curated)
-        poolname=random.choice(list(pools.keys()))
+        # poolname=random.choice(list(pools.keys()))
+        poolname="pico-default-curated"
         print ("INFO: pool=%s" % poolname)
         SVCli(s3=s3,
               projectname="euclidbeats",
