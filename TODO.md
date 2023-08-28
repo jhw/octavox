@@ -1,7 +1,5 @@
 ### short
 
-- euclidbeats randomise method to randomise a sample
-- euclidbeats random euclid pattern
 - euclidbeats render euclid notes
 - euclidbeats volume importance sampling
 
@@ -124,6 +122,8 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- euclidbeats randomise method to randomise a sample
+- euclidbeats random euclid pattern
 - rename slicebeats model.py as machines.py
 - rename lfos as modulators
 - rename slicebeats model.py as machines.py

@@ -1,12 +1,14 @@
 - name: KickSampler
-  class: octavox.projects.euclidbeats.model.Sequencer
-  params: {}
+  class: octavox.projects.euclidbeats.machines.Sequencer
+  params:
+    tag: kk
 - name: SnareSampler
-  class: octavox.projects.euclidbeats.model.Sequencer
-  params: {}
+  class: octavox.projects.euclidbeats.machines.Sequencer
+  params:
+    tag: sn
 - name: HatSampler
-  class: octavox.projects.euclidbeats.model.Sequencer
-  params: {}
+  class: octavox.projects.euclidbeats.machines.Sequencer
+    tag: ht
 - name: Echo/wet
   class: octavox.modules.modulators.sample_hold.SampleHoldModulator
   params:

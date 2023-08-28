@@ -32,8 +32,7 @@ class SVCli(SVBankCli):
         npatches=self.env["nblocks"]*self.env["blocksize"]
         for i in range(npatches):
             patch=SVPatch.randomise(machines=machines,
-                                    pool=self.pools[self.poolname],
-                                    density=self.env["density"])
+                                    pool=self.pools[self.poolname])
             patches.append(patch)
         return patches
 
@@ -56,7 +55,6 @@ sn: (snare)|(sn)|(sd)|(clap)|(clp)|(cp)|(hc)|(rim)|(plip)|(rs)
 """)
 
 Params=yaml.safe_load("""
-density: 0.75
 nbeats: 16
 blocksize: 4
 nblocks: 8
