@@ -1,18 +1,24 @@
 ### short [euclidbeats]
 
-- density
-- vitling- like kk, sn patterns
-- sample variation
+- replace nblocks/nblocksize with npatches
+
+- note variation via sample cutoff (half) and reverse
+- note variation via sample change
+
+- mutation actions
+- migration of slicebeats archives
 
 ### medium
-
-- [euclidbeats] dedicated ht model
-- [euclidbeats] ht filter variation
 
 - acidbass [notes]
   
 ### thoughts
 
+- dedicated hat model?
+  - again, might be overkill
+  - you might be better having samplehats|noisehats run against simple kick, bass models
+- vitling- like kk, sn patterns?
+  - might be overkill because you can always
 - specify initial controller values in hex space?
   - no because initial values seem to work in uniform space
 
@@ -126,6 +132,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- density
 - [euclidbeats] ht curation is not working
 - [euclidbeats] undo pico-default-curated pool fixing
 - [slicebeats] refactor archives

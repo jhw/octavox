@@ -42,13 +42,13 @@ class Sequencer(dict):
     def clone(self):
         return Sequencer(self)
 
-    def render(self, nbeats, **kwargs):
+    def render(self, nbeats, density):
         notes=bjorklund(steps=self["pattern"][1],
                         pulses=self["pattern"][0])
         q=Q(self["seed"])
         for i in range(nbeats):
             note=notes[i % len(notes)]
-            if note: # 0|1
+            if q.random() < density and note: # 0|1
                 volume=self.volume(q, i)
                 yield SVNoteTrig(mod=self["name"],
                                  sample=self["sample"],
@@ -59,10 +59,8 @@ class Sequencer(dict):
         for j in range(n+1):
             k=2**(n-j)
             if 0 == i % k:
-                rand=q.gauss(0, var)
-                value=1-max(0, min(1, j*drift+rand))
-                print (k, value)
-                return value
+                sigma=q.gauss(0, var)
+                return 1-max(0, min(1, j*drift+sigma))
                 
 if __name__=="__main__":
     pass

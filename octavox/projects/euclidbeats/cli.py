@@ -10,7 +10,7 @@ from octavox.modules.model import SVNoteTrig, SVPatch
 
 from octavox.modules.pools import SVSample, SVPools, SVPool
 
-import boto3, json, os, random, re, yaml
+import boto3, os, random, yaml
 
 Machines=load_yaml("projects/euclidbeats/machines.yaml")
 
@@ -32,7 +32,8 @@ class SVCli(SVBankCli):
         npatches=self.env["nblocks"]*self.env["blocksize"]
         for i in range(npatches):
             patch=SVPatch.randomise(machines=machines,
-                                    pool=self.pools[self.poolname])
+                                    pool=self.pools[self.poolname],
+                                    density=self.env["density"])
             patches.append(patch)
         return patches
 
@@ -55,6 +56,7 @@ sn: (snare)|(sn)|(sd)|(clap)|(clp)|(cp)|(hc)|(rim)|(plip)|(rs)
 """)
 
 Params=yaml.safe_load("""
+density: 0.5
 nbeats: 16
 blocksize: 4
 nblocks: 8

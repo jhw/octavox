@@ -29,37 +29,6 @@
 - polyend tracker
 - perkons
 
-### octavox demos 18/08/23
-
-- slidebass -> 
-  - sustain+note off
-  - city dreams bass
-  - filter changes intra- note
-  - slide
-
-- euclidbeats
-- FMbass
-- kickerbass
-- synth chords
-- backbeats
-
-- arp
-- compressor 
-- relative notes
-- bass trills
-- bass jumps
-- deep/dubhouse
-
----
-
-- noisehats
-- samplehats
-- granular samples
-- sample bass
-- acid bass
-
-
-
 ### s3 banks 15/08/23
 
 - dump_pico_banks to push to s3
