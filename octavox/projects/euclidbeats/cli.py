@@ -70,8 +70,7 @@ if __name__=="__main__":
         s3=boto3.client("s3")
         banks=SVBanks.initialise(s3, bucketname)
         pools=init_pools(banks, terms=Curated)
-        # poolname=random.choice(list(pools.keys()))
-        poolname="pico-default-curated"
+        poolname=random.choice(list(pools.keys()))
         print ("INFO: pool=%s" % poolname)
         SVCli(s3=s3,
               projectname="euclidbeats",

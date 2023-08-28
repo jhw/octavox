@@ -1,14 +1,11 @@
 ### short [euclidbeats]
 
-- [euclidbeats] ht curation is not working
-
-- [euclidbeats] undo pico-default-curated pool fixing
+- density
+- vitling- like kk, sn patterns
+- sample variation
 
 ### medium
 
-- [euclidbeats] sample variation
-- [euclidbeats] trig variation
-- [euclidbeats] kk, sn vitling patterns
 - [euclidbeats] dedicated ht model
 - [euclidbeats] ht filter variation
 
@@ -129,6 +126,8 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- [euclidbeats] ht curation is not working
+- [euclidbeats] undo pico-default-curated pool fixing
 - [slicebeats] refactor archives
   - replace lfos refs with modulators 
   - replace model refs with machines
