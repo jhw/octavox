@@ -1,5 +1,12 @@
 ### short
 
+- rename slicebeats model.py as machines.py
+- rename lfos as modulators
+- euclidbeats randomise method to randomise a sample
+- euclidbeats random euclid pattern
+- euclidbeats render euclid notes
+- euclidbeats volume importance sampling
+
 ### medium
 
 ### thoughts
