@@ -1,5 +1,5 @@
 - name: KickSampler
-  class: octavox.projects.slicebeats.model.Sequencer
+  class: octavox.projects.slicebeats.machines.Sequencer
   params:
     tag: kk
     styles:
@@ -7,21 +7,21 @@
     - electro
     - triplets
 - name: SnareSampler
-  class: octavox.projects.slicebeats.model.Sequencer
+  class: octavox.projects.slicebeats.machines.Sequencer
   params:
     tag: sn
     styles:
     - backbeat
     - skip
 - name: HatSampler
-  class: octavox.projects.slicebeats.model.Sequencer
+  class: octavox.projects.slicebeats.machines.Sequencer
   params:
     tag: ht
     styles:
     - offbeats
     - closed
 - name: Echo/wet
-  class: octavox.modules.lfos.sample_hold.SampleHoldModulator
+  class: octavox.modules.modulators.sample_hold.SampleHoldModulator
   params:
     range: [0, 1]
     increment: 0.25
@@ -30,7 +30,7 @@
     maxvalue: "8000"
     minvalue: "0000"
 - name: Echo/feedback
-  class: octavox.modules.lfos.sample_hold.SampleHoldModulator
+  class: octavox.modules.modulators.sample_hold.SampleHoldModulator
   params:
     range: [0, 1]
     increment: 0.25

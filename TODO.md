@@ -1,11 +1,11 @@
 ### short
 
-- rename slicebeats model.py as machines.py
-- rename lfos as modulators
 - euclidbeats randomise method to randomise a sample
 - euclidbeats random euclid pattern
 - euclidbeats render euclid notes
 - euclidbeats volume importance sampling
+
+- refactor archives to replace lfos with modulators and model with machines
 
 ### medium
 
@@ -124,6 +124,10 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- rename slicebeats model.py as machines.py
+- rename lfos as modulators
+- rename slicebeats model.py as machines.py
+- rename lfos as modulators
 - README.md
 - bjorklund
 - common rhythms

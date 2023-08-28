@@ -10,7 +10,7 @@ from octavox.modules.model import SVNoteTrig, SVPatch
 
 from octavox.modules.pools import SVSample, SVPools, SVPool
 
-from octavox.projects.slicebeats.model import Pattern
+from octavox.projects.slicebeats.machines import Pattern
 
 import boto3, os, random, yaml
 
