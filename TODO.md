@@ -1,16 +1,12 @@
 ### short
 
-### medium
-
-- note variation via sample cutoff (half) and reverse
-
 - note variation via sample change
+
+### medium
 
 - mutation actions
 - migration of slicebeats archives
 
-- acidbass [notes]
-  
 ### thoughts
 
 - dedicated hat model?
@@ -131,6 +127,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- note variation via sample cutoff (half) and reverse
 - replace nblocks/nblocksize with npatches
 - sampler repeat method
 - test samplebass, samplehats, grainpads

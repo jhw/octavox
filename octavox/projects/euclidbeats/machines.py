@@ -42,6 +42,16 @@ class Sequencer(dict):
     def clone(self):
         return Sequencer(self)
 
+    def random_mods(self, q, limit=0.1, cutoff=0.5, fadeout=50):
+        v=q.random()
+        if v < limit:
+            return "reverse"
+        elif v < 2*limit:
+            return "cutoff?cutoff=%.2f&fadeout=%i" % (cutoff,
+                                                      fadeout)
+        else:
+            return None
+    
     def render(self, nbeats, density):
         notes=bjorklund(steps=self["pattern"][1],
                         pulses=self["pattern"][0])
@@ -50,8 +60,13 @@ class Sequencer(dict):
             note=notes[i % len(notes)]
             if q.random() < density and note: # 0|1
                 volume=self.volume(q, i)
+                sample=self["sample"].clone()
+                mods=self.random_mods(q)
+                if mods:
+                    print (mods)
+                    sample["mod"]=mods
                 yield SVNoteTrig(mod=self["name"],
-                                 sample=self["sample"],
+                                 sample=sample,
                                  vel=volume,
                                  i=i)
 
