@@ -1,12 +1,12 @@
 ### short [02-sample-mod-qs]
 
-- add vitlingbeats notes
-
-- sampler to parse mod qs and eval values if necessary
+- sampler to parse qs
 - modify samplebass, samplehats, grainpad demos to use mod qs
 - add reverse option to sampler cutoff
 
 ### medium
+
+- add vitlingbeats notes
 
 - replace nblocks/nblocksize with npatches
 
