@@ -1,5 +1,6 @@
 ### short [02-sample-mod-qs]
 
+- add boolean option to parse_qs
 - modify samplebass, samplehats, grainpad demos to use mod qs
 - add reverse option to sampler cutoff
 
