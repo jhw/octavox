@@ -1,6 +1,5 @@
 ### short [02-note-variation]
 
-- undo sample- based variations
 - initialise n samples per sequencer
 - choose random sample
 - define params -> modulators -> note -> step, threshold
@@ -132,6 +131,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- undo sample- based variations
 - note variation via sample cutoff (half) and reverse
 - replace nblocks/nblocksize with npatches
 - sampler repeat method
