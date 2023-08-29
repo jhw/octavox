@@ -61,12 +61,10 @@ def spawn_patches(pool, npatches=16):
         base=random.choice(pool)
         def wrapped():
             sample=base.clone()
-            sample["mod"]="granular"
-            sample["ctrl"]={"offset": random.choice([50, 100, 200]),
-                            "sz": random.choice([50, 100]),
-                            "n": random.choice([5, 10]),
-                            "padding": 20,
-                            "fadeout": 100}
+            modstr="granular?offset=%i&sz=%i&n=%i&padding=20&fadeout=100"
+            sample["mod"]=modstr % (random.choice([50, 100, 200]),
+                                    random.choice([50, 100]),
+                                    random.choice([5, 10]))
             return sample
         return wrapped            
     return [grain_pads(trigfn=trigfn,

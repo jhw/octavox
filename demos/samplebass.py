@@ -78,9 +78,7 @@ def spawn_patches(pool, npatches=16):
         base=random.choice(pool)
         def wrapped():
             sample=base.clone()
-            sample["mod"]="cutoff"
-            sample["ctrl"]={"cutoff": random.choice([125, 250, 500, 1000]),
-                            "fadeout": 50}
+            sample["mod"]="cutoff?cutoff=%i&fadeout=50" % random.choice([125, 250, 500, 1000])
             return sample
         return wrapped            
     def pitchfn():

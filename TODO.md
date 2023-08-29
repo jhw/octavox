@@ -1,10 +1,10 @@
 ### short [02-sample-mod-qs]
 
-- modify samplebass, samplehats, grainpad demos to use mod qs
+- add vitlingbeats notes
+
+- test samplebass, samplehats, grainpads
 
 ### medium
-
-- add vitlingbeats notes
 
 - replace nblocks/nblocksize with npatches
 
@@ -135,6 +135,8 @@ ValueError: Value is not in range 1-32
 - sample similarity clustering?
 
 ### done
+
+- modify samplebass, samplehats, grainpad demos to use mod qs
 
 - add cutoff float support
 - add reverse option to sampler cutoff

@@ -78,7 +78,6 @@ def spawn_patches(pool,
     def reverse(sample):
         rev=sample.clone()
         rev["mod"]="reverse"
-        rev["ctrl"]={}
         return rev
     def spawn_samplefn(pool):            
         samples=[]
