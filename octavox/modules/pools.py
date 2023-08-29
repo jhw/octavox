@@ -22,20 +22,18 @@ class SVSample(dict):
                 "file": self["file"],
                 "pitch": self["pitch"],
                 "tags": list(self["tags"])}
-        if ("mod" in self and
-            "ctrl" in self):
+        if "mod" in self:
             kwargs["mod"]=self["mod"]
-            kwargs["ctrl"]=dict(kwargs["ctrl"])
         return SVSample(kwargs)
 
     @property
     def has_pitch(self):
         return self["pitch"]!=0
-    
+
     @property
     def has_mod(self):
-        return "mod" in self and "ctrl" in self
-            
+        return "mod" in self
+                
     @property
     def has_tags(self):
         return self["tags"]!=[]
@@ -51,8 +49,7 @@ class SVSample(dict):
 
     @property
     def modstr(self):
-        return "#%s?%s" % (self["mod"],
-                           urllib.parse.urlencode(self["ctrl"]))
+        return self["mod"]
     
     @property
     def tagstr(self):
@@ -64,7 +61,7 @@ class SVSample(dict):
                                  self["file"])),
         if self.has_pitch:
             tokens.append(self.pitchstr)
-        if self.has_mod: 
+        if self.has_mod:
             tokens.append(self.modstr)
         if self.has_tags:
             tokens.append(self.tagstr)

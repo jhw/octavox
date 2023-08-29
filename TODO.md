@@ -2,7 +2,6 @@
 
 - add vitlingbeats notes
 
-- simplify sample mod code to replace mod+ctrl with mod qs
 - sampler to parse mod qs and eval values if necessary
 - modify samplebass, samplehats, grainpad demos to use mod qs
 - add reverse option to sampler cutoff
@@ -139,6 +138,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- simplify sample mod code to replace mod+ctrl with mod qs
 - test script to parse querystring
 - density
 - [euclidbeats] ht curation is not working
