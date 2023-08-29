@@ -9,6 +9,13 @@ def load_class(path):
     except:
         raise RuntimeError("error importing %s" % path)
 
+def load_class(path):
+    tokens=path.split(".")            
+    modpath, classname = ".".join(tokens[:-1]), tokens[-1]
+    module=importlib.import_module(modpath)
+    return getattr(module, classname)
+
+    
 """
 - https://stackoverflow.com/questions/7331462/check-if-a-string-is-a-possible-abbrevation-for-a-name
 """

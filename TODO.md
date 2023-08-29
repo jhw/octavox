@@ -1,6 +1,6 @@
 ### short [02-sample-mod-qs]
 
-- test samplebass, samplehats, grainpads
+- sampler repeat method
 
 ### medium
 
@@ -134,9 +134,9 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- test samplebass, samplehats, grainpads
 - add vitlingbeats notes
 - modify samplebass, samplehats, grainpad demos to use mod qs
-
 - add cutoff float support
 - add reverse option to sampler cutoff
 - add boolean option to parse_qs

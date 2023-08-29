@@ -78,7 +78,7 @@ class SVSampler(SVBaseSampler):
         if "?" not in modstr:
             return modstr, {}
         else:
-            tokens = modstr.split(?)
+            tokens = modstr.split("?")
             return tokens[0], parse_qs(tokens[1])
     
     @init_segment
