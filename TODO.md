@@ -1,10 +1,15 @@
 ### short [02-note-variation]
 
-- if 0 == i % step and q.random() < threshold then change sample
+- check how params are being saved
+- add separate note, volume seeds
+  - gives more fine grained mutation options
+- add pattern modulation
+- remove sample and hold "zero pull"
+  - is over- optimisation
+- density min/max variables when choosing patterns
 
 ### medium
 
-- pattern variation
 - mutation actions
 - migration of slicebeats archives
 

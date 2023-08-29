@@ -35,12 +35,15 @@ class Sequencer(dict):
                                tag=machine["params"]["tag"])
         return Sequencer({"name": machine["name"],                          
                           "class": machine["class"],
+                          "params": machine["params"],
                           "pattern": random_pattern(),
                           "samples": samples,
                           "seed": random_seed()})
 
     def __init__(self, machine):
         dict.__init__(self, machine)
+        for k, v in machine["params"].items():
+            setattr(self, k, v)
                             
     def clone(self):
         return Sequencer(self)
@@ -51,6 +54,9 @@ class Sequencer(dict):
         notes=bjorklund(pulses=self["pattern"][0],
                         steps=self["pattern"][1])
         for i in range(nbeats):
+            if (0 == i % self.modulation["note"]["step"] and
+                q.random() < self.modulation["note"]["threshold"]):
+                sample=q.choice(self["samples"])
             note=notes[i % len(notes)]
             if q.random() < density and note: # 0|1
                 volume=self.volume(q, i)

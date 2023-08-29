@@ -33,6 +33,7 @@
 
 - arp
 - compressor 
+- transpose
 - relative notes
 - bass trills and jumps
 - deephouse/dubhouse
