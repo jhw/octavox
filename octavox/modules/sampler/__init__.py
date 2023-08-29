@@ -94,8 +94,12 @@ class SVSampler(SVBaseSampler):
     def apply_reverse(self, seg):
         return seg.reverse()
     
-    def apply_cutoff(self, seg, cutoff, fadeout):
-        return seg[:cutoff].fade_out(fadeout)
+    def apply_cutoff(self, seg, cutoff, fadeout, reverse=False):
+        sz = int(len(seg)*max(0, min(1, cutoff))) if isinstance(cutoff, float) else cutoff
+        buf=seg[:cutoff]
+        if reverse:
+            buf.reverse()
+        return buf.fade_out(fadeout)
 
     def apply_granular(self, seg, offset, sz, n, fadeout, padding):
         buf=AudioSegment.empty()

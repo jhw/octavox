@@ -1,7 +1,6 @@
 ### short [02-sample-mod-qs]
 
 - modify samplebass, samplehats, grainpad demos to use mod qs
-- add reverse option to sampler cutoff
 
 ### medium
 
@@ -137,6 +136,8 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- add cutoff float support
+- add reverse option to sampler cutoff
 - add boolean option to parse_qs
 - sampler to parse qs
 - simplify sample mod code to replace mod+ctrl with mod qs
