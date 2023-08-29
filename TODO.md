@@ -1,10 +1,9 @@
-### short [02-sample-mod-qs]
+### short
 
 ### medium
 
-- replace nblocks/nblocksize with npatches
-
 - note variation via sample cutoff (half) and reverse
+
 - note variation via sample change
 
 - mutation actions
@@ -132,6 +131,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- replace nblocks/nblocksize with npatches
 - sampler repeat method
 - test samplebass, samplehats, grainpads
 - add vitlingbeats notes

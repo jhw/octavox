@@ -32,8 +32,7 @@ class SVCli(SVBankCli):
     @render_patches(prefix="random")
     def do_randomise_patches(self, machines=Machines):
         patches=[]
-        npatches=self.env["nblocks"]*self.env["blocksize"]
-        for i in range(npatches):
+        for i in range(self.env["npatches"]):
             patch=SVPatch.randomise(machines=machines,
                                     pool=self.pools[self.poolname],
                                     fixes=self.fixes,
@@ -57,8 +56,7 @@ class SVCli(SVBankCli):
     def do_mutate_patch(self, i, level, machines=Machines):
         root=self.patches[i % len(self.patches)]
         patches=[root]
-        npatches=self.env["nblocks"]*self.env["blocksize"]
-        for i in range(npatches-1):
+        for i in range(self.env["npatches"]-1):
             patch=root.clone()
             for machine in patch["machines"]:
                 if "slices" in machine:
@@ -137,8 +135,7 @@ density: 0.75
 dseed: 1.0
 dstyle: 0.66666
 nbeats: 16
-blocksize: 4
-nblocks: 8
+npatches: 32
 bpm: 120
 """)
 
