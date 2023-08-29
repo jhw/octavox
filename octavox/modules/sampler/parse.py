@@ -6,6 +6,8 @@ def parse_qs(qs):
             return float(v)
         elif re.search("^\\-?\\d+$", v):
             return int(v)
+        elif re.search("^(true)|(false)$", v, re.I):
+            return eval(v.lower().capitalize())
         else:
             return v
     url=urllib.parse.urlparse("?"+qs)    
