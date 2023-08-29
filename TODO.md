@@ -1,7 +1,5 @@
 ### short [02-sample-mod-qs]
 
-- sampler repeat method
-
 ### medium
 
 - replace nblocks/nblocksize with npatches
@@ -134,6 +132,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- sampler repeat method
 - test samplebass, samplehats, grainpads
 - add vitlingbeats notes
 - modify samplebass, samplehats, grainpad demos to use mod qs
