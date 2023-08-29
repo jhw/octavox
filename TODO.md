@@ -1,4 +1,14 @@
-### short [euclidbeats]
+### short [02-sample-mod-qs]
+
+- add vitlingbeats notes
+
+- test script to parse querystring
+- simplify sample mod code to replace mod+ctrl with mod qs
+- sampler to parse mod qs and eval values if necessary
+- modify samplebass, samplehats, grainpad demos to use mod qs
+- add reverse option to sampler cutoff
+
+### medium
 
 - replace nblocks/nblocksize with npatches
 
@@ -7,8 +17,6 @@
 
 - mutation actions
 - migration of slicebeats archives
-
-### medium
 
 - acidbass [notes]
   
