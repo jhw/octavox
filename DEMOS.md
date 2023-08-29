@@ -26,6 +26,7 @@
 - relative notes
 - bass trills and jumps
 - deephouse/dubhouse
+- drones
 
 ### done
 
@@ -33,5 +34,5 @@
 - noisehats
 - samplehats
 - granular
-- sample bass
-- acid bass
+- samplebass
+- acidbass
