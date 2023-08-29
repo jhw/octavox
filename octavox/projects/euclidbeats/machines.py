@@ -12,6 +12,8 @@ import random
 
 Patterns=load_yaml("projects/euclidbeats/patterns.yaml")
 
+NSamples=4
+
 class Sequencer(dict):
     
     @classmethod
@@ -19,21 +21,22 @@ class Sequencer(dict):
                   machine,
                   pool,
                   patterns=Patterns):
-        def random_sample(pool, tag):            
+        def random_samples(pool, tag, n=NSamples):            
             samples=pool.filter_tag(tag)
             if samples==[]:
                 samples=pool
-            return random.choice(samples)
+            return [random.choice(samples)
+                    for i in range(n)]
         def random_pattern(patterns=Patterns):
             return random.choice(patterns)
         def random_seed():
             return int(1e8*random.random())
-        sample=random_sample(pool=pool,
-                             tag=machine["params"]["tag"])
+        samples=random_samples(pool=pool,
+                               tag=machine["params"]["tag"])
         return Sequencer({"name": machine["name"],                          
                           "class": machine["class"],
                           "pattern": random_pattern(),
-                          "sample": sample,
+                          "samples": samples,
                           "seed": random_seed()})
 
     def __init__(self, machine):
@@ -43,14 +46,14 @@ class Sequencer(dict):
         return Sequencer(self)
 
     def render(self, nbeats, density):
-        notes=bjorklund(steps=self["pattern"][1],
-                        pulses=self["pattern"][0])
         q=Q(self["seed"])
+        sample=q.choice(self["samples"])
+        notes=bjorklund(pulses=self["pattern"][0],
+                        steps=self["pattern"][1])
         for i in range(nbeats):
             note=notes[i % len(notes)]
             if q.random() < density and note: # 0|1
                 volume=self.volume(q, i)
-                sample=self["sample"].clone()
                 yield SVNoteTrig(mod=self["name"],
                                  sample=sample,
                                  vel=volume,
