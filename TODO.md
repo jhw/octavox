@@ -1,7 +1,5 @@
 ### short [02-sample-mod-qs]
 
-- add vitlingbeats notes
-
 - test samplebass, samplehats, grainpads
 
 ### medium
@@ -136,6 +134,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- add vitlingbeats notes
 - modify samplebass, samplehats, grainpad demos to use mod qs
 
 - add cutoff float support
