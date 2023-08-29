@@ -1,6 +1,5 @@
 ### short [02-note-variation]
 
-- define params -> modulators -> note -> step, threshold
 - if 0 == i % step and q.random() < threshold then change sample
 
 ### medium
@@ -129,6 +128,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- define params -> modulators -> note -> step, threshold
 - initialise n samples per sequencer
 - choose random sample
 - undo sample- based variations

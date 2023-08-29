@@ -2,14 +2,26 @@
   class: octavox.projects.euclidbeats.machines.Sequencer
   params:
     tag: kk
+    modulation:
+      note:
+        step: 4
+        threshold: 0.25
 - name: SnareSampler
   class: octavox.projects.euclidbeats.machines.Sequencer
   params:
     tag: sn
+    modulation:
+      note:
+        step: 4
+        threshold: 0.25
 - name: HatSampler
   class: octavox.projects.euclidbeats.machines.Sequencer
   params:
-    tag: kk # ht
+    tag: ht
+    modulation:
+      note:
+        step: 4
+        threshold: 0.25
 - name: Echo/wet
   class: octavox.modules.modulators.sample_hold.SampleHoldModulator
   params:
