@@ -1,9 +1,14 @@
-### short
+### short [02-note-variation]
 
-- note variation via sample change
+- undo sample- based variations
+- initialise n samples per sequencer
+- choose random sample
+- define params -> modulators -> note -> step, threshold
+- if 0 == i % step and q.random() < threshold then change sample
 
 ### medium
 
+- pattern variation
 - mutation actions
 - migration of slicebeats archives
 
