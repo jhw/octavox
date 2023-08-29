@@ -7,6 +7,8 @@ from pydub import AudioSegment
 # from scipy.io import wavfile
 from octavox.modules.sampler import wavfile
 
+from octavox.modules.sampler.parse import parse_qs
+
 import io, warnings
 
 warnings.simplefilter("ignore", wavfile.WavFileWarning)
@@ -72,11 +74,19 @@ class SVSampler(SVBaseSampler):
             return fn(self, sample, src)
         return wrapped
 
+    def parse_modstr(self, modstr):
+        if "?" not in modstr:
+            return modstr, {}
+        else:
+            tokens = modstr.split(?)
+            return tokens[0], parse_qs(tokens[1])
+    
     @init_segment
     def slice_sample(self, sample, src):
+        modname, modkwargs = self.parse_modstr(sample["mod"])
+        modfn=getattr(self, "apply_%s" % modname)
         seg0=self.segments[sample["file"]]
-        modfn=getattr(self, "apply_%s" % sample["mod"])
-        seg1=modfn(seg0, **sample["ctrl"])
+        seg1=modfn(seg0, **modkwargs)
         buf=io.BytesIO()
         seg1.export(buf, format=sample["file"].split(".")[-1])
         return buf

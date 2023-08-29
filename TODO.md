@@ -1,6 +1,5 @@
 ### short [02-sample-mod-qs]
 
-- sampler to parse qs
 - modify samplebass, samplehats, grainpad demos to use mod qs
 - add reverse option to sampler cutoff
 
@@ -138,6 +137,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- sampler to parse qs
 - simplify sample mod code to replace mod+ctrl with mod qs
 - test script to parse querystring
 - density
