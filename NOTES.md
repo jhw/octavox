@@ -1,3 +1,18 @@
+### samplebeats 30/08/23
+
+- complete euclidbeats as far as possible
+- refactor slicebeats along the lines of euclid
+  - remove fixes
+  - remove slices
+  - replace oh/ch support with simple ht
+  - replace slices with euclid style modulation on note and pattern
+- combine euclid and vitling projects into a single samplebeats project
+- that way you can mix euclid and vitling generators 
+- sequencers can be moved to modules
+- clis are then combined; no need to abstract pool generating code
+- should be able to seamlessly save projects with different generators
+- opens up the possibiity of a dedicated hats sampler
+
 ### python demos 22/08/23
 
 - pitch shifting

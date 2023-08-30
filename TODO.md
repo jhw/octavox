@@ -1,12 +1,6 @@
 ### short [02-note-variation]
 
-- check how params are being saved
-- add separate note, volume seeds
-  - gives more fine grained mutation options
 - add pattern modulation
-- remove sample and hold "zero pull"
-  - is over- optimisation
-- density min/max variables when choosing patterns
 
 ### medium
 
@@ -15,6 +9,12 @@
 
 ### thoughts
 
+- have a fixed set of patterns a la slicebeats?
+  - feels like over- optimisation again
+- density min/max variables when choosing patterns?
+  - no; better is easy swapping of euclid and vitlling
+- remove sample and hold "zero pull"?
+  - no, is a nice option to have
 - dedicated hat model?
   - again, might be overkill
   - you might be better having samplehats|noisehats run against simple kick, bass models
@@ -133,6 +133,9 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- add separate note, volume seeds
+  - gives more fine grained mutation options
+- check how params are being saved
 - define params -> modulators -> note -> step, threshold
 - initialise n samples per sequencer
 - choose random sample
