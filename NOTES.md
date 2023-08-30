@@ -1,3 +1,16 @@
+### roadmap 30/08/23
+
+- one euclid and vitling are abstracted into modules/sequencers, opens up the possibilty that you just have a single top level api and that a patch is just a yaml file like machines.yaml
+- then you can mix and match a lot of these different machines together, since they all render independently
+- they are rather like tracker or digitakt instruments, except you have the possibility of pushing large amounts of stuff through them in parallel
+- you might have a couple of beats modules, and a whole series of bass modules; then whatever other pads and glitches you want
+- a patch might start with focus on a particular instrument; beats or bass for example
+- eg you might work on a bass patch but then augment it with some simple vitling beats
+- the next question is how you export it to other hardware like the play or the digitakt
+- might want export_xxx which exports into particular formts for different machines
+- they you start to "augment" one of these stems with whatever the particular machine offers, maybe before passing it to the octa for live performance
+- it's a whole different world out there
+
 ### samplebeats 30/08/23
 
 - complete euclidbeats as far as possible

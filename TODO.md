@@ -1,12 +1,18 @@
 ### short
 
+- pass machines filename to cli class
+- check if runtime throws are really required
+- check what happens if machines.yaml badly defined, mis- specified
+- undo env support and replace with simple dict
+- split modules into core and modules
+- rename projects as patches
+- change density to be a local arg
+- move volume parameterisation into machines.yaml
 - add pattern density minmax
-- check what happens if machines badly defined
-- add back protection to load_class with traceback support
 
 ### medium
 
-- mutation 
+- mutation algos 
 - migrate slicebeats archives and test
 
 ### thoughts
