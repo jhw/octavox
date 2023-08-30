@@ -1,9 +1,12 @@
 ### short [02-note-variation]
 
-- add pattern modulation
+- replace defined pattern with pattern seed and random choice based on seed
+- add pattern lfos
 
 ### medium
 
+- add back protection to load_class with traceback support
+- reload machines on each patch randomisation
 - mutation actions
 - migration of slicebeats archives
 
