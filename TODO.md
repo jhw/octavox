@@ -1,7 +1,7 @@
 ### short [02-note-variation]
 
-- replace defined pattern with pattern seed and random choice based on seed
-- add pattern lfos
+- add pattern density minmax
+- move machines and links back into cli
 
 ### medium
 
@@ -136,6 +136,8 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- replace defined pattern with pattern seed and random choice based on seed
+- add pattern lfos
 - add separate note, volume seeds
   - gives more fine grained mutation options
 - check how params are being saved

@@ -6,40 +6,102 @@ from octavox.modules.pools import SVSample
 
 from octavox.projects import Q
 
-from octavox.projects.euclidbeats.bjorklund import bjorklund
+import random, yaml
 
-import random
+"""
+- https://club.tidalcycles.org/t/week-1-lesson-5-mini-notation-part-3/449
+- https://www.jakerichterdrums.com/13randomwords/2022/4/13/euclidean-rhythm
+- http://cgm.cs.mcgill.ca/~godfried/publications/banff.pdf
+"""
 
-Patterns=load_yaml("projects/euclidbeats/patterns.yaml")
+Patterns=[{"pulses": pat[0],
+           "steps": pat[1],
+           "density": pat[0]/pat[1]}
+          for pat in yaml.safe_load("""
+- [2, 5] # A thirteenth century Persian rhythm called Khafif-e-ramal
+- [3, 4] # The archetypal pattern of the Cumbia from Colombia, as well as a Calypso rhythm from Trinidad
+- [3, 5, 2] # Another thirteenth century Persian rhythm by the name of Khafif-e-ramal, as well as a Rumanian folk-dance rhythm
+- [3, 7] # A Ruchenitza rhythm used in a Bulgarian folk-dance
+- [3, 8] # The Cuban tresillo pattern
+- [4, 7] # Another Ruchenitza Bulgarian folk-dance rhythm
+- [4, 9] # The Aksak rhythm of Turkey
+- [4, 11] # The metric pattern used by Frank Zappa in his piece titled Outside Now
+- [5, 6] # Yields the York-Samai pattern, a popular Arab rhythm
+- [5, 7] # The Nawakhat pattern, another popular Arab rhythm
+- [5, 8] # The Cuban cinquillo pattern
+- [5, 9] # A popular Arab rhythm called Agsag-Samai
+- [5, 11] # The metric pattern used by Moussorgsky in Pictures at an Exhibition
+- [5, 12] # The Venda clapping pattern of a South African children’s song
+- [5, 16] # The Bossa-Nova rhythm necklace of Brazil
+- [7, 8] # A typical rhythm played on the Bendir (frame drum)
+- [7, 12] # A common West African bell pattern
+- [7, 16, 14] # A Samba rhythm necklace from Brazil
+- [9, 16] # A rhythm necklace used in the Central African Republic
+- [11, 24, 14] # A rhythm necklace of the Aka Pygmies of Central Africa
+- [13, 24, 5] # Another rhythm necklace of the Aka Pygmies of the upper Sangha
+""")]
 
 NSamples=4
+
+"""
+- https://raw.githubusercontent.com/brianhouse/bjorklund/master/__init__.py
+"""
+
+def bjorklund(steps, pulses, **kwargs):
+    steps = int(steps)
+    pulses = int(pulses)
+    if pulses > steps:
+        raise ValueError    
+    pattern = []    
+    counts = []
+    remainders = []
+    divisor = steps - pulses
+    remainders.append(pulses)
+    level = 0
+    while True:
+        counts.append(divisor // remainders[level])
+        remainders.append(divisor % remainders[level])
+        divisor = remainders[level]
+        level = level + 1
+        if remainders[level] <= 1:
+            break
+    counts.append(divisor)    
+    def build(level):
+        if level == -1:
+            pattern.append(0)
+        elif level == -2:
+            pattern.append(1)         
+        else:
+            for i in range(0, counts[level]):
+                build(level - 1)
+            if remainders[level] != 0:
+                build(level - 2)    
+    build(level)
+    i = pattern.index(1)
+    pattern = pattern[i:] + pattern[0:i]
+    return pattern
 
 class Sequencer(dict):
     
     @classmethod
     def randomise(self,
                   machine,
-                  pool,
-                  patterns=Patterns):
+                  pool):
         def random_samples(pool, tag, n=NSamples):            
             samples=pool.filter_tag(tag)
             if samples==[]:
                 samples=pool
             return [random.choice(samples)
                     for i in range(n)]
-        def random_pattern(patterns=Patterns):
-            return random.choice(patterns)
         def random_seed():
             return int(1e8*random.random())
         samples=random_samples(pool=pool,
                                tag=machine["params"]["tag"])
-        seeds={"note": random_seed(),
-               "trig": random_seed(),
-               "volume": random_seed()}
+        seeds={k:int(1e8*random.random())
+               for k in "note|trig|pattern|volume".split("|")}
         return Sequencer({"name": machine["name"],                          
                           "class": machine["class"],
                           "params": machine["params"],
-                          "pattern": random_pattern(),
                           "samples": samples,
                           "seeds": seeds})
 
@@ -51,17 +113,37 @@ class Sequencer(dict):
     def clone(self):
         return Sequencer(self)
 
+    def random_sample(self, q):
+        return q["note"].choice(self["samples"])
+
+    def random_pattern(self, q, patterns=Patterns):
+        mindensity, maxdensity = 0, 1
+        selected=[pat for pat in patterns
+                  if (pat["density"] > mindensity and
+                      pat["density"] < maxdensity)]
+        if selected==[]:
+            raise RuntimeError("no available patterns for %s" % self.tag)
+        return bjorklund(**q["pattern"].choice(selected))
+
+    def switch_sample(self, q, i):
+        return (0 == i % self.modulation["note"]["step"] and
+                    q["trig"].random() < self.modulation["note"]["threshold"])
+
+    def switch_pattern(self, q, i):
+        return (0 == i % self.modulation["pattern"]["step"] and
+                q["trig"].random() < self.modulation["pattern"]["threshold"])
+    
     def render(self, nbeats, density):
         q={k:Q(v) for k, v in self["seeds"].items()}
-        sample=q["note"].choice(self["samples"])
-        notes=bjorklund(pulses=self["pattern"][0],
-                        steps=self["pattern"][1])
+        sample, pattern = (self.random_sample(q),
+                           self.random_pattern(q))
         for i in range(nbeats):
-            if (0 == i % self.modulation["note"]["step"] and
-                q["trig"].random() < self.modulation["note"]["threshold"]):
-                sample=q["note"].choice(self["samples"])
-            note=notes[i % len(notes)]
-            if q["trig"].random() < density and note: # 0|1
+            if self.switch_sample(q, i):
+                sample=self.random_sample(q)
+            if self.switch_pattern(q, i):
+                pattern=self.random_pattern(q)
+            beat=bool(pattern[i % len(pattern)])
+            if q["trig"].random() < density and beat:
                 volume=self.volume(q["volume"], i)
                 yield SVNoteTrig(mod=self["name"],
                                  sample=sample,

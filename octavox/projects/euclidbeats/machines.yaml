@@ -6,6 +6,9 @@
       note:
         step: 4
         threshold: 0.5
+      pattern:
+        step: 4
+        threshold: 0.5
 - name: SnareSampler
   class: octavox.projects.euclidbeats.machines.Sequencer
   params:
@@ -14,12 +17,18 @@
       note:
         step: 4
         threshold: 0.5
+      pattern:
+        step: 4
+        threshold: 0.5
 - name: HatSampler
   class: octavox.projects.euclidbeats.machines.Sequencer
   params:
     tag: ht
     modulation:
       note:
+        step: 4
+        threshold: 0.5
+      pattern:
         step: 4
         threshold: 0.5
 - name: Echo/wet
