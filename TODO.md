@@ -1,14 +1,13 @@
-### short [02-note-variation]
+### short
 
 - add pattern density minmax
-- move machines and links back into cli
+- check what happens if machines badly defined
+- add back protection to load_class with traceback support
 
 ### medium
 
-- add back protection to load_class with traceback support
-- reload machines on each patch randomisation
-- mutation actions
-- migration of slicebeats archives
+- mutation 
+- migrate slicebeats archives and test
 
 ### thoughts
 
@@ -136,6 +135,8 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- reload machines on each patch randomisation
+- move machines and links back into cli
 - replace defined pattern with pattern seed and random choice based on seed
 - add pattern lfos
 - add separate note, volume seeds

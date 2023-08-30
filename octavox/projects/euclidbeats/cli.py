@@ -12,7 +12,7 @@ from octavox.modules.pools import SVSample, SVPools, SVPool
 
 import boto3, os, random, yaml
 
-Machines=load_yaml("projects/euclidbeats/machines.yaml")
+MachinesSrc="projects/euclidbeats/machines.yaml"
 
 MinPoolSize=12
 
@@ -27,8 +27,8 @@ class SVCli(SVBankCli):
         
     @parse_line()
     @render_patches(prefix="random")
-    def do_randomise_patches(self, machines=Machines):
-        patches=[]
+    def do_randomise_patches(self, src=MachinesSrc):
+        machines, patches = load_yaml(src), []
         for i in range(self.env["npatches"]):
             patch=SVPatch.randomise(machines=machines,
                                     pool=self.pools[self.poolname],
@@ -48,10 +48,37 @@ def init_pools(banks, terms, limit=MinPoolSize):
     pools.update(globalz)
     return pools
 
-Curated=yaml.safe_load("""
-ht: (hat)|(ht)|(perc)|(ussion)|(prc)|(glitch)
-kk: (kick)|(kik)|(kk)|(bd)|(bass)
-sn: (snare)|(sn)|(sd)|(clap)|(clp)|(cp)|(hc)|(rim)|(plip)|(rs)
+Modules=yaml.safe_load("""
+- name: KickSampler
+  class: octavox.modules.sampler.SVSampler
+- name: SnareSampler
+  class: octavox.modules.sampler.SVSampler
+- name: HatSampler
+  class: octavox.modules.sampler.SVSampler
+- name: Echo
+  class: rv.modules.echo.Echo
+  defaults:
+    dry: 256
+    wet: 256
+    delay: 36
+    delay_unit: 3 # tick
+- name: Reverb
+  class: rv.modules.reverb.Reverb
+  defaults:
+    wet: 4
+""")
+
+Links=yaml.safe_load("""
+- - KickSampler
+  - Echo
+- - SnareSampler
+  - Echo
+- - HatSampler
+  - Echo
+- - Echo
+  - Reverb
+- - Reverb
+  - Output
 """)
 
 Params=yaml.safe_load("""
@@ -61,12 +88,17 @@ npatches: 32
 bpm: 120
 """)
 
+Curated=yaml.safe_load("""
+ht: (hat)|(ht)|(perc)|(ussion)|(prc)|(glitch)
+kk: (kick)|(kik)|(kk)|(bd)|(bass)
+sn: (snare)|(sn)|(sd)|(clap)|(clp)|(cp)|(hc)|(rim)|(plip)|(rs)
+""")
+
 if __name__=="__main__":
     try:
         bucketname=os.environ["OCTAVOX_ASSETS_BUCKET"]
         if bucketname in ["", None]:
             raise RuntimeError("OCTAVOX_ASSETS_BUCKET does not exist")
-        modules, links = [load_yaml("projects/euclidbeats/%s.yaml" % key) for key in "modules|links".split("|")]
         s3=boto3.client("s3")
         banks=SVBanks.initialise(s3, bucketname)
         pools=init_pools(banks, terms=Curated)
@@ -77,8 +109,8 @@ if __name__=="__main__":
               bucketname=bucketname,
               poolname=poolname,
               params=Params,
-              modules=modules,
-              links=links,
+              modules=Modules,
+              links=Links,
               banks=banks,
               pools=pools).cmdloop()
     except RuntimeError as error:
