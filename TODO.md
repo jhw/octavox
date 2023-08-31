@@ -1,8 +1,5 @@
 ### short
 
-- pass machines filename to cli class
-- check if runtime throws are really required
-- check what happens if machines.yaml badly defined, mis- specified
 - undo env support and replace with simple dict
 - split modules into core and modules
 - rename projects as patches
@@ -141,6 +138,9 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- pass machines filename to cli class
+- check if runtime throws are really required
+- check what happens if machines.yaml badly defined, mis- specified
 - reload machines on each patch randomisation
 - move machines and links back into cli
 - replace defined pattern with pattern seed and random choice based on seed

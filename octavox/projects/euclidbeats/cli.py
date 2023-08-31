@@ -12,8 +12,6 @@ from octavox.modules.pools import SVSample, SVPools, SVPool
 
 import boto3, os, random, yaml
 
-MachinesSrc="projects/euclidbeats/machines.yaml"
-
 MinPoolSize=12
 
 class SVCli(SVBankCli):
@@ -21,14 +19,16 @@ class SVCli(SVBankCli):
     intro="Welcome to Euclidbeats :)"
 
     def __init__(self,
+                 machines,
                  *args,
                  **kwargs):
         SVBankCli.__init__(self, *args, **kwargs)
+        self.machines=machines
         
     @parse_line()
     @render_patches(prefix="random")
-    def do_randomise_patches(self, src=MachinesSrc):
-        machines, patches = load_yaml(src), []
+    def do_randomise_patches(self):
+        machines, patches = load_yaml(self.machines), []
         for i in range(self.env["npatches"]):
             patch=SVPatch.randomise(machines=machines,
                                     pool=self.pools[self.poolname],
@@ -105,6 +105,7 @@ if __name__=="__main__":
         poolname=random.choice(list(pools.keys()))
         print ("INFO: pool=%s" % poolname)
         SVCli(s3=s3,
+              machines="projects/euclidbeats/machines.yaml",
               projectname="euclidbeats",
               bucketname=bucketname,
               poolname=poolname,
