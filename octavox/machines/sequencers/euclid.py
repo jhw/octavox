@@ -1,5 +1,3 @@
-from octavox import load_yaml
-
 from octavox.core.model import SVNoteTrig, SVFXTrig
 
 from octavox.core.pools import SVSample
@@ -81,7 +79,7 @@ def bjorklund(steps, pulses, **kwargs):
     pattern = pattern[i:] + pattern[0:i]
     return pattern
 
-class Sequencer(dict):
+class EuclidSequencer(dict):
     
     @classmethod
     def randomise(self,
@@ -99,11 +97,11 @@ class Sequencer(dict):
                                tag=machine["params"]["tag"])
         seeds={k:int(1e8*random.random())
                for k in "note|trig|pattern|volume".split("|")}
-        return Sequencer({"name": machine["name"],                          
-                          "class": machine["class"],
-                          "params": machine["params"],
-                          "samples": samples,
-                          "seeds": seeds})
+        return EuclidSequencer({"name": machine["name"],
+                                "class": machine["class"],
+                                "params": machine["params"],
+                                "samples": samples,
+                                "seeds": seeds})
 
     def __init__(self, machine):
         dict.__init__(self, machine)
@@ -111,7 +109,7 @@ class Sequencer(dict):
             setattr(self, k, v)
                             
     def clone(self):
-        return Sequencer(self)
+        return EuclidSequencer(self)
 
     def random_sample(self, q):
         return q["note"].choice(self["samples"])

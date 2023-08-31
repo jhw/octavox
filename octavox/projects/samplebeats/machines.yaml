@@ -1,5 +1,5 @@
 - name: KickSampler
-  class: octavox.projects.euclidbeats.machines.Sequencer
+  class: octavox.machines.sequencers.euclid.EuclidSequencer
   params:
     tag: kk
     modulation:
@@ -10,7 +10,7 @@
         step: 4
         threshold: 0.5
 - name: SnareSampler
-  class: octavox.projects.euclidbeats.machines.Sequencer
+  class: octavox.machines.sequencers.euclid.EuclidSequencer
   params:
     tag: sn
     modulation:
@@ -21,7 +21,7 @@
         step: 4
         threshold: 0.5
 - name: HatSampler
-  class: octavox.projects.euclidbeats.machines.Sequencer
+  class: octavox.machines.sequencers.euclid.EuclidSequencer
   params:
     tag: ht
     modulation:

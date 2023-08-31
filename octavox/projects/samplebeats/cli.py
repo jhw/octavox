@@ -16,7 +16,7 @@ MinPoolSize=12
 
 class SVCli(SVBankCli):
 
-    intro="Welcome to Euclidbeats :)"
+    intro="Welcome to Samplebeats :)"
 
     def __init__(self,
                  machines,
@@ -105,8 +105,8 @@ if __name__=="__main__":
         poolname=random.choice(list(pools.keys()))
         print ("INFO: pool=%s" % poolname)
         SVCli(s3=s3,
-              machines="projects/euclidbeats/machines.yaml",
-              projectname="euclidbeats",
+              machines="projects/samplebeats/machines.yaml",
+              projectname="samplebeats",
               bucketname=bucketname,
               poolname=poolname,
               params=Params,

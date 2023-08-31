@@ -1,14 +1,17 @@
 ### short
 
 - undo env support and replace with simple dict
-- change density to be a local arg
-- move volume parameterisation into machines.yaml
-- add pattern density minmax
+- migration of slicebeats archives
 
 ### medium
 
+- change density to be a local arg
+
+- [euclid] move volume parameterisation into machines.yaml?
+- [euclid] add pattern density minmax
+- [euclid] pattern/sample mean reversion
+
 - mutation algos 
-- migrate slicebeats archives and test
 
 ### thoughts
 
@@ -136,6 +139,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- rename euclidbeats
 - split modules into core and modules
 - pass machines filename to cli class
 - check if runtime throws are really required
