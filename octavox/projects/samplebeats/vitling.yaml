@@ -31,7 +31,7 @@ machines:
 - class: octavox.machines.sequencers.beats.vitling.VitlingSequencer
   name: KickSampler
   params:
-    density: 0.66666
+    density: 1.0
     modulation:
       note:
         reversion: 0.5
@@ -41,11 +41,15 @@ machines:
         reversion: 0.5
         step: 4
         threshold: 0.5
+    patterns:
+    - fourfloor
+    - electro
+    - triplets
     tag: kk
 - class: octavox.machines.sequencers.beats.vitling.VitlingSequencer
   name: SnareSampler
   params:
-    density: 0.33333
+    density: 1.0
     modulation:
       note:
         reversion: 0.5
@@ -55,11 +59,14 @@ machines:
         reversion: 0.5
         step: 4
         threshold: 0.5
+    patterns:
+    - backbeat
+    - skip
     tag: sn
 - class: octavox.machines.sequencers.beats.vitling.VitlingSequencer
   name: HatSampler
   params:
-    density: 0.9
+    density: 1.0
     modulation:
       note:
         reversion: 0.5
@@ -69,6 +76,9 @@ machines:
         reversion: 0.5
         step: 4
         threshold: 0.5
+    patterns:
+    - offbeats
+    - closed
     tag: ht
 - class: octavox.machines.modulators.sample_hold.SampleHoldModulator
   name: Echo/wet

@@ -1,8 +1,11 @@
 ### short
 
-- add patterns to vitling.yaml
 - initialise pattern from patterns
 - update render code to handle vitling algos
+
+- vitling algo code shouldn't need to return beat name
+  - should be able to use self.tag
+  - can then just return volume or None
 
 ### medium
 
@@ -141,6 +144,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- add patterns to vitling.yaml
 - add vitling beat code to sequencer
 - copy hello.yaml to euclid.yaml
 - new vitling seq and vitling yaml
