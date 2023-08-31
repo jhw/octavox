@@ -42,12 +42,9 @@ class SampleHoldModulator(dict):
 
     def sample_hold(self, q, i, d):
         if 0 == i % self.step:
-            if q.random() < self.live:
-                floor, ceil = self.range
-                v=floor+(ceil-floor)*q.random()
-                return self.increment*int(0.5+v/self.increment)
-            else:
-                return 0.0
+            floor, ceil = self.range
+            v=floor+(ceil-floor)*q.random()
+            return self.increment*int(0.5+v/self.increment)
 
 if __name__=="__main__":
     pass

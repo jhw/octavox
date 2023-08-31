@@ -1,11 +1,12 @@
 ### short
 
+- check raising of RuntimeError in core
 - sequencer beats base class
-- remove sample and hold zero anchor
 - vitling sequencer
 - implement pattern density minimax args
 - density to be a local arg
 - migration of slicebeats archives
+- modulator base class
 
 ### medium
 
@@ -140,6 +141,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- remove sample and hold zero anchor
 - sequencer beats subdir
 - undo env support and replace with simple dict
 - rename euclidbeats

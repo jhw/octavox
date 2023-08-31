@@ -215,28 +215,6 @@ class SVBankCli(SVBaseCli):
         self.poolname=self.pools.lookup(poolname)
         print ("INFO: pool=%s" % self.poolname)
 
-    @parse_line(config=[{"name": "fsrc",
-                         "type": "str"},
-                        {"name": "fdest",
-                         "type": "str"}])
-    def do_copy_pool(self, fsrc, fdest):
-        def lookup(self, frag):
-            try:
-                return self.pools.lookup(str(frag))
-            except RuntimeError as error:
-                return None
-        src=lookup(self, fsrc)
-        if not src:                
-            raise RuntimeError("src does not exist")
-        dest=lookup(self, fdest)
-        if not dest:
-            self.pools[fdest]=SVPool()
-            dest=fdest
-        print ("INFO: copying %s to %s" % (src, dest))
-        self.pools[dest].add(self.pools[src])
-        self.poolname=dest
-        print ("INFO: pool=%s" % dest)
-
     @parse_line()
     def do_randomise_pool(self):
         self.poolname=random.choice(list(self.pools.keys()))
