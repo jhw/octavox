@@ -1,7 +1,7 @@
 ### short
 
-- vitling sequencer
-
+- add vitling beat code to sequencer
+- add patterns to vitling.yaml
 
 ### medium
 
@@ -139,6 +139,10 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- copy hello.yaml to euclid.yaml
+- new vitling seq and vitling yaml
+- remove bjorkman code and add vitling routines 
+- remove volume from vitling
 - merge modules and links back into machines.yaml
 - rename as hello and accept command line arg
 - remove load_yaml
