@@ -1,7 +1,7 @@
 ### short
 
-- sequencer beats subdir
 - sequencer beats base class
+- remove sample and hold zero anchor
 - vitling sequencer
 - implement pattern density minimax args
 - density to be a local arg
@@ -140,6 +140,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- sequencer beats subdir
 - undo env support and replace with simple dict
 - rename euclidbeats
 - split modules into core and modules
