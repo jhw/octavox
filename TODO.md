@@ -2,9 +2,10 @@
 
 - simply number of different attr names being passed to mean revert decorator 
 
+- vitling sequencer
+
 ### medium
 
-- vitling sequencer
 - migration of slicebeats archives
 - mutation algos 
 
