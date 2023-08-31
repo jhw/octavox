@@ -1,4 +1,4 @@
-from octavox.modules import is_abbrev
+from octavox.core import is_abbrev
 
 import random, re, urllib.parse
 

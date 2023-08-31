@@ -1,4 +1,4 @@
-from octavox.modules.model import SVFXTrig
+from octavox.core.model import SVFXTrig
 
 from octavox.projects import Q
 

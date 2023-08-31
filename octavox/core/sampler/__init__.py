@@ -5,9 +5,9 @@ from rv.note import NOTE as RVNOTE
 from pydub import AudioSegment
 
 # from scipy.io import wavfile
-from octavox.modules.sampler import wavfile
+from octavox.core.sampler import wavfile
 
-from octavox.modules.sampler.parse import parse_qs
+from octavox.core.sampler.parse import parse_qs
 
 import io, warnings
 

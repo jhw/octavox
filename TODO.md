@@ -1,8 +1,6 @@
 ### short
 
 - undo env support and replace with simple dict
-- split modules into core and modules
-- rename projects as patches
 - change density to be a local arg
 - move volume parameterisation into machines.yaml
 - add pattern density minmax
@@ -138,6 +136,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- split modules into core and modules
 - pass machines filename to cli class
 - check if runtime throws are really required
 - check what happens if machines.yaml badly defined, mis- specified

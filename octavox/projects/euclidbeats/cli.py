@@ -1,14 +1,14 @@
 from octavox import load_yaml
 
-from octavox.modules.banks import SVBanks
+from octavox.core.banks import SVBanks
 
-from octavox.modules.cli import SVBankCli, render_patches
+from octavox.core.cli import SVBankCli, render_patches
 
-from octavox.modules.cli.parse import parse_line
+from octavox.core.cli.parse import parse_line
 
-from octavox.modules.model import SVNoteTrig, SVPatch
+from octavox.core.model import SVNoteTrig, SVPatch
 
-from octavox.modules.pools import SVSample, SVPools, SVPool
+from octavox.core.pools import SVSample, SVPools, SVPool
 
 import boto3, os, random, yaml
 
@@ -50,11 +50,11 @@ def init_pools(banks, terms, limit=MinPoolSize):
 
 Modules=yaml.safe_load("""
 - name: KickSampler
-  class: octavox.modules.sampler.SVSampler
+  class: octavox.core.sampler.SVSampler
 - name: SnareSampler
-  class: octavox.modules.sampler.SVSampler
+  class: octavox.core.sampler.SVSampler
 - name: HatSampler
-  class: octavox.modules.sampler.SVSampler
+  class: octavox.core.sampler.SVSampler
 - name: Echo
   class: rv.modules.echo.Echo
   defaults:

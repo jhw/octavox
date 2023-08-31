@@ -1,8 +1,8 @@
 from octavox import load_yaml
 
-from octavox.modules.model import SVNoteTrig, SVFXTrig
+from octavox.core.model import SVNoteTrig, SVFXTrig
 
-from octavox.modules.pools import SVSample
+from octavox.core.pools import SVSample
 
 from octavox.projects import Q
 

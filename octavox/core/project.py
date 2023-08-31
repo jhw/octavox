@@ -1,9 +1,9 @@
 from rv.api import Project as RVProject
 from rv.pattern import Pattern as RVPattern
 
-from octavox.modules import load_class
+from octavox.core import load_class
 
-from octavox.modules.banks import SVPool
+from octavox.core.banks import SVPool
 
 import random
 

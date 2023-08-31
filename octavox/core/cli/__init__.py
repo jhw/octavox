@@ -1,21 +1,21 @@
 from octavox import load_yaml, has_internet
 
-from octavox.modules import is_abbrev, list_s3_keys
+from octavox.core import is_abbrev, list_s3_keys
 
-from octavox.modules.banks import SVPool
+from octavox.core.banks import SVPool
 
-from octavox.modules.cli.parse import parse_line
+from octavox.core.cli.parse import parse_line
 
-from octavox.modules.model import SVPatch
+from octavox.core.model import SVPatch
 
-from octavox.modules.project import SVProject
+from octavox.core.project import SVProject
 
 from datetime import datetime
 
 import boto3, cmd, json, os, random, readline
 
-Nouns, Adjectives = (load_yaml("modules/cli/nouns.yaml"),
-                     load_yaml("modules/cli/adjectives.yaml"))
+Nouns, Adjectives = (load_yaml("core/cli/nouns.yaml"),
+                     load_yaml("core/cli/adjectives.yaml"))
 
 HistorySize=100
 
@@ -37,7 +37,7 @@ def render_patches(prefix):
         def dump_sunvox(self):
             project=SVProject().render(patches=[patch.render(nbeats=self.env["nbeats"])
                                                 for patch in self.patches],
-                                       modconfig=self.modules,
+                                       modconfig=self.core,
                                        links=self.links,
                                        banks=self.banks,
                                        bpm=self.env["bpm"])
@@ -102,7 +102,7 @@ class SVBaseCli(cmd.Cmd):
         self.bucketname=bucketname
         self.outdir="tmp/%s" % projectname
         self.init_subdirs()
-        self.modules=modules
+        self.core=modules
         self.links=links
         self.env=SVEnvironment(params)
         self.patches=None
@@ -191,7 +191,7 @@ class SVBaseCli(cmd.Cmd):
             patches=[SVPatch(**patch).render(nbeats=self.env["nbeats"])
                      for patch in struct]
             project=SVProject().render(patches=patches,
-                                       modconfig=self.modules,
+                                       modconfig=self.core,
                                        links=self.links,
                                        banks=self.banks,
                                        bpm=self.env["bpm"])

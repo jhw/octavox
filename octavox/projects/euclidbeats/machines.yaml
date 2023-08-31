@@ -32,7 +32,7 @@
         step: 4
         threshold: 0.5
 - name: Echo/wet
-  class: octavox.modules.modulators.sample_hold.SampleHoldModulator
+  class: octavox.machines.modulators.sample_hold.SampleHoldModulator
   params:
     range: [0, 1]
     increment: 0.25
@@ -41,7 +41,7 @@
     maxvalue: "8000"
     minvalue: "0000"
 - name: Echo/feedback
-  class: octavox.modules.modulators.sample_hold.SampleHoldModulator
+  class: octavox.machines.modulators.sample_hold.SampleHoldModulator
   params:
     range: [0, 1]
     increment: 0.25

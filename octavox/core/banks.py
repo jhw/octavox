@@ -1,8 +1,8 @@
 from octavox import has_internet
 
-from octavox.modules import is_abbrev, list_s3_keys
+from octavox.core import is_abbrev, list_s3_keys
 
-from octavox.modules.pools import SVSample, SVPool, SVPools
+from octavox.core.pools import SVSample, SVPool, SVPools
 
 from pydub import AudioSegment
 

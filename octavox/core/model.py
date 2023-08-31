@@ -1,4 +1,4 @@
-from octavox.modules import load_class
+from octavox.core import load_class
 
 """
 - mod is automatically added to sample tags so that samples can be properly allocated to samplers at project rendering time
