@@ -2,7 +2,7 @@ from octavox.core.model import SVNoteTrig, SVFXTrig
 
 from octavox.core.pools import SVSample
 
-from octavox.machines.sequencers.beats import BeatSequencer, add_to_state
+from octavox.machines.sequencers.beats import BeatSequencer, mean_revert
 
 from octavox.projects import Q
 
@@ -104,11 +104,13 @@ class EuclidSequencer(BeatSequencer):
     def clone(self):
         return EuclidSequencer(self)
 
-    @add_to_state("samples")
+    @mean_revert(attr="samples",
+                 qattr="trig")
     def random_sample(self, q):
         return q["note"].choice(self["samples"])
 
-    @add_to_state("patterns")
+    @mean_revert(attr="patterns",
+                 qattr="pattern")
     def random_pattern(self, q,
                        patterns=Patterns):
         return bjorklund(**q["pattern"].choice(patterns))

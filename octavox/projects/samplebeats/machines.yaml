@@ -3,6 +3,7 @@
   params:
     tag: kk
     density: 0.66666
+    reversion: 0.5
     modulation:
       note:
         step: 4
@@ -15,6 +16,7 @@
   params:
     tag: sn
     density: 0.33333
+    reversion: 0.5
     modulation:
       note:
         step: 4
@@ -27,6 +29,7 @@
   params:
     tag: ht
     density: 0.9
+    reversion: 0.5
     modulation:
       note:
         step: 4

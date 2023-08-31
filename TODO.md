@@ -1,7 +1,7 @@
 ### short
 
-- sample/pattern mean reversion
 - vitling sequencer
+
 - migration of slicebeats archives
 
 ### medium
@@ -136,6 +136,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- sample/pattern mean reversion
 - sequencer beats base class
 - replace global density with per- track density
 - remove minmax density support

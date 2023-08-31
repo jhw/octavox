@@ -1,9 +1,12 @@
 import random
 
-def add_to_state(attr):
+def mean_revert(attr, qattr):
     def decorator(fn):
-        def wrapped(self, *args, **kwargs):
-            resp=fn(self, *args, **kwargs)
+        def shall_revert(self, q):
+            return (q[qattr].random() < self.reversion and
+                    len(self["state"][attr]) > 1)
+        def wrapped(self, q, *args, **kwargs):
+            resp=self["state"][attr][-2] if shall_revert(self, q) else fn(self, q, *args, **kwargs)
             self["state"][attr].append(resp)
             return resp
         return wrapped
