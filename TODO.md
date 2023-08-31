@@ -2,9 +2,10 @@
 
 - vitling sequencer
 
-- migration of slicebeats archives
 
 ### medium
+
+- migration of slicebeats archives
 
 - mutation algos 
 
