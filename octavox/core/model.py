@@ -145,27 +145,22 @@ class SVMachines(list):
 class SVPatch(dict):
     
     @classmethod
-    def randomise(self, machines, density=1, **kwargs):
+    def randomise(self, machines, **kwargs):
         return SVPatch(machines=SVMachines.randomise(machines=machines,
-                                                     **kwargs),
-                       density=density)
+                                                     **kwargs))
         
     def __init__(self,
-                 machines,
-                 density):
-        dict.__init__(self, {"machines": SVMachines(machines),
-                             "density": density})
+                 machines):
+        dict.__init__(self, {"machines": SVMachines(machines)})
         
     def clone(self):
-        return SVPatch(machines=self["machines"].clone(),
-                       density=self["density"])
+        return SVPatch(machines=self["machines"].clone())
     
     def render(self,
                nbeats):
         trigs=SVTrigs(nbeats=nbeats)
         for machine in self["machines"]:
-            for trig in machine.render(nbeats=nbeats,
-                                       density=self["density"]):
+            for trig in machine.render(nbeats=nbeats):
                 trigs.append(trig)
         return trigs.tracks
 

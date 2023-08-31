@@ -31,8 +31,7 @@ class SVCli(SVBankCli):
         machines, patches = load_yaml(self.machines), []
         for i in range(self.env["npatches"]):
             patch=SVPatch.randomise(machines=machines,
-                                    pool=self.pools[self.poolname],
-                                    density=self.env["density"])
+                                    pool=self.pools[self.poolname])
             patches.append(patch)
         return patches
 
@@ -82,7 +81,6 @@ Links=yaml.safe_load("""
 """)
 
 Env=yaml.safe_load("""
-density: 0.5
 nbeats: 16
 npatches: 32
 bpm: 120

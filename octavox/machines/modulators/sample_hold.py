@@ -28,19 +28,19 @@ class SampleHoldModulator(dict):
     def clone(self):
         return SampleHoldModulator(self)
                     
-    def render(self, nbeats, density):
+    def render(self, nbeats):
         minval, maxval = (int(self.minvalue, 16),
                           int(self.maxvalue, 16))
         q=Q(self["seed"])
         for i in range(nbeats):
-            v=self.sample_hold(q, i, density)
+            v=self.sample_hold(q, i)
             if v!=None: # explicit because could return zero
                 value=(v*maxval-minval)+minval
                 yield SVFXTrig(target=self["name"],
                                value=value,
                                i=i)
 
-    def sample_hold(self, q, i, d):
+    def sample_hold(self, q, i):
         if 0 == i % self.step:
             floor, ceil = self.range
             v=floor+(ceil-floor)*q.random()

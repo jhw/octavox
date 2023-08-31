@@ -2,6 +2,7 @@
   class: octavox.machines.sequencers.beats.euclid.EuclidSequencer
   params:
     tag: kk
+    density: 0.66666
     modulation:
       note:
         step: 4
@@ -13,6 +14,7 @@
   class: octavox.machines.sequencers.beats.euclid.EuclidSequencer
   params:
     tag: sn
+    density: 0.33333
     modulation:
       note:
         step: 4
@@ -24,6 +26,7 @@
   class: octavox.machines.sequencers.beats.euclid.EuclidSequencer
   params:
     tag: ht
+    density: 0.9
     modulation:
       note:
         step: 4

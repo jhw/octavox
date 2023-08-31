@@ -13,8 +13,7 @@ import random, yaml
 """
 
 Patterns=[{"pulses": pat[0],
-           "steps": pat[1],
-           "density": pat[0]/pat[1]}
+           "steps": pat[1]}
           for pat in yaml.safe_load("""
 - [2, 5] # A thirteenth century Persian rhythm called Khafif-e-ramal
 - [3, 4] # The archetypal pattern of the Cumbia from Colombia, as well as a Calypso rhythm from Trinidad
@@ -134,7 +133,7 @@ class EuclidSequencer(dict):
     - for the moment it's either/or in terms of sample/pattern switching
     """
     
-    def render(self, nbeats, density):
+    def render(self, nbeats):
         q={k:Q(v) for k, v in self["seeds"].items()}
         sample, pattern = (self.random_sample(q),
                            self.random_pattern(q))
@@ -144,7 +143,7 @@ class EuclidSequencer(dict):
             elif self.switch_pattern(q, i):
                 pattern=self.random_pattern(q)
             beat=bool(pattern[i % len(pattern)])
-            if q["trig"].random() < density and beat:
+            if q["trig"].random() < self.density and beat:
                 volume=self.volume(q["volume"], i)
                 yield SVNoteTrig(mod=self["name"],
                                  sample=sample,
