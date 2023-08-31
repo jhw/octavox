@@ -1,12 +1,11 @@
 ### short
 
-- check raising of RuntimeError in core
+- remove minmax density support
+- replace global density with per- track density
+
 - sequencer beats base class
 - vitling sequencer
-- implement pattern density minimax args
-- density to be a local arg
 - migration of slicebeats archives
-- modulator base class
 
 ### medium
 
@@ -141,6 +140,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- check raising of RuntimeError in core
 - remove sample and hold zero anchor
 - sequencer beats subdir
 - undo env support and replace with simple dict
