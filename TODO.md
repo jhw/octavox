@@ -1,15 +1,17 @@
 ### short
 
-- rename sequencer.beats as samplebeats
 - refactor "note" refs as "sample"
 
 ### medium
 
 - migration of slicebeats archives
+- test archiving and reanimating projects
 - mutation algos 
 
 ### thoughts
 
+- rename sequencer.beats as samplebeats?
+  - no don't like that one; no reason why sample and note sequencers can't sit together in beats directory
 - simply number of different attr names being passed to @mean_revert?
   - is a bit complex but is okay
 - [euclid] move volume parameterisation into machines.yaml?
