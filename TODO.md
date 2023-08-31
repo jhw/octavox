@@ -1,11 +1,14 @@
 ### short
 
 - add patterns to vitling.yaml
+- initialise pattern from patterns
+- update render code to handle vitling algos
 
 ### medium
 
+- move cli into projects root 
+- rename sequencer.beats as samplebeats
 - migration of slicebeats archives
-
 - mutation algos 
 
 ### thoughts
