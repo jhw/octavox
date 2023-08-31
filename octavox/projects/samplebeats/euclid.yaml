@@ -33,7 +33,7 @@ machines:
   params:
     density: 0.66666
     modulation:
-      note:
+      sample:
         reversion: 0.5
         step: 4
         threshold: 0.5
@@ -47,7 +47,7 @@ machines:
   params:
     density: 0.33333
     modulation:
-      note:
+      sample:
         reversion: 0.5
         step: 4
         threshold: 0.5
@@ -61,7 +61,7 @@ machines:
   params:
     density: 0.9
     modulation:
-      note:
+      sample:
         reversion: 0.5
         step: 4
         threshold: 0.5

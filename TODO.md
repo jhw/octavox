@@ -1,7 +1,5 @@
 ### short
 
-- refactor "note" refs as "sample"
-
 ### medium
 
 - migration of slicebeats archives
@@ -140,6 +138,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- refactor "note" refs as "sample"
 - normalise vitling volumes at 1
 - update render code to handle vitling algos
 - vitling algo code shouldn't need to return beat name

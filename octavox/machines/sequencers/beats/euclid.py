@@ -91,7 +91,7 @@ class EuclidSequencer(BeatSequencer):
                                              tag=machine["params"]["tag"],
                                              n=n)
         seeds={k:BeatSequencer.random_seed()
-               for k in "note|trig|pattern|volume".split("|")}
+               for k in "sample|trig|pattern|volume".split("|")}
         return EuclidSequencer({"name": machine["name"],
                                 "class": machine["class"],
                                 "params": machine["params"],
