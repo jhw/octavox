@@ -1,10 +1,10 @@
-from octavox.modules.banks import SVBanks
+from octavox.core.banks import SVBanks
 
-from octavox.modules.model import SVNoteTrig, SVFXTrig, SVTrigs
+from octavox.core.model import SVNoteTrig, SVFXTrig, SVTrigs
 
-from octavox.modules.pools import SVSample, SVPool
+from octavox.core.pools import SVSample, SVPool
 
-from octavox.modules.project import SVProject
+from octavox.core.project import SVProject
 
 from datetime import datetime
 
@@ -16,7 +16,7 @@ import boto3, os, random, yaml
 
 Modules=yaml.safe_load("""
 - name: Sampler
-  class: octavox.modules.sampler.SVSampler
+  class: octavox.core.sampler.SVSampler
 - name: Filter
   class: rv.modules.filter.Filter
   defaults:

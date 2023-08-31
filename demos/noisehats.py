@@ -1,6 +1,6 @@
-from octavox.modules.model import SVNoteTrig, SVFXTrig, SVTrigs
+from octavox.core.model import SVNoteTrig, SVFXTrig, SVTrigs
 
-from octavox.modules.project import SVProject
+from octavox.core.project import SVProject
 
 from datetime import datetime
 

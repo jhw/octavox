@@ -37,5 +37,25 @@ class BeatSequencer(dict):
         self["state"]={k:[]
                        for k in "samples|patterns".split("|")}
 
+    @mean_revert(attr="samples",
+                 qattr="trig",
+                 modattr="note")
+    def random_sample(self, q):
+        return q["note"].choice(self["samples"])
+        
+    """
+    - should possible use q["note"] and q["pattern"] rather than q["trig"] in each place? 
+    - or define separate generator such as q["mod"]?
+    """
+    
+    def switch_sample(self, q, i):
+        return (0 == i % self.modulation["note"]["step"] and
+                q["trig"].random() < self.modulation["note"]["threshold"])
+
+    def switch_pattern(self, q, i):
+        return (0 == i % self.modulation["pattern"]["step"] and
+                q["trig"].random() < self.modulation["pattern"]["threshold"])
+
+        
 if __name__=="__main__":
     pass

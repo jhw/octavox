@@ -104,30 +104,12 @@ class EuclidSequencer(BeatSequencer):
     def clone(self):
         return EuclidSequencer(self)
 
-    @mean_revert(attr="samples",
-                 qattr="trig",
-                 modattr="note")
-    def random_sample(self, q):
-        return q["note"].choice(self["samples"])
-
     @mean_revert(attr="patterns",
-                 qattr="pattern",
+                 qattr="trig",
                  modattr="pattern")
     def random_pattern(self, q,
                        patterns=Patterns):
         return bjorklund(**q["pattern"].choice(patterns))
-
-    """
-    - could add state variables and mean reversion here
-    """
-    
-    def switch_sample(self, q, i):
-        return (0 == i % self.modulation["note"]["step"] and
-                    q["trig"].random() < self.modulation["note"]["threshold"])
-
-    def switch_pattern(self, q, i):
-        return (0 == i % self.modulation["pattern"]["step"] and
-                q["trig"].random() < self.modulation["pattern"]["threshold"])
 
     """
     - for the moment it's either/or in terms of sample/pattern switching

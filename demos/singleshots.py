@@ -1,16 +1,16 @@
-from octavox.modules.banks import SVBanks
+from octavox.core.banks import SVBanks
 
-from octavox.modules.model import SVTrigs, SVNoteTrig
+from octavox.core.model import SVTrigs, SVNoteTrig
 
-from octavox.modules.pools import SVSample
+from octavox.core.pools import SVSample
 
-from octavox.modules.project import SVProject
+from octavox.core.project import SVProject
 
 import boto3, os, yaml
 
 Modules=yaml.safe_load("""
 - name: Sampler
-  class: octavox.modules.sampler.SVSampler
+  class: octavox.core.sampler.SVSampler
 """)
 
 Links=yaml.safe_load("""

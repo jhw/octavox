@@ -1,16 +1,17 @@
 ### short
 
-- simply number of different attr names being passed to mean revert decorator 
-
 - vitling sequencer
+
+- migration of slicebeats archives
 
 ### medium
 
-- migration of slicebeats archives
 - mutation algos 
 
 ### thoughts
 
+- simply number of different attr names being passed to @mean_revert?
+  - is a bit complex but is okay
 - [euclid] move volume parameterisation into machines.yaml?
   - probably overkill
 - have a fixed set of patterns a la slicebeats?
