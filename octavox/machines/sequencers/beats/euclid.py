@@ -114,20 +114,9 @@ class EuclidSequencer(dict):
     def random_sample(self, q):
         return q["note"].choice(self["samples"])
 
-    """
-    - min/max density could be part of config
-    """
-    
     def random_pattern(self, q,
-                       patterns=Patterns,
-                       mindensity=0,
-                       maxdensity=1):
-        selected=[pat for pat in patterns
-                  if (pat["density"] > mindensity and
-                      pat["density"] < maxdensity)]
-        if selected==[]:
-            raise RuntimeError("no available patterns for %s" % self.tag)
-        return bjorklund(**q["pattern"].choice(selected))
+                       patterns=Patterns):
+        return bjorklund(**q["pattern"].choice(patterns))
 
     """
     - could add state variables and mean reversion here

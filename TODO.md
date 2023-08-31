@@ -1,6 +1,5 @@
 ### short
 
-- remove minmax density support
 - replace global density with per- track density
 
 - sequencer beats base class
@@ -140,6 +139,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- remove minmax density support
 - check raising of RuntimeError in core
 - remove sample and hold zero anchor
 - sequencer beats subdir
