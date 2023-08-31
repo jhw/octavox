@@ -105,12 +105,14 @@ class EuclidSequencer(BeatSequencer):
         return EuclidSequencer(self)
 
     @mean_revert(attr="samples",
-                 qattr="trig")
+                 qattr="trig",
+                 modattr="note")
     def random_sample(self, q):
         return q["note"].choice(self["samples"])
 
     @mean_revert(attr="patterns",
-                 qattr="pattern")
+                 qattr="pattern",
+                 modattr="pattern")
     def random_pattern(self, q,
                        patterns=Patterns):
         return bjorklund(**q["pattern"].choice(patterns))

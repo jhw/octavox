@@ -3,40 +3,43 @@
   params:
     tag: kk
     density: 0.66666
-    reversion: 0.5
     modulation:
       note:
         step: 4
         threshold: 0.5
+        reversion: 0.5
       pattern:
         step: 4
         threshold: 0.5
+        reversion: 0.5
 - name: SnareSampler
   class: octavox.machines.sequencers.beats.euclid.EuclidSequencer
   params:
     tag: sn
     density: 0.33333
-    reversion: 0.5
     modulation:
       note:
         step: 4
         threshold: 0.5
+        reversion: 0.5
       pattern:
         step: 4
         threshold: 0.5
+        reversion: 0.5
 - name: HatSampler
   class: octavox.machines.sequencers.beats.euclid.EuclidSequencer
   params:
     tag: ht
     density: 0.9
-    reversion: 0.5
     modulation:
       note:
         step: 4
         threshold: 0.5
+        reversion: 0.5
       pattern:
         step: 4
         threshold: 0.5
+        reversion: 0.5
 - name: Echo/wet
   class: octavox.machines.modulators.sample_hold.SampleHoldModulator
   params:

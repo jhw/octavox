@@ -1,9 +1,9 @@
 import random
 
-def mean_revert(attr, qattr):
+def mean_revert(attr, qattr, modattr):
     def decorator(fn):
         def shall_revert(self, q):
-            return (q[qattr].random() < self.reversion and
+            return (q[qattr].random() < self.modulation[modattr]["reversion"] and
                     len(self["state"][attr]) > 1)
         def wrapped(self, q, *args, **kwargs):
             resp=self["state"][attr][-2] if shall_revert(self, q) else fn(self, q, *args, **kwargs)
