@@ -41,29 +41,6 @@ class VitlingSequencer(BeatSequencer):
         return q["pattern"].choice(self.patterns)
 
     """
-    def render(self,
-               nbeats,
-               density):
-        multiplier, offset = int(nbeats/self["pattern"].size), 0
-        for pat in self["pattern"].expanded:
-            slice=self["slices"][pat["i"]]
-            q=Q(slice["seed"])            
-            fn=getattr(self, slice["style"])
-            nsamplebeats=pat["n"]*multiplier
-            samples=slice["samples"].tagged_map
-            for i in range(nsamplebeats):
-                v=fn(q, i, density)
-                if v!=None: # explicit because could return zero
-                    tag, volume = v
-                    sample=samples[tag].clone()
-                    yield SVNoteTrig(mod=self["name"],
-                                     vel=volume,
-                                     i=i+offset,
-                                     sample=sample)
-            offset+=nsamplebeats
-    """
-    
-    """
     - for the moment it's either/or in terms of sample/pattern switching
     """
     
@@ -77,7 +54,7 @@ class VitlingSequencer(BeatSequencer):
             elif self.switch_pattern(q, i):
                 pattern=self.random_pattern(q)
             beatfn=getattr(self, pattern)
-            beat=fn(q, i, self.density)
+            beat=beatfn(q["trig"], i, self.density)
             if beat!=None: # NB explicit check
                 volume=beat
                 yield SVNoteTrig(mod=self["name"],
@@ -88,10 +65,14 @@ class VitlingSequencer(BeatSequencer):
     """
     - https://github.com/vitling/acid-banger/blob/main/src/pattern.ts
     """
+
+    """
+    - fourfloor scaled up to return 1.0 in base case (was 0.9)
+    """
     
     def fourfloor(self, q, i, d):
         if i % 4 == 0 and q.random() < d:
-            return 0.9
+            return 1.0
         elif i % 2 == 0 and q.random() < 0.1*d:
             return 0.6
 
@@ -103,7 +84,7 @@ class VitlingSequencer(BeatSequencer):
             return 0.9*q.random()
 
     """ 
-    - added by me
+    - triplets added by me
     """
         
     def triplets(self, q, i, d):
@@ -112,7 +93,7 @@ class VitlingSequencer(BeatSequencer):
 
     def backbeat(self, q, i, d):
         if i % 8 == 4 and q.random() < d:
-            return q
+            return 1
 
     def skip(self, q, i, d):
         if i % 8 in [3, 6] and q.random() < d:
@@ -123,20 +104,21 @@ class VitlingSequencer(BeatSequencer):
             return 0.2+0.2*q.random()
 
     """
-    - simpified to return single sound only
+    - offbeats simpified to return single sound only
+    - offbeats and closed scaled up to return 2x original volume
     """
         
     def offbeats(self, q, i, d):
         if i % 4 == 2 and q.random() < d:
-            return 0.4
+            return 0.8
         elif q.random() < 0.3*d:
-            return 0.2*q.random()
+            return 0.4*q.random()
     
     def closed(self, q, i, d):
         if i % 2 == 0 and q.random() < d:
-            return 0.4
+            return 0.8
         elif q.random() < 0.5*d:
-            return 0.3*q.random()
+            return 0.6*q.random()
                 
 if __name__=="__main__":
     pass

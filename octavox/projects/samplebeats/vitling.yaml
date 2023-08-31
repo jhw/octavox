@@ -36,11 +36,11 @@ machines:
       note:
         reversion: 0.5
         step: 4
-        threshold: 0.5
+        threshold: 0.8
       pattern:
         reversion: 0.5
         step: 4
-        threshold: 0.5
+        threshold: 0.8
     patterns:
     - fourfloor
     - electro
@@ -54,11 +54,11 @@ machines:
       note:
         reversion: 0.5
         step: 4
-        threshold: 0.5
+        threshold: 0.8
       pattern:
         reversion: 0.5
         step: 4
-        threshold: 0.5
+        threshold: 0.8
     patterns:
     - backbeat
     - skip
@@ -71,11 +71,11 @@ machines:
       note:
         reversion: 0.5
         step: 4
-        threshold: 0.5
+        threshold: 0.8
       pattern:
         reversion: 0.5
         step: 4
-        threshold: 0.5
+        threshold: 0.8
     patterns:
     - offbeats
     - closed

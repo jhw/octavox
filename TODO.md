@@ -1,12 +1,10 @@
 ### short
 
-- normalise vitling volumes at 1
+- rename sequencer.beats as samplebeats
+- refactor "note" refs as "sample"
 
 ### medium
 
-- move cli into projects root?
-
-- rename sequencer.beats as samplebeats
 - migration of slicebeats archives
 - mutation algos 
 
@@ -140,6 +138,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- normalise vitling volumes at 1
 - update render code to handle vitling algos
 - vitling algo code shouldn't need to return beat name
   - should be able to use self.tag
