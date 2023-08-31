@@ -2,9 +2,11 @@ from octavox.core.model import SVNoteTrig, SVFXTrig
 
 from octavox.core.pools import SVSample
 
+from octavox.machines.sequencers.beats import BeatSequencer
+
 from octavox.projects import Q
 
-import random, yaml
+import yaml
 
 """
 - https://club.tidalcycles.org/t/week-1-lesson-5-mini-notation-part-3/449
@@ -77,24 +79,18 @@ def bjorklund(steps, pulses, **kwargs):
     i = pattern.index(1)
     pattern = pattern[i:] + pattern[0:i]
     return pattern
-
-class EuclidSequencer(dict):
+            
+class EuclidSequencer(BeatSequencer):
     
     @classmethod
     def randomise(self,
                   machine,
-                  pool):
-        def random_samples(pool, tag, n=NSamples):            
-            samples=pool.filter_tag(tag)
-            if samples==[]:
-                samples=pool
-            return [random.choice(samples)
-                    for i in range(n)]
-        def random_seed():
-            return int(1e8*random.random())
-        samples=random_samples(pool=pool,
-                               tag=machine["params"]["tag"])
-        seeds={k:int(1e8*random.random())
+                  pool,
+                  n=NSamples):
+        samples=BeatSequencer.random_samples(pool=pool,
+                                             tag=machine["params"]["tag"],
+                                             n=n)
+        seeds={k:BeatSequencer.random_seed()
                for k in "note|trig|pattern|volume".split("|")}
         return EuclidSequencer({"name": machine["name"],
                                 "class": machine["class"],
@@ -103,16 +99,14 @@ class EuclidSequencer(dict):
                                 "seeds": seeds})
 
     def __init__(self, machine):
-        dict.__init__(self, machine)
-        for k, v in machine["params"].items():
-            setattr(self, k, v)
+        BeatSequencer.__init__(self, machine)
                             
     def clone(self):
         return EuclidSequencer(self)
 
     def random_sample(self, q):
         return q["note"].choice(self["samples"])
-
+    
     def random_pattern(self, q,
                        patterns=Patterns):
         return bjorklund(**q["pattern"].choice(patterns))

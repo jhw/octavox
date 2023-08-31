@@ -1,6 +1,5 @@
 ### short
 
-- sequencer beats base class
 - sample/pattern mean reversion
 - vitling sequencer
 - migration of slicebeats archives
@@ -137,6 +136,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- sequencer beats base class
 - replace global density with per- track density
 - remove minmax density support
 - check raising of RuntimeError in core
