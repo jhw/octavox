@@ -1,5 +1,14 @@
 import random
 
+def add_to_state(attr):
+    def decorator(fn):
+        def wrapped(self, *args, **kwargs):
+            resp=fn(self, *args, **kwargs)
+            self["state"][attr].append(resp)
+            return resp
+        return wrapped
+    return decorator
+
 class BeatSequencer(dict):
 
     """
@@ -22,6 +31,8 @@ class BeatSequencer(dict):
         dict.__init__(self, machine)
         for k, v in machine["params"].items():
             setattr(self, k, v)
+        self["state"]={k:[]
+                       for k in "samples|patterns".split("|")}
 
 if __name__=="__main__":
     pass

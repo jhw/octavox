@@ -2,7 +2,7 @@ from octavox.core.model import SVNoteTrig, SVFXTrig
 
 from octavox.core.pools import SVSample
 
-from octavox.machines.sequencers.beats import BeatSequencer
+from octavox.machines.sequencers.beats import BeatSequencer, add_to_state
 
 from octavox.projects import Q
 
@@ -104,9 +104,11 @@ class EuclidSequencer(BeatSequencer):
     def clone(self):
         return EuclidSequencer(self)
 
+    @add_to_state("samples")
     def random_sample(self, q):
         return q["note"].choice(self["samples"])
-    
+
+    @add_to_state("patterns")
     def random_pattern(self, q,
                        patterns=Patterns):
         return bjorklund(**q["pattern"].choice(patterns))
