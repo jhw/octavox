@@ -68,22 +68,6 @@ def assert_project(fn):
         return fn(self, *args, **kwargs)
     return wrapped
 
-class SVEnvironment(dict):
-
-    def __init__(self, item={}):
-        dict.__init__(self, item)
-
-    def lookup(self, abbrev):
-        matches=[]
-        for key in self:
-            if is_abbrev(abbrev, key):
-                matches.append(key)
-        if matches==[]:
-            raise RuntimeError("%s not found" % abbrev)
-        elif len(matches) > 1:
-            raise RuntimeError("multiple key matches for %s" % abbrev)
-        return matches.pop()
-
 class SVBaseCli(cmd.Cmd):
 
     prompt=">>> "
@@ -92,7 +76,7 @@ class SVBaseCli(cmd.Cmd):
                  s3,
                  projectname,
                  bucketname,
-                 params,
+                 env,
                  modules,
                  links,
                  historysize=HistorySize):
@@ -104,7 +88,7 @@ class SVBaseCli(cmd.Cmd):
         self.init_subdirs()
         self.core=modules
         self.links=links
-        self.env=SVEnvironment(params)
+        self.env=env
         self.patches=None
         self.filename=None
         self.historyfile=os.path.expanduser("%s/.clihistory" % self.outdir)
@@ -119,20 +103,6 @@ class SVBaseCli(cmd.Cmd):
     def preloop(self):
         if os.path.exists(self.historyfile):
             readline.read_history_file(self.historyfile)
-
-    @parse_line()
-    def do_show_params(self):
-        for key in sorted(self.env.keys()):
-            print ("%s: %s" % (key, self.env[key]))
-    
-    @parse_line(config=[{"name": "pat",
-                         "type": "str"},
-                        {"name": "value",
-                         "type": "number"}])
-    def do_set_param(self, pat, value):
-        key=self.env.lookup(pat)
-        self.env[key]=value
-        print ("INFO: %s=%s" % (key, self.env[key]))
 
     @parse_line()
     def do_list_projects(self):

@@ -1,6 +1,5 @@
 ### short
 
-- undo env support and replace with simple dict
 - migration of slicebeats archives
 
 ### medium
@@ -139,6 +138,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- undo env support and replace with simple dict
 - rename euclidbeats
 - split modules into core and modules
 - pass machines filename to cli class

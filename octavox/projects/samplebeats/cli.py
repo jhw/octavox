@@ -81,7 +81,7 @@ Links=yaml.safe_load("""
   - Output
 """)
 
-Params=yaml.safe_load("""
+Env=yaml.safe_load("""
 density: 0.5
 nbeats: 16
 npatches: 32
@@ -109,7 +109,7 @@ if __name__=="__main__":
               projectname="samplebeats",
               bucketname=bucketname,
               poolname=poolname,
-              params=Params,
+              env=Env,
               modules=Modules,
               links=Links,
               banks=banks,
