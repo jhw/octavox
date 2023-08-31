@@ -1,14 +1,11 @@
 ### short
 
-- update render code to handle vitling algos
-
-- vitling algo code shouldn't need to return beat name
-  - should be able to use self.tag
-  - can then just return volume or None
+- normalise vitling volumes at 1
 
 ### medium
 
-- move cli into projects root 
+- move cli into projects root?
+
 - rename sequencer.beats as samplebeats
 - migration of slicebeats archives
 - mutation algos 
@@ -143,6 +140,10 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- update render code to handle vitling algos
+- vitling algo code shouldn't need to return beat name
+  - should be able to use self.tag
+  - can then just return volume or None  
 - initialise pattern from patterns
 - add patterns to vitling.yaml
 - add vitling beat code to sequencer
