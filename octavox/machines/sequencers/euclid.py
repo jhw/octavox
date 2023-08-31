@@ -114,8 +114,14 @@ class EuclidSequencer(dict):
     def random_sample(self, q):
         return q["note"].choice(self["samples"])
 
-    def random_pattern(self, q, patterns=Patterns):
-        mindensity, maxdensity = 0, 1
+    """
+    - min/max density could be part of config
+    """
+    
+    def random_pattern(self, q,
+                       patterns=Patterns,
+                       mindensity=0,
+                       maxdensity=1):
         selected=[pat for pat in patterns
                   if (pat["density"] > mindensity and
                       pat["density"] < maxdensity)]
@@ -123,6 +129,10 @@ class EuclidSequencer(dict):
             raise RuntimeError("no available patterns for %s" % self.tag)
         return bjorklund(**q["pattern"].choice(selected))
 
+    """
+    - could add state variables and mean reversion here
+    """
+    
     def switch_sample(self, q, i):
         return (0 == i % self.modulation["note"]["step"] and
                     q["trig"].random() < self.modulation["note"]["threshold"])
@@ -130,6 +140,10 @@ class EuclidSequencer(dict):
     def switch_pattern(self, q, i):
         return (0 == i % self.modulation["pattern"]["step"] and
                 q["trig"].random() < self.modulation["pattern"]["threshold"])
+
+    """
+    - for the moment it's either/or in terms of sample/pattern switching
+    """
     
     def render(self, nbeats, density):
         q={k:Q(v) for k, v in self["seeds"].items()}
@@ -138,7 +152,7 @@ class EuclidSequencer(dict):
         for i in range(nbeats):
             if self.switch_sample(q, i):
                 sample=self.random_sample(q)
-            if self.switch_pattern(q, i):
+            elif self.switch_pattern(q, i):
                 pattern=self.random_pattern(q)
             beat=bool(pattern[i % len(pattern)])
             if q["trig"].random() < density and beat:

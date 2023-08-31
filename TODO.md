@@ -1,19 +1,21 @@
 ### short
 
+- sequencer beats subdir
+- sequencer beats base class
+- vitling sequencer
+- implement pattern density minimax args
+- density to be a local arg
 - migration of slicebeats archives
 
 ### medium
 
-- change density to be a local arg
-
-- [euclid] move volume parameterisation into machines.yaml?
-- [euclid] add pattern density minmax
-- [euclid] pattern/sample mean reversion
-
+- sample/pattern mean reversion
 - mutation algos 
 
 ### thoughts
 
+- [euclid] move volume parameterisation into machines.yaml?
+  - probably overkill
 - have a fixed set of patterns a la slicebeats?
   - feels like over- optimisation again
 - density min/max variables when choosing patterns?
