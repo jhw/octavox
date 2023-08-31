@@ -1,11 +1,15 @@
 ### short
 
-- vitling sequencer
+- move reversion parameters under modulation 
+- simply number of different attr names being passed to mean revert decorator 
 
-- migration of slicebeats archives
+- merge modules and links back into machines.yaml
+- rename as hello and accept command line arg
 
 ### medium
 
+- vitling sequencer
+- migration of slicebeats archives
 - mutation algos 
 
 ### thoughts
