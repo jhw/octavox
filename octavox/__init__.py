@@ -1,7 +1,4 @@
-import os, socket, yaml
-
-def load_yaml(filename):
-    return yaml.safe_load(open(os.path.join(os.path.dirname(__file__), filename)).read())
+import socket
 
 """
 - https://stackoverflow.com/a/33117579/124179

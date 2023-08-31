@@ -1,4 +1,4 @@
-from octavox import load_yaml, has_internet
+from octavox import has_internet
 
 from octavox.core import is_abbrev, list_s3_keys
 
@@ -12,10 +12,10 @@ from octavox.core.project import SVProject
 
 from datetime import datetime
 
-import boto3, cmd, json, os, random, readline
+import boto3, cmd, json, os, random, readline, yaml
 
-Nouns, Adjectives = (load_yaml("core/cli/nouns.yaml"),
-                     load_yaml("core/cli/adjectives.yaml"))
+Nouns, Adjectives = (yaml.safe_load(open("octavox/core/cli/nouns.yaml").read()),
+                     yaml.safe_load(open("octavox/core/cli/adjectives.yaml").read()))
 
 HistorySize=100
 

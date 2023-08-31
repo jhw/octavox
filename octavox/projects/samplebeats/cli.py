@@ -1,5 +1,3 @@
-from octavox import load_yaml
-
 from octavox.core.banks import SVBanks
 
 from octavox.core.cli import SVBankCli, render_patches
@@ -28,7 +26,8 @@ class SVCli(SVBankCli):
     @parse_line()
     @render_patches(prefix="random")
     def do_randomise_patches(self):
-        machines, patches = load_yaml(self.machines), []
+        machines=yaml.safe_load(open(self.machines).read())
+        patches=[]        
         for i in range(self.env["npatches"]):
             patch=SVPatch.randomise(machines=machines,
                                     pool=self.pools[self.poolname])
@@ -103,7 +102,7 @@ if __name__=="__main__":
         poolname=random.choice(list(pools.keys()))
         print ("INFO: pool=%s" % poolname)
         SVCli(s3=s3,
-              machines="projects/samplebeats/machines.yaml",
+              machines="octavox/projects/samplebeats/machines.yaml",
               projectname="samplebeats",
               bucketname=bucketname,
               poolname=poolname,
