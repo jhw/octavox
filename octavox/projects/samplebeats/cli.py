@@ -8,7 +8,7 @@ from octavox.core.model import SVNoteTrig, SVPatch
 
 from octavox.core.pools import SVSample, SVPools, SVPool
 
-import boto3, os, random, yaml
+import boto3, os, random, sys, yaml
 
 MinPoolSize=12
 
@@ -92,6 +92,12 @@ sn: (snare)|(sn)|(sd)|(clap)|(clp)|(cp)|(hc)|(rim)|(plip)|(rs)
 
 if __name__=="__main__":
     try:
+        if len(sys.argv) < 2:
+            raise RuntimeError("please enter filename")
+        filename=sys.argv[1]
+        if not os.path.exists(filename):
+            raise RuntimeError("file does not exist")
+        struct=yaml.safe_load(open(filename).read())
         bucketname=os.environ["OCTAVOX_ASSETS_BUCKET"]
         if bucketname in ["", None]:
             raise RuntimeError("OCTAVOX_ASSETS_BUCKET does not exist")
@@ -99,16 +105,15 @@ if __name__=="__main__":
         banks=SVBanks.initialise(s3, bucketname)
         pools=init_pools(banks, terms=Curated)
         poolname=random.choice(list(pools.keys()))
-        machines=yaml.safe_load(open("octavox/projects/samplebeats/machines.yaml").read())
         print ("INFO: pool=%s" % poolname)
         SVCli(s3=s3,
-              machines=machines,
+              machines=struct["machines"],
               projectname="samplebeats",
               bucketname=bucketname,
               poolname=poolname,
               env=Env,
-              modules=Modules,
-              links=Links,
+              modules=struct["modules"],
+              links=struct["links"],
               banks=banks,
               pools=pools).cmdloop()
     except RuntimeError as error:

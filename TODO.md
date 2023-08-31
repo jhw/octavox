@@ -1,8 +1,6 @@
 ### short
 
 - simply number of different attr names being passed to mean revert decorator 
-- merge modules and links back into machines.yaml
-- rename as hello and accept command line arg
 
 ### medium
 
@@ -138,6 +136,8 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- merge modules and links back into machines.yaml
+- rename as hello and accept command line arg
 - remove load_yaml
 - move reversion parameters under modulation 
 - sample/pattern mean reversion
