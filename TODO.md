@@ -1,6 +1,5 @@
 ### short
 
-- initialise pattern from patterns
 - update render code to handle vitling algos
 
 - vitling algo code shouldn't need to return beat name
@@ -144,6 +143,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- initialise pattern from patterns
 - add patterns to vitling.yaml
 - add vitling beat code to sequencer
 - copy hello.yaml to euclid.yaml

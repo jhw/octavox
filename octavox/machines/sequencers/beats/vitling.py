@@ -37,9 +37,8 @@ class VitlingSequencer(BeatSequencer):
     @mean_revert(attr="patterns",
                  qattr="trig",
                  modattr="pattern")
-    def random_pattern(self, q,
-                       patterns=Patterns):
-        return bjorklund(**q["pattern"].choice(patterns))
+    def random_pattern(self, q):
+        return q["pattern"].choice(self.patterns)
 
     """
     - for the moment it's either/or in terms of sample/pattern switching
