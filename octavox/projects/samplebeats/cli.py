@@ -26,10 +26,9 @@ class SVCli(SVBankCli):
     @parse_line()
     @render_patches(prefix="random")
     def do_randomise_patches(self):
-        machines=yaml.safe_load(open(self.machines).read())
         patches=[]        
         for i in range(self.env["npatches"]):
-            patch=SVPatch.randomise(machines=machines,
+            patch=SVPatch.randomise(machines=self.machines,
                                     pool=self.pools[self.poolname])
             patches.append(patch)
         return patches
@@ -100,9 +99,10 @@ if __name__=="__main__":
         banks=SVBanks.initialise(s3, bucketname)
         pools=init_pools(banks, terms=Curated)
         poolname=random.choice(list(pools.keys()))
+        machines=yaml.safe_load(open("octavox/projects/samplebeats/machines.yaml").read())
         print ("INFO: pool=%s" % poolname)
         SVCli(s3=s3,
-              machines="octavox/projects/samplebeats/machines.yaml",
+              machines=machines,
               projectname="samplebeats",
               bucketname=bucketname,
               poolname=poolname,
