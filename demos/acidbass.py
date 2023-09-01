@@ -20,7 +20,7 @@ Modules=yaml.safe_load("""
     f_release: 192
     f_exponential_freq: 0
     f_freq_hz: 4096
-    f_resonance: 1350
+    f_resonance: 1450
 - name: Echo
   class: rv.modules.echo.Echo
   defaults:
@@ -49,7 +49,6 @@ def acid_bass(wavefn,
               velfn,
               relfn,
               freqfn,
-              resfn,
               nbeats=16):
     def note_trig(trigs, target, note, vel, i):
         trigs.append(SVNoteTrig(mod=target,
@@ -60,7 +59,7 @@ def acid_bass(wavefn,
         trigs.append(SVFXTrig(target=target,
                               value=value,
                               i=i))
-    wave, resonance = wavefn(), resfn()
+    wave=wavefn()
     trigs=SVTrigs(nbeats=nbeats)
     for i in range(nbeats):
         if trigfn(i):
@@ -68,7 +67,6 @@ def acid_bass(wavefn,
             fx_trig(trigs, "Generator/waveform", wave, i)
             fx_trig(trigs, "Generator/f_release", relfn(), i)
             fx_trig(trigs, "Generator/f_freq_hz", freqfn(), i)
-            fx_trig(trigs, "Generator/f_resonance", resonance, i)
     return trigs.tracks
 
 def spawn_patches(npatches=32):
@@ -92,35 +90,16 @@ def spawn_patches(npatches=32):
             return basenote+12
     def velfn():
         return 1 if random.random() < 0.3 else 0.8
-    def spawn_relfn(H=["89ab",
-                       "abcd",
-                       "8ace",
-                       "47ad"]):
-        values=random.choice([hexvalues(h) for h in H])
-        def wrapped():
-            return random.choice(values)
-        return wrapped
-    def spawn_freqfn(H=["04|08|0c|10".split("|"),
-                        "04|08|0c|10".split("|"),
-                        "08|10|18|20".split("|"),
-                        "08|10|18|20".split("|"),
-                        "1234",
-                        "1234",
-                        "2345",
-                        "1357"]):
-        values=random.choice([hexvalues(h) for h in H])
-        def wrapped():
-            return random.choice(values)
-        return wrapped
-    def resfn(h="bcdeefff"):
-        return random.choice(hexvalues(h))
+    def relfn(H="abcd"):
+        return random.choice(hexvalues(H))
+    def freqfn(H="0c|0e|0f|10|11|12".split("|")):
+        return random.choice(hexvalues(H))
     return [acid_bass(wavefn=wavefn,
                       trigfn=trigfn,
                       notefn=notefn,
                       velfn=velfn,
-                      relfn=spawn_relfn(),
-                      freqfn=spawn_freqfn(),
-                      resfn=resfn)
+                      relfn=relfn,
+                      freqfn=freqfn)
             for i in range(npatches)]
 
 if __name__=="__main__":

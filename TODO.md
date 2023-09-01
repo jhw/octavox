@@ -1,5 +1,7 @@
 ### short
 
+- nsamples should be part of params
+
 ### medium
 
 - mutation algos 
