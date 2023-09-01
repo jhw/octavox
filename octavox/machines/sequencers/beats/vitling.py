@@ -34,9 +34,7 @@ class VitlingSequencer(BeatSequencer):
     def clone(self):
         return VitlingSequencer(self)
 
-    @mean_revert(attr="patterns",
-                 qattr="trig",
-                 modattr="pattern")
+    @mean_revert(attr="pattern")
     def random_pattern(self, q):
         return q["pattern"].choice(self.patterns)
 

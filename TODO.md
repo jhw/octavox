@@ -2,9 +2,9 @@
 
 ### medium
 
-- migration of slicebeats archives
-- test archiving and reanimating projects
 - mutation algos 
+- test archiving and reanimating projects
+- migration of slicebeats archives
 
 ### thoughts
 

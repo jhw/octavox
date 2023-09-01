@@ -104,9 +104,7 @@ class EuclidSequencer(BeatSequencer):
     def clone(self):
         return EuclidSequencer(self)
 
-    @mean_revert(attr="patterns",
-                 qattr="trig",
-                 modattr="pattern")
+    @mean_revert(attr="pattern")
     def random_pattern(self, q,
                        patterns=Patterns):
         return bjorklund(**q["pattern"].choice(patterns))
