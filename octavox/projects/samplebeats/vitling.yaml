@@ -41,6 +41,7 @@ machines:
         reversion: 0.5
         step: 4
         threshold: 0.8
+    nsamples: 4
     patterns:
     - fourfloor
     - electro
@@ -59,6 +60,7 @@ machines:
         reversion: 0.5
         step: 4
         threshold: 0.8
+    nsamples: 4
     patterns:
     - backbeat
     - skip
@@ -76,6 +78,7 @@ machines:
         reversion: 0.5
         step: 4
         threshold: 0.8
+    nsamples: 4
     patterns:
     - offbeats
     - closed

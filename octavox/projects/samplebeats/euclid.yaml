@@ -41,6 +41,7 @@ machines:
         reversion: 0.5
         step: 4
         threshold: 0.5
+    nsamples: 4
     tag: kk
 - class: octavox.machines.sequencers.beats.euclid.EuclidSequencer
   name: SnareSampler
@@ -55,6 +56,7 @@ machines:
         reversion: 0.5
         step: 4
         threshold: 0.5
+    nsamples: 4
     tag: sn
 - class: octavox.machines.sequencers.beats.euclid.EuclidSequencer
   name: HatSampler
@@ -69,6 +71,7 @@ machines:
         reversion: 0.5
         step: 4
         threshold: 0.5
+    nsamples: 4
     tag: ht
 - class: octavox.machines.modulators.sample_hold.SampleHoldModulator
   name: Echo/wet

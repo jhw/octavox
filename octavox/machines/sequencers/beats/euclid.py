@@ -40,8 +40,6 @@ Patterns=[{"pulses": pat[0],
 - [13, 24, 5] # Another rhythm necklace of the Aka Pygmies of the upper Sangha
 """)]
 
-NSamples=4
-
 """
 - https://raw.githubusercontent.com/brianhouse/bjorklund/master/__init__.py
 """
@@ -85,11 +83,10 @@ class EuclidSequencer(BeatSequencer):
     @classmethod
     def randomise(self,
                   machine,
-                  pool,
-                  n=NSamples):
+                  pool):
         samples=BeatSequencer.random_samples(pool=pool,
                                              tag=machine["params"]["tag"],
-                                             n=n)
+                                             n=machine["params"]["nsamples"])
         seeds={k:BeatSequencer.random_seed()
                for k in "sample|trig|pattern|volume".split("|")}
         return EuclidSequencer({"name": machine["name"],

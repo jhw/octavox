@@ -8,18 +8,15 @@ from octavox.projects import Q
 
 import yaml
 
-NSamples=4
-
 class VitlingSequencer(BeatSequencer):
     
     @classmethod
     def randomise(self,
                   machine,
-                  pool,
-                  n=NSamples):
+                  pool):
         samples=BeatSequencer.random_samples(pool=pool,
                                              tag=machine["params"]["tag"],
-                                             n=n)
+                                             n=machine["params"]["nsamples"])
         seeds={k:BeatSequencer.random_seed()
                for k in "sample|trig|pattern|volume".split("|")}
         return VitlingSequencer({"name": machine["name"],
