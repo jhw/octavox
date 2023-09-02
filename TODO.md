@@ -1,12 +1,14 @@
 ### short
 
-- nsamples should be part of params
+- replace config files with dynamic creation
+- test archiving and reanimating projects
 
 ### medium
 
-- mutation algos 
-- test archiving and reanimating projects
-- migration of slicebeats archives
+- check lookup functions are all being used
+- mutation, export algos 
+- cli based regex tagging
+- migrate slicebeats archives
 
 ### thoughts
 
@@ -140,6 +142,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- nsamples should be part of params
 - refactor "note" refs as "sample"
 - normalise vitling volumes at 1
 - update render code to handle vitling algos
