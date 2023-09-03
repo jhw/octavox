@@ -1,7 +1,7 @@
 ### short
 
-- pass sequencers and machines separately into cli
-- randomise choice of sequencers
+- pass all sequencers in, make random choice and log them
+
 - create sequencers dynamically
 - create modulators dynamically
 
@@ -147,6 +147,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- pass sequencers and machines separately into cli
 - make projects a module
 - single cli
 - move Q into machines

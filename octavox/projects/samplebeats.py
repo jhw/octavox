@@ -17,18 +17,21 @@ class SVCli(SVBankCli):
     intro="Welcome to Samplebeats :)"
 
     def __init__(self,
-                 machines,
+                 sequencers,
+                 modulators,
                  *args,
                  **kwargs):
         SVBankCli.__init__(self, *args, **kwargs)
-        self.machines=machines
-        
+        self.sequencers=sequencers
+        self.modulators=modulators
+
     @parse_line()
     @render_patches(prefix="random")
     def do_randomise_patches(self):
+        machines=self.sequencers+self.modulators
         patches=[]        
         for i in range(self.env["npatches"]):
-            patch=SVPatch.randomise(machines=self.machines,
+            patch=SVPatch.randomise(machines=machines,
                                     pool=self.pools[self.poolname])
             patches.append(patch)
         return patches
@@ -230,7 +233,8 @@ if __name__=="__main__":
         poolname=random.choice(list(pools.keys()))
         print ("INFO: pool=%s" % poolname)
         SVCli(s3=s3,
-              machines=EuclidSequencers+Modulators,
+              sequencers=EuclidSequencers,
+              modulators=Modulators,
               projectname="samplebeats",
               bucketname=bucketname,
               poolname=poolname,
