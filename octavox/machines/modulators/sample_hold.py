@@ -1,6 +1,6 @@
 from octavox.core.model import SVFXTrig
 
-from octavox.projects import Q
+from octavox.machines import Q
 
 import random
 

@@ -2,9 +2,9 @@ from octavox.core.model import SVNoteTrig, SVFXTrig
 
 from octavox.core.pools import SVSample
 
-from octavox.machines.sequencers.beats import BeatSequencer, mean_revert
+from octavox.machines import Q
 
-from octavox.projects import Q
+from octavox.machines.sequencers.beats import BeatSequencer, mean_revert
 
 import yaml
 

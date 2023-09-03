@@ -1,11 +1,17 @@
 ### short
 
-- replace config files with dynamic creation
-- test archiving and reanimating projects
+- make projects a module
+- pass sequencers and machines separately into cli
+- randomise choice of sequencers
+- create sequencers dynamically
+- create modulators dynamically
 
 ### medium
 
+- test archiving and reanimating projects
 - check lookup functions are all being used
+- consider fixing, banning by passing sunvox hex expression eg "a07F01"
+- consider randomising pools on per sequencer basis rather than having single fixed pool
 - mutation, export algos 
 - cli based regex tagging
 - migrate slicebeats archives
@@ -142,6 +148,8 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- single cli
+- move Q into machines
 - nsamples should be part of params
 - refactor "note" refs as "sample"
 - normalise vitling volumes at 1
