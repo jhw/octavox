@@ -1,5 +1,7 @@
 ### short
 
+- rename sequencers (eg EuclidSampleSequencer)
+
 - initialise sequencers, modulators dynamically
 
 ### medium
