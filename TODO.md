@@ -1,6 +1,5 @@
 ### short
 
-- make projects a module
 - pass sequencers and machines separately into cli
 - randomise choice of sequencers
 - create sequencers dynamically
@@ -148,6 +147,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- make projects a module
 - single cli
 - move Q into machines
 - nsamples should be part of params
