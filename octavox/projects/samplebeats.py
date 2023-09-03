@@ -92,7 +92,7 @@ Links=yaml.safe_load("""
 """)
 
 EuclidSequencers=yaml.safe_load("""
-- class: octavox.machines.sequencers.beats.euclid.EuclidSequencer
+- class: octavox.machines.sequencers.samples.euclid.EuclidSampleSequencer
   name: KickSampler
   params:
     density: 0.66666
@@ -107,7 +107,7 @@ EuclidSequencers=yaml.safe_load("""
         threshold: 0.5
     nsamples: 4
     tag: kk
-- class: octavox.machines.sequencers.beats.euclid.EuclidSequencer
+- class: octavox.machines.sequencers.samples.euclid.EuclidSampleSequencer
   name: SnareSampler
   params:
     density: 0.33333
@@ -122,7 +122,7 @@ EuclidSequencers=yaml.safe_load("""
         threshold: 0.5
     nsamples: 4
     tag: sn
-- class: octavox.machines.sequencers.beats.euclid.EuclidSequencer
+- class: octavox.machines.sequencers.samples.euclid.EuclidSampleSequencer
   name: HatSampler
   params:
     density: 0.9
@@ -140,7 +140,7 @@ EuclidSequencers=yaml.safe_load("""
 """)
 
 VitlingSequencers=yaml.safe_load("""
-- class: octavox.machines.sequencers.beats.vitling.VitlingSequencer
+- class: octavox.machines.sequencers.samples.vitling.VitlingSampleSequencer
   name: KickSampler
   params:
     density: 1.0
@@ -159,7 +159,7 @@ VitlingSequencers=yaml.safe_load("""
     - electro
     - triplets
     tag: kk
-- class: octavox.machines.sequencers.beats.vitling.VitlingSequencer
+- class: octavox.machines.sequencers.samples.vitling.VitlingSampleSequencer
   name: SnareSampler
   params:
     density: 1.0
@@ -177,7 +177,7 @@ VitlingSequencers=yaml.safe_load("""
     - backbeat
     - skip
     tag: sn
-- class: octavox.machines.sequencers.beats.vitling.VitlingSequencer
+- class: octavox.machines.sequencers.samples.vitling.VitlingSampleSequencer
   name: HatSampler
   params:
     density: 1.0

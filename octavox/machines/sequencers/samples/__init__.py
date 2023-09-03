@@ -12,7 +12,7 @@ def mean_revert(attr):
         return wrapped
     return decorator
 
-class BeatSequencer(dict):
+class SampleSequencer(dict):
 
     """
     - remember tag may not be present in pool, hence need a default catch-all

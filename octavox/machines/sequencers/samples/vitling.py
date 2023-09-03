@@ -4,32 +4,32 @@ from octavox.core.pools import SVSample
 
 from octavox.machines import Q
 
-from octavox.machines.sequencers.beats import BeatSequencer, mean_revert
+from octavox.machines.sequencers.samples import SampleSequencer, mean_revert
 
 import yaml
 
-class VitlingSequencer(BeatSequencer):
+class VitlingSampleSequencer(SampleSequencer):
     
     @classmethod
     def randomise(self,
                   machine,
                   pool):
-        samples=BeatSequencer.random_samples(pool=pool,
-                                             tag=machine["params"]["tag"],
-                                             n=machine["params"]["nsamples"])
-        seeds={k:BeatSequencer.random_seed()
+        samples=SampleSequencer.random_samples(pool=pool,
+                                               tag=machine["params"]["tag"],
+                                               n=machine["params"]["nsamples"])
+        seeds={k:SampleSequencer.random_seed()
                for k in "sample|trig|pattern|volume".split("|")}
-        return VitlingSequencer({"name": machine["name"],
-                                "class": machine["class"],
-                                "params": machine["params"],
-                                "samples": samples,
-                                "seeds": seeds})
+        return VitlingSampleSequencer({"name": machine["name"],
+                                       "class": machine["class"],
+                                       "params": machine["params"],
+                                       "samples": samples,
+                                       "seeds": seeds})
 
     def __init__(self, machine):
-        BeatSequencer.__init__(self, machine)
+        SampleSequencer.__init__(self, machine)
                             
     def clone(self):
-        return VitlingSequencer(self)
+        return VitlingSampleSequencer(self)
 
     @mean_revert(attr="pattern")
     def random_pattern(self, q):

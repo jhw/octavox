@@ -1,7 +1,5 @@
 ### short
 
-- rename sequencers (eg EuclidSampleSequencer)
-
 - initialise sequencers, modulators dynamically
 
 ### medium
@@ -145,6 +143,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- rename sequencers (eg EuclidSampleSequencer)
 - pass all sequencers in, make random choice and log them
 - pass sequencers and machines separately into cli
 - make projects a module
