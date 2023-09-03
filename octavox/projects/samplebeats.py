@@ -27,7 +27,7 @@ class SVCli(SVBankCli):
 
     @parse_line()
     @render_patches(prefix="random")
-    def do_randomise_patches(self):
+    def do_randomise_patches(self):       
         machines=self.sequencers+self.modulators
         patches=[]        
         for i in range(self.env["npatches"]):
@@ -36,6 +36,16 @@ class SVCli(SVBankCli):
             patches.append(patch)
         return patches
 
+def randomise_sequencers(sequencers):
+    def group_sequencers(seqs):
+            groups={}
+            for seq in seqs:
+                groups.setdefault(seq["name"], [])
+                groups[seq["name"]].append(seq)
+            return groups
+    return [random.choice(seqs)
+            for seqs in group_sequencers(sequencers).values()]
+    
 def init_pools(banks, terms, limit=MinPoolSize):
     pools, globalz = SVPools(), SVPools()
     for bankname, bank in banks.items():
@@ -232,8 +242,11 @@ if __name__=="__main__":
         pools=init_pools(banks, terms=Curated)
         poolname=random.choice(list(pools.keys()))
         print ("INFO: pool=%s" % poolname)
-        SVCli(s3=s3,
-              sequencers=EuclidSequencers,
+        sequencers=randomise_sequencers(EuclidSequencers+VitlingSequencers)
+        for seq in sequencers:
+            print ("INFO: %s=%s" % (seq["name"], seq["class"].split(".")[-1]))
+        SVCli(s3=s3,                                  
+              sequencers=sequencers,
               modulators=Modulators,
               projectname="samplebeats",
               bucketname=bucketname,

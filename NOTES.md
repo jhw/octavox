@@ -1,3 +1,18 @@
+### per sampler pools 03/09/23
+
+- instead of passing a single pool to sampler and having it optimisitically look for tags, what about passing different pools to samplers?
+- would mean existing pool cli code is redundant
+- would mean sample lookup no longer looks at tags, it just looks at whatever samples it is presented with
+- this is might be desirable; tags are used only at the project level, not the core level; it would also give the cli more power to create pools
+- randomise could allocate different pools to different channels
+- you wouldn't need the global stuff any more
+- you probaby don't need the free pools stuff any more 
+- as free pools are really a hack, stuffing all samples in each channel
+- so you just have curated pools
+- sample lookup looks for tags optimistically, but otherwise selects from all
+- cli randomly selects three (curated) pools
+- but you have the option of fixing pools
+
 ### roadmap 30/08/23
 
 - one euclid and vitling are abstracted into modules/sequencers, opens up the possibilty that you just have a single top level api and that a patch is just a yaml file like machines.yaml

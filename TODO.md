@@ -1,18 +1,14 @@
 ### short
 
-- pass all sequencers in, make random choice and log them
-
-- create sequencers dynamically
-- create modulators dynamically
+- initialise sequencers, modulators dynamically
 
 ### medium
 
-- test archiving and reanimating projects
-- check lookup functions are all being used
-- consider fixing, banning by passing sunvox hex expression eg "a07F01"
-- consider randomising pools on per sequencer basis rather than having single fixed pool
+- pass pools on per- channel basis [notes]
+- fix/ban samples via passing of six digits sunvox hex expression
+- global (cli) and local densities
+
 - mutation, export algos 
-- cli based regex tagging
 - migrate slicebeats archives
 
 ### thoughts
@@ -147,6 +143,7 @@ ValueError: Value is not in range 1-32
 
 ### done
 
+- pass all sequencers in, make random choice and log them
 - pass sequencers and machines separately into cli
 - make projects a module
 - single cli
