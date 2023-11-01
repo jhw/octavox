@@ -1,3 +1,9 @@
+### euclid patterns 01/11/23
+
+- https://club.tidalcycles.org/t/week-1-lesson-5-mini-notation-part-3/449
+- https://www.jakerichterdrums.com/13randomwords/2022/4/13/euclidean-rhythm
+- http://cgm.cs.mcgill.ca/~godfried/publications/banff.pdf
+
 ### per sampler pools 03/09/23
 
 - instead of passing a single pool to sampler and having it optimisitically look for tags, what about passing different pools to samplers?

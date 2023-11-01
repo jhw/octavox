@@ -1,8 +1,7 @@
 ### short
 
-- move euclid patterns into config
+- move sequencer, modulator randomisation code into cli
 - separate sn/kk/ht patterns according to density
-
 - randomise machines on per patch basis
 
 ### medium
@@ -22,6 +21,7 @@
 
 ### done
 
+- move euclid patterns into config
 - simplify euclid patterns
 - remove samples subdir from sequencers
 - single sequencers list
