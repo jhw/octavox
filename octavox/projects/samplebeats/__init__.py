@@ -10,13 +10,8 @@ from octavox.core.pools import SVSample, SVPools, SVPool
 
 import boto3, os, random, sys, yaml
 
-Modules=yaml.safe_load(open("octavox/projects/samplebeats/modules.yaml").read())
-
-Links=yaml.safe_load(open("octavox/projects/samplebeats/links.yaml").read())
-
-Sequencers=yaml.safe_load(open("octavox/projects/samplebeats/sequencers.yaml").read())
-
-Modulators=yaml.safe_load(open("octavox/projects/samplebeats/modulators.yaml").read())
+Modules, Links, Sequencers, Modulators = [yaml.safe_load(open("octavox/projects/samplebeats/%s.yaml" % attr).read())
+                                          for attr in "modules|links|sequencers|modulators".split("|")]
 
 Env=yaml.safe_load("""
 nbeats: 16
@@ -32,6 +27,19 @@ sn: (snare)|(sn)|(sd)|(clap)|(clp)|(cp)|(hc)|(rim)|(plip)|(rs)
 
 MinPoolSize=12
 
+class SequencerMap(dict):
+
+    def __init__(self, sequencers):
+        groups={}
+        for seq in sequencers:
+            groups.setdefault(seq["name"], [])
+            groups[seq["name"]].append(seq)
+        dict.__init__(self, groups)
+
+    def randomise(self):
+        return [random.choice(self[key])
+                for key in self]
+        
 class SVCli(SVBankCli):
 
     intro="Welcome to Samplebeats :)"
@@ -42,30 +50,20 @@ class SVCli(SVBankCli):
                  *args,
                  **kwargs):
         SVBankCli.__init__(self, *args, **kwargs)
-        self.sequencers=sequencers
+        self.sequencers=SequencerMap(sequencers)
         self.modulators=modulators
 
     @parse_line()
     @render_patches(prefix="random")
-    def do_randomise_patches(self):       
-        machines=self.sequencers+self.modulators
-        patches=[]        
+    def do_randomise_patches(self):
+        patches=[]
         for i in range(self.env["npatches"]):
+            machines=self.sequencers.randomise()+self.modulators
             patch=SVPatch.initialise(machines=machines,
                                      pool=self.pools[self.poolname])
             patches.append(patch)
         return patches
 
-def randomise_sequencers(sequencers):
-    def group_sequencers(seqs):
-            groups={}
-            for seq in seqs:
-                groups.setdefault(seq["name"], [])
-                groups[seq["name"]].append(seq)
-            return groups
-    return [random.choice(seqs)
-            for seqs in group_sequencers(sequencers).values()]
-    
 def init_pools(banks, terms, limit=MinPoolSize):
     pools, globalz = SVPools(), SVPools()
     for bankname, bank in banks.items():
@@ -88,11 +86,8 @@ if __name__=="__main__":
         pools=init_pools(banks, terms=Curated)
         poolname=random.choice(list(pools.keys()))
         print ("INFO: pool=%s" % poolname)
-        sequencers=randomise_sequencers(Sequencers)
-        for seq in sequencers:
-            print ("INFO: %s=%s" % (seq["name"], seq["class"].split(".")[-1]))
         SVCli(s3=s3,                                  
-              sequencers=sequencers,
+              sequencers=Sequencers,
               modulators=Modulators,
               projectname="samplebeats",
               bucketname=bucketname,

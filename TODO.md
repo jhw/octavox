@@ -1,7 +1,5 @@
 ### short
 
-- randomise machines on per patch basis
-
 - separate sn/kk/ht patterns according to density
 
 ### medium
@@ -15,14 +13,15 @@
 - mutate action
 - chain action
 
-- incorporate 3rd euclid arg
 - migrate slicebeats archives
-- eliminate fixes
+- incorporate 3rd euclid arg
 
 ### thoughts
 
 ### done
 
+- eliminate fixes
+- randomise machines on per patch basis
 - move euclid patterns into config
 - simplify euclid patterns
 - remove samples subdir from sequencers
