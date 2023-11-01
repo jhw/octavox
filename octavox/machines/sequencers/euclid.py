@@ -14,9 +14,7 @@ import yaml
 - http://cgm.cs.mcgill.ca/~godfried/publications/banff.pdf
 """
 
-Patterns=[{"pulses": pat[0],
-           "steps": pat[1]}
-          for pat in yaml.safe_load("""
+Patterns=yaml.safe_load("""
 - [2, 5] # A thirteenth century Persian rhythm called Khafif-e-ramal
 - [3, 4] # The archetypal pattern of the Cumbia from Colombia, as well as a Calypso rhythm from Trinidad
 - [3, 5, 2] # Another thirteenth century Persian rhythm by the name of Khafif-e-ramal, as well as a Rumanian folk-dance rhythm
@@ -38,7 +36,7 @@ Patterns=[{"pulses": pat[0],
 - [9, 16] # A rhythm necklace used in the Central African Republic
 - [11, 24, 14] # A rhythm necklace of the Aka Pygmies of Central Africa
 - [13, 24, 5] # Another rhythm necklace of the Aka Pygmies of the upper Sangha
-""")]
+""")
 
 """
 - https://raw.githubusercontent.com/brianhouse/bjorklund/master/__init__.py
@@ -104,7 +102,9 @@ class EuclidSequencer(SampleSequencer):
     @mean_revert(attr="pattern")
     def random_pattern(self, q,
                        patterns=Patterns):
-        return bjorklund(**q["pattern"].choice(patterns))
+        pulses, steps = q["pattern"].choice(patterns)[:2]
+        return bjorklund(pulses=pulses,
+                         steps=steps)
 
     """
     - for the moment it's either/or in terms of sample/pattern switching

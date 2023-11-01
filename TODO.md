@@ -1,7 +1,9 @@
 ### short
 
-- initialise lists of sequencers and modulators with args baked as closures
-  - each patch to randomly sample in lists of sequencers and modulators
+- move euclid patterns into config
+- separate sn/kk/ht patterns according to density
+
+- randomise machines on per patch basis
 
 ### medium
 
@@ -20,6 +22,7 @@
 
 ### done
 
+- simplify euclid patterns
 - remove samples subdir from sequencers
 - single sequencers list
 - abstract sequencer yaml config
