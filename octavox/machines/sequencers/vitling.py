@@ -4,7 +4,7 @@ from octavox.core.pools import SVSample
 
 from octavox.machines import Q
 
-from octavox.machines.sequencers.samples import SampleSequencer, mean_revert
+from octavox.machines.sequencers import SampleSequencer, mean_revert
 
 import yaml
 

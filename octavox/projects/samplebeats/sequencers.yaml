@@ -43,3 +43,58 @@
         threshold: 0.5
     nsamples: 4
     tag: ht
+- class: octavox.machines.sequencers.vitling.VitlingSequencer
+  name: KickSampler
+  params:
+    density: 1.0
+    modulation:
+      sample:
+        reversion: 0.5
+        step: 4
+        threshold: 0.8
+      pattern:
+        reversion: 0.5
+        step: 4
+        threshold: 0.8
+    nsamples: 4
+    patterns:
+    - fourfloor
+    - electro
+    - triplets
+    tag: kk
+- class: octavox.machines.sequencers.vitling.VitlingSequencer
+  name: SnareSampler
+  params:
+    density: 1.0
+    modulation:
+      sample:
+        reversion: 0.5
+        step: 4
+        threshold: 0.8
+      pattern:
+        reversion: 0.5
+        step: 4
+        threshold: 0.8
+    nsamples: 4
+    patterns:
+    - backbeat
+    - skip
+    tag: sn
+- class: octavox.machines.sequencers.vitling.VitlingSequencer
+  name: HatSampler
+  params:
+    density: 1.0
+    modulation:
+      sample:
+        reversion: 0.5
+        step: 4
+        threshold: 0.8
+      pattern:
+        reversion: 0.5
+        step: 4
+        threshold: 0.8
+    nsamples: 4
+    patterns:
+    - offbeats
+    - closed
+    tag: ht
