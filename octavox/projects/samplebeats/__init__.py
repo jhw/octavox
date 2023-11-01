@@ -14,9 +14,7 @@ Modules=yaml.safe_load(open("octavox/projects/samplebeats/modules.yaml").read())
 
 Links=yaml.safe_load(open("octavox/projects/samplebeats/links.yaml").read())
 
-EuclidSequencers=yaml.safe_load(open("octavox/projects/samplebeats/sequencers/euclid.yaml").read())
-
-VitlingSequencers=yaml.safe_load(open("octavox/projects/samplebeats/sequencers/vitling.yaml").read())
+Sequencers=yaml.safe_load(open("octavox/projects/samplebeats/sequencers.yaml").read())
 
 Modulators=yaml.safe_load(open("octavox/projects/samplebeats/modulators.yaml").read())
 
@@ -90,7 +88,7 @@ if __name__=="__main__":
         pools=init_pools(banks, terms=Curated)
         poolname=random.choice(list(pools.keys()))
         print ("INFO: pool=%s" % poolname)
-        sequencers=randomise_sequencers(EuclidSequencers+VitlingSequencers)
+        sequencers=randomise_sequencers(Sequencers)
         for seq in sequencers:
             print ("INFO: %s=%s" % (seq["name"], seq["class"].split(".")[-1]))
         SVCli(s3=s3,                                  

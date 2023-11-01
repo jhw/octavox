@@ -1,6 +1,5 @@
 ### short
 
-- single sequencers list
 - remove samples subdir from sequencers
 
 ### medium
@@ -18,4 +17,5 @@
 
 ### done
 
+- single sequencers list
 - abstract sequencer yaml config
