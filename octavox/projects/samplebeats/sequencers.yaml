@@ -1,4 +1,4 @@
-- class: octavox.machines.sequencers.samples.euclid.EuclidSampleSequencer
+- class: octavox.machines.sequencers.euclid.EuclidSequencer
   name: KickSampler
   params:
     density: 0.66666
@@ -13,7 +13,7 @@
         threshold: 0.5
     nsamples: 4
     tag: kk
-- class: octavox.machines.sequencers.samples.euclid.EuclidSampleSequencer
+- class: octavox.machines.sequencers.euclid.EuclidSequencer
   name: SnareSampler
   params:
     density: 0.33333
@@ -28,7 +28,7 @@
         threshold: 0.5
     nsamples: 4
     tag: sn
-- class: octavox.machines.sequencers.samples.euclid.EuclidSampleSequencer
+- class: octavox.machines.sequencers.euclid.EuclidSequencer
   name: HatSampler
   params:
     density: 0.9
