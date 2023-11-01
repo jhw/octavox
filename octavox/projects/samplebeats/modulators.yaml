@@ -1,0 +1,20 @@
+- class: octavox.machines.modulators.sample_hold.SampleHoldModulator
+  name: Echo/wet
+  params:
+    increment: 0.25
+    maxvalue: '8000'
+    minvalue: '0000'
+    range:
+    - 0
+    - 1
+    step: 4
+- class: octavox.machines.modulators.sample_hold.SampleHoldModulator
+  name: Echo/feedback
+  params:
+    increment: 0.25
+    maxvalue: '8000'
+    minvalue: '0000'
+    range:
+    - 0
+    - 1
+    step: 4

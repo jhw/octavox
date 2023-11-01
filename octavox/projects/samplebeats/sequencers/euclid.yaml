@@ -1,0 +1,45 @@
+- class: octavox.machines.sequencers.samples.euclid.EuclidSampleSequencer
+  name: KickSampler
+  params:
+    density: 0.66666
+    modulation:
+      sample:
+        reversion: 0.5
+        step: 4
+        threshold: 0.5
+      pattern:
+        reversion: 0.5
+        step: 4
+        threshold: 0.5
+    nsamples: 4
+    tag: kk
+- class: octavox.machines.sequencers.samples.euclid.EuclidSampleSequencer
+  name: SnareSampler
+  params:
+    density: 0.33333
+    modulation:
+      sample:
+        reversion: 0.5
+        step: 4
+        threshold: 0.5
+      pattern:
+        reversion: 0.5
+        step: 4
+        threshold: 0.5
+    nsamples: 4
+    tag: sn
+- class: octavox.machines.sequencers.samples.euclid.EuclidSampleSequencer
+  name: HatSampler
+  params:
+    density: 0.9
+    modulation:
+      sample:
+        reversion: 0.5
+        step: 4
+        threshold: 0.5
+      pattern:
+        reversion: 0.5
+        step: 4
+        threshold: 0.5
+    nsamples: 4
+    tag: ht

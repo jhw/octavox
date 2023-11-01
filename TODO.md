@@ -1,11 +1,12 @@
 ### short
 
+- single sequencers list
+- remove samples subdir from sequencers
+
 ### medium
 
-- abstract sequencer yaml config
-- remove samples subdir from sequencers
 - initialise lists of sequencers and modulators with args baked as closures
-- each patch to randomly sample in lists of sequencers and modulators
+  - each patch to randomly sample in lists of sequencers and modulators
 - cli- level density parameters
 - mutate action
 - add back pattern breaks
@@ -17,3 +18,4 @@
 
 ### done
 
+- abstract sequencer yaml config
