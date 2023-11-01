@@ -1,6 +1,5 @@
 ### short
 
-- move sequencer, modulator randomisation code into cli
 - separate sn/kk/ht patterns according to density
 - randomise machines on per patch basis
 

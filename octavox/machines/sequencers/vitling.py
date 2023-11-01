@@ -11,7 +11,7 @@ import yaml
 class VitlingSequencer(SampleSequencer):
     
     @classmethod
-    def randomise(self,
+    def initialise(self,
                   machine,
                   pool):
         samples=SampleSequencer.random_samples(pool=pool,

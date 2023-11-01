@@ -12,7 +12,7 @@ import random
 class SampleHoldModulator(dict):
     
     @classmethod
-    def randomise(self,
+    def initialise(self,
                   machine,
                   **kwargs):
         return SampleHoldModulator({"name": machine["name"],

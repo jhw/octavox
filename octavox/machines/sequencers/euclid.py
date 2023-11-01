@@ -47,9 +47,9 @@ def bjorklund(steps, pulses, **kwargs):
 class EuclidSequencer(SampleSequencer):
     
     @classmethod
-    def randomise(self,
-                  machine,
-                  pool):
+    def initialise(self,
+                   machine,
+                   pool):
         samples=SampleSequencer.random_samples(pool=pool,
                                                tag=machine["params"]["tag"],
                                                n=machine["params"]["nsamples"])

@@ -51,8 +51,8 @@ class SVCli(SVBankCli):
         machines=self.sequencers+self.modulators
         patches=[]        
         for i in range(self.env["npatches"]):
-            patch=SVPatch.randomise(machines=machines,
-                                    pool=self.pools[self.poolname])
+            patch=SVPatch.initialise(machines=machines,
+                                     pool=self.pools[self.poolname])
             patches.append(patch)
         return patches
 

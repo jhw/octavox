@@ -127,11 +127,11 @@ class SVTracks(dict):
 class SVMachines(list):
     
     @classmethod
-    def randomise(self,
+    def initialise(self,
                   machines,
                   **kwargs):
-        return SVMachines([load_class(machine["class"]).randomise(machine=machine,
-                                                                **kwargs)
+        return SVMachines([load_class(machine["class"]).initialise(machine=machine,
+                                                                   **kwargs)
                            for machine in machines])
     
     def __init__(self, machines):
@@ -145,8 +145,8 @@ class SVMachines(list):
 class SVPatch(dict):
     
     @classmethod
-    def randomise(self, machines, **kwargs):
-        return SVPatch(machines=SVMachines.randomise(machines=machines,
+    def initialise(self, machines, **kwargs):
+        return SVPatch(machines=SVMachines.initialise(machines=machines,
                                                      **kwargs))
         
     def __init__(self,
