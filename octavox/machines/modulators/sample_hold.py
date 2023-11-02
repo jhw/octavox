@@ -18,7 +18,7 @@ class SampleHoldModulator(dict):
         return SampleHoldModulator({"name": machine["name"],
                                     "class": machine["class"],
                                     "params": machine["params"],
-                                    "seed": int(1e8*random.random())})
+                                    "seeds": {"level": int(1e8*random.random())}})
 
     def __init__(self, machine):
         dict.__init__(self, machine)
@@ -31,7 +31,7 @@ class SampleHoldModulator(dict):
     def render(self, nbeats):
         minval, maxval = (int(self.minvalue, 16),
                           int(self.maxvalue, 16))
-        q=Q(self["seed"])
+        q=Q(self["seeds"]["level"])
         for i in range(nbeats):
             v=self.sample_hold(q, i)
             if v!=None: # explicit because could return zero

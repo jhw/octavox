@@ -1,6 +1,6 @@
-### short
+### short [02-mutate]
 
-- separate sn/kk/ht patterns according to density
+- clone() method seems not to be working
 
 ### medium
 
@@ -10,13 +10,15 @@
 - add back pattern breaks
 - add mute support
 
-- mutate action
 - chain action
 
 - migrate slicebeats archives
 - incorporate 3rd euclid arg
 
 ### thoughts
+
+- separate sn/kk/ht patterns according to density?
+  - not worth it
 
 ### done
 

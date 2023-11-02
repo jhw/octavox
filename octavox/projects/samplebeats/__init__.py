@@ -64,6 +64,23 @@ class SVCli(SVBankCli):
             patches.append(patch)
         return patches
 
+    @parse_line(config=[{"name": "i",
+                         "type": "int"}])
+    @render_patches(prefix="mutation")
+    def do_mutate_patch(self, i):
+        root=self.patches[i % len(self.patches)]
+        patches=[root]
+        for i in range(len(self.patches)-1):
+            patch=root.clone()
+            """
+            if i > 0:
+                for machine in patch["machines"]:
+                    for key in machine["seeds"]:
+                        machine["seeds"][key]=int(random.random()*1e8)
+            """
+            patches.append(patch)
+        return patches
+    
 def init_pools(banks, terms, limit=MinPoolSize):
     pools, globalz = SVPools(), SVPools()
     for bankname, bank in banks.items():
