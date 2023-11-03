@@ -81,7 +81,7 @@ class EuclidSequencer(SampleSequencer):
     - for the moment it's either/or in terms of sample/pattern switching
     """
     
-    def render(self, nbeats):
+    def render(self, nbeats, density):
         q={k:Q(v) for k, v in self["seeds"].items()}
         sample, pattern = (self.random_sample(q),
                            self.random_pattern(q))
@@ -91,7 +91,7 @@ class EuclidSequencer(SampleSequencer):
             elif self.switch_pattern(q, i):
                 pattern=self.random_pattern(q)
             beat=bool(pattern[i % len(pattern)])
-            if q["trig"].random() < self.density and beat:
+            if q["trig"].random() < (self.density*density) and beat:
                 volume=self.volume(q["volume"], i)
                 yield SVNoteTrig(mod=self["name"],
                                  sample=sample,

@@ -1,11 +1,12 @@
 ### short
 
-- check ability to load a prior file
+- env temperature
 
-- cli density
+- check env variables can be modified
 
 ### medium
 
+- check ability to load a prior file
 - pattern breaks
 - mutes
 - chain action

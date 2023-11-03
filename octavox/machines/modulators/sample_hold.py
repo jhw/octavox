@@ -31,7 +31,7 @@ class SampleHoldModulator(dict):
                                     "params": copy.deepcopy(self["params"]),
                                     "seeds": dict(self["seeds"])})
                     
-    def render(self, nbeats):
+    def render(self, nbeats, **kwargs):
         minval, maxval = (int(self.minvalue, 16),
                           int(self.maxvalue, 16))
         q=Q(self["seeds"]["level"])

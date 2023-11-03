@@ -35,7 +35,8 @@ def render_patches(prefix):
                 f.write(json.dumps(self.patches,
                                    indent=2))
         def dump_sunvox(self):
-            project=SVProject().render(patches=[patch.render(nbeats=self.env["nbeats"])
+            project=SVProject().render(patches=[patch.render(nbeats=self.env["nbeats"],
+                                                             density=self.env["density"])
                                                 for patch in self.patches],
                                        modconfig=self.core,
                                        links=self.links,
@@ -158,7 +159,8 @@ class SVBaseCli(cmd.Cmd):
             with open(filename, 'w') as f:
                 f.write(json.dumps(struct,
                                    indent=2))
-            patches=[SVPatch(**patch).render(nbeats=self.env["nbeats"])
+            patches=[SVPatch(**patch).render(nbeats=self.env["nbeats"],
+                                             density=self.env["density"])
                      for patch in struct]
             project=SVProject().render(patches=patches,
                                        modconfig=self.core,

@@ -41,7 +41,7 @@ class VitlingSequencer(SampleSequencer):
     - for the moment it's either/or in terms of sample/pattern switching
     """
     
-    def render(self, nbeats):
+    def render(self, nbeats, density):
         q={k:Q(v) for k, v in self["seeds"].items()}
         sample, pattern = (self.random_sample(q),
                            self.random_pattern(q))
@@ -51,7 +51,7 @@ class VitlingSequencer(SampleSequencer):
             elif self.switch_pattern(q, i):
                 pattern=self.random_pattern(q)
             beatfn=getattr(self, pattern)
-            beat=beatfn(q["trig"], i, self.density)
+            beat=beatfn(q["trig"], i, self.density*density)
             if beat!=None: # NB explicit check
                 volume=beat
                 yield SVNoteTrig(mod=self["name"],

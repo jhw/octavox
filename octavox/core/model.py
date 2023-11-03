@@ -157,10 +157,12 @@ class SVPatch(dict):
         return SVPatch(machines=self["machines"].clone())
     
     def render(self,
-               nbeats):
+               nbeats,
+               density):
         trigs=SVTrigs(nbeats=nbeats)
         for machine in self["machines"]:
-            for trig in machine.render(nbeats=nbeats):
+            for trig in machine.render(nbeats=nbeats,
+                                       density=density):
                 trigs.append(trig)
         return trigs.tracks
 
