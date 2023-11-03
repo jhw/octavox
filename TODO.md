@@ -1,19 +1,16 @@
 ### short [02-mutate]
 
-- clone() method seems not to be working
+- randomising a cloned patches seed seems to affect the original version also
 
 ### medium
 
+- mutation of machines
 - cli density
-- cli temperature 
-
-- add back pattern breaks
-- add mute support
-
+- pattern breaks
+- mutes
 - chain action
-
-- migrate slicebeats archives
-- incorporate 3rd euclid arg
+- migration of slicebeats archives
+- 3rd euclid arg
 
 ### thoughts
 
