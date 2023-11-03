@@ -1,10 +1,13 @@
-### short [02-mutate]
+### short
 
-- remove unused cli imports
+- seed initialisation and clone is fucked up
 
 ### medium
 
+- check ability to load a prior file
+
 - machine mutation
+
 - cli density
 - pattern breaks
 - mutes
@@ -19,6 +22,11 @@
 
 ### done
 
+- rendered root patch getting mutated even when seeds not changed
+  - looks to be pattern and note
+  - doesn't seem to be a function of sequencer
+  - doesn't feel like modulator affected
+- remove unused cli imports
 - randomising a cloned patches seed seems to affect the original version also
 - eliminate fixes
 - randomise machines on per patch basis

@@ -4,9 +4,9 @@ from octavox.core.cli import SVBankCli, render_patches
 
 from octavox.core.cli.parse import parse_line
 
-from octavox.core.model import SVNoteTrig, SVPatch
+from octavox.core.model import SVPatch
 
-from octavox.core.pools import SVSample, SVPools, SVPool
+from octavox.core.pools import SVPools
 
 import boto3, os, random, sys, yaml
 
@@ -60,7 +60,7 @@ class SVCli(SVBankCli):
         for i in range(self.env["npatches"]):
             machines=self.sequencers.randomise()+self.modulators
             patch=SVPatch.initialise(machines=machines,
-                                     pool=self.pools[self.poolname])
+                                     pool=self.pools[self.poolname])            
             patches.append(patch)
         return patches
 
@@ -70,7 +70,12 @@ class SVCli(SVBankCli):
     def do_mutate_patch(self, i):
         root=self.patches[i % len(self.patches)]
         patches=[root]
-        patches.append(root.clone())
+        for i in range(self.env["npatches"]-1):
+            patch=root.clone()
+            for machine in patch["machines"]:
+                for key in machine["seeds"]:
+                    machine["seeds"][key]=int(1e8*random.random())
+            patches.append(patch)
         return patches
     
 def init_pools(banks, terms, limit=MinPoolSize):
