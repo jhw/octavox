@@ -1,14 +1,11 @@
 ### short
 
-- seed initialisation and clone is fucked up
+- check ability to load a prior file
+
+- cli density
 
 ### medium
 
-- check ability to load a prior file
-
-- machine mutation
-
-- cli density
 - pattern breaks
 - mutes
 - chain action
@@ -17,11 +14,15 @@
 
 ### thoughts
 
+- machine mutation?
+  - probably not required if you can iterate through depth of attributes
 - separate sn/kk/ht patterns according to density?
   - not worth it
 
 ### done
 
+- multiple migration actions with different attributes
+- seed initialisation and clone is fucked up
 - rendered root patch getting mutated even when seeds not changed
   - looks to be pattern and note
   - doesn't seem to be a function of sequencer

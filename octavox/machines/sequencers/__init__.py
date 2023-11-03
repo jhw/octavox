@@ -1,17 +1,5 @@
 import random
 
-def mean_revert(attr):
-    def decorator(fn):
-        def shall_revert(self, q):
-            return (q[attr].random() < self.modulation[attr]["reversion"] and
-                    len(self.state[attr]) > 1)
-        def wrapped(self, q, *args, **kwargs):
-            resp=self.state[attr][-2] if shall_revert(self, q) else fn(self, q, *args, **kwargs)
-            self.state[attr].append(resp)
-            return resp
-        return wrapped
-    return decorator
-
 class SampleSequencer(dict):
 
     """
@@ -36,7 +24,6 @@ class SampleSequencer(dict):
             setattr(self, k, v)
         self.state={k:[] for k in "sample|pattern".split("|")}
 
-    # @mean_revert(attr="sample")
     def random_sample(self, q):
         return q["sample"].choice(self["samples"])
         

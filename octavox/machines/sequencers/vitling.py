@@ -4,7 +4,7 @@ from octavox.core.pools import SVSample
 
 from octavox.machines import Q
 
-from octavox.machines.sequencers import SampleSequencer, mean_revert
+from octavox.machines.sequencers import SampleSequencer
 
 import copy
 
@@ -36,7 +36,6 @@ class VitlingSequencer(SampleSequencer):
                                              for sample in self["samples"]],
                                  "seeds": dict(self["seeds"])})
 
-    # @mean_revert(attr="pattern")
     def random_pattern(self, q):
         return q["pattern"].choice(self.patterns)
 

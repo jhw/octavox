@@ -67,15 +67,15 @@ class SVCli(SVBankCli):
     @parse_line(config=[{"name": "i",
                          "type": "int"}])
     @render_patches(prefix="mutation")
-    def do_mutate_patch(self, i):
+    def do_mutate_patch(self, i, attrs="trig|pattern|volume|level".split("|")):
         root=self.patches[i % len(self.patches)]
         patches=[root]
         for i in range(self.env["npatches"]-1):
             patch=root.clone()
             for machine in patch["machines"]:
-                for key in machine["seeds"]:
-                    if key!="sample":
-                        machine["seeds"][key]=int(1e8*random.random())
+                for attr in attrs:
+                    if attr in machine["seeds"]:
+                        machine["seeds"][attr]=int(1e8*random.random())
             patches.append(patch)
         return patches
     

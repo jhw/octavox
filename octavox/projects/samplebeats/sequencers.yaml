@@ -4,11 +4,9 @@
     density: 0.66666
     modulation:
       sample:
-        reversion: 0.5
         step: 4
         threshold: 0.5
       pattern:
-        reversion: 0.5
         step: 4
         threshold: 0.5
     nsamples: 4
@@ -41,11 +39,9 @@
     density: 0.33333
     modulation:
       sample:
-        reversion: 0.5
         step: 4
         threshold: 0.5
       pattern:
-        reversion: 0.5
         step: 4
         threshold: 0.5
     nsamples: 4
@@ -78,11 +74,9 @@
     density: 0.9
     modulation:
       sample:
-        reversion: 0.5
         step: 4
         threshold: 0.5
       pattern:
-        reversion: 0.5
         step: 4
         threshold: 0.5
     nsamples: 4
@@ -115,11 +109,9 @@
     density: 1.0
     modulation:
       sample:
-        reversion: 0.5
         step: 4
         threshold: 0.8
       pattern:
-        reversion: 0.5
         step: 4
         threshold: 0.8
     nsamples: 4
@@ -134,11 +126,9 @@
     density: 1.0
     modulation:
       sample:
-        reversion: 0.5
         step: 4
         threshold: 0.8
       pattern:
-        reversion: 0.5
         step: 4
         threshold: 0.8
     nsamples: 4
@@ -152,11 +142,9 @@
     density: 1.0
     modulation:
       sample:
-        reversion: 0.5
         step: 4
         threshold: 0.8
       pattern:
-        reversion: 0.5
         step: 4
         threshold: 0.8
     nsamples: 4
