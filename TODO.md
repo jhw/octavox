@@ -1,8 +1,11 @@
 ### short
 
-- env temperature
-
+- multiple mutations
+  - level 
+  - level|trig|pattern|volume
+  - level|trig|pattern|volume|sample
 - check env variables can be modified
+- env temperature
 
 ### medium
 
