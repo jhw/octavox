@@ -1,8 +1,8 @@
 from octavox.core.model import SVFXTrig
 
-from octavox.machines import Q
+from octavox.machines import Q, random_seed
 
-import copy, random
+import copy
 
 """
 - a Modulator uses params at runtime, hence they need to be part of state
@@ -18,7 +18,7 @@ class SampleHoldModulator(dict):
         return SampleHoldModulator({"name": machine["name"],
                                     "class": machine["class"],
                                     "params": machine["params"],
-                                    "seeds": {"level": int(1e8*random.random())}})
+                                    "seeds": {"level": random_seed()}})
 
     def __init__(self, machine):
         dict.__init__(self, machine)

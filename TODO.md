@@ -21,6 +21,7 @@
 
 ### done
 
+- simplified seed setting
 - multiple migration actions with different attributes
 - seed initialisation and clone is fucked up
 - rendered root patch getting mutated even when seeds not changed

@@ -2,9 +2,9 @@ from octavox.core.model import SVNoteTrig, SVFXTrig
 
 from octavox.core.pools import SVSample
 
-from octavox.machines import Q
+from octavox.machines import Q, random_seed
 
-from octavox.machines.sequencers import SampleSequencer
+from octavox.machines.sequencers import SampleSequencer, random_samples
 
 import copy
 
@@ -52,16 +52,14 @@ class EuclidSequencer(SampleSequencer):
     def initialise(self,
                    machine,
                    pool):
-        samples=SampleSequencer.random_samples(pool=pool,
-                                               tag=machine["params"]["tag"],
-                                               n=machine["params"]["nsamples"])
-        seeds={k:SampleSequencer.random_seed()
-               for k in "sample|trig|pattern|volume".split("|")}
         return EuclidSequencer({"name": machine["name"],
                                 "class": machine["class"],
                                 "params": machine["params"],
-                                "samples": samples,
-                                "seeds": seeds})
+                                "samples": random_samples(pool=pool,
+                                                          tag=machine["params"]["tag"],
+                                                          n=machine["params"]["nsamples"]),
+                                "seeds": {k:random_seed()
+                                          for k in "sample|trig|pattern|volume".split("|")}})
 
     def __init__(self, machine):
         SampleSequencer.__init__(self, machine)
