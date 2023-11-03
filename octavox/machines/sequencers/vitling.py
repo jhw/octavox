@@ -36,7 +36,7 @@ class VitlingSequencer(SampleSequencer):
                                              for sample in self["samples"]],
                                  "seeds": dict(self["seeds"])})
 
-    @mean_revert(attr="pattern")
+    # @mean_revert(attr="pattern")
     def random_pattern(self, q):
         return q["pattern"].choice(self.patterns)
 

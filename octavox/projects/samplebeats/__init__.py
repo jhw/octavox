@@ -74,7 +74,8 @@ class SVCli(SVBankCli):
             patch=root.clone()
             for machine in patch["machines"]:
                 for key in machine["seeds"]:
-                    machine["seeds"][key]=int(1e8*random.random())
+                    if key!="sample":
+                        machine["seeds"][key]=int(1e8*random.random())
             patches.append(patch)
         return patches
     

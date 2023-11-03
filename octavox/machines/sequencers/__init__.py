@@ -36,7 +36,7 @@ class SampleSequencer(dict):
             setattr(self, k, v)
         self.state={k:[] for k in "sample|pattern".split("|")}
 
-    @mean_revert(attr="sample")
+    # @mean_revert(attr="sample")
     def random_sample(self, q):
         return q["sample"].choice(self["samples"])
         
