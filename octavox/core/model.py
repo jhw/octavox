@@ -18,8 +18,10 @@ class SVNoteTrig:
         self.mod=mod
         self.i=i
         self.chord=chord
+        """
         if sample:
             sample.add_tag(mod) # NB
+        """
         self.sample=sample
         self.note=note
         self.vel=vel        
