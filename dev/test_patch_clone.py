@@ -41,6 +41,9 @@ if __name__=="__main__":
     patch0=SVPatch(**struct[0])
     rendered0=render_patch(patch0)
     patch1=patch0.clone()
+    rendered1=render_patch(patch1)
+    print (json_stringify(patch0)==json_stringify(patch1),
+           json_stringify(rendered0)==json_stringify(rendered1))
     randomise_seeds(patch1)
     rendered1=render_patch(patch1)
     print (json_stringify(patch0)==json_stringify(patch1),

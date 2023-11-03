@@ -2,7 +2,7 @@ from octavox.core.model import SVFXTrig
 
 from octavox.machines import Q
 
-import random
+import copy, random
 
 """
 - a Modulator uses params at runtime, hence they need to be part of state
@@ -26,7 +26,10 @@ class SampleHoldModulator(dict):
             setattr(self, k, v)
 
     def clone(self):
-        return SampleHoldModulator(self)
+        return SampleHoldModulator({"name": self["name"],
+                                    "class": self["class"],
+                                    "params": copy.deepcopy(self["params"]),
+                                    "seeds": dict(self["seeds"])})
                     
     def render(self, nbeats):
         minval, maxval = (int(self.minvalue, 16),

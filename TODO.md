@@ -1,10 +1,10 @@
 ### short [02-mutate]
 
-- randomising a cloned patches seed seems to affect the original version also
+- remove unused cli imports
 
 ### medium
 
-- mutation of machines
+- machine mutation
 - cli density
 - pattern breaks
 - mutes
@@ -19,6 +19,7 @@
 
 ### done
 
+- randomising a cloned patches seed seems to affect the original version also
 - eliminate fixes
 - randomise machines on per patch basis
 - move euclid patterns into config

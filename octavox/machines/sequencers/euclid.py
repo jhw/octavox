@@ -6,6 +6,8 @@ from octavox.machines import Q
 
 from octavox.machines.sequencers import SampleSequencer, mean_revert
 
+import copy
+
 """
 - https://raw.githubusercontent.com/brianhouse/bjorklund/master/__init__.py
 """
@@ -65,7 +67,12 @@ class EuclidSequencer(SampleSequencer):
         SampleSequencer.__init__(self, machine)
                             
     def clone(self):
-        return EuclidSequencer(self)
+        return EuclidSequencer({"name": self["name"],
+                                "class": self["class"],
+                                "params": copy.deepcopy(self["params"]),
+                                "samples": [sample.clone()
+                                            for sample in self["samples"]],
+                                "seeds": dict(self["seeds"])})
 
     @mean_revert(attr="pattern")
     def random_pattern(self, q):

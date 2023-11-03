@@ -6,7 +6,7 @@ from octavox.machines import Q
 
 from octavox.machines.sequencers import SampleSequencer, mean_revert
 
-import yaml
+import copy
 
 class VitlingSequencer(SampleSequencer):
     
@@ -29,7 +29,12 @@ class VitlingSequencer(SampleSequencer):
         SampleSequencer.__init__(self, machine)
                             
     def clone(self):
-        return VitlingSequencer(self)
+        return VitlingSequencer({"name": self["name"],
+                                 "class": self["class"],
+                                 "params": copy.deepcopy(self["params"]),
+                                 "samples": [sample.clone()
+                                             for sample in self["samples"]],
+                                 "seeds": dict(self["seeds"])})
 
     @mean_revert(attr="pattern")
     def random_pattern(self, q):
