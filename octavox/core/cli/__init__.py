@@ -70,6 +70,22 @@ def assert_project(fn):
         return fn(self, *args, **kwargs)
     return wrapped
 
+class SVEnvironment(dict):
+
+    def __init__(self, item={}):
+        dict.__init__(self, item)
+
+    def lookup(self, abbrev):
+        matches=[]
+        for key in self:
+            if is_abbrev(abbrev, key):
+                matches.append(key)
+        if matches==[]:
+            raise RuntimeError("%s not found" % abbrev)
+        elif len(matches) > 1:
+            raise RuntimeError("multiple key matches for %s" % abbrev)
+        return matches.pop()
+
 class SVBaseCli(cmd.Cmd):
 
     prompt=">>> "
@@ -90,7 +106,7 @@ class SVBaseCli(cmd.Cmd):
         self.init_subdirs()
         self.core=modules
         self.links=links
-        self.env=env
+        self.env=SVEnvironment(env)
         self.patches=None
         self.filename=None
         self.historyfile=os.path.expanduser("%s/.clihistory" % self.outdir)
@@ -111,16 +127,17 @@ class SVBaseCli(cmd.Cmd):
         for key in sorted(self.env.keys()):
             print ("%s: %s" % (key, self.env[key]))
     
-    @parse_line(config=[{"name": "key",
+    @parse_line(config=[{"name": "frag",
                          "type": "str"},
                         {"name": "value",
                          "type": "number"}])
-    def do_set_param(self, key, value):
-        if key in self.env:
+    def do_set_param(self, frag, value):
+        key=self.env.lookup(frag)
+        if key:
             self.env[key]=value
             print ("INFO: %s=%s" % (key, self.env[key]))
         else:
-            print ("WARNING: %s not found")
+            print ("WARNING: %s not found" % frag)
             
     @parse_line()
     def do_list_projects(self):
@@ -138,7 +155,7 @@ class SVBaseCli(cmd.Cmd):
         elif len(matches)==1:
             filename=matches.pop()
             print ("INFO: %s" % filename)
-            abspath="%s/json/%s" % (self.outdir, filename)
+            abspaht="%s/json/%s" % (self.outdir, filename)
             patches=json.loads(open(abspath).read())
             self.patches=[SVPatch(**patch)
                           for patch in patches]

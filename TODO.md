@@ -1,11 +1,9 @@
 ### short
 
-- add back env and param lookup
-  - 796ba065a28bd7767b6b0bb508752b7c49b3298c
+- pattern breaks
 
 ### medium
 
-- pattern breaks
 - mutes
 - chain action
 - migration of slicebeats archives
@@ -21,6 +19,8 @@
 
 ### done
 
+- add back env and param lookup
+  - 796ba065a28bd7767b6b0bb508752b7c49b3298c
 - add temperature parameter
 - modify env variables
 - loading and them mutating fails because sample classes are not being created on project/machine load
