@@ -106,6 +106,22 @@ class SVBaseCli(cmd.Cmd):
             readline.read_history_file(self.historyfile)
 
     @parse_line()
+    def do_show_params(self):
+        for key in sorted(self.env.keys()):
+            print ("%s: %s" % (key, self.env[key]))
+    
+    @parse_line(config=[{"name": "key",
+                         "type": "str"},
+                        {"name": "value",
+                         "type": "number"}])
+    def do_set_param(self, key, value):
+        if key in self.env:
+            self.env[key]=value
+            print ("INFO: %s=%s" % (key, self.env[key]))
+        else:
+            print ("WARNING: %s not found")
+            
+    @parse_line()
     def do_list_projects(self):
         for filename in sorted(os.listdir(self.outdir+"/json")):
             print (filename.split(".")[0])
