@@ -1,13 +1,12 @@
 ### short
 
-### medium
-
+- fix sequencer superclass stuff
+- add temperature parameter
 - add back param lookup
   - 796ba065a28bd7767b6b0bb508752b7c49b3298c
 
-- move machine constructors into base class
-  - check superclass constructor is being called
-  
+### medium
+
 - pattern breaks
 - mutes
 - chain action
