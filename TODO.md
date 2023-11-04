@@ -7,10 +7,11 @@
 - mutes
 - chain action
 - migration of slicebeats archives
-- 3rd euclid arg
 
 ### thoughts
 
+- 3rd euclid arg?
+  - probably not worth it
 - why can't I move sequencers constructors into base class??
 - machine mutation?
   - probably not required if you can iterate through depth of attributes
