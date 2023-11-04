@@ -12,8 +12,7 @@ class SampleSequencer(dict):
     """
     - remember tag may not be present in pool, hence need a default catch-all
     """
-    
-    
+        
     def __init__(self, machine):
         dict.__init__(self, machine)
         for k, v in machine["params"].items():
@@ -25,11 +24,11 @@ class SampleSequencer(dict):
         
     def switch_sample(self, q, i):
         return (0 == i % self.modulation["sample"]["step"] and
-                q["trig"].random() < self.modulation["sample"]["threshold"])
+                q["sample"].random() < self.modulation["sample"]["threshold"])
 
     def switch_pattern(self, q, i):
         return (0 == i % self.modulation["pattern"]["step"] and
-                q["trig"].random() < self.modulation["pattern"]["threshold"])
+                q["pattern"].random() < self.modulation["pattern"]["threshold"])
 
         
 if __name__=="__main__":

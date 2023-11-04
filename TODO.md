@@ -1,11 +1,10 @@
 ### short
 
-- check env variables can be modified
-- env temperature
+- check ability to load a prior file
+- modify env variables
 
 ### medium
 
-- check ability to load a prior file
 - pattern breaks
 - mutes
 - chain action
@@ -14,6 +13,9 @@
 
 ### thoughts
 
+- env temperature variable?
+  - could be passed to machines
+  - but gets a bit more complex as has to be passed to switch_sample/pattern helpers
 - machine mutation?
   - probably not required if you can iterate through depth of attributes
 - separate sn/kk/ht patterns according to density?

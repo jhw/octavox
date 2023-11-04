@@ -17,8 +17,7 @@ Env=yaml.safe_load("""
 nbeats: 16
 npatches: 32
 bpm: 120
-# density: 1
-density: 0.5
+density: 1
 """)
 
 Curated=yaml.safe_load("""
