@@ -4,6 +4,9 @@
 
 ### medium
 
+- move machine constructors into base class
+  - check superclass constructor is being called
+  
 - pattern breaks
 - mutes
 - chain action
