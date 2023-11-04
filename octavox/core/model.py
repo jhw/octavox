@@ -158,11 +158,13 @@ class SVPatch(dict):
     
     def render(self,
                nbeats,
-               density):
+               density,
+               temperature):
         trigs=SVTrigs(nbeats=nbeats)
         for machine in self["machines"]:
             for trig in machine.render(nbeats=nbeats,
-                                       density=density):
+                                       density=density,
+                                       temperature=temperature):
                 trigs.append(trig)
         return trigs.tracks
 

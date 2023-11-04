@@ -1,8 +1,6 @@
 ### short
 
-- fix sequencer superclass stuff
-- add temperature parameter
-- add back param lookup
+- add back env and param lookup
   - 796ba065a28bd7767b6b0bb508752b7c49b3298c
 
 ### medium
@@ -15,9 +13,7 @@
 
 ### thoughts
 
-- env temperature variable?
-  - could be passed to machines
-  - but gets a bit more complex as has to be passed to switch_sample/pattern helpers
+- why can't I move sequencers constructors into base class??
 - machine mutation?
   - probably not required if you can iterate through depth of attributes
 - separate sn/kk/ht patterns according to density?
@@ -25,6 +21,7 @@
 
 ### done
 
+- add temperature parameter
 - modify env variables
 - loading and them mutating fails because sample classes are not being created on project/machine load
 - check ability to load a prior file

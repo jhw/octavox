@@ -61,6 +61,10 @@ class EuclidSequencer(SampleSequencer):
                                 "seeds": {k:random_seed()
                                           for k in "sample|trig|pattern|volume".split("|")}})
 
+    """
+    - should be moved to SampleSequencer but can't get the superclass constructor call to work 
+    """
+    
     def __init__(self, machine):
         SampleSequencer.__init__(self, {"name": machine["name"],
                                         "class": machine["class"],
@@ -85,14 +89,14 @@ class EuclidSequencer(SampleSequencer):
     - for the moment it's either/or in terms of sample/pattern switching
     """
     
-    def render(self, nbeats, density):
+    def render(self, nbeats, density, temperature):
         q={k:Q(v) for k, v in self["seeds"].items()}
         sample, pattern = (self.random_sample(q),
                            self.random_pattern(q))
         for i in range(nbeats):
-            if self.switch_sample(q, i):
+            if self.switch_sample(q, i, temperature):
                 sample=self.random_sample(q)
-            elif self.switch_pattern(q, i):
+            elif self.switch_pattern(q, i, temperature):
                 pattern=self.random_pattern(q)
             beat=bool(pattern[i % len(pattern)])
             if q["trig"].random() < (self.density*density) and beat:

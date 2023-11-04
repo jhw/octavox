@@ -22,13 +22,13 @@ class SampleSequencer(dict):
     def random_sample(self, q):
         return q["sample"].choice(self["samples"])
         
-    def switch_sample(self, q, i):
+    def switch_sample(self, q, i, temperature):
         return (0 == i % self.modulation["sample"]["step"] and
-                q["sample"].random() < self.modulation["sample"]["threshold"])
+                q["sample"].random() < self.modulation["sample"]["threshold"]*temperature)
 
-    def switch_pattern(self, q, i):
+    def switch_pattern(self, q, i, temperature):
         return (0 == i % self.modulation["pattern"]["step"] and
-                q["pattern"].random() < self.modulation["pattern"]["threshold"])
+                q["pattern"].random() < self.modulation["pattern"]["threshold"]*temperature)
 
         
 if __name__=="__main__":

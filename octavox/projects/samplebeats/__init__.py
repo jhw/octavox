@@ -18,6 +18,7 @@ nbeats: 16
 npatches: 32
 bpm: 120
 density: 1
+temperature: 1
 """)
 
 Curated=yaml.safe_load("""
