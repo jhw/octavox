@@ -1,7 +1,5 @@
 ### short
 
-- loading and them mutating fails because sample classes are not being created on project/machine load
-
 - modify env variables
 
 ### medium
@@ -24,6 +22,7 @@
 
 ### done
 
+- loading and them mutating fails because sample classes are not being created on project/machine load
 - check ability to load a prior file
 - multiple mutations
   - level 

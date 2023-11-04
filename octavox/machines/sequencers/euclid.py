@@ -62,14 +62,18 @@ class EuclidSequencer(SampleSequencer):
                                           for k in "sample|trig|pattern|volume".split("|")}})
 
     def __init__(self, machine):
-        SampleSequencer.__init__(self, machine)
+        SampleSequencer.__init__(self, {"name": machine["name"],
+                                        "class": machine["class"],
+                                        "params": machine["params"],
+                                        "samples": [SVSample(sample)
+                                                    for sample in machine["samples"]],
+                                        "seeds": machine["seeds"]})
                             
     def clone(self):
         return EuclidSequencer({"name": self["name"],
                                 "class": self["class"],
                                 "params": copy.deepcopy(self["params"]),
-                                "samples": [sample.clone()
-                                            for sample in self["samples"]],
+                                "samples": copy.deepcopy(self["samples"]),
                                 "seeds": dict(self["seeds"])})
 
     def random_pattern(self, q):
