@@ -1,6 +1,7 @@
 ### short
 
-- check ability to load a prior file
+- loading and them mutating fails because sample classes are not being created on project/machine load
+
 - modify env variables
 
 ### medium
@@ -23,6 +24,7 @@
 
 ### done
 
+- check ability to load a prior file
 - multiple mutations
   - level 
   - level|trig|pattern|volume

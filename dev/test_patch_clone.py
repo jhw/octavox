@@ -21,7 +21,8 @@ def render_patch(patch):
         if "samples" in machine:            
             machine["samples"]=[SVSample(sample)
                                 for sample in machine["samples"]]
-    rendered=patch.render(nbeats=16)
+    rendered=patch.render(nbeats=16,
+                          density=1)
     return ({K: [v.to_dict() for v in V]
              for K, V in rendered.items()})    
 
