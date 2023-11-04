@@ -66,10 +66,7 @@ class SVCli(SVBankCli):
             patches.append(patch)
         return patches
 
-    @parse_line(config=[{"name": "i",
-                         "type": "int"}])
-    @render_patches(prefix="mutation")
-    def do_mutate_patch(self, i, attrs="trig|pattern|volume|level".split("|")):
+    def _mutate_patch(self, i, attrs):
         root=self.patches[i % len(self.patches)]
         patches=[root]
         for i in range(self.env["npatches"]-1):
@@ -80,6 +77,24 @@ class SVCli(SVBankCli):
                         machine["seeds"][attr]=int(1e8*random.random())
             patches.append(patch)
         return patches
+    
+    @parse_line(config=[{"name": "i",
+                         "type": "int"}])
+    @render_patches(prefix="mutation")
+    def do_mutate_patch_1(self, i):
+        return self._mutate_patch(i, attrs=["level"])
+
+    @parse_line(config=[{"name": "i",
+                         "type": "int"}])
+    @render_patches(prefix="mutation")
+    def do_mutate_patch_2(self, i):
+        return self._mutate_patch(i, attrs="level|trig|pattern|volume".split("|"))
+
+    @parse_line(config=[{"name": "i",
+                         "type": "int"}])
+    @render_patches(prefix="mutation")
+    def do_mutate_patch_3(self, i):
+        return self._mutate_patch(i, attrs="level|trig|pattern|volume|sample".split("|"))                
     
 def init_pools(banks, terms, limit=MinPoolSize):
     pools, globalz = SVPools(), SVPools()

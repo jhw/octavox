@@ -1,9 +1,5 @@
 ### short
 
-- multiple mutations
-  - level 
-  - level|trig|pattern|volume
-  - level|trig|pattern|volume|sample
 - check env variables can be modified
 - env temperature
 
@@ -25,6 +21,10 @@
 
 ### done
 
+- multiple mutations
+  - level 
+  - level|trig|pattern|volume
+  - level|trig|pattern|volume|sample
 - simplified seed setting
 - multiple migration actions with different attributes
 - seed initialisation and clone is fucked up
