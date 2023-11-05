@@ -147,24 +147,27 @@ class SVMachines(list):
 class SVPatch(dict):
     
     @classmethod
-    def initialise(self, machines, **kwargs):
+    def initialise(self, machines, mutes=[], **kwargs):
         return SVPatch(machines=SVMachines.initialise(machines=machines,
-                                                     **kwargs))
+                                                      **kwargs),
+                       mutes=mutes)
         
     def __init__(self,
-                 machines):
-        dict.__init__(self, {"machines": SVMachines(machines)})
+                 machines,
+                 mutes):
+        dict.__init__(self, {"machines": SVMachines(machines),
+                             "mutes": mutes})
         
     def clone(self):
-        return SVPatch(machines=self["machines"].clone())
+        return SVPatch(machines=self["machines"].clone(),
+                       mutes=list(self["mutes"]))
     
     def render(self,
                nbeats,
                density,
-               temperature,
-               mutes=[]):
+               temperature):
         trigs=SVTrigs(nbeats=nbeats,
-                      mutes=mutes)
+                      mutes=self["mutes"])
         for machine in self["machines"]:
             for trig in machine.render(nbeats=nbeats,
                                        density=density,

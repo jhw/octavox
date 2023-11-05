@@ -1,9 +1,6 @@
 ### short
 
-- check intarray support exists
-- figure out how to pass mutes to project render
-  - should you even use @render_project?
-- chain/expand/explode action
+- chain/expand/explode action [notes]
 
 ### medium
 
@@ -20,6 +17,8 @@
 
 ### done
 
+- figure out how to pass mutes to project render
+  - should you even use @render_project
 - mutes
 - pattern breaks > b738a77daf39fe52f393eb6611a324c16dda4121
 - add back env and param lookup
