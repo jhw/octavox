@@ -83,19 +83,17 @@ class SVCli(SVBankCli):
                          "type": "int"}])
     @render_patches(prefix="mutation")
     def do_mutate_patch_1(self, i):
-        return self._mutate_patch(i, attrs=["level"])
-
+        return self._mutate_patch(i, attrs="level|volume".split("|"))
     @parse_line(config=[{"name": "i",
                          "type": "int"}])
     @render_patches(prefix="mutation")
     def do_mutate_patch_2(self, i):
-        return self._mutate_patch(i, attrs="level|trig|pattern|volume".split("|"))
-
+        return self._mutate_patch(i, attrs="level|volume|trig|pattern".split("|"))
     @parse_line(config=[{"name": "i",
                          "type": "int"}])
     @render_patches(prefix="mutation")
     def do_mutate_patch_3(self, i):
-        return self._mutate_patch(i, attrs="level|trig|pattern|volume|sample".split("|"))                
+        return self._mutate_patch(i, attrs="level|volume|trig|pattern|sample".split("|"))                
     
 def init_pools(banks, terms, limit=MinPoolSize):
     pools, globalz = SVPools(), SVPools()
