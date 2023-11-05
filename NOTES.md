@@ -1,3 +1,11 @@
+### chain action 05/11/23
+
+- not sure it should be called chain
+- take a series of patterns you like
+- create all the different mute permutations
+- save to 8/16/24/32/48 size
+- random selections from the set
+
 ### euclid patterns 01/11/23
 
 - https://club.tidalcycles.org/t/week-1-lesson-5-mini-notation-part-3/449

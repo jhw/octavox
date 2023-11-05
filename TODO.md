@@ -1,6 +1,9 @@
 ### short
 
-- chain action w/ mutes
+- check intarray support exists
+- figure out how to pass mutes to project render
+  - should you even use @render_project?
+- chain/expand/explode action
 
 ### medium
 
