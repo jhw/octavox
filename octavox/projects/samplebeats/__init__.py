@@ -16,9 +16,10 @@ Modules, Links, Sequencers, Modulators = [yaml.safe_load(open("octavox/projects/
 Env=yaml.safe_load("""
 nbeats: 16
 npatches: 32
+density: 0.66666
+temperature: 0.66666
 bpm: 120
-density: 1
-temperature: 1
+nbreaks: 0
 """)
 
 Curated=yaml.safe_load("""

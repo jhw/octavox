@@ -1,12 +1,11 @@
 ### short
 
-- pattern breaks > b738a77daf39fe52f393eb6611a324c16dda4121
+- mutes
 
 ### medium
 
-- mutes
 - chain action
-- migration of slicebeats archives
+- migrate slicebeats archives
 
 ### thoughts
 
@@ -20,6 +19,7 @@
 
 ### done
 
+- pattern breaks > b738a77daf39fe52f393eb6611a324c16dda4121
 - add back env and param lookup
   - 796ba065a28bd7767b6b0bb508752b7c49b3298c
 - add temperature parameter

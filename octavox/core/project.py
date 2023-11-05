@@ -1,5 +1,6 @@
 from rv.api import Project as RVProject
 from rv.pattern import Pattern as RVPattern
+from rv.note import Note as RVNote
 
 from octavox.core import load_class
 
@@ -118,6 +119,21 @@ class SVProject:
                          y_size=height,
                          bg_color=color).set_via_fn(notefn)
 
+    @attach_pattern
+    def init_blank(self,
+                   patterns,
+                   patch,
+                   offset,
+                   color,
+                   height=Height):
+        def notefn(self, j, i):
+            return RVNote()
+        return RVPattern(lines=patch.nbeats,
+                         tracks=len(patch),
+                         x=offset.value,
+                         y_size=height,
+                         bg_color=color).set_via_fn(notefn)
+    
     def init_controllers(self, modules):
         controllers={}
         for mod in modules.values():
@@ -129,7 +145,8 @@ class SVProject:
 
     def init_patterns(self,
                       modules,
-                      patches):
+                      patches,
+                      nbreaks):
         controllers=self.init_controllers(modules)
         offset=SVOffset()
         patterns, color = [], None
@@ -140,7 +157,12 @@ class SVProject:
                               controllers=controllers,
                               patch=patch,
                               offset=offset,
-                              color=color)            
+                              color=color)
+            for i in range(nbreaks):
+                self.init_blank(patterns=patterns,
+                                patch=patch,
+                                offset=offset,
+                                color=color)
         return patterns
 
     def render(self,
@@ -148,6 +170,7 @@ class SVProject:
                modconfig,
                links,
                bpm,
+               nbreaks,
                banks=None,
                volume=Volume):
         proj=RVProject()
@@ -163,7 +186,8 @@ class SVProject:
                           links=links,
                           modules=modules)
         proj.patterns=self.init_patterns(modules=modules,
-                                         patches=patches)
+                                         patches=patches,
+                                         nbreaks=nbreaks)
         return proj
 
 if __name__=="__main__":

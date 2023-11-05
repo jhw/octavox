@@ -42,7 +42,8 @@ def render_patches(prefix):
                                        modconfig=self.core,
                                        links=self.links,
                                        banks=self.banks,
-                                       bpm=self.env["bpm"])
+                                       bpm=self.env["bpm"],
+                                       nbreaks=self.env["nbreaks"])
             filename="%s/sunvox/%s.sunvox" % (self.outdir,
                                               self.filename)
             with open(filename, 'wb') as f:
