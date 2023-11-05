@@ -5,13 +5,13 @@
 ### medium
 
 - chain action
+
 - migrate slicebeats archives
 
 ### thoughts
 
 - 3rd euclid arg?
   - probably not worth it
-- why can't I move sequencers constructors into base class??
 - machine mutation?
   - probably not required if you can iterate through depth of attributes
 - separate sn/kk/ht patterns according to density?

@@ -1,7 +1,5 @@
 from octavox.core.model import SVNoteTrig, SVFXTrig
 
-from octavox.core.pools import SVSample
-
 from octavox.machines import Q, random_seed
 
 from octavox.machines.sequencers import SampleSequencer, random_samples
@@ -61,17 +59,8 @@ class EuclidSequencer(SampleSequencer):
                                 "seeds": {k:random_seed()
                                           for k in "sample|trig|pattern|volume".split("|")}})
 
-    """
-    - should be moved to SampleSequencer but can't get the superclass constructor call to work 
-    """
-    
     def __init__(self, machine):
-        SampleSequencer.__init__(self, {"name": machine["name"],
-                                        "class": machine["class"],
-                                        "params": machine["params"],
-                                        "samples": [SVSample(sample)
-                                                    for sample in machine["samples"]],
-                                        "seeds": machine["seeds"]})
+        SampleSequencer.__init__(self, machine)
                             
     def clone(self):
         return EuclidSequencer({"name": self["name"],
