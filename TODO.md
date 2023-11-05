@@ -1,10 +1,8 @@
 ### short
 
-- mutes
+- chain action w/ mutes
 
 ### medium
-
-- chain action
 
 - migrate slicebeats archives
 
@@ -19,6 +17,7 @@
 
 ### done
 
+- mutes
 - pattern breaks > b738a77daf39fe52f393eb6611a324c16dda4121
 - add back env and param lookup
   - 796ba065a28bd7767b6b0bb508752b7c49b3298c
