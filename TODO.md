@@ -1,12 +1,38 @@
 ### short [01-chaining]
 
-- mute combinations
+- json error
+
+```
+EXCEPTION: Traceback (most recent call last):
+  File "/Users/jhw/work/octavox/octavox/core/cli/parse.py", line 58, in wrapped
+    return fn(self, **kwargs)
+  File "/Users/jhw/work/octavox/octavox/core/cli/__init__.py", line 71, in wrapped
+    return fn(self, *args, **kwargs)
+  File "/Users/jhw/work/octavox/octavox/core/cli/__init__.py", line 55, in wrapped
+    dump_json(self)
+  File "/Users/jhw/work/octavox/octavox/core/cli/__init__.py", line 35, in dump_json
+    f.write(json.dumps(self.patches,
+  File "/Users/jhw/.pyenv/versions/3.10.12/lib/python3.10/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/Users/jhw/.pyenv/versions/3.10.12/lib/python3.10/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/Users/jhw/.pyenv/versions/3.10.12/lib/python3.10/json/encoder.py", line 429, in _iterencode
+    yield from _iterencode_list(o, _current_indent_level)
+  File "/Users/jhw/.pyenv/versions/3.10.12/lib/python3.10/json/encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "/Users/jhw/.pyenv/versions/3.10.12/lib/python3.10/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/Users/jhw/.pyenv/versions/3.10.12/lib/python3.10/json/encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "/Users/jhw/.pyenv/versions/3.10.12/lib/python3.10/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type set is not JSON serializable
+```
+
+- randomise chained mutations
 - truncate length
 
 ### medium
-
-- mutate and chain must assert project
-
 
 - migrate slicebeats archives
 
@@ -21,6 +47,8 @@
 
 ### done
 
+- mute combinations
+- mutate and chain must assert project
 - skeleton action which takes multiple roots
 - figure out how to pass mutes to project render
   - should you even use @render_project

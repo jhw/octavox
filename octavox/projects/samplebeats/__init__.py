@@ -8,7 +8,7 @@ from octavox.core.model import SVPatch
 
 from octavox.core.pools import SVPools
 
-import boto3, os, random, sys, yaml
+import boto3, itertools, os, random, sys, yaml
 
 Modules, Links, Sequencers, Modulators = [yaml.safe_load(open("octavox/projects/samplebeats/%s.yaml" % attr).read())
                                           for attr in "modules|links|sequencers|modulators".split("|")]
@@ -103,10 +103,27 @@ class SVCli(SVBankCli):
     @assert_project
     @render_patches(prefix="chain")
     def do_chain_patches(self, I):
+        def permutations_of(s):
+            n, perms = len(s), []            
+            for i in range(1, n):
+                for perm in itertools.permutations(s, i):
+                    perms.append(set(perm))                    
+            return perms
         roots=[self.patches[i % len(self.patches)]
                for i in I]
         patches=[]
         patches+=roots
+        allmutes=permutations_of(["%sSampler" % attr.capitalize()
+                               for attr in "kick|snare|hat".split("|")])
+        for root in roots:
+            for mutes in allmutes:
+                patch=SVPatch(machines=root["machines"],
+                              mutes=mutes)
+                """
+                patch=root.clone()
+                patch["mutes"]=mutes
+                """
+                patches.append(patch)
         return patches
     
 def init_pools(banks, terms, limit=MinPoolSize):
