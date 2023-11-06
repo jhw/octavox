@@ -1,6 +1,8 @@
-### short
+### short [01-chaining]
 
-- chain/expand/explode action [notes]
+- skeleton action which takes multiple roots
+- mute combinations
+- truncate length
 
 ### medium
 
