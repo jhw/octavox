@@ -1,6 +1,6 @@
 from octavox.core.banks import SVBanks
 
-from octavox.core.cli import SVBankCli, render_patches
+from octavox.core.cli import SVBankCli, render_patches, assert_project
 
 from octavox.core.cli.parse import parse_line
 
@@ -81,19 +81,33 @@ class SVCli(SVBankCli):
     
     @parse_line(config=[{"name": "i",
                          "type": "int"}])
+    @assert_project
     @render_patches(prefix="mutation")
     def do_mutate_patch_1(self, i):
         return self._mutate_patch(i, attrs="level|volume".split("|"))
     @parse_line(config=[{"name": "i",
                          "type": "int"}])
+    @assert_project
     @render_patches(prefix="mutation")
     def do_mutate_patch_2(self, i):
         return self._mutate_patch(i, attrs="level|volume|trig|pattern".split("|"))
     @parse_line(config=[{"name": "i",
                          "type": "int"}])
+    @assert_project
     @render_patches(prefix="mutation")
     def do_mutate_patch_3(self, i):
         return self._mutate_patch(i, attrs="level|volume|trig|pattern|sample".split("|"))                
+
+    @parse_line(config=[{"name": "I",
+                         "type": "array"}])
+    @assert_project
+    @render_patches(prefix="chain")
+    def do_chain_patches(self, I):
+        roots=[self.patches[i % len(self.patches)]
+               for i in I]
+        patches=[]
+        patches+=roots
+        return patches
     
 def init_pools(banks, terms, limit=MinPoolSize):
     pools, globalz = SVPools(), SVPools()

@@ -1,10 +1,12 @@
 ### short [01-chaining]
 
-- skeleton action which takes multiple roots
 - mute combinations
 - truncate length
 
 ### medium
+
+- mutate and chain must assert project
+
 
 - migrate slicebeats archives
 
@@ -19,6 +21,7 @@
 
 ### done
 
+- skeleton action which takes multiple roots
 - figure out how to pass mutes to project render
   - should you even use @render_project
 - mutes
