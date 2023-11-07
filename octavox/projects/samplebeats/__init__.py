@@ -102,29 +102,31 @@ class SVCli(SVBankCli):
                          "type": "array"}])
     @assert_project
     @render_patches(prefix="chain")
-    def do_chain_patches(self, I):
-        def permutations_of(s):
-            n, perms = len(s), []            
-            for i in range(1, n):
-                for perm in itertools.permutations(s, i):
-                    perms.append(set(perm))                    
-            return perms
+    def do_chain_patches(self, I, lengths=[4, 8, 16, 24, 32, 48]):
+        def unique_permutations(strings):
+            perms=[]
+            for r in range(1, len(strings)):
+                for _perm in itertools.permutations(strings, r):
+                    perm="/".join(sorted(list(_perm)))
+                    if perm not in perms:
+                        perms.append(perm)
+            return [perm.split("/")
+                    for perm in perms]
         roots=[self.patches[i % len(self.patches)]
                for i in I]
+        allmutes=unique_permutations(["%sSampler" % attr.capitalize()
+                                      for attr in "kick|snare|hat".split("|")])
         patches=[]
-        patches+=roots
-        allmutes=permutations_of(["%sSampler" % attr.capitalize()
-                               for attr in "kick|snare|hat".split("|")])
         for root in roots:
             for mutes in allmutes:
-                patch=SVPatch(machines=root["machines"],
-                              mutes=mutes)
-                """
                 patch=root.clone()
-                patch["mutes"]=mutes
-                """
+                patch["mutes"]=list(mutes) # NB
                 patches.append(patch)
-        return patches
+        random.shuffle(patches)
+        patches=roots+patches
+        sz=[l for l in lengths
+            if l < len(patches)][-1]
+        return patches[:sz]
     
 def init_pools(banks, terms, limit=MinPoolSize):
     pools, globalz = SVPools(), SVPools()

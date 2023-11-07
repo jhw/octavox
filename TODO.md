@@ -1,4 +1,22 @@
-### short [01-chaining]
+### short
+
+- use constructor during chaining
+
+### medium
+
+- test archive/unarchive
+- migrate slicebeats archives
+
+### thoughts
+
+- 3rd euclid arg?
+  - probably not worth it
+- machine mutation?
+  - probably not required if you can iterate through depth of attributes
+- separate sn/kk/ht patterns according to density?
+  - not worth it
+
+### done
 
 - json error
 
@@ -31,22 +49,6 @@ TypeError: Object of type set is not JSON serializable
 
 - randomise chained mutations
 - truncate length
-
-### medium
-
-- migrate slicebeats archives
-
-### thoughts
-
-- 3rd euclid arg?
-  - probably not worth it
-- machine mutation?
-  - probably not required if you can iterate through depth of attributes
-- separate sn/kk/ht patterns according to density?
-  - not worth it
-
-### done
-
 - mute combinations
 - mutate and chain must assert project
 - skeleton action which takes multiple roots
