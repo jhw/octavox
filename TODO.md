@@ -1,7 +1,5 @@
 ### short
 
-- use constructor during chaining
-
 ### medium
 
 - test archive/unarchive
@@ -18,6 +16,7 @@
 
 ### done
 
+- use constructor during chaining
 - json error
 
 ```

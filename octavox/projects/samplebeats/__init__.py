@@ -119,8 +119,8 @@ class SVCli(SVBankCli):
         patches=[]
         for root in roots:
             for mutes in allmutes:
-                patch=root.clone()
-                patch["mutes"]=list(mutes) # NB
+                patch=SVPatch(machines=root["machines"],
+                              mutes=mutes)
                 patches.append(patch)
         random.shuffle(patches)
         patches=roots+patches
