@@ -1,11 +1,15 @@
-### short
+### short [01-archives]
 
-- sample ban facilities
+- test reanimation
+- examine migration facilities
+- diff current format against archive format
+- write migration script and migrate
+- test running archived projects
+- test archiving a project
 
 ### medium
 
-- test archive/unarchive
-- migrate slicebeats archives
+- sample ban facilities
 
 ### thoughts
 
