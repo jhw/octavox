@@ -1,9 +1,6 @@
 ### short [01-archives]
 
-- test reanimate archives
-- examine structure difference
-- script to migrate projects
-- migrate and test
+- script to migrate formats
 
 ### medium
 
