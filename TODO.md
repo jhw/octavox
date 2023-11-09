@@ -1,14 +1,14 @@
 ### short [01-archives]
 
-- test reanimation
-- examine migration facilities
-- diff current format against archive format
-- write migration script and migrate
-- test running archived projects
-- test archiving a project
+- script to refactor slicebeats name as samplebeats
+- test reanimate archives
+- examine structure difference
+- script to migrate projects
+- migrate and test
 
 ### medium
 
+- test archiving a project
 - sample ban facilities
 
 ### thoughts
