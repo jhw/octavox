@@ -1,6 +1,5 @@
 ### short [01-archives]
 
-- script to refactor slicebeats name as samplebeats
 - test reanimate archives
 - examine structure difference
 - script to migrate projects
@@ -22,6 +21,7 @@
 
 ### done
 
+- script to refactor slicebeats name as samplebeats
 - use constructor during chaining
 - json error
 
