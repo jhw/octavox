@@ -1,10 +1,12 @@
 ### short [01-archives]
 
-- script to load slicebeats and extract (migrate) relevant information
+- plan for mapping slicebeats onto new schema
+- investigate how vitling offbeats oh/ch is now implemented
 
 ### medium
 
 - test archiving a project
+
 - sample ban facilities
 
 ### thoughts
@@ -18,6 +20,7 @@
 
 ### done
 
+- script to load slicebeats and extract (migrate) relevant information
 - delete samplebeats archives
 - script to refactor slicebeats name as samplebeats
 - use constructor during chaining

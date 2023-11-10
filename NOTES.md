@@ -1,3 +1,12 @@
+### slicebeats mapping 10/11/23
+
+- use vitling sequencers with styles
+- forget seeds; generated some new ones
+- use root sample only; rest are mutated clones
+- figure out how oh/ch now managed
+- try and map samples in the order they are currently mapped
+- push to archives and reanimate
+
 ### chain action 05/11/23
 
 - not sure it should be called chain
