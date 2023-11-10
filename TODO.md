@@ -1,6 +1,6 @@
 ### short [01-archives]
 
-- script to migrate formats
+- script to load slicebeats and extract (migrate) relevant information
 
 ### medium
 
@@ -18,6 +18,7 @@
 
 ### done
 
+- delete samplebeats archives
 - script to refactor slicebeats name as samplebeats
 - use constructor during chaining
 - json error
