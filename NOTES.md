@@ -1,3 +1,11 @@
+### slicebeats refactoring 26/11/23
+
+- the seeds are no use because the seed model is completely different
+- patterns are no good because they are no longer stored at the slice level, they are randomised depending on seed
+- so really the only things worth preserving are the samples
+- and then probably only the root sample as remember slicebeats are all mutations
+- so maybe generate some kind of ranomised patterns and then splash the samples from the root into them
+
 ### slicebeats mapping 10/11/23
 
 - use vitling sequencers with styles
