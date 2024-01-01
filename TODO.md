@@ -4,9 +4,11 @@
 - test project archive lifecycle
 - action to show dump samples
 - remove pydub slicing stuff
+- remove pitch info
 - check chain is working
 - check breaks are still in place
 - pydub scripts to slice a dumped wavfile
+- fixing and banning
 
 ### medium
 
