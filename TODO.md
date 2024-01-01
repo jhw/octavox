@@ -1,13 +1,13 @@
-### short [01-archives]
+### short
 
-- plan for mapping slicebeats onto new schema
-- investigate how vitling offbeats oh/ch is now implemented
+- test project archive lifecycle
+- action to show dump samples
+- remove pydub slicing stuff
+- check chain is working
+- check breaks are still in place
+- pydub scripts to slice a dumped wavfile
 
 ### medium
-
-- test archiving a project
-
-- sample ban facilities
 
 ### thoughts
 
