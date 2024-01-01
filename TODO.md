@@ -1,5 +1,6 @@
 ### short
 
+- script to splash slicebeats samples onto new randomise structure
 - test project archive lifecycle
 - action to show dump samples
 - remove pydub slicing stuff

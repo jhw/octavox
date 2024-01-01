@@ -4,8 +4,6 @@ from octavox.core import is_abbrev, list_s3_keys
 
 from octavox.core.pools import SVSample, SVPool, SVPools
 
-from pydub import AudioSegment
-
 import io, os, re, zipfile
 
 class SVBank:
