@@ -1,9 +1,10 @@
 ### short
 
-### medium
-
 - pass banned list to banks pools generation
 - script to randomise patches and insert slicebeats samples
+
+### medium
+
 - pydub scripts to slice a dumped wavfile
   - check chain is working
 - wavfile analysis
