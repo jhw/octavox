@@ -1,17 +1,17 @@
 ### short
 
-- pass banned list to banks pools generation
-
 ### medium
 
-- dump_sample to splash trigs onto a grid
+- pass banned list to banks pools generation
 - script to randomise patches and insert slicebeats samples
-- check chain is working
 - pydub scripts to slice a dumped wavfile
-- fixing
+  - check chain is working
+- wavfile analysis
+  - https://chat.openai.com/c/8b21f613-b444-4d7f-93db-ccc670f1e468
 
 ### demos
 
+- sample fixing
 - risers and drops
 
 ### thoughts
@@ -25,6 +25,7 @@
 
 ### done
 
+- complete rendering of dump_samples grid
 - remove trigs.grid
 - action to show sample keys
 - get rid of chord support

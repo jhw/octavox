@@ -71,15 +71,58 @@ class SVCli(SVBankCli):
                          "type": "int"}])
     @assert_project
     def do_dump_patch(self, i):
+        class Column(list):
+            def __init__(self, items=[]):
+                list.__init__(self, items)
+            @property
+            def width(self):
+                return max([len(v) for v in self])
+        class Track(Column):
+            def __init__(self, n, defaultval=".."):
+                Column.__init__(self, [defaultval for i in range(n)])
+        class Index(Column):
+            def __init__(self, n):
+                Column.__init__(self, [str(i) for i in range(n)])
+        class Grid(dict):
+            def __init__(self, n):
+                dict.__init__(self)
+                self["Index"]=Index(n)
+            @property
+            def widths(self):
+                widths={}
+                for k, v in self.items():
+                    widths[k]=max([len(k), v.width])
+                return widths
+            def format_cell(self, v, n):
+                return v+" ".join(['' for i in range(1+n-len(v))]) if len(v) < n else v[:n]
+            def render(self, keys, delimiter="  "):
+                widths=self.widths
+                rows=[]
+                titles=[self.format_cell(key, widths[key])
+                        for key in keys]
+                rows.append(titles)
+                for i in range(len(self["Index"])):
+                    row=[self.format_cell(self[key][i], widths[key])
+                         for key in keys]
+                    rows.append(row)
+                return "\n".join([delimiter.join(row)
+                                  for row in rows])
         patch=SVPatch(**self.patches[i % len(self.patches)])
         rendered=patch.render(nbeats=self.env["nbeats"],
                               density=self.env["density"],
                               temperature=self.env["temperature"])
+        grid=Grid(self.env["nbeats"])
         for key, trigs in rendered.items():
             if "Sampler" in key:
+                grid.setdefault(key, Track(self.env["nbeats"]))
                 for trig in trigs:
-                    print (key, trig.i, trig.sample["bank"], trig.sample["file"])
-                    
+                    grid[key][trig.i]="%s/%s" % (trig.sample["bank"],
+                                                 trig.sample["file"])
+        print (grid.render(keys=["Index",
+                                 "KickSampler",
+                                 "SnareSampler",
+                                 "HatSampler"]))
+        
     def _mutate_patch(self, i, attrs):
         root=self.patches[i % len(self.patches)]
         patches=[root]
