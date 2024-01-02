@@ -1,3 +1,21 @@
+### show samples 02/02/24
+
+- the main problem here is that 
+  - each track uses a different sampler
+  - each sampler holds samples for every single patch for the track in question
+  - the sunvox view only shows you a slot reference
+  - because of the generative nature of the machines, it's hard to get hold of the actual notes (although possible if you render the track)
+  - a rendered patch doesn't make use of all the defined samples
+  
+- can imagine a action which takes a patch index
+- you probably have to render a project to get the samplers and the notes which are actually played
+- is there a pre- render stage prior to a sunvox render stage?
+- yes because you have the whole model thing
+
+- start with randomise task
+- instead of rendering a project, just generate the internal model
+- see what access you have to actual notes plus sampler mapping
+
 ### reanimate archives 02/02/24
 
 ```

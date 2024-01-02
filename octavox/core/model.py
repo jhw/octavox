@@ -2,8 +2,6 @@ from octavox.core import load_class
 
 """
 - mod is automatically added to sample tags so that samples can be properly allocated to samplers at project rendering time
-- chord is expanded into a series of note trigs with different track keys
-- chords do not currently support samples
 """
 
 class SVNoteTrig:
@@ -11,29 +9,24 @@ class SVNoteTrig:
     Volume=128
     
     def __init__(self, mod, i,
-                 chord=None,
                  sample=None,
                  note=None,
                  vel=1):
         self.mod=mod
         self.i=i
-        self.chord=chord
         if sample:
             sample.add_tag(mod) # NB
         self.sample=sample
         self.note=note
         self.vel=vel        
+
+    """
+    - returns a list so could potentially add chord info in the future
+    """
         
     @property
     def expanded(self):
-        if self.chord:
-            return [("%s/%i" % (self.mod, i),
-                     SVNoteTrig(mod=self.mod,
-                                i=self.i,
-                                note=note))
-                    for i, note in enumerate(self.chord)]
-        else:
-            return [(self.mod, self)]
+        return [(self.mod, self)]
         
     def render(self,
                modules,
@@ -65,7 +58,11 @@ class SVFXTrig:
     @property
     def ctrl(self):
         return self.target.split("/")[1]
-        
+
+    """
+    - returns a list for consistency with SVNoteTrig, even though list functionality highly likely to be unused
+    """
+    
     @property
     def expanded(self):
         return [(self.target, self)]

@@ -21,6 +21,7 @@
 
 ### done
 
+- get rid of chord support
 - script to filter slicebeats samples
 - reanimate fails on nbreaks [notes]
 - test project archive lifecycle
