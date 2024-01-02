@@ -4,8 +4,7 @@ import random, re, urllib.parse
 
 def sample_default_kwargs(fn):
     def wrapped(self, item):
-        for attr, defaultval in [("pitch", 0),
-                                 ("tags", [])]:
+        for attr, defaultval in [("tags", [])]:
             if attr not in item:
                 item[attr]=defaultval
         return fn(self, item)
@@ -20,13 +19,8 @@ class SVSample(dict):
     def clone(self):
         kwargs={"bank": self["bank"],
                 "file": self["file"],
-                "pitch": self["pitch"],
                 "tags": list(self["tags"])}
         return SVSample(kwargs)
-
-    @property
-    def has_pitch(self):
-        return self["pitch"]!=0
 
     @property
     def has_tags(self):
@@ -37,11 +31,6 @@ class SVSample(dict):
             self["tags"].append(tag)
 
     @property
-    def pitchstr(self):
-        fmtstr="(+%i)" if self["pitch"] > 0 else "(%i)"
-        return fmtstr % self["pitch"]
-    
-    @property
     def tagstr(self):
         return "[%s]" % ", ".join(sorted(self["tags"]))
 
@@ -49,8 +38,6 @@ class SVSample(dict):
         tokens=[]
         tokens.append("%s/%s" % (self["bank"],
                                  self["file"])),
-        if self.has_pitch:
-            tokens.append(self.pitchstr)
         if self.has_tags:
             tokens.append(self.tagstr)
         return " ".join(tokens)

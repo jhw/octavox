@@ -3,7 +3,6 @@
 - script to splash slicebeats samples onto new randomise structure
 - test project archive lifecycle
 - action to show dump samples
-- remove pitch info
 - check chain is working
 - pydub scripts to slice a dumped wavfile
 - fixing and banning
@@ -21,6 +20,7 @@
 
 ### done
 
+- remove pitch info
 - remove pydub slicing stuff
 - check breaks are still in place
 - script to load slicebeats and extract (migrate) relevant information
