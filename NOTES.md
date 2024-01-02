@@ -1,3 +1,21 @@
+### reanimate archives 02/02/24
+
+```
+(env) jhw@Justins-MacBook-Air octavox % python octavox/projects/samplebeats/__init__.py
+INFO: pool=pico-richard-devine-default
+Welcome to Samplebeats :)
+>>> reanimate_archives
+2024-01-02-07-47-15-random-hour-many
+EXCEPTION: Traceback (most recent call last):
+  File "/Users/jhw/work/octavox/octavox/core/cli/parse.py", line 58, in wrapped
+    return fn(self, **kwargs)
+  File "/Users/jhw/work/octavox/octavox/core/cli/__init__.py", line 64, in wrapped
+    return fn(self, *args, **kwargs)
+  File "/Users/jhw/work/octavox/octavox/core/cli/__init__.py", line 201, in do_reanimate_archives
+    project=SVProject().render(patches=patches,
+TypeError: SVProject.render() missing 1 required positional argument: 'nbreaks'
+```
+
 ### slicebeats refactoring 26/11/23
 
 - the seeds are no use because the seed model is completely different

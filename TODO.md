@@ -1,8 +1,9 @@
 ### short
 
-- script to splash slicebeats samples onto new randomise structure
-- test project archive lifecycle
-- action to show dump samples
+- script to filter slicebeats samples
+- script to generate new slicebeats projects
+- reanimate fails on nbreaks [notes]
+- action to show sample keys
 - check chain is working
 - pydub scripts to slice a dumped wavfile
 - fixing and banning
@@ -20,6 +21,7 @@
 
 ### done
 
+- test project archive lifecycle
 - remove pitch info
 - remove pydub slicing stuff
 - check breaks are still in place
