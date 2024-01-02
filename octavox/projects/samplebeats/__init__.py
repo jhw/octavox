@@ -67,6 +67,19 @@ class SVCli(SVBankCli):
             patches.append(patch)
         return patches
 
+    @parse_line(config=[{"name": "i",
+                         "type": "int"}])
+    @assert_project
+    def do_dump_patch(self, i):
+        patch=SVPatch(**self.patches[i % len(self.patches)])
+        rendered=patch.render(nbeats=self.env["nbeats"],
+                              density=self.env["density"],
+                              temperature=self.env["temperature"])
+        for key, trigs in rendered.items():
+            if "Sampler" in key:
+                for trig in trigs:
+                    print (key, trig.i, trig.sample["bank"], trig.sample["file"])
+                    
     def _mutate_patch(self, i, attrs):
         root=self.patches[i % len(self.patches)]
         patches=[root]

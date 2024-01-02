@@ -1,7 +1,8 @@
 ### short
 
-- script to generate new slicebeats projects
-- action to show sample keys
+- dump_sample to splash trigs onto a grid
+
+- script to randomise patches and insert slicebeats samples
 - check chain is working
 - pydub scripts to slice a dumped wavfile
 - fixing and banning
@@ -21,6 +22,7 @@
 
 ### done
 
+- action to show sample keys
 - get rid of chord support
 - script to filter slicebeats samples
 - reanimate fails on nbreaks [notes]
