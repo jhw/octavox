@@ -2,13 +2,15 @@
 
 - script to filter slicebeats samples
 - script to generate new slicebeats projects
-- reanimate fails on nbreaks [notes]
+
 - action to show sample keys
 - check chain is working
 - pydub scripts to slice a dumped wavfile
 - fixing and banning
 
 ### medium
+
+- risers and drops
 
 ### thoughts
 
@@ -21,6 +23,7 @@
 
 ### done
 
+- reanimate fails on nbreaks [notes]
 - test project archive lifecycle
 - remove pitch info
 - remove pydub slicing stuff

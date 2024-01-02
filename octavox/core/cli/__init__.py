@@ -202,7 +202,8 @@ class SVBaseCli(cmd.Cmd):
                                        modconfig=self.core,
                                        links=self.links,
                                        banks=self.banks,
-                                       bpm=self.env["bpm"])
+                                       bpm=self.env["bpm"],
+                                       nbreaks=self.env["nbreaks"])
             filename="%s/sunvox/%s.sunvox" % (self.outdir, stem)
             with open(filename, 'wb') as f:
                 project.write_to(f)
