@@ -1,0 +1,6274 @@
+[
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 53404948,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 57688546,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 81121559,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 95541153,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 84182292,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 61016511,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 89407438,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 99103361,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 41656479,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 62069080
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 16119167
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 12620417,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 1235534,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 58310741,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 98189209,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 50038926,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 4259318,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 64613587,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 61391389,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 79213701,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 16833593
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 12236750
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 99378640,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 44839048,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 69839868,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 37754193,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 12061954,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 79654442,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 24263359,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 77300485,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 43749575,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 94548325
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 81635628
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 84548201,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 43372576,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 70901423,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 39863263,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 79431687,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 29925786,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 57028762,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 58051150,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 84013605,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 95532545
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 63944128
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 58678787,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 95239993,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 55703633,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 93475025,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 59719288,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 66778720,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 42945014,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 54217457,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 97980706,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 48437963
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 44073162
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 87129574,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 89611835,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 39174356,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 65686877,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 1272216,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 51863787,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 96423774,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 58851464,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 7259213,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 42619832
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 38822017
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 41850809,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 36341907,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 22727688,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 64160174,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 4427218,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 81110156,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 50640719,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 49972913,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 87156004,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 20362879
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 69320743
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 13347705,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 19548916,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 76613732,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 3268854,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 61435284,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 88077053,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 66832701,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 40514168,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 97640589,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 65453894
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 19404172
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 73488727,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 32782103,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 24155436,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 4733382,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 74176973,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 21903675,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 8921605,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 31965844,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 18962164,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 68198944
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 40510391
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 83401199,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 17314859,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 93066764,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 56191754,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 85419538,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 49757908,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 77468811,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 29567326,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 13001513,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 58627883
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 7066930
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 35192703,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 51617868,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 52272035,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 59834947,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 68369135,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 9822779,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 47720715,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 86233757,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 23687031,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 67005755
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 75409774
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 21585011,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 24433329,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 18442122,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 545323,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 15979226,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 55964561,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 74560698,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 72618024,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 23864548,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 25313310
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 48439274
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 11088200,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 67271534,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 25598306,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 68584686,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 13418527,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 94764426,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 66580686,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 45646151,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 34862404,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 21458930
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 53522551
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 50209205,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 4321406,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 85749591,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 97345754,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 23608189,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 4777575,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 15080420,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 60360828,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 27141255,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 62084581
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 36481577
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 76663158,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 14232625,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 36049579,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 48132392,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 61956029,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 17407744,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 12547484,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 59014293,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 37720976,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 813216
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 16805518
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 81916180,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 6796103,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 4472049,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 3162970,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 26055106,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 94461961,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 12331847,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 5753268,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 45151370,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 6801691
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 32691470
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 37926223,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 47427905,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 77119386,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 38103838,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 34770752,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 22249363,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 51375825,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 93149000,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 9741345,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 34454751
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 93146683
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 31383490,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 66434166,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 7596445,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 79928960,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 60525343,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 54071979,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 90462319,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 45489019,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 86746180,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 13742313
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 5220112
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 86806358,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 14789807,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 49557724,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 12430539,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 8504882,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 8287270,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 70335121,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 77416023,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 32088402,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 71573165
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 1896515
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 81939826,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 3425353,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 25998345,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 54025474,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 12497326,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 80122952,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 23755941,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 97814582,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 35957613,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 66677394
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 31369620
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 65310113,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 12436240,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 91357883,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 54593208,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 48678185,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 35285207,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 11120883,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 74145479,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 55574195,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 33681898
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 46442982
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 20044475,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 28336853,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 54433656,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 17627883,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 84173319,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 69527512,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 822051,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 6449548,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 9180769,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 629639
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 39281751
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 33351827,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 9675320,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 27396402,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 29716850,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 12801021,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 58927659,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 99063527,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 53791830,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 4321126,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 46004127
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 4303327
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 61235966,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 2436508,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 69935790,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 71252107,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 70557512,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 26101670,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 29441892,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 69212756,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 27113514,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 59691661
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 53894231
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 98199339,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 48341602,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 72187559,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 64443979,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 67356954,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 70097847,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 39076764,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 92989271,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 95445982,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 94240983
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 81523019
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 67775074,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 66503716,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 26192100,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 69702627,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 45679589,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 66249509,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 53668605,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 78488307,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 89025006,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 85516058
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 34678017
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 10653170,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 37346425,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 77363563,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 10496148,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 18686979,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 82845616,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 13104039,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 17326102,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 61925371,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 80605314
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 1220942
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 21770809,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 15654660,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 48662058,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 86195135,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 57152690,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 38619039,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 80509846,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 65390227,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 1098752,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 27999950
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 9499074
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 92832242,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 2822622,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 20627445,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 44494486,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 87323191,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 65849705,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 49682071,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 34538229,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 90977247,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 63148145
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 8923684
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 69691967,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 79392414,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 66692046,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 41167428,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 43966062,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 34308947,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 46695542,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 80218912,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 58642752,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 74122298
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 1318951
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 28812324,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 98927157,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 49722627,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 80444570,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 14852560,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 18888504,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 52499992,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 45292234,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 11472862,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 50464872
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 10681208
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "10 BD.wav"
+              }
+            ],
+            "seed": 75348785,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "18 Arcade.wav"
+              }
+            ],
+            "seed": 39012532,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "36 Does It Even Matter Percussion.wav"
+              }
+            ],
+            "seed": 72210164,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "30 Devine.wav"
+              }
+            ],
+            "seed": 65529317,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              }
+            ],
+            "seed": 40009571,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "44 ERIKABD5.wav"
+              }
+            ],
+            "seed": 4813915,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "20 fmbs3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "10 Electro Acoustic sd.wav"
+              }
+            ],
+            "seed": 80936930,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "07 fmbs4.wav"
+              }
+            ],
+            "seed": 35467068,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "52 ERIKAPURESYNTHone3.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-richard-devine",
+                "file": "25 Devine.wav"
+              }
+            ],
+            "seed": 57056944,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 87607866
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 95579675
+      }
+    ],
+    "density": 0.75
+  }
+]

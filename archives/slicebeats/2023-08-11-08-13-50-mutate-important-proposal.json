@@ -1,0 +1,6274 @@
+[
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 46294998,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 34833658,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 65321468,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 62172442,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 65385211,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 96282372,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 46733187,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 79088416,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 80294306,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 7917819,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 99779275,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 42929839,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 65494900,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 94915985,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 1359167,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 37947708,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 13987911,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 59379233,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 31400320,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 37020648,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 2298992,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 93001187,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 97166421,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 76098572,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 55136658,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 50184081,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 37807436,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 97633647,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 82621715,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 50682596,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 91307781,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 20455330,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 16058614,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 48199680,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 23754314,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 58886759,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 28859188,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 26086087,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 54654078,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 28476640,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 99300284,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 13711032,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 62538156,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 17150233,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 3594870,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 60444512,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 5431495,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 30621199,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 15264623,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 92039007,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 59828531,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 76626794,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 7146531,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 39846825,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 78221955,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 50969030,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 96810719,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 71193141,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 24176359,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 57857577,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 24729429,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 10651718,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 76742627,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 61186708,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 97590140,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 52778338,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 82686255,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 87945689,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 14745961,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 5759242,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 31854392,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 91656451,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 94775870,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 75585699,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 1070605,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 48240602,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 83638655,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 56214373,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 58066933,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 62101654,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 67610058,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 93042182,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 25663366,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 54273304,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 99358872,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 85326595,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 78140981,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 40393051,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 33665381,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 78348455,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 794928,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 17375277,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 26899974,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 50119004,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 38054944,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 78847201,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 73167510,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 41458943,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 69330758,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 14763814,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 34937283,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 65915835,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 70264725,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 32024970,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 95967840,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 27697752,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 38456843,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 15271640,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 31892224,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 23952294,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 47058910,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 86703650,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 55132328,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 9958322,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 44108183,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 51258372,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 84811918,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 4720117,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 53458750,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 86812612,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 96096507,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 99216822,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 31155173,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 94297704,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 15877623,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 11004861,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 72100726,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 38930826,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 27183276,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 55402539,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 97540689,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 56110257,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 35977282,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 95216501,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 51926626,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 63647832,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 36593675,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 42144940,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 2984362,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 67911802,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 51861191,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 1155709,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 99501422,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 60847586,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 43822693,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 45721306,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 98025506,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 97938501,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 50082759,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 43917715,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 69482829,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 2159148,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 17820087,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 31893181,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 62648985,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 73462435,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 2875765,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 98084134,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 14513785,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 3839051,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 91566891,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 16394911,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 33525971,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 72691174,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 72601054,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 46042309,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 30507479,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 66782550,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 87401430,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 73001618,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 53991000,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 95630404,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 14042147,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 78965576,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 48888934,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 55046350,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 72517125,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 90726075,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 35804946,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 3357912,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 12393323,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 71078454,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 48506967,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 98614283,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 77105146,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 76583233,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 21639608,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 12273736,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 30891592,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 27057534,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 55234050,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 59395659,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 40884946,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 70170708,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 23905485,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 52505307,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 88410601,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 17651440,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 81204059,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 4450596,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 36837666,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 64338000,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 22466137,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 57123296,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 44625892,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 28609398,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 20149723,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 60421076,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 44918293,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 96142709,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 48456400,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 49726473,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 30561895,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 82662834,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 65350272,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 63383233,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 62454936,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 13110380,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 46487582,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 16101992,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 5000586,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 20668736,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 17970181,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 94530984,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 18606803,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 5958231,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 49525190,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 19969415,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 6589938,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 81783695,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 53215011,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 96981545,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 80168805,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 13815267,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 30149967,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 82080038,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 36021175,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 21599240,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 59712293,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 85059970,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 84382147,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 65174344,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 41333050,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 60997490,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 50688700,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 9640278,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 65205877,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 37966645,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 53640904,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 51278536,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 86528445,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 82524458,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 71933692,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 98527639,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 50996540,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 51357686,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 39111488,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 84444121,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 75733340,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 33498659,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 22413721,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 23184699,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 90114758,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 93764784,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 39146225,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 96351765,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 46908131,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 3778683,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 6861476,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 49930310,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 30419045,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 38399553,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 2803489,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 88506581,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 42459053,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 93661285,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 96521903,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 39287197,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 80628179,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 44893363,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 61246051,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 87075965,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 72210878,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 56394300,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 97347223,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 79503575,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 78211956,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 62545362,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 17475456,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 97220314,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 3337154,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 16603819,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 7982062,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 79380927,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 32255181,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 29563315,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 28793928,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 33011817,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 12314193,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 38008105,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 73042055,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 51512964,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 90325911,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 1960263,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 10142981,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 44370900,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 35919405,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 91891752,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 58501658,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 80445941,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 40214634,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 21295755,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 41381181,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 46517745,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 92164578,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 50567387,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 77982454,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 11933617,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 95252478,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 67262450,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 98319786,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 73473042,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 4560329,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 98052774,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 26086117,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 4120694,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 6512473,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 33303494,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 72755287,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 10120045,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 81365480,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 3734024,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 48024446,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 61420253,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 76322099,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 23101736,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 62121582,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 25628499,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 2637176,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 90156931,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 88645228,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-syntrx",
+                "file": "62 kik1.wav"
+              }
+            ],
+            "seed": 44889482,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "00 medium decayed Kick.wav"
+              }
+            ],
+            "seed": 14570846,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "00 Basimilus Filtered Kick Percussion.wav"
+              }
+            ],
+            "seed": 38101212,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav"
+              }
+            ],
+            "seed": 54194249,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 79503070,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "13 SD.wav"
+              }
+            ],
+            "seed": 30103898,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-legowelt",
+                "file": "60 ERIKASHihat.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-default",
+                "file": "40 CH.wav"
+              }
+            ],
+            "seed": 31896720,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "06 Grimy Gretch Kick Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 16978382,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "30 PERC.wav"
+              }
+            ],
+            "seed": 75510446,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 71935911,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 63489089,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  }
+]

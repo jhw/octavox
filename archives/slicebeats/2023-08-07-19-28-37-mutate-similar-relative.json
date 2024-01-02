@@ -1,0 +1,6274 @@
+[
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 96258342,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 3917476,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 96021409,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 81482205,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 43428835,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 37220810,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 58590416,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 16701882,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 55786449,
+            "style": "closed"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 63552273,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 24107963,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 50045895,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 12971654,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 7127339,
+            "style": "electro"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 30495020,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 45094657,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 11009219,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 13220163,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 23986895,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 53260885,
+            "style": "closed"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 49524225,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 87442302,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 42322000,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 63167729,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 91967695,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 86325865,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 57300373,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 29781273,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 22957841,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 15533489,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 86632203,
+            "style": "closed"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 13826200,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 31392556,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 47524550,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 37658141,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 53139925,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 56960990,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 36098622,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 40983857,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 54717864,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 76969748,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 87324274,
+            "style": "closed"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 92085236,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 46059001,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 88791586,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 7193155,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 74392164,
+            "style": "electro"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 91084173,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 62618052,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 6340673,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 17958203,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 42864826,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 56884143,
+            "style": "closed"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 73102293,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 77596479,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 50962669,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 93426567,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 39339759,
+            "style": "electro"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 17149630,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 45976713,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 85048061,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 3120217,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 10898807,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 19260389,
+            "style": "closed"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 36001129,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 82866913,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 3838392,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 93922211,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 22909792,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 67742027,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 19778397,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 9720019,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 35275849,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 46985496,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 72557627,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 95846439,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 19775025,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 13753407,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 658251,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 91477828,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 14445515,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 17172039,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 8291936,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 22040894,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 17149163,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 48200650,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 85038912,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 10273203,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 56070486,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 46915702,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 44510766,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 34172543,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 23544864,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 21660930,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 26703564,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 44707034,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 14420451,
+            "style": "closed"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 12882992,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 79640571,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 81429944,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 63107459,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 29176691,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 2219572,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 40073839,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 56798722,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 62701075,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 36049207,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 84008997,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 42840169,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 96384447,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 15718688,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 72379109,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 38563053,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 92229328,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 6607074,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 95242766,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 99234827,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 30366865,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 14784732,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 20289379,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 78743898,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 61956784,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 29243408,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 35303820,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 5342202,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 39531807,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 10477375,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 47593218,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 35407806,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 94377511,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 56859458,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 89892258,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 4422425,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 94433957,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 77446767,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 61843180,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 61682084,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 34691675,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 67951199,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 21579792,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 3030528,
+            "style": "closed"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 7338717,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 44694281,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 82562244,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 20825470,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 66227170,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 49722785,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 29530998,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 96547459,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 69866322,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 30114117,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 53892320,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 67822912,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 74288239,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 76607385,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 10168744,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 57862454,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 27330388,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 22309903,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 21057931,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 55830810,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 58132594,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 47125306,
+            "style": "closed"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 53384204,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 24480050,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 92878730,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 16865246,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 36562005,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 73662369,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 76573964,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 64037149,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 68967469,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 87680421,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 61386066,
+            "style": "closed"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 47543839,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 95709643,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 43438293,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 73143750,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 23549497,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 8208796,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 78832453,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 38230497,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 52778682,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 81925646,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 98754192,
+            "style": "closed"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 75470992,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 17853153,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 2281182,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 1819865,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 25377393,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 95181175,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 21665414,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 74349866,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 57111547,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 4602476,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 24509435,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 59971368,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 75016966,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 17685378,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 18599442,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 17053828,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 22724137,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 17619201,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 99162203,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 24100150,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 81955628,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 15502118,
+            "style": "closed"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 87035152,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 81154255,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 66950912,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 81392458,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 8360607,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 58686031,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 18934182,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 25231881,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 16742801,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 69264362,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 23995148,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 47352961,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 12565141,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 89022097,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 5657959,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 8246637,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 55345685,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 50827906,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 29926876,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 69020266,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 25049462,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 12812766,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 5028127,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 90202304,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 37934684,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 26312319,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 76832479,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 4326294,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 64430569,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 84668873,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 19931380,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 97655348,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 38375351,
+            "style": "closed"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 29309146,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 4789892,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 58789821,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 17088779,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 68616905,
+            "style": "electro"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 12937604,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 21425707,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 60597697,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 24325806,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 18421965,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 5199389,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 56934013,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 61087632,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 36490915,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 20201795,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 77497581,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 57180899,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 3759408,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 27553937,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 19760794,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 86691506,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 69559436,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 56759397,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 9951235,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 25916524,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 45652316,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 83543211,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 31900490,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 14844038,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 18247883,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 95002884,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 87659732,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 62562700,
+            "style": "closed"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 56653134,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 90141967,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 41501883,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 34752688,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 33637314,
+            "style": "electro"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 8084834,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 6710946,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 76168811,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 15173482,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 40182520,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 56201058,
+            "style": "closed"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 84759935,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 63488704,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 80282468,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 30178265,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 32596474,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 60789991,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 47955118,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 3141668,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 44542651,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 70117215,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 29817627,
+            "style": "closed"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 60407132,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 66563037,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 20503683,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 87981087,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 45613381,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 7450183,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 44008685,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 8384310,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 47267466,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 76305932,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 92327149,
+            "style": "closed"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 53040757,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 16780715,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 66943486,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 43645458,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 59971398,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 73105340,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 1299014,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 32763852,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 2483931,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 15208590,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 92514061,
+            "style": "closed"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 77969621,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 19454192,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 98361753,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 1281728,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 90179563,
+            "style": "triplets"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 49405625,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 16238966,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 50237777,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 15122214,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 45792725,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 30561617,
+            "style": "closed"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 32988371,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 22444691,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 66655237,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 53201784,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 97438830,
+            "style": "electro"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 99237504,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 7928686,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 20930655,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 40271279,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 24487978,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 88137457,
+            "style": "closed"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 92391637,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 11869071,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "01 BD.wav"
+              }
+            ],
+            "seed": 53904256,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "11 Kick.wav"
+              }
+            ],
+            "seed": 40834825,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "03 BD.wav"
+              }
+            ],
+            "seed": 26010660,
+            "style": "electro"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 15834080,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "28 HC.wav"
+              }
+            ],
+            "seed": 49692265,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "10 SD.wav"
+              }
+            ],
+            "seed": 44113518,
+            "style": "skip"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "45 Wraith Kit III Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "23 gltcht4.wav"
+              }
+            ],
+            "seed": 45244674,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "32 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "31 Machine Hat Percussion.wav"
+              }
+            ],
+            "seed": 44135914,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-syntrx",
+                "file": "06 gltcht1.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "41 verbos harmonic oscillator chorded drone.wav"
+              }
+            ],
+            "seed": 26582017,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 36984135,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 20490588,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  }
+]

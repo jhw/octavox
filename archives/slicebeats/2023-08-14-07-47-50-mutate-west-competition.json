@@ -1,0 +1,6274 @@
+[
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 85985687,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 26261785,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 88506132,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 56184846,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 98508576,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 40907304,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 69884422,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 63824588,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 52710956,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 51638694,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 34736061,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 93967615,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 11329904,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 27947460,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 43437804,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 20510143,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 89146268,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 46240681,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 87398793,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 13199322,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 42140935,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 30139313,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 22619296,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 47968765,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 72489345,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 37589807,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 14402497,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 66597337,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 52654170,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 38695718,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 25962593,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 49937369,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 3438764,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 14875925,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 4767447,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 91719422,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 27858430,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 97649907,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 21845985,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 88774703,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 17210728,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 20406868,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 46201416,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 81826059,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 55860643,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 16814619,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 60275901,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 94309821,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 70707231,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 55701778,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 28244956,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 4102058,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 6514296,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 80410849,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 87830973,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 90011664,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 42228701,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 40386735,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 92002731,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 27619350,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 72011413,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 72523128,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 16564280,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 68358747,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 49667283,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 10458838,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 31026551,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 28374768,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 13687312,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 19288299,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 22703079,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 9605863,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 71309607,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 13807660,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 67375500,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 89912339,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 47821453,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 98319243,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 45311744,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 64177511,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 69466585,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 48576995,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 47442409,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 55553396,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 77608644,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 837909,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 47115432,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 43556018,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 53523220,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 64680207,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 44917991,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 16574664,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 99440342,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 22437455,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 26515533,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 86207759,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 38699823,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 99850917,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 1220182,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 57452650,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 33791180,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 85361403,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 10531042,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 1277274,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 26381735,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 36890985,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 27867620,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 78850836,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 77715055,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 44759621,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 32355414,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 39490830,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 96082259,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 56859180,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 31533967,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 48248160,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 85250105,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 64111462,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 38162793,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 59151674,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 83684870,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 96811716,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 95562526,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 14987348,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 93043888,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 77059563,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 70541913,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 10059771,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 27772560,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 12813058,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 25325276,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 38767629,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 94768537,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 83848518,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 84492242,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 41191445,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 38011437,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 24111517,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 81076182,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 45065696,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 76360083,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 49193478,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 21792609,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 21352966,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 32015933,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 25637559,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 31010741,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 83589196,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 55301187,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 51766990,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 77626740,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 77910570,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 9099629,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 85127579,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 4342234,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 11552986,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 40152718,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 64554906,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 54302457,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 26943876,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 85628641,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 28407588,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 33183123,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 21535787,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 68541176,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 63282575,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 14820038,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 34433079,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 76389743,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 6634839,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 77962049,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 25025251,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 46301037,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 76685717,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 70628425,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 66184753,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 3851349,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 23869276,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 67991306,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 85595489,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 6193176,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 54506025,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 28743938,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 66395656,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 64819420,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 88328992,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 21424536,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 18452892,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 73666136,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 34810209,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 25941167,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 98037432,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 41301388,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 8383523,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 33399983,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 35839599,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 78550418,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 25897898,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 34990120,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 70349206,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 47086410,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 65332529,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 74621974,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 12648773,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 64040814,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 37760946,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 52881184,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 26606096,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 46235924,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 41026427,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 76883567,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 35978325,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 49562017,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 38785593,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 30145165,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 6613053,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 62861729,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 25855907,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 92483746,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 40197224,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 69517844,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 71442394,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 86671610,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 88125475,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 77627554,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 39826331,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 35292985,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 42853321,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 65139554,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 70772323,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 10169029,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 17932467,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 77429118,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 89836719,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 98542150,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 1795445,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 63295601,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 16794660,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 16012659,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 31085517,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 4516350,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 40776629,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 7702588,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 34511145,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 29256351,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 92808786,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 14992414,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 93158123,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 67794861,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 96697499,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 27012901,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 91321701,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 54946742,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 6023490,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 69779997,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 70667397,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 68806264,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 58134728,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 17602627,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 83730700,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 83807801,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 12219683,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 25605341,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 24108292,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 50407688,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 60853275,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 40452597,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 7927135,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 41577147,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 98571511,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 88352705,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 5004478,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 23878580,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 14636995,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 88318751,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 27738323,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 1626944,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 84886324,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 22406432,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 4030291,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 13169576,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 8730873,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 35121014,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 42918757,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 73451602,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 51221451,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 17801032,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 40686560,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 18586697,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 38787278,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 646331,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 34021134,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 52121224,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 73532756,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 84688141,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 60871605,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 43500807,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 19925377,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 45741493,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 11801812,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 76372782,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 34672737,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 96147199,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 6642950,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 3493059,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 19828484,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 54702757,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 1107131,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 95544257,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 65829307,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 72249072,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 37983572,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 30208058,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 86571762,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 44267126,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 31908841,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 42837772,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 94500991,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 28248435,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 78086628,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 8951719,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 9785179,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 77866802,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 39853572,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 92068548,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 38855727,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 98026368,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 98023505,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 18899720,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 28657172,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 60412804,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 40995431,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 75849699,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 28235456,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 37378136,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 47344373,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 80809603,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 39510913,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 96586469,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 55336479,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 17569048,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-legowelt",
+                "file": "61 ERIKABD7.wav"
+              }
+            ],
+            "seed": 36357736,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav"
+              }
+            ],
+            "seed": 27019565,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "06 BD.wav"
+              }
+            ],
+            "seed": 24367713,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "18 SD.wav"
+              }
+            ],
+            "seed": 18970006,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-clipping",
+                "file": "30 ShooterSnare.wav"
+              }
+            ],
+            "seed": 4696895,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "13 Brute Snare II Percussion.wav"
+              }
+            ],
+            "seed": 13923433,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "29 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              }
+            ],
+            "seed": 35432190,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-baseck",
+                "file": "36 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "46 Street Trash Percussion.wav"
+              }
+            ],
+            "seed": 11841408,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "43 Wraith Kit I Percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "05 Prophet Kick Long Percussion.wav"
+              }
+            ],
+            "seed": 95133530,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 10236774,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "seed": 186959,
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ],
+    "density": 0.75
+  }
+]

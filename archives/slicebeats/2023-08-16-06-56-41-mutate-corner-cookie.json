@@ -1,0 +1,6274 @@
+[
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 5578554,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 10729319,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 93630817,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 12975764,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 10564799,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 53055197,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 79229769,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 28242244,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 62552994,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 96241001
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 25332963
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 86682276,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 20412150,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 91824471,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 20085975,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 96869,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 14684234,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 53907057,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 6968435,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 9098608,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 16636120
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 99448541
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 97980104,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 74745644,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 10055191,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 12602600,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 38113180,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 78594929,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 75500429,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 98813076,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 8656322,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 96692645
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 86981278
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 70947485,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 2466001,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 49985403,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 49020252,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 24010330,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 71534649,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 32652713,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 86880003,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 50843448,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 96331620
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 34384867
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 92478932,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 77951575,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 28404447,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 16356048,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 57566786,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 95462810,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 21096297,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 43990542,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 14851150,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 54082195
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 25541911
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 53824127,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 32514740,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 49718584,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 46805585,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 38878977,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 94523340,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 78578499,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 89236163,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 12884961,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 61963053
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 16076669
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 83043985,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 52063775,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 34140108,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 49291505,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 92002176,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 91651557,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 48384639,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 58173867,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 34563819,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 27067954
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 10396115
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 14511824,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 60903955,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 354481,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 69480080,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 2179026,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 4136785,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 44920622,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 51882552,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 95745010,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 63005136
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 29980164
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 48143290,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 7995165,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 33845184,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 12558486,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 62419948,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 70930565,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 23927602,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 44163389,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 19731693,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 2686863
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 9607299
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 8613097,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 49835808,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 49633185,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 36115247,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 76140792,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 20651984,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 39682267,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 16664474,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 9112624,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 5421917
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 43567152
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 98415372,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 58399199,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 39788966,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 79105127,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 68953272,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 38453319,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 47094601,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 75421985,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 11110175,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 25781251
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 39178361
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 88222769,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 57968311,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 27595895,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 46984852,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 66555147,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 86966627,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 42293456,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 77311267,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 11898156,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 34784530
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 91574950
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 66587902,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 43553781,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 88441986,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 82212628,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 20964890,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 61936368,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 67803253,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 90577575,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 23630767,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 31692756
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 78839937
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 3210839,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 6317041,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 7865043,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 40175136,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 3017728,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 66477842,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 23723782,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 10698831,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 96210801,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 71063003
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 41340359
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 45691957,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 62473946,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 14048354,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 16242652,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 22541641,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 33128015,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 67745135,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 91341017,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 94115240,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 77771832
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 76420087
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 4720484,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 15979059,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 18706441,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 27414653,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 28266198,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 48851367,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 4711733,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 57838293,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 54870217,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 16930462
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 89268391
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 26504645,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 14171838,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 81313885,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 48137474,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 32669118,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 2128660,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 72941247,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 4494338,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 64569241,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 78410792
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 54546483
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 59453723,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 36948369,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 91513258,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 13863855,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 92940894,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 12961914,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 9033886,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 61925667,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 50255640,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 18082458
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 28648441
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 57527656,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 3506675,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 94737744,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 65195960,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 88295109,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 77404089,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 26716995,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 85212337,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 53752222,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 74938219
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 16522262
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 87349590,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 34185361,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 26597455,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 58120002,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 7065132,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 68161094,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 31179715,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 17324237,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 79245055,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 54520897
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 63175406
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 88322252,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 19120230,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 59825723,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 88753509,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 74921318,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 41352968,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 33071503,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 88698239,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 47336954,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 77514341
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 85077535
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 58025380,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 81444840,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 3944027,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 63527808,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 66077430,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 53688339,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 5911204,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 6217327,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 8778894,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 48541131
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 34440312
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 63836360,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 49929742,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 54369045,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 53938009,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 71226028,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 80132175,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 29922052,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 69775766,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 24608746,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 14288577
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 2918459
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 25624415,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 7246215,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 3357626,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 8812181,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 71248277,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 28845385,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 68805348,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 27038086,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 93432637,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 64168760
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 62297431
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 21024155,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 55272675,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 36801419,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 54919931,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 75576487,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 96303978,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 15092406,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 88226325,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 35394018,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 24233266
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 76855547
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 37385365,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 87903248,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 24649725,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 28278522,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 53502550,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 36759578,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 77957732,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 13056276,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 35757528,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 56478605
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 84905711
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 77809112,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 98216853,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 21581217,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 13104157,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 39259753,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 98972791,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 36462110,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 47997568,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 93015027,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 79704584
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 62022051
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 84908219,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 80864583,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 99546858,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 7044844,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 9417722,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 65882382,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 97703428,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 98408230,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 24852198,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 98925259
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 42087547
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 73543228,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 26414741,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 11928293,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 84749709,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 53094517,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 82825481,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 37788005,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 48919195,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 84641235,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 47612802
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 75230821
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 82605515,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 13172960,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 65814248,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 82309267,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 29902417,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 58664136,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 33575402,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 35377068,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 34502048,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 84804552
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 70223655
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 34810625,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 4118028,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 43355514,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 97034765,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 72464839,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 65983393,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 734198,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 38456062,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 57893469,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 95118198
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 85885638
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "04 doom kick.wav"
+              }
+            ],
+            "seed": 75008149,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 6645862,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "22 verbos complex tonal riser lead.wav"
+              }
+            ],
+            "seed": 48103796,
+            "style": "triplets"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "14 Buchla bongo percussion.wav"
+              }
+            ],
+            "seed": 16498394,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 24721868,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "27 Ernie ball bass guitar note sustain lead.wav"
+              }
+            ],
+            "seed": 78400466,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "32 buchla bass shot lead.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "62 th gate blip ear candy.wav"
+              }
+            ],
+            "seed": 58117906,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "58 Flux noise ear candy.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "25 swamatron fuzz hit lead.wav"
+              }
+            ],
+            "seed": 64593856,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "38 buchla static tonal.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "12 Smack my pitch up stc08 Snare.wav"
+              }
+            ],
+            "seed": 97242448,
+            "style": "offbeats"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 36616687
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 9802944
+      }
+    ],
+    "density": 0.75
+  }
+]

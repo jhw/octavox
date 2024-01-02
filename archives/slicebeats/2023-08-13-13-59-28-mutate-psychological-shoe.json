@@ -1,0 +1,6274 @@
+[
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 43924648,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 50209008,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 97602568,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 48162471,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 70858692,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 44735176,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 25926888,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 65371349,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 16047991,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 16745421,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 7649309,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 77669578,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 72136303,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 95687688,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 25987385,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 31090627,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 69338754,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 73834057,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 80473800,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 63508673,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 41543593,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 5336642,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 7425673,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 44885144,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 36341011,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 61394707,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 48727856,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 78804959,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 24650679,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 74593754,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 23642870,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 21997942,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 39530241,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 71395517,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 80992955,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 1716622,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 25945618,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 52001491,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 29465196,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 69273168,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 90307182,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 17524284,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 92592764,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 39713976,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 49014671,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 22389388,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 27183593,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 95344101,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 95444934,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 85073307,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 81271372,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 46210861,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 71058943,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 4702223,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 72666413,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 63180659,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 96299145,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 11740608,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 26010257,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 55725292,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 3095527,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 3485503,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 7223316,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 8920354,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 32796515,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 15432990,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 27595489,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 46378823,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 52985065,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 74356217,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 6581157,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 56358079,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 63522041,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 9957941,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 15746099,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 30258455,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 18759188,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 50104840,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 81802259,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 10802579,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 4559580,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 78479131,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 4229102,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 5493984,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 76214729,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 86556854,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 2326080,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 25971948,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 35179115,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 22855789,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 4284103,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 34700360,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 55980918,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 311609,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 81797662,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 58154073,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 83792813,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 56298749,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 46935550,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 39295258,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 1660353,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 45840585,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 31985652,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 59545990,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 88226766,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 16352787,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 20969244,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 71624458,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 63476888,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 25315603,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 82099859,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 13934285,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 39121478,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 74983000,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 90300543,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 69305274,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 59889241,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 60270594,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 89734182,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 90170421,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 77265620,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 74904447,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 7508302,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 52914765,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 77319482,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 86268739,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 34615913,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 29520416,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 41246745,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 36694887,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 92425979,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 78089408,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 87947625,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 41229389,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 21887312,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 32711983,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 89443048,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 88567669,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 68878062,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 29843382,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 94635858,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 62799803,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 17177330,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 65488143,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 75429843,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 60486065,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 39023772,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 72019064,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 1932033,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 84324611,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 55369002,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 82536051,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 21681387,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 62606492,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 38886399,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 49497621,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 98202988,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 84393501,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 78759192,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 82633528,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 41929998,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 26244453,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 70269190,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 37236107,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 99246407,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 28225492,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 76284289,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 96619067,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 47444925,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 34592916,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 18193442,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 681896,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 77955229,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 8680520,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 90807343,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 74786151,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 4915180,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 6479784,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 94396988,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 67294959,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 66493590,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 85290126,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 38050185,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 62766541,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 20980589,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 29740960,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 53875275,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 99384975,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 86836032,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 8614831,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 66973651,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 52615557,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 28254478,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 14379163,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 83529805,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 82881526,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 59338578,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 21958390,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 77443631,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 70086602,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 12318990,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 61304564,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 14870673,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 58450079,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 75945635,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 52018993,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 73364705,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 82211659,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 66788456,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 48243202,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 72970216,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 8816230,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 39570578,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 78304820,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 3938078,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 84002071,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 96031272,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 372615,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 61131936,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 55609271,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 41270006,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 71828430,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 11038954,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 58802759,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 53315085,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 62263849,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 81087744,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 48549066,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 66076434,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 34252047,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 34592086,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 99405752,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 41433926,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 51011624,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 75956715,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 69635648,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 60454158,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 44529544,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 10937122,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 71650336,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 35579440,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 46474861,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 20069056,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 45837165,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 50743483,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 83273853,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 37819399,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 49609374,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 14808678,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 57129851,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 89257090,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 66399332,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 75382974,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 29259962,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 29531727,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 18647756,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 95192050,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 41214876,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 97800883,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 6129565,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 55351617,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 97385424,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 5051723,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 46487570,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 61877554,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 54419342,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 28005726,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 63438692,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 66446774,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 30106294,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 19469262,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 38271712,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 16945364,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 40498011,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 52165321,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 2072905,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 37111105,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 60444884,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 68330173,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 62886565,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 83114085,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 72882064,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 19959726,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 5343525,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 66583922,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 43046792,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 60103305,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 75421616,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 85088459,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 93810665,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 14654085,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 18683854,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 38315957,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 14221805,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 9326579,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 3528244,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 76581232,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 40976564,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 84798670,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 13337165,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 29030331,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 17172912,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 5745447,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 29958118,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 26852069,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 28313146,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 1497716,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 63693079,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 39249152,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 40533366,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 46957412,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 92991086,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 7523243,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 96280557,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 42951952,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 8038420,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 6126864,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 66812359,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 29927200,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 51241318,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 31861739,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 81095201,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 56353286,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 86452545,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 20470197,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 54210488,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 44771616,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 92943021,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 56821266,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 53755855,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 15005805,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 21533760,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 69373497,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 58830064,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 41230188,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 39502900,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 58471653,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 22689176,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 12092947,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 20093226,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 74535924,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "name": "KickSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-complex-waveforms",
+                "file": "06 Kick.wav"
+              }
+            ],
+            "seed": 26454931,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav"
+              }
+            ],
+            "seed": 28940047,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "kk"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "30 Miami Bass.wav"
+              }
+            ],
+            "seed": 24394506,
+            "style": "fourfloor"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "SnareSampler",
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-default",
+                "file": "30 IB HC.wav"
+              }
+            ],
+            "seed": 80569032,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "54 \u00c6thers Tide Bass.wav"
+              }
+            ],
+            "seed": 72406235,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "sn"
+                ],
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav"
+              }
+            ],
+            "seed": 81008826,
+            "style": "backbeat"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "HatSampler",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-dj-raitis-vinyl-cuts",
+                "file": "34 PERC.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-syntrx",
+                "file": "30 gltcht8.wav"
+              }
+            ],
+            "seed": 61531562,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-pitch-black",
+                "file": "19 Verbos complex Resonating tom hit percussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "25 Basimilus Hat II Percussion.wav"
+              }
+            ],
+            "seed": 34627371,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "tags": [
+                  "oh"
+                ],
+                "bank": "pico-otto-von-schirach",
+                "file": "48 syncussion.wav"
+              },
+              {
+                "tags": [
+                  "ch"
+                ],
+                "bank": "pico-nero-bellum",
+                "file": "42 Basimilus Zap Percussion.wav"
+              }
+            ],
+            "seed": 88040744,
+            "style": "offbeats"
+          }
+        ],
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "name": "Echo/wet",
+        "seed": 54285519,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "name": "Echo/feedback",
+        "seed": 25258987,
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  }
+]

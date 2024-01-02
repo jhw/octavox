@@ -1,0 +1,6658 @@
+[
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 22517606,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 18663683,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 30710177,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 99398127,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 29952310,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 88913163,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 36553592,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 72239385,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 10633731,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 94037322
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 49577116
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 29778141,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 57765865,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 49644391,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 81251829,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 97290992,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 23788557,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 63751038,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 33451377,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 87886240,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 47754441
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 17286345
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 69539651,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 85220261,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 69953807,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 18252895,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 14755451,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 43625022,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 98733078,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 64550872,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 85538713,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 90528577
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 32600641
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 2241722,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 57109062,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 75587845,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 22425949,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 93492447,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 72114869,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 401546,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 30939425,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 74073420,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 41884703
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 46849907
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 94200364,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 65983920,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 22323635,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 88720452,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 20242027,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 73220075,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 98020621,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 98217397,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 22381328,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 45239386
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 60043969
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 63214580,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 43560718,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 29308120,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 35522364,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 16863063,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 35455078,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 46682653,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 76164589,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 87626633,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 89206279
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 34246878
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 66505288,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 67079485,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 73853082,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 80218730,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 29201668,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 95738196,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 5698633,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 1932816,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 60230920,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 46857108
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 68527136
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 28152795,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 30933120,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 34223724,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 90727049,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 62102349,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 32503642,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 50881371,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 97891690,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 32623149,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 32164389
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 73270086
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 46232320,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 19170008,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 55420014,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 61644371,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 9478444,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 95840174,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 16802772,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 20091784,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 39187109,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 10912487
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 87918471
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 45648175,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 52055617,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 13923657,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 92423231,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 3791795,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 58422468,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 27413787,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 28855301,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 99490266,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 22427956
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 60665065
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 14166128,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 16824060,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 79875299,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 11424089,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 4679957,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 86473262,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 77136363,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 62865145,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 78684530,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 85638428
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 96101875
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 91500169,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 27664932,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 67114297,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 44635783,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 73085785,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 55679155,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 35804535,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 62967086,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 72982589,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 41266441
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 44626904
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 38188258,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 73545256,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 88559907,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 90462437,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 68647606,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 93220501,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 4276091,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 34683951,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 54340644,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 49383150
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 3541696
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 5596885,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 98626927,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 20432755,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 25597520,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 35611768,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 80080962,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 64382943,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 38910984,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 55536398,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 93313801
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 60789085
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 13504378,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 19053151,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 25566587,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 33722563,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 35025265,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 91208272,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 23627591,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 88578482,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 33539044,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 75320829
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 54615840
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 50112919,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 42412632,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 43904853,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 43672678,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 76243823,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 66957470,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 8378944,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 47560368,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 3442073,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 30686073
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 11898118
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 79630455,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 61546778,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 98983919,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 31851149,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 57569506,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 90690780,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 74058607,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 67000550,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 80028657,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 57108077
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 58785104
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 11364651,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 48978635,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 14893195,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 60944618,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 73177503,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 63872515,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 80395526,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 16090693,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 54082925,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 79548221
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 1089894
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 73809596,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 29975665,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 48399600,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 45077425,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 16472638,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 72595742,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 37940403,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 51060641,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 48599820,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 93383690
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 61227663
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 82324282,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 48765699,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 23945566,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 28396215,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 37512876,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 23974273,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 56217922,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 8336490,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 83759229,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 85401238
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 61201518
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 78378314,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 11444738,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 7602313,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 34755960,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 62092447,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 72260364,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 52211777,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 34980246,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 33799503,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 69204705
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 26279912
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 56505281,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 10168230,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 6569131,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 41378213,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 67490440,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 19736231,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 90545565,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 9085315,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 42600139,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 3138301
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 81040303
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 73754646,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 11786245,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 33489098,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 45078312,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 81910759,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 96568318,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 5572986,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 19140132,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 13110524,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 38601947
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 79928194
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 57277907,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 7457584,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 40343150,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 72971946,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 9445858,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 17911694,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 45389533,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 94060741,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 39441058,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 43482937
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 40479306
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 20677138,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 47340172,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 50479852,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 61671202,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 70295294,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 87656365,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 55879586,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 85009567,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 81543261,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 11943098
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 20395575
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 79420844,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 21491028,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 61716382,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 8117006,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 73786756,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 20897429,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 95261984,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 89386937,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 26470425,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 11970649
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 99166829
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 18682316,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 33383703,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 34025072,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 66467683,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 95544336,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 41722087,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 35550379,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 61861585,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 75314492,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 88586060
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 81890233
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 84091281,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 96620355,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 34644188,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 45878603,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 81349086,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 310600,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 75153728,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 79215638,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 9537963,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 94998441
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 95271056
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 27262037,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 40405402,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 96449589,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 10974441,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 59133375,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 83115527,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 94327004,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 71011781,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 1807420,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 72318812
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 1045807
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 2234390,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 69136629,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 55299982,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 16338448,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 99325951,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 28999891,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 2845153,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 89013543,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 89653367,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 16266291
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 55241443
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 47854359,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 83580658,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 96123478,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 1717043,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 51239775,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 32846935,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 55531363,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 78739989,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 47417394,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 95211446
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 56392257
+      }
+    ],
+    "density": 0.75
+  },
+  {
+    "machines": [
+      {
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-legowelt",
+                "file": "35 ERIKApadAtmos1.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 54269699,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "11 Electro kik.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 25253802,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "56 SYNCUSSION BASS.wav",
+                "pitch": 0,
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 89399451,
+            "style": "electro"
+          }
+        ]
+      },
+      {
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "3x0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-default",
+                "file": "62 JUNGLE BREAK.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 34680193,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "34 Miami Bass Sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 47526313,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "21 Gabba sd.wav",
+                "pitch": 0,
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 34750923,
+            "style": "skip"
+          }
+        ]
+      },
+      {
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer",
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 69578022,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "47 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 68277622,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "51 SYNCUSSION.wav",
+                "pitch": 0,
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "bank": "pico-otto-von-schirach",
+                "file": "50 syncussion.wav",
+                "pitch": 0,
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 64001966,
+            "style": "closed"
+          }
+        ]
+      },
+      {
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 0.66666,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 29229088
+      },
+      {
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        },
+        "seed": 49117830
+      }
+    ],
+    "density": 0.75
+  }
+]

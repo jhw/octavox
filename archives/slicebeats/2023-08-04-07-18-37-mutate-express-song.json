@@ -1,0 +1,6658 @@
+[
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 64551846,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 51455998,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 45859719,
+            "style": "electro"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 63153412,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 42857285,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 95126005,
+            "style": "backbeat"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 14810955,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 19295836,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 41061866,
+            "style": "closed"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 81188253,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 9560659,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 36073564,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 60457713,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 22422337,
+            "style": "triplets"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 55917218,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 13520096,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 92112204,
+            "style": "skip"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 99959323,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 50637429,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 21091326,
+            "style": "offbeats"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 32637810,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 96128305,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 64958240,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 64521149,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 45515644,
+            "style": "fourfloor"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 99210751,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 53984753,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 63186560,
+            "style": "skip"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 4093502,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 27282115,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 95454565,
+            "style": "closed"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 85305018,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 69657234,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 42598968,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 94045340,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 62897903,
+            "style": "fourfloor"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 60416785,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 88209623,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 67090103,
+            "style": "backbeat"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 29854777,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 83974873,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 59980533,
+            "style": "offbeats"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 75541250,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 55168857,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 20490267,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 70693351,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 8598073,
+            "style": "electro"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 93078133,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 11056792,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 87811751,
+            "style": "backbeat"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 81362501,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 15164462,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 70435485,
+            "style": "closed"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 36317920,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 89629138,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 96197219,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 47882984,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 5522796,
+            "style": "electro"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 16393266,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 3192508,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 52064688,
+            "style": "backbeat"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 15434393,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 57162430,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 61505970,
+            "style": "closed"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 68202486,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 19103829,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 67123831,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 97721818,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 99127099,
+            "style": "triplets"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 54089611,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 84015971,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 62599004,
+            "style": "backbeat"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 76252292,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 60448902,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 77767877,
+            "style": "closed"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 71159812,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 79342796,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 82130368,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 1998873,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 40423324,
+            "style": "electro"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 56316773,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 16115454,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 11694624,
+            "style": "backbeat"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 80071242,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 41316971,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 97655545,
+            "style": "closed"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 22819710,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 86981974,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 71415238,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 26406964,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 66750857,
+            "style": "triplets"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 19038574,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 99123982,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 84635508,
+            "style": "skip"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 33864742,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 26170027,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 55753864,
+            "style": "closed"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 64677458,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 73411986,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 8128234,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 95434158,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 64858743,
+            "style": "electro"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 33055930,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 57822439,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 69476701,
+            "style": "backbeat"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 75184610,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 57813545,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 62123137,
+            "style": "closed"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 51303928,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 55035642,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 54159410,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 49301864,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 59038951,
+            "style": "electro"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 59120086,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 29262495,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 31655642,
+            "style": "skip"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 33213145,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 17089707,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 20791522,
+            "style": "offbeats"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 26076042,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 17102506,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 92173339,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 77439996,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 60563491,
+            "style": "electro"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 58508718,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 86776638,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 80111688,
+            "style": "skip"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 78142467,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 94837879,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 14932584,
+            "style": "closed"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 81655467,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 85560405,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 8887736,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 9431398,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 63233949,
+            "style": "electro"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 90140882,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 91726643,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 96056527,
+            "style": "skip"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 72120012,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 25240746,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 38666915,
+            "style": "offbeats"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 31732514,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 41513610,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 63812793,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 53147572,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 56428378,
+            "style": "electro"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 80030141,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 19061114,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 2649771,
+            "style": "backbeat"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 50419836,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 33309931,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 2575848,
+            "style": "closed"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 85976319,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 82071362,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 47874525,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 83444962,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 84582437,
+            "style": "electro"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 24047544,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 17184932,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 36174158,
+            "style": "backbeat"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 36174381,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 88542236,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 26089942,
+            "style": "closed"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 89222747,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 54329102,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 20357340,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 42043657,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 1427306,
+            "style": "triplets"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 68798213,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 5342114,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 23415452,
+            "style": "backbeat"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 58465728,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 21544982,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 19306264,
+            "style": "closed"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 20701165,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 90727985,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 74134034,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 46890689,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 6361327,
+            "style": "triplets"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 48760983,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 43690097,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 49275575,
+            "style": "skip"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 8537900,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 28610672,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 56974899,
+            "style": "closed"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 36052733,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 50522029,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 81031108,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 4176857,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 49958150,
+            "style": "triplets"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 19573975,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 12779253,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 64730173,
+            "style": "backbeat"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 796827,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 20050863,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 85400472,
+            "style": "closed"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 33572082,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 56644081,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 32244539,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 90625759,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 20255396,
+            "style": "fourfloor"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 2132201,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 8251076,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 7701218,
+            "style": "backbeat"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 56576038,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 65360255,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 17080677,
+            "style": "closed"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 48037992,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 56028115,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 14704297,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 15511805,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 90029233,
+            "style": "fourfloor"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 68786026,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 33743020,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 60288764,
+            "style": "backbeat"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 54504235,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 4060714,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 70000225,
+            "style": "closed"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 3429950,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 8762507,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 38658750,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 85562898,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 46789595,
+            "style": "fourfloor"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 29413645,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 14478391,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 7389588,
+            "style": "backbeat"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 41350635,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 93344303,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 80550844,
+            "style": "offbeats"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 47420759,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 99401814,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 68507921,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 35635413,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 73607531,
+            "style": "fourfloor"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 29409568,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 13187919,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 16515030,
+            "style": "skip"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 93257791,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 13545329,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 46034470,
+            "style": "closed"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 44846351,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 52436623,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 29870638,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 61069575,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 98810811,
+            "style": "electro"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 54077829,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 65912827,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 53891207,
+            "style": "backbeat"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 85559968,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 41911753,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 67880256,
+            "style": "closed"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 84994607,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 7073935,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 1481859,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 70879385,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 60007733,
+            "style": "fourfloor"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 60931946,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 59911648,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 68940093,
+            "style": "backbeat"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 49206563,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 18057456,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 35753618,
+            "style": "closed"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 49788961,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 77118753,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 27856547,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 2368910,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 66970653,
+            "style": "electro"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 80477378,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 8953421,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 5161491,
+            "style": "skip"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 25463449,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 27214380,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 16570961,
+            "style": "closed"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 90100957,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 48855795,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 5600316,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 7078375,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 62554928,
+            "style": "triplets"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 29952925,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 62966394,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 39050094,
+            "style": "backbeat"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 90914833,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 8377422,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 4462519,
+            "style": "closed"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 57122744,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 35331972,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 6413754,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 74261948,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 54885400,
+            "style": "electro"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 17929923,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 13791740,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 80649057,
+            "style": "backbeat"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 11636772,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 5567247,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 65977098,
+            "style": "offbeats"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 57378206,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 18223264,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 50982361,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 39068201,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 58021648,
+            "style": "triplets"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 309619,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 95218381,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 41473986,
+            "style": "backbeat"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 71867273,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 7635427,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 62670123,
+            "style": "closed"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 12211793,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 50114914,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 79485131,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 92378620,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 10505985,
+            "style": "electro"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 88911881,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 19354668,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 58756203,
+            "style": "backbeat"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 81526930,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 25887416,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 55960472,
+            "style": "closed"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 57558856,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 58544520,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 45647013,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 97597643,
+            "style": "electro"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 58595726,
+            "style": "triplets"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 53784884,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 35417273,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 55518878,
+            "style": "backbeat"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 6927374,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 95014398,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 48956161,
+            "style": "offbeats"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 28640533,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 55160768,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 2899920,
+            "style": "fourfloor"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 88896323,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 55290516,
+            "style": "electro"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 57600788,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 96829579,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 64482124,
+            "style": "backbeat"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 15838057,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 3489191,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 32391470,
+            "style": "closed"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 30990561,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 42759200,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  },
+  {
+    "density": 0.75,
+    "machines": [
+      {
+        "pattern": "0|1|0|2",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-legowelt",
+                "file": "55 ERIKABD6.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 4129608,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "KickSampler",
+                "bank": "pico-ib-magnetic-saturation",
+                "file": "00 BD.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 5897909,
+            "style": "triplets"
+          },
+          {
+            "samples": [
+              {
+                "mod": "kk",
+                "bank": "pico-clipping",
+                "file": "46 WakeUpBass.wav",
+                "tags": [
+                  "kk"
+                ]
+              }
+            ],
+            "seed": 50923763,
+            "style": "electro"
+          }
+        ],
+        "name": "KickSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|1|0|1",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "59 Zort Sd.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 96049943,
+            "style": "skip"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-otto-von-schirach",
+                "file": "45 Static Snare.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 8288148,
+            "style": "backbeat"
+          },
+          {
+            "samples": [
+              {
+                "mod": "SnareSampler",
+                "bank": "pico-legowelt",
+                "file": "49 ERIKANorseMythology.wav",
+                "tags": [
+                  "sn"
+                ]
+              }
+            ],
+            "seed": 47199004,
+            "style": "backbeat"
+          }
+        ],
+        "name": "SnareSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "pattern": "0|0|1|0",
+        "slices": [
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "53 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "HatSampler",
+                "bank": "pico-complex-waveforms",
+                "file": "57 Perc.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 19834980,
+            "style": "offbeats"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-otto-von-schirach",
+                "file": "54 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "20 Vintage Machines Snare Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 69530942,
+            "style": "closed"
+          },
+          {
+            "samples": [
+              {
+                "mod": "oh",
+                "bank": "pico-baseck",
+                "file": "34 syncussion.wav",
+                "tags": [
+                  "oh"
+                ]
+              },
+              {
+                "mod": "ch",
+                "bank": "pico-nero-bellum",
+                "file": "29 Dirty Hat Closed Percussion.wav",
+                "tags": [
+                  "ch"
+                ]
+              }
+            ],
+            "seed": 36141607,
+            "style": "closed"
+          }
+        ],
+        "name": "HatSampler",
+        "class": "octavox.projects.slicebeats.machines.Sequencer"
+      },
+      {
+        "seed": 96878117,
+        "name": "Echo/wet",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      },
+      {
+        "seed": 93309531,
+        "name": "Echo/feedback",
+        "class": "octavox.modules.modulators.sample_hold.SampleHoldModulator",
+        "params": {
+          "range": [
+            0,
+            1
+          ],
+          "increment": 0.25,
+          "step": 4,
+          "live": 1.0,
+          "maxvalue": "8000",
+          "minvalue": "0000"
+        }
+      }
+    ]
+  }
+]
