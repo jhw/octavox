@@ -108,11 +108,12 @@ class SVProject:
                      offset,
                      color,
                      height=Height):
-        grid=patch.grid
-        from rv.note import Note
+        trigs=[{note.i:note
+               for note in track}
+               for key, track in patch.items()]
         def notefn(self, j, i):
-            return grid[i][j].render(modules,
-                                     controllers) if j in grid[i] else Note()
+            return trigs[i][j].render(modules,
+                                      controllers) if j in trigs[i] else RVNote()
         return RVPattern(lines=patch.nbeats,
                          tracks=len(patch),
                          x=offset.value,

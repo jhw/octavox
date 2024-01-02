@@ -117,12 +117,6 @@ class SVTracks(dict):
                 if (hasattr(trig, "sample") and trig.sample):
                     keys.add(trig.sample)
 
-    @property
-    def grid(self):
-        return [{note.i:note
-                 for note in track}
-                for key, track in self.items()]
-
 class SVMachines(list):
     
     @classmethod

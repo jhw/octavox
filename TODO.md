@@ -1,7 +1,5 @@
 ### short
 
-- remove trigs.grid
-
 - pass banned list to banks pools generation
 
 ### medium
@@ -27,6 +25,7 @@
 
 ### done
 
+- remove trigs.grid
 - action to show sample keys
 - get rid of chord support
 - script to filter slicebeats samples

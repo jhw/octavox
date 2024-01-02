@@ -1,6 +1,6 @@
 from octavox.core import is_abbrev
 
-import random, re, urllib.parse
+import re
 
 def sample_default_kwargs(fn):
     def wrapped(self, item):
