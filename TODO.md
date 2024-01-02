@@ -6,7 +6,6 @@
 - remove pydub slicing stuff
 - remove pitch info
 - check chain is working
-- check breaks are still in place
 - pydub scripts to slice a dumped wavfile
 - fixing and banning
 
@@ -23,6 +22,7 @@
 
 ### done
 
+- check breaks are still in place
 - script to load slicebeats and extract (migrate) relevant information
 - delete samplebeats archives
 - script to refactor slicebeats name as samplebeats
