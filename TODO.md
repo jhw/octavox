@@ -1,13 +1,18 @@
 ### short
 
-- dump_sample to splash trigs onto a grid
+- remove trigs.grid
 
+- pass banned list to banks pools generation
+
+### medium
+
+- dump_sample to splash trigs onto a grid
 - script to randomise patches and insert slicebeats samples
 - check chain is working
 - pydub scripts to slice a dumped wavfile
-- fixing and banning
+- fixing
 
-### medium
+### demos
 
 - risers and drops
 
