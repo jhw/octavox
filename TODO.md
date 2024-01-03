@@ -1,8 +1,10 @@
 ### short
 
+- check what happens to filename on loading project
+- isolate wav export code
+
 ### medium
 
-- test RV file export
 - chaining to dump and slice file
 - test librosa
 - sample fixing

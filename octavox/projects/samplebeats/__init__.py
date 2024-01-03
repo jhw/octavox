@@ -8,6 +8,8 @@ from octavox.core.model import SVPatch
 
 from octavox.core.pools import SVPool, SVPools, SVSample
 
+from octavox.core.project import SVProject
+
 import boto3, itertools, json, os, random, sys, yaml
 
 Modules, Links, Sequencers, Modulators, Banned = [yaml.safe_load(open("octavox/projects/samplebeats/%s.yaml" % attr).read())
@@ -183,6 +185,21 @@ class SVCli(SVBankCli):
         sz=[l for l in lengths
             if l < len(patches)][-1]
         return patches[:sz]
+
+    @parse_line()
+    @assert_project
+    def do_export_stems(self):
+        print (self.projectname, self.filename)
+        project=SVProject().render(patches=[patch.render(nbeats=self.env["nbeats"],
+                                                         density=self.env["density"],
+                                                         temperature=self.env["temperature"])
+                                                for patch in self.patches],
+                                   modconfig=self.core,
+                                   links=self.links,
+                                   banks=self.banks,
+                                   bpm=self.env["bpm"],
+                                   nbreaks=self.env["nbreaks"])
+        print (project)
     
 def init_pools(banks, terms, banned=[], limit=MinPoolSize):
     pools, globalz = SVPools(), SVPools()
