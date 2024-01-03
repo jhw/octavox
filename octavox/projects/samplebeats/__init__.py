@@ -198,22 +198,31 @@ def init_pools(banks, terms, banned=[], limit=MinPoolSize):
     return pools
 
 def init_slicebeats_pool(root="archives/slicebeats"):
-    pool=SVPool()
-    for filename in os.listdir(root):
-        if "mutate" not in filename:
-            raise RuntimeError("slicebeats file is not a single root mutation")
-        patches=json.loads(open("%s/%s" % (root, filename)).read())
-        patch=patches.pop() # all
+    def add_samples(samples, filename):            
+        patches=json.loads(open(filename).read())
+        patch=patches.pop() # as a mutation, all patches have the same samples
         for machine in patch["machines"]:
             if "slices" in machine:
-                for slice in machine["slices"]:
+                n=max([int(tok[-1]) for tok in machine["pattern"].split("|")]) # but machines have different patterns, and samples are only used if their index value is part of the pattern
+                for i in range(1+n):
+                    slice=machine["slices"][i]
                     for sample in slice["samples"]:
                         if "pitch" in sample:
                             sample.pop("pitch")
                         if ("ch" in sample["tags"] or
                             "oh" in sample["tags"]):
                             sample["tags"]=["ht"]
-                        pool.append(SVSample(sample))
+                        key="%s/%s" % (sample["bank"],
+                                       sample["file"])
+                        samples[key]=sample
+    samples={}
+    for filename in os.listdir(root):
+        if "mutate" not in filename:
+            raise RuntimeError("slicebeats file is not a single root mutation")
+        add_samples(samples, "%s/%s" % (root, filename))
+    pool=SVPool()
+    for sample in samples.values():
+        pool.append(SVSample(sample))
     return pool
 
 if __name__=="__main__":
