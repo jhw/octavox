@@ -1,11 +1,13 @@
 ### short
 
-- check what happens to filename on loading project
-- isolate wav export code
+- why does filename appear to be missing on project import
+- rename json dir as octavox
+- separate export wav and slice stems actions
+- abstract wav export code
+- abstract sunvox project rendering code
 
 ### medium
 
-- chaining to dump and slice file
 - test librosa
 - sample fixing
 
