@@ -10,8 +10,8 @@ from octavox.core.pools import SVPools
 
 import boto3, itertools, os, random, sys, yaml
 
-Modules, Links, Sequencers, Modulators = [yaml.safe_load(open("octavox/projects/samplebeats/%s.yaml" % attr).read())
-                                          for attr in "modules|links|sequencers|modulators".split("|")]
+Modules, Links, Sequencers, Modulators, Banned = [yaml.safe_load(open("octavox/projects/samplebeats/%s.yaml" % attr).read())
+                                                  for attr in "modules|links|sequencers|modulators|banned".split("|")]
 
 Env=yaml.safe_load("""
 nbeats: 16
@@ -184,11 +184,12 @@ class SVCli(SVBankCli):
             if l < len(patches)][-1]
         return patches[:sz]
     
-def init_pools(banks, terms, limit=MinPoolSize):
+def init_pools(banks, terms, banned=[], limit=MinPoolSize):
     pools, globalz = SVPools(), SVPools()
     for bankname, bank in banks.items():
-        for attr, pool in [("default", bank.default_pool),
-                           ("curated", bank.filter_pool(terms))]:
+        for attr, pool in [("default", bank.filter_default_pool(banned=banned)),
+                           ("curated", bank.filter_curated_pool(terms,
+                                                                banned=banned))]:
             if len(pool) > limit:
                 pools["%s-%s" % (bankname, attr)]=pool
     for attr in "default|curated".split("|"):        
@@ -203,7 +204,9 @@ if __name__=="__main__":
             raise RuntimeError("OCTAVOX_ASSETS_BUCKET does not exist")
         s3=boto3.client("s3")
         banks=SVBanks.initialise(s3, bucketname)
-        pools=init_pools(banks, terms=Curated)
+        pools=init_pools(banks,
+                         terms=Curated,
+                         banned=Banned)
         poolname=random.choice(list(pools.keys()))
         print ("INFO: pool=%s" % poolname)
         SVCli(s3=s3,                                  

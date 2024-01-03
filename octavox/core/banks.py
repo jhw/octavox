@@ -17,24 +17,27 @@ class SVBank:
         return [item.filename
                 for item in self.zipfile.infolist()]
 
-    @property
-    def default_pool(self):
+    def filter_default_pool(self, banned=[]):
         pool, wavfiles = SVPool(), self.wavfiles
         for wavfile in wavfiles:
-            sample=SVSample({"bank": self.name,
-                             "file": wavfile})
-            pool.add(sample)
+            key="%s/%s" % (self.name, wavfile)
+            if key not in banned:
+                sample=SVSample({"bank": self.name,
+                                 "file": wavfile})
+                pool.add(sample)
         return pool
 
-    def filter_pool(self, terms):
+    def filter_curated_pool(self, terms, banned=[]):
         pool, wavfiles = SVPool(), self.wavfiles
         for wavfile in wavfiles:
-            for tag, term in terms.items():
-                if re.search(term, wavfile, re.I):
-                    sample=SVSample({"bank": self.name,
-                                     "file": wavfile,
-                                     "tags": [tag]})
-                    pool.add(sample)
+            key="%s/%s" % (self.name, wavfile)
+            if key not in banned:
+                for tag, term in terms.items():
+                    if re.search(term, wavfile, re.I):
+                        sample=SVSample({"bank": self.name,
+                                         "file": wavfile,
+                                         "tags": [tag]})
+                        pool.add(sample)
         return pool
 
     def lookup(self, abbrev):

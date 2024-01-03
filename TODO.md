@@ -1,6 +1,5 @@
 ### short
 
-- pass banned list to banks pools generation
 - script to randomise patches and insert slicebeats samples
 
 ### medium
@@ -28,6 +27,7 @@
 
 ### done
 
+- pass banned list to banks pools generation
 - complete rendering of dump_samples grid
 - remove trigs.grid
 - action to show sample keys
