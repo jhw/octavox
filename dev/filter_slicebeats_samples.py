@@ -8,16 +8,20 @@
 
 import json, os
 
+def filter_samples(patch):
+    samples={}
+    for machine in patch["machines"]:
+        if "slices" in machine:
+            for slice in machine["slices"]:
+                for sample in slice["samples"]:
+                    key=sample["tags"][0]
+                    samples.setdefault(key, [])
+                    samples[key].append((sample["bank"], sample["file"]))
+    return samples
+
 if __name__=="__main__":
     for filename in os.listdir("archives/slicebeats"):
         print ("--- %s ---" % filename.split(".")[0])
         patches=json.loads(open("archives/slicebeats/%s" % filename).read())
-        patch=patches.pop() # because these are all mutations ie the samples are the same in each patch
-        for machine in patch["machines"]:
-            if "slices" in machine:
-                for slice in machine["slices"]:
-                    for sample in slice["samples"]:
-                        print ("%s/%s/%s" % (sample["tags"][0],
-                                             sample["bank"],
-                                             sample["file"]))
+        print (filter_samples(patches.pop()))
 
