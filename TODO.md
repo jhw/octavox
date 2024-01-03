@@ -1,15 +1,18 @@
 ### short
 
+- slicebeats pool to use samples mentioned in patterns only
+- slicebeats pool to use set to avoid duplicates
+
 ### medium
 
 - test RV file export
 - chaining to dump and slice file
 - test librosa
+- sample fixing
 
 ### demos
 
-- sample fixing
-
+- kickers
 - risers and drops
 
 ### thoughts
