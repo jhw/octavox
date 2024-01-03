@@ -6,9 +6,9 @@ from octavox.core.cli.parse import parse_line
 
 from octavox.core.model import SVPatch
 
-from octavox.core.pools import SVPools
+from octavox.core.pools import SVPool, SVPools, SVSample
 
-import boto3, itertools, os, random, sys, yaml
+import boto3, itertools, json, os, random, sys, yaml
 
 Modules, Links, Sequencers, Modulators, Banned = [yaml.safe_load(open("octavox/projects/samplebeats/%s.yaml" % attr).read())
                                                   for attr in "modules|links|sequencers|modulators|banned".split("|")]
@@ -197,6 +197,25 @@ def init_pools(banks, terms, banned=[], limit=MinPoolSize):
     pools.update(globalz)
     return pools
 
+def init_slicebeats_pool(root="archives/slicebeats"):
+    pool=SVPool()
+    for filename in os.listdir(root):
+        if "mutate" not in filename:
+            raise RuntimeError("slicebeats file is not a single root mutation")
+        patches=json.loads(open("%s/%s" % (root, filename)).read())
+        patch=patches.pop() # all
+        for machine in patch["machines"]:
+            if "slices" in machine:
+                for slice in machine["slices"]:
+                    for sample in slice["samples"]:
+                        if "pitch" in sample:
+                            sample.pop("pitch")
+                        if ("ch" in sample["tags"] or
+                            "oh" in sample["tags"]):
+                            sample["tags"]=["ht"]
+                        pool.append(SVSample(sample))
+    return pool
+
 if __name__=="__main__":
     try:
         bucketname=os.environ["OCTAVOX_ASSETS_BUCKET"]
@@ -207,6 +226,9 @@ if __name__=="__main__":
         pools=init_pools(banks,
                          terms=Curated,
                          banned=Banned)
+        # START TEMP CODE?
+        pools["pico-slicebeats"]=init_slicebeats_pool()
+        # END TEMP CODE?
         poolname=random.choice(list(pools.keys()))
         print ("INFO: pool=%s" % poolname)
         SVCli(s3=s3,                                  

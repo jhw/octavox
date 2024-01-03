@@ -1,18 +1,15 @@
 ### short
 
-- script to randomise patches and insert slicebeats samples
-
 ### medium
 
-- pydub scripts to slice a dumped wavfile
-  - test rv file export
-  - check chain is working
-  
-- librosa demo
+- test RV file export
+- chaining to dump and slice file
+- test librosa
 
 ### demos
 
 - sample fixing
+
 - risers and drops
 
 ### thoughts
@@ -26,6 +23,7 @@
 
 ### done
 
+- script to randomise patches and insert slicebeats samples
 - pass banned list to banks pools generation
 - complete rendering of dump_samples grid
 - remove trigs.grid
