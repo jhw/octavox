@@ -8,8 +8,7 @@
   - test rv file export
   - check chain is working
   
-- wavfile analysis
-  - https://chat.openai.com/c/8b21f613-b444-4d7f-93db-ccc670f1e468
+- librosa demo
 
 ### demos
 
