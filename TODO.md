@@ -1,5 +1,6 @@
 ### short
 
+- add bpm to output filename
 - export_stems skeleton
 - assert_wav routine
 - stem slicing
