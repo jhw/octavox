@@ -31,11 +31,11 @@ class SampleHoldModulator(dict):
                                     "params": copy.deepcopy(self["params"]),
                                     "seeds": dict(self["seeds"])})
                     
-    def render(self, nbeats, **kwargs):
+    def render(self, nticks, **kwargs):
         minval, maxval = (int(self.minvalue, 16),
                           int(self.maxvalue, 16))
         q=Q(self["seeds"]["level"])
-        for i in range(nbeats):
+        for i in range(nticks):
             v=self.sample_hold(q, i)
             if v!=None: # explicit because could return zero
                 value=(v*maxval-minval)+minval

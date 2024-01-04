@@ -18,7 +18,7 @@ import boto3, itertools, json, os, random, sys, yaml
             for attr in "modules|links|sequencers|modulators|banned".split("|")]
 
 Env=yaml.safe_load("""
-nbeats: 16
+nticks: 16
 npatches: 32
 density: 0.66666
 temperature: 0.66666
@@ -112,13 +112,13 @@ class SVCli(SVBankCli):
                 return "\n".join([delimiter.join(row)
                                   for row in rows])
         patch=SVPatch(**self.patches[i % len(self.patches)])
-        rendered=patch.render(nbeats=self.env["nbeats"],
+        rendered=patch.render(nticks=self.env["nticks"],
                               density=self.env["density"],
                               temperature=self.env["temperature"])
-        grid=Grid(self.env["nbeats"])
+        grid=Grid(self.env["nticks"])
         for key, trigs in rendered.items():
             if "Sampler" in key:
-                grid.setdefault(key, Track(self.env["nbeats"]))
+                grid.setdefault(key, Track(self.env["nticks"]))
                 for trig in trigs:
                     grid[key][trig.i]="%s/%s" % (trig.sample["bank"],
                                                  trig.sample["file"])

@@ -78,11 +78,11 @@ class EuclidSequencer(SampleSequencer):
     - for the moment it's either/or in terms of sample/pattern switching
     """
     
-    def render(self, nbeats, density, temperature):
+    def render(self, nticks, density, temperature):
         q={k:Q(v) for k, v in self["seeds"].items()}
         sample, pattern = (self.random_sample(q),
                            self.random_pattern(q))
-        for i in range(nbeats):
+        for i in range(nticks):
             if self.switch_sample(q, i, temperature):
                 sample=self.random_sample(q)
             elif self.switch_pattern(q, i, temperature):

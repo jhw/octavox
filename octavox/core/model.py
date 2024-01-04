@@ -86,14 +86,14 @@ class SVFXTrig:
 
 class SVTrigs(list):
 
-    def __init__(self, nbeats, mutes, items=[]):
+    def __init__(self, nticks, mutes, items=[]):
         list.__init__(self, items)
-        self.nbeats=nbeats
+        self.nticks=nticks
         self.mutes=mutes
 
     @property
     def tracks(self):
-        tracks=SVTracks(self.nbeats)
+        tracks=SVTracks(self.nticks)
         for _trig in self:
             for key, trig in _trig.expanded:
                 if key not in self.mutes:
@@ -107,9 +107,9 @@ class SVTrigs(list):
     
 class SVTracks(dict):
 
-    def __init__(self, nbeats, item={}):
+    def __init__(self, nticks, item={}):
         dict.__init__(self)
-        self.nbeats=nbeats
+        self.nticks=nticks
 
     def filter_pool(self, keys):
         for track in self.values():
@@ -154,13 +154,13 @@ class SVPatch(dict):
                        mutes=list(self["mutes"]))
     
     def render(self,
-               nbeats,
+               nticks,
                density,
                temperature):
-        trigs=SVTrigs(nbeats=nbeats,
+        trigs=SVTrigs(nticks=nticks,
                       mutes=self["mutes"])
         for machine in self["machines"]:
-            for trig in machine.render(nbeats=nbeats,
+            for trig in machine.render(nticks=nticks,
                                        density=density,
                                        temperature=temperature):
                 trigs.append(trig)

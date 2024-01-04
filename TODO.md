@@ -1,6 +1,5 @@
 ### short
 
-- refactor nbeats as nticks
 - add tbp=4
 - add decorator to check if wav exists
 - calculate term based on nticks/tpb/bpm
@@ -31,6 +30,7 @@
 
 ### done
 
+- refactor nbeats as nticks
 - add usepatterns option to slicebeats pool
 - stem slicing
 - export wav to proper filename

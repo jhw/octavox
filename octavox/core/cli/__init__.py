@@ -113,7 +113,7 @@ class SVBaseCli(cmd.Cmd):
                                indent=2))
 
     def render_project(self):
-        rendered=[patch.render(nbeats=self.env["nbeats"],
+        rendered=[patch.render(nticks=self.env["nticks"],
                                density=self.env["density"],
                                temperature=self.env["temperature"])
                   for patch in self.patches]
@@ -210,7 +210,7 @@ class SVBaseCli(cmd.Cmd):
             with open(filename, 'w') as f:
                 f.write(json.dumps(struct,
                                    indent=2))
-            patches=[SVPatch(**patch).render(nbeats=self.env["nbeats"],
+            patches=[SVPatch(**patch).render(nticks=self.env["nticks"],
                                              density=self.env["density"],
                                              temperature=self.env["temperature"])
                      for patch in struct]

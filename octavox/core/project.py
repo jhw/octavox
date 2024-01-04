@@ -96,7 +96,7 @@ class SVProject:
         def wrapped(*args, **kwargs):
             rvpat=fn(*args, **kwargs)
             kwargs["patterns"].append(rvpat)
-            kwargs["offset"].increment(kwargs["patch"].nbeats)
+            kwargs["offset"].increment(kwargs["patch"].nticks)
         return wrapped
     
     @attach_pattern
@@ -114,7 +114,7 @@ class SVProject:
         def notefn(self, j, i):
             return trigs[i][j].render(modules,
                                       controllers) if j in trigs[i] else RVNote()
-        return RVPattern(lines=patch.nbeats,
+        return RVPattern(lines=patch.nticks,
                          tracks=len(patch),
                          x=offset.value,
                          y_size=height,
@@ -129,7 +129,7 @@ class SVProject:
                    height=Height):
         def notefn(self, j, i):
             return RVNote()
-        return RVPattern(lines=patch.nbeats,
+        return RVPattern(lines=patch.nticks,
                          tracks=len(patch),
                          x=offset.value,
                          y_size=height,
