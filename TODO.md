@@ -1,9 +1,12 @@
 ### short
 
-- check if wav exists
-- slice wavfile
+- refactor nbeats as nticks
+- add tbp=4
+- add decorator to check if wav exists
+- calculate term based on nticks/tpb/bpm
+- formatter for slice indexes
+- slicing code
 - trim breaks
-- integrate with chain method
 
 ### medium
 
