@@ -23,6 +23,7 @@ npatches: 32
 density: 0.66666
 temperature: 0.66666
 bpm: 120
+tpb: 4 # ticks per beat
 nbreaks: 0
 """)
 

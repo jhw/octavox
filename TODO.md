@@ -1,6 +1,5 @@
 ### short
 
-- add tbp=4
 - add decorator to check if wav exists
 - calculate term based on nticks/tpb/bpm
 - formatter for slice indexes
@@ -30,6 +29,7 @@
 
 ### done
 
+- add tbp=4
 - refactor nbeats as nticks
 - add usepatterns option to slicebeats pool
 - stem slicing
