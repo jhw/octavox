@@ -1,11 +1,13 @@
 ### short
 
-- abstract wav export code
+- export requirements
+- test project export
 
 ### medium
 
-- test librosa
-- sample fixing
+- stem slicing
+- librosa
+- cli sample fixing
 
 ### demos
 
@@ -24,6 +26,7 @@
 
 ### done
 
+- abstract wav export code
 - abstract sunvox project rendering code
 - check json.dumps indent
 - rename json dir as dsl
