@@ -5,7 +5,6 @@
 ### medium
 
 - librosa
-- cli sample fixing
 
 ### demos
 
@@ -15,6 +14,9 @@
 
 ### thoughts
 
+- cli sample fixing
+  - think this is a bit of a misnomer
+  - you'd be better working with mutate_patch_3
 - undo/redo?
   - don't think it's worth it as this tends to be an in- memory model
   - problem is you always have to render to see anything
