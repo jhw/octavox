@@ -28,9 +28,9 @@ def random_filename(prefix):
     
 def render_patches(prefix):
     def decorator(fn):
-        def dump_json(self):
-            filename="%s/json/%s.json" % (self.outdir,
-                                          self.filename)
+        def dump_dsl(self):
+            filename="%s/dsl/%s.json" % (self.outdir,
+                                         self.filename)
             with open(filename, 'w') as f:
                 f.write(json.dumps(self.patches,
                                    indent=2))
@@ -52,7 +52,7 @@ def render_patches(prefix):
             self.filename=random_filename(prefix)
             print ("INFO: %s" % self.filename)
             self.patches=fn(self, *args, **kwargs)
-            dump_json(self)
+            dump_dsl(self)
             dump_sunvox(self)
         return wrapped
     return decorator
@@ -113,7 +113,7 @@ class SVBaseCli(cmd.Cmd):
         self.historyfile=os.path.expanduser("%s/.clihistory" % self.outdir)
         self.historysize=historysize
 
-    def init_subdirs(self, subdirs=["json", "sunvox"]):
+    def init_subdirs(self, subdirs=["dsl", "sunvox"]):
         for subdir in subdirs:
             path="%s/%s" % (self.outdir, subdir)
             if not os.path.exists(path):
@@ -142,21 +142,21 @@ class SVBaseCli(cmd.Cmd):
             
     @parse_line()
     def do_list_projects(self):
-        for filename in sorted(os.listdir(self.outdir+"/json")):
+        for filename in sorted(os.listdir(self.outdir+"/dsl")):
             print (filename.split(".")[0])
 
     @parse_line(config=[{"name": "stem",
                          "type": "str"}])
     def do_load_project(self, stem):
         matches=[filename
-                 for filename in sorted(os.listdir(self.outdir+"/json"))
+                 for filename in sorted(os.listdir(self.outdir+"/dsl"))
                  if stem in filename]
         if matches==[]:
             print ("WARNING: no matches")
         elif len(matches)==1:
             self.filename=matches.pop()
             print ("INFO: %s" % self.filename)
-            abspath="%s/json/%s" % (self.outdir, self.filename)
+            abspath="%s/dsl/%s" % (self.outdir, self.filename)
             patches=json.loads(open(abspath).read())
             self.patches=[SVPatch(**patch)
                           for patch in patches]
@@ -171,7 +171,8 @@ class SVBaseCli(cmd.Cmd):
                                       self.filename)
         self.s3.put_object(Bucket=self.bucketname,
                            Key=s3key,
-                           Body=json.dumps(self.patches),
+                           Body=json.dumps(self.patches,
+                                           indent=2),
                            ContentType="application/json")
             
     @parse_line()
@@ -190,7 +191,7 @@ class SVBaseCli(cmd.Cmd):
             print (stem)
             struct=json.loads(self.s3.get_object(Bucket=self.bucketname,
                                                  Key=s3key)["Body"].read())
-            filename="%s/json/%s.json" % (self.outdir, stem)
+            filename="%s/dsl/%s.json" % (self.outdir, stem)
             with open(filename, 'w') as f:
                 f.write(json.dumps(struct,
                                    indent=2))
