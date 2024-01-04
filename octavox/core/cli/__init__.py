@@ -53,6 +53,15 @@ def assert_project(fn):
         return fn(self, *args, **kwargs)
     return wrapped
 
+def assert_wav(fn):
+    def wrapped(self, *args, **kwargs):
+        filename="%s/wav/%s.wav" % (self.outdir,
+                                    self.filename)
+        if not os.path.exists(filename):
+            raise RuntimeError("please generate wavfile first")
+        return fn(self, *args, **kwargs)
+    return wrapped
+
 class SVEnvironment(dict):
 
     def __init__(self, item={}):
