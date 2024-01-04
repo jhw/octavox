@@ -5,3 +5,5 @@ numpy
 pydub
 pyyaml
 git+https://github.com//metrasynth/radiant-voices
+sunvox-dll-python
+tdqm

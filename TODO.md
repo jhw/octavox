@@ -1,12 +1,13 @@
 ### short
 
-- export requirements
-- test project export
+- export wav to proper filename
+- export_stems skeleton
+- stem slicing
 
 ### medium
 
-- stem slicing
 - librosa
+
 - cli sample fixing
 
 ### demos
@@ -26,6 +27,8 @@
 
 ### done
 
+- test project export
+- export requirements
 - abstract wav export code
 - abstract sunvox project rendering code
 - check json.dumps indent

@@ -5,15 +5,16 @@
 import numpy as np
 
 # from scipy.io import wavfile
-from sunvox.core.utils import wavfile
+from octavox.core.utils import wavfile
 
-from sunvox import Slot as RVSlot
+# from sunvox import Slot
+from sunvox.slot import Slot as RVSlot
 from sunvox.buffered import BufferedProcess as RVBufferedProcess
-from sunvox.bufferer import float32, int16
+from sunvox.buffered import float32, int16
 
 from tqdm import tqdm
 
-def export_wav(project, out_filename,
+def export_wav(project, filename,
                data_type=float32, # int16, float32
                channels=2, # 1, 2
                freq=44100): # 44100, 48000
@@ -38,7 +39,7 @@ def export_wav(project, out_filename,
             output[position:end_pos]=buffer[:copy_size]
             position=end_pos
             pbar.update(copy_size)
-    wavfile.write(out_filename, freq, output)
+    wavfile.write(filename, freq, output)
     p.deinit()
     p.kill()
 
