@@ -201,14 +201,15 @@ def init_pools(banks, terms, banned=[], limit=MinPoolSize):
     pools.update(globalz)
     return pools
 
-def init_slicebeats_pool(root="archives/slicebeats"):
+def init_slicebeats_pool(root="archives/slicebeats",
+                         usepatterns=False):
     def add_samples(samples, filename):            
         patches=json.loads(open(filename).read())
         patch=patches.pop() # as a mutation, all patches have the same samples
         for machine in patch["machines"]:
             if "slices" in machine:
-                n=max([int(tok[-1]) for tok in machine["pattern"].split("|")]) # but machines have different patterns, and samples are only used if their index value is part of the pattern
-                for i in range(1+n):
+                n=1+max([int(tok[-1]) for tok in machine["pattern"].split("|")]) if usepatterns else len(machine["slices"])
+                for i in range(n):
                     slice=machine["slices"][i]
                     for sample in slice["samples"]:
                         if "pitch" in sample:

@@ -3,6 +3,7 @@
 - check if wav exists
 - slice wavfile
 - trim breaks
+- integrate with chain method
 
 ### medium
 
@@ -27,6 +28,7 @@
 
 ### done
 
+- add usepatterns option to slicebeats pool
 - stem slicing
 - export wav to proper filename
 - test project export
