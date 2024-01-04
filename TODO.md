@@ -1,7 +1,7 @@
 ### short
 
-- export wav to proper filename
 - export_stems skeleton
+- assert_wav routine
 - stem slicing
 
 ### medium
@@ -27,6 +27,7 @@
 
 ### done
 
+- export wav to proper filename
 - test project export
 - export requirements
 - abstract wav export code

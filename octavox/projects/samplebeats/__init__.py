@@ -8,8 +8,6 @@ from octavox.core.model import SVPatch
 
 from octavox.core.pools import SVPool, SVPools, SVSample
 
-from octavox.core.utils.export import export_wav
-
 import boto3, itertools, json, os, random, sys, yaml
 
 (Modules,
@@ -189,13 +187,6 @@ class SVCli(SVBankCli):
         sz=[l for l in lengths
             if l < len(patches)][-1]
         return patches[:sz]
-
-    @parse_line()
-    @assert_project
-    def do_export_wav(self):
-        project=self.render_project()
-        export_wav(project=project,
-                   filename="tmp/hello.wav")
     
 def init_pools(banks, terms, banned=[], limit=MinPoolSize):
     pools, globalz = SVPools(), SVPools()

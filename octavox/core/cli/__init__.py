@@ -10,6 +10,8 @@ from octavox.core.model import SVPatch
 
 from octavox.core.project import SVProject
 
+from octavox.core.utils.export import export_wav
+
 from datetime import datetime
 
 import boto3, cmd, json, os, random, readline, yaml
@@ -93,7 +95,7 @@ class SVBaseCli(cmd.Cmd):
         self.historyfile=os.path.expanduser("%s/.clihistory" % self.outdir)
         self.historysize=historysize
 
-    def init_subdirs(self, subdirs=["dsl", "sunvox"]):
+    def init_subdirs(self, subdirs=["dsl", "sunvox", "wav"]):
         for subdir in subdirs:
             path="%s/%s" % (self.outdir, subdir)
             if not os.path.exists(path):
@@ -128,7 +130,14 @@ class SVBaseCli(cmd.Cmd):
         with open(filename, 'wb') as f:
             project=self.render_project()
             project.write_to(f)
-            
+
+    def dump_wav(self):
+        filename="%s/wav/%s.wav" % (self.outdir,
+                                    self.filename)
+        project=self.render_project()
+        export_wav(project=project,
+                   filename=filename)
+                        
     @parse_line()
     def do_show_params(self):
         for key in sorted(self.env.keys()):
@@ -160,9 +169,9 @@ class SVBaseCli(cmd.Cmd):
         if matches==[]:
             print ("WARNING: no matches")
         elif len(matches)==1:
-            self.filename=matches.pop()
+            self.filename=matches.pop().split(".")[0]
             print ("INFO: %s" % self.filename)
-            abspath="%s/dsl/%s" % (self.outdir, self.filename)
+            abspath="%s/dsl/%s.json" % (self.outdir, self.filename)
             patches=json.loads(open(abspath).read())
             self.patches=[SVPatch(**patch)
                           for patch in patches]
@@ -214,7 +223,12 @@ class SVBaseCli(cmd.Cmd):
             filename="%s/sunvox/%s.sunvox" % (self.outdir, stem)
             with open(filename, 'wb') as f:
                 project.write_to(f)
-                    
+
+    @parse_line()
+    @assert_project
+    def do_export_wav(self):
+        self.dump_wav()
+                
     def do_exit(self, _):
         return self.do_quit(None)
 
