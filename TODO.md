@@ -1,9 +1,6 @@
 ### short
 
-- abstract sunvox project rendering code
-- separate export wav and slice stems actions
 - abstract wav export code
-
 
 ### medium
 
@@ -27,6 +24,7 @@
 
 ### done
 
+- abstract sunvox project rendering code
 - check json.dumps indent
 - rename json dir as dsl
 - why does filename appear to be missing on project import
