@@ -1,8 +1,9 @@
 ### short
 
+- abstract sunvox project rendering code
 - separate export wav and slice stems actions
 - abstract wav export code
-- abstract sunvox project rendering code
+
 
 ### medium
 
@@ -26,6 +27,7 @@
 
 ### done
 
+- check json.dumps indent
 - rename json dir as dsl
 - why does filename appear to be missing on project import
 - slicebeats pool to use samples mentioned in patterns only
