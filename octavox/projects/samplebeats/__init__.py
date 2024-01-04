@@ -8,6 +8,8 @@ from octavox.core.model import SVPatch
 
 from octavox.core.pools import SVPool, SVPools, SVSample
 
+from pydub import AudioSegment
+
 import boto3, itertools, json, os, random, sys, yaml
 
 (Modules,
@@ -190,12 +192,25 @@ class SVCli(SVBankCli):
         return patches[:sz]
 
     @parse_line()
+    @assert_project
     @assert_wav
-    def do_generate_stems(self):
+    def do_generate_stems(self, fade=5):        
         nbeats=int(self.env["nticks"]/self.env["tpb"])
         duration=int(1000*60*nbeats/self.env["bpm"])
-        print (nbeats, duration)
-    
+        wavfilename="%s/wav/%s.wav" % (self.outdir,
+                                       self.filename)
+        audio=AudioSegment.from_wav(wavfilename)
+        destdirname="%s/stems/%s" % (self.outdir,
+                                     self.filename)
+        if not os.path.exists(destdirname):
+            os.makedirs(destdirname)
+        for i in range(len(self.patches)):
+            starttime=i*duration
+            endtime=starttime+duration
+            stem=audio[starttime:endtime].fade_in(fade).fade_out(fade)
+            stemfilename="%s/stem-%03i.wav" % (destdirname, i)
+            stem.export(stemfilename, format="wav")
+                
 def init_pools(banks, terms, banned=[], limit=MinPoolSize):
     pools, globalz = SVPools(), SVPools()
     for bankname, bank in banks.items():

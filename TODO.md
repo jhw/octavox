@@ -1,12 +1,9 @@
 ### short
 
-- formatter for slice indexes
-- slicing code
-- trim breaks
+- adjust stem generation for breaks
 
 ### medium
 
-- add bpm to output filename
 - librosa
 - cli sample fixing
 
@@ -18,6 +15,13 @@
 
 ### thoughts
 
+- undo/redo?
+  - don't think it's worth it as this tends to be an in- memory model
+  - problem is you always have to render to see anything
+  - and every time you render you need a neew name
+  - so undo is really just load a prior name
+- add bpm to output filename?
+  - not sure is worth it
 - 3rd euclid arg?
   - probably not worth it
 - machine mutation?
@@ -27,6 +31,8 @@
 
 ### done
 
+- formatter for slice indexes
+- slicing code
 - generate_stems skeleton
 - calculate term based on nticks/tpb/bpm
 - add decorator to check if wav exists
