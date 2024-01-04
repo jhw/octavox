@@ -1,6 +1,6 @@
 from octavox.core.banks import SVBanks
 
-from octavox.core.cli import SVBankCli, render_patches, assert_project
+from octavox.core.cli import SVBankCli, render_patches, assert_project, assert_wav
 
 from octavox.core.cli.parse import parse_line
 
@@ -188,6 +188,13 @@ class SVCli(SVBankCli):
         sz=[l for l in lengths
             if l < len(patches)][-1]
         return patches[:sz]
+
+    @parse_line()
+    @assert_wav
+    def do_generate_stems(self):
+        nbeats=int(self.env["nticks"]/self.env["tpb"])
+        duration=int(1000*60*nbeats/self.env["bpm"])
+        print (nbeats, duration)
     
 def init_pools(banks, terms, banned=[], limit=MinPoolSize):
     pools, globalz = SVPools(), SVPools()

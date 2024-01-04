@@ -1,7 +1,5 @@
 ### short
 
-- generate_stems skeleton
-- calculate term based on nticks/tpb/bpm
 - formatter for slice indexes
 - slicing code
 - trim breaks
@@ -29,6 +27,8 @@
 
 ### done
 
+- generate_stems skeleton
+- calculate term based on nticks/tpb/bpm
 - add decorator to check if wav exists
 - add tbp=4
 - refactor nbeats as nticks
