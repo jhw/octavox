@@ -1,14 +1,13 @@
 ### short
 
-- add bpm to output filename
-- export_stems skeleton
-- assert_wav routine
-- stem slicing
+- check if wav exists
+- slice wavfile
+- trim breaks
 
 ### medium
 
+- add bpm to output filename
 - librosa
-
 - cli sample fixing
 
 ### demos
@@ -28,6 +27,7 @@
 
 ### done
 
+- stem slicing
 - export wav to proper filename
 - test project export
 - export requirements
