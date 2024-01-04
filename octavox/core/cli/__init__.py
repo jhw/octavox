@@ -154,9 +154,9 @@ class SVBaseCli(cmd.Cmd):
         if matches==[]:
             print ("WARNING: no matches")
         elif len(matches)==1:
-            filename=matches.pop()
-            print ("INFO: %s" % filename)
-            abspath="%s/json/%s" % (self.outdir, filename)
+            self.filename=matches.pop()
+            print ("INFO: %s" % self.filename)
+            abspath="%s/json/%s" % (self.outdir, self.filename)
             patches=json.loads(open(abspath).read())
             self.patches=[SVPatch(**patch)
                           for patch in patches]

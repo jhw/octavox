@@ -1,6 +1,5 @@
 ### short
 
-- why does filename appear to be missing on project import
 - rename json dir as octavox
 - separate export wav and slice stems actions
 - abstract wav export code
@@ -28,6 +27,7 @@
 
 ### done
 
+- why does filename appear to be missing on project import
 - slicebeats pool to use samples mentioned in patterns only
 - slicebeats pool to use set to avoid duplicates
 - script to randomise patches and insert slicebeats samples
