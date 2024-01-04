@@ -3,7 +3,7 @@ from rv.modules.sampler import Sampler as RVSampler
 from rv.note import NOTE as RVNOTE
 
 # from scipy.io import wavfile
-from octavox.core.sampler import wavfile
+from octavox.core.utils import wavfile
 
 import io, warnings
 
