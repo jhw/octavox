@@ -1,7 +1,6 @@
 ### short
 
 - chaining doesn't seem to include mutes :/
-- why aren't chains visible in M8?
 - move stems stuff into core cli
 - combine wav export and stems
 
@@ -36,6 +35,7 @@
 
 ### done
 
+- why aren't chains visible in M8?
 - adjust stem generation for breaks
 - formatter for slice indexes
 - slicing code

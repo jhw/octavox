@@ -15,7 +15,7 @@ from sunvox.buffered import float32, int16
 from tqdm import tqdm
 
 def export_wav(project, filename,
-               data_type=float32, # int16, float32
+               data_type=int16, # int16, float32
                channels=2, # 1, 2
                freq=44100): # 44100, 48000
     p=RVBufferedProcess(freq=freq,
