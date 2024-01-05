@@ -1,10 +1,8 @@
 ### short
 
-- adjust stem generation for breaks
-
 ### medium
 
-- librosa
+- librosa demo
 
 ### demos
 
@@ -33,6 +31,7 @@
 
 ### done
 
+- adjust stem generation for breaks
 - formatter for slice indexes
 - slicing code
 - generate_stems skeleton

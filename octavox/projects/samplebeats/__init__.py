@@ -204,8 +204,9 @@ class SVCli(SVBankCli):
                                      self.filename)
         if not os.path.exists(destdirname):
             os.makedirs(destdirname)
+        nbreaks=self.env["nbreaks"]
         for i in range(len(self.patches)):
-            starttime=i*duration
+            starttime=(1+nbreaks)*i*duration
             endtime=starttime+duration
             stem=audio[starttime:endtime].fade_in(fade).fade_out(fade)
             stemfilename="%s/stem-%03i.wav" % (destdirname, i)
