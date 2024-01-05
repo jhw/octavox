@@ -1,5 +1,8 @@
 ### short
 
+- move stems stuff into core cli
+- combine wav export and stems
+
 ### medium
 
 - librosa demo
