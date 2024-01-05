@@ -1,5 +1,7 @@
 ### short
 
+- chaining doesn't seem to include mutes :/
+- why aren't chains visible in M8?
 - move stems stuff into core cli
 - combine wav export and stems
 
