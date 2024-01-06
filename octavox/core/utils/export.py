@@ -16,6 +16,10 @@ from io import BytesIO
 
 from tqdm import tqdm
 
+"""
+- M8 requires 16 bit wav files
+"""
+
 def export_wav(project,
                data_type=int16, # int16, float32
                channels=2, # 1, 2
