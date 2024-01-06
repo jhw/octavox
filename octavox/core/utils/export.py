@@ -12,9 +12,11 @@ from sunvox.slot import Slot as RVSlot
 from sunvox.buffered import BufferedProcess as RVBufferedProcess
 from sunvox.buffered import float32, int16
 
+from io import BytesIO
+
 from tqdm import tqdm
 
-def export_wav(project, filename,
+def export_wav(project,
                data_type=int16, # int16, float32
                channels=2, # 1, 2
                freq=44100): # 44100, 48000
@@ -39,9 +41,12 @@ def export_wav(project, filename,
             output[position:end_pos]=buffer[:copy_size]
             position=end_pos
             pbar.update(copy_size)
-    wavfile.write(filename, freq, output)
+    buf=BytesIO()
+    wavfile.write(buf, freq, output)
     p.deinit()
     p.kill()
+    buf.seek(0)
+    return buf
 
 if __name__ == "__main__":
     pass

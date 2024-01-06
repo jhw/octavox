@@ -4,8 +4,6 @@
 
 ### medium
 
-- see if wav dump to file can be replaced with in- memory operation
-
 - librosa demo
 
 ### demos
@@ -35,6 +33,7 @@
 
 ### done
 
+- see if wav dump to file can be replaced with in- memory operation
 - move stems stuff into core cli
 - combine wav export and stems
 - why aren't chains visible in M8?

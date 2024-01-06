@@ -97,7 +97,7 @@ class SVBaseCli(cmd.Cmd):
         self.historyfile=os.path.expanduser("%s/.clihistory" % self.outdir)
         self.historysize=historysize
 
-    def init_subdirs(self, subdirs=["dsl", "sunvox", "wav"]):
+    def init_subdirs(self, subdirs=["dsl", "sunvox"]):
         for subdir in subdirs:
             path="%s/%s" % (self.outdir, subdir)
             if not os.path.exists(path):
@@ -222,12 +222,9 @@ class SVBaseCli(cmd.Cmd):
     @parse_line()
     @assert_project
     def do_export_stems(self, fade=5):
-        wavfilename="%s/wav/%s.wav" % (self.outdir,
-                                       self.filename)
         project=self.render_project()
-        export_wav(project=project,
-                   filename=wavfilename)
-        audio=AudioSegment.from_wav(wavfilename)
+        wav=export_wav(project=project)
+        audio=AudioSegment.from_wav(wav)
         nbeats=int(self.env["nticks"]/self.env["tpb"])
         duration=int(1000*60*nbeats/self.env["bpm"])       
         destdirname="%s/stems/%s" % (self.outdir,
