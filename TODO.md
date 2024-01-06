@@ -1,8 +1,5 @@
 ### short
 
-- move stems stuff into core cli
-- combine wav export and stems
-
 - investigate if chaining is generating mutes
 
 ### medium
@@ -38,6 +35,8 @@
 
 ### done
 
+- move stems stuff into core cli
+- combine wav export and stems
 - why aren't chains visible in M8?
 - adjust stem generation for breaks
 - formatter for slice indexes

@@ -12,6 +12,8 @@ from octavox.core.project import SVProject
 
 from octavox.core.utils.export import export_wav
 
+from pydub import AudioSegment
+
 from datetime import datetime
 
 import boto3, cmd, json, os, random, readline, yaml
@@ -50,15 +52,6 @@ def assert_project(fn):
     def wrapped(self, *args, **kwargs):
         if not self.patches:
             raise RuntimeError("no patches found")
-        return fn(self, *args, **kwargs)
-    return wrapped
-
-def assert_wav(fn):
-    def wrapped(self, *args, **kwargs):
-        filename="%s/wav/%s.wav" % (self.outdir,
-                                    self.filename)
-        if not os.path.exists(filename):
-            raise RuntimeError("please generate wavfile first")
         return fn(self, *args, **kwargs)
     return wrapped
 
@@ -139,13 +132,6 @@ class SVBaseCli(cmd.Cmd):
         with open(filename, 'wb') as f:
             project=self.render_project()
             project.write_to(f)
-
-    def dump_wav(self):
-        filename="%s/wav/%s.wav" % (self.outdir,
-                                    self.filename)
-        project=self.render_project()
-        export_wav(project=project,
-                   filename=filename)
                         
     @parse_line()
     def do_show_params(self):
@@ -235,9 +221,27 @@ class SVBaseCli(cmd.Cmd):
 
     @parse_line()
     @assert_project
-    def do_export_wav(self):
-        self.dump_wav()
-                
+    def do_export_stems(self, fade=5):
+        wavfilename="%s/wav/%s.wav" % (self.outdir,
+                                       self.filename)
+        project=self.render_project()
+        export_wav(project=project,
+                   filename=wavfilename)
+        audio=AudioSegment.from_wav(wavfilename)
+        nbeats=int(self.env["nticks"]/self.env["tpb"])
+        duration=int(1000*60*nbeats/self.env["bpm"])       
+        destdirname="%s/stems/%s" % (self.outdir,
+                                     self.filename)
+        if not os.path.exists(destdirname):
+            os.makedirs(destdirname)
+        nbreaks=self.env["nbreaks"]
+        for i in range(len(self.patches)):
+            starttime=(1+nbreaks)*i*duration
+            endtime=starttime+duration
+            stem=audio[starttime:endtime].fade_in(fade).fade_out(fade)
+            stemfilename="%s/stem-%03i.wav" % (destdirname, i)
+            stem.export(stemfilename, format="wav")
+        
     def do_exit(self, _):
         return self.do_quit(None)
 
