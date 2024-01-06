@@ -163,7 +163,7 @@ class SVCli(SVBankCli):
                          "type": "array"}])
     @assert_project
     @render_patches(prefix="chain")
-    def do_chain_patches(self, I, lengths=[4, 8, 16, 24, 32, 48]):
+    def do_chain_patches(self, I):
         def unique_permutations(strings):
             perms=[]
             for r in range(1, len(strings)):
@@ -179,16 +179,13 @@ class SVCli(SVBankCli):
                                       for attr in "kick|snare|hat".split("|")])
         patches=[]
         for root in roots:
+            patches.append(root)
             for mutes in allmutes:
                 patch=SVPatch(machines=root["machines"],
                               mutes=mutes)
                 patches.append(patch)
-        random.shuffle(patches)
-        patches=roots+patches
-        sz=[l for l in lengths
-            if l < len(patches)][-1]
-        return patches[:sz]
-
+        return patches
+                
 def init_pools(banks, terms, banned=[], limit=MinPoolSize):
     pools, globalz = SVPools(), SVPools()
     for bankname, bank in banks.items():

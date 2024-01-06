@@ -1,7 +1,5 @@
 ### short
 
-- investigate if chaining is generating mutes
-
 ### medium
 
 - librosa demo
@@ -33,6 +31,7 @@
 
 ### done
 
+- investigate if chaining is generating mutes
 - see if wav dump to file can be replaced with in- memory operation
 - move stems stuff into core cli
 - combine wav export and stems
