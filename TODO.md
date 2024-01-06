@@ -1,10 +1,13 @@
 ### short
 
-- chaining doesn't seem to include mutes :/
 - move stems stuff into core cli
 - combine wav export and stems
 
+- investigate if chaining is generating mutes
+
 ### medium
+
+- see if wav dump to file can be replaced with in- memory operation
 
 - librosa demo
 
