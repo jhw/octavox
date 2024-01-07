@@ -1,8 +1,14 @@
 ### short
 
-- librosa demo
+- new pools subdir
+- script to generate curated pools
+- script to generate slicebeats pool
+- refactor samplebeats pool code to load yaml pools
+- remove existing in- memory pool curation code
 
 ### medium
+
+- librosa demo
 
 ### demos
 
