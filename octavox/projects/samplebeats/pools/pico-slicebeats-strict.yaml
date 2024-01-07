@@ -1,0 +1,364 @@
+- bank: pico-pitch-black
+  file: 04 doom kick.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 27 Ernie ball bass guitar note sustain lead.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 14 Buchla bongo percussion.wav
+  tags:
+  - ht
+- bank: pico-pitch-black
+  file: 32 buchla bass shot lead.wav
+  tags:
+  - ht
+- bank: pico-pitch-black
+  file: 62 th gate blip ear candy.wav
+  tags:
+  - ht
+- bank: pico-pitch-black
+  file: 58 Flux noise ear candy.wav
+  tags:
+  - ht
+- bank: pico-pitch-black
+  file: 25 swamatron fuzz hit lead.wav
+  tags:
+  - ht
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 10 BD.wav
+  tags:
+  - kk
+- bank: pico-richard-devine
+  file: 30 Devine.wav
+  tags:
+  - sn
+- bank: pico-syntrx
+  file: 20 fmbs3.wav
+  tags:
+  - ht
+- bank: pico-otto-von-schirach
+  file: 10 Electro Acoustic sd.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 13 Brute Snare II Percussion.wav
+  tags:
+  - ht
+- bank: pico-syntrx
+  file: 07 fmbs4.wav
+  tags:
+  - ht
+- bank: pico-legowelt
+  file: 55 ERIKABD6.wav
+  tags:
+  - kk
+- bank: pico-ib-magnetic-saturation
+  file: 00 BD.wav
+  tags:
+  - kk
+- bank: pico-clipping
+  file: 46 WakeUpBass.wav
+  tags:
+  - kk
+- bank: pico-otto-von-schirach
+  file: 59 Zort Sd.wav
+  tags:
+  - sn
+- bank: pico-otto-von-schirach
+  file: 45 Static Snare.wav
+  tags:
+  - sn
+- bank: pico-otto-von-schirach
+  file: 53 syncussion.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 57 Perc.wav
+  tags:
+  - ht
+- bank: pico-otto-von-schirach
+  file: 54 syncussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 20 Vintage Machines Snare Percussion.wav
+  tags:
+  - sn
+- bank: pico-pitch-black
+  file: 06 roundhouse kick.wav
+  tags:
+  - kk
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 08 BD.wav
+  tags:
+  - kk
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 16 SD.wav
+  tags:
+  - sn
+- bank: pico-default
+  file: 11 SD.wav
+  tags:
+  - sn
+- bank: pico-baseck
+  file: 41 syncussion.wav
+  tags:
+  - ht
+- bank: pico-otto-von-schirach
+  file: 50 syncussion.wav
+  tags:
+  - ht
+- bank: pico-baseck
+  file: 32 syncussion.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 61 Perc.wav
+  tags:
+  - ht
+- bank: pico-richard-devine
+  file: 59 Devine.wav
+  tags:
+  - kk
+- bank: pico-default
+  file: 30 IB HC.wav
+  tags:
+  - sn
+- bank: pico-baseck
+  file: 12 BRA13.wav
+  tags:
+  - sn
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 33 PERC.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 35 ERIKApadAtmos1.wav
+  tags:
+  - kk
+- bank: pico-baseck
+  file: 19 FM04.wav
+  tags:
+  - ht
+- bank: pico-default
+  file: 62 JUNGLE BREAK.wav
+  tags:
+  - sn
+- bank: pico-syntrx
+  file: 27 gltchm7.wav
+  tags:
+  - ht
+- bank: pico-otto-von-schirach
+  file: 34 Miami Bass Sd.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 01 BD.wav
+  tags:
+  - kk
+- bank: pico-legowelt
+  file: 24 ERIKABubblemarimba.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 25 Basimilus Hat II Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 18 Stacked Noise Snare Percussion.wav
+  tags:
+  - ht
+- bank: pico-pitch-black
+  file: 17 buchla tamborine percussion.wav
+  tags:
+  - ht
+- bank: pico-otto-von-schirach
+  file: 49 syncussion.wav
+  tags:
+  - ht
+- bank: pico-richard-devine
+  file: 01 Devine.wav
+  tags:
+  - kk
+- bank: pico-richard-devine
+  file: 34 Devine.wav
+  tags:
+  - kk
+- bank: pico-richard-devine
+  file: 31 Devine.wav
+  tags:
+  - sn
+- bank: pico-richard-devine
+  file: 13 Devine.wav
+  tags:
+  - ht
+- bank: pico-richard-devine
+  file: 47 Devine.wav
+  tags:
+  - ht
+- bank: pico-syntrx
+  file: 62 kik1.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 00 medium decayed Kick.wav
+  tags:
+  - kk
+- bank: pico-ib-magnetic-saturation
+  file: 13 SD.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 60 ERIKASHihat.wav
+  tags:
+  - ht
+- bank: pico-default
+  file: 40 CH.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 11 Kick.wav
+  tags:
+  - kk
+- bank: pico-ib-magnetic-saturation
+  file: 29 RIM.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 15 SD.wav
+  tags:
+  - sn
+- bank: pico-otto-von-schirach
+  file: 56 SYNCUSSION BASS.wav
+  tags:
+  - kk
+- bank: pico-nero-bellum
+  file: 38 Noise Sub Percussion.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 06 Kick.wav
+  tags:
+  - kk
+- bank: pico-nero-bellum
+  file: "54 \xC6thers Tide Bass.wav"
+  tags:
+  - sn
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 34 PERC.wav
+  tags:
+  - ht
+- bank: pico-syntrx
+  file: 30 gltcht8.wav
+  tags:
+  - ht
+- bank: pico-pitch-black
+  file: 19 Verbos complex Resonating tom hit percussion.wav
+  tags:
+  - ht
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 01 BD.wav
+  tags:
+  - kk
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 03 BD.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 12 Smack my pitch up stc08 Snare.wav
+  tags:
+  - sn
+- bank: pico-default
+  file: 28 HC.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 45 Wraith Kit III Percussion.wav
+  tags:
+  - ht
+- bank: pico-syntrx
+  file: 23 gltcht4.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 31 Machine Hat Percussion.wav
+  tags:
+  - ht
+- bank: pico-legowelt
+  file: 61 ERIKABD7.wav
+  tags:
+  - kk
+- bank: pico-ib-magnetic-saturation
+  file: 18 SD.wav
+  tags:
+  - sn
+- bank: pico-clipping
+  file: 30 ShooterSnare.wav
+  tags:
+  - sn
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 29 PERC.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 43 Wraith Kit I Percussion.wav
+  tags:
+  - ht
+- bank: pico-default
+  file: 02 BD.wav
+  tags:
+  - kk
+- bank: pico-ib-magnetic-saturation
+  file: 07 BD.wav
+  tags:
+  - kk
+- bank: pico-legowelt
+  file: 05 ERIKASD2.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 08 Basimilus Sub Drop Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 04 Uncle Toms Blackened Kick Percussion.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 58 Perc.wav
+  tags:
+  - ht
+- bank: pico-legowelt
+  file: 62 ERIKABDhat.wav
+  tags:
+  - ht
+- bank: pico-baseck
+  file: 38 syncussion.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 00 Kick.wav
+  tags:
+  - kk
+- bank: pico-ib-magnetic-saturation
+  file: 30 RIM.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 35 Defleshing Automata Percussion.wav
+  tags:
+  - ht
+- bank: pico-otto-von-schirach
+  file: 11 Electro kik.wav
+  tags:
+  - kk
+- bank: pico-otto-von-schirach
+  file: 47 syncussion.wav
+  tags:
+  - ht
+- bank: pico-otto-von-schirach
+  file: 51 SYNCUSSION.wav
+  tags:
+  - ht

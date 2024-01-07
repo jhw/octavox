@@ -1,7 +1,5 @@
 ### short
 
-- script to dump slicebeats pools
-
 - modify pool code to iterate through directories
 
 ### medium
@@ -35,6 +33,7 @@
 
 ### done
 
+- script to dump slicebeats pools
 - script to dump curated pools
 - script to dump default pools
 - investigate if chaining is generating mutes
