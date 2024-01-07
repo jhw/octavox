@@ -23,7 +23,7 @@ def init_pools(banks, banned, limit=MinPoolSize):
                          banned=banned)
         if len(pool) > limit:
             pools["%s-default" % bankname]=pool
-    globalz["pico-global-default"]=pools.flatten2()
+    globalz["pico-global-default"]=pools.flatten()
     pools.update(globalz)
     return pools
 

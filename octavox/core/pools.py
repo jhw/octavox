@@ -70,14 +70,7 @@ class SVPools(dict):
     def __init__(self, item={}):
         dict.__init__(self, item)
 
-    def flatten(self, term):
-        flattened=SVPool()
-        for poolname, pool in self.items():
-            if re.search(term, poolname):
-                flattened+=pool
-        return flattened
-
-    def flatten2(self):
+    def flatten(self):
         flattened=SVPool()
         for poolname, pool in self.items():            
             flattened+=pool

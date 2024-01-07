@@ -33,6 +33,7 @@
 
 ### done
 
+- replace flatten2
 - modify pool code to iterate through directories
 - script to dump slicebeats pools
 - script to dump curated pools
