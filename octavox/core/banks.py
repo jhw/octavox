@@ -2,9 +2,9 @@ from octavox import has_internet
 
 from octavox.core import is_abbrev, list_s3_keys
 
-from octavox.core.pools import SVSample, SVPool, SVPools
+from octavox.core.pools import SVPool
 
-import io, os, re, zipfile
+import io, os, zipfile
 
 class SVBank:
 
@@ -16,29 +16,6 @@ class SVBank:
     def wavfiles(self):
         return [item.filename
                 for item in self.zipfile.infolist()]
-
-    def filter_default_pool(self, banned=[]):
-        pool, wavfiles = SVPool(), self.wavfiles
-        for wavfile in wavfiles:
-            key="%s/%s" % (self.name, wavfile)
-            if key not in banned:
-                sample=SVSample({"bank": self.name,
-                                 "file": wavfile})
-                pool.add(sample)
-        return pool
-
-    def filter_curated_pool(self, terms, banned=[]):
-        pool, wavfiles = SVPool(), self.wavfiles
-        for wavfile in wavfiles:
-            key="%s/%s" % (self.name, wavfile)
-            if key not in banned:
-                for tag, term in terms.items():
-                    if re.search(term, wavfile, re.I):
-                        sample=SVSample({"bank": self.name,
-                                         "file": wavfile,
-                                         "tags": [tag]})
-                        pool.add(sample)
-        return pool
 
     def lookup(self, abbrev):
         matches=[]

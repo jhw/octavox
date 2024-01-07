@@ -1,6 +1,6 @@
 ### short
 
-- modify pool code to iterate through directories
+- replace flatten2
 
 ### medium
 
@@ -33,6 +33,7 @@
 
 ### done
 
+- modify pool code to iterate through directories
 - script to dump slicebeats pools
 - script to dump curated pools
 - script to dump default pools

@@ -27,14 +27,6 @@ tpb: 4 # ticks per beat
 nbreaks: 0
 """)
 
-Curated=yaml.safe_load("""
-ht: (hat)|(ht)|(perc)|(ussion)|(prc)|(glitch)
-kk: (kick)|(kik)|(kk)|(bd)|(bass)
-sn: (snare)|(sn)|(sd)|(clap)|(clp)|(cp)|(hc)|(rim)|(plip)|(rs)
-""")
-
-MinPoolSize=12
-
 class SequencerMap(dict):
 
     def __init__(self, sequencers):
@@ -186,48 +178,16 @@ class SVCli(SVBankCli):
                 patches.append(patch)
         return patches
                 
-def init_pools(banks, terms, banned=[], limit=MinPoolSize):
-    pools, globalz = SVPools(), SVPools()
-    for bankname, bank in banks.items():
-        for attr, pool in [("default", bank.filter_default_pool(banned=banned)),
-                           ("curated", bank.filter_curated_pool(terms,
-                                                                banned=banned))]:
-            if len(pool) > limit:
-                pools["%s-%s" % (bankname, attr)]=pool
-    for attr in "default|curated".split("|"):        
-        globalz["global-%s" % attr]=pools.flatten("\\-%s$" % attr)
-    pools.update(globalz)
+def init_pools(dirname="octavox/projects/samplebeats/pools"):
+    pools=SVPools()
+    for filename in os.listdir(dirname):
+        poolname=filename.split(".")[0]
+        pool=SVPool()        
+        for sample in yaml.safe_load(open("%s/%s" % (dirname, filename)).read()):
+            pool.add(SVSample(sample))
+        pools[poolname]=pool
     return pools
-
-def init_slicebeats_pool(root="archives/slicebeats",
-                         usepatterns=False):
-    def add_samples(samples, filename):            
-        patches=json.loads(open(filename).read())
-        patch=patches.pop() # as a mutation, all patches have the same samples
-        for machine in patch["machines"]:
-            if "slices" in machine:
-                n=1+max([int(tok[-1]) for tok in machine["pattern"].split("|")]) if usepatterns else len(machine["slices"])
-                for i in range(n):
-                    slice=machine["slices"][i]
-                    for sample in slice["samples"]:
-                        if "pitch" in sample:
-                            sample.pop("pitch")
-                        if ("ch" in sample["tags"] or
-                            "oh" in sample["tags"]):
-                            sample["tags"]=["ht"]
-                        key="%s/%s" % (sample["bank"],
-                                       sample["file"])
-                        samples[key]=sample
-    samples={}
-    for filename in os.listdir(root):
-        if "mutate" not in filename:
-            raise RuntimeError("slicebeats file is not a single root mutation")
-        add_samples(samples, "%s/%s" % (root, filename))
-    pool=SVPool()
-    for sample in samples.values():
-        pool.append(SVSample(sample))
-    return pool
-
+        
 if __name__=="__main__":
     try:
         bucketname=os.environ["OCTAVOX_ASSETS_BUCKET"]
@@ -235,12 +195,7 @@ if __name__=="__main__":
             raise RuntimeError("OCTAVOX_ASSETS_BUCKET does not exist")
         s3=boto3.client("s3")
         banks=SVBanks.initialise(s3, bucketname)
-        pools=init_pools(banks,
-                         terms=Curated,
-                         banned=Banned)
-        # START TEMP CODE?
-        pools["pico-slicebeats"]=init_slicebeats_pool()
-        # END TEMP CODE?
+        pools=init_pools()
         poolname=random.choice(list(pools.keys()))
         print ("INFO: pool=%s" % poolname)
         SVCli(s3=s3,                                  
