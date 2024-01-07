@@ -76,6 +76,12 @@ class SVPools(dict):
             if re.search(term, poolname):
                 flattened+=pool
         return flattened
+
+    def flatten2(self):
+        flattened=SVPool()
+        for poolname, pool in self.items():            
+            flattened+=pool
+        return flattened
         
     def lookup(self, abbrev):
         matches=[]

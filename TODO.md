@@ -1,6 +1,5 @@
 ### short
 
-- script to dump default pools
 - script to dump curated pools
 - script to dump slicebeats pools
 
@@ -37,6 +36,7 @@
 
 ### done
 
+- script to dump default pools
 - investigate if chaining is generating mutes
 - see if wav dump to file can be replaced with in- memory operation
 - move stems stuff into core cli

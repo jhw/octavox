@@ -1,0 +1,192 @@
+- bank: pico-syntrx
+  file: 00 mdns1.wav
+  tags: []
+- bank: pico-syntrx
+  file: 01 gltchm10.wav
+  tags: []
+- bank: pico-syntrx
+  file: 02 sr1.wav
+  tags: []
+- bank: pico-syntrx
+  file: 03 gltchm11.wav
+  tags: []
+- bank: pico-syntrx
+  file: 04 sr2.wav
+  tags: []
+- bank: pico-syntrx
+  file: 05 sr3.wav
+  tags: []
+- bank: pico-syntrx
+  file: 06 gltcht1.wav
+  tags: []
+- bank: pico-syntrx
+  file: 07 fmbs4.wav
+  tags: []
+- bank: pico-syntrx
+  file: 08 gltchm3.wav
+  tags: []
+- bank: pico-syntrx
+  file: 09 swpbas1.wav
+  tags: []
+- bank: pico-syntrx
+  file: 10 gltchm2.wav
+  tags: []
+- bank: pico-syntrx
+  file: 11 gltcht2.wav
+  tags: []
+- bank: pico-syntrx
+  file: 12 swpbas2.wav
+  tags: []
+- bank: pico-syntrx
+  file: 13 gltchm1.wav
+  tags: []
+- bank: pico-syntrx
+  file: 14 blip1.wav
+  tags: []
+- bank: pico-syntrx
+  file: 15 gltcht3.wav
+  tags: []
+- bank: pico-syntrx
+  file: 16 gltcht7.wav
+  tags: []
+- bank: pico-syntrx
+  file: 17 gltchm5.wav
+  tags: []
+- bank: pico-syntrx
+  file: 18 fmbs2.wav
+  tags: []
+- bank: pico-syntrx
+  file: 19 bass1.wav
+  tags: []
+- bank: pico-syntrx
+  file: 20 fmbs3.wav
+  tags: []
+- bank: pico-syntrx
+  file: 21 gltchm4.wav
+  tags: []
+- bank: pico-syntrx
+  file: 22 gltcht6.wav
+  tags: []
+- bank: pico-syntrx
+  file: 23 gltcht4.wav
+  tags: []
+- bank: pico-syntrx
+  file: 24 fmbs1.wav
+  tags: []
+- bank: pico-syntrx
+  file: 25 gltchm6.wav
+  tags: []
+- bank: pico-syntrx
+  file: 26 bass2.wav
+  tags: []
+- bank: pico-syntrx
+  file: 27 gltchm7.wav
+  tags: []
+- bank: pico-syntrx
+  file: 28 gltcht5.wav
+  tags: []
+- bank: pico-syntrx
+  file: 29 swpbs1.wav
+  tags: []
+- bank: pico-syntrx
+  file: 30 gltcht8.wav
+  tags: []
+- bank: pico-syntrx
+  file: 31 bsprc2.wav
+  tags: []
+- bank: pico-syntrx
+  file: 32 swpbs2.wav
+  tags: []
+- bank: pico-syntrx
+  file: 33 gltchm9.wav
+  tags: []
+- bank: pico-syntrx
+  file: 34 bsprc1.wav
+  tags: []
+- bank: pico-syntrx
+  file: 35 bsp2.wav
+  tags: []
+- bank: pico-syntrx
+  file: 36 gltchm8.wav
+  tags: []
+- bank: pico-syntrx
+  file: 37 zr2.wav
+  tags: []
+- bank: pico-syntrx
+  file: 38 gltchn1.wav
+  tags: []
+- bank: pico-syntrx
+  file: 39 gltchn3.wav
+  tags: []
+- bank: pico-syntrx
+  file: 40 cymb2.wav
+  tags: []
+- bank: pico-syntrx
+  file: 41 zr1.wav
+  tags: []
+- bank: pico-syntrx
+  file: 42 gltchn2.wav
+  tags: []
+- bank: pico-syntrx
+  file: 43 hh1.wav
+  tags: []
+- bank: pico-syntrx
+  file: 44 hh3.wav
+  tags: []
+- bank: pico-syntrx
+  file: 45 cymab1.wav
+  tags: []
+- bank: pico-syntrx
+  file: 46 hh2.wav
+  tags: []
+- bank: pico-syntrx
+  file: 47 nois4.wav
+  tags: []
+- bank: pico-syntrx
+  file: 48 kik3.wav
+  tags: []
+- bank: pico-syntrx
+  file: 49 hh6.wav
+  tags: []
+- bank: pico-syntrx
+  file: 50 sprng1.wav
+  tags: []
+- bank: pico-syntrx
+  file: 51 snare1.wav
+  tags: []
+- bank: pico-syntrx
+  file: 52 fmb1.wav
+  tags: []
+- bank: pico-syntrx
+  file: 53 kik2.wav
+  tags: []
+- bank: pico-syntrx
+  file: 54 nois1.wav
+  tags: []
+- bank: pico-syntrx
+  file: 55 nois3.wav
+  tags: []
+- bank: pico-syntrx
+  file: 56 hh5.wav
+  tags: []
+- bank: pico-syntrx
+  file: 57 sprng2.wav
+  tags: []
+- bank: pico-syntrx
+  file: 58 snare2.wav
+  tags: []
+- bank: pico-syntrx
+  file: 59 fmb2.wav
+  tags: []
+- bank: pico-syntrx
+  file: 60 snare3.wav
+  tags: []
+- bank: pico-syntrx
+  file: 61 hh4.wav
+  tags: []
+- bank: pico-syntrx
+  file: 62 kik1.wav
+  tags: []
+- bank: pico-syntrx
+  file: 63 nois2.wav
+  tags: []

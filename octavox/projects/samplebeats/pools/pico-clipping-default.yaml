@@ -1,0 +1,192 @@
+- bank: pico-clipping
+  file: 00 AirGlassTap.wav
+  tags: []
+- bank: pico-clipping
+  file: 01 AirWell.wav
+  tags: []
+- bank: pico-clipping
+  file: 02 AllBlackCable.wav
+  tags: []
+- bank: pico-clipping
+  file: 03 Baby1.wav
+  tags: []
+- bank: pico-clipping
+  file: 04 Baby2.wav
+  tags: []
+- bank: pico-clipping
+  file: 05 Baby3.wav
+  tags: []
+- bank: pico-clipping
+  file: 06 Baby4.wav
+  tags: []
+- bank: pico-clipping
+  file: 07 BackUpSBDrugs.wav
+  tags: []
+- bank: pico-clipping
+  file: 08 BackUpPianoSmahs1.wav
+  tags: []
+- bank: pico-clipping
+  file: 09 BackUpPianoSmahs2.wav
+  tags: []
+- bank: pico-clipping
+  file: 10 BetterPlaceKick.wav
+  tags: []
+- bank: pico-clipping
+  file: 11 BetterPlaceShephard.wav
+  tags: []
+- bank: pico-clipping
+  file: 12 BetterPlaceDiggsGo.wav
+  tags: []
+- bank: pico-clipping
+  file: 13 BLSBottomsOff.wav
+  tags: []
+- bank: pico-clipping
+  file: 14 BreakTheGlassDoorSlam.wav
+  tags: []
+- bank: pico-clipping
+  file: 15 BreakTheGlassMetalSqueak.wav
+  tags: []
+- bank: pico-clipping
+  file: 16 BreakTheGlassTerminator.wav
+  tags: []
+- bank: pico-clipping
+  file: 17 BreakTheGlassAir1.wav
+  tags: []
+- bank: pico-clipping
+  file: 18 BreakTheGlassAir2.wav
+  tags: []
+- bank: pico-clipping
+  file: 19 DreamBowl.wav
+  tags: []
+- bank: pico-clipping
+  file: 20 FaceSticks.wav
+  tags: []
+- bank: pico-clipping
+  file: 21 FaceDiggsBreakShit.wav
+  tags: []
+- bank: pico-clipping
+  file: 22 GetItVegBreakSnare.wav
+  tags: []
+- bank: pico-clipping
+  file: 23 GetUpAlarm.wav
+  tags: []
+- bank: pico-clipping
+  file: 24 HotFuckNoLoveClap.wav
+  tags: []
+- bank: pico-clipping
+  file: 25 HotFuckNoLoveFeedback.wav
+  tags: []
+- bank: pico-clipping
+  file: 26 HotFuckMaxiPrettyMouth.wav
+  tags: []
+- bank: pico-clipping
+  file: 27 SayTheNameBees.wav
+  tags: []
+- bank: pico-clipping
+  file: 28 ShooterKick.wav
+  tags: []
+- bank: pico-clipping
+  file: 29 ShooterKick2.wav
+  tags: []
+- bank: pico-clipping
+  file: 30 ShooterSnare.wav
+  tags: []
+- bank: pico-clipping
+  file: 31 ShooterChamberHit.wav
+  tags: []
+- bank: pico-clipping
+  file: 32 ShooterMelodyBass.wav
+  tags: []
+- bank: pico-clipping
+  file: 33 Story1Rubber.wav
+  tags: []
+- bank: pico-clipping
+  file: 34 Story1Shout1.wav
+  tags: []
+- bank: pico-clipping
+  file: 35 Story1Shout2.wav
+  tags: []
+- bank: pico-clipping
+  file: 36 Story2ChamberHit.wav
+  tags: []
+- bank: pico-clipping
+  file: 37 Story2Blip.wav
+  tags: []
+- bank: pico-clipping
+  file: 38 SummertimeChild.wav
+  tags: []
+- bank: pico-clipping
+  file: 39 SummertimeSquiggle.wav
+  tags: []
+- bank: pico-clipping
+  file: 40 SummertimeRapMan.wav
+  tags: []
+- bank: pico-clipping
+  file: 41 TrueKick.wav
+  tags: []
+- bank: pico-clipping
+  file: 42 TrueSnare.wav
+  tags: []
+- bank: pico-clipping
+  file: 43 TrueKerchunk.wav
+  tags: []
+- bank: pico-clipping
+  file: 44 TrueDiggsGods.wav
+  tags: []
+- bank: pico-clipping
+  file: 45 WakeUpSiren.wav
+  tags: []
+- bank: pico-clipping
+  file: 46 WakeUpBass.wav
+  tags: []
+- bank: pico-clipping
+  file: 47 WakeUpDiggsJump.wav
+  tags: []
+- bank: pico-clipping
+  file: 48 WorkWorkCinderblock.wav
+  tags: []
+- bank: pico-clipping
+  file: 49 WorkWorkWaterJug01.wav
+  tags: []
+- bank: pico-clipping
+  file: 50 WorkWorkWaterJug02.wav
+  tags: []
+- bank: pico-clipping
+  file: 51 WorkWorkWaterJug03.wav
+  tags: []
+- bank: pico-clipping
+  file: 52 WorkWorkWaterJug04.wav
+  tags: []
+- bank: pico-clipping
+  file: 53 WorkWorkWaterJug05.wav
+  tags: []
+- bank: pico-clipping
+  file: 54 WorkWorkWaterJug06.wav
+  tags: []
+- bank: pico-clipping
+  file: 55 WorkWorkWaterJug07.wav
+  tags: []
+- bank: pico-clipping
+  file: 56 WorkWorkWaterJug08.wav
+  tags: []
+- bank: pico-clipping
+  file: 57 WorkWorkWaterJug09.wav
+  tags: []
+- bank: pico-clipping
+  file: 58 WorkWorkWaterJug10.wav
+  tags: []
+- bank: pico-clipping
+  file: 59 WorkWorkWaterJug11.wav
+  tags: []
+- bank: pico-clipping
+  file: 60 WorkWorkWaterJug12.wav
+  tags: []
+- bank: pico-clipping
+  file: 61 WriggleIntroSiren.wav
+  tags: []
+- bank: pico-clipping
+  file: 62 WriggleDiggsWriggle.wav
+  tags: []
+- bank: pico-clipping
+  file: 63 ItsClippingBitch.wav
+  tags: []

@@ -1,0 +1,192 @@
+- bank: pico-pitch-black
+  file: 00 medium decayed Kick.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 01 punch kick.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 02 Buchla round kick.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 03 dark energy kick.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 04 doom kick.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 05 Heavy kick.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 06 roundhouse kick.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 07 Verbos amp tone controller kick.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 08 crash snare culture print Snare.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 09 Culture vulture Pentode Snare.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 10 noise snap snare.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 11 ob6 noise snare.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 12 Smack my pitch up stc08 Snare.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 13 zap noise culture vulture print percussion.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 14 Buchla bongo percussion.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 15 Buchla congo percussion.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 16 Buchla Pop hit percussion.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 17 buchla tamborine percussion.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 18 Voyager bleep blip percussion.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 19 Verbos complex Resonating tom hit percussion.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 20 swarmatron congo percussion.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 21 swarmatron cluster shot percussion.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 22 verbos complex tonal riser lead.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 23 verbos complex saw bass shot lead.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 24 verbos complex osc shot lead.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 25 swamatron fuzz hit lead.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 26 modulated harmonic v1 and verbos lead.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 27 Ernie ball bass guitar note sustain lead.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 28 Cs15 Black ritual sequence lower ocatve lead.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 29 cluster flux with X mod hit swarmatron lead.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 30 coast lin fm lead.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 31 Cs15 arp culture vulture Higher octave w fuzz lead.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 32 buchla bass shot lead.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 33 Ob6 Saw bass Stab lead.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 34 slow attack Buchla pulse trigger tonal.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 35 silence is on it way hit tonal.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 36 GhostBreath tonal.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 37 Evil wisphers swell tonal.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 38 buchla static tonal.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 39 Buchla Spring verb bend tonal.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 40 verbos saw decayed culture vulture print drone.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 41 verbos harmonic oscillator chorded drone.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 42 grim reaper verbos harmonic osc bass drone.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 43 folktek scape drum decayed drone.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 44 deep space shot drone.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 45 buchla modulated drone.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 46 Buchla am mod drone wsprverb drone.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 47 buchla Alarm High fx.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 48 choir Impact fx.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 49 Fractured sweep erbeverb fx.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 50 Noisey hive riser fx.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 51 Portals riser fx.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 52 Resanator short rise cs15 fx.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 53 reverse swell up fx.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 54 rising Sweep fx.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 55 swarm sweep fx.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 56 The beast growls ear candy.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 57 massive flux ear candy.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 58 Flux noise ear candy.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 59 Alarm Low ear candy.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 60 buchla power on ear candy.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 61 buchla modulation lfo ear candy.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 62 th gate blip ear candy.wav
+  tags: []
+- bank: pico-pitch-black
+  file: 63 massive cinematic hit.wav
+  tags: []

@@ -1,0 +1,192 @@
+- bank: pico-legowelt
+  file: 00 ERIKABD1.wav
+  tags: []
+- bank: pico-legowelt
+  file: 01 ERIKAHardtechnoBD.wav
+  tags: []
+- bank: pico-legowelt
+  file: 02 ERIKAIndustrialBassdrum.wav
+  tags: []
+- bank: pico-legowelt
+  file: 03 ERIKAOverdriveBD.wav
+  tags: []
+- bank: pico-legowelt
+  file: 04 ERIKASD1.wav
+  tags: []
+- bank: pico-legowelt
+  file: 05 ERIKASD2.wav
+  tags: []
+- bank: pico-legowelt
+  file: 06 ERIKASD3.wav
+  tags: []
+- bank: pico-legowelt
+  file: 07 ERIKASDnoise.wav
+  tags: []
+- bank: pico-legowelt
+  file: 08 ERIKASDelectro.wav
+  tags: []
+- bank: pico-legowelt
+  file: 09 ERIKASnurrydrum.wav
+  tags: []
+- bank: pico-legowelt
+  file: 10 ERIKASDxtreeeem.wav
+  tags: []
+- bank: pico-legowelt
+  file: 11 ERIKABD2.wav
+  tags: []
+- bank: pico-legowelt
+  file: 12 ERIKASDfuture.wav
+  tags: []
+- bank: pico-legowelt
+  file: 13 ERIKASDthunderwip.wav
+  tags: []
+- bank: pico-legowelt
+  file: 14 ERIKADimensionSnare.wav
+  tags: []
+- bank: pico-legowelt
+  file: 15 ERIKACLAP1.wav
+  tags: []
+- bank: pico-legowelt
+  file: 16 ERIKADuistereCLAP.wav
+  tags: []
+- bank: pico-legowelt
+  file: 17 ERIKASidestick.wav
+  tags: []
+- bank: pico-legowelt
+  file: 18 ERIKASimplibell.wav
+  tags: []
+- bank: pico-legowelt
+  file: 19 ERIKAbeautybell.wav
+  tags: []
+- bank: pico-legowelt
+  file: 20 ERIKAAlienimba.wav
+  tags: []
+- bank: pico-legowelt
+  file: 21 ERIKABellyBilly.wav
+  tags: []
+- bank: pico-legowelt
+  file: 22 ERIKABD3.wav
+  tags: []
+- bank: pico-legowelt
+  file: 23 ERIKAWinterchestra.wav
+  tags: []
+- bank: pico-legowelt
+  file: 24 ERIKABubblemarimba.wav
+  tags: []
+- bank: pico-legowelt
+  file: 25 ERIKADigibliss.wav
+  tags: []
+- bank: pico-legowelt
+  file: 26 ERIKAKrimiSynth.wav
+  tags: []
+- bank: pico-legowelt
+  file: 27 ERIKAbweio.wav
+  tags: []
+- bank: pico-legowelt
+  file: 28 ERIKAChord1.wav
+  tags: []
+- bank: pico-legowelt
+  file: 29 ERIKAAntiloophuppelSynth.wav
+  tags: []
+- bank: pico-legowelt
+  file: 30 ERIKACornish.wav
+  tags: []
+- bank: pico-legowelt
+  file: 31 ERIKANewAgeBusStop.wav
+  tags: []
+- bank: pico-legowelt
+  file: 32 ERIKAIndustrio.wav
+  tags: []
+- bank: pico-legowelt
+  file: 33 ERIKABD4.wav
+  tags: []
+- bank: pico-legowelt
+  file: 34 ERIKAAstroPadLoop.wav
+  tags: []
+- bank: pico-legowelt
+  file: 35 ERIKApadAtmos1.wav
+  tags: []
+- bank: pico-legowelt
+  file: 36 ERIKApadAtmos2.wav
+  tags: []
+- bank: pico-legowelt
+  file: 37 ERIKAPADemulsie.wav
+  tags: []
+- bank: pico-legowelt
+  file: 38 ERIKAPadpacific.wav
+  tags: []
+- bank: pico-legowelt
+  file: 39 ERIKAPadsolipol.wav
+  tags: []
+- bank: pico-legowelt
+  file: 40 ERIKApadlama.wav
+  tags: []
+- bank: pico-legowelt
+  file: 41 ERIKAPADWAVE1.wav
+  tags: []
+- bank: pico-legowelt
+  file: 42 ERIKA90sIDMorgan.wav
+  tags: []
+- bank: pico-legowelt
+  file: 43 ERIKAItalianOrgan.wav
+  tags: []
+- bank: pico-legowelt
+  file: 44 ERIKABD5.wav
+  tags: []
+- bank: pico-legowelt
+  file: 45 ERIKAJazzorgan.wav
+  tags: []
+- bank: pico-legowelt
+  file: 46 ERIKAScarrry.wav
+  tags: []
+- bank: pico-legowelt
+  file: 47 ERIKAMechaniek.wav
+  tags: []
+- bank: pico-legowelt
+  file: 48 ERIKAModularForest.wav
+  tags: []
+- bank: pico-legowelt
+  file: 49 ERIKANorseMythology.wav
+  tags: []
+- bank: pico-legowelt
+  file: 50 ERIKAPURESYNTHone1.wav
+  tags: []
+- bank: pico-legowelt
+  file: 51 ERIKAPURESYNTHone2.wav
+  tags: []
+- bank: pico-legowelt
+  file: 52 ERIKAPURESYNTHone3.wav
+  tags: []
+- bank: pico-legowelt
+  file: 53 ERIKAPURESYNTHone5.wav
+  tags: []
+- bank: pico-legowelt
+  file: 54 ERIKAPURESYNTHone6.wav
+  tags: []
+- bank: pico-legowelt
+  file: 55 ERIKABD6.wav
+  tags: []
+- bank: pico-legowelt
+  file: 56 ERIKABVDubstyle.wav
+  tags: []
+- bank: pico-legowelt
+  file: 57 ERIKAMystiFlute.wav
+  tags: []
+- bank: pico-legowelt
+  file: 58 ERIKADadchord.wav
+  tags: []
+- bank: pico-legowelt
+  file: 59 ERIKASETIishere.wav
+  tags: []
+- bank: pico-legowelt
+  file: 60 ERIKASHihat.wav
+  tags: []
+- bank: pico-legowelt
+  file: 61 ERIKABD7.wav
+  tags: []
+- bank: pico-legowelt
+  file: 62 ERIKABDhat.wav
+  tags: []
+- bank: pico-legowelt
+  file: 63 ERIKABDlotom.wav
+  tags: []

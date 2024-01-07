@@ -1,0 +1,192 @@
+- bank: pico-default
+  file: 00 BD.wav
+  tags: []
+- bank: pico-default
+  file: 01 BD.wav
+  tags: []
+- bank: pico-default
+  file: 02 BD.wav
+  tags: []
+- bank: pico-default
+  file: 03 Buchla BD.wav
+  tags: []
+- bank: pico-default
+  file: 04 IB BD.wav
+  tags: []
+- bank: pico-default
+  file: 05 IB BD.wav
+  tags: []
+- bank: pico-default
+  file: 06 Jungle BD.wav
+  tags: []
+- bank: pico-default
+  file: 07 BD.wav
+  tags: []
+- bank: pico-default
+  file: 08 Synth BD.wav
+  tags: []
+- bank: pico-default
+  file: 09 Synth BD.wav
+  tags: []
+- bank: pico-default
+  file: 10 SD.wav
+  tags: []
+- bank: pico-default
+  file: 11 SD.wav
+  tags: []
+- bank: pico-default
+  file: 12 SD.wav
+  tags: []
+- bank: pico-default
+  file: 13 IB SD.wav
+  tags: []
+- bank: pico-default
+  file: 14 IB SD.wav
+  tags: []
+- bank: pico-default
+  file: 15 IB SD.wav
+  tags: []
+- bank: pico-default
+  file: 16 Synth SD.wav
+  tags: []
+- bank: pico-default
+  file: 17 Synth SD.wav
+  tags: []
+- bank: pico-default
+  file: 18 Jungle SD.wav
+  tags: []
+- bank: pico-default
+  file: 19 TOM.wav
+  tags: []
+- bank: pico-default
+  file: 20 TOM.wav
+  tags: []
+- bank: pico-default
+  file: 21 CN.wav
+  tags: []
+- bank: pico-default
+  file: 22 TOM.wav
+  tags: []
+- bank: pico-default
+  file: 23 TOM.wav
+  tags: []
+- bank: pico-default
+  file: 24 IB TOM.wav
+  tags: []
+- bank: pico-default
+  file: 25 IB TOM.wav
+  tags: []
+- bank: pico-default
+  file: 26 Buchla TOM.wav
+  tags: []
+- bank: pico-default
+  file: 27 HC.wav
+  tags: []
+- bank: pico-default
+  file: 28 HC.wav
+  tags: []
+- bank: pico-default
+  file: 29 HC.wav
+  tags: []
+- bank: pico-default
+  file: 30 IB HC.wav
+  tags: []
+- bank: pico-default
+  file: 31 RS.wav
+  tags: []
+- bank: pico-default
+  file: 32 RS.wav
+  tags: []
+- bank: pico-default
+  file: 33 RS.wav
+  tags: []
+- bank: pico-default
+  file: 34 CL.wav
+  tags: []
+- bank: pico-default
+  file: 35 IB CL.wav
+  tags: []
+- bank: pico-default
+  file: 36 CB.wav
+  tags: []
+- bank: pico-default
+  file: 37 CB.wav
+  tags: []
+- bank: pico-default
+  file: 38 Buchla CB.wav
+  tags: []
+- bank: pico-default
+  file: 39 MA.wav
+  tags: []
+- bank: pico-default
+  file: 40 CH.wav
+  tags: []
+- bank: pico-default
+  file: 41 CH.wav
+  tags: []
+- bank: pico-default
+  file: 42 Jungle HH.wav
+  tags: []
+- bank: pico-default
+  file: 43 Synth HH.wav
+  tags: []
+- bank: pico-default
+  file: 44 Synth HH.wav
+  tags: []
+- bank: pico-default
+  file: 45 OH.wav
+  tags: []
+- bank: pico-default
+  file: 46 OH.wav
+  tags: []
+- bank: pico-default
+  file: 47 CY.wav
+  tags: []
+- bank: pico-default
+  file: 48 RD.wav
+  tags: []
+- bank: pico-default
+  file: 49 TOM DOG.wav
+  tags: []
+- bank: pico-default
+  file: 50 TOM LAZER.wav
+  tags: []
+- bank: pico-default
+  file: 51 Synth BLIP.wav
+  tags: []
+- bank: pico-default
+  file: 52 Synth BLIP.wav
+  tags: []
+- bank: pico-default
+  file: 53 Synth BLIP.wav
+  tags: []
+- bank: pico-default
+  file: 54 IB FX.wav
+  tags: []
+- bank: pico-default
+  file: 55 RAITIS FX.wav
+  tags: []
+- bank: pico-default
+  file: 56 IB FX.wav
+  tags: []
+- bank: pico-default
+  file: 57 IB SYNTH.wav
+  tags: []
+- bank: pico-default
+  file: 58 RAITIS CHRD.wav
+  tags: []
+- bank: pico-default
+  file: 59 PIANO.wav
+  tags: []
+- bank: pico-default
+  file: 60 RAITIS CHRD.wav
+  tags: []
+- bank: pico-default
+  file: 61 RAITIS VOICE.wav
+  tags: []
+- bank: pico-default
+  file: 62 JUNGLE BREAK.wav
+  tags: []
+- bank: pico-default
+  file: 63 FUGUE.wav
+  tags: []
