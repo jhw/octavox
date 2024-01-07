@@ -1,10 +1,10 @@
 ### short
 
-- new pools subdir
-- script to generate curated pools
-- script to generate slicebeats pool
-- refactor samplebeats pool code to load yaml pools
-- remove existing in- memory pool curation code
+- script to dump default pools
+- script to dump curated pools
+- script to dump slicebeats pools
+
+- modify pool code to iterate through directories
 
 ### medium
 
