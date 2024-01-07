@@ -1,7 +1,5 @@
 ### short
 
-- replace flatten2
-
 ### medium
 
 - librosa demo
