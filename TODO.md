@@ -1,5 +1,7 @@
 ### short
 
+- move pool scripts inside project
+
 ### medium
 
 - librosa demo
