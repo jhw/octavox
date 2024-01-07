@@ -1,0 +1,288 @@
+- bank: pico-nero-bellum
+  file: 00 Basimilus Filtered Kick Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 00 Basimilus Filtered Kick Percussion.wav
+  tags:
+  - kk
+- bank: pico-nero-bellum
+  file: 01 Basimilus Trash Kick Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 01 Basimilus Trash Kick Percussion.wav
+  tags:
+  - kk
+- bank: pico-nero-bellum
+  file: 02 Brute Kick I Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 02 Brute Kick I Percussion.wav
+  tags:
+  - kk
+- bank: pico-nero-bellum
+  file: 03 Brute Kick II Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 03 Brute Kick II Percussion.wav
+  tags:
+  - kk
+- bank: pico-nero-bellum
+  file: 04 Uncle Toms Blackened Kick Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 04 Uncle Toms Blackened Kick Percussion.wav
+  tags:
+  - kk
+- bank: pico-nero-bellum
+  file: 05 Prophet Kick Long Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 05 Prophet Kick Long Percussion.wav
+  tags:
+  - kk
+- bank: pico-nero-bellum
+  file: 06 Grimy Gretch Kick Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 06 Grimy Gretch Kick Percussion.wav
+  tags:
+  - kk
+- bank: pico-nero-bellum
+  file: 06 Grimy Gretch Kick Percussion.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 07 Pentode Kick Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 07 Pentode Kick Percussion.wav
+  tags:
+  - kk
+- bank: pico-nero-bellum
+  file: 08 Basimilus Sub Drop Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 09 DPO Drop Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 10 Varishape Pulse Bomb Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 11 Basimilus Trash Snare Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 11 Basimilus Trash Snare Percussion.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 12 Brute Snare I Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 12 Brute Snare I Percussion.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 13 Brute Snare II Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 13 Brute Snare II Percussion.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 14 Brute Snare III Sidestick Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 14 Brute Snare III Sidestick Percussion.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 15 Erbeverb Snare Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 15 Erbeverb Snare Percussion.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 16 Fuego Snare Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 16 Fuego Snare Percussion.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 17 Noise Blade Snare Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 17 Noise Blade Snare Percussion.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 18 Stacked Noise Snare Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 18 Stacked Noise Snare Percussion.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 19 Warfare Snare Roll Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 19 Warfare Snare Roll Percussion.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 20 Vintage Machines Snare Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 20 Vintage Machines Snare Percussion.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 21 Pentode Snare Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 21 Pentode Snare Percussion.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 22 Basimilus Filtered Hat I Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 23 Basimilus Filtered Hat II Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 24 Basimilus Hat I Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 25 Basimilus Hat II Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 26 Basimilus Hat III Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 27 Clean Hat Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 28 Dirty Hat Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 29 Dirty Hat Closed Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 30 Dope Hat Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 31 Machine Hat Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 32 Trip Hat Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 33 Dark Reactor I Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 34 Dark Reactor II Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 35 Defleshing Automata Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 36 Does It Even Matter Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 37 Luger P08 Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 38 Noise Sub Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 39 Perfect Weapon I Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 40 Perfect Weapon II Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 41 Sinth Steam Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 42 Basimilus Zap Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 43 Wraith Kit I Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 44 Wraith Kit II Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 45 Wraith Kit III Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 46 Street Trash Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 52 GR700 Shredder Bass Bass.wav
+  tags:
+  - kk
+- bank: pico-nero-bellum
+  file: 53 Fuck Your Shit Bass bpm.wav
+  tags:
+  - kk
+- bank: pico-nero-bellum
+  file: "54 \xC6thers Tide Bass.wav"
+  tags:
+  - kk
+- bank: pico-nero-bellum
+  file: "54 \xC6thers Tide Bass.wav"
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 59 Nightmare in Monochrome Candy.wav
+  tags:
+  - ht

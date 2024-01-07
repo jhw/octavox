@@ -1,0 +1,108 @@
+- bank: pico-ib-magnetic-saturation
+  file: 00 BD.wav
+  tags:
+  - kk
+- bank: pico-ib-magnetic-saturation
+  file: 01 BD.wav
+  tags:
+  - kk
+- bank: pico-ib-magnetic-saturation
+  file: 02 BD.wav
+  tags:
+  - kk
+- bank: pico-ib-magnetic-saturation
+  file: 03 BD.wav
+  tags:
+  - kk
+- bank: pico-ib-magnetic-saturation
+  file: 04 BD.wav
+  tags:
+  - kk
+- bank: pico-ib-magnetic-saturation
+  file: 05 BD.wav
+  tags:
+  - kk
+- bank: pico-ib-magnetic-saturation
+  file: 06 BD.wav
+  tags:
+  - kk
+- bank: pico-ib-magnetic-saturation
+  file: 07 BD.wav
+  tags:
+  - kk
+- bank: pico-ib-magnetic-saturation
+  file: 08 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 09 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 10 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 11 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 12 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 13 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 14 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 15 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 16 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 17 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 18 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 19 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 20 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 21 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 22 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 23 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 28 CP.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 29 RIM.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 30 RIM.wav
+  tags:
+  - sn

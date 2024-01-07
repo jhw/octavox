@@ -1,0 +1,72 @@
+- bank: pico-syntrx
+  file: 06 gltcht1.wav
+  tags:
+  - ht
+- bank: pico-syntrx
+  file: 11 gltcht2.wav
+  tags:
+  - ht
+- bank: pico-syntrx
+  file: 15 gltcht3.wav
+  tags:
+  - ht
+- bank: pico-syntrx
+  file: 16 gltcht7.wav
+  tags:
+  - ht
+- bank: pico-syntrx
+  file: 19 bass1.wav
+  tags:
+  - kk
+- bank: pico-syntrx
+  file: 22 gltcht6.wav
+  tags:
+  - ht
+- bank: pico-syntrx
+  file: 23 gltcht4.wav
+  tags:
+  - ht
+- bank: pico-syntrx
+  file: 26 bass2.wav
+  tags:
+  - kk
+- bank: pico-syntrx
+  file: 28 gltcht5.wav
+  tags:
+  - ht
+- bank: pico-syntrx
+  file: 30 gltcht8.wav
+  tags:
+  - ht
+- bank: pico-syntrx
+  file: 31 bsprc2.wav
+  tags:
+  - ht
+- bank: pico-syntrx
+  file: 34 bsprc1.wav
+  tags:
+  - ht
+- bank: pico-syntrx
+  file: 48 kik3.wav
+  tags:
+  - kk
+- bank: pico-syntrx
+  file: 51 snare1.wav
+  tags:
+  - sn
+- bank: pico-syntrx
+  file: 53 kik2.wav
+  tags:
+  - kk
+- bank: pico-syntrx
+  file: 58 snare2.wav
+  tags:
+  - sn
+- bank: pico-syntrx
+  file: 60 snare3.wav
+  tags:
+  - sn
+- bank: pico-syntrx
+  file: 62 kik1.wav
+  tags:
+  - kk

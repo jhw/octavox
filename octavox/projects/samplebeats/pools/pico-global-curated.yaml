@@ -1,0 +1,1364 @@
+- bank: pico-baseck
+  file: 32 syncussion.wav
+  tags:
+  - ht
+- bank: pico-baseck
+  file: 33 syncussion.wav
+  tags:
+  - ht
+- bank: pico-baseck
+  file: 34 syncussion.wav
+  tags:
+  - ht
+- bank: pico-baseck
+  file: 35 syncussion.wav
+  tags:
+  - ht
+- bank: pico-baseck
+  file: 36 syncussion.wav
+  tags:
+  - ht
+- bank: pico-baseck
+  file: 37 syncussion.wav
+  tags:
+  - ht
+- bank: pico-baseck
+  file: 38 syncussion.wav
+  tags:
+  - ht
+- bank: pico-baseck
+  file: 39 syncussion.wav
+  tags:
+  - ht
+- bank: pico-baseck
+  file: 40 syncussion.wav
+  tags:
+  - ht
+- bank: pico-baseck
+  file: 41 syncussion.wav
+  tags:
+  - ht
+- bank: pico-baseck
+  file: 42 syncussion.wav
+  tags:
+  - ht
+- bank: pico-baseck
+  file: 43 syncussion.wav
+  tags:
+  - ht
+- bank: pico-baseck
+  file: 44 syncussion.wav
+  tags:
+  - ht
+- bank: pico-baseck
+  file: 45 syncussion.wav
+  tags:
+  - ht
+- bank: pico-baseck
+  file: 46 syncussion.wav
+  tags:
+  - ht
+- bank: pico-baseck
+  file: 47 syncussion.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 00 Kick.wav
+  tags:
+  - kk
+- bank: pico-complex-waveforms
+  file: 01 Kick.wav
+  tags:
+  - kk
+- bank: pico-complex-waveforms
+  file: 02 Kick.wav
+  tags:
+  - kk
+- bank: pico-complex-waveforms
+  file: 03 Kick.wav
+  tags:
+  - kk
+- bank: pico-complex-waveforms
+  file: 04 Kick.wav
+  tags:
+  - kk
+- bank: pico-complex-waveforms
+  file: 05 Kick.wav
+  tags:
+  - kk
+- bank: pico-complex-waveforms
+  file: 06 Kick.wav
+  tags:
+  - kk
+- bank: pico-complex-waveforms
+  file: 07 Kick.wav
+  tags:
+  - kk
+- bank: pico-complex-waveforms
+  file: 08 Kick.wav
+  tags:
+  - kk
+- bank: pico-complex-waveforms
+  file: 09 Kick.wav
+  tags:
+  - kk
+- bank: pico-complex-waveforms
+  file: 10 Kick.wav
+  tags:
+  - kk
+- bank: pico-complex-waveforms
+  file: 11 Kick.wav
+  tags:
+  - kk
+- bank: pico-complex-waveforms
+  file: 12 Kick.wav
+  tags:
+  - kk
+- bank: pico-complex-waveforms
+  file: 13 Kick.wav
+  tags:
+  - kk
+- bank: pico-complex-waveforms
+  file: 28 Glitch.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 29 Glitch.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 30 Glitch.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 31 Glitch.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 32 Glitch.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 33 Glitch.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 34 Glitch.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 35 Glitch.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 36 Glitch.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 37 Glitch.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 38 Glitch.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 39 Glitch.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 40 Glitch.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 41 Glitch.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 42 Glitch.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 43 Glitch.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 44 Glitch.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 45 Glitch.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 46 Glitch.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 47 Glitch.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 48 Glitch.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 49 glitch.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 50 Glitch.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 51 Glitch.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 52 Glitch.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 53 Glitch.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 54 Perc.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 55 Perc.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 56 Perc.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 57 Perc.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 58 Perc.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 59 Perc.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 60 Perc.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 61 Perc.wav
+  tags:
+  - ht
+- bank: pico-complex-waveforms
+  file: 62 Perc.wav
+  tags:
+  - ht
+- bank: pico-default
+  file: 00 BD.wav
+  tags:
+  - kk
+- bank: pico-default
+  file: 01 BD.wav
+  tags:
+  - kk
+- bank: pico-default
+  file: 02 BD.wav
+  tags:
+  - kk
+- bank: pico-default
+  file: 03 Buchla BD.wav
+  tags:
+  - kk
+- bank: pico-default
+  file: 04 IB BD.wav
+  tags:
+  - kk
+- bank: pico-default
+  file: 05 IB BD.wav
+  tags:
+  - kk
+- bank: pico-default
+  file: 06 Jungle BD.wav
+  tags:
+  - kk
+- bank: pico-default
+  file: 07 BD.wav
+  tags:
+  - kk
+- bank: pico-default
+  file: 08 Synth BD.wav
+  tags:
+  - kk
+- bank: pico-default
+  file: 09 Synth BD.wav
+  tags:
+  - kk
+- bank: pico-default
+  file: 10 SD.wav
+  tags:
+  - sn
+- bank: pico-default
+  file: 11 SD.wav
+  tags:
+  - sn
+- bank: pico-default
+  file: 12 SD.wav
+  tags:
+  - sn
+- bank: pico-default
+  file: 13 IB SD.wav
+  tags:
+  - sn
+- bank: pico-default
+  file: 14 IB SD.wav
+  tags:
+  - sn
+- bank: pico-default
+  file: 15 IB SD.wav
+  tags:
+  - sn
+- bank: pico-default
+  file: 16 Synth SD.wav
+  tags:
+  - sn
+- bank: pico-default
+  file: 17 Synth SD.wav
+  tags:
+  - sn
+- bank: pico-default
+  file: 18 Jungle SD.wav
+  tags:
+  - sn
+- bank: pico-default
+  file: 27 HC.wav
+  tags:
+  - sn
+- bank: pico-default
+  file: 28 HC.wav
+  tags:
+  - sn
+- bank: pico-default
+  file: 29 HC.wav
+  tags:
+  - sn
+- bank: pico-default
+  file: 30 IB HC.wav
+  tags:
+  - sn
+- bank: pico-default
+  file: 31 RS.wav
+  tags:
+  - sn
+- bank: pico-default
+  file: 32 RS.wav
+  tags:
+  - sn
+- bank: pico-default
+  file: 33 RS.wav
+  tags:
+  - sn
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 00 BD.wav
+  tags:
+  - kk
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 01 BD.wav
+  tags:
+  - kk
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 02 BD.wav
+  tags:
+  - kk
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 03 BD.wav
+  tags:
+  - kk
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 04 BD.wav
+  tags:
+  - kk
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 05 BD.wav
+  tags:
+  - kk
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 06 BD.wav
+  tags:
+  - kk
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 07 BD.wav
+  tags:
+  - kk
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 08 BD.wav
+  tags:
+  - kk
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 09 BD.wav
+  tags:
+  - kk
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 10 BD.wav
+  tags:
+  - kk
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 11 SD.wav
+  tags:
+  - sn
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 12 SD.wav
+  tags:
+  - sn
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 13 SD.wav
+  tags:
+  - sn
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 14 SD.wav
+  tags:
+  - sn
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 15 SD.wav
+  tags:
+  - sn
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 16 SD.wav
+  tags:
+  - sn
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 17 SD.wav
+  tags:
+  - sn
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 18 SD.wav
+  tags:
+  - sn
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 19 SD.wav
+  tags:
+  - sn
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 20 SD.wav
+  tags:
+  - sn
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 21 SD.wav
+  tags:
+  - sn
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 22 SD.wav
+  tags:
+  - sn
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 23 SD.wav
+  tags:
+  - sn
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 24 SD.wav
+  tags:
+  - sn
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 25 CP.wav
+  tags:
+  - sn
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 26 CP.wav
+  tags:
+  - sn
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 27 PERC.wav
+  tags:
+  - ht
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 28 PERC.wav
+  tags:
+  - ht
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 29 PERC.wav
+  tags:
+  - ht
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 30 PERC.wav
+  tags:
+  - ht
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 31 PERC.wav
+  tags:
+  - ht
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 32 PERC.wav
+  tags:
+  - ht
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 33 PERC.wav
+  tags:
+  - ht
+- bank: pico-dj-raitis-vinyl-cuts
+  file: 34 PERC.wav
+  tags:
+  - ht
+- bank: pico-ib-magnetic-saturation
+  file: 00 BD.wav
+  tags:
+  - kk
+- bank: pico-ib-magnetic-saturation
+  file: 01 BD.wav
+  tags:
+  - kk
+- bank: pico-ib-magnetic-saturation
+  file: 02 BD.wav
+  tags:
+  - kk
+- bank: pico-ib-magnetic-saturation
+  file: 03 BD.wav
+  tags:
+  - kk
+- bank: pico-ib-magnetic-saturation
+  file: 04 BD.wav
+  tags:
+  - kk
+- bank: pico-ib-magnetic-saturation
+  file: 05 BD.wav
+  tags:
+  - kk
+- bank: pico-ib-magnetic-saturation
+  file: 06 BD.wav
+  tags:
+  - kk
+- bank: pico-ib-magnetic-saturation
+  file: 07 BD.wav
+  tags:
+  - kk
+- bank: pico-ib-magnetic-saturation
+  file: 08 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 09 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 10 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 11 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 12 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 13 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 14 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 15 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 16 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 17 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 18 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 19 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 20 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 21 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 22 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 23 SD.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 28 CP.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 29 RIM.wav
+  tags:
+  - sn
+- bank: pico-ib-magnetic-saturation
+  file: 30 RIM.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 00 ERIKABD1.wav
+  tags:
+  - kk
+- bank: pico-legowelt
+  file: 01 ERIKAHardtechnoBD.wav
+  tags:
+  - kk
+- bank: pico-legowelt
+  file: 02 ERIKAIndustrialBassdrum.wav
+  tags:
+  - kk
+- bank: pico-legowelt
+  file: 02 ERIKAIndustrialBassdrum.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 03 ERIKAOverdriveBD.wav
+  tags:
+  - kk
+- bank: pico-legowelt
+  file: 04 ERIKASD1.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 05 ERIKASD2.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 06 ERIKASD3.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 07 ERIKASDnoise.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 08 ERIKASDelectro.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 09 ERIKASnurrydrum.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 10 ERIKASDxtreeeem.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 11 ERIKABD2.wav
+  tags:
+  - kk
+- bank: pico-legowelt
+  file: 12 ERIKASDfuture.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 13 ERIKASDthunderwip.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 14 ERIKADimensionSnare.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 15 ERIKACLAP1.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 16 ERIKADuistereCLAP.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 22 ERIKABD3.wav
+  tags:
+  - kk
+- bank: pico-legowelt
+  file: 24 ERIKABubblemarimba.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 26 ERIKAKrimiSynth.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 33 ERIKABD4.wav
+  tags:
+  - kk
+- bank: pico-legowelt
+  file: 44 ERIKABD5.wav
+  tags:
+  - kk
+- bank: pico-legowelt
+  file: 49 ERIKANorseMythology.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 55 ERIKABD6.wav
+  tags:
+  - kk
+- bank: pico-legowelt
+  file: 60 ERIKASHihat.wav
+  tags:
+  - ht
+- bank: pico-legowelt
+  file: 61 ERIKABD7.wav
+  tags:
+  - kk
+- bank: pico-legowelt
+  file: 62 ERIKABDhat.wav
+  tags:
+  - ht
+- bank: pico-legowelt
+  file: 62 ERIKABDhat.wav
+  tags:
+  - kk
+- bank: pico-legowelt
+  file: 63 ERIKABDlotom.wav
+  tags:
+  - kk
+- bank: pico-nero-bellum
+  file: 00 Basimilus Filtered Kick Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 00 Basimilus Filtered Kick Percussion.wav
+  tags:
+  - kk
+- bank: pico-nero-bellum
+  file: 01 Basimilus Trash Kick Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 01 Basimilus Trash Kick Percussion.wav
+  tags:
+  - kk
+- bank: pico-nero-bellum
+  file: 02 Brute Kick I Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 02 Brute Kick I Percussion.wav
+  tags:
+  - kk
+- bank: pico-nero-bellum
+  file: 03 Brute Kick II Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 03 Brute Kick II Percussion.wav
+  tags:
+  - kk
+- bank: pico-nero-bellum
+  file: 04 Uncle Toms Blackened Kick Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 04 Uncle Toms Blackened Kick Percussion.wav
+  tags:
+  - kk
+- bank: pico-nero-bellum
+  file: 05 Prophet Kick Long Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 05 Prophet Kick Long Percussion.wav
+  tags:
+  - kk
+- bank: pico-nero-bellum
+  file: 06 Grimy Gretch Kick Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 06 Grimy Gretch Kick Percussion.wav
+  tags:
+  - kk
+- bank: pico-nero-bellum
+  file: 06 Grimy Gretch Kick Percussion.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 07 Pentode Kick Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 07 Pentode Kick Percussion.wav
+  tags:
+  - kk
+- bank: pico-nero-bellum
+  file: 08 Basimilus Sub Drop Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 09 DPO Drop Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 10 Varishape Pulse Bomb Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 11 Basimilus Trash Snare Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 11 Basimilus Trash Snare Percussion.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 12 Brute Snare I Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 12 Brute Snare I Percussion.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 13 Brute Snare II Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 13 Brute Snare II Percussion.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 14 Brute Snare III Sidestick Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 14 Brute Snare III Sidestick Percussion.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 15 Erbeverb Snare Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 15 Erbeverb Snare Percussion.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 16 Fuego Snare Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 16 Fuego Snare Percussion.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 17 Noise Blade Snare Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 17 Noise Blade Snare Percussion.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 18 Stacked Noise Snare Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 18 Stacked Noise Snare Percussion.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 19 Warfare Snare Roll Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 19 Warfare Snare Roll Percussion.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 20 Vintage Machines Snare Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 20 Vintage Machines Snare Percussion.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 21 Pentode Snare Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 21 Pentode Snare Percussion.wav
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 22 Basimilus Filtered Hat I Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 23 Basimilus Filtered Hat II Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 24 Basimilus Hat I Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 25 Basimilus Hat II Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 26 Basimilus Hat III Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 27 Clean Hat Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 28 Dirty Hat Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 29 Dirty Hat Closed Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 30 Dope Hat Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 31 Machine Hat Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 32 Trip Hat Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 33 Dark Reactor I Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 34 Dark Reactor II Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 35 Defleshing Automata Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 36 Does It Even Matter Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 37 Luger P08 Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 38 Noise Sub Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 39 Perfect Weapon I Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 40 Perfect Weapon II Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 41 Sinth Steam Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 42 Basimilus Zap Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 43 Wraith Kit I Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 44 Wraith Kit II Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 45 Wraith Kit III Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 46 Street Trash Percussion.wav
+  tags:
+  - ht
+- bank: pico-nero-bellum
+  file: 52 GR700 Shredder Bass Bass.wav
+  tags:
+  - kk
+- bank: pico-nero-bellum
+  file: 53 Fuck Your Shit Bass bpm.wav
+  tags:
+  - kk
+- bank: pico-nero-bellum
+  file: "54 \xC6thers Tide Bass.wav"
+  tags:
+  - kk
+- bank: pico-nero-bellum
+  file: "54 \xC6thers Tide Bass.wav"
+  tags:
+  - sn
+- bank: pico-nero-bellum
+  file: 59 Nightmare in Monochrome Candy.wav
+  tags:
+  - ht
+- bank: pico-otto-von-schirach
+  file: 07 Electro Acoustic hats.wav
+  tags:
+  - ht
+- bank: pico-otto-von-schirach
+  file: 10 Electro Acoustic sd.wav
+  tags:
+  - sn
+- bank: pico-otto-von-schirach
+  file: 11 Electro kik.wav
+  tags:
+  - kk
+- bank: pico-otto-von-schirach
+  file: 12 Electro sd.wav
+  tags:
+  - sn
+- bank: pico-otto-von-schirach
+  file: 16 ElectroHat.wav
+  tags:
+  - ht
+- bank: pico-otto-von-schirach
+  file: 21 Gabba sd.wav
+  tags:
+  - sn
+- bank: pico-otto-von-schirach
+  file: 27 hank kik.wav
+  tags:
+  - kk
+- bank: pico-otto-von-schirach
+  file: 28 hank Sd.wav
+  tags:
+  - sn
+- bank: pico-otto-von-schirach
+  file: 30 Miami Bass.wav
+  tags:
+  - kk
+- bank: pico-otto-von-schirach
+  file: 31 Miami Bass clap.wav
+  tags:
+  - kk
+- bank: pico-otto-von-schirach
+  file: 31 Miami Bass clap.wav
+  tags:
+  - sn
+- bank: pico-otto-von-schirach
+  file: 32 Miami Bass hat.wav
+  tags:
+  - ht
+- bank: pico-otto-von-schirach
+  file: 32 Miami Bass hat.wav
+  tags:
+  - kk
+- bank: pico-otto-von-schirach
+  file: 33 Miami Bass kik.wav
+  tags:
+  - kk
+- bank: pico-otto-von-schirach
+  file: 34 Miami Bass Sd.wav
+  tags:
+  - kk
+- bank: pico-otto-von-schirach
+  file: 34 Miami Bass Sd.wav
+  tags:
+  - sn
+- bank: pico-otto-von-schirach
+  file: 35 Miami Bass Sd.wav
+  tags:
+  - kk
+- bank: pico-otto-von-schirach
+  file: 35 Miami Bass Sd.wav
+  tags:
+  - sn
+- bank: pico-otto-von-schirach
+  file: 37 pickle kik.wav
+  tags:
+  - kk
+- bank: pico-otto-von-schirach
+  file: 42 Ring Snare.wav
+  tags:
+  - sn
+- bank: pico-otto-von-schirach
+  file: 43 Static Lic kik.wav
+  tags:
+  - kk
+- bank: pico-otto-von-schirach
+  file: 44 Static Sd.wav
+  tags:
+  - sn
+- bank: pico-otto-von-schirach
+  file: 45 Static Snare.wav
+  tags:
+  - sn
+- bank: pico-otto-von-schirach
+  file: 47 syncussion.wav
+  tags:
+  - ht
+- bank: pico-otto-von-schirach
+  file: 48 syncussion.wav
+  tags:
+  - ht
+- bank: pico-otto-von-schirach
+  file: 49 syncussion.wav
+  tags:
+  - ht
+- bank: pico-otto-von-schirach
+  file: 50 syncussion.wav
+  tags:
+  - ht
+- bank: pico-otto-von-schirach
+  file: 51 SYNCUSSION.wav
+  tags:
+  - ht
+- bank: pico-otto-von-schirach
+  file: 52 syncussion.wav
+  tags:
+  - ht
+- bank: pico-otto-von-schirach
+  file: 53 syncussion.wav
+  tags:
+  - ht
+- bank: pico-otto-von-schirach
+  file: 54 syncussion.wav
+  tags:
+  - ht
+- bank: pico-otto-von-schirach
+  file: 55 syncussion.wav
+  tags:
+  - ht
+- bank: pico-otto-von-schirach
+  file: 56 SYNCUSSION BASS.wav
+  tags:
+  - ht
+- bank: pico-otto-von-schirach
+  file: 56 SYNCUSSION BASS.wav
+  tags:
+  - kk
+- bank: pico-otto-von-schirach
+  file: 57 top kik.wav
+  tags:
+  - kk
+- bank: pico-otto-von-schirach
+  file: 59 Zort Sd.wav
+  tags:
+  - sn
+- bank: pico-otto-von-schirach
+  file: 60 Zort Sd.wav
+  tags:
+  - sn
+- bank: pico-otto-von-schirach
+  file: 61 Zort Sd.wav
+  tags:
+  - sn
+- bank: pico-pitch-black
+  file: 00 medium decayed Kick.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 01 punch kick.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 02 Buchla round kick.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 03 dark energy kick.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 04 doom kick.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 05 Heavy kick.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 06 roundhouse kick.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 07 Verbos amp tone controller kick.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 08 crash snare culture print Snare.wav
+  tags:
+  - sn
+- bank: pico-pitch-black
+  file: 09 Culture vulture Pentode Snare.wav
+  tags:
+  - sn
+- bank: pico-pitch-black
+  file: 10 noise snap snare.wav
+  tags:
+  - sn
+- bank: pico-pitch-black
+  file: 11 ob6 noise snare.wav
+  tags:
+  - sn
+- bank: pico-pitch-black
+  file: 12 Smack my pitch up stc08 Snare.wav
+  tags:
+  - sn
+- bank: pico-pitch-black
+  file: 13 zap noise culture vulture print percussion.wav
+  tags:
+  - ht
+- bank: pico-pitch-black
+  file: 14 Buchla bongo percussion.wav
+  tags:
+  - ht
+- bank: pico-pitch-black
+  file: 15 Buchla congo percussion.wav
+  tags:
+  - ht
+- bank: pico-pitch-black
+  file: 16 Buchla Pop hit percussion.wav
+  tags:
+  - ht
+- bank: pico-pitch-black
+  file: 17 buchla tamborine percussion.wav
+  tags:
+  - ht
+- bank: pico-pitch-black
+  file: 18 Voyager bleep blip percussion.wav
+  tags:
+  - ht
+- bank: pico-pitch-black
+  file: 19 Verbos complex Resonating tom hit percussion.wav
+  tags:
+  - ht
+- bank: pico-pitch-black
+  file: 20 swarmatron congo percussion.wav
+  tags:
+  - ht
+- bank: pico-pitch-black
+  file: 21 swarmatron cluster shot percussion.wav
+  tags:
+  - ht
+- bank: pico-pitch-black
+  file: 23 verbos complex saw bass shot lead.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 27 Ernie ball bass guitar note sustain lead.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 32 buchla bass shot lead.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 33 Ob6 Saw bass Stab lead.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 37 Evil wisphers swell tonal.wav
+  tags:
+  - sn
+- bank: pico-pitch-black
+  file: 42 grim reaper verbos harmonic osc bass drone.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 42 grim reaper verbos harmonic osc bass drone.wav
+  tags:
+  - sn
+- bank: pico-pitch-black
+  file: 53 reverse swell up fx.wav
+  tags:
+  - sn
+- bank: pico-syntrx
+  file: 06 gltcht1.wav
+  tags:
+  - ht
+- bank: pico-syntrx
+  file: 11 gltcht2.wav
+  tags:
+  - ht
+- bank: pico-syntrx
+  file: 15 gltcht3.wav
+  tags:
+  - ht
+- bank: pico-syntrx
+  file: 16 gltcht7.wav
+  tags:
+  - ht
+- bank: pico-syntrx
+  file: 19 bass1.wav
+  tags:
+  - kk
+- bank: pico-syntrx
+  file: 22 gltcht6.wav
+  tags:
+  - ht
+- bank: pico-syntrx
+  file: 23 gltcht4.wav
+  tags:
+  - ht
+- bank: pico-syntrx
+  file: 26 bass2.wav
+  tags:
+  - kk
+- bank: pico-syntrx
+  file: 28 gltcht5.wav
+  tags:
+  - ht
+- bank: pico-syntrx
+  file: 30 gltcht8.wav
+  tags:
+  - ht
+- bank: pico-syntrx
+  file: 31 bsprc2.wav
+  tags:
+  - ht
+- bank: pico-syntrx
+  file: 34 bsprc1.wav
+  tags:
+  - ht
+- bank: pico-syntrx
+  file: 48 kik3.wav
+  tags:
+  - kk
+- bank: pico-syntrx
+  file: 51 snare1.wav
+  tags:
+  - sn
+- bank: pico-syntrx
+  file: 53 kik2.wav
+  tags:
+  - kk
+- bank: pico-syntrx
+  file: 58 snare2.wav
+  tags:
+  - sn
+- bank: pico-syntrx
+  file: 60 snare3.wav
+  tags:
+  - sn
+- bank: pico-syntrx
+  file: 62 kik1.wav
+  tags:
+  - kk

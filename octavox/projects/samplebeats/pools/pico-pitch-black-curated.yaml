@@ -1,0 +1,120 @@
+- bank: pico-pitch-black
+  file: 00 medium decayed Kick.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 01 punch kick.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 02 Buchla round kick.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 03 dark energy kick.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 04 doom kick.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 05 Heavy kick.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 06 roundhouse kick.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 07 Verbos amp tone controller kick.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 08 crash snare culture print Snare.wav
+  tags:
+  - sn
+- bank: pico-pitch-black
+  file: 09 Culture vulture Pentode Snare.wav
+  tags:
+  - sn
+- bank: pico-pitch-black
+  file: 10 noise snap snare.wav
+  tags:
+  - sn
+- bank: pico-pitch-black
+  file: 11 ob6 noise snare.wav
+  tags:
+  - sn
+- bank: pico-pitch-black
+  file: 12 Smack my pitch up stc08 Snare.wav
+  tags:
+  - sn
+- bank: pico-pitch-black
+  file: 13 zap noise culture vulture print percussion.wav
+  tags:
+  - ht
+- bank: pico-pitch-black
+  file: 14 Buchla bongo percussion.wav
+  tags:
+  - ht
+- bank: pico-pitch-black
+  file: 15 Buchla congo percussion.wav
+  tags:
+  - ht
+- bank: pico-pitch-black
+  file: 16 Buchla Pop hit percussion.wav
+  tags:
+  - ht
+- bank: pico-pitch-black
+  file: 17 buchla tamborine percussion.wav
+  tags:
+  - ht
+- bank: pico-pitch-black
+  file: 18 Voyager bleep blip percussion.wav
+  tags:
+  - ht
+- bank: pico-pitch-black
+  file: 19 Verbos complex Resonating tom hit percussion.wav
+  tags:
+  - ht
+- bank: pico-pitch-black
+  file: 20 swarmatron congo percussion.wav
+  tags:
+  - ht
+- bank: pico-pitch-black
+  file: 21 swarmatron cluster shot percussion.wav
+  tags:
+  - ht
+- bank: pico-pitch-black
+  file: 23 verbos complex saw bass shot lead.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 27 Ernie ball bass guitar note sustain lead.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 32 buchla bass shot lead.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 33 Ob6 Saw bass Stab lead.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 37 Evil wisphers swell tonal.wav
+  tags:
+  - sn
+- bank: pico-pitch-black
+  file: 42 grim reaper verbos harmonic osc bass drone.wav
+  tags:
+  - kk
+- bank: pico-pitch-black
+  file: 42 grim reaper verbos harmonic osc bass drone.wav
+  tags:
+  - sn
+- bank: pico-pitch-black
+  file: 53 reverse swell up fx.wav
+  tags:
+  - sn

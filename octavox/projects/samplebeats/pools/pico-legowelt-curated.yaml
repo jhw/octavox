@@ -1,0 +1,120 @@
+- bank: pico-legowelt
+  file: 00 ERIKABD1.wav
+  tags:
+  - kk
+- bank: pico-legowelt
+  file: 01 ERIKAHardtechnoBD.wav
+  tags:
+  - kk
+- bank: pico-legowelt
+  file: 02 ERIKAIndustrialBassdrum.wav
+  tags:
+  - kk
+- bank: pico-legowelt
+  file: 02 ERIKAIndustrialBassdrum.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 03 ERIKAOverdriveBD.wav
+  tags:
+  - kk
+- bank: pico-legowelt
+  file: 04 ERIKASD1.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 05 ERIKASD2.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 06 ERIKASD3.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 07 ERIKASDnoise.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 08 ERIKASDelectro.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 09 ERIKASnurrydrum.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 10 ERIKASDxtreeeem.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 11 ERIKABD2.wav
+  tags:
+  - kk
+- bank: pico-legowelt
+  file: 12 ERIKASDfuture.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 13 ERIKASDthunderwip.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 14 ERIKADimensionSnare.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 15 ERIKACLAP1.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 16 ERIKADuistereCLAP.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 22 ERIKABD3.wav
+  tags:
+  - kk
+- bank: pico-legowelt
+  file: 24 ERIKABubblemarimba.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 26 ERIKAKrimiSynth.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 33 ERIKABD4.wav
+  tags:
+  - kk
+- bank: pico-legowelt
+  file: 44 ERIKABD5.wav
+  tags:
+  - kk
+- bank: pico-legowelt
+  file: 49 ERIKANorseMythology.wav
+  tags:
+  - sn
+- bank: pico-legowelt
+  file: 55 ERIKABD6.wav
+  tags:
+  - kk
+- bank: pico-legowelt
+  file: 60 ERIKASHihat.wav
+  tags:
+  - ht
+- bank: pico-legowelt
+  file: 61 ERIKABD7.wav
+  tags:
+  - kk
+- bank: pico-legowelt
+  file: 62 ERIKABDhat.wav
+  tags:
+  - ht
+- bank: pico-legowelt
+  file: 62 ERIKABDhat.wav
+  tags:
+  - kk
+- bank: pico-legowelt
+  file: 63 ERIKABDlotom.wav
+  tags:
+  - kk
