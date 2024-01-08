@@ -1,16 +1,15 @@
 ### short
 
-- move pool scripts inside project
-
 ### medium
 
 - librosa demo
 
 ### demos
 
+- hats
 - kickers
-- risers 
-- drops
+- risers and drops
+- chord stabs
 
 ### thoughts
 
@@ -33,6 +32,7 @@
 
 ### done
 
+- move pool scripts inside project
 - replace flatten2
 - modify pool code to iterate through directories
 - script to dump slicebeats pools
