@@ -1,8 +1,11 @@
 ### short
 
-### medium
+- chaining to auto- insert breaks via decorator
 
 - librosa demo
+
+### medium
+
 
 ### demos
 
