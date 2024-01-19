@@ -39,7 +39,18 @@ class SequencerMap(dict):
     def randomise(self):
         return [random.choice(self[key])
                 for key in self]
-        
+
+def override_breaks(override):
+    def decorator(fn):
+        def wrapped(self, *args, **kwargs):
+            nbreaks=self.env["nbreaks"]
+            self.env["nbreaks"]=override
+            resp=fn(self, *args, **kwargs)
+            self.env["nbreaks"]=nbreaks
+            return resp
+        return wrapped
+    return decorator
+    
 class SVCli(SVBankCli):
 
     intro="Welcome to Samplebeats :)"
@@ -154,6 +165,7 @@ class SVCli(SVBankCli):
     @parse_line(config=[{"name": "I",
                          "type": "array"}])
     @assert_project
+    @override_breaks(1)    
     @render_patches(prefix="chain")
     def do_chain_patches(self, I):
         def unique_permutations(strings):

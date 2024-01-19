@@ -1,7 +1,5 @@
 ### short
 
-- chaining to auto- insert breaks via decorator
-
 - librosa demo
 
 ### medium
@@ -35,6 +33,7 @@
 
 ### done
 
+- chaining to auto- insert breaks via decorator
 - move pool scripts inside project
 - replace flatten2
 - modify pool code to iterate through directories
