@@ -1,12 +1,10 @@
 ### short
 
-- librosa demo
-
 ### medium
-
 
 ### demos
 
+- chords, pads, lfos
 - hats
 - kickers
 - risers and drops
@@ -33,6 +31,7 @@
 
 ### done
 
+- librosa demo
 - chaining to auto- insert breaks via decorator
 - move pool scripts inside project
 - replace flatten2
